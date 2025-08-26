@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&family=Montserrat+Alternates:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Color Hues for Dynamic Theming */
+    --accent-hue: 15;
+    --forest-hue: 140;
+    --earth-hue: 25;
+    
+    /* Dynamic Color System */
+    --accent: hsl(var(--accent-hue), 70%, 50%);
+    --accent-light: hsl(var(--accent-hue), 70%, 85%);
+    --accent-dark: hsl(var(--accent-hue), 70%, 35%);
+    
+    /* Gradient Mesh Variables */
+    --gradient-mesh-1: conic-gradient(from 180deg at 50% 50%, 
+      hsl(var(--accent-hue), 70%, 50%) 0deg,
+      hsl(var(--forest-hue), 60%, 40%) 120deg,
+      hsl(var(--earth-hue), 65%, 45%) 240deg,
+      hsl(var(--accent-hue), 70%, 50%) 360deg);
+    
+    --gradient-mesh-2: radial-gradient(ellipse 80% 50% at 20% 40%,
+      hsla(var(--accent-hue), 70%, 50%, 0.3) 0%,
+      transparent 50%),
+      radial-gradient(ellipse 80% 50% at 80% 60%,
+      hsla(var(--forest-hue), 60%, 40%, 0.3) 0%,
+      transparent 50%),
+      radial-gradient(ellipse 80% 50% at 40% 80%,
+      hsla(var(--earth-hue), 65%, 45%, 0.3) 0%,
+      transparent 50%);
+    
+    --gradient-mesh-3: linear-gradient(135deg,
+      hsla(var(--accent-hue), 70%, 50%, 0.1) 0%,
+      hsla(var(--forest-hue), 60%, 40%, 0.1) 35%,
+      hsla(var(--earth-hue), 65%, 45%, 0.1) 70%,
+      hsla(var(--accent-hue), 70%, 50%, 0.1) 100%);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-cream text-forest-800 font-sans;
+    background-image: var(--gradient-mesh-3);
+    background-attachment: fixed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold uppercase tracking-wide;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent hover:bg-accent/90 text-cream font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-vintage-lg uppercase tracking-wide;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-earth-700 text-earth-700 hover:bg-earth-700 hover:text-cream font-bold py-4 px-8 rounded-xl transition-all duration-300 uppercase tracking-wide;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent border-2 border-forest-700 text-forest-700 hover:bg-forest-700 hover:text-cream font-bold py-3 px-6 rounded-xl transition-all duration-300 uppercase tracking-wide text-sm;
+  }
+  
+  .section-padding {
+    padding-top: clamp(3rem, 8vw, 8rem);
+    padding-bottom: clamp(3rem, 8vw, 8rem);
+    padding-left: clamp(1rem, 4vw, 2rem);
+    padding-right: clamp(1rem, 4vw, 2rem);
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-forest-700 to-earth-700 bg-clip-text text-transparent;
+  }
+  
+  .badge-circle {
+    @apply w-20 h-20 bg-gradient-to-br from-forest-700 to-earth-700 text-cream rounded-full flex items-center justify-center font-display font-bold text-lg shadow-vintage-lg;
+  }
+  
+  .card-vintage {
+    @apply bg-cream border-2 border-forest-200 rounded-2xl shadow-vintage-lg hover:shadow-vintage-xl transition-all duration-300 hover:scale-105;
+  }
+  
+  .hero-title {
+    @apply font-display font-black uppercase tracking-wider text-cream drop-shadow-lg;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: clamp(2.8rem, 8.5vw, 6.5rem);
+  }
+  
+  .section-title {
+    @apply font-display font-bold uppercase tracking-wide text-forest-800 text-center;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    line-height: clamp(2rem, 4.5vw, 3.5rem);
+  }
+  
+  .stats-number {
+    @apply font-display font-black text-forest-700 uppercase;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: clamp(2.2rem, 5.5vw, 4.5rem);
+  }
+  
+  .vintage-divider {
+    @apply w-24 h-1 bg-gradient-to-r from-forest-700 to-earth-700 mx-auto my-8;
+  }
+  
+  /* Fluid Typography Classes */
+  .text-fluid-xl {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    line-height: clamp(1.75rem, 4vw, 2.5rem);
+  }
+  
+  .text-fluid-lg {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    line-height: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  .text-fluid-base {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: clamp(1.5rem, 2.5vw, 1.75rem);
+  }
+  
+  .text-fluid-sm {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: clamp(1.25rem, 2vw, 1.5rem);
+  }
+  
+  /* Gradient Mesh Utility Classes */
+  .gradient-mesh-bg {
+    background: var(--gradient-mesh-1);
+  }
+  
+  .gradient-mesh-overlay {
+    background: var(--gradient-mesh-2);
+  }
+  
+  .gradient-mesh-subtle {
+    background: var(--gradient-mesh-3);
+  }
+  
+  .gradient-text-mesh {
+    background: var(--gradient-mesh-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .gradient-border-mesh {
+    border-image: var(--gradient-mesh-1) 1;
+  }
+  
+  /* Dynamic Theme Classes */
+  .theme-accent {
+    color: var(--accent);
+  }
+  
+  .theme-accent-bg {
+    background-color: var(--accent);
+  }
+  
+  .theme-accent-light {
+    color: var(--accent-light);
+  }
+  
+  .theme-accent-dark {
+    color: var(--accent-dark);
+  }
+}
+
