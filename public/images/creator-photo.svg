@@ -1,0 +1,36 @@
+<svg width="400" height="500" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="500" fill="#2F4F3E"/>
+  
+  <!-- Mountain silhouette -->
+  <path d="M0 350 L80 280 L150 320 L220 250 L300 290 L400 220 L400 500 L0 500 Z" fill="#1A2F1F"/>
+  
+  <!-- Person silhouette -->
+  <circle cx="200" cy="180" r="40" fill="#6B4423"/>
+  <path d="M160 220 L240 220 L235 280 L230 340 L225 400 L175 400 L170 340 L165 280 Z" fill="#6B4423"/>
+  
+  <!-- Backpack -->
+  <rect x="210" y="200" width="25" height="40" rx="5" fill="#A9A9A9"/>
+  
+  <!-- Walking stick -->
+  <line x1="150" y1="250" x2="140" y2="180" stroke="#8B4513" stroke-width="3"/>
+  
+  <!-- Trees -->
+  <circle cx="80" cy="320" r="15" fill="#228B22"/>
+  <rect x="77" y="320" width="6" height="20" fill="#8B4513"/>
+  
+  <circle cx="320" cy="300" r="12" fill="#228B22"/>
+  <rect x="318" y="300" width="4" height="15" fill="#8B4513"/>
+  
+  <!-- Clouds -->
+  <ellipse cx="100" cy="80" rx="30" ry="15" fill="#F5F2E7" opacity="0.7"/>
+  <ellipse cx="300" cy="60" rx="25" ry="12" fill="#F5F2E7" opacity="0.7"/>
+  
+  <!-- Text overlay -->
+  <text x="200" y="450" text-anchor="middle" fill="#F5F2E7" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+    Twórca Sudety Grand Trail
+  </text>
+  <text x="200" y="470" text-anchor="middle" fill="#C94E2B" font-family="Arial, sans-serif" font-size="12">
+    Podmień na swoje zdjęcie
+  </text>
+</svg>

@@ -1,0 +1,49 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#475569;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#64748b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0f172a"/>
+  
+  <!-- Hills -->
+  <polygon points="0,300 200,200 400,250 600,150 800,200 800,600 0,600" fill="#1e293b"/>
+  <polygon points="0,400 150,300 350,350 550,250 750,300 800,320 800,600 0,600" fill="#334155"/>
+  
+  <!-- Grass areas -->
+  <ellipse cx="150" cy="500" rx="80" ry="20" fill="url(#grassGradient)"/>
+  <ellipse cx="400" cy="480" rx="100" ry="25" fill="url(#grassGradient)"/>
+  <ellipse cx="650" cy="520" rx="90" ry="22" fill="url(#grassGradient)"/>
+  
+  <!-- Trail path -->
+  <path d="M 50 550 Q 200 450 350 480 Q 500 510 650 450 Q 750 420 800 450" 
+        stroke="url(#pathGradient)" stroke-width="8" fill="none" opacity="0.8"/>
+  
+  <!-- Trees -->
+  <g opacity="0.9">
+    <polygon points="100,450 110,380 120,450" fill="#15803d"/>
+    <circle cx="110" cy="390" r="15" fill="#22c55e"/>
+    
+    <polygon points="300,420 315,340 330,420" fill="#15803d"/>
+    <circle cx="315" cy="350" r="18" fill="#22c55e"/>
+    
+    <polygon points="500,460 515,380 530,460" fill="#15803d"/>
+    <circle cx="515" cy="390" r="16" fill="#22c55e"/>
+    
+    <polygon points="700,440 715,360 730,440" fill="#15803d"/>
+    <circle cx="715" cy="370" r="17" fill="#22c55e"/>
+  </g>
+  
+  <!-- Rocks -->
+  <ellipse cx="250" cy="520" rx="15" ry="8" fill="#475569"/>
+  <ellipse cx="450" cy="540" rx="12" ry="6" fill="#64748b"/>
+  <ellipse cx="600" cy="510" rx="18" ry="10" fill="#475569"/>
+</svg>
+

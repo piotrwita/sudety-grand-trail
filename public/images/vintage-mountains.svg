@@ -1,0 +1,62 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2f4f3e;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#6b4423;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#a9a9a9;stop-opacity:0.6" />
+    </linearGradient>
+    <linearGradient id="mountainGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22342b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2f4f3e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mountainGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2f4f3e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4d321b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="forestGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3d6045;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22342b;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="sunGradient" cx="80%" cy="20%" r="15%">
+      <stop offset="0%" style="stop-color:#f5f2e7;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#c94e2b;stop-opacity:0.4" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="1920" height="1080" fill="url(#skyGradient)"/>
+  
+  <!-- Sun -->
+  <circle cx="1500" cy="200" r="80" fill="url(#sunGradient)"/>
+  
+  <!-- Mountains Background Layer -->
+  <polygon points="0,500 300,200 600,350 900,150 1200,300 1500,100 1800,250 1920,200 1920,1080 0,1080" fill="url(#mountainGradient1)" opacity="0.9"/>
+  
+  <!-- Mountains Middle Layer -->
+  <polygon points="0,600 250,300 500,450 750,250 1000,400 1250,200 1500,350 1750,150 1920,300 1920,1080 0,1080" fill="url(#mountainGradient2)" opacity="0.8"/>
+  
+  <!-- Mountains Foreground Layer -->
+  <polygon points="0,700 200,400 400,550 600,350 800,500 1000,300 1200,450 1400,250 1600,400 1800,200 1920,350 1920,1080 0,1080" fill="url(#forestGradient)"/>
+  
+  <!-- Forest Silhouette -->
+  <polygon points="0,800 150,750 300,780 450,760 600,790 750,770 900,800 1050,780 1200,790 1350,770 1500,800 1650,780 1800,790 1920,800 1920,1080 0,1080" fill="#22342b" opacity="0.9"/>
+  
+  <!-- Tree Silhouettes -->
+  <g fill="#22342b" opacity="0.7">
+    <polygon points="100,800 115,720 130,800"/>
+    <polygon points="200,790 220,700 240,790"/>
+    <polygon points="350,800 370,710 390,800"/>
+    <polygon points="500,790 520,720 540,790"/>
+    <polygon points="650,800 670,700 690,800"/>
+    <polygon points="800,790 820,710 840,790"/>
+    <polygon points="950,800 970,720 990,800"/>
+    <polygon points="1100,790 1120,700 1140,790"/>
+    <polygon points="1250,800 1270,710 1290,800"/>
+    <polygon points="1400,790 1420,720 1440,790"/>
+    <polygon points="1550,800 1570,700 1590,800"/>
+    <polygon points="1700,790 1720,710 1740,790"/>
+  </g>
+  
+  <!-- Texture overlay -->
+  <rect width="1920" height="1080" fill="url(#skyGradient)" opacity="0.1"/>
+</svg>

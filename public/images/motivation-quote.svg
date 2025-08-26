@@ -1,0 +1,37 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sunsetGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#334155;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#475569;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="sunGradient" cx="50%" cy="30%" r="15%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0.4" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="600" height="400" fill="url(#sunsetGradient)"/>
+  
+  <!-- Sun -->
+  <circle cx="450" cy="120" r="40" fill="url(#sunGradient)"/>
+  
+  <!-- Mountain silhouettes -->
+  <polygon points="0,250 100,150 200,200 300,100 400,180 500,120 600,160 600,400 0,400" fill="#0f172a" opacity="0.8"/>
+  <polygon points="0,300 80,220 180,260 280,180 380,240 480,200 580,220 600,230 600,400 0,400" fill="#1e293b" opacity="0.6"/>
+  
+  <!-- Foreground hill -->
+  <polygon points="0,350 150,300 300,320 450,280 600,300 600,400 0,400" fill="#334155" opacity="0.4"/>
+  
+  <!-- Pine trees silhouettes -->
+  <g fill="#0f172a" opacity="0.9">
+    <polygon points="50,350 60,280 70,350"/>
+    <polygon points="120,340 135,260 150,340"/>
+    <polygon points="200,360 215,290 230,360"/>
+    <polygon points="350,330 365,250 380,330"/>
+    <polygon points="450,350 465,270 480,350"/>
+    <polygon points="520,340 535,260 550,340"/>
+  </g>
+</svg>
+

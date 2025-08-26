@@ -1,0 +1,47 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#334155;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#475569;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mountainGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mountainGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="forestGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#166534;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#14532d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="1920" height="1080" fill="url(#skyGradient)"/>
+  
+  <!-- Mountains Background -->
+  <polygon points="0,600 400,300 800,450 1200,200 1600,400 1920,350 1920,1080 0,1080" fill="url(#mountainGradient1)"/>
+  
+  <!-- Mountains Foreground -->
+  <polygon points="0,700 300,400 600,550 900,350 1200,500 1500,300 1800,450 1920,400 1920,1080 0,1080" fill="url(#mountainGradient2)"/>
+  
+  <!-- Forest -->
+  <polygon points="0,800 200,750 400,780 600,760 800,790 1000,770 1200,800 1400,780 1600,790 1800,770 1920,800 1920,1080 0,1080" fill="url(#forestGradient)"/>
+  
+  <!-- Trees -->
+  <g opacity="0.8">
+    <polygon points="100,800 120,720 140,800" fill="#15803d"/>
+    <polygon points="300,790 320,710 340,790" fill="#16a34a"/>
+    <polygon points="500,800 520,730 540,800" fill="#15803d"/>
+    <polygon points="700,790 720,720 740,790" fill="#16a34a"/>
+    <polygon points="900,800 920,740 940,800" fill="#15803d"/>
+    <polygon points="1100,790 1120,710 1140,790" fill="#16a34a"/>
+    <polygon points="1300,800 1320,730 1340,800" fill="#15803d"/>
+    <polygon points="1500,790 1520,720 1540,790" fill="#16a34a"/>
+    <polygon points="1700,800 1720,740 1740,800" fill="#15803d"/>
+  </g>
+</svg>
+
