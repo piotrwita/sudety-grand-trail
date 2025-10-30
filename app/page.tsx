@@ -3,12 +3,10 @@ import { HeroSection, WhyChooseSection, SudetenCrownSection, MotivationSection }
 export default function Home() {
 	return (
 		<>
-			{/* <div className='pt-16'> */}
 			<HeroSection />
 			<WhyChooseSection />
 			<SudetenCrownSection />
 			<MotivationSection />
-			{/* </div> */}
 		</>
 	)
 }
