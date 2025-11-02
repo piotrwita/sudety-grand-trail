@@ -1,43 +1,47 @@
 import type { Metadata } from 'next'
-import { Inter, Poppins } from 'next/font/google'
+import { Inter, Oswald, Montserrat_Alternates } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import ScrollProgressBar from '@/components/ScrollProgressBar'
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
+const inter = Inter({
+	subsets: ['latin'],
+	weight: ['400', '500', '600', '700', '800'],
+	variable: '--font-inter',
+	display: 'swap',
 })
 
-const poppins = Poppins({ 
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-poppins',
+const oswald = Oswald({
+	subsets: ['latin'],
+	weight: ['400', '500', '600', '700'],
+	variable: '--font-oswald',
+	display: 'swap',
+})
+
+const montserratAlternates = Montserrat_Alternates({
+	subsets: ['latin'],
+	weight: ['400', '500', '600', '700', '800'],
+	variable: '--font-montserrat-alternates',
+	display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Sudety Grand Trail - Odkryj Magię Gór',
-  description: 'Wyrusz w niezapomnianą podróż przez najpiękniejsze szlaki Sudetów. Przygoda, natura i wyzwanie czekają na Ciebie.',
-  keywords: 'sudety, szlaki górskie, trekking, przygoda, natura, góry',
+	title: 'Sudety Grand Trail - Odkryj Magię Gór',
+	description:
+		'Wyrusz w niezapomnianą podróż przez najpiękniejsze szlaki Sudetów. Przygoda, natura i wyzwanie czekają na Ciebie.',
+	keywords: 'sudety, szlaki górskie, trekking, przygoda, natura, góry',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="pl" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="antialiased">
-        <ScrollProgressBar />
-        <Navigation />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
-      </body>
-    </html>
-  )
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+	return (
+		<html lang='pl' className={`${inter.variable} ${oswald.variable} ${montserratAlternates.variable}`}>
+			<body className='antialiased'>
+				<ScrollProgressBar />
+				<Navigation />
+				<main className='min-h-screen'>{children}</main>
+				<Footer />
+			</body>
+		</html>
+	)
 }
-
