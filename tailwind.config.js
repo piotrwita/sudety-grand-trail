@@ -49,9 +49,8 @@ module.exports = {
         accent: '#c94e2b', // Accent red/orange
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Oswald', 'Montserrat Alternates', 'League Spartan', 'system-ui', 'sans-serif'],
-        heading: ['Montserrat Alternates', 'Oswald', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-oswald)', 'var(--font-montserrat-alternates)', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
