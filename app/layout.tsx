@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import { Inter, Oswald, Montserrat_Alternates } from 'next/font/google'
-import './globals.css'
-import Navigation from '@/components/Navigation'
+import { Navigation } from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import ScrollProgressBar from '@/components/ScrollProgressBar'
+import { siteConfig } from '@/config/site'
+
+import './globals.css'
 
 const inter = Inter({
 	subsets: ['latin'],
@@ -27,13 +29,13 @@ const montserratAlternates = Montserrat_Alternates({
 })
 
 export const metadata: Metadata = {
-	title: 'Sudety Grand Trail - Odkryj Magię Gór',
+	title: `${siteConfig.name} - Odkryj Magię Gór`,
 	description:
 		'Wyrusz w niezapomnianą podróż przez najpiękniejsze szlaki Sudetów. Przygoda, natura i wyzwanie czekają na Ciebie.',
 	keywords: 'sudety, szlaki górskie, trekking, przygoda, natura, góry',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: React.PropsWithChildren) {
 	return (
 		<html lang='pl' className={`${inter.variable} ${oswald.variable} ${montserratAlternates.variable}`}>
 			<body className='antialiased'>
