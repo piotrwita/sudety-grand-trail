@@ -19,7 +19,11 @@ const HeroSection = () => {
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
   
   return (
-    <section ref={ref} className="relative min-h-screen pt-16 flex items-center justify-center overflow-hidden">
+    <section 
+      ref={ref} 
+      className="relative min-h-screen pt-16 flex items-center justify-center overflow-hidden"
+      aria-label="Sekcja główna - Sudety Grand Trail"
+    >
       {/* Parallax Background Image */}
       <motion.div 
         className="absolute inset-0 z-0"
@@ -27,10 +31,11 @@ const HeroSection = () => {
       >
         <Image
           src="/images/vintage-mountains.svg"
-          alt="Sudety Mountains"
+          alt="Widok gór Sudetów w stylu vintage"
           fill
           className="object-cover scale-110"
           priority
+          aria-hidden="false"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/80 backdrop-blur-sm" />
       </motion.div>
@@ -63,26 +68,44 @@ const HeroSection = () => {
         >
 
           <motion.h1 
-            className="hero-title mb-6"
+            className="hero-title mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <span className="block">Sudety</span>
+            <span className="block mb-2">Sudety</span>
             <span className="block gradient-text-mesh">Grand Trail</span>
-            <span className="block font-black" style={{ fontSize: 'clamp(2rem, 6vw, 5rem)' }}>900 KM</span>
           </motion.h1>
           
-          <motion.p 
-            className="text-fluid-xl text-cream/90 mb-12 max-w-5xl mx-auto font-medium"
+          {/* Separator */}
+          <motion.div 
+            className="w-24 h-0.5 bg-gradient-to-r from-transparent via-cream/40 to-transparent mx-auto mb-10"
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.75 }}
+          />
+          
+          {/* Sekcja z opisem projektu */}
+          <motion.div 
+            className="text-cream/90 mb-8 max-w-5xl mx-auto text-center space-y-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <span className="gradient-text-mesh font-bold">KORONA SUDETÓW</span> w jednym szlaku! 
-            Pierwszy autorski projekt zdobycia najwyższego szczytu każdego z 24 pasm Sudetów. 
-            900 km przez 3 kraje – od Jarnołtówka po Ślężę. To nie tylko trasa – to kompletne podbicie Sudetów!
-          </motion.p>
+            {/* Główny tytuł */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+            >
+              <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-4">
+                <span className="gradient-text-mesh">KORONA SUDETÓW</span> w jednym szlaku!
+              </p>
+              <p className="text-fluid-base lg:text-fluid-lg text-cream/85 font-medium leading-relaxed max-w-3xl mx-auto">
+                <span className="text-cream/60 italic">Autorski projekt zdobycia najwyższych szczytów wszystkich pasm górskich Sudetów.</span>
+              </p>
+            </motion.div>
+          </motion.div>
           
           <motion.div
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
@@ -90,14 +113,19 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
           >
-            <Link href="/trail" className="btn-primary text-xl px-12 py-5">
+            <Link 
+              href="/trail" 
+              className="btn-primary text-xl px-12 py-5"
+              aria-label="Rozpocznij podróż przez Sudety Grand Trail"
+            >
               Rozpocznij Podróż
             </Link>
             <a 
               href="https://mapy.com/s/barusofola" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="btn-secondary text-xl px-12 py-5 border-cream/60 text-cream/90 hover:bg-cream/90 hover:text-forest-800"
+              className="btn-secondary text-xl px-12 py-5 border-cream/80 text-cream hover:bg-cream hover:text-forest-800 focus:ring-cream/50"
+              aria-label="Zobacz interaktywną mapę trasy (otworzy się w nowej karcie)"
             >
               Zobacz Mapę
             </a>
@@ -108,26 +136,52 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-wrap justify-center gap-8 lg:gap-12 mt-16"
+            className="flex flex-wrap justify-center items-center gap-6 lg:gap-8 mt-16"
+            role="region"
+            aria-label="Statystyki trasy"
           >
-            <div className="text-center">
-              <div className="stats-number text-cream">900</div>
+            <div 
+              className="text-center group cursor-default transition-transform duration-300 hover:scale-105 focus-within:scale-105 focus-within:outline-none focus-within:ring-2 focus-within:ring-cream/50 focus-within:rounded-lg focus-within:px-2 focus-within:py-1"
+              tabIndex={0}
+              aria-label="900 Kilometrów"
+            >
+              <div className="stats-number text-cream group-hover:text-accent transition-colors duration-300">900</div>
               <div className="text-cream/70 font-bold uppercase tracking-wide text-sm">Kilometrów</div>
             </div>
-            <div className="text-center">
-              <div className="stats-number text-cream">24</div>
+            <div className="w-px h-12 bg-cream/20" aria-hidden="true"></div>
+            <div 
+              className="text-center group cursor-default transition-transform duration-300 hover:scale-105 focus-within:scale-105 focus-within:outline-none focus-within:ring-2 focus-within:ring-cream/50 focus-within:rounded-lg focus-within:px-2 focus-within:py-1"
+              tabIndex={0}
+              aria-label="22 Pasma"
+            >
+              <div className="stats-number text-cream group-hover:text-accent transition-colors duration-300">22</div>
               <div className="text-cream/70 font-bold uppercase tracking-wide text-sm">Pasma</div>
             </div>
-            <div className="text-center">
-              <div className="stats-number text-cream">3</div>
+            <div className="w-px h-12 bg-cream/20" aria-hidden="true"></div>
+            <div 
+              className="text-center group cursor-default transition-transform duration-300 hover:scale-105 focus-within:scale-105 focus-within:outline-none focus-within:ring-2 focus-within:ring-cream/50 focus-within:rounded-lg focus-within:px-2 focus-within:py-1"
+              tabIndex={0}
+              aria-label="3 Kraje"
+            >
+              <div className="stats-number text-cream group-hover:text-accent transition-colors duration-300">3</div>
               <div className="text-cream/70 font-bold uppercase tracking-wide text-sm">Kraje</div>
             </div>
-            <div className="text-center">
-              <div className="stats-number text-cream">30k</div>
+            <div className="w-px h-12 bg-cream/20" aria-hidden="true"></div>
+            <div 
+              className="text-center group cursor-default transition-transform duration-300 hover:scale-105 focus-within:scale-105 focus-within:outline-none focus-within:ring-2 focus-within:ring-cream/50 focus-within:rounded-lg focus-within:px-2 focus-within:py-1"
+              tabIndex={0}
+              aria-label="30 tysięcy Przewyższeń"
+            >
+              <div className="stats-number text-cream group-hover:text-accent transition-colors duration-300">30k</div>
               <div className="text-cream/70 font-bold uppercase tracking-wide text-sm">Przewyższeń</div>
             </div>
-            <div className="text-center">
-              <div className="stats-number text-cream">16</div>
+            <div className="w-px h-12 bg-cream/20" aria-hidden="true"></div>
+            <div 
+              className="text-center group cursor-default transition-transform duration-300 hover:scale-105 focus-within:scale-105 focus-within:outline-none focus-within:ring-2 focus-within:ring-cream/50 focus-within:rounded-lg focus-within:px-2 focus-within:py-1"
+              tabIndex={0}
+              aria-label="16 Szczytów Korony Gór Polski"
+            >
+              <div className="stats-number text-cream group-hover:text-accent transition-colors duration-300">16</div>
               <div className="text-cream/70 font-bold uppercase tracking-wide text-sm">Szczytów KGP</div>
             </div>
           </motion.div>

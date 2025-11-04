@@ -373,7 +373,7 @@ const SudetenCrownSection = () => {
 					<div className='vintage-divider' />
 
 					<p className='text-xl text-mountain-600 max-w-4xl mx-auto font-medium leading-relaxed mb-8'>
-						24 pasma górskie. 24 najwyższe szczyty. Jeden szlak. Kompletne podbicie Sudetów od Śnieżki (1603m) po Lázek
+						22 pasma górskie. 22 najwyższe szczyty. Jeden szlak. Kompletne podbicie Sudetów od Śnieżki (1603m) po Lázek
 						(714m).
 					</p>
 
