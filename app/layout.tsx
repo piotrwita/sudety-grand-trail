@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Oswald, Montserrat_Alternates } from 'next/font/google'
-import { Navigation } from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import { Navigation } from '@/components/layouts/Navigation'
+import { Footer } from '@/components/layouts/Footer'
 import ScrollProgressBar from '@/components/ScrollProgressBar'
 import { siteConfig } from '@/config/site'
 
