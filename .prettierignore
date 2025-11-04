@@ -1,0 +1,11 @@
+# Ignore artifacts:
+build
+coverage
+cache
+.cache
+package.json
+package-lock.json
+public
+dist
+node_modules
+.next
