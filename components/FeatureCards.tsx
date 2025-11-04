@@ -5,15 +5,15 @@ import { motion } from 'framer-motion'
 const features = [
   {
     title: 'Korona Sudetów',
-    description: 'Pierwszy szlak umożliwiający zdobycie najwyższego szczytu każdego z 24 pasm Sudetów. Od Śnieżki (1603m) po Lázek (714m) – kompletne podbicie gór.',
+    description: 'Pierwszy szlak umożliwiający zdobycie najwyższego szczytu każdego z 22 pasm Sudetów. Od Śnieżki (1603m) po Lázek (714m) – kompletne podbicie gór.',
     icon: (
       <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3l6 6 6-6M5 21l6-6 6 6M12 3v18" />
       </svg>
     ),
-    color: 'from-emerald-500 to-teal-600',
-    bgColor: 'bg-emerald-50',
-    textColor: 'text-emerald-700'
+    color: 'from-forest-600 to-forest-700',
+    bgColor: 'bg-forest-50',
+    textColor: 'text-forest-700'
   },
   {
     title: 'Międzynarodowość',
@@ -23,9 +23,9 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    color: 'from-blue-500 to-indigo-600',
-    bgColor: 'bg-blue-50',
-    textColor: 'text-blue-700'
+    color: 'from-earth-600 to-earth-700',
+    bgColor: 'bg-earth-50',
+    textColor: 'text-earth-700'
   },
   {
     title: 'Transformacja',
@@ -35,9 +35,9 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    color: 'from-amber-500 to-orange-600',
-    bgColor: 'bg-amber-50',
-    textColor: 'text-amber-700'
+    color: 'from-accent to-accent/90',
+    bgColor: 'bg-accent/5',
+    textColor: 'text-accent'
   }
 ]
 
@@ -67,7 +67,7 @@ const FeatureCards = () => {
           viewport={{ once: true, margin: "-50px" }}
           className="group"
         >
-          <div className={`${feature.bgColor} rounded-2xl p-8 h-full border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden`}>
+          <div className={`${feature.bgColor} rounded-2xl p-8 h-full border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden focus-within:outline-none focus-within:ring-4 focus-within:ring-forest-700/30 focus-within:ring-offset-2`}>
             
             {/* Background Pattern */}
             <div className="absolute top-0 right-0 w-32 h-32 opacity-5">
@@ -87,11 +87,11 @@ const FeatureCards = () => {
             </div>
             
             {/* Content */}
-            <h3 className={`text-2xl font-bold mb-4 ${feature.textColor} group-hover:${feature.textColor.replace('700', '800')} transition-colors duration-300`}>
+            <h3 className={`text-2xl font-bold mb-4 ${feature.textColor} transition-colors duration-300 group-hover:opacity-90`}>
               {feature.title}
             </h3>
             
-            <p className="text-gray-600 leading-relaxed font-medium">
+            <p className="text-forest-700/90 leading-relaxed font-medium">
               {feature.description}
             </p>
             

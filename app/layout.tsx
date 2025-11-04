@@ -42,9 +42,12 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
       className={`${inter.variable} ${oswald.variable} ${montserratAlternates.variable}`}
     >
       <body className="antialiased">
+        <a href="#main-content" className="skip-to-content">
+          Przejdź do treści
+        </a>
         <ScrollProgressBar />
         <Navigation />
-        <main className="min-h-screen">{children}</main>
+        <main id="main-content" className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

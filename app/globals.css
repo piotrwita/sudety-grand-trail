@@ -55,15 +55,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-accent hover:bg-accent/90 text-cream font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-vintage-lg uppercase tracking-wide;
+    @apply bg-accent hover:bg-accent/90 text-cream font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-vintage-lg uppercase tracking-wide focus:outline-none focus:ring-4 focus:ring-accent/50 focus:ring-offset-2 focus:ring-offset-forest-800;
   }
   
   .btn-secondary {
-    @apply bg-transparent border-2 border-earth-700 text-earth-700 hover:bg-earth-700 hover:text-cream font-bold py-4 px-8 rounded-xl transition-all duration-300 uppercase tracking-wide;
+    @apply bg-transparent border-2 border-earth-700 text-earth-700 hover:bg-earth-700 hover:text-cream font-bold py-4 px-8 rounded-xl transition-all duration-300 uppercase tracking-wide focus:outline-none focus:ring-4 focus:ring-earth-700/50 focus:ring-offset-2 focus:ring-offset-forest-800;
   }
   
   .btn-outline {
-    @apply bg-transparent border-2 border-forest-700 text-forest-700 hover:bg-forest-700 hover:text-cream font-bold py-3 px-6 rounded-xl transition-all duration-300 uppercase tracking-wide text-sm;
+    @apply bg-transparent border-2 border-forest-700 text-forest-700 hover:bg-forest-700 hover:text-cream font-bold py-3 px-6 rounded-xl transition-all duration-300 uppercase tracking-wide text-sm focus:outline-none focus:ring-4 focus:ring-forest-700/50 focus:ring-offset-2;
   }
   
   .section-padding {
@@ -171,6 +171,15 @@
   
   .theme-accent-dark {
     color: var(--accent-dark);
+  }
+  
+  /* Skip to content link for accessibility */
+  .skip-to-content {
+    @apply absolute -top-16 left-4 z-50 bg-accent text-cream px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 focus:top-4 focus:outline-none focus:ring-4 focus:ring-accent/50;
+  }
+  
+  .skip-to-content:focus {
+    @apply top-4;
   }
 }
 

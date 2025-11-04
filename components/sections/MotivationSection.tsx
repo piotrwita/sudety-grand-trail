@@ -86,7 +86,7 @@ const MotivationSection = () => {
             className="mt-16 pt-12 border-t border-cream/20"
           >
             <p className="text-xl text-cream/90 mb-8 font-medium">
-              Gotowy na nieprzewidywalną przygodę przez 24 pasma Sudetów? Od majestatycznej Śnieżki, 
+              Gotowy na nieprzewidywalną przygodę przez 22 pasma Sudetów? Od majestatycznej Śnieżki, 
               przez potężny Śnieżnik i Pradziada, po charakterystyczną Wielką Sowę i mistyczną Ślężę.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
