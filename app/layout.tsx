@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Oswald, Montserrat_Alternates } from 'next/font/google';
-import { Navigation } from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import { Navigation } from '@/components/layouts/Navigation';
+import { Footer } from '@/components/layouts/Footer';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 import { siteConfig } from '@/config/site';
 
@@ -47,7 +47,9 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         </a>
         <ScrollProgressBar />
         <Navigation />
-        <main id="main-content" className="min-h-screen">{children}</main>
+        <main id="main-content" className="min-h-screen">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

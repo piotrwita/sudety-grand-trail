@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
+import Image from "next/image";
+import Link from "next/link";
+import { SocialLinkList } from "./SocialLinkList";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="bg-forest-900 text-cream py-16">
       <div className="container-custom">
@@ -22,13 +22,17 @@ const Footer = () => {
                 />
               </div>
               <div>
-                <h3 className="font-display font-bold text-xl">Sudety Grand Trail</h3>
-                <p className="text-mountain-400 text-sm">Korona Sudetów w jednym szlaku</p>
+                <h3 className="font-display font-bold text-xl">
+                  Sudety Grand Trail
+                </h3>
+                <p className="text-mountain-400 text-sm">
+                  Korona Sudetów w jednym szlaku
+                </p>
               </div>
             </div>
             <p className="text-mountain-300 text-sm leading-relaxed">
-              900 km przez 24 pasma górskie. Zdobądź najwyższe szczyty Sudetów 
-              i 16 szczytów Korony Gór Polski w jednej epickiej wędrówce.
+              900 km przez 24 pasma górskie. Zdobądź najwyższe szczyty Sudetów i
+              16 szczytów Korony Gór Polski w jednej epickiej wędrówce.
             </p>
           </div>
 
@@ -36,24 +40,39 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-bold text-lg mb-6">Szlak</h4>
             <div className="space-y-3">
-              <Link href="/" className="block text-mountain-300 hover:text-accent transition-colors">
+              <Link
+                href="/"
+                className="block text-mountain-300 hover:text-accent transition-colors"
+              >
                 Strona Główna
               </Link>
-              <Link href="/trail" className="block text-mountain-300 hover:text-accent transition-colors">
+              <Link
+                href="/trail"
+                className="block text-mountain-300 hover:text-accent transition-colors"
+              >
                 Poznaj Trasę
               </Link>
-              <Link href="/live" className="block text-mountain-300 hover:text-accent transition-colors">
+              <Link
+                href="/live"
+                className="block text-mountain-300 hover:text-accent transition-colors"
+              >
                 Live Tracking
               </Link>
-              <Link href="/hall-of-fame" className="block text-mountain-300 hover:text-accent transition-colors">
+              <Link
+                href="/hall-of-fame"
+                className="block text-mountain-300 hover:text-accent transition-colors"
+              >
                 Hall of Fame
               </Link>
-              <Link href="/about" className="block text-mountain-300 hover:text-accent transition-colors">
+              <Link
+                href="/about"
+                className="block text-mountain-300 hover:text-accent transition-colors"
+              >
                 O Mnie
               </Link>
-              <a 
-                href="https://mapy.com/s/barusofola" 
-                target="_blank" 
+              <a
+                href="https://mapy.com/s/barusofola"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="block text-mountain-300 hover:text-accent transition-colors"
               >
@@ -66,14 +85,8 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-bold text-lg mb-6">Społeczność</h4>
             <div className="space-y-3">
-              <a 
-                href="https://www.facebook.com/SudetyGrandTrail" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="block text-mountain-300 hover:text-accent transition-colors"
-              >
-                Facebook
-              </a>
+              <SocialLinkList className="flex space-x-3 border-forest-600" />
+
               <div className="pt-4">
                 <div className="flex items-center space-x-2 text-sm text-mountain-400">
                   <div className="w-2 h-2 bg-accent rounded-full"></div>
@@ -116,7 +129,5 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
-
-export default Footer
+  );
+};
