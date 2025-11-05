@@ -28,7 +28,7 @@ export const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-16"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-12"
       aria-label="Sekcja główna - Sudety Grand Trail"
     >
       {/* Parallax Background Image */}
@@ -47,25 +47,24 @@ export const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/85" />
       </motion.div>
 
-      {/* Parallax Background Logo */}
+      {/* Parallax Logo Image */}
       <motion.div
         className="z-5 absolute inset-0 will-change-transform"
         style={{ scale: logoScale, opacity: logoOpacity }}
       >
-        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 transform lg:h-[800px] lg:w-[800px]">
+        <div className="absolute left-1/2 top-1/2 size-[500px] -translate-x-1/2 -translate-y-1/2 transform lg:size-[600px] 2xl:size-[800px]">
           <Image
             src={logoJpg}
-            alt="SGT Background Logo"
-            width={800}
-            height={800}
-            className="h-full w-full rounded-full object-cover"
+            alt="Logo Sudety Grand Trail"
+            fill
+            className="size-full rounded-full object-cover"
           />
         </div>
       </motion.div>
 
       {/* Parallax Content Container */}
       <motion.div
-        className="relative z-10 mx-auto -mt-16 max-w-6xl px-4 text-center will-change-transform sm:px-6 lg:-mt-20 lg:px-8"
+        className="relative z-10 mx-auto max-w-7xl px-4 text-center will-change-transform sm:px-6 lg:px-8"
         style={{ y: contentY }}
       >
         <motion.div
@@ -74,26 +73,26 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.h1
-            className="hero-title mb-8"
+            className="hero-title"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <span className="mb-2 block">Sudety</span>
+            <span className="mb-1 block sm:mb-2">Sudety</span>
             <span className="gradient-text-mesh block">Grand Trail</span>
           </motion.h1>
 
           {/* Separator */}
           <motion.div
-            className="mx-auto mb-10 h-0.5 w-24 bg-gradient-to-r from-transparent via-cream/40 to-transparent"
+            className="mx-auto my-4 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent lg:my-6"
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.75 }}
           />
 
-          {/* Sekcja z opisem projektu */}
+          {/* Description Container */}
           <motion.div
-            className="mx-auto mb-8 max-w-5xl space-y-4 text-center text-cream/90"
+            className="mx-auto max-w-5xl space-y-3 px-2 text-center text-cream/90 sm:space-y-4 sm:px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -103,7 +102,7 @@ export const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9 }}
             >
-              <p className="mb-4 text-xl font-bold sm:text-2xl lg:text-3xl xl:text-4xl">
+              <p className="mb-3 text-lg font-bold sm:mb-4 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                 <span className="gradient-text-mesh">KORONA SUDETÓW</span> w
                 jednym szlaku!
               </p>
@@ -116,15 +115,16 @@ export const HeroSection = () => {
             </motion.div>
           </motion.div>
 
+          {/* Buttons Container */}
           <motion.div
-            className="flex flex-col items-center justify-center gap-6 sm:flex-row"
+            className="mt-4 flex w-full flex-col items-center justify-center gap-3 px-4 sm:mt-6 sm:flex-row sm:gap-4 md:gap-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
           >
             <Link
               href="/trail"
-              className="btn-primary px-12 py-5 text-xl"
+              className="btn-primary w-full px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
               aria-label="Rozpocznij podróż przez Sudety Grand Trail"
             >
               Rozpocznij Podróż
@@ -133,7 +133,7 @@ export const HeroSection = () => {
               href="https://mapy.com/s/barusofola"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary border-cream/80 px-12 py-5 text-xl text-cream hover:bg-cream hover:text-forest-800 focus:ring-cream/50"
+              className="btn-secondary w-full border-cream/80 px-6 py-3 text-sm text-cream hover:bg-cream hover:text-forest-800 focus:ring-cream/50 sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
               aria-label="Zobacz interaktywną mapę trasy (otworzy się w nowej karcie)"
             >
               Zobacz Mapę
@@ -145,89 +145,63 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="mt-16 flex flex-wrap items-center justify-center gap-6 lg:gap-8"
+            className="mt-8 flex flex-wrap items-center justify-center gap-4 px-2 sm:mt-10 sm:gap-6 md:mt-12 lg:gap-8"
             role="region"
             aria-label="Statystyki trasy"
           >
-            <div
-              className="group cursor-default text-center transition-transform duration-300 focus-within:scale-105 focus-within:rounded-lg focus-within:px-2 focus-within:py-1 focus-within:outline-none focus-within:ring-2 focus-within:ring-cream/50 hover:scale-105"
-              tabIndex={0}
-              aria-label="900 Kilometrów"
-            >
-              <div className="stats-number text-cream transition-colors duration-300 group-hover:text-accent">
-                900
-              </div>
-              <div className="text-sm font-bold uppercase tracking-wide text-cream/70">
-                Kilometrów
-              </div>
-            </div>
-            <div className="h-12 w-px bg-cream/20" aria-hidden="true"></div>
-            <div
-              className="group cursor-default text-center transition-transform duration-300 focus-within:scale-105 focus-within:rounded-lg focus-within:px-2 focus-within:py-1 focus-within:outline-none focus-within:ring-2 focus-within:ring-cream/50 hover:scale-105"
-              tabIndex={0}
-              aria-label="22 Pasma"
-            >
-              <div className="stats-number text-cream transition-colors duration-300 group-hover:text-accent">
-                22
-              </div>
-              <div className="text-sm font-bold uppercase tracking-wide text-cream/70">
-                Pasma
-              </div>
-            </div>
-            <div className="h-12 w-px bg-cream/20" aria-hidden="true"></div>
-            <div
-              className="group cursor-default text-center transition-transform duration-300 focus-within:scale-105 focus-within:rounded-lg focus-within:px-2 focus-within:py-1 focus-within:outline-none focus-within:ring-2 focus-within:ring-cream/50 hover:scale-105"
-              tabIndex={0}
-              aria-label="3 Kraje"
-            >
-              <div className="stats-number text-cream transition-colors duration-300 group-hover:text-accent">
-                3
-              </div>
-              <div className="text-sm font-bold uppercase tracking-wide text-cream/70">
-                Kraje
-              </div>
-            </div>
-            <div className="h-12 w-px bg-cream/20" aria-hidden="true"></div>
-            <div
-              className="group cursor-default text-center transition-transform duration-300 focus-within:scale-105 focus-within:rounded-lg focus-within:px-2 focus-within:py-1 focus-within:outline-none focus-within:ring-2 focus-within:ring-cream/50 hover:scale-105"
-              tabIndex={0}
-              aria-label="30 tysięcy Przewyższeń"
-            >
-              <div className="stats-number text-cream transition-colors duration-300 group-hover:text-accent">
-                30k
-              </div>
-              <div className="text-sm font-bold uppercase tracking-wide text-cream/70">
-                Przewyższeń
-              </div>
-            </div>
-            <div className="h-12 w-px bg-cream/20" aria-hidden="true"></div>
-            <div
-              className="group cursor-default text-center transition-transform duration-300 focus-within:scale-105 focus-within:rounded-lg focus-within:px-2 focus-within:py-1 focus-within:outline-none focus-within:ring-2 focus-within:ring-cream/50 hover:scale-105"
-              tabIndex={0}
-              aria-label="16 Szczytów Korony Gór Polski"
-            >
-              <div className="stats-number text-cream transition-colors duration-300 group-hover:text-accent">
-                16
-              </div>
-              <div className="text-sm font-bold uppercase tracking-wide text-cream/70">
-                Szczytów KGP
-              </div>
-            </div>
+            <Stats value="900" label="Kilometrów" ariaLabel="900 Kilometrów" />
+            <StatsSeperator />
+            <Stats value="22" label="Pasma" ariaLabel="22 Pasma" />
+            <StatsSeperator />
+            <Stats value="3" label="Kraje" ariaLabel="3 Kraje" />
+            <StatsSeperator />
+            <Stats
+              value="30k"
+              label="Przewyższeń"
+              ariaLabel="30 tysięcy Przewyższeń"
+            />
+            <StatsSeperator />
+            <Stats
+              value="16"
+              label="Szczytów KGP"
+              ariaLabel="16 Szczytów Korony Gór Polski"
+            />
           </motion.div>
         </motion.div>
       </motion.div>
 
       <ScrollIndicator />
 
-      {/* Decorative vintage elements */}
-      <div className="absolute left-10 top-20 h-24 w-24 animate-pulse rounded-full bg-accent/10 blur-xl" />
-      <div
-        className="absolute bottom-20 right-10 h-32 w-32 animate-pulse rounded-full bg-forest-700/10 blur-2xl"
-        style={{ animationDelay: '1s' }}
-      />
+      <DecorativeVintageElements />
     </section>
   );
 };
+
+const StatsSeperator = () => (
+  <div className="h-8 w-px bg-cream/20 sm:h-10 md:h-12" aria-hidden="true" />
+);
+
+const Stats = ({
+  value,
+  label,
+  ariaLabel,
+}: {
+  value: string;
+  label: string;
+  ariaLabel: string;
+}) => (
+  <div
+    className="group cursor-default text-center transition-transform duration-300 focus-within:scale-105 focus-within:rounded-lg focus-within:px-2 focus-within:py-1 focus-within:outline-none focus-within:ring-2 focus-within:ring-cream/50 hover:scale-105"
+    aria-label={ariaLabel}
+  >
+    <div className="stats-number text-cream transition-colors duration-300 group-hover:text-accent">
+      {value}
+    </div>
+    <div className="text-xs font-bold uppercase tracking-wide text-cream/70 sm:text-sm">
+      {label}
+    </div>
+  </div>
+);
 
 const ScrollIndicator = () => (
   <motion.div
@@ -248,4 +222,14 @@ const ScrollIndicator = () => (
       />
     </motion.div>
   </motion.div>
+);
+
+const DecorativeVintageElements = () => (
+  <>
+    <div className="absolute left-10 top-20 h-24 w-24 animate-pulse rounded-full bg-accent/10 blur-xl" />
+    <div
+      className="absolute bottom-20 right-10 h-32 w-32 animate-pulse rounded-full bg-forest-700/10 blur-2xl"
+      style={{ animationDelay: '1s' }}
+    />
+  </>
 );
