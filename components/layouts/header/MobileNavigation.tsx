@@ -24,12 +24,11 @@ export const MobileNavigation = () => {
         <HamburgerIcon isOpen={isMenuOpen} />
       </button>
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         {isMenuOpen && (
           <>
             {/* Backdrop */}
             <motion.div
-              key="backdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -41,7 +40,6 @@ export const MobileNavigation = () => {
 
             {/* Menu Container */}
             <motion.div
-              key="menu-container"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
