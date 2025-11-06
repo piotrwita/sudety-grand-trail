@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Oswald, Montserrat_Alternates } from 'next/font/google';
-import { Navigation } from '@/components/layouts/Navigation';
+import { SiteHeader } from '@/components/layouts/header/SiteHeader';
 import { Footer } from '@/components/layouts/Footer';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 import { siteConfig } from '@/config/site';
@@ -46,7 +46,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           Przejdź do treści
         </a>
         <ScrollProgressBar />
-        <Navigation />
+        <SiteHeader />
         <main id="main-content" className="min-h-screen">
           {children}
         </main>
