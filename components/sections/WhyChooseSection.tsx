@@ -74,8 +74,8 @@ const WhyChooseSection = () => {
 								</div>
 								
 								<blockquote className='border-l-4 border-forest-700 pl-10 py-8 bg-forest-50/50 rounded-r-lg my-12 max-w-3xl mx-auto'>
-									<p className='text-lg md:text-xl text-forest-800 italic leading-relaxed'>
-										Choć Sudety zostały przeze mnie przebyte już czterokrotnie,<br />
+									<p className='text-lg md:text-xl text-forest-800 italic leading-relaxed text-justify'>
+										Wprawdzie Sudety zostały przeze mnie przebyte już czterokrotnie,<br />
 										żaden z istniejących szlaków nie poprowadził mnie kompleksowo<br />
 										przez to niezwykle różnorodne pasmo.
 									</p>

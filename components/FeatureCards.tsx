@@ -4,11 +4,16 @@ import { motion } from 'framer-motion'
 
 const features = [
   {
-    title: 'Korona Sudetów',
-    description: 'Pierwszy szlak umożliwiający zdobycie najwyższego szczytu każdego z 22 pasm Sudetów. Od Śnieżki (1603m) po Lázek (714m) – kompletne podbicie gór.',
+    title: 'Kompletne przejście Sudetów',
+    description: (
+      <>
+        Pierwszy szlak, który naprawdę łączy Sudety w jedną spójną opowieść. Wyruszasz z Jarnołtówka w Górach Opawskich, by po setkach kilometrów stanąć na szczycie mistycznej Ślęży i zakończyć wędrówkę w Sobótce. Po drodze zdobywasz wszystko – od najwyższej Śnieżki po najniższy Lázek. To pełna, nieprzerwana podróż przez całe Sudety, przez ich zmienność, wysokości i dzikość. Jedna droga. Jedno wyzwanie. Jedna kompletna całość.
+      </>
+    ),
     icon: (
       <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3l6 6 6-6M5 21l6-6 6 6M12 3v18" />
+        {/* Check/ptaszek - ujednolicony styl */}
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
       </svg>
     ),
     color: 'from-forest-600 to-forest-700',
@@ -16,11 +21,12 @@ const features = [
     textColor: 'text-forest-700'
   },
   {
-    title: 'Międzynarodowość',
-    description: 'Przekrocz granice nie tylko fizyczne, ale i mentalne. Wędruj przez Polskę, Czechy i Niemcy, odkrywając różnorodność kulturową i przyrodniczą.',
+    title: 'Trzy kraje, jedno pasmo',
+    description: 'Wędrujesz przez Polskę, Czechy i Niemcy – trzy kultury, trzy spojrzenia, jeden górski świat. Szlak przekracza granice nie tylko na mapie, ale przede wszystkim w umyśle. Łączy krajobrazy, języki i rytmy życia, tworząc z nich jedną wspólną przestrzeń. To Sudety w pełnym wymiarze. Bez granic.',
     icon: (
       <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        {/* Kula ziemska - ujednolicony styl */}
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
     color: 'from-earth-600 to-earth-700',
@@ -28,15 +34,16 @@ const features = [
     textColor: 'text-earth-700'
   },
   {
-    title: 'Transformacja',
-    description: 'To nie tylko szlak – to podróż transformacyjna. 900 km, które zmienią Twoje postrzeganie gór, siebie i własnych możliwości.',
+    title: 'Wyprawa, która zmienia',
+    description: '900 kilometrów i prawie 30 000 metrów przewyższeń. To nie tylko droga przez góry, ale spotkanie z samym sobą. Każdy kilometr uczy wytrwałości, zachwytu i pokory wobec natury. To coś więcej niż trasa do przejścia. To doświadczenie, które zostaje w człowieku na całe życie.',
     icon: (
       <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        {/* Piorun/błyskawica - ujednolicony styl */}
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
     color: 'from-accent to-accent/90',
-    bgColor: 'bg-accent/5',
+    bgColor: 'bg-mountain-100',
     textColor: 'text-accent'
   }
 ]
@@ -87,13 +94,13 @@ const FeatureCards = () => {
             </div>
             
             {/* Content */}
-            <h3 className={`text-2xl font-bold mb-4 ${feature.textColor} transition-colors duration-300 group-hover:opacity-90`}>
+            <h3 className={`text-2xl font-bold mb-4 ${feature.textColor} transition-colors duration-300 group-hover:opacity-90 min-h-[3.5rem]`}>
               {feature.title}
             </h3>
             
-            <p className="text-forest-700/90 leading-relaxed font-medium">
+            <div className="text-forest-700/90 leading-relaxed font-medium text-justify">
               {feature.description}
-            </p>
+            </div>
             
             {/* Decorative Element */}
             <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r ${feature.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`} />
