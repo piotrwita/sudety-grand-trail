@@ -10,6 +10,7 @@ export const siteConfig = {
 	navigation: [
 		{ href: '/', label: 'Home' },
 		{ href: '/trail', label: 'Trail' },
+		{ href: '/korona', label: 'Korona Sudetów' },
 		{ href: '/live', label: 'Live', isLive: true },
 		{ href: '/hall-of-fame', label: 'Hall of Fame' },
 		{ href: '/about', label: 'O Mnie' },

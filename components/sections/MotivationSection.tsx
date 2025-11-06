@@ -85,9 +85,8 @@ const MotivationSection = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-16 pt-12 border-t border-cream/20"
           >
-            <p className="text-xl text-cream/90 mb-8 font-medium">
-              Gotowy na nieprzewidywalną przygodę przez 22 pasma Sudetów? Od majestatycznej Śnieżki, 
-              przez potężny Śnieżnik i Pradziada, po charakterystyczną Wielką Sowę i mistyczną Ślężę.
+            <p className="text-xl text-cream/90 mb-8 font-medium text-center">
+              Gotowy na nieprzewidywalną przygodę przez 24 pasma Sudetów?
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <a 
