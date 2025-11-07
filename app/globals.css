@@ -8,178 +8,202 @@
     --accent-hue: 15;
     --forest-hue: 140;
     --earth-hue: 25;
-    
+
     /* Dynamic Color System */
     --accent: hsl(var(--accent-hue), 70%, 50%);
     --accent-light: hsl(var(--accent-hue), 70%, 85%);
     --accent-dark: hsl(var(--accent-hue), 70%, 35%);
-    
+
     /* Gradient Mesh Variables */
-    --gradient-mesh-1: conic-gradient(from 180deg at 50% 50%, 
+    --gradient-mesh-1: conic-gradient(
+      from 180deg at 50% 50%,
       hsl(var(--accent-hue), 70%, 50%) 0deg,
       hsl(var(--forest-hue), 60%, 40%) 120deg,
       hsl(var(--earth-hue), 65%, 45%) 240deg,
-      hsl(var(--accent-hue), 70%, 50%) 360deg);
-    
-    --gradient-mesh-2: radial-gradient(ellipse 80% 50% at 20% 40%,
-      hsla(var(--accent-hue), 70%, 50%, 0.3) 0%,
-      transparent 50%),
-      radial-gradient(ellipse 80% 50% at 80% 60%,
-      hsla(var(--forest-hue), 60%, 40%, 0.3) 0%,
-      transparent 50%),
-      radial-gradient(ellipse 80% 50% at 40% 80%,
-      hsla(var(--earth-hue), 65%, 45%, 0.3) 0%,
-      transparent 50%);
-    
-    --gradient-mesh-3: linear-gradient(135deg,
+      hsl(var(--accent-hue), 70%, 50%) 360deg
+    );
+
+    --gradient-mesh-2:
+      radial-gradient(
+        ellipse 80% 50% at 20% 40%,
+        hsla(var(--accent-hue), 70%, 50%, 0.3) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 80% 50% at 80% 60%,
+        hsla(var(--forest-hue), 60%, 40%, 0.3) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 80% 50% at 40% 80%,
+        hsla(var(--earth-hue), 65%, 45%, 0.3) 0%,
+        transparent 50%
+      );
+
+    --gradient-mesh-3: linear-gradient(
+      135deg,
       hsla(var(--accent-hue), 70%, 50%, 0.1) 0%,
       hsla(var(--forest-hue), 60%, 40%, 0.1) 35%,
       hsla(var(--earth-hue), 65%, 45%, 0.1) 70%,
-      hsla(var(--accent-hue), 70%, 50%, 0.1) 100%);
+      hsla(var(--accent-hue), 70%, 50%, 0.1) 100%
+    );
   }
 
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
-    @apply bg-cream text-forest-800 font-sans;
+    @apply bg-cream font-sans text-forest-800;
     background-image: var(--gradient-mesh-3);
     background-attachment: fixed;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display font-bold uppercase tracking-wide;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-accent hover:bg-accent/90 text-cream font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-vintage-lg uppercase tracking-wide focus:outline-none focus:ring-4 focus:ring-accent/50 focus:ring-offset-2 focus:ring-offset-forest-800;
+    @apply transform rounded-xl bg-accent px-8 py-4 font-bold uppercase tracking-wide text-cream transition-all duration-300 hover:scale-105 hover:bg-accent/90 hover:shadow-vintage-lg focus:outline-none focus:ring-4 focus:ring-accent/50 focus:ring-offset-2 focus:ring-offset-forest-800;
   }
-  
+
   .btn-secondary {
-    @apply bg-transparent border-2 border-earth-700 text-earth-700 hover:bg-earth-700 hover:text-cream font-bold py-4 px-8 rounded-xl transition-all duration-300 uppercase tracking-wide focus:outline-none focus:ring-4 focus:ring-earth-700/50 focus:ring-offset-2 focus:ring-offset-forest-800;
+    @apply rounded-xl border-2 border-earth-700 bg-transparent px-8 py-4 font-bold uppercase tracking-wide text-earth-700 transition-all duration-300 hover:bg-earth-700 hover:text-cream focus:outline-none focus:ring-4 focus:ring-earth-700/50 focus:ring-offset-2 focus:ring-offset-forest-800;
   }
-  
+
   .btn-outline {
-    @apply bg-transparent border-2 border-forest-700 text-forest-700 hover:bg-forest-700 hover:text-cream font-bold py-3 px-6 rounded-xl transition-all duration-300 uppercase tracking-wide text-sm focus:outline-none focus:ring-4 focus:ring-forest-700/50 focus:ring-offset-2;
+    @apply rounded-xl border-2 border-forest-700 bg-transparent px-6 py-3 text-sm font-bold uppercase tracking-wide text-forest-700 transition-all duration-300 hover:bg-forest-700 hover:text-cream focus:outline-none focus:ring-4 focus:ring-forest-700/50 focus:ring-offset-2;
   }
-  
+
   .section-padding {
     padding-top: clamp(3rem, 8vw, 8rem);
     padding-bottom: clamp(3rem, 8vw, 8rem);
     padding-left: clamp(1rem, 4vw, 2rem);
     padding-right: clamp(1rem, 4vw, 2rem);
   }
-  
-  .container-custom {
-    @apply max-w-7xl mx-auto;
+
+  /* Fluid container for fluid width */
+  .fluid-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
   }
-  
+
+  @media (min-width: 640px) {
+    .fluid-container {
+      max-width: clamp(640px, 100% - 2rem, 1440px);
+    }
+  }
+
   .text-gradient {
     @apply bg-gradient-to-r from-forest-700 to-earth-700 bg-clip-text text-transparent;
   }
-  
+
   .badge-circle {
-    @apply w-20 h-20 bg-gradient-to-br from-forest-700 to-earth-700 text-cream rounded-full flex items-center justify-center font-display font-bold text-lg shadow-vintage-lg;
+    @apply flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-forest-700 to-earth-700 font-display text-lg font-bold text-cream shadow-vintage-lg;
   }
-  
+
   .card-vintage {
-    @apply bg-cream border-2 border-forest-200 rounded-2xl shadow-vintage-lg hover:shadow-vintage-xl transition-all duration-300 hover:scale-105;
+    @apply rounded-2xl border-2 border-forest-200 bg-cream shadow-vintage-lg transition-all duration-300 hover:scale-105 hover:shadow-vintage-xl;
   }
-  
+
   .hero-title {
     @apply font-display font-black uppercase tracking-wider text-cream drop-shadow-lg;
     font-size: clamp(2.5rem, 8vw, 6rem);
     line-height: clamp(2.8rem, 8.5vw, 6.5rem);
   }
-  
+
   .section-title {
-    @apply font-display font-bold uppercase tracking-wide text-forest-800 text-center;
+    @apply text-center font-display font-bold uppercase tracking-wide text-forest-800;
     font-size: clamp(1.75rem, 4vw, 3rem);
     line-height: clamp(2rem, 4.5vw, 3.5rem);
   }
-  
+
   .stats-number {
-    @apply font-display font-black text-forest-700 uppercase;
+    @apply font-display font-black uppercase text-forest-700;
     font-size: clamp(2rem, 5vw, 4rem);
     line-height: clamp(2.2rem, 5.5vw, 4.5rem);
   }
-  
+
   .vintage-divider {
-    @apply w-24 h-1 bg-gradient-to-r from-forest-700 to-earth-700 mx-auto my-8;
+    @apply mx-auto my-8 h-1 w-24 bg-gradient-to-r from-forest-700 to-earth-700;
   }
-  
+
   /* Fluid Typography Classes */
   .text-fluid-xl {
     font-size: clamp(1.25rem, 3vw, 2rem);
     line-height: clamp(1.75rem, 4vw, 2.5rem);
   }
-  
+
   .text-fluid-lg {
     font-size: clamp(1.125rem, 2.5vw, 1.5rem);
     line-height: clamp(1.5rem, 3vw, 2rem);
   }
-  
+
   .text-fluid-base {
     font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: clamp(1.5rem, 2.5vw, 1.75rem);
   }
-  
+
   .text-fluid-sm {
     font-size: clamp(0.875rem, 1.5vw, 1rem);
     line-height: clamp(1.25rem, 2vw, 1.5rem);
   }
-  
+
   /* Gradient Mesh Utility Classes */
   .gradient-mesh-bg {
     background: var(--gradient-mesh-1);
   }
-  
+
   .gradient-mesh-overlay {
     background: var(--gradient-mesh-2);
   }
-  
+
   .gradient-mesh-subtle {
     background: var(--gradient-mesh-3);
   }
-  
+
   .gradient-text-mesh {
     background: var(--gradient-mesh-1);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  
+
   .gradient-border-mesh {
     border-image: var(--gradient-mesh-1) 1;
   }
-  
+
   /* Dynamic Theme Classes */
   .theme-accent {
     color: var(--accent);
   }
-  
+
   .theme-accent-bg {
     background-color: var(--accent);
   }
-  
+
   .theme-accent-light {
     color: var(--accent-light);
   }
-  
+
   .theme-accent-dark {
     color: var(--accent-dark);
   }
-  
+
   /* Skip to content link for accessibility */
   .skip-to-content {
-    @apply absolute -top-16 left-4 z-50 bg-accent text-cream px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 focus:top-4 focus:outline-none focus:ring-4 focus:ring-accent/50;
+    @apply absolute -top-16 left-4 z-50 rounded-lg bg-accent px-6 py-3 font-bold uppercase tracking-wide text-cream transition-all duration-300 focus:top-4 focus:outline-none focus:ring-4 focus:ring-accent/50;
   }
-  
+
   .skip-to-content:focus {
     @apply top-4;
   }
 }
-

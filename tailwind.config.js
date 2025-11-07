@@ -32,6 +32,7 @@ module.exports = {
           700: '#6b4423', // Warm earthy brown
           800: '#5a3a1f',
           900: '#4d321b',
+          DEFAULT: '#6b4423',
         },
         mountain: {
           50: '#fafafa',
@@ -44,19 +45,54 @@ module.exports = {
           700: '#52525b',
           800: '#3f3f46',
           900: '#27272a',
+          DEFAULT: '#a9a9a9',
         },
-        cream: '#f5f2e7', // Off-white/cream
-        accent: '#c94e2b', // Accent red/orange
+        accent: {
+          50: '#fef2f2',
+          100: '#fee2e2',
+          200: '#fecaca',
+          300: '#fca5a5',
+          400: '#f87171',
+          500: '#c94e2b', // Main accent
+          600: '#b91c1c',
+          700: '#991b1b',
+          800: '#7f1d1d',
+          900: '#651e1e',
+          hover: '#c94e2bcc',
+          DEFAULT: '#c94e2b',
+        },
+        cream: {
+          50: '#fefefe', // Almost white
+          100: '#fdfcfa', // Very light cream
+          200: '#faf8f3', // Light cream
+          300: '#f7f4ed', // Soft cream
+          400: '#f6f3e9', // Medium-light cream
+          500: '#f5f2e7', // Main cream (original)
+          600: '#ede8db', // Slightly darker cream
+          700: '#e0d9c8', // Warm cream
+          800: '#d1c7b0', // Dark cream
+          900: '#bfb396', // Darkest cream
+          hover: '#f5f2e7e6', // Cream with opacity
+          DEFAULT: '#f5f2e7',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-oswald)', 'var(--font-montserrat-alternates)', 'system-ui', 'sans-serif'],
+        display: [
+          'var(--font-oswald)',
+          'var(--font-montserrat-alternates)',
+          'system-ui',
+          'sans-serif',
+        ],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'hero-gradient': 'linear-gradient(135deg, rgba(47, 79, 62, 0.8) 0%, rgba(107, 68, 35, 0.6) 100%)',
-        'vintage-texture': 'linear-gradient(45deg, rgba(245, 242, 231, 0.1) 25%, transparent 25%), linear-gradient(-45deg, rgba(245, 242, 231, 0.1) 25%, transparent 25%)',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'hero-gradient':
+          'linear-gradient(135deg, rgba(47, 79, 62, 0.8) 0%, rgba(107, 68, 35, 0.6) 100%)',
+        'vintage-texture':
+          'linear-gradient(45deg, rgba(245, 242, 231, 0.1) 25%, transparent 25%), linear-gradient(-45deg, rgba(245, 242, 231, 0.1) 25%, transparent 25%)',
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease-out',
@@ -67,37 +103,39 @@ module.exports = {
         fadeInUp: {
           '0%': {
             opacity: '0',
-            transform: 'translateY(30px)'
+            transform: 'translateY(30px)',
           },
           '100%': {
             opacity: '1',
-            transform: 'translateY(0)'
-          }
+            transform: 'translateY(0)',
+          },
         },
         fadeIn: {
           '0%': {
-            opacity: '0'
+            opacity: '0',
           },
           '100%': {
-            opacity: '1'
-          }
+            opacity: '1',
+          },
         },
         scaleHover: {
           '0%': {
-            transform: 'scale(1)'
+            transform: 'scale(1)',
           },
           '100%': {
-            transform: 'scale(1.05)'
-          }
-        }
+            transform: 'scale(1.05)',
+          },
+        },
       },
       boxShadow: {
-        'vintage': '0 4px 6px -1px rgba(47, 79, 62, 0.1), 0 2px 4px -1px rgba(47, 79, 62, 0.06)',
-        'vintage-lg': '0 10px 15px -3px rgba(47, 79, 62, 0.1), 0 4px 6px -2px rgba(47, 79, 62, 0.05)',
-        'vintage-xl': '0 20px 25px -5px rgba(47, 79, 62, 0.1), 0 10px 10px -5px rgba(47, 79, 62, 0.04)',
-      }
+        vintage:
+          '0 4px 6px -1px rgba(47, 79, 62, 0.1), 0 2px 4px -1px rgba(47, 79, 62, 0.06)',
+        'vintage-lg':
+          '0 10px 15px -3px rgba(47, 79, 62, 0.1), 0 4px 6px -2px rgba(47, 79, 62, 0.05)',
+        'vintage-xl':
+          '0 20px 25px -5px rgba(47, 79, 62, 0.1), 0 10px 10px -5px rgba(47, 79, 62, 0.04)',
+      },
     },
   },
   plugins: [],
-}
-
+};
