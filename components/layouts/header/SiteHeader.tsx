@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { siteConfig } from '@/config/site';
 import { DesktopNavigation } from './DesktopNavigation';
 import { MobileNavigation } from './MobileNavigation';
+import { LogoImage } from '../../LogoImage';
 
 export const SiteHeader = () => {
   return (
@@ -29,15 +29,9 @@ export const SiteHeader = () => {
 const HeaderLogo = () => (
   <Link href="/" className="flex items-center gap-3">
     <div className="size-8 overflow-hidden rounded-full bg-transparent shadow-vintage sm:size-10">
-      <Image
-        src={siteConfig.logo.src}
-        alt={siteConfig.logo.alt}
-        width={siteConfig.logo.width}
-        height={siteConfig.logo.height}
-        className="object-cover"
-      />
+      <LogoImage width={40} height={40} />
     </div>
-    <span className="hover:text-accent-hover hidden font-display text-base font-bold text-cream transition-colors duration-200 sm:block sm:text-lg">
+    <span className="hidden font-display text-base font-bold text-cream transition-colors duration-200 hover:text-accent-hover sm:block sm:text-lg">
       {siteConfig.name}
     </span>
   </Link>
