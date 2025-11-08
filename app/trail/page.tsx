@@ -1,9 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import TrailMap from '@/components/TrailMap';
-
 import TrailDescription from '@/components/TrailDescription';
 import TrailMotivation from '@/components/TrailMotivation';
 

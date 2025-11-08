@@ -1,38 +1,33 @@
 import type { Metadata } from 'next';
-import { Inter, Oswald, Montserrat_Alternates } from 'next/font/google';
+import { inter, oswald, montserratAlternates } from '@/lib/fonts';
 import { SiteHeader } from '@/components/layouts/header';
 import { Footer } from '@/components/layouts/Footer';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
-import { siteConfig } from '@/config/site';
+import { siteMetadata } from '@/config/metadata';
 
 import './globals.css';
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const oswald = Oswald({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-oswald',
-  display: 'swap',
-});
-
-const montserratAlternates = Montserrat_Alternates({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-montserrat-alternates',
-  display: 'swap',
-});
-
 export const metadata: Metadata = {
-  title: `${siteConfig.name} - Odkryj Magię Gór`,
-  description:
-    'Wyrusz w niezapomnianą podróż przez najpiękniejsze szlaki Sudetów. Przygoda, natura i wyzwanie czekają na Ciebie.',
-  keywords: 'sudety, szlaki górskie, trekking, przygoda, natura, góry',
+  title: {
+    default: siteMetadata.title,
+    template: `%s | ${siteMetadata.title}`,
+  },
+  description: siteMetadata.description,
+  keywords: siteMetadata.keywords,
+  authors: siteMetadata.authors,
+  creator: siteMetadata.creator,
+  publisher: siteMetadata.publisher,
+  metadataBase: new URL(siteMetadata.siteUrl),
+  openGraph: {
+    type: siteMetadata.openGraph.type,
+    locale: siteMetadata.openGraph.locale,
+    url: siteMetadata.openGraph.url,
+    siteName: siteMetadata.openGraph.siteName,
+    images: siteMetadata.openGraph.images,
+  },
+  twitter: siteMetadata.twitter,
+  robots: siteMetadata.robots,
+  icons: siteMetadata.icons,
 };
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
