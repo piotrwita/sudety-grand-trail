@@ -1,3 +1,5 @@
+import { siteRoutes } from './site-routes';
+
 export const siteConfig = {
   name: 'Sudety Grand Trail',
   description: 'Sudety Grand Trail - Trail running event',
@@ -6,12 +8,12 @@ export const siteConfig = {
     alt: 'Sudety Grand Trail Logo',
   },
   navigation: [
-    { href: '/', label: 'Home' },
-    { href: '/trail', label: 'Trail' },
-    { href: '/korona', label: 'Korona Sudetów' },
-    { href: '/live', label: 'Live', isLive: true },
-    { href: '/hall-of-fame', label: 'Hall of Fame' },
-    { href: '/about', label: 'O Mnie' },
+    { href: siteRoutes.home, label: 'Home' },
+    { href: siteRoutes.trail, label: 'Trail' },
+    { href: siteRoutes.korona, label: 'Korona Sudetów' },
+    { href: siteRoutes.live, label: 'Live', isLive: true },
+    { href: siteRoutes.hallOfFame, label: 'Hall of Fame' },
+    { href: siteRoutes.about, label: 'O Mnie' },
   ],
   socialLinks: [
     {
