@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const TrailDescription = () => {
   return (
-    <section className="section-padding bg-forest-50">
+    <section className="section-padding overflow-hidden bg-forest-50">
       <div className="fluid-container">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Text Content */}

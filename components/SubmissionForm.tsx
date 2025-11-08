@@ -558,12 +558,6 @@ const SubmissionForm = () => {
         className="absolute bottom-20 right-10 h-24 w-24 animate-pulse rounded-full bg-cream/10 blur-xl"
         style={{ animationDelay: '1s' }}
       />
-
-      {/* Corner decorative elements */}
-      <div className="absolute left-8 top-8 h-16 w-16 border-l-4 border-t-4 border-cream/20" />
-      <div className="absolute right-8 top-8 h-16 w-16 border-r-4 border-t-4 border-cream/20" />
-      <div className="absolute bottom-8 left-8 h-16 w-16 border-b-4 border-l-4 border-cream/20" />
-      <div className="absolute bottom-8 right-8 h-16 w-16 border-b-4 border-r-4 border-cream/20" />
     </section>
   );
 };
