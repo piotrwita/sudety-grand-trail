@@ -1,0 +1,209 @@
+---
+description: Apply these Tailwind CSS conventions for consistent, accessible, and maintainable UI development. Use when writing HTML/JSX with Tailwind classes.
+alwaysApply: false
+tags: ['tailwind', 'css', 'ui', 'frontend', 'responsive', 'accessibility']
+---
+
+## Tailwind CSS rules
+
+# Always follow this exact order when writing Tailwind classes:
+
+1. Layout → flex, grid, block, inline, absolute, relative
+2. Flexbox/Grid → items-center, justify-between, grid-cols-3
+3. Spacing → m-4, p-6, space-x-2, gap-4
+4. Sizing → w-full, h-64, max-w-lg, min-h-screen
+5. Typography → text-lg, font-bold, leading-tight, text-center
+6. Visual → bg-blue-500, text-white, border, rounded-lg, shadow-md
+7. Miscellaneous → cursor-pointer, overflow-hidden, z-10
+8. States → hover:bg-blue-600, focus:ring-2, active:scale-95
+9. Responsive → sm:text-xl, md:flex-row, lg:w-1/2, xl:p-8
+
+Example of Properly Ordered Classes
+
+```html
+<!-- CORRECT: Properly ordered -->
+<div
+  class="flex w-full max-w-4xl items-center justify-between rounded-lg border border-gray-200 bg-white px-6 py-4 text-lg font-semibold text-gray-800 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 sm:px-8 md:text-xl lg:max-w-6xl"
+>
+  Content here
+</div>
+
+<!-- WRONG: Random order (more obviously wrong) -->
+<div
+  class="flex w-full max-w-4xl items-center justify-between rounded-lg border border-gray-200 bg-white px-6 py-4 text-lg font-semibold text-gray-800 shadow-sm hover:shadow-md focus:ring-2 sm:px-8"
+>
+  Content here
+</div>
+```
+
+# Use Mobile-first responsive design:
+
+```html
+<!-- Start with mobile, enhance upward -->
+<div class="text-center sm:text-left md:text-center lg:text-right">
+  Mobile-first content
+</div>
+
+<!-- Layout changes -->
+<div class="flex flex-col sm:flex-row md:flex-col lg:flex-row">
+  Responsive layout
+</div>
+
+<!-- Spacing progression -->
+<div class="p-4 sm:p-6 md:p-8 lg:p-12">Progressive spacing</div>
+```
+
+# Use dark mode variants:
+
+```html
+<div class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
+  Dark mode support
+</div>
+```
+
+# Use animation utilities:
+
+```html
+<button class="animate-pulse hover:animate-bounce">Animated button</button>
+```
+
+# Use interactive states:
+
+```html
+<button class="bg-blue-500 hover:bg-blue-600 focus:ring-2">Click me</button>
+```
+
+# Use @apply for repeated patterns when necessary:
+
+```css
+@layer components {
+  .btn-primary {
+    @apply rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600;
+  }
+}
+```
+
+# Use arbitrary values for specific needs:
+
+```html
+<div class="top-[117px] grid-cols-[1fr_2fr]">
+  <!-- Custom positioning and grid layout -->
+</div>
+```
+
+# Use consistent spacing patterns:
+
+```html
+<!-- Use space-* for consistent gaps -->
+<div class="space-y-6">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>
+
+<!-- Prefer mt-* to mb-* -->
+<div>First paragraph (no margin needed)</div>
+<div class="mt-4">Subsequent paragraphs get top margin</div>
+<div class="mt-4">This creates consistent gaps</div>
+<div class="mt-4">Easy to maintain spacing</div>
+
+<!-- Use gap for grid/flex layouts -->
+<div class="flex flex-wrap gap-x-4 gap-y-6"></div>
+```
+
+# Typography hierarchy:
+
+```html
+<h1 class="text-3xl font-bold">
+  <!-- Headings: bold -->
+  <h2 class="text-xl font-semibold">
+    <!-- Subheadings: semibold -->
+    <p class="text-base font-normal">
+      <!-- Body: normal -->
+      <span class="text-sm text-gray-600">
+        <!-- Helper text: smaller, muted --></span
+      >
+    </p>
+  </h2>
+</h1>
+```
+
+# Semantic colors:
+
+```html
+<!-- Status colors -->
+<div class="bg-red-50 text-red-800">Error</div>
+<div class="bg-green-50 text-green-800">Success</div>
+<div class="bg-blue-50 text-blue-800">Info</div>
+<div class="bg-yellow-50 text-yellow-800">Warning</div>
+
+<!-- Brand colors -->
+<button class="bg-primary-600 hover:bg-primary-700">Action</button>
+```
+
+# Use group and peer utilities for interactivity:
+
+```html
+<!-- Group hover effects -->
+<div class="group hover:bg-gray-50">
+  <h3 class="group-hover:text-blue-600">Title</h3>
+  <p class="group-hover:text-gray-700">Description</p>
+</div>
+
+<!-- Peer state changes -->
+<input class="peer" type="checkbox" />
+<label class="peer-checked:text-blue-600">Check me</label>
+```
+
+# Accessibility patterns:
+
+```html
+<!-- Focus indicators -->
+<button
+  class="rounded bg-blue-600 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+>
+  Button with focus ring
+</button>
+
+<!-- Focus-visible for keyboard-only focus -->
+<button
+  class="rounded bg-blue-600 px-4 py-2 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+>
+  Keyboard focus only
+</button>
+```
+
+- Screen Reader Support
+
+```html
+<!-- Hidden labels for icons -->
+<button
+  class="p-2 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
+>
+  <span class="sr-only">Close modal</span>
+  <!-- icon -->
+</button>
+
+<!-- ARIA labels with styling -->
+<div
+  class="relative"
+  role="progressbar"
+  aria-valuenow="75"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  aria-label="Upload progress"
+>
+  <div class="h-2 w-full rounded-full bg-gray-200">
+    <div
+      class="h-2 rounded-full bg-blue-600 transition-all duration-300"
+      style="width: 75%"
+    ></div>
+  </div>
+</div>
+
+<!-- Screen reader only text -->
+<div class="flex items-center space-x-2">
+  <div class="h-3 w-3 rounded-full bg-green-400"></div>
+  <span>Online</span>
+  <span class="sr-only">User is currently online</span>
+</div>
+```
