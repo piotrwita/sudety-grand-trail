@@ -65,7 +65,7 @@ const WhyChooseSection = () => {
                 />
               </svg>
             </motion.div>
-            <motion.h2 className="section-title mb-3 text-4xl md:text-5xl">
+            <motion.h2 className="section-title mb-3">
               <span className="text-gradient">Geneza Szlaku</span>
             </motion.h2>
             <div className="mx-auto mb-2 h-0.5 w-16 bg-gradient-to-r from-transparent via-forest-700 to-transparent" />

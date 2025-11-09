@@ -38,13 +38,13 @@ const TrailHeroSection = () => (
           <MapIcon className="size-8 text-cream" />
         </ScaleIn>
 
-        <h1 className="hero-title mb-6 text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="hero-title mb-6">
           Poznaj <span className="text-accent">Trasę</span>
         </h1>
 
         <div className="vintage-divider bg-gradient-to-r from-accent to-cream" />
 
-        <p className="text-2xl font-medium leading-relaxed text-cream/90">
+        <p className="text-fluid-xl font-medium leading-relaxed text-cream/90">
           <span className="font-bold text-accent">KORONA SUDETÓW</span> w jednym
           szlaku! 900 km przez 24 pasma i zdobycie najwyższego szczytu każdego z
           nich. Od Jarnołtówka (Góry Opawskie) po Ślężę – kompletne podbicie

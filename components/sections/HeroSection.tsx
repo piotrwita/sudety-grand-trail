@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useRef } from 'react';
 import backgroundImg from 'public/images/vintage-mountains.svg';
 import logoJpg from 'public/images/logo.jpg';
+import { Stats, StatsSeparator } from '@/components/Stats';
 
 export const HeroSection = () => {
   const ref = useRef(null);
@@ -150,17 +151,17 @@ export const HeroSection = () => {
             aria-label="Statystyki trasy"
           >
             <Stats value="900" label="Kilometrów" ariaLabel="900 Kilometrów" />
-            <StatsSeperator />
+            <StatsSeparator />
             <Stats value="22" label="Pasma" ariaLabel="22 Pasma" />
-            <StatsSeperator />
+            <StatsSeparator />
             <Stats value="3" label="Kraje" ariaLabel="3 Kraje" />
-            <StatsSeperator />
+            <StatsSeparator />
             <Stats
               value="30k"
               label="Przewyższeń"
               ariaLabel="30 tysięcy Przewyższeń"
             />
-            <StatsSeperator />
+            <StatsSeparator />
             <Stats
               value="16"
               label="Szczytów KGP"
@@ -176,32 +177,6 @@ export const HeroSection = () => {
     </section>
   );
 };
-
-const StatsSeperator = () => (
-  <div className="h-8 w-px bg-cream/20 sm:h-10 md:h-12" aria-hidden="true" />
-);
-
-const Stats = ({
-  value,
-  label,
-  ariaLabel,
-}: {
-  value: string;
-  label: string;
-  ariaLabel: string;
-}) => (
-  <div
-    className="group cursor-default text-center transition-transform duration-300 focus-within:scale-105 focus-within:rounded-lg focus-within:px-2 focus-within:py-1 focus-within:outline-none focus-within:ring-2 focus-within:ring-cream/50 hover:scale-105"
-    aria-label={ariaLabel}
-  >
-    <div className="stats-number text-cream transition-colors duration-300 group-hover:text-accent">
-      {value}
-    </div>
-    <div className="text-xs font-bold uppercase tracking-wide text-cream/70 sm:text-sm">
-      {label}
-    </div>
-  </div>
-);
 
 const ScrollIndicator = () => (
   <motion.div

@@ -39,13 +39,13 @@ const HallOfFameStats = () => {
             </svg>
           </motion.div>
 
-          <h2 className="section-title mb-6 text-4xl md:text-5xl">
+          <h2 className="section-title mb-6">
             Statystyki <span className="text-gradient">Przejść</span>
           </h2>
 
           <div className="vintage-divider" />
 
-          <p className="mx-auto max-w-4xl text-xl font-medium leading-relaxed text-mountain-600">
+          <p className="text-fluid-xl mx-auto max-w-4xl font-medium leading-relaxed text-mountain-600">
             Odkąd szlak został oficjalnie wyznaczony, odważni wędrowcy podejmują
             wyzwanie zdobycia pełnej Korony Sudetów. Oto ich osiągnięcia.
           </p>

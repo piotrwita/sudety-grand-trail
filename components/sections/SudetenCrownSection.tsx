@@ -476,13 +476,13 @@ const SudetenCrownSection = () => {
             <span className="text-2xl">👑</span>
           </motion.div>
 
-          <h2 className="section-title mb-6 text-4xl md:text-5xl">
+          <h2 className="section-title mb-6">
             <span className="text-gradient">Korona Sudetów</span>
           </h2>
 
           <div className="vintage-divider" />
 
-          <p className="mx-auto mb-8 max-w-4xl text-xl font-medium leading-relaxed text-mountain-600">
+          <p className="text-fluid-xl mx-auto mb-8 max-w-5xl font-medium leading-relaxed text-mountain-600">
             22 pasma górskie. 22 najwyższe szczyty. Jeden szlak. Kompletne
             podbicie Sudetów od Śnieżki (1603m) po Lázek (714m).
           </p>
@@ -830,7 +830,7 @@ const SudetenCrownSection = () => {
                       <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="card-vintage to-earth/10 border-accent/30 bg-gradient-to-r from-accent/10 p-6"
+                        className="card-vintage border-accent/30 bg-gradient-to-r from-accent/10 to-earth/10 p-6"
                       >
                         <div className="text-center">
                           <div className="mb-3 flex items-center justify-center space-x-2">

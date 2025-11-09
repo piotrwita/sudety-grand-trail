@@ -36,7 +36,7 @@ const LiveTracking = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="hero-title mb-6 text-4xl text-forest-800 md:text-5xl lg:text-6xl"
+            className="section-title mb-6 text-forest-800"
           >
             Live <span className="text-gradient">Tracking</span>
           </motion.h2>
@@ -48,7 +48,7 @@ const LiveTracking = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mx-auto max-w-4xl text-xl font-medium leading-relaxed text-mountain-600"
+            className="mx-auto text-xl font-medium leading-relaxed text-mountain-600"
           >
             Dzięki współpracy z <strong className="text-accent">Poltrax</strong>{' '}
             możesz śledzić moją wyprawę w czasie rzeczywistym. Mapa pokazuje

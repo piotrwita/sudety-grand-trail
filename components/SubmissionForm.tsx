@@ -145,13 +145,13 @@ const SubmissionForm = () => {
             </svg>
           </motion.div>
 
-          <h2 className="hero-title mb-6 text-4xl text-cream md:text-5xl">
+          <h2 className="hero-title mb-6 text-cream">
             Zgłoś Swoje <span className="text-accent">Przejście</span>
           </h2>
 
           <div className="vintage-divider bg-gradient-to-r from-accent to-cream" />
 
-          <p className="mx-auto max-w-4xl text-xl font-medium leading-relaxed text-cream/90">
+          <p className="text-fluid-xl mx-auto max-w-4xl font-medium leading-relaxed text-cream/90">
             Ukończyłeś Sudety Grand Trail? Podziel się swoją historią i dołącz
             do oficjalnego Hall of Fame!
           </p>

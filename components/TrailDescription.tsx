@@ -15,7 +15,7 @@ const TrailDescription = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="section-title mb-8 text-left text-4xl md:text-5xl">
+            <h2 className="section-title mb-8 text-left">
               O <span className="text-gradient">Szlaku</span>
             </h2>
 

@@ -62,7 +62,7 @@ const MotivationSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="hero-title mb-8 text-3xl leading-relaxed md:text-4xl lg:text-5xl"
+              className="section-title mb-8 leading-relaxed text-cream"
             >
               "To szlak stworzony z myślą o tych, którzy chcą się zgubić, by się
               odnaleźć"
