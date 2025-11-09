@@ -3,12 +3,7 @@
 import { motion } from 'framer-motion';
 import LiveTracking from '@/components/LiveTracking';
 import TimePressure from '@/components/TimePressure';
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: 'easeOut' },
-};
+import { Stats, StatsSeparator } from '@/components/Stats';
 
 export default function LivePage() {
   return (
@@ -42,7 +37,7 @@ export default function LivePage() {
             </motion.div>
 
             <motion.h1
-              className="hero-title mb-6 text-5xl leading-tight text-cream sm:text-6xl md:text-7xl lg:text-8xl"
+              className="hero-title mb-6 leading-tight text-cream"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -51,7 +46,7 @@ export default function LivePage() {
             </motion.h1>
 
             <motion.p
-              className="mx-auto mb-8 max-w-3xl text-xl font-medium leading-relaxed text-cream/80 sm:text-2xl"
+              className="text-fluid-xl mx-auto mb-8 max-w-3xl font-medium leading-relaxed text-cream/80"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -62,35 +57,31 @@ export default function LivePage() {
 
             {/* Quick Stats */}
             <motion.div
-              className="flex flex-wrap justify-center gap-8 text-center"
+              className="flex flex-wrap items-center justify-center gap-8 text-center"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
             >
-              <div className="text-center">
-                <div className="stats-number text-4xl text-accent sm:text-5xl">
-                  900
-                </div>
-                <div className="text-sm font-bold uppercase tracking-wide text-cream/70">
-                  Kilometrów
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="stats-number text-4xl text-accent sm:text-5xl">
-                  22
-                </div>
-                <div className="text-sm font-bold uppercase tracking-wide text-cream/70">
-                  Pasma
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="stats-number text-4xl text-accent sm:text-5xl">
-                  24/7
-                </div>
-                <div className="text-sm font-bold uppercase tracking-wide text-cream/70">
-                  Tracking
-                </div>
-              </div>
+              <Stats
+                value="900"
+                label="Kilometrów"
+                ariaLabel="900 Kilometrów"
+                // labelClassName="text-sm font-bold uppercase tracking-wide text-cream/70"
+              />
+              <StatsSeparator />
+              <Stats
+                value="22"
+                label="Pasma"
+                ariaLabel="22 Pasma"
+                // labelClassName="text-sm font-bold uppercase tracking-wide text-cream/70"
+              />
+              <StatsSeparator />
+              <Stats
+                value="24/7"
+                label="Tracking"
+                ariaLabel="24/7 Tracking"
+                // labelClassName="text-sm font-bold uppercase tracking-wide text-cream/70"
+              />
             </motion.div>
           </motion.div>
         </div>
@@ -137,14 +128,14 @@ export default function LivePage() {
               Bezpłatny Tracker
             </div>
 
-            <h2 className="mb-6 text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
+            <h2 className="section-title mb-6 text-slate-900">
               Twoja{' '}
               <span className="bg-gradient-to-r from-accent to-orange-500 bg-clip-text text-transparent">
                 Własna Historia
               </span>
             </h2>
 
-            <p className="mx-auto max-w-3xl text-xl leading-relaxed text-slate-600">
+            <p className="text-fluid-lg mx-auto max-w-3xl leading-relaxed text-slate-600">
               A jeśli kiedyś sami będziecie chcieli spróbować przejść ten szlak,
               to mam dla Was dobrą wiadomość.
             </p>
@@ -390,13 +381,13 @@ export default function LivePage() {
             transition={{ duration: 0.8 }}
             className="mb-16 text-center"
           >
-            <h2 className="section-title mb-6 text-4xl md:text-5xl">
+            <h2 className="section-title mb-6">
               Jak działa <span className="text-gradient">Live Tracking</span>?
             </h2>
 
             <div className="vintage-divider" />
 
-            <p className="mx-auto max-w-4xl text-xl font-medium leading-relaxed text-mountain-600">
+            <p className="text-fluid-lg mx-auto max-w-5xl font-medium leading-relaxed text-mountain-600">
               Dzięki współpracy z firmą{' '}
               <strong className="text-accent">Poltrax</strong> powstała
               interaktywna mapa, która pokazuje moją lokalizację w czasie

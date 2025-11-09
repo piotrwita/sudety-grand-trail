@@ -50,13 +50,13 @@ const TrailMotivation = () => {
               </svg>
             </motion.div>
 
-            <h2 className="hero-title mb-6 text-4xl md:text-5xl">
+            <h2 className="section-title mb-6 text-cream">
               <span className="text-accent">Motywacja</span> do Działania
             </h2>
 
             <div className="vintage-divider bg-gradient-to-r from-accent to-cream" />
 
-            <p className="mx-auto max-w-4xl text-xl font-medium leading-relaxed text-cream/90">
+            <p className="text-fluid-lg mx-auto font-medium leading-relaxed text-cream/90">
               To propozycja dla każdego, kto pragnie odkryć Sudety w ich pełni –
               nie tylko fizycznie, ale też duchowo. Dla wędrowców, marzycieli,
               samotników, sportowców i ludzi gór.

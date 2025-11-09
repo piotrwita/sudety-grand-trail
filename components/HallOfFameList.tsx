@@ -125,7 +125,7 @@ const HallOfFameList = () => {
             <span className="text-2xl">🏆</span>
           </motion.div>
 
-          <h2 className="section-title mb-6 text-4xl md:text-5xl">
+          <h2 className="section-title mb-6">
             <span className="text-gradient">Zdobywcy</span> Korony Sudetów
           </h2>
 

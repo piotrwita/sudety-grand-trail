@@ -58,7 +58,7 @@ const AboutProjectSection = () => {
               </svg>
             </motion.div>
 
-            <h2 className="hero-title mb-6 text-4xl text-cream md:text-5xl">
+            <h2 className="section-title mb-6 text-cream">
               O <span className="text-accent">Projekcie</span>
             </h2>
 

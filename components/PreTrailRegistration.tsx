@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const PreTrailRegistration = () => {
   return (
-    <section className="section-padding to-earth/10 bg-gradient-to-br from-accent/10">
+    <section className="section-padding overflow-hidden bg-gradient-to-br from-accent/10 to-earth/10">
       <div className="fluid-container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -36,7 +36,7 @@ const PreTrailRegistration = () => {
             </svg>
           </motion.div>
 
-          <h2 className="section-title mb-6 text-4xl md:text-5xl">
+          <h2 className="section-title mb-6">
             Zanim <span className="text-gradient">Wyruszysz</span>
           </h2>
 

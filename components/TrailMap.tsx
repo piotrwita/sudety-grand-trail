@@ -13,13 +13,13 @@ const TrailMap = () => {
           transition={{ duration: 0.8 }}
           className="mb-16 text-center"
         >
-          <h2 className="section-title mb-6 text-4xl md:text-5xl">
+          <h2 className="section-title mb-6">
             Oficjalna <span className="text-gradient">Trasa Szlaku</span>
           </h2>
 
           <div className="vintage-divider" />
 
-          <p className="mx-auto mb-8 max-w-5xl text-xl font-medium leading-relaxed text-mountain-600">
+          <p className="text-fluid-lg mx-auto mb-8 font-medium leading-relaxed text-mountain-600">
             Nadszedł moment, by oficjalnie przedstawić trasę wyznaczoną
             specjalnie na potrzeby tej wyprawy. To nie przypadkowy kierunek ani
             luźny pomysł – to{' '}
@@ -204,7 +204,7 @@ const TrailMap = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="card-vintage to-earth/10 group border-accent/30 bg-gradient-to-br from-accent/10 p-8 text-center hover:scale-105"
+              className="card-vintage group border-accent/30 bg-gradient-to-br from-accent/10 to-earth/10 p-8 text-center hover:scale-105"
             >
               <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-accent to-earth-700 shadow-vintage transition-transform duration-300 group-hover:scale-110">
                 <svg
