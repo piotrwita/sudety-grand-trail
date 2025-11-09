@@ -21,7 +21,7 @@ export default function HallOfFamePage() {
 }
 
 const HallOfFameHeroSection = () => (
-  <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700 py-32">
+  <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700 py-32">
     {/* Background Pattern */}
     <div className="gradient-mesh-overlay absolute inset-0 opacity-20" />
     <div className="absolute inset-0 bg-[url('/images/vintage-mountains.svg')] bg-cover bg-center opacity-10" />
