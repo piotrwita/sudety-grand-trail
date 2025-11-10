@@ -5,6 +5,9 @@ import SubmissionForm from '@/components/SubmissionForm';
 import { FadeIn, ScaleIn } from '@/components/motion';
 import { pageMetadata } from '@/config/metadata';
 import type { Metadata } from 'next';
+import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
+import { Section } from '@/components/sections/Section';
+import Link from 'next/link';
 
 export const metadata: Metadata = pageMetadata.hallOfFame;
 
@@ -21,12 +24,15 @@ export default function HallOfFamePage() {
 }
 
 const HallOfFameHeroSection = () => (
-  <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700 py-32">
+  <Section
+    className="bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700 py-24"
+    ariaLabel="Sekcja główna - Hall of Fame"
+  >
     {/* Background Pattern */}
     <div className="gradient-mesh-overlay absolute inset-0 opacity-20" />
-    <div className="absolute inset-0 bg-[url('/images/vintage-mountains.svg')] bg-cover bg-center opacity-10" />
+    <VintageMountainsBackground className="opacity-10" />
 
-    <div className="relative z-10 mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
+    <div className="fluid-container relative z-10 text-center">
       <FadeIn direction="up" offset={60} duration={0.6}>
         {/* Badge */}
         <ScaleIn
@@ -62,17 +68,22 @@ const HallOfFameHeroSection = () => (
           delay={0.8}
           className="flex flex-col items-center justify-center gap-6 sm:flex-row"
         >
-          <a href="#zglos-przejscie" className="btn-primary px-10 py-4 text-lg">
+          <Link
+            href="#zglos-przejscie"
+            className="btn-primary px-10 py-4 text-lg"
+            aria-label="Zgłoś Swoje Przejście"
+          >
             Zgłoś Swoje Przejście
-          </a>
-          <a
+          </Link>
+          <Link
             href="#hall-of-fame"
             className="btn-secondary border-cream/60 px-10 py-4 text-lg text-cream/90 hover:bg-cream/90 hover:text-forest-800"
+            aria-label="Zobacz Zdobywców"
           >
             Zobacz Zdobywców
-          </a>
+          </Link>
         </FadeIn>
       </FadeIn>
     </div>
-  </section>
+  </Section>
 );

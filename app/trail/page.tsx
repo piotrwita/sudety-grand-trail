@@ -5,6 +5,7 @@ import { FadeIn, ScaleIn } from '@/components/motion';
 import { MapIcon } from '@/components/icons';
 import { pageMetadata } from '@/config/metadata';
 import type { Metadata } from 'next';
+import { Section } from '@/components/sections/Section';
 
 export const metadata: Metadata = pageMetadata.trail;
 
@@ -20,14 +21,17 @@ export default function TrailPage() {
 }
 
 const TrailHeroSection = () => (
-  <section className="relative bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700 py-32">
+  <Section
+    className="min-h-0 bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700 py-24"
+    ariaLabel="Sekcja główna - Poznaj Trasę"
+  >
     <div className="absolute inset-0 bg-vintage-texture opacity-10" />
     <div className="fluid-container relative z-10">
       <FadeIn
         direction="up"
         offset={60}
         duration={0.6}
-        className="mx-auto max-w-5xl text-center"
+        className="mx-auto max-w-4xl text-center"
       >
         <ScaleIn
           initialScale={0.5}
@@ -44,7 +48,7 @@ const TrailHeroSection = () => (
 
         <div className="vintage-divider bg-gradient-to-r from-accent to-cream" />
 
-        <p className="text-fluid-xl font-medium leading-relaxed text-cream/90">
+        <p className="text-fluid-lg font-medium leading-relaxed text-cream/90">
           <span className="font-bold text-accent">KORONA SUDETÓW</span> w jednym
           szlaku! 900 km przez 24 pasma i zdobycie najwyższego szczytu każdego z
           nich. Od Jarnołtówka (Góry Opawskie) po Ślężę – kompletne podbicie
@@ -52,5 +56,5 @@ const TrailHeroSection = () => (
         </p>
       </FadeIn>
     </div>
-  </section>
+  </Section>
 );

@@ -1,4 +1,4 @@
-export { HeroSection } from './HeroSection';
+export { HomeHeroSection } from './HomeHeroSection';
 export { default as WhyChooseSection } from './WhyChooseSection';
 export { default as AboutProjectSection } from './AboutProjectSection';
 export { default as SudetenCrownSection } from './SudetenCrownSection';

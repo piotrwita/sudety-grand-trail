@@ -1,5 +1,5 @@
 import {
-  HeroSection,
+  HomeHeroSection,
   WhyChooseSection,
   AboutProjectSection,
   MotivationSection,
@@ -12,7 +12,7 @@ export const metadata: Metadata = pageMetadata.home;
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <HomeHeroSection />
       <WhyChooseSection />
       <AboutProjectSection />
       <MotivationSection />

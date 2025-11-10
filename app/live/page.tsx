@@ -5,6 +5,8 @@ import { FadeIn } from '@/components/motion/FadeIn';
 import { ScaleIn } from '@/components/motion/ScaleIn';
 import { pageMetadata } from '@/config/metadata';
 import { Metadata } from 'next';
+import { Section } from '@/components/sections/Section';
+import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 
 export const metadata: Metadata = pageMetadata.live;
 
@@ -22,10 +24,13 @@ export default function LivePage() {
 
 const LiveHeroSection = () => {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-forest-800 via-forest-700 to-forest-900 py-32">
+    <Section
+      className="bg-gradient-to-br from-forest-800 via-forest-700 to-forest-900 py-24"
+      ariaLabel="Sekcja główna - Śledź Wyprawę"
+    >
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/images/vintage-mountains.svg')] bg-cover bg-center opacity-20" />
+        <VintageMountainsBackground className="opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-forest-800/50 to-forest-900" />
       </div>
 
@@ -116,7 +121,7 @@ const LiveHeroSection = () => {
         className="absolute bottom-20 right-10 h-32 w-32 animate-pulse rounded-full bg-forest-600/10 blur-2xl"
         style={{ animationDelay: '1s' }}
       />
-    </section>
+    </Section>
   );
 };
 

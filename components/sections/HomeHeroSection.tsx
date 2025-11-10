@@ -4,11 +4,12 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRef } from 'react';
-import backgroundImg from 'public/images/vintage-mountains.svg';
 import logoJpg from 'public/images/logo.jpg';
 import { Stats, StatsSeparator } from '@/components/Stats';
+import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
+import { Section } from './Section';
 
-export const HeroSection = () => {
+export const HomeHeroSection = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -27,24 +28,13 @@ export const HeroSection = () => {
   const contentY = useTransform(smoothProgress, [0, 1], ['0%', '30%']);
 
   return (
-    <section
-      ref={ref}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-12"
-      aria-label="Sekcja główna - Sudety Grand Trail"
-    >
+    <Section ref={ref} ariaLabel="Sekcja główna - Sudety Grand Trail">
       {/* Parallax Background Image */}
       <motion.div
         className="absolute inset-0 z-0 will-change-transform"
         style={{ y: backgroundY }}
       >
-        <Image
-          src={backgroundImg}
-          alt="Widok gór Sudetów w stylu vintage"
-          fill
-          className="object-cover"
-          priority
-          aria-hidden="false"
-        />
+        <VintageMountainsBackground />
         <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/85" />
       </motion.div>
 
@@ -174,7 +164,7 @@ export const HeroSection = () => {
       <ScrollIndicator />
 
       <DecorativeVintageElements />
-    </section>
+    </Section>
   );
 };
 

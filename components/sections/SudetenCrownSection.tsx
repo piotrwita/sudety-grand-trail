@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
+import { Section } from './Section';
 
 // Dane wszystkich 22 pasm uporządkowane od najwyższego do najniższego
 const sudetenRanges = [
@@ -446,7 +447,7 @@ const SudetenCrownSection = () => {
   };
 
   return (
-    <section className="section-padding bg-forest-50">
+    <Section className="bg-forest-50 py-24" ariaLabel="Sekcja Korona Sudetów">
       <div className="fluid-container">
         {/* Header */}
         <motion.div
@@ -986,7 +987,7 @@ const SudetenCrownSection = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </Section>
   );
 };
 
