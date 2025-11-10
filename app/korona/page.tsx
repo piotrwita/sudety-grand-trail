@@ -6,8 +6,8 @@ export const metadata: Metadata = pageMetadata.korona;
 
 export default function KoronaPage() {
   return (
-    <div className="pt-16">
+    <>
       <SudetenCrownSection />
-    </div>
+    </>
   );
 }
