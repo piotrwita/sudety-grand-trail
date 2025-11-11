@@ -1,9 +1,8 @@
 'use client';
 
-import { ReactNode, useRef } from 'react';
+import { ReactNode } from 'react';
 import {
   motion,
-  useInView,
   type MotionProps,
   type UseInViewOptions,
   type Variants,
@@ -11,7 +10,11 @@ import {
 
 type MarginType = UseInViewOptions['margin'];
 
-interface ScaleInProps extends MotionProps {
+interface ScaleInProps
+  extends Omit<
+    MotionProps,
+    'initial' | 'animate' | 'variants' | 'whileInView' | 'viewport'
+  > {
   children: ReactNode;
   className?: string;
   variant?: Variants;
@@ -55,31 +58,37 @@ export function ScaleIn({
   finalOpacity = 1,
   inView = false,
   inViewMargin = '-100px',
+  transition,
   ...props
 }: ScaleInProps) {
-  const ref = useRef(null);
-  const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
-  const isInView = !inView || inViewResult;
-
   const combinedVariants =
     variant ||
     createVariants(initialScale, finalScale, initialOpacity, finalOpacity);
 
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={combinedVariants}
-      transition={{
-        delay: 0.04 + delay,
-        duration,
-        ease: 'easeOut',
-      }}
-      className={className}
-      {...props}
-    >
-      {children}
-    </motion.div>
-  );
+  // Default animation transition (for entrance)
+  const animationTransition = {
+    delay: 0.04 + delay,
+    duration,
+    ease: 'easeOut',
+    ...transition,
+  };
+
+  // Combine properties based on inView mode
+  const motionProps = {
+    initial: 'hidden' as const,
+    variants: combinedVariants,
+    transition: animationTransition,
+    className,
+    ...props,
+    ...(inView
+      ? {
+          whileInView: 'visible' as const,
+          viewport: { once: true, margin: inViewMargin },
+        }
+      : {
+          animate: 'visible' as const,
+        }),
+  };
+
+  return <motion.div {...motionProps}>{children}</motion.div>;
 }

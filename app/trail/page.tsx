@@ -1,4 +1,4 @@
-import TrailMap from '@/components/TrailMap';
+import { TrailMapSection } from '@/components/sections';
 import TrailDescription from '@/components/TrailDescription';
 import TrailMotivation from '@/components/TrailMotivation';
 import { FadeIn, ScaleIn } from '@/components/motion';
@@ -13,7 +13,7 @@ export default function TrailPage() {
   return (
     <>
       <TrailHeroSection />
-      <TrailMap />
+      <TrailMapSection />
       <TrailDescription />
       <TrailMotivation />
     </>
