@@ -1,17 +1,21 @@
 'use client';
 
-import { ReactNode, useRef } from 'react';
+import { ReactNode } from 'react';
 import {
   motion,
-  useInView,
   type MotionProps,
   type UseInViewOptions,
   type Variants,
 } from 'framer-motion';
 
+type DirectionType = 'up' | 'down' | 'left' | 'right';
 type MarginType = UseInViewOptions['margin'];
 
-interface MotionFadeProps extends MotionProps {
+interface MotionFadeProps
+  extends Omit<
+    MotionProps,
+    'initial' | 'animate' | 'variants' | 'whileInView' | 'viewport'
+  > {
   children: ReactNode;
   className?: string;
   variant?: {
@@ -21,15 +25,12 @@ interface MotionFadeProps extends MotionProps {
   duration?: number;
   delay?: number;
   offset?: number;
-  direction?: 'up' | 'down' | 'left' | 'right';
+  direction?: DirectionType;
   inView?: boolean;
   inViewMargin?: MarginType;
 }
 
-const createVariants = (
-  direction: 'up' | 'down' | 'left' | 'right',
-  offset: number
-): Variants => {
+const createVariants = (direction: DirectionType, offset: number): Variants => {
   const isHorizontal = direction === 'left' || direction === 'right';
   const axis = isHorizontal ? 'x' : 'y';
   const offsetValue =
@@ -57,29 +58,35 @@ export function FadeIn({
   direction = 'down',
   inView = false,
   inViewMargin = '-100px',
+  transition,
   ...props
 }: MotionFadeProps) {
-  const ref = useRef(null);
-  const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
-  const isInView = !inView || inViewResult;
-
   const combinedVariants = variant || createVariants(direction, offset);
 
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={combinedVariants}
-      transition={{
-        delay: 0.04 + delay,
-        duration,
-        ease: 'easeOut',
-      }}
-      className={className}
-      {...props}
-    >
-      {children}
-    </motion.div>
-  );
+  // Default animation transition (for entrance)
+  const animationTransition = {
+    delay: 0.04 + delay,
+    duration,
+    ease: 'easeOut',
+    ...transition,
+  };
+
+  // Combine properties based on inView mode
+  const motionProps = {
+    initial: 'hidden' as const,
+    variants: combinedVariants,
+    transition: animationTransition,
+    className,
+    ...props,
+    ...(inView
+      ? {
+          whileInView: 'visible' as const,
+          viewport: { once: true, margin: inViewMargin },
+        }
+      : {
+          animate: 'visible' as const,
+        }),
+  };
+
+  return <motion.div {...motionProps}>{children}</motion.div>;
 }
