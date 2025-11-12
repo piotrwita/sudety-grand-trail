@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
-const TimePressure = () => {
+export const TimePressure = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -259,5 +259,3 @@ const TimePressure = () => {
     </section>
   );
 };
-
-export default TimePressure;

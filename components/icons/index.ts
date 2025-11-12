@@ -5,3 +5,6 @@ export { DownloadIcon } from './DownloadIcon';
 export { ExternalLinkIcon } from './ExternalLinkIcon';
 export { SparklesIcon } from './SparklesIcon';
 export { ClockIcon } from './ClockIcon';
+export { LocationIcon } from './LocationIcon';
+export { FlagIcon } from './FlagIcon';
+export { CheckIcon } from './CheckIcon';

@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { ClockIcon, FlagIcon, LocationIcon } from '../icons';
 
-const LiveTracking = () => {
+export const LiveTrackingSection = () => {
   return (
     <section className="section-padding relative overflow-hidden bg-cream">
       {/* Background elements */}
@@ -116,25 +117,7 @@ const LiveTracking = () => {
               className="rounded-2xl border border-forest-100 bg-white p-6 text-center shadow-lg transition-shadow duration-300 hover:shadow-xl"
             >
               <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
-                <svg
-                  className="h-6 w-6 text-accent"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
+                <LocationIcon className="size-6 text-accent" />
               </div>
               <h3 className="mb-2 text-lg font-bold text-forest-800">
                 Aktualna Pozycja
@@ -152,19 +135,7 @@ const LiveTracking = () => {
               className="rounded-2xl border border-forest-100 bg-white p-6 text-center shadow-lg transition-shadow duration-300 hover:shadow-xl"
             >
               <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
-                <svg
-                  className="h-6 w-6 text-accent"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+                <ClockIcon className="size-6 text-accent" />
               </div>
               <h3 className="mb-2 text-lg font-bold text-forest-800">
                 Limit Czasowy
@@ -182,19 +153,7 @@ const LiveTracking = () => {
               className="rounded-2xl border border-forest-100 bg-white p-6 text-center shadow-lg transition-shadow duration-300 hover:shadow-xl"
             >
               <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
-                <svg
-                  className="h-6 w-6 text-accent"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"
-                  />
-                </svg>
+                <FlagIcon className="size-6 text-accent" />
               </div>
               <h3 className="mb-2 text-lg font-bold text-forest-800">
                 Punkty Etapów
@@ -209,5 +168,3 @@ const LiveTracking = () => {
     </section>
   );
 };
-
-export default LiveTracking;
