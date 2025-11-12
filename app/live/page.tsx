@@ -1,12 +1,18 @@
-import LiveTracking from '@/components/LiveTracking';
-import TimePressure from '@/components/TimePressure';
+import { LiveTrackingSection, Section } from '@/components/sections';
+import { TimePressure } from '@/components/TimePressure';
 import { Stats, StatsSeparator } from '@/components/Stats';
 import { FadeIn } from '@/components/motion/FadeIn';
 import { ScaleIn } from '@/components/motion/ScaleIn';
 import { pageMetadata } from '@/config/metadata';
 import { Metadata } from 'next';
-import { Section } from '@/components/sections/Section';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
+import {
+  MapIcon,
+  LocationIcon,
+  ClockIcon,
+  FlagIcon,
+  CheckIcon,
+} from '@/components/icons';
 
 export const metadata: Metadata = pageMetadata.live;
 
@@ -14,7 +20,7 @@ export default function LivePage() {
   return (
     <>
       <LiveHeroSection />
-      <LiveTracking />
+      <LiveTrackingSection />
       <TimePressure />
       <ModernTrackerSection />
       <AdditionalInfoSection />
@@ -82,7 +88,6 @@ const LiveHeroSection = () => {
             </p>
           </FadeIn>
 
-          {/* Quick Stats */}
           <FadeIn
             direction="up"
             offset={30}
@@ -91,26 +96,11 @@ const LiveHeroSection = () => {
             inView={false}
             className="flex flex-wrap items-center justify-center gap-8 text-center"
           >
-            <Stats
-              value="900"
-              label="Kilometrów"
-              ariaLabel="900 Kilometrów"
-              // labelClassName="text-sm font-bold uppercase tracking-wide text-cream/70"
-            />
+            <Stats value="900" label="Kilometrów" ariaLabel="900 Kilometrów" />
             <StatsSeparator />
-            <Stats
-              value="22"
-              label="Pasma"
-              ariaLabel="22 Pasma"
-              // labelClassName="text-sm font-bold uppercase tracking-wide text-cream/70"
-            />
+            <Stats value="22" label="Pasma" ariaLabel="22 Pasma" />
             <StatsSeparator />
-            <Stats
-              value="24/7"
-              label="Tracking"
-              ariaLabel="24/7 Tracking"
-              // labelClassName="text-sm font-bold uppercase tracking-wide text-cream/70"
-            />
+            <Stats value="24/7" label="Tracking" ariaLabel="24/7 Tracking" />
           </FadeIn>
         </FadeIn>
       </div>
@@ -213,60 +203,24 @@ const ModernTrackerSection = () => {
             {/* Features */}
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-100">
-                  <svg
-                    className="h-4 w-4 text-green-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                <div className="flex size-6 items-center justify-center rounded-full bg-green-100">
+                  <CheckIcon className="size-4 text-green-600" />
                 </div>
                 <span className="text-slate-700">
                   Kompletnie darmowy - bez ukrytych kosztów
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-100">
-                  <svg
-                    className="h-4 w-4 text-green-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                <div className="flex size-6 items-center justify-center rounded-full bg-green-100">
+                  <CheckIcon className="size-4 text-green-600" />
                 </div>
                 <span className="text-slate-700">
                   Profesjonalne narzędzie do trackingu
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-100">
-                  <svg
-                    className="h-4 w-4 text-green-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                <div className="flex size-6 items-center justify-center rounded-full bg-green-100">
+                  <CheckIcon className="size-4 text-green-600" />
                 </div>
                 <span className="text-slate-700">
                   Zapisz i udostępnij swoją przygodę
@@ -350,25 +304,7 @@ const ModernTrackerSection = () => {
               {/* Content */}
               <div className="relative z-10 space-y-6 text-center">
                 <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-white shadow-lg">
-                  <svg
-                    className="h-10 w-10 text-accent"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
+                  <LocationIcon className="size-10 text-accent" />
                 </div>
 
                 <div className="space-y-2">
@@ -401,7 +337,7 @@ const ModernTrackerSection = () => {
 
 const AdditionalInfoSection = () => {
   return (
-    <section className="section-padding bg-cream">
+    <Section className="bg-cream">
       <div className="fluid-container">
         <FadeIn
           direction="up"
@@ -409,13 +345,13 @@ const AdditionalInfoSection = () => {
           duration={0.8}
           inView={true}
           inViewMargin="-100px"
-          className="mb-16 text-center"
+          className="text-center"
         >
-          <h2 className="section-title mb-6">
+          <h2 className="section-title">
             Jak działa <span className="text-gradient">Live Tracking</span>?
           </h2>
 
-          <div className="vintage-divider" />
+          <div className="vintage-divider mt-6" />
 
           <p className="text-fluid-lg mx-auto max-w-5xl font-medium leading-relaxed text-mountain-600">
             Dzięki współpracy z firmą{' '}
@@ -425,41 +361,26 @@ const AdditionalInfoSection = () => {
           </p>
         </FadeIn>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <FadeIn
             direction="up"
             offset={30}
             duration={0.6}
             delay={0.2}
             inView={true}
-            className="card-vintage group p-8 text-center hover:scale-105"
           >
-            <div className="badge-circle mx-auto mb-6 h-16 w-16 transition-transform duration-300 group-hover:scale-110">
-              <svg
-                className="h-6 w-6 text-cream"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
+            <div className="card-vintage h-full p-8 text-center">
+              <div className="badge-circle mx-auto size-16 transition-transform duration-300 group-hover:scale-110">
+                <LocationIcon className="size-6" />
+              </div>
+              <h3 className="section-title mt-6 text-xl">Real-time GPS</h3>
+
+              <div className="vintage-divider my-3 w-12" />
+
+              <p className="text-sm text-mountain-600">
+                Aktualna pozycja co kilka minut
+              </p>
             </div>
-            <h3 className="section-title mb-2 text-xl">Real-time GPS</h3>
-            <div className="vintage-divider mx-auto my-3 w-12" />
-            <p className="text-sm text-mountain-600">
-              Aktualna pozycja co kilka minut
-            </p>
           </FadeIn>
 
           <FadeIn
@@ -468,26 +389,19 @@ const AdditionalInfoSection = () => {
             duration={0.6}
             delay={0.3}
             inView={true}
-            className="card-vintage group p-8 text-center hover:scale-105"
           >
-            <div className="badge-circle mx-auto mb-6 h-16 w-16 transition-transform duration-300 group-hover:scale-110">
-              <svg
-                className="h-6 w-6 text-cream"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7"
-                />
-              </svg>
+            <div className="card-vintage h-full p-8 text-center">
+              <div className="badge-circle mx-auto size-16 transition-transform duration-300 group-hover:scale-110">
+                <MapIcon className="size-6" />
+              </div>
+              <h3 className="section-title mt-6 text-xl">Przebyta Trasa</h3>
+
+              <div className="vintage-divider my-3 w-12" />
+
+              <p className="text-sm text-mountain-600">
+                Historia całej wędrówki
+              </p>
             </div>
-            <h3 className="section-title mb-2 text-xl">Przebyta Trasa</h3>
-            <div className="vintage-divider mx-auto my-3 w-12" />
-            <p className="text-sm text-mountain-600">Historia całej wędrówki</p>
           </FadeIn>
 
           <FadeIn
@@ -496,28 +410,19 @@ const AdditionalInfoSection = () => {
             duration={0.6}
             delay={0.4}
             inView={true}
-            className="card-vintage group p-8 text-center hover:scale-105"
           >
-            <div className="badge-circle mx-auto mb-6 h-16 w-16 transition-transform duration-300 group-hover:scale-110">
-              <svg
-                className="h-6 w-6 text-cream"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+            <div className="card-vintage h-full p-8 text-center">
+              <div className="badge-circle mx-auto size-16 transition-transform duration-300 group-hover:scale-110">
+                <ClockIcon className="size-6" />
+              </div>
+              <h3 className="section-title mt-6 text-xl">Limit Czasowy</h3>
+
+              <div className="vintage-divider my-3 w-12" />
+
+              <p className="text-sm text-mountain-600">
+                Presja czasu widoczna na mapie
+              </p>
             </div>
-            <h3 className="section-title mb-2 text-xl">Limit Czasowy</h3>
-            <div className="vintage-divider mx-auto my-3 w-12" />
-            <p className="text-sm text-mountain-600">
-              Presja czasu widoczna na mapie
-            </p>
           </FadeIn>
 
           <FadeIn
@@ -526,31 +431,22 @@ const AdditionalInfoSection = () => {
             duration={0.6}
             delay={0.5}
             inView={true}
-            className="card-vintage group p-8 text-center hover:scale-105"
           >
-            <div className="badge-circle mx-auto mb-6 h-16 w-16 transition-transform duration-300 group-hover:scale-110">
-              <svg
-                className="h-6 w-6 text-cream"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"
-                />
-              </svg>
+            <div className="card-vintage h-full p-8 text-center">
+              <div className="badge-circle mx-auto size-16 transition-transform duration-300 group-hover:scale-110">
+                <FlagIcon className="size-6" />
+              </div>
+              <h3 className="section-title mt-6 text-xl">Punkty Etapów</h3>
+
+              <div className="vintage-divider my-3 w-12" />
+
+              <p className="text-sm text-mountain-600">
+                Planowane miejsca noclegów
+              </p>
             </div>
-            <h3 className="section-title mb-2 text-xl">Punkty Etapów</h3>
-            <div className="vintage-divider mx-auto my-3 w-12" />
-            <p className="text-sm text-mountain-600">
-              Planowane miejsca noclegów
-            </p>
           </FadeIn>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
