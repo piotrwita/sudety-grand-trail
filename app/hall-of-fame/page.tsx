@@ -25,39 +25,62 @@ export default function HallOfFamePage() {
 
 const HallOfFameHeroSection = () => (
   <Section
-    className="bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700 py-24"
+    className="relative overflow-hidden bg-gradient-to-br from-forest-900 via-earth-900 to-forest-800 py-24"
     ariaLabel="Sekcja główna - Hall of Fame"
   >
-    {/* Background Pattern */}
-    <div className="gradient-mesh-overlay absolute inset-0 opacity-20" />
-    <VintageMountainsBackground className="opacity-10" />
+    {/* Epic Background Effects */}
+    <div className="absolute inset-0 bg-gradient-to-br from-forest-900/95 via-earth-900/95 to-forest-800/95" />
+    <div className="gradient-mesh-overlay absolute inset-0 opacity-30" />
+    <VintageMountainsBackground className="opacity-15" />
+    
+    {/* Epic Conqueror Background Elements */}
+    <div className="absolute inset-0">
+      <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-yellow-500/5 to-transparent" />
+      <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-yellow-500/5 to-transparent" />
+      {/* Smooth bottom glow - no hard edges */}
+      <div className="absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial from-yellow-400/8 via-yellow-400/4 to-transparent blur-3xl" />
+    </div>
+    
+    {/* Radial glow effect */}
+    <div className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-yellow-400/10 via-yellow-400/5 to-transparent blur-3xl" />
 
     <div className="fluid-container relative z-10 text-center">
       <FadeIn direction="up" offset={60} duration={0.6}>
-        {/* Badge */}
+        {/* Enhanced Trophy Badge */}
         <ScaleIn
           initialScale={0.5}
           duration={0.6}
           delay={0.2}
-          className="mb-8 inline-flex size-24 items-center justify-center rounded-full border-4 border-cream/20 bg-gradient-to-br from-yellow-400 to-yellow-600 shadow-vintage-xl"
+          className="mb-8 inline-flex size-28 items-center justify-center rounded-full border-4 border-yellow-400/30 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 shadow-[0_0_40px_rgba(250,204,21,0.4)]"
         >
-          <span className="text-3xl">🏆</span>
+          <svg
+            className="h-14 w-14 text-forest-900/80"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-label="Puchar"
+          >
+            <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z" />
+          </svg>
         </ScaleIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.4}>
           <h1 className="hero-title mb-6 text-cream">
             <span className="gradient-text-mesh">Hall of Fame</span>
-            <span className="text-fluid-lg mt-4 block font-medium normal-case tracking-normal text-cream/80">
+            <span className="text-fluid-lg mt-6 block font-display font-bold uppercase tracking-wider text-yellow-400 drop-shadow-lg">
               Oficjalne Przejścia Sudety Grand Trail
             </span>
           </h1>
         </FadeIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
-          <p className="text-fluid-xl mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-cream/80">
-            Ci odważni zdobyli pełną{' '}
-            <span className="font-bold text-accent">Koronę Sudetów</span> – 900
-            km przez 24 pasma górskie. Dołącz do elitarnego grona zdobywców!
+          <p className="text-fluid-xl mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-cream/90">
+            Niezłomni wędrowcy zdobyli pełną{' '}
+            <span className="font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-accent bg-clip-text text-transparent">Koronę Sudetów</span>. 
+            Przeszli 900 kilometrów przez 22 pasma górskie.
+            <br />
+            <span className="mt-4 block italic text-cream/90">
+              Ty możesz dołączyć do elitarnego grona zdobywców!
+            </span>
           </p>
         </FadeIn>
 
