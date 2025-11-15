@@ -128,10 +128,10 @@ const SubmissionForm = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8 inline-flex h-20 w-20 items-center justify-center rounded-full border-4 border-cream/20 bg-gradient-to-br from-accent to-earth-700 shadow-vintage-xl"
+            className="section-icon-badge-light mb-8 bg-gradient-to-br from-accent to-earth-700"
           >
             <svg
-              className="h-8 w-8 text-cream"
+              className="h-8 w-8 text-cream/80"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -146,10 +146,10 @@ const SubmissionForm = () => {
           </motion.div>
 
           <h2 className="hero-title mb-6 text-cream">
-            Zgłoś Swoje <span className="text-accent">Przejście</span>
+            Zgłoś Swoje <span className="text-gradient-light">Przejście</span>
           </h2>
 
-          <div className="vintage-divider bg-gradient-to-r from-accent to-cream" />
+          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent" />
 
           <p className="text-fluid-xl mx-auto max-w-4xl font-medium leading-relaxed text-cream/90">
             Ukończyłeś Sudety Grand Trail? Podziel się swoją historią i dołącz

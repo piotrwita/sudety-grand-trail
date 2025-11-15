@@ -351,7 +351,7 @@ const AdditionalInfoSection = () => {
             Jak działa <span className="text-gradient">Live Tracking</span>?
           </h2>
 
-          <div className="vintage-divider mt-6" />
+          <div className="mx-auto mt-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
 
           <p className="text-fluid-lg mx-auto max-w-5xl font-medium leading-relaxed text-mountain-600">
             Dzięki współpracy z firmą{' '}
@@ -375,7 +375,7 @@ const AdditionalInfoSection = () => {
               </div>
               <h3 className="section-title mt-6 text-xl">Real-time GPS</h3>
 
-              <div className="vintage-divider my-3 w-12" />
+              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
 
               <p className="text-sm text-mountain-600">
                 Aktualna pozycja co kilka minut
@@ -396,7 +396,7 @@ const AdditionalInfoSection = () => {
               </div>
               <h3 className="section-title mt-6 text-xl">Przebyta Trasa</h3>
 
-              <div className="vintage-divider my-3 w-12" />
+              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
 
               <p className="text-sm text-mountain-600">
                 Historia całej wędrówki
@@ -417,7 +417,7 @@ const AdditionalInfoSection = () => {
               </div>
               <h3 className="section-title mt-6 text-xl">Limit Czasowy</h3>
 
-              <div className="vintage-divider my-3 w-12" />
+              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
 
               <p className="text-sm text-mountain-600">
                 Presja czasu widoczna na mapie
@@ -438,7 +438,7 @@ const AdditionalInfoSection = () => {
               </div>
               <h3 className="section-title mt-6 text-xl">Punkty Etapów</h3>
 
-              <div className="vintage-divider my-3 w-12" />
+              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
 
               <p className="text-sm text-mountain-600">
                 Planowane miejsca noclegów

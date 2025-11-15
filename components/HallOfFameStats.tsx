@@ -111,7 +111,7 @@ const HallOfFameStats = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8 inline-flex h-20 w-20 items-center justify-center rounded-full border-4 border-cream/20 bg-gradient-to-br from-accent to-earth-700 shadow-[0_10px_30px_rgba(0,0,0,0.2),0_4px_10px_rgba(0,0,0,0.15)]"
+            className="section-icon-badge mb-8 bg-gradient-to-br from-accent to-earth-700"
           >
             <svg
               className="h-8 w-8 text-cream/80"

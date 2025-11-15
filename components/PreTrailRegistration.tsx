@@ -19,10 +19,10 @@ const PreTrailRegistration = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8 inline-flex h-20 w-20 items-center justify-center rounded-full border-4 border-cream/20 bg-gradient-to-br from-forest-600 to-earth-700 shadow-vintage-xl"
+            className="section-icon-badge mb-8 bg-gradient-to-br from-forest-600 to-earth-700"
           >
             <svg
-              className="h-8 w-8 text-cream"
+              className="h-8 w-8 text-cream/80"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -40,7 +40,7 @@ const PreTrailRegistration = () => {
             Zanim <span className="text-gradient">Wyruszysz</span>
           </h2>
 
-          <div className="vintage-divider" />
+          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
 
           <p className="mx-auto max-w-4xl text-xl font-medium leading-relaxed text-mountain-600">
             Planujesz podbój Korony Sudetów? Najpierw zgłoś swoją próbę

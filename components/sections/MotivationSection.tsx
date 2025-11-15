@@ -45,10 +45,10 @@ const MotivationSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-12 inline-flex h-24 w-24 items-center justify-center rounded-full border-4 border-cream/20 bg-gradient-to-br from-accent to-earth-700 shadow-vintage-xl"
+              className="section-icon-badge-light mb-12 bg-gradient-to-br from-accent to-earth-700"
             >
               <svg
-                className="h-10 w-10 text-cream"
+                className="h-8 w-8 text-cream/80"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -62,13 +62,13 @@ const MotivationSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="section-title mb-8 leading-relaxed text-cream"
+              className="section-title mb-6 leading-relaxed text-cream"
             >
               "To szlak stworzony z myślą o tych, którzy chcą się zgubić, by się
               odnaleźć"
             </motion.blockquote>
 
-            <div className="vintage-divider bg-gradient-to-r from-accent to-cream" />
+            <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent" />
 
             {/* Author */}
             <motion.cite

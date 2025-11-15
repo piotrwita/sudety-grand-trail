@@ -26,7 +26,7 @@ export const TrailMapSection = () => {
             Oficjalna <span className="text-gradient">Trasa Szlaku</span>
           </h2>
 
-          <div className="vintage-divider" />
+          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
 
           <p className="text-fluid-lg mx-auto mb-8 font-medium leading-relaxed text-mountain-600">
             Nadszedł moment, by oficjalnie przedstawić trasę wyznaczoną
@@ -115,7 +115,7 @@ export const TrailMapSection = () => {
                 <MapIcon className="size-6" />
               </div>
               <h3 className="section-title mt-6 text-xl">Długość</h3>
-              <div className="vintage-divider my-3 w-12" />
+              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
               <p className="stats-number mt-3 text-2xl">900 km</p>
             </div>
           </FadeIn>
@@ -132,7 +132,7 @@ export const TrailMapSection = () => {
                 <SparklesIcon className="size-6" />
               </div>
               <h3 className="section-title mt-6 text-xl">Najwyższy punkt</h3>
-              <div className="vintage-divider my-3 w-12" />
+              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
               <p className="font-bold text-mountain-600">Śnieżka</p>
               <p className="stats-number text-2xl">1602 m</p>
             </div>
@@ -150,7 +150,7 @@ export const TrailMapSection = () => {
                 <ClockIcon className="size-6" />
               </div>
               <h3 className="section-title mb-2 text-xl">Przewyższenia</h3>
-              <div className="vintage-divider my-3 w-12" />
+              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
               <p className="stats-number text-2xl">30 000 m</p>
             </div>
           </FadeIn>
@@ -168,7 +168,7 @@ export const TrailMapSection = () => {
                 <DownloadIcon className="size-6 text-cream" />
               </div>
               <h3 className="section-title mb-2 text-xl">Plik GPX</h3>
-              <div className="vintage-divider my-3 w-12" />
+              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
               <p className="mb-3 font-bold text-mountain-600">
                 Gotowy do pobrania
               </p>

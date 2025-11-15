@@ -48,7 +48,7 @@ const WhyChooseSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full border-4 border-cream/20 bg-gradient-to-br from-forest-700 to-earth-700 shadow-[0_10px_30px_rgba(0,0,0,0.2),0_4px_10px_rgba(0,0,0,0.15)]"
+              className="section-icon-badge mb-6 bg-gradient-to-br from-forest-700 to-earth-700"
             >
               {/* Żarówka - ikona pomysłu/inspiracji */}
               <svg
@@ -65,7 +65,7 @@ const WhyChooseSection = () => {
                 />
               </svg>
             </motion.div>
-            <motion.h2 className="section-title mb-3">
+            <motion.h2 className="section-title mb-6">
               <span className="text-gradient">Geneza Szlaku</span>
             </motion.h2>
             <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />

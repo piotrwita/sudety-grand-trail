@@ -19,7 +19,7 @@ const TrailDescription = () => {
               O <span className="text-gradient">Szlaku</span>
             </h2>
 
-            <div className="vintage-divider mx-0" />
+            <div className="my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
 
             <div className="space-y-6 leading-relaxed text-mountain-600">
               <p className="text-xl font-medium">

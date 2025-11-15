@@ -33,10 +33,10 @@ const TrailMotivation = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-8 inline-flex h-20 w-20 items-center justify-center rounded-full border-4 border-cream/20 bg-gradient-to-br from-accent to-forest-700 shadow-vintage-xl"
+              className="section-icon-badge-light mb-8 bg-gradient-to-br from-accent to-forest-700"
             >
               <svg
-                className="h-8 w-8 text-cream"
+                className="h-8 w-8 text-cream/80"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -51,10 +51,10 @@ const TrailMotivation = () => {
             </motion.div>
 
             <h2 className="section-title mb-6 text-cream">
-              <span className="text-accent">Motywacja</span> do Działania
+              <span className="text-gradient-light">Motywacja</span> do Działania
             </h2>
 
-            <div className="vintage-divider bg-gradient-to-r from-accent to-cream" />
+            <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent" />
 
             <p className="text-fluid-lg mx-auto font-medium leading-relaxed text-cream/90">
               To propozycja dla każdego, kto pragnie odkryć Sudety w ich pełni –
@@ -78,7 +78,7 @@ const TrailMotivation = () => {
                   Przekrocz Swoje Granice
                 </h3>
 
-                <div className="vintage-divider mx-0 mb-6" />
+                <div className="mb-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
 
                 <p className="mb-8 text-lg font-medium leading-relaxed text-mountain-600">
                   Ten projekt powstał z miłości do gór, ale też z potrzeby

@@ -37,16 +37,16 @@ const TrailHeroSection = () => (
           initialScale={0.5}
           duration={0.8}
           delay={0.2}
-          className="mb-8 inline-flex size-20 items-center justify-center rounded-full border-4 border-cream/20 bg-gradient-to-br from-accent to-earth-700 shadow-vintage-xl"
+          className="section-icon-badge-light mb-8 bg-gradient-to-br from-accent to-earth-700"
         >
-          <MapIcon className="size-8 text-cream" />
+          <MapIcon className="h-8 w-8 text-cream/80" />
         </ScaleIn>
 
         <h1 className="hero-title mb-6">
-          Poznaj <span className="text-accent">Trasę</span>
+          Poznaj <span className="text-gradient-light">Trasę</span>
         </h1>
 
-        <div className="vintage-divider bg-gradient-to-r from-accent to-cream" />
+        <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent" />
 
         <p className="text-fluid-lg font-medium leading-relaxed text-cream/90">
           <span className="font-bold text-accent">KORONA SUDETÓW</span> w jednym

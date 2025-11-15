@@ -42,7 +42,7 @@ export const LiveTrackingSection = () => {
             Live <span className="text-gradient">Tracking</span>
           </motion.h2>
 
-          <div className="vintage-divider" />
+          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
