@@ -22,10 +22,11 @@ const HallOfFameStats = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
         </svg>
       ),
-      gradient: 'from-yellow-400 via-yellow-500 to-accent',
-      bgGradient: 'from-yellow-50 via-cream to-forest-50',
-      textColor: 'text-yellow-700',
-      valueColor: 'text-yellow-600',
+      gradient: 'from-forest-500 via-forest-600 to-forest-700',
+      bgGradient: 'from-forest-50 via-cream to-forest-50',
+      textColor: 'text-forest-600',
+      valueColor: 'text-forest-600',
+      borderColor: 'border-forest-600/40',
     },
     {
       id: 'fastest',
@@ -37,10 +38,11 @@ const HallOfFameStats = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      gradient: 'from-accent via-accent/90 to-accent/80',
+      gradient: 'from-accent-400 via-accent-500 to-accent-600',
       bgGradient: 'from-accent/10 via-orange-50 to-accent/5',
-      textColor: 'text-accent',
-      valueColor: 'text-accent',
+      textColor: 'text-accent-600',
+      valueColor: 'text-accent-600',
+      borderColor: 'border-accent-500/40',
     },
     {
       id: 'thisYear',
@@ -52,10 +54,11 @@ const HallOfFameStats = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
       ),
-      gradient: 'from-earth-600 via-earth-700 to-earth-800',
+      gradient: 'from-earth-500 via-earth-600 to-earth-700',
       bgGradient: 'from-earth-50 via-amber-50 to-earth-50',
-      textColor: 'text-earth-700',
-      valueColor: 'text-earth-700',
+      textColor: 'text-earth-600',
+      valueColor: 'text-earth-600',
+      borderColor: 'border-earth-600/40',
     },
     {
       id: 'first',
@@ -67,10 +70,11 @@ const HallOfFameStats = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v18M5 3l14 7-14 7" />
         </svg>
       ),
-      gradient: 'from-mountain-600 via-mountain-700 to-mountain-800',
-      bgGradient: 'from-mountain-50 via-slate-50 to-mountain-50',
-      textColor: 'text-mountain-700',
-      valueColor: 'text-mountain-700',
+      gradient: 'from-yellow-300 via-yellow-400 to-yellow-500',
+      bgGradient: 'from-yellow-50 via-cream to-yellow-50',
+      textColor: 'text-yellow-600',
+      valueColor: 'text-yellow-600',
+      borderColor: 'border-yellow-400/40',
     },
   ];
 
@@ -144,7 +148,7 @@ const HallOfFameStats = () => {
               whileInView="animate"
               whileHover="hover"
               viewport={{ once: true, margin: '-50px' }}
-              className={`group relative overflow-hidden rounded-2xl border-2 border-white/50 bg-gradient-to-br ${card.bgGradient} p-5 text-center shadow-lg transition-all duration-300 hover:shadow-2xl`}
+              className={`group relative overflow-hidden rounded-2xl border-4 ${card.borderColor} bg-gradient-to-br ${card.bgGradient} p-5 text-center shadow-[0_8px_16px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_12px_24px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.4)]`}
             >
               {/* Background Pattern */}
               <div className="absolute top-0 right-0 w-40 h-40 opacity-5">
@@ -164,12 +168,12 @@ const HallOfFameStats = () => {
 
               {/* Icon or Badge - Right Top Corner */}
               {card.id === 'first' ? (
-                <div className={`absolute right-3 top-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${card.gradient} text-white shadow-md transition-transform duration-300 group-hover:scale-110 font-display font-black text-lg drop-shadow-lg`}>
+                <div className={`absolute right-3 top-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${card.gradient} text-white shadow-[0_8px_16px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-110 font-display font-black text-lg drop-shadow-lg`}>
                   #1
                 </div>
               ) : (
-                <div className={`absolute right-3 top-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${card.gradient} text-white shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`} style={{ filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3))' }}>
-                  <div style={{ filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4))' }}>
+                <div className={`absolute right-3 top-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${card.gradient} text-white shadow-[0_8px_16px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
+                  <div className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
                     {card.icon}
                   </div>
                 </div>
