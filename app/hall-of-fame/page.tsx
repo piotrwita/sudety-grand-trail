@@ -72,6 +72,10 @@ const HallOfFameHeroSection = () => (
           </h1>
         </FadeIn>
 
+        <FadeIn direction="up" offset={30} duration={0.8} delay={0.5}>
+          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent" />
+        </FadeIn>
+
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
           <p className="text-fluid-xl mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-cream/90">
             Niezłomni wędrowcy zdobyli pełną{' '}

@@ -48,11 +48,11 @@ const WhyChooseSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full border-4 border-cream/20 bg-gradient-to-br from-forest-700 to-earth-700 shadow-vintage-xl"
+              className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full border-4 border-cream/20 bg-gradient-to-br from-forest-700 to-earth-700 shadow-[0_10px_30px_rgba(0,0,0,0.2),0_4px_10px_rgba(0,0,0,0.15)]"
             >
               {/* Żarówka - ikona pomysłu/inspiracji */}
               <svg
-                className="h-8 w-8 text-cream"
+                className="h-8 w-8 text-cream/80"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -68,11 +68,11 @@ const WhyChooseSection = () => {
             <motion.h2 className="section-title mb-3">
               <span className="text-gradient">Geneza Szlaku</span>
             </motion.h2>
-            <div className="mx-auto mb-2 h-0.5 w-16 bg-gradient-to-r from-transparent via-forest-700 to-transparent" />
+            <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
           </motion.div>
 
           <motion.div variants={fadeInUp} className="mx-auto max-w-5xl">
-            <div className="relative p-8 lg:p-12">
+            <div className="relative px-4 pb-8 pt-0 sm:px-8 lg:px-12 lg:pb-12">
               <div className="space-y-10 text-lg leading-relaxed text-mountain-700">
                 <div className="text-center">
                   <p className="mx-auto max-w-4xl text-xl font-medium leading-relaxed md:text-2xl">
@@ -84,7 +84,7 @@ const WhyChooseSection = () => {
                   </p>
                 </div>
 
-                <blockquote className="mx-auto my-12 max-w-3xl rounded-r-lg border-l-4 border-forest-700 bg-forest-50/50 py-8 pl-10">
+                <blockquote className="mx-auto my-12 max-w-3xl rounded-r-lg border-l-4 border-forest-700 bg-forest-50/50 py-6 pl-4 pr-4 sm:py-8 sm:pl-10 sm:pr-8">
                   <p className="text-justify text-lg italic leading-relaxed text-forest-800 md:text-xl">
                     Wprawdzie Sudety zostały przeze mnie przebyte już
                     czterokrotnie,
