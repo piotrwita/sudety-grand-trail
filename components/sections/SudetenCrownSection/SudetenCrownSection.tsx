@@ -1,14 +1,14 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
-import { Section } from './Section';
-import { sudetenRanges, koronaGorPolski } from './SudetenCrownSection/data';
-import { MountainCardsView } from './SudetenCrownSection/MountainCardsView';
-import { TrailPlannerView } from './SudetenCrownSection/TrailPlannerView';
+import { Section } from '../Section';
+import { sudetenRanges, koronaGorPolski } from './data';
+import { MountainCardsView } from './MountainCardsView';
+import { TrailPlannerView } from './TrailPlannerView';
+import { FadeIn, ScaleIn } from '@/components/motion';
 
-const SudetenCrownSection = () => {
+export const SudetenCrownSection = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'planner'>('grid');
   const [selectedPeaks, setSelectedPeaks] = useState<number[]>([]);
 
@@ -28,11 +28,12 @@ const SudetenCrownSection = () => {
     <Section className="bg-forest-50 py-24" ariaLabel="Sekcja Korona Sudetów">
       <div className="fluid-container">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.8 }}
+        <FadeIn
+          direction="up"
+          offset={50}
+          duration={0.8}
+          inView={true}
+          inViewMargin="-100px"
           className="relative mb-16 text-center"
         >
           {/* Subtle Logo Watermark */}
@@ -45,15 +46,18 @@ const SudetenCrownSection = () => {
               className="h-full w-full rounded-full object-cover"
             />
           </div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <ScaleIn
+            initialScale={0.5}
+            finalScale={1}
+            initialOpacity={0}
+            finalOpacity={1}
+            duration={0.6}
+            delay={0.2}
+            inView={true}
             className="section-icon-badge mb-8 bg-gradient-to-br from-yellow-400 to-yellow-600"
           >
             <span className="text-2xl">👑</span>
-          </motion.div>
+          </ScaleIn>
 
           <h2 className="section-title mb-6">
             <span className="text-gradient">Korona Sudetów</span>
@@ -91,12 +95,10 @@ const SudetenCrownSection = () => {
               </button>
             </div>
           </div>
-        </motion.div>
+        </FadeIn>
 
-        {/* Grid View */}
         {viewMode === 'grid' && <MountainCardsView ranges={sudetenRanges} />}
 
-        {/* Trip Planner View */}
         {viewMode === 'planner' && (
           <TrailPlannerView
             ranges={sudetenRanges}
@@ -107,42 +109,46 @@ const SudetenCrownSection = () => {
           />
         )}
 
-        {/* Summary Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+        <FadeIn
+          direction="up"
+          offset={30}
+          duration={0.8}
+          delay={0.3}
+          inView={true}
           className="mt-16 grid gap-6 md:grid-cols-4"
         >
-          <div className="card-vintage p-6 text-center">
-            <div className="stats-number mb-2 text-3xl">24</div>
-            <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
-              Pasma
-            </div>
-          </div>
-          <div className="card-vintage p-6 text-center">
-            <div className="stats-number mb-2 text-3xl">1603</div>
-            <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
-              Najwyższy (Śnieżka)
-            </div>
-          </div>
-          <div className="card-vintage p-6 text-center">
-            <div className="stats-number mb-2 text-3xl">714</div>
-            <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
-              Najniższy (Lázek)
-            </div>
-          </div>
-          <div className="card-vintage p-6 text-center">
-            <div className="stats-number mb-2 text-3xl">889</div>
-            <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
-              Różnica wysokości
-            </div>
-          </div>
-        </motion.div>
+          <SummaryStats />
+        </FadeIn>
       </div>
     </Section>
   );
 };
 
-export default SudetenCrownSection;
+const SummaryStats = () => (
+  <>
+    <div className="card-vintage p-6 text-center">
+      <div className="stats-number mb-2 text-3xl">24</div>
+      <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
+        Pasma
+      </div>
+    </div>
+    <div className="card-vintage p-6 text-center">
+      <div className="stats-number mb-2 text-3xl">1603</div>
+      <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
+        Najwyższy (Śnieżka)
+      </div>
+    </div>
+    <div className="card-vintage p-6 text-center">
+      <div className="stats-number mb-2 text-3xl">714</div>
+      <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
+        Najniższy (Lázek)
+      </div>
+    </div>
+    <div className="card-vintage p-6 text-center">
+      <div className="stats-number mb-2 text-3xl">889</div>
+      <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
+        Różnica wysokości
+      </div>
+    </div>
+  </>
+);
