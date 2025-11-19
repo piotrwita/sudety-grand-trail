@@ -8,3 +8,4 @@ export { ClockIcon } from './ClockIcon';
 export { LocationIcon } from './LocationIcon';
 export { FlagIcon } from './FlagIcon';
 export { CheckIcon } from './CheckIcon';
+export { XIcon } from './XIcon';
