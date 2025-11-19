@@ -84,7 +84,7 @@ export const TrailPlannerView = ({
             KGP Sudety (16)
           </button>
           <button onClick={handleQuickSelectAll} className="btn-secondary">
-            Pełna Korona (24)
+            Pełna Korona (22)
           </button>
           <button
             onClick={handleClear}

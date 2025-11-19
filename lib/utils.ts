@@ -1,3 +1,4 @@
+import React from 'react';
 import type { ClassValue } from 'clsx';
 
 import { clsx } from 'clsx';
@@ -13,3 +14,23 @@ import { twMerge } from 'tailwind-merge';
 export const cn = (...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs));
 };
+/**
+ * Utility for merging multiple refs into a single ref callback.
+ * @example
+ * const ref = useRef(null);
+ * const mergedRef = mergeRefs(ref, ref2, ref3);
+ * <div ref={mergedRef} />
+ */
+export function mergeRefs<T = any>(
+  ...refs: (React.MutableRefObject<T> | React.LegacyRef<T> | undefined | null)[]
+): React.RefCallback<T> {
+  return (value) => {
+    refs.forEach((ref) => {
+      if (typeof ref === 'function') {
+        ref(value);
+      } else if (ref != null) {
+        (ref as React.MutableRefObject<T | null>).current = value;
+      }
+    });
+  };
+}
