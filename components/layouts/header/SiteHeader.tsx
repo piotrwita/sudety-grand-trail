@@ -1,28 +1,27 @@
-'use client';
-
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { siteConfig } from '@/config/site';
 import { DesktopNavigation } from './DesktopNavigation';
 import { MobileNavigation } from './MobileNavigation';
-import { LogoImage } from '../../LogoImage';
+import { LogoImage } from '@/components/LogoImage';
+import { FadeIn } from '@/components/motion/FadeIn';
 
 export const SiteHeader = () => {
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6 }}
+    <FadeIn
+      direction="down"
+      duration={0.6}
+      offset={100}
       className="fixed inset-x-0 top-0 z-50 border-b border-forest-600 bg-forest-800/95"
+      data-scroll-lock-fill-gap
     >
-      <div className="fluid-container flex h-16 items-center justify-between">
+      <nav className="fluid-container flex h-16 items-center justify-between">
         <HeaderLogo />
 
         <DesktopNavigation />
 
         <MobileNavigation />
-      </div>
-    </motion.nav>
+      </nav>
+    </FadeIn>
   );
 };
 

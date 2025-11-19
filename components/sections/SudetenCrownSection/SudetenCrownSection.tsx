@@ -7,9 +7,17 @@ import { sudetenRanges, koronaGorPolski } from './data';
 import { MountainCardsView } from './MountainCardsView';
 import { TrailPlannerView } from './TrailPlannerView';
 import { FadeIn, ScaleIn } from '@/components/motion';
+import { SummaryStats } from './SummaryStats';
+
+const ViewModes = {
+  Grid: 'grid',
+  Planner: 'planner',
+} as const;
+
+type ViewMode = (typeof ViewModes)[keyof typeof ViewModes];
 
 export const SudetenCrownSection = () => {
-  const [viewMode, setViewMode] = useState<'grid' | 'planner'>('grid');
+  const [viewMode, setViewMode] = useState<ViewMode>(ViewModes.Grid);
   const [selectedPeaks, setSelectedPeaks] = useState<number[]>([]);
 
   const togglePeak = (rangeId: number) => {
@@ -97,9 +105,11 @@ export const SudetenCrownSection = () => {
           </div>
         </FadeIn>
 
-        {viewMode === 'grid' && <MountainCardsView ranges={sudetenRanges} />}
+        {viewMode === ViewModes.Grid && (
+          <MountainCardsView ranges={sudetenRanges} />
+        )}
 
-        {viewMode === 'planner' && (
+        {viewMode === ViewModes.Planner && (
           <TrailPlannerView
             ranges={sudetenRanges}
             kgpPeaks={koronaGorPolski}
@@ -123,32 +133,3 @@ export const SudetenCrownSection = () => {
     </Section>
   );
 };
-
-const SummaryStats = () => (
-  <>
-    <div className="card-vintage p-6 text-center">
-      <div className="stats-number mb-2 text-3xl">24</div>
-      <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
-        Pasma
-      </div>
-    </div>
-    <div className="card-vintage p-6 text-center">
-      <div className="stats-number mb-2 text-3xl">1603</div>
-      <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
-        Najwyższy (Śnieżka)
-      </div>
-    </div>
-    <div className="card-vintage p-6 text-center">
-      <div className="stats-number mb-2 text-3xl">714</div>
-      <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
-        Najniższy (Lázek)
-      </div>
-    </div>
-    <div className="card-vintage p-6 text-center">
-      <div className="stats-number mb-2 text-3xl">889</div>
-      <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
-        Różnica wysokości
-      </div>
-    </div>
-  </>
-);
