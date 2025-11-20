@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { Section } from '../Section';
 import { sudetenRanges, koronaGorPolski } from './data';
 import { MountainCardsView } from './MountainCardsView';
@@ -40,20 +39,8 @@ export const SudetenCrownSection = () => {
           direction="up"
           offset={50}
           duration={0.8}
-          inView={true}
-          inViewMargin="-100px"
           className="relative mb-16 text-center"
         >
-          {/* Subtle Logo Watermark */}
-          <div className="absolute right-0 top-0 hidden h-32 w-32 overflow-hidden rounded-full opacity-5 lg:block">
-            <Image
-              src="/images/logo.png"
-              alt="SGT Logo"
-              width={128}
-              height={128}
-              className="h-full w-full rounded-full object-cover"
-            />
-          </div>
           <ScaleIn
             initialScale={0.5}
             finalScale={1}
@@ -61,7 +48,6 @@ export const SudetenCrownSection = () => {
             finalOpacity={1}
             duration={0.6}
             delay={0.2}
-            inView={true}
             className="section-icon-badge mb-8 bg-gradient-to-br from-yellow-400 to-yellow-600"
           >
             <span className="text-2xl">👑</span>
@@ -82,9 +68,9 @@ export const SudetenCrownSection = () => {
           <div className="mb-8 flex justify-center">
             <div className="flex rounded-xl bg-forest-100 p-1">
               <button
-                onClick={() => setViewMode('grid')}
+                onClick={() => setViewMode(ViewModes.Grid)}
                 className={`rounded-lg px-6 py-2 text-sm font-bold uppercase tracking-wide transition-all ${
-                  viewMode === 'grid'
+                  viewMode === ViewModes.Grid
                     ? 'bg-forest-700 text-cream shadow-vintage'
                     : 'text-forest-700 hover:bg-forest-200'
                 }`}
@@ -92,9 +78,9 @@ export const SudetenCrownSection = () => {
                 Siatka
               </button>
               <button
-                onClick={() => setViewMode('planner')}
+                onClick={() => setViewMode(ViewModes.Planner)}
                 className={`rounded-lg px-6 py-2 text-sm font-bold uppercase tracking-wide transition-all ${
-                  viewMode === 'planner'
+                  viewMode === ViewModes.Planner
                     ? 'bg-forest-700 text-cream shadow-vintage'
                     : 'text-forest-700 hover:bg-forest-200'
                 }`}
