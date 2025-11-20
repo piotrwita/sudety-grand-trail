@@ -10,6 +10,7 @@ import {
   MorphingDialogContainer,
 } from '@/components/motion/MorphingDialog';
 import { useIsMobile } from '@/hooks/useIsMobile';
+import { useDebounce } from '@/hooks/useDebounce';
 import { cn } from '@/lib/utils';
 import { getRankColor, getCountryFlag, isKgpPeak } from './utils';
 import { koronaGorPolski, type SudetenRange } from './data';
@@ -44,17 +45,18 @@ export const MountainCardsView = ({ ranges }: MountainCardsViewProps) => {
 
   // Filter controls
   const [searchTerm, setSearchTerm] = useState('');
+  const debouncedSearchTerm = useDebounce(searchTerm, 300);
   const [showKgpOnly, setShowKgpOnly] = useState(false);
 
   const isMobile = useIsMobile();
 
   const filteredRanges = useMemo(() => {
     return ranges.filter((range) => {
-      const searchLower = searchTerm.toLowerCase();
+      const searchLower = debouncedSearchTerm.toLowerCase();
 
       // Match against name, peak name, or country
       const matchesSearch =
-        searchTerm === '' ||
+        debouncedSearchTerm === '' ||
         range.name.toLowerCase().includes(searchLower) ||
         range.peak.toLowerCase().includes(searchLower) ||
         range.country.toLowerCase().includes(searchLower);
@@ -65,7 +67,7 @@ export const MountainCardsView = ({ ranges }: MountainCardsViewProps) => {
 
       return matchesSearch && matchesKgp;
     });
-  }, [ranges, searchTerm, showKgpOnly]);
+  }, [ranges, debouncedSearchTerm, showKgpOnly]);
 
   const handleClearFilters = () => {
     setSearchTerm('');
