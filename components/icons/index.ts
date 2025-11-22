@@ -9,3 +9,8 @@ export { LocationIcon } from './LocationIcon';
 export { FlagIcon } from './FlagIcon';
 export { CheckIcon } from './CheckIcon';
 export { XIcon } from './XIcon';
+export { CheckWithBorderIcon as BadgeIcon } from './CheckWithBorderIcon';
+export { LightningIcon } from './LightningIcon';
+export { CalendarIcon } from './CalendarIcon';
+export { StarIcon } from './StarIcon';
+export { RightArrowIcon } from './RightArrowIcon';

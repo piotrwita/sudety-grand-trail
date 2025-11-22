@@ -14,7 +14,7 @@ export const MobileNavigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="flex gap-3 md:hidden">
+    <div className="flex gap-3 lg:hidden">
       <SocialLinkList className="flex gap-3 border-r border-forest-600 pr-3" />
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -33,7 +33,7 @@ export const MobileNavigation = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 top-16 z-40 bg-forest-900/50 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 top-16 z-40 bg-forest-900/50 backdrop-blur-sm"
               onClick={() => setIsMenuOpen(false)}
               aria-label="Close menu"
             />
@@ -44,7 +44,7 @@ export const MobileNavigation = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="via-forest-850 fixed left-0 right-0 top-16 z-50 border-b border-forest-700/40 bg-gradient-to-b from-forest-800 to-forest-900 p-6 shadow-2xl md:hidden"
+              className="via-forest-850 fixed left-0 right-0 top-16 z-50 border-b border-forest-700/40 bg-gradient-to-b from-forest-800 to-forest-900 p-6 shadow-2xl"
             >
               <ul className="flex flex-col items-center gap-3">
                 {siteConfig.navigation.map((item, idx) => (

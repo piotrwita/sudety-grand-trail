@@ -144,7 +144,6 @@
   /* Section Icon Badge - Enhanced Style with gradient border and glow */
   .section-icon-badge {
     @apply relative inline-flex h-20 w-20 items-center justify-center rounded-full;
-    @apply transition-all duration-300;
     @apply shadow-[0_10px_30px_rgba(0,0,0,0.2),0_4px_10px_rgba(0,0,0,0.15),inset_0_2px_4px_rgba(255,255,255,0.1),inset_0_-2px_4px_rgba(0,0,0,0.2)];
   }
 

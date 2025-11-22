@@ -39,7 +39,7 @@ export const DesktopNavigation = () => {
   }, [pathname, underlineLeft, underlineWidth]);
 
   return (
-    <div className="hidden md:flex md:items-center md:justify-end md:gap-6 lg:gap-8">
+    <div className="hidden lg:flex lg:items-center lg:justify-end lg:gap-8">
       <ul className="relative flex gap-6 lg:gap-8">
         {siteConfig.navigation.map((item, index) => {
           const isActive = pathname === item.href;

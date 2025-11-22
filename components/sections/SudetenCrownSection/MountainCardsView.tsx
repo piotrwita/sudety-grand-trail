@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import Image from 'next/image';
 import { FadeIn } from '@/components/motion';
 import {
   MorphingDialog,
@@ -107,7 +106,6 @@ export const MountainCardsView = ({ ranges }: MountainCardsViewProps) => {
             );
           }
 
-          // Desktop View: Modal/Dialog Cards
           return (
             <DesktopMountainCard key={range.id} range={range} isKgp={isKgp} />
           );
@@ -267,7 +265,7 @@ const MountainCardVisuals = ({ range, isKgp }: MountainCardProps) => (
 const MountainInfo = ({ range }: { range: SudetenRange }) => (
   <div className="flex min-w-0 flex-col justify-center md:block">
     <div className="hidden text-4xl md:mb-2 md:block">🏔️</div>
-    <h3 className="truncate font-display text-base font-bold uppercase leading-tight text-forest-800 md:mb-2 md:text-lg md:normal-case">
+    <h3 className="font-display text-base font-bold uppercase leading-tight text-forest-800 md:mb-2 md:text-lg md:normal-case">
       {range.name}
     </h3>
     <p className="truncate text-sm font-medium text-mountain-600 md:mb-4 md:font-bold">
