@@ -1,5 +1,5 @@
-import HallOfFameStats from '@/components/HallOfFameStats';
-import PreTrailRegistration from '@/components/PreTrailRegistration';
+import { HallOfFameStats } from '@/components/HallOfFameStats';
+import { PreTrailRegistration } from '@/components/PreTrailRegistration';
 import HallOfFameList from '@/components/HallOfFameList';
 import SubmissionForm from '@/components/SubmissionForm';
 import { FadeIn, ScaleIn } from '@/components/motion';
@@ -32,15 +32,15 @@ const HallOfFameHeroSection = () => (
     <div className="absolute inset-0 bg-gradient-to-br from-forest-900/95 via-earth-900/95 to-forest-800/95" />
     <div className="gradient-mesh-overlay absolute inset-0 opacity-30" />
     <VintageMountainsBackground className="opacity-15" />
-    
+
     {/* Epic Conqueror Background Elements */}
     <div className="absolute inset-0">
       <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-yellow-500/5 to-transparent" />
       <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-yellow-500/5 to-transparent" />
       {/* Smooth bottom glow - no hard edges */}
-      <div className="absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial from-yellow-400/8 via-yellow-400/4 to-transparent blur-3xl" />
+      <div className="from-yellow-400/8 via-yellow-400/4 absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial to-transparent blur-3xl" />
     </div>
-    
+
     {/* Radial glow effect */}
     <div className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-yellow-400/10 via-yellow-400/5 to-transparent blur-3xl" />
 
@@ -79,8 +79,10 @@ const HallOfFameHeroSection = () => (
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
           <p className="text-fluid-xl mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-cream/90">
             Niezłomni wędrowcy zdobyli pełną{' '}
-            <span className="font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-accent bg-clip-text text-transparent">Koronę Sudetów</span>. 
-            Przeszli 900 kilometrów przez 22 pasma górskie.
+            <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-accent bg-clip-text font-bold text-transparent">
+              Koronę Sudetów
+            </span>
+            . Przeszli 900 kilometrów przez 22 pasma górskie.
             <br />
             <span className="mt-4 block italic text-cream/90">
               Ty możesz dołączyć do elitarnego grona zdobywców!
