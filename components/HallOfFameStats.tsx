@@ -126,121 +126,118 @@ export const HallOfFameStats = () => {
               inView={true}
               inViewMargin="-50px"
               whileHover={hoverVariants}
-              className={`group relative overflow-hidden rounded-2xl border-4 ${card.borderColor} bg-gradient-to-br ${card.bgGradient} p-5 text-center shadow-[0_8px_16px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.3)] transition-shadow duration-300 hover:shadow-[0_12px_24px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.4)]`}
+              className="group"
             >
-              {/* Decorative Corner Elements */}
-              <div
-                className={`absolute left-0 top-0 h-16 w-16 bg-gradient-to-br ${card.gradient} opacity-10 blur-2xl`}
-              />
-              <div
-                className={`absolute bottom-0 right-0 h-20 w-20 bg-gradient-to-tl ${card.gradient} opacity-10 blur-2xl`}
-              />
-
-              {/* Icon or Badge - Right Top Corner */}
-              {card.id === 'first' ? (
+              <div className="card-vintage relative h-full p-6 text-center">
+                {/* Subtle gradient overlay */}
                 <div
-                  className={`absolute right-3 top-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${card.gradient} font-display text-lg font-black text-white shadow-[0_8px_16px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.3)] drop-shadow-lg transition-transform duration-300 group-hover:scale-110`}
-                >
-                  #1
-                </div>
-              ) : (
-                <div
-                  className={`absolute right-3 top-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${card.gradient} text-white shadow-[0_8px_16px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110`}
-                >
-                  <div className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
-                    {card.icon}
-                  </div>
-                </div>
-              )}
+                  className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${card.bgGradient} opacity-30`}
+                />
 
-              {/* Content */}
-              <div className="pt-2">
-                {/* Value */}
-                {card.id === 'fastest' && typeof card.value === 'string' ? (
+                {/* Icon or Badge - Top Right Corner */}
+                {card.id === 'first' ? (
                   <div
-                    className={`mb-2 font-display font-black uppercase ${card.valueColor}`}
-                    style={{
-                      minHeight: 'clamp(2.2rem, 5.5vw, 4.5rem)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
+                    className={`absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${card.gradient} font-display text-sm font-black text-white shadow-vintage transition-transform duration-300 group-hover:scale-110`}
                   >
-                    <div className="flex items-baseline justify-center gap-1 leading-none">
-                      {card.value.split(' ').map((part, idx) => {
-                        const isNumber = /^\d+$/.test(part);
-                        return (
-                          <span
-                            key={idx}
-                            className={
-                              isNumber
-                                ? 'text-4xl md:text-5xl'
-                                : 'text-xl md:text-2xl'
-                            }
-                          >
-                            {part}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  </div>
-                ) : card.id === 'first' ? (
-                  <div
-                    className={`mb-2 font-display font-bold ${card.valueColor}`}
-                    style={{
-                      fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
-                      lineHeight: '1.3',
-                      minHeight: 'clamp(2.2rem, 5.5vw, 4.5rem)',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      textAlign: 'center',
-                    }}
-                  >
-                    {typeof card.value === 'string'
-                      ? card.value
-                          .split(' ')
-                          .map((part, idx) => <span key={idx}>{part}</span>)
-                      : card.value}
+                    #1
                   </div>
                 ) : (
                   <div
-                    className={`mb-2 font-display font-black uppercase ${card.valueColor}`}
-                    style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}
+                    className={`absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${card.gradient} text-white shadow-vintage transition-transform duration-300 group-hover:scale-110`}
                   >
-                    {card.value}
+                    {card.icon}
                   </div>
                 )}
 
-                {/* Title */}
-                <h3
-                  className={`mb-1 text-base font-bold uppercase tracking-wide ${card.textColor} transition-colors duration-300`}
-                >
-                  {card.title}
-                </h3>
+                {/* Content */}
+                <div className="relative z-10 pt-2">
+                  {/* Value */}
+                  {card.id === 'fastest' && typeof card.value === 'string' ? (
+                    <div
+                      className={`mb-3 font-display font-black uppercase ${card.valueColor}`}
+                      style={{
+                        minHeight: 'clamp(2.2rem, 5.5vw, 4.5rem)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <div className="flex items-baseline justify-center gap-1 leading-none">
+                        {card.value.split(' ').map((part, idx) => {
+                          const isNumber = /^\d+$/.test(part);
+                          return (
+                            <span
+                              key={idx}
+                              className={
+                                isNumber
+                                  ? 'text-4xl md:text-5xl'
+                                  : 'text-xl md:text-2xl'
+                              }
+                            >
+                              {part}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ) : card.id === 'first' ? (
+                    <div
+                      className={`mb-3 font-display font-bold ${card.valueColor}`}
+                      style={{
+                        fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
+                        lineHeight: '1.3',
+                        minHeight: 'clamp(2.2rem, 5.5vw, 4.5rem)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {typeof card.value === 'string'
+                        ? card.value
+                            .split(' ')
+                            .map((part, idx) => <span key={idx}>{part}</span>)
+                        : card.value}
+                    </div>
+                  ) : (
+                    <div
+                      className={`mb-3 font-display font-black uppercase ${card.valueColor}`}
+                      style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}
+                    >
+                      {card.value}
+                    </div>
+                  )}
 
-                {/* Description */}
-                {card.id !== 'first' && (
-                  <p
-                    className={`text-xs font-medium leading-relaxed ${card.textColor}/80`}
+                  {/* Title */}
+                  <h3
+                    className={`mb-2 text-base font-bold uppercase tracking-wide ${card.textColor} transition-colors duration-300`}
                   >
-                    {card.description}
-                  </p>
-                )}
+                    {card.title}
+                  </h3>
 
-                {/* Subtitle for first card */}
-                {card.id === 'first' && (
-                  <p className="mt-1 text-xs font-medium text-mountain-500">
-                    {card.description}
-                  </p>
-                )}
+                  {/* Description */}
+                  {card.id !== 'first' && (
+                    <p
+                      className={`text-sm font-medium leading-relaxed ${card.textColor}/80`}
+                    >
+                      {card.description}
+                    </p>
+                  )}
+
+                  {/* Subtitle for first card */}
+                  {card.id === 'first' && (
+                    <p className="mt-1 text-sm font-medium text-mountain-600">
+                      {card.description}
+                    </p>
+                  )}
+                </div>
+
+                {/* Bottom Gradient Accent */}
+                <div
+                  className={`absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r ${card.gradient} origin-left scale-x-0 transform transition-transform duration-300 group-hover:scale-x-100`}
+                />
               </div>
-
-              {/* Bottom Gradient Accent */}
-              <div
-                className={`absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r ${card.gradient} origin-left scale-x-0 transform transition-transform duration-300 group-hover:scale-x-100`}
-              />
             </FadeIn>
           ))}
         </div>
@@ -255,47 +252,87 @@ export const HallOfFameStats = () => {
           className="mt-16 text-center"
         >
           <h3 className="section-title mb-8 text-2xl">Osiągnięcia Zdobywców</h3>
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-8">
             {/* 22 pasma */}
-            <div className="group relative flex h-24 w-24 flex-col items-center justify-center rounded-full border-4 border-forest-700/40 bg-gradient-to-br from-forest-600 via-forest-700 to-forest-800 shadow-[0_8px_16px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-110 hover:shadow-[0_12px_24px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.4)]">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent opacity-50" />
-              <span className="relative z-10 mb-1 text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+            <div className="group relative flex h-28 w-28 flex-col items-center justify-center transition-all duration-300 hover:scale-110">
+              {/* Badge base with metallic effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-forest-600 via-forest-700 to-forest-800 shadow-[0_12px_24px_rgba(47,79,62,0.4),inset_0_4px_8px_rgba(255,255,255,0.15),inset_0_-4px_8px_rgba(0,0,0,0.4)]" />
+              
+              {/* Metallic shine effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 via-transparent to-transparent opacity-60" />
+              <div className="absolute top-2 left-1/2 h-8 w-8 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/40 to-transparent blur-sm" />
+              
+              {/* Border with depth */}
+              <div className="absolute inset-0 rounded-full border-4 border-forest-800/60 shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)]" />
+              
+              {/* Content */}
+              <span className="relative z-10 mb-1 text-3xl drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
                 🏔️
               </span>
-              <span className="relative z-10 text-xs font-bold text-cream drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+              <span className="relative z-10 text-xs font-bold uppercase tracking-wide text-cream drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
                 22 pasma
               </span>
             </div>
 
             {/* 16 KGP */}
-            <div className="group relative flex h-24 w-24 flex-col items-center justify-center rounded-full border-4 border-yellow-500/40 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 shadow-[0_8px_16px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-110 hover:shadow-[0_12px_24px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.4),inset_0_-2px_4px_rgba(0,0,0,0.4)]">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/15 to-transparent opacity-60" />
-              <span className="relative z-10 mb-1 text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+            <div className="group relative flex h-28 w-28 flex-col items-center justify-center transition-all duration-300 hover:scale-110">
+              {/* Badge base with golden metallic effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 shadow-[0_12px_24px_rgba(250,204,21,0.5),inset_0_4px_8px_rgba(255,255,255,0.25),inset_0_-4px_8px_rgba(0,0,0,0.4)]" />
+              
+              {/* Golden metallic shine */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-70" />
+              <div className="absolute top-2 left-1/2 h-8 w-8 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/50 to-transparent blur-sm" />
+              
+              {/* Border with depth */}
+              <div className="absolute inset-0 rounded-full border-4 border-yellow-700/70 shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)]" />
+              
+              {/* Content */}
+              <span className="relative z-10 mb-1 text-3xl drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
                 👑
               </span>
-              <span className="relative z-10 text-xs font-bold text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+              <span className="relative z-10 text-xs font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
                 16 KGP
               </span>
             </div>
 
             {/* 900 km */}
-            <div className="group relative flex h-24 w-24 flex-col items-center justify-center rounded-full border-4 border-earth-700/40 bg-gradient-to-br from-earth-600 via-earth-700 to-earth-800 shadow-[0_8px_16px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-110 hover:shadow-[0_12px_24px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.4)]">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent opacity-50" />
-              <span className="relative z-10 mb-1 text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+            <div className="group relative flex h-28 w-28 flex-col items-center justify-center transition-all duration-300 hover:scale-110">
+              {/* Badge base with bronze metallic effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-earth-600 via-earth-700 to-earth-800 shadow-[0_12px_24px_rgba(107,68,35,0.4),inset_0_4px_8px_rgba(255,255,255,0.15),inset_0_-4px_8px_rgba(0,0,0,0.4)]" />
+              
+              {/* Bronze metallic shine */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 via-transparent to-transparent opacity-60" />
+              <div className="absolute top-2 left-1/2 h-8 w-8 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/40 to-transparent blur-sm" />
+              
+              {/* Border with depth */}
+              <div className="absolute inset-0 rounded-full border-4 border-earth-800/60 shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)]" />
+              
+              {/* Content */}
+              <span className="relative z-10 mb-1 text-3xl drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
                 🥾
               </span>
-              <span className="relative z-10 text-xs font-bold text-cream drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+              <span className="relative z-10 text-xs font-bold uppercase tracking-wide text-cream drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
                 900 km
               </span>
             </div>
 
             {/* 30k m up */}
-            <div className="group relative flex h-24 w-24 flex-col items-center justify-center rounded-full border-4 border-accent/40 bg-gradient-to-br from-accent via-accent/90 to-accent/80 shadow-[0_8px_16px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-110 hover:shadow-[0_12px_24px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.4)]">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent opacity-50" />
-              <span className="relative z-10 mb-1 text-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+            <div className="group relative flex h-28 w-28 flex-col items-center justify-center transition-all duration-300 hover:scale-110">
+              {/* Badge base with copper metallic effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent via-accent/90 to-accent/80 shadow-[0_12px_24px_rgba(201,78,43,0.5),inset_0_4px_8px_rgba(255,255,255,0.2),inset_0_-4px_8px_rgba(0,0,0,0.4)]" />
+              
+              {/* Copper metallic shine */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/35 via-transparent to-transparent opacity-65" />
+              <div className="absolute top-2 left-1/2 h-8 w-8 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/45 to-transparent blur-sm" />
+              
+              {/* Border with depth */}
+              <div className="absolute inset-0 rounded-full border-4 border-accent-700/70 shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)]" />
+              
+              {/* Content */}
+              <span className="relative z-10 mb-1 text-3xl drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
                 ⬆️
               </span>
-              <span className="relative z-10 text-xs font-bold text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+              <span className="relative z-10 text-xs font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
                 30k m
               </span>
             </div>
