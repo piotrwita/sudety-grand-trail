@@ -2,7 +2,6 @@ import {
   HomeHeroSection,
   WhyChooseSection,
   AboutProjectSection,
-  MotivationSection,
 } from '@/components/sections';
 import { pageMetadata } from '@/config/metadata';
 import type { Metadata } from 'next';
@@ -15,7 +14,6 @@ export default function Home() {
       <HomeHeroSection />
       <WhyChooseSection />
       <AboutProjectSection />
-      <MotivationSection />
     </>
   );
 }

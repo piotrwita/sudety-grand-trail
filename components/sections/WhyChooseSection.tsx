@@ -42,13 +42,13 @@ const WhyChooseSection = () => {
           variants={staggerContainer}
           className="mb-8"
         >
-          <motion.div variants={fadeInUp} className="mb-8 text-center">
+          <motion.div variants={fadeInUp} className="relative mb-16 text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="section-icon-badge mb-6 bg-gradient-to-br from-forest-700 to-earth-700"
+              className="section-icon-badge mb-8 bg-gradient-to-br from-forest-700 to-earth-700"
             >
               {/* Żarówka - ikona pomysłu/inspiracji */}
               <svg
@@ -66,46 +66,9 @@ const WhyChooseSection = () => {
               </svg>
             </motion.div>
             <motion.h2 className="section-title mb-6">
-              <span className="text-gradient">Geneza Szlaku</span>
+              <span className="text-gradient">Dlaczego ten szlak</span>
             </motion.h2>
             <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-          </motion.div>
-
-          <motion.div variants={fadeInUp} className="mx-auto max-w-5xl">
-            <div className="relative px-4 pb-8 pt-0 sm:px-8 lg:px-12 lg:pb-12">
-              <div className="space-y-10 text-lg leading-relaxed text-mountain-700">
-                <div className="text-center">
-                  <p className="mx-auto max-w-4xl text-xl font-medium leading-relaxed md:text-2xl">
-                    <span className="bg-gradient-to-r from-forest-700 via-accent to-earth-700 bg-clip-text font-bold text-transparent drop-shadow-sm">
-                      SUDETY GRAND TRAIL
-                    </span>{' '}
-                    to autorski projekt długodystansowego szlaku górskiego,
-                    który narodził się z pasji, doświadczenia i… niedosytu.
-                  </p>
-                </div>
-
-                <blockquote className="mx-auto my-12 max-w-3xl rounded-r-lg border-l-4 border-forest-700 bg-forest-50/50 py-6 pl-4 pr-4 sm:py-8 sm:pl-10 sm:pr-8">
-                  <p className="text-justify text-lg italic leading-relaxed text-forest-800 md:text-xl">
-                    Wprawdzie Sudety zostały przeze mnie przebyte już
-                    czterokrotnie,
-                    <br />
-                    żaden z istniejących szlaków nie poprowadził mnie
-                    kompleksowo
-                    <br />
-                    przez to niezwykle różnorodne pasmo.
-                  </p>
-                </blockquote>
-
-                <p className="text-center text-xl font-medium leading-relaxed md:text-2xl">
-                  Właśnie dlatego powstała idea stworzenia nowej, kompletnej
-                  trasy,
-                  <br />
-                  czyli szlaku, który stanie się nie tylko zwieńczeniem moich
-                  sudeckich wędrówek, ale i nowym wyzwaniem dla wszystkich
-                  miłośników gór.
-                </p>
-              </div>
-            </div>
           </motion.div>
         </motion.div>
 
