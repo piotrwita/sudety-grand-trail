@@ -1,5 +1,20 @@
 import { siteRoutes } from './site-routes';
 
+const socialLinks = {
+  map: {
+    href: 'https://mapy.com/s/barusofola',
+    label: 'Mapa',
+    external: true,
+    icon: 'map',
+  },
+  facebook: {
+    href: 'https://www.facebook.com/SudetyGrandTrail',
+    label: 'Facebook',
+    external: true,
+    icon: 'facebook',
+  },
+} as const;
+
 export const siteConfig = {
   name: 'Sudety Grand Trail',
   description: 'Sudety Grand Trail - Trail running event',
@@ -15,20 +30,8 @@ export const siteConfig = {
     { href: siteRoutes.hallOfFame, label: 'Hall of Fame' },
     { href: siteRoutes.about, label: 'O Mnie' },
   ],
-  socialLinks: [
-    {
-      href: 'https://mapy.com/s/barusofola',
-      label: 'Mapa',
-      external: true,
-      icon: 'map',
-    },
-    {
-      href: 'https://www.facebook.com/SudetyGrandTrail',
-      label: 'Facebook',
-      external: true,
-      icon: 'facebook',
-    },
-  ],
+  socialLinks: Object.values(socialLinks),
+  links: socialLinks,
 } as const;
 
 export type SiteConfig = typeof siteConfig;

@@ -22,7 +22,7 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(
     <section
       ref={ref}
       className={cn(
-        'full-width relative flex min-h-screen items-center justify-center overflow-hidden pt-12',
+        'full-width relative flex min-h-screen items-center justify-center overflow-hidden py-12',
         className
       )}
       aria-label={ariaLabel}

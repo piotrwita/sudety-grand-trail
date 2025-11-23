@@ -15,3 +15,4 @@ export { CalendarIcon } from './CalendarIcon';
 export { StarIcon } from './StarIcon';
 export { RightArrowIcon } from './RightArrowIcon';
 export { InfoIcon } from './InfoIcon';
+export { LightbulbIcon } from './LightbulbIcon';

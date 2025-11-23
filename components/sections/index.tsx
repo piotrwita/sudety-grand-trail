@@ -1,6 +1,6 @@
 export { HomeHeroSection } from './HomeHeroSection';
-export { default as WhyChooseSection } from './WhyChooseSection';
-export { default as AboutProjectSection } from './AboutProjectSection';
+export { WhyChooseSection } from './WhyChooseSection';
+export { AboutProjectSection } from './AboutProjectSection';
 export { SudetenCrownSection } from './SudetenCrownSection/SudetenCrownSection';
 export { default as MotivationSection } from './MotivationSection';
 export { TrailMapSection } from './TrailMapSection';
