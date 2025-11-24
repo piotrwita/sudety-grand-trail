@@ -50,7 +50,7 @@ export const AboutProjectSection = () => {
                 delay={0.2}
                 className="section-icon-badge-light mb-8 bg-gradient-to-br from-accent to-earth-700"
               >
-                <ProjectIcon className="h-8 w-8 text-cream/80" />
+                <ProjectIcon className="size-8 text-cream/80" />
               </ScaleIn>
 
               <FadeIn inView={true} className="mb-6">

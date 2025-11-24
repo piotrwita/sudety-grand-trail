@@ -1,41 +1,32 @@
 import { CheckIcon, InfoIcon, RightArrowIcon } from '@/components/icons';
-import { FadeIn, ScaleIn } from '@/components/motion';
+import { FadeIn } from '@/components/motion';
 import { Section } from '@/components/sections';
 import { VintageMountainsBackground } from './VintageMountainsBackground';
 import Link from 'next/link';
+import { SectionHeader } from './sections/SectionHeader';
 
 export const PreTrailRegistration = () => {
   return (
     <Section
       ariaLabel="Zanim Wyruszysz"
-      className="section-padding overflow-hidden bg-gradient-to-br from-accent/10 to-earth/10"
+      className="overflow-hidden bg-gradient-to-br from-accent/10 to-earth/10"
     >
       <VintageMountainsBackground className="opacity-10" />
 
       <div className="fluid-container relative z-10">
+        <SectionHeader
+          title="Zanim Wyruszysz"
+          icon={<InfoIcon className="size-6 text-cream/80" />}
+          variant="forest"
+        />
         <FadeIn
           direction="up"
-          offset={50}
-          duration={0.8}
+          offset={30}
+          duration={0.6}
+          delay={0.6}
           inView={true}
           className="mb-16 text-center"
         >
-          <ScaleIn
-            initialScale={0.5}
-            duration={0.6}
-            delay={0.2}
-            inView={true}
-            className="section-icon-badge mb-8 bg-gradient-to-br from-forest-600 to-earth-700"
-          >
-            <InfoIcon className="size-8 text-cream/80" />
-          </ScaleIn>
-
-          <h2 className="section-title mb-6">
-            Zanim <span className="text-gradient">Wyruszysz</span>
-          </h2>
-
-          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-
           <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-mountain-600">
             Planujesz podbój Korony Sudetów? Najpierw zgłoś swoją próbę
             przejścia i otrzymaj darmowy tracker GPS do śledzenia postępów!
@@ -47,8 +38,8 @@ export const PreTrailRegistration = () => {
           <FadeIn
             direction="left"
             offset={50}
-            duration={0.8}
-            delay={0.3}
+            duration={0.6}
+            delay={0.8}
             inView={true}
             className="relative flex h-full flex-col"
           >
@@ -56,86 +47,86 @@ export const PreTrailRegistration = () => {
               Proces Przejścia SGT
             </h3>
 
-              {/* Timeline */}
-              <div className="relative flex flex-1 flex-col">
-                {/* Vertical line connecting steps - full height to match right column */}
-                <div className="absolute left-7 top-0 bottom-0 w-0.5 bg-gradient-to-b from-forest-600 via-earth-600 to-accent" />
-                
-                {/* Container for evenly spaced steps */}
-                <div className="relative flex h-full flex-col justify-between py-4">
-                  {/* Step 1 */}
-                  <div className="relative flex items-start gap-6">
-                    <div className="relative z-10 flex size-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-forest-600 to-forest-700 text-xl font-bold text-cream shadow-vintage ring-4 ring-cream">
-                      1
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="mb-2 text-lg font-bold text-forest-800">
-                        Zgłoś Próbę Przejścia
-                      </h4>
-                      <p className="mb-3 leading-relaxed text-mountain-600">
-                        Przed startem wypełnij formularz zgłoszenia próby przejścia.
-                        Otrzymasz darmowy tracker GPS i będziesz widoczny na mapie
-                        live tracking.
-                      </p>
-                      <Link
-                        href="/live#tracker-form"
-                        className="inline-flex items-center font-bold text-accent transition-colors hover:text-accent-600"
-                      >
-                        Zgłoś próbę przejścia
-                        <RightArrowIcon className="ml-2 size-4" />
-                      </Link>
-                    </div>
-                  </div>
+            {/* Timeline */}
+            <div className="relative flex flex-1 flex-col">
+              {/* Vertical line connecting steps - full height to match right column */}
+              <div className="absolute bottom-0 left-7 top-0 w-0.5 bg-gradient-to-b from-forest-600 via-earth-600 to-accent" />
 
-                  {/* Step 2 */}
-                  <div className="relative flex items-start gap-6">
-                    <div className="relative z-10 flex size-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-earth-600 to-earth-700 text-xl font-bold text-cream shadow-vintage ring-4 ring-cream">
-                      2
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="mb-2 text-lg font-bold text-forest-800">
-                        Pokonaj Szlak
-                      </h4>
-                      <p className="mb-3 leading-relaxed text-mountain-600">
-                        Wyrusz na trasę z trackerem GPS. Twoje postępy będą widoczne
-                        na żywo dla wszystkich obserwujących. Zdobądź wszystkie 22
-                        najwyższe szczyty pasm Sudetów.
-                      </p>
-                      <Link
-                        href="/trail"
-                        className="inline-flex items-center font-bold text-accent transition-colors hover:text-accent-600"
-                      >
-                        Poznaj trasę
-                        <RightArrowIcon className="ml-2 size-4" />
-                      </Link>
-                    </div>
+              {/* Container for evenly spaced steps */}
+              <div className="relative flex h-full flex-col justify-between py-4">
+                {/* Step 1 */}
+                <div className="relative flex items-start gap-6">
+                  <div className="relative z-10 flex size-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-forest-600 to-forest-700 text-xl font-bold text-cream shadow-vintage ring-4 ring-cream">
+                    1
                   </div>
+                  <div className="flex-1 pt-1">
+                    <h4 className="mb-2 text-lg font-bold text-forest-800">
+                      Zgłoś Próbę Przejścia
+                    </h4>
+                    <p className="mb-3 leading-relaxed text-mountain-600">
+                      Przed startem wypełnij formularz zgłoszenia próby
+                      przejścia. Otrzymasz darmowy tracker GPS i będziesz
+                      widoczny na mapie live tracking.
+                    </p>
+                    <Link
+                      href="/live#tracker-form"
+                      className="inline-flex items-center font-bold text-accent transition-colors hover:text-accent-600"
+                    >
+                      Zgłoś próbę przejścia
+                      <RightArrowIcon className="ml-2 size-4" />
+                    </Link>
+                  </div>
+                </div>
 
-                  {/* Step 3 */}
-                  <div className="relative flex items-start gap-6">
-                    <div className="relative z-10 flex size-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent to-yellow-600 text-xl font-bold text-cream shadow-vintage ring-4 ring-cream">
-                      3
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h4 className="mb-2 text-lg font-bold text-forest-800">
-                        Zgłoś Ukończenie
-                      </h4>
-                      <p className="mb-3 leading-relaxed text-mountain-600">
-                        Po ukończeniu szlaku zgłoś swoje przejście z materiałami
-                        (zdjęcia, GPX). Po weryfikacji dołączysz do oficjalnego Hall
-                        of Fame!
-                      </p>
-                      <a
-                        href="#zglos-przejscie"
-                        className="inline-flex items-center font-bold text-accent transition-colors hover:text-accent-600"
-                      >
-                        Formularz ukończenia
-                        <RightArrowIcon className="ml-2 size-4" />
-                      </a>
-                    </div>
+                {/* Step 2 */}
+                <div className="relative flex items-start gap-6">
+                  <div className="relative z-10 flex size-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-earth-600 to-earth-700 text-xl font-bold text-cream shadow-vintage ring-4 ring-cream">
+                    2
+                  </div>
+                  <div className="flex-1 pt-1">
+                    <h4 className="mb-2 text-lg font-bold text-forest-800">
+                      Pokonaj Szlak
+                    </h4>
+                    <p className="mb-3 leading-relaxed text-mountain-600">
+                      Wyrusz na trasę z trackerem GPS. Twoje postępy będą
+                      widoczne na żywo dla wszystkich obserwujących. Zdobądź
+                      wszystkie 22 najwyższe szczyty pasm Sudetów.
+                    </p>
+                    <Link
+                      href="/trail"
+                      className="inline-flex items-center font-bold text-accent transition-colors hover:text-accent-600"
+                    >
+                      Poznaj trasę
+                      <RightArrowIcon className="ml-2 size-4" />
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="relative flex items-start gap-6">
+                  <div className="relative z-10 flex size-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent to-yellow-600 text-xl font-bold text-cream shadow-vintage ring-4 ring-cream">
+                    3
+                  </div>
+                  <div className="flex-1 pt-1">
+                    <h4 className="mb-2 text-lg font-bold text-forest-800">
+                      Zgłoś Ukończenie
+                    </h4>
+                    <p className="mb-3 leading-relaxed text-mountain-600">
+                      Po ukończeniu szlaku zgłoś swoje przejście z materiałami
+                      (zdjęcia, GPX). Po weryfikacji dołączysz do oficjalnego
+                      Hall of Fame!
+                    </p>
+                    <a
+                      href="#zglos-przejscie"
+                      className="inline-flex items-center font-bold text-accent transition-colors hover:text-accent-600"
+                    >
+                      Formularz ukończenia
+                      <RightArrowIcon className="ml-2 size-4" />
+                    </a>
                   </div>
                 </div>
               </div>
+            </div>
           </FadeIn>
 
           {/* Right - Benefits Card */}
@@ -146,7 +137,7 @@ export const PreTrailRegistration = () => {
             delay={0.5}
             inView={true}
           >
-            <div className="card-vintage h-full p-8 transition-shadow duration-300 hover:shadow-vintage-xl">
+            <div className="card-vintage h-full p-8 hover:shadow-vintage-xl">
               <div className="mb-8 text-center">
                 <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-gradient-to-br from-accent to-yellow-600 shadow-vintage">
                   <svg
@@ -173,8 +164,8 @@ export const PreTrailRegistration = () => {
                     </h4>
                     <p className="text-sm leading-relaxed text-mountain-600">
                       Otrzymaj profesjonalny tracker Poltrax całkowicie za darmo
-                      na cały czas przejścia. Nie musisz kupować sprzętu - my
-                      go dostarczamy!
+                      na cały czas przejścia. Nie musisz kupować sprzętu - my go
+                      dostarczamy!
                     </p>
                   </div>
                 </div>
@@ -242,7 +233,8 @@ export const PreTrailRegistration = () => {
                   Zgłoś Próbę Przejścia
                 </Link>
                 <p className="mt-4 text-sm text-mountain-500">
-                  Wszystko w jednym miejscu • Szybka rejestracja • Natychmiastowy dostęp
+                  Wszystko w jednym miejscu • Szybka rejestracja •
+                  Natychmiastowy dostęp
                 </p>
               </div>
             </div>
@@ -258,7 +250,7 @@ export const PreTrailRegistration = () => {
           inView={true}
           className="mt-16"
         >
-          <div className="card-vintage border-2 border-yellow-400 bg-gradient-to-br from-yellow-50 to-orange-50 p-8 transition-shadow duration-300 hover:shadow-vintage-xl">
+          <div className="card-vintage border-2 border-yellow-400 bg-gradient-to-br from-yellow-50 to-orange-50 p-8 hover:shadow-vintage-xl">
             <div className="flex items-start gap-6">
               <div className="flex size-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 shadow-vintage">
                 <svg

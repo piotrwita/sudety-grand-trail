@@ -3,6 +3,9 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Link from 'next/link';
+import { SectionHeader } from './sections/SectionHeader';
+import { FadeIn } from './motion';
+import { Section } from './sections';
 
 const SubmissionForm = () => {
   const [formData, setFormData] = useState({
@@ -114,24 +117,17 @@ const SubmissionForm = () => {
   };
 
   return (
-    <section id="zglos-przejscie" className="section-padding bg-forest-800">
+    <Section
+      id="zglos-przejscie"
+      ariaLabel="Zgłoś Swoje Przejście"
+      className="bg-forest-800"
+    >
       <div className="fluid-container">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.8 }}
-          className="mb-16 text-center"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="section-icon-badge-light mb-8 bg-gradient-to-br from-accent to-earth-700"
-          >
+        <SectionHeader
+          title="Zgłoś Swoje Przejście"
+          icon={
             <svg
-              className="h-8 w-8 text-cream/80"
+              className="h-6 w-6 text-cream/80"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -143,26 +139,31 @@ const SubmissionForm = () => {
                 d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
-          </motion.div>
+          }
+          variant="light"
+        />
 
-          <h2 className="hero-title mb-6 text-cream">
-            Zgłoś Swoje <span className="text-gradient-light">Przejście</span>
-          </h2>
-
-          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent" />
-
-          <p className="text-fluid-xl mx-auto max-w-4xl font-medium leading-relaxed text-cream/90">
+        <FadeIn
+          direction="up"
+          offset={30}
+          duration={0.6}
+          delay={0.6}
+          inView={true}
+          className="mb-16 text-center"
+        >
+          <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-cream/90">
             Ukończyłeś Sudety Grand Trail? Podziel się swoją historią i dołącz
             do oficjalnego Hall of Fame!
           </p>
-        </motion.div>
+        </FadeIn>
 
         <div className="mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+          <FadeIn
+            direction="up"
+            offset={30}
+            duration={0.8}
+            delay={0.8}
+            inView={true}
             className="card-vintage bg-cream/95 p-10"
           >
             {submitStatus === 'success' ? (
@@ -548,7 +549,7 @@ const SubmissionForm = () => {
                 </div>
               </form>
             )}
-          </motion.div>
+          </FadeIn>
         </div>
       </div>
 
@@ -558,7 +559,7 @@ const SubmissionForm = () => {
         className="absolute bottom-20 right-10 h-24 w-24 animate-pulse rounded-full bg-cream/10 blur-xl"
         style={{ animationDelay: '1s' }}
       />
-    </section>
+    </Section>
   );
 };
 

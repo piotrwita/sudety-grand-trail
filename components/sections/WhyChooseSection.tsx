@@ -16,31 +16,29 @@ export const WhyChooseSection = () => {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-forest-200/30 via-transparent to-earth-200/30" />
 
       <div className="fluid-container relative z-10">
-        <div className="mb-8">
-          <FadeIn
+        <FadeIn
+          inView={true}
+          direction="up"
+          offset={60}
+          duration={0.6}
+          className="relative mb-8 text-center lg:mb-16"
+        >
+          <ScaleIn
             inView={true}
-            direction="up"
-            offset={60}
+            initialScale={0.5}
             duration={0.6}
-            className="relative mb-16 text-center"
+            delay={0.2}
+            className="section-icon-badge mb-8 bg-gradient-to-br from-forest-700 to-earth-700"
           >
-            <ScaleIn
-              inView={true}
-              initialScale={0.5}
-              duration={0.6}
-              delay={0.2}
-              className="section-icon-badge mb-8 bg-gradient-to-br from-forest-700 to-earth-700"
-            >
-              <LightbulbIcon className="size-8 text-cream/80" />
-            </ScaleIn>
-            <FadeIn inView={true} className="mb-6">
-              <h2 className="section-title">
-                <span className="text-gradient">Dlaczego ten szlak</span>
-              </h2>
-            </FadeIn>
-            <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
+            <LightbulbIcon className="size-8 text-cream/80" />
+          </ScaleIn>
+          <FadeIn inView={true} className="mb-6">
+            <h2 className="section-title">
+              <span className="text-gradient">Dlaczego ten szlak</span>
+            </h2>
           </FadeIn>
-        </div>
+          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
+        </FadeIn>
 
         <FeatureCards />
       </div>

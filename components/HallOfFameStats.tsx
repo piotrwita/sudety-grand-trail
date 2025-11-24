@@ -7,6 +7,7 @@ import {
 import { FadeIn, ScaleIn } from '@/components/motion';
 import { VintageMountainsBackground } from './VintageMountainsBackground';
 import { Section } from './sections';
+import { SectionHeader } from './sections/SectionHeader';
 
 // Mock data - później będzie z API/bazy danych
 const stats = {
@@ -76,33 +77,23 @@ export const HallOfFameStats = () => {
   };
 
   return (
-    <Section ariaLabel="Statystyki Szlaku">
+    <Section ariaLabel="Statystyki Szlaku" className='items-start'>
       <VintageMountainsBackground className="opacity-10" />
 
       <div className="fluid-container relative z-10">
+        <SectionHeader
+          title="Statystyki Szlaku"
+          icon={<StarIcon className="size-6 text-cream/80" />}
+        />
+
         <FadeIn
           direction="up"
-          offset={50}
-          duration={0.8}
+          offset={30}
+          duration={0.6}
+          delay={0.6}
           inView={true}
           className="mb-16 text-center"
         >
-          <ScaleIn
-            initialScale={0.5}
-            duration={0.6}
-            delay={0.2}
-            inView={true}
-            className="section-icon-badge mb-8 bg-gradient-to-br from-accent to-earth-700"
-          >
-            <StarIcon className="size-8 text-cream/80" />
-          </ScaleIn>
-
-          <h2 className="section-title mb-6">
-            Statystyki <span className="text-gradient">Szlaku</span>
-          </h2>
-
-          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-
           <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-mountain-600">
             Odkąd szlak został oficjalnie wyznaczony, wędrowcy podejmują
             wyzwanie{' '}
@@ -122,9 +113,8 @@ export const HallOfFameStats = () => {
               direction="up"
               offset={30}
               duration={0.6}
-              delay={0.1 + index * 0.1}
+              delay={0.8 + index * 0.1}
               inView={true}
-              inViewMargin="-50px"
               whileHover={hoverVariants}
               className="group"
             >
@@ -257,14 +247,14 @@ export const HallOfFameStats = () => {
             <div className="group relative flex h-28 w-28 flex-col items-center justify-center transition-all duration-300 hover:scale-110">
               {/* Badge base with metallic effect */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-forest-600 via-forest-700 to-forest-800 shadow-[0_12px_24px_rgba(47,79,62,0.4),inset_0_4px_8px_rgba(255,255,255,0.15),inset_0_-4px_8px_rgba(0,0,0,0.4)]" />
-              
+
               {/* Metallic shine effect */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 via-transparent to-transparent opacity-60" />
-              <div className="absolute top-2 left-1/2 h-8 w-8 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/40 to-transparent blur-sm" />
-              
+              <div className="absolute left-1/2 top-2 h-8 w-8 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/40 to-transparent blur-sm" />
+
               {/* Border with depth */}
               <div className="absolute inset-0 rounded-full border-4 border-forest-800/60 shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)]" />
-              
+
               {/* Content */}
               <span className="relative z-10 mb-1 text-3xl drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
                 🏔️
@@ -278,14 +268,14 @@ export const HallOfFameStats = () => {
             <div className="group relative flex h-28 w-28 flex-col items-center justify-center transition-all duration-300 hover:scale-110">
               {/* Badge base with golden metallic effect */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 shadow-[0_12px_24px_rgba(250,204,21,0.5),inset_0_4px_8px_rgba(255,255,255,0.25),inset_0_-4px_8px_rgba(0,0,0,0.4)]" />
-              
+
               {/* Golden metallic shine */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-70" />
-              <div className="absolute top-2 left-1/2 h-8 w-8 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/50 to-transparent blur-sm" />
-              
+              <div className="absolute left-1/2 top-2 h-8 w-8 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/50 to-transparent blur-sm" />
+
               {/* Border with depth */}
               <div className="absolute inset-0 rounded-full border-4 border-yellow-700/70 shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)]" />
-              
+
               {/* Content */}
               <span className="relative z-10 mb-1 text-3xl drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
                 👑
@@ -299,14 +289,14 @@ export const HallOfFameStats = () => {
             <div className="group relative flex h-28 w-28 flex-col items-center justify-center transition-all duration-300 hover:scale-110">
               {/* Badge base with bronze metallic effect */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-earth-600 via-earth-700 to-earth-800 shadow-[0_12px_24px_rgba(107,68,35,0.4),inset_0_4px_8px_rgba(255,255,255,0.15),inset_0_-4px_8px_rgba(0,0,0,0.4)]" />
-              
+
               {/* Bronze metallic shine */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 via-transparent to-transparent opacity-60" />
-              <div className="absolute top-2 left-1/2 h-8 w-8 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/40 to-transparent blur-sm" />
-              
+              <div className="absolute left-1/2 top-2 h-8 w-8 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/40 to-transparent blur-sm" />
+
               {/* Border with depth */}
               <div className="absolute inset-0 rounded-full border-4 border-earth-800/60 shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)]" />
-              
+
               {/* Content */}
               <span className="relative z-10 mb-1 text-3xl drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
                 🥾
@@ -320,14 +310,14 @@ export const HallOfFameStats = () => {
             <div className="group relative flex h-28 w-28 flex-col items-center justify-center transition-all duration-300 hover:scale-110">
               {/* Badge base with copper metallic effect */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent via-accent/90 to-accent/80 shadow-[0_12px_24px_rgba(201,78,43,0.5),inset_0_4px_8px_rgba(255,255,255,0.2),inset_0_-4px_8px_rgba(0,0,0,0.4)]" />
-              
+
               {/* Copper metallic shine */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/35 via-transparent to-transparent opacity-65" />
-              <div className="absolute top-2 left-1/2 h-8 w-8 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/45 to-transparent blur-sm" />
-              
+              <div className="absolute left-1/2 top-2 h-8 w-8 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/45 to-transparent blur-sm" />
+
               {/* Border with depth */}
               <div className="absolute inset-0 rounded-full border-4 border-accent-700/70 shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)]" />
-              
+
               {/* Content */}
               <span className="relative z-10 mb-1 text-3xl drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
                 ⬆️

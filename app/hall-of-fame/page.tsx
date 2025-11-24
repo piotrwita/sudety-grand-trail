@@ -1,6 +1,6 @@
 import { HallOfFameStats } from '@/components/HallOfFameStats';
 import { PreTrailRegistration } from '@/components/PreTrailRegistration';
-import HallOfFameList from '@/components/HallOfFameList';
+import { HallOfFameList } from '@/components/HallOfFameList';
 import SubmissionForm from '@/components/SubmissionForm';
 import { FadeIn, ScaleIn } from '@/components/motion';
 import { pageMetadata } from '@/config/metadata';
@@ -25,7 +25,7 @@ export default function HallOfFamePage() {
 
 const HallOfFameHeroSection = () => (
   <Section
-    className="relative overflow-hidden bg-gradient-to-br from-forest-900 via-earth-900 to-forest-800 py-24"
+    className="relative overflow-hidden bg-gradient-to-br from-forest-900 via-earth-900 to-forest-800 pt-16"
     ariaLabel="Sekcja główna - Hall of Fame"
   >
     {/* Epic Background Effects */}
