@@ -2,7 +2,14 @@
 const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
-    remotePatterns: [],
+
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'd34-a.sdn.cz',
+        pathname: '/**',
+      },
+    ],
   },
 };
 

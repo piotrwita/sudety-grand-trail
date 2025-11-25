@@ -16,6 +16,7 @@ import { koronaGorPolski, type SudetenRange } from './data';
 import { CheckIcon } from '@/components/icons';
 import { SearchIcon } from '@/components/icons/SearchIcon';
 import { Watermark } from '@/components/Watermark';
+import Image from 'next/image';
 
 interface MountainCardsViewProps {
   ranges: SudetenRange[];
@@ -227,7 +228,7 @@ const DesktopMountainCard = ({ range, isKgp }: MountainCardProps) => {
           </div>
         </MorphingDialogTrigger>
         <MorphingDialogContainer>
-          <MorphingDialogContent className="relative h-auto w-[500px] rounded-2xl border-2 border-forest-200 bg-cream shadow-vintage-lg">
+          <MorphingDialogContent className="relative h-auto w-[500px] rounded-2xl border-2 border-forest-200 bg-cream shadow-vintage-lg [&_.mountain-image-container]:h-64">
             <div className="p-6">
               <MountainCardVisuals range={range} isKgp={isKgp} />
               <div className="mt-4 border-t border-forest-200 pt-4">
@@ -262,17 +263,38 @@ const MountainCardVisuals = ({ range, isKgp }: MountainCardProps) => (
   </div>
 );
 
-const MountainInfo = ({ range }: { range: SudetenRange }) => (
-  <div className="flex min-w-0 flex-col justify-center md:block">
-    <div className="hidden text-4xl md:mb-2 md:block">🏔️</div>
-    <h3 className="font-display text-base font-bold uppercase leading-tight text-forest-800 md:mb-2 md:text-lg md:normal-case">
-      {range.name}
-    </h3>
-    <p className="truncate text-sm font-medium text-mountain-600 md:mb-4 md:font-bold">
-      {range.peak}
-    </p>
-  </div>
-);
+const MountainInfo = ({ range }: { range: SudetenRange }) => {
+  // Śnieżnik (id: 3) uses the provided image
+  const isSnieznik = range.id === 3;
+  const imageUrl = isSnieznik
+    ? 'https://d34-a.sdn.cz/d_34/c_img_QR_m/LUNSxQ.jpeg?fl=res,667,500,1'
+    : null;
+
+  return (
+    <div className="flex min-w-0 flex-col justify-center md:block">
+      {isSnieznik && imageUrl ? (
+        <div className="mountain-image-container relative hidden h-32 w-full overflow-hidden rounded-lg md:mb-3 md:block [&_img]:transition-transform [&_img]:duration-300 group-hover:[&_img]:scale-105">
+          <Image
+            src={imageUrl}
+            alt={`${range.name} - ${range.peak}`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={isSnieznik}
+          />
+        </div>
+      ) : (
+        <div className="hidden text-4xl md:mb-2 md:block">🏔️</div>
+      )}
+      <h3 className="font-display text-base font-bold uppercase leading-tight text-forest-800 md:mb-2 md:text-lg md:normal-case">
+        {range.name}
+      </h3>
+      <p className="truncate text-sm font-medium text-mountain-600 md:mb-4 md:font-bold">
+        {range.peak}
+      </p>
+    </div>
+  );
+};
 
 const ElevationStats = ({ range }: { range: SudetenRange }) => (
   <div className="ml-4 flex flex-shrink-0 flex-col items-end justify-center text-right md:ml-0 md:block md:text-center">
