@@ -61,16 +61,15 @@ export const FeatureCards = () => {
       {features.map((feature, index) => (
         <FadeIn
           key={feature.title}
-          direction="down"
+          direction="up"
           offset={30}
-          delay={0.3 * index}
+          delay={0.3 + 0.3 * index}
           duration={0.6}
           inView={true}
-          inViewMargin="-200px"
           className="group"
         >
           <div
-            className={`${feature.bgColor} relative h-full overflow-hidden rounded-2xl border border-white/50 p-8 shadow-lg transition-all duration-300 focus-within:outline-none focus-within:ring-4 focus-within:ring-forest-700/30 focus-within:ring-offset-2 hover:-translate-y-2 hover:shadow-xl`}
+            className={`${feature.bgColor} relative h-full overflow-hidden rounded-2xl border border-white/50 p-8 shadow-lg transition-all duration-300 focus-within:outline-none focus-within:ring-4 focus-within:ring-forest-700/30 focus-within:ring-offset-2 hover:-translate-y-1 hover:shadow-xl`}
           >
             <div className="absolute right-0 top-0 size-32 opacity-20">
               <BackgroundPattern index={index} textColor={feature.textColor} />

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 interface SectionHeaderProps {
   title: string;
@@ -24,11 +25,6 @@ const separatorTransition = {
   duration: 0.8,
   delay: 0.4,
   ease: 'easeOut',
-};
-
-const viewport = {
-  once: true,
-  margin: '-100px',
 };
 
 const badgeVariants = {
@@ -74,11 +70,18 @@ export const SectionHeader = ({
   icon,
   variant = 'default',
 }: SectionHeaderProps) => {
+  const isMobile = useIsMobile();
   const {
     badge: badgeClassName,
     separator: separatorClassName,
     textGradient: textGradientClassName,
   } = badgeVariants[variant];
+
+  // Adjust viewport margin for mobile - smaller margin so animation triggers when badge is more visible
+  const viewport = {
+    once: true,
+    margin: isMobile ? '-20px' : '-100px',
+  };
 
   return (
     <>
@@ -88,7 +91,7 @@ export const SectionHeader = ({
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={viewport}
           transition={transition}
-          className={badgeClassName}
+          className={`motion ${badgeClassName}`}
         >
           {icon}
         </motion.div>
@@ -98,7 +101,7 @@ export const SectionHeader = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewport}
           transition={transition}
-          className="section-title text-left"
+          className="section-title motion text-left"
         >
           <span className={textGradientClassName}>{title}</span>
         </motion.h2>
@@ -108,7 +111,7 @@ export const SectionHeader = ({
         whileInView={{ opacity: 1, scaleX: 1 }}
         viewport={viewport}
         transition={separatorTransition}
-        className={separatorClassName}
+        className={`motion ${separatorClassName}`}
       />
     </>
   );
