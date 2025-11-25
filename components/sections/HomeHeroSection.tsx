@@ -2,12 +2,14 @@
 
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useRef } from 'react';
-import logoJpg from 'public/images/logo.jpg';
 import { Stats, StatsSeparator } from '@/components/Stats';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 import { Section } from './Section';
+import { LogoImage } from '../LogoImage';
+import { siteConfig } from '@/config/site';
+import { siteRoutes } from '@/config/site-routes';
+import { FadeIn, ScaleIn } from '@/components/motion';
 
 export const HomeHeroSection = () => {
   const ref = useRef(null);
@@ -28,7 +30,11 @@ export const HomeHeroSection = () => {
   const contentY = useTransform(smoothProgress, [0, 1], ['0%', '30%']);
 
   return (
-    <Section ref={ref} ariaLabel="Sekcja główna - Sudety Grand Trail">
+    <Section
+      ref={ref}
+      ariaLabel="Sekcja główna - Sudety Grand Trail"
+      className="pt-16"
+    >
       {/* Parallax Background Image */}
       <motion.div
         className="absolute inset-0 z-0 will-change-transform"
@@ -44,11 +50,11 @@ export const HomeHeroSection = () => {
         style={{ scale: logoScale, opacity: logoOpacity }}
       >
         <div className="absolute left-1/2 top-1/2 size-[500px] -translate-x-1/2 -translate-y-1/2 transform lg:size-[600px] 2xl:size-[800px]">
-          <Image
-            src={logoJpg}
-            alt="Logo Sudety Grand Trail"
+          <LogoImage
             fill
-            className="size-full rounded-full object-cover"
+            sizes="(min-width: 1536px) 800px, (min-width: 1024px) 600px, 100vw"
+            priority
+            fetchPriority="high"
           />
         </div>
       </motion.div>
@@ -58,41 +64,41 @@ export const HomeHeroSection = () => {
         className="relative z-10 mx-auto max-w-7xl px-4 text-center will-change-transform sm:px-6 lg:px-8"
         style={{ y: contentY }}
       >
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <motion.h1
+        <FadeIn direction="up" duration={0.6} delay={0.2} offset={50}>
+          <FadeIn
+            direction="up"
+            duration={0.6}
+            delay={0.6}
+            offset={30}
             className="hero-title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
           >
             <span className="mb-1 block sm:mb-2">Sudety</span>
             <span className="gradient-text-mesh block">Grand Trail</span>
-          </motion.h1>
+          </FadeIn>
 
           {/* Separator */}
-          <motion.div
+          <ScaleIn
+            duration={0.6}
+            delay={0.75}
+            initialScale={0}
+            finalScale={1}
+            initialOpacity={0}
+            finalOpacity={1}
             className="mx-auto my-4 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent lg:my-6"
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.75 }}
-          />
+            style={{ transformOrigin: 'center' }}
+          >
+            <div />
+          </ScaleIn>
 
           {/* Description Container */}
-          <motion.div
+          <FadeIn
+            direction="up"
+            duration={0.6}
+            delay={0.8}
+            offset={30}
             className="mx-auto max-w-5xl space-y-3 px-2 text-center text-cream/90 sm:space-y-4 sm:px-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-            >
+            <FadeIn direction="up" duration={0.8} delay={0.9} offset={20}>
               <p className="mb-3 text-lg font-bold sm:mb-4 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                 <span className="gradient-text-mesh">KORONA SUDETÓW</span> w
                 jednym szlaku!
@@ -103,25 +109,26 @@ export const HomeHeroSection = () => {
                   górskich Sudetów.
                 </span>
               </p>
-            </motion.div>
-          </motion.div>
+            </FadeIn>
+          </FadeIn>
 
           {/* Buttons Container */}
-          <motion.div
+          <FadeIn
+            direction="up"
+            duration={0.6}
+            delay={1.0}
+            offset={30}
             className="mt-4 flex w-full flex-col items-center justify-center gap-3 px-4 sm:mt-6 sm:flex-row sm:gap-4 md:gap-6"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
           >
             <Link
-              href="/trail"
+              href={siteRoutes.trail}
               className="btn-primary w-full px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
               aria-label="Rozpocznij podróż przez Sudety Grand Trail"
             >
               Rozpocznij Podróż
             </Link>
             <Link
-              href="https://mapy.com/s/barusofola"
+              href={siteConfig.links.map.href}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary w-full border-cream/80 px-6 py-3 text-sm text-cream hover:bg-cream hover:text-forest-800 focus:ring-cream/50 sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
@@ -129,36 +136,45 @@ export const HomeHeroSection = () => {
             >
               Zobacz Mapę
             </Link>
-          </motion.div>
+          </FadeIn>
 
           {/* Stats Row */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="mt-8 flex flex-wrap items-center justify-center gap-4 px-2 sm:mt-10 sm:gap-6 md:mt-12 lg:gap-8"
-            role="region"
-            aria-label="Statystyki trasy"
+          <FadeIn
+            direction="up"
+            duration={0.6}
+            delay={1.2}
+            offset={30}
+            className="mt-8 sm:mt-10 md:mt-12"
           >
-            <Stats value="900" label="Kilometrów" ariaLabel="900 Kilometrów" />
-            <StatsSeparator />
-            <Stats value="22" label="Pasma" ariaLabel="22 Pasma" />
-            <StatsSeparator />
-            <Stats value="3" label="Kraje" ariaLabel="3 Kraje" />
-            <StatsSeparator />
-            <Stats
-              value="30k"
-              label="Przewyższeń"
-              ariaLabel="30 tysięcy Przewyższeń"
-            />
-            <StatsSeparator />
-            <Stats
-              value="16"
-              label="Szczytów KGP"
-              ariaLabel="16 Szczytów Korony Gór Polski"
-            />
-          </motion.div>
-        </motion.div>
+            <div
+              className="flex flex-wrap items-center justify-center gap-4 px-2 sm:gap-6 lg:gap-8"
+              role="region"
+              aria-label="Statystyki trasy"
+            >
+              <Stats
+                value="900"
+                label="Kilometrów"
+                ariaLabel="900 Kilometrów"
+              />
+              <StatsSeparator />
+              <Stats value="22" label="Pasma" ariaLabel="22 Pasma" />
+              <StatsSeparator />
+              <Stats value="3" label="Kraje" ariaLabel="3 Kraje" />
+              <StatsSeparator />
+              <Stats
+                value="30k"
+                label="Przewyższeń"
+                ariaLabel="30 tysięcy Przewyższeń"
+              />
+              <StatsSeparator />
+              <Stats
+                value="16"
+                label="Szczytów KGP"
+                ariaLabel="16 Szczytów Korony Gór Polski"
+              />
+            </div>
+          </FadeIn>
+        </FadeIn>
       </motion.div>
 
       <ScrollIndicator />
@@ -169,11 +185,11 @@ export const HomeHeroSection = () => {
 };
 
 const ScrollIndicator = () => (
-  <motion.div
+  <FadeIn
+    duration={0.6}
+    delay={1.4}
+    offset={0}
     className="absolute bottom-16 left-1/2 -translate-x-1/2 transform lg:bottom-20"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 1, delay: 1.4 }}
   >
     <motion.div
       animate={{ y: [0, 10, 0] }}
@@ -186,7 +202,7 @@ const ScrollIndicator = () => (
         className="mt-2 h-3 w-1 rounded-full bg-cream/60"
       />
     </motion.div>
-  </motion.div>
+  </FadeIn>
 );
 
 const DecorativeVintageElements = () => (

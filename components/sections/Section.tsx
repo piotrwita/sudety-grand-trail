@@ -8,6 +8,7 @@ import {
 } from 'react';
 
 interface SectionProps extends PropsWithChildren {
+  id?: string;
   children: ReactNode;
   className?: string;
   ariaLabel?: string;
@@ -16,10 +17,11 @@ interface SectionProps extends PropsWithChildren {
 
 export const Section = forwardRef<HTMLDivElement, SectionProps>(
   (
-    { children, className, ariaLabel, ...rest }: SectionProps,
+    { children, className, ariaLabel, id, ...rest }: SectionProps,
     ref: Ref<HTMLDivElement>
   ) => (
     <section
+      id={id}
       ref={ref}
       className={cn(
         'full-width relative flex min-h-screen items-center justify-center overflow-hidden py-12',

@@ -3,6 +3,9 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
+import { Section } from './sections';
+import { SectionHeader } from './sections/SectionHeader';
+import { FadeIn } from './motion';
 
 // Mock data - przykładowe przejścia
 const mockCompletions = [
@@ -76,7 +79,7 @@ const mockCompletions = [
   },
 ];
 
-const HallOfFameList = () => {
+export const HallOfFameList = () => {
   const [selectedCompletion, setSelectedCompletion] = useState<number | null>(
     null
   );
@@ -105,39 +108,32 @@ const HallOfFameList = () => {
   };
 
   return (
-    <section id="hall-of-fame" className="section-padding bg-cream">
+    <Section
+      id="hall-of-fame"
+      ariaLabel="Zdobywcy Korony Sudetów"
+      className="bg-cream"
+    >
       <div className="fluid-container">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.8 }}
+        <SectionHeader
+          title="Zdobywcy Korony Sudetów"
+          icon={<span className="text-2xl">🏆</span>}
+          variant="crown"
+        />
+        <FadeIn
+          direction="up"
+          offset={30}
+          duration={0.6}
+          delay={0.6}
+          inView={true}
           className="mb-16 text-center"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="section-icon-badge mb-8 bg-gradient-to-br from-yellow-400 to-yellow-600"
-          >
-            <span className="text-2xl">🏆</span>
-          </motion.div>
-
-          <h2 className="section-title mb-6">
-            <span className="text-gradient">Zdobywcy</span> Korony Sudetów
-          </h2>
-
-          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-
-          <p className="mx-auto mb-8 max-w-4xl text-xl font-medium leading-relaxed text-mountain-600">
+          <p className="text-fluid-lg mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-mountain-600">
             Ci odważni wędrowcy ukończyli pełny szlak Sudety Grand Trail. Każde
             przejście to unikalna historia determinacji i pasji do gór.
           </p>
 
           {/* Sort Controls */}
-          <div className="mb-8 flex justify-center">
+          <div className="flex justify-center">
             <div className="flex rounded-xl bg-forest-100 p-1">
               <button
                 onClick={() => setSortBy('date')}
@@ -171,7 +167,7 @@ const HallOfFameList = () => {
               </button>
             </div>
           </div>
-        </motion.div>
+        </FadeIn>
 
         {/* Completions Grid */}
         <div className="grid gap-8 lg:grid-cols-2">
@@ -180,8 +176,12 @@ const HallOfFameList = () => {
               key={completion.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{
+                duration: 0.6,
+                delay: 0.84 + index * 0.1,
+                ease: 'easeOut',
+              }}
               whileHover={{ y: -5, scale: 1.02 }}
               onClick={() =>
                 setSelectedCompletion(
@@ -331,11 +331,12 @@ const HallOfFameList = () => {
         </div>
 
         {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+        <FadeIn
+          direction="up"
+          offset={30}
+          duration={0.8}
+          delay={1.2}
+          inView={true}
           className="mt-16 text-center"
         >
           <div className="card-vintage border-forest-300 bg-gradient-to-br from-forest-700/10 to-earth-700/10 p-10">
@@ -353,10 +354,8 @@ const HallOfFameList = () => {
               Zgłoś Swoje Przejście
             </a>
           </div>
-        </motion.div>
+        </FadeIn>
       </div>
-    </section>
+    </Section>
   );
 };
-
-export default HallOfFameList;

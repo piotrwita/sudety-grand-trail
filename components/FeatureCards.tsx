@@ -26,7 +26,7 @@ const features = [
       'Wędrujesz przez Polskę, Czechy i Niemcy – trzy kultury, trzy spojrzenia, jeden górski świat. Szlak przekracza granice nie tylko na mapie, ale przede wszystkim w umyśle. Łączy krajobrazy, języki i rytmy życia, tworząc z nich jedną wspólną przestrzeń. To Sudety w pełnym wymiarze. Bez granic.',
     icon: (
       <svg
-        className="h-12 w-12"
+        className="size-12"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -48,7 +48,7 @@ const features = [
     title: 'Wyprawa, która zmienia',
     description:
       '900 kilometrów i prawie 30 000 metrów przewyższeń. To nie tylko droga przez góry, ale spotkanie z samym sobą. Każdy kilometr uczy wytrwałości, zachwytu i pokory wobec natury. To coś więcej niż trasa do przejścia. To doświadczenie, które zostaje w człowieku na całe życie.',
-    icon: <LightningIcon className="h-12 w-12" />,
+    icon: <LightningIcon className="size-12" />,
     color: 'from-accent to-accent/90',
     bgColor: 'bg-mountain-100',
     textColor: 'text-accent',
@@ -57,7 +57,7 @@ const features = [
 
 export const FeatureCards = () => {
   return (
-    <div className="grid gap-8 md:grid-cols-3 lg:gap-10">
+    <div className="grid gap-8 lg:grid-cols-3 lg:gap-10">
       {features.map((feature, index) => (
         <FadeIn
           key={feature.title}
@@ -72,32 +72,12 @@ export const FeatureCards = () => {
           <div
             className={`${feature.bgColor} relative h-full overflow-hidden rounded-2xl border border-white/50 p-8 shadow-lg transition-all duration-300 focus-within:outline-none focus-within:ring-4 focus-within:ring-forest-700/30 focus-within:ring-offset-2 hover:-translate-y-2 hover:shadow-xl`}
           >
-            {/* Background Pattern */}
             <div className="absolute right-0 top-0 size-32 opacity-20">
-              <svg viewBox="0 0 100 100" className="size-full">
-                <defs>
-                  <pattern
-                    id={`pattern-${index}`}
-                    x="0"
-                    y="0"
-                    width="20"
-                    height="20"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <circle cx="10" cy="10" r="1" fill="currentColor" />
-                  </pattern>
-                </defs>
-                <rect
-                  width="100"
-                  height="100"
-                  fill={`url(#pattern-${index})`}
-                  className={feature.textColor}
-                />
-              </svg>
+              <BackgroundPattern index={index} textColor={feature.textColor} />
             </div>
 
             <div
-              className={`inline-flex h-20 w-20 items-center justify-center bg-gradient-to-br ${feature.color} mb-6 rounded-2xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110`}
+              className={`inline-flex size-20 items-center justify-center bg-gradient-to-br ${feature.color} mb-6 rounded-2xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110`}
             >
               {feature.icon}
             </div>
@@ -122,3 +102,32 @@ export const FeatureCards = () => {
     </div>
   );
 };
+
+const BackgroundPattern = ({
+  index,
+  textColor,
+}: {
+  index: number;
+  textColor: string;
+}) => (
+  <svg viewBox="0 0 100 100" className="size-full">
+    <defs>
+      <pattern
+        id={`pattern-${index}`}
+        x="0"
+        y="0"
+        width="20"
+        height="20"
+        patternUnits="userSpaceOnUse"
+      >
+        <circle cx="10" cy="10" r="1" fill="currentColor" />
+      </pattern>
+    </defs>
+    <rect
+      width="100"
+      height="100"
+      fill={`url(#pattern-${index})`}
+      className={textColor}
+    />
+  </svg>
+);
