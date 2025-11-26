@@ -52,7 +52,7 @@ export const HomeHeroSection = () => {
         <div className="absolute left-1/2 top-1/2 size-[500px] -translate-x-1/2 -translate-y-1/2 transform lg:size-[600px] 2xl:size-[800px]">
           <LogoImage
             fill
-            sizes="(min-width: 1536px) 800px, (min-width: 1024px) 600px, 100vw"
+            // sizes="(min-width: 1536px) 800px, (min-width: 1024px) 600px, 100vw"
             priority
             fetchPriority="high"
           />
