@@ -1,0 +1,1 @@
+export { WhyChooseSection } from './WhyChooseSection';

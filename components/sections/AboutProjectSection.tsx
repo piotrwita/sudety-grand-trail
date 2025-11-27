@@ -1,24 +1,19 @@
 import Link from 'next/link';
+import { ReactNode } from 'react';
 import { FacebookIcon } from '@/components/icons';
-import { FadeIn, ScaleIn } from '@/components/motion';
+import { FadeIn } from '@/components/motion';
 import { siteConfig } from '@/config/site';
 import { Section } from './Section';
+import { SectionHeader } from './SectionHeader';
 
-const ProjectIcon = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-    />
-  </svg>
-);
+const FADE_IN_PROPS = {
+  inView: true,
+  inViewMargin: '-200px' as const,
+  direction: 'up' as const,
+  offset: 30,
+  delay: 0.3,
+  duration: 0.6,
+};
 
 export const AboutProjectSection = () => {
   const { facebook, map } = siteConfig.links;
@@ -26,56 +21,29 @@ export const AboutProjectSection = () => {
   return (
     <Section
       ariaLabel="O Projekcie"
-      className="relative items-start overflow-hidden bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700 py-12 lg:py-24"
+      className="relative items-start overflow-hidden bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700"
     >
-      {/* Decorative background elements */}
-      <div className="absolute right-20 top-20 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
-      <div className="absolute bottom-20 left-20 h-48 w-48 rounded-full bg-cream/5 blur-2xl" />
+      <DecorativeBackground />
 
       <div className="fluid-container relative z-10">
         <div className="mx-auto max-w-6xl">
-          {/* Header */}
-          <div className="mb-8">
-            <FadeIn
-              inView={true}
-              direction="up"
-              offset={60}
-              duration={0.6}
-              className="relative mb-16 text-center"
-            >
-              <ScaleIn
-                inView={true}
-                initialScale={0.5}
-                duration={0.6}
-                delay={0.2}
-                className="section-icon-badge-light mb-8 bg-gradient-to-br from-accent to-earth-700"
-              >
-                <ProjectIcon className="size-8 text-cream/80" />
-              </ScaleIn>
-
-              <FadeIn inView={true} className="mb-6">
-                <h2 className="section-title text-cream">
-                  O <span className="text-gradient-light">Projekcie</span>
-                </h2>
-              </FadeIn>
-
-              <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent" />
-            </FadeIn>
-          </div>
+          <SectionHeader
+            title="O Projekcie"
+            icon={<ProjectIcon className="size-5 text-cream/80 sm:size-6" />}
+            variant="light"
+          />
 
           {/* Main Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Historia powstania i koncepcja */}
             <FadeIn
-              inView={true}
-              inViewMargin="-200px"
-              direction="up"
-              className="relative overflow-hidden rounded-2xl border border-cream/20 bg-gradient-to-br from-forest-800/80 via-forest-800/60 to-earth-800/80 p-8 backdrop-blur-sm lg:p-12"
+              {...FADE_IN_PROPS}
+              className="relative overflow-hidden rounded-xl border border-cream/20 bg-gradient-to-br from-forest-800/80 via-forest-800/60 to-earth-800/80 p-4 backdrop-blur-sm sm:rounded-2xl sm:p-6 md:p-8 lg:p-12"
             >
-              <div className="relative space-y-8 text-lg leading-relaxed text-cream/90">
+              <div className="relative space-y-4 text-base leading-relaxed text-cream/90 sm:space-y-6 sm:text-lg md:space-y-8">
                 {/* Historia powstania */}
-                <div className="space-y-4">
-                  <p className="text-2xl font-bold text-cream">
+                <div className="space-y-3 sm:space-y-4">
+                  <p className="text-xl font-bold text-cream sm:text-2xl">
                     Z pasji, doświadczenia i... niedosytu.
                   </p>
                   <p>
@@ -89,7 +57,7 @@ export const AboutProjectSection = () => {
                   </p>
                   <p>
                     Właśnie dlatego narodziła się idea{' '}
-                    <span className="text-xl font-bold text-accent">
+                    <span className="text-lg font-bold text-accent sm:text-xl">
                       SUDETY GRAND TRAIL
                     </span>
                     , czyli szlaku, który stanie się nie tylko zwieńczeniem
@@ -101,12 +69,11 @@ export const AboutProjectSection = () => {
                   </p>
                 </div>
 
-                {/* Separator */}
-                <div className="h-px bg-gradient-to-r from-transparent via-cream/30 to-transparent" />
+                <Separator variant="cream" />
 
                 {/* Koncepcja */}
-                <div className="space-y-4">
-                  <p className="text-2xl font-bold text-cream">
+                <div className="space-y-3 sm:space-y-4">
+                  <p className="text-xl font-bold text-cream sm:text-2xl">
                     To nie tylko kolejna linia na mapie.
                   </p>
                   <p>
@@ -122,24 +89,24 @@ export const AboutProjectSection = () => {
                   </p>
                   <p>
                     Trasa mierzy{' '}
-                    <span className="text-xl font-bold text-accent">
+                    <span className="text-lg font-bold text-accent sm:text-xl">
                       900 kilometrów
                     </span>{' '}
                     długości i{' '}
-                    <span className="text-xl font-bold text-accent">
+                    <span className="text-lg font-bold text-accent sm:text-xl">
                       niespełna 30 000 metrów
                     </span>{' '}
                     przewyższeń. Przebiega przez{' '}
-                    <span className="text-xl font-bold text-accent">
+                    <span className="text-lg font-bold text-accent sm:text-xl">
                       22 pasma
                     </span>{' '}
                     górskie, prowadząc przez{' '}
-                    <span className="text-xl font-bold text-accent">
+                    <span className="text-lg font-bold text-accent sm:text-xl">
                       trzy kraje
                     </span>{' '}
                     – Polskę, Czechy, zahaczając także o Niemcy.
                   </p>
-                  <p className="border-t border-cream/20 pt-4 italic text-cream/95">
+                  <p className="border-t border-cream/20 pt-3 italic text-cream/95 sm:pt-4">
                     Początek trasy znajduje się w{' '}
                     <span className="font-bold not-italic text-cream">
                       Jarnołtówku (Góry Opawskie)
@@ -156,16 +123,13 @@ export const AboutProjectSection = () => {
 
             {/* Cel i Legendy */}
             <FadeIn
-              inView={true}
-              inViewMargin="-200px"
-              direction="up"
-              delay={0.2}
-              className="relative overflow-hidden rounded-2xl border border-accent/30 bg-gradient-to-br from-accent/15 via-accent/10 to-earth-700/20 p-8 backdrop-blur-sm lg:p-12"
+              {...FADE_IN_PROPS}
+              className="relative overflow-hidden rounded-xl border border-accent/30 bg-gradient-to-br from-accent/15 via-accent/10 to-earth-700/20 p-4 backdrop-blur-sm sm:rounded-2xl sm:p-6 md:p-8 lg:p-12"
             >
-              <div className="relative space-y-8 text-lg leading-relaxed text-cream/90">
+              <div className="relative space-y-4 text-base leading-relaxed text-cream/90 sm:space-y-6 sm:text-lg md:space-y-8">
                 {/* Cel Szlaku */}
-                <div className="space-y-4">
-                  <p className="text-2xl font-bold text-cream">
+                <div className="space-y-3 sm:space-y-4">
+                  <p className="text-xl font-bold text-cream sm:text-2xl">
                     Kompletne przejście Sudetów.
                   </p>
                   <p>
@@ -179,7 +143,7 @@ export const AboutProjectSection = () => {
                     </span>
                     .
                   </p>
-                  <div className="rounded-r border-l-4 border-accent bg-accent/10 py-3 pl-6 text-xl font-medium italic text-cream">
+                  <HighlightedBox>
                     W wielu przypadkach oznacza to{' '}
                     <span className="font-bold not-italic">
                       podwójne wejścia
@@ -187,15 +151,14 @@ export const AboutProjectSection = () => {
                     – na faktyczny najwyższy punkt i na szczyt koronny, jeśli
                     różnią się od siebie. To czyni trasę jeszcze bardziej
                     wymagającą i wyjątkową.
-                  </div>
+                  </HighlightedBox>
                 </div>
 
-                {/* Separator */}
-                <div className="h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+                <Separator variant="accent" />
 
                 {/* Legendy */}
-                <div className="space-y-4">
-                  <p className="text-2xl font-bold text-cream">
+                <div className="space-y-3 sm:space-y-4">
+                  <p className="text-xl font-bold text-cream sm:text-2xl">
                     Legendy Sudetów czekają.
                   </p>
                   <p>
@@ -217,7 +180,7 @@ export const AboutProjectSection = () => {
                     i mistyczną{' '}
                     <span className="font-bold text-cream">Ślężę</span>.
                   </p>
-                  <p className="text-xl font-medium text-cream">
+                  <p className="text-lg font-medium text-cream sm:text-xl">
                     A to dopiero początek tej górskiej mozaiki.
                   </p>
                 </div>
@@ -226,13 +189,11 @@ export const AboutProjectSection = () => {
 
             {/* Filozofia */}
             <FadeIn
-              inView={true}
-              inViewMargin="-200px"
-              direction="up"
-              className="relative overflow-hidden rounded-2xl border border-cream/20 bg-gradient-to-br from-forest-800/80 via-forest-800/60 to-earth-800/80 p-8 backdrop-blur-sm lg:p-12"
+              {...FADE_IN_PROPS}
+              className="relative overflow-hidden rounded-xl border border-cream/20 bg-gradient-to-br from-forest-800/80 via-forest-800/60 to-earth-800/80 p-4 backdrop-blur-sm sm:rounded-2xl sm:p-6 md:p-8 lg:p-12"
             >
-              <div className="relative space-y-6 text-lg leading-relaxed text-cream/90">
-                <p className="text-2xl font-bold text-cream">
+              <div className="relative space-y-4 text-base leading-relaxed text-cream/90 sm:space-y-5 sm:text-lg md:space-y-6">
+                <p className="text-xl font-bold text-cream sm:text-2xl">
                   Dla tych, którzy chcą się zgubić, by się odnaleźć.
                 </p>
                 <p>
@@ -246,7 +207,7 @@ export const AboutProjectSection = () => {
                   .
                 </p>
                 <p>
-                  <span className="text-xl font-bold text-accent">
+                  <span className="text-lg font-bold text-accent sm:text-xl">
                     SUDETY GRAND TRAIL
                   </span>{' '}
                   to propozycja dla każdego, kto pragnie odkryć Sudety w ich
@@ -256,7 +217,7 @@ export const AboutProjectSection = () => {
                   dla wszystkich, którzy kochają góry i pragną zmierzyć się z
                   takim wyzwaniem.
                 </p>
-                <p className="border-t border-cream/20 pt-4 text-xl italic text-cream/90">
+                <p className="border-t border-cream/20 pt-3 text-lg italic text-cream/90 sm:pt-4 sm:text-xl">
                   To szlak stworzony z myślą o tych, którzy szukają czegoś
                   więcej niż tylko oznakowanej drogi.
                 </p>
@@ -264,57 +225,48 @@ export const AboutProjectSection = () => {
             </FadeIn>
 
             {/* Zakończenie */}
-            <FadeIn
-              inView={true}
-              inViewMargin="-200px"
-              direction="up"
-              className="text-center"
-            >
-              <div className="relative overflow-hidden rounded-2xl border border-accent/40 bg-gradient-to-br from-accent/25 via-accent/20 to-earth-700/25 p-8 backdrop-blur-sm lg:p-12">
-                <div className="relative space-y-8">
+            <FadeIn {...FADE_IN_PROPS} className="text-center">
+              <div className="relative overflow-hidden rounded-xl border border-accent/40 bg-gradient-to-br from-accent/25 via-accent/20 to-earth-700/25 p-4 backdrop-blur-sm sm:rounded-2xl sm:p-6 md:p-8 lg:p-12">
+                <div className="relative space-y-4 sm:space-y-6 md:space-y-8">
                   {/* Zakończenie */}
                   <div>
-                    <p className="mb-4 text-2xl font-bold italic leading-relaxed text-cream md:text-3xl">
+                    <p className="mb-3 text-xl font-bold italic leading-relaxed text-cream sm:mb-4 sm:text-2xl md:text-3xl">
                       Nieprzewidywalna przygoda. Przemyślana koncepcja.
                     </p>
-                    <p className="text-xl text-cream/90">
+                    <p className="text-lg text-cream/90 sm:text-xl">
                       Zapraszam do zmierzenia się z tym wyzwaniem – na własnych
                       zasadach, we własnym tempie.
                     </p>
                   </div>
 
                   {/* Cytat w ramce */}
-                  <div className="rounded-r border-l-4 border-accent bg-accent/10 py-4 pl-6 text-left text-xl font-medium italic text-cream">
+                  <HighlightedBox className="text-left">
                     W przestrzeni, w rytmie marszu, w samych sobie — Twórca
                     Sudety Grand Trail
-                  </div>
+                  </HighlightedBox>
 
                   {/* Call to Action */}
-                  <div className="border-t border-cream/20 pt-6">
-                    <p className="mb-6 text-xl font-medium text-cream/90">
+                  <div className="border-t border-cream/20 pt-4 sm:pt-6">
+                    <p className="mb-4 text-lg font-medium text-cream/90 sm:mb-6 sm:text-xl">
                       Gotowy na nieprzewidywalną przygodę przez 24 pasma
                       Sudetów?
                     </p>
-                    <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                      <Link
+                    <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+                      <ActionButton
                         href={facebook.href}
-                        target={facebook.external ? '_blank' : undefined}
-                        rel={
-                          facebook.external ? 'noopener noreferrer' : undefined
-                        }
-                        className="btn-primary flex items-center justify-center gap-2 px-8 py-3 text-base sm:px-10 sm:py-4 sm:text-lg"
+                        external={facebook.external}
+                        variant="primary"
                       >
-                        <FacebookIcon className="size-5" />
+                        <FacebookIcon className="size-4 sm:size-5" />
                         Dołącz do Społeczności
-                      </Link>
-                      <Link
+                      </ActionButton>
+                      <ActionButton
                         href={map.href}
-                        target={map.external ? '_blank' : undefined}
-                        rel={map.external ? 'noopener noreferrer' : undefined}
-                        className="btn-secondary border-cream/60 px-8 py-3 text-base text-cream/90 hover:bg-cream/90 hover:text-forest-800 sm:px-10 sm:py-4 sm:text-lg"
+                        external={map.external}
+                        variant="secondary"
                       >
                         Sprawdź Trasę
-                      </Link>
+                      </ActionButton>
                     </div>
                   </div>
                 </div>
@@ -324,5 +276,80 @@ export const AboutProjectSection = () => {
         </div>
       </div>
     </Section>
+  );
+};
+
+const ProjectIcon = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+    />
+  </svg>
+);
+
+const DecorativeBackground = () => (
+  <>
+    <div className="absolute right-4 top-4 h-32 w-32 rounded-full bg-accent/10 blur-lg sm:right-8 sm:top-8 sm:h-48 sm:w-48 md:right-12 md:top-12 md:h-56 md:w-56 lg:right-20 lg:top-20 lg:h-64 lg:w-64" />
+    <div className="absolute bottom-4 left-4 h-24 w-24 rounded-full bg-cream/5 blur-xl sm:bottom-8 sm:left-8 sm:h-36 sm:w-36 md:bottom-12 md:left-12 md:h-40 md:w-40 lg:bottom-20 lg:left-20 lg:h-48 lg:w-48" />
+  </>
+);
+
+const Separator = ({ variant = 'cream' }: { variant?: 'cream' | 'accent' }) => {
+  const classes =
+    variant === 'accent'
+      ? 'h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent'
+      : 'h-px bg-gradient-to-r from-transparent via-cream/30 to-transparent';
+  return <div className={classes} />;
+};
+
+const HighlightedBox = ({
+  children,
+  className = '',
+}: {
+  children: ReactNode;
+  className?: string;
+}) => (
+  <div
+    className={`rounded-r border-l-4 border-accent bg-accent/10 py-2 pl-4 text-base font-medium italic text-cream sm:py-3 sm:pl-6 sm:text-lg md:text-xl ${className}`}
+  >
+    {children}
+  </div>
+);
+
+const ActionButton = ({
+  href,
+  external,
+  children,
+  variant = 'primary',
+}: {
+  href: string;
+  external?: boolean;
+  children: ReactNode;
+  variant?: 'primary' | 'secondary';
+}) => {
+  const baseClasses =
+    'flex items-center justify-center gap-2 px-6 py-2.5 text-sm sm:w-auto sm:px-8 sm:py-3 sm:text-base md:px-10 md:py-4 md:text-lg w-full';
+  const variantClasses =
+    variant === 'primary'
+      ? 'btn-primary'
+      : 'btn-secondary border-cream/60 text-cream/90 hover:bg-cream/90 hover:text-forest-800';
+
+  return (
+    <Link
+      href={href}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
+      className={`${baseClasses} ${variantClasses}`}
+    >
+      {children}
+    </Link>
   );
 };
