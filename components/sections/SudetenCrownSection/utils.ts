@@ -16,6 +16,7 @@ export interface TripStats {
 
 /**
  * Check if a peak is part of Korona Gór Polski (KGP)
+ * This is a fallback method - prefer using range.isKgp field directly
  */
 export const isKgpPeak = (
   peakName: string,

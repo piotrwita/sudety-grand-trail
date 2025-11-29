@@ -27,11 +27,14 @@ interface FilterBarProps {
   onSearchChange: (value: string) => void;
   showKgpOnly: boolean;
   onToggleKgp: () => void;
+  showKsOnly: boolean;
+  onToggleKs: () => void;
 }
 
 interface MountainCardProps {
   range: SudetenRange;
   isKgp: boolean;
+  isKs: boolean;
 }
 
 interface MobileMountainCardProps extends MountainCardProps {
@@ -47,6 +50,7 @@ export const MountainCardsView = ({ ranges }: MountainCardsViewProps) => {
   const [searchTerm, setSearchTerm] = useState('');
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
   const [showKgpOnly, setShowKgpOnly] = useState(false);
+  const [showKsOnly, setShowKsOnly] = useState(false);
 
   const isMobile = useIsMobile();
 
@@ -61,17 +65,22 @@ export const MountainCardsView = ({ ranges }: MountainCardsViewProps) => {
         range.peak.toLowerCase().includes(searchLower) ||
         range.country.toLowerCase().includes(searchLower);
 
-      // Check KGP (Korona Gór Polski) status
-      const isKgp = isKgpPeak(range.peak, koronaGorPolski);
+      // Check KS and KGP status
+      const isKs = range.isKs ?? false;
+      const isKgp = range.isKgp ?? isKgpPeak(range.peak, koronaGorPolski);
+      
+      // Apply filters - if filter is active, show only matching peaks
+      const matchesKs = !showKsOnly || isKs;
       const matchesKgp = !showKgpOnly || isKgp;
 
-      return matchesSearch && matchesKgp;
+      return matchesSearch && matchesKs && matchesKgp;
     });
-  }, [ranges, debouncedSearchTerm, showKgpOnly]);
+  }, [ranges, debouncedSearchTerm, showKgpOnly, showKsOnly]);
 
   const handleClearFilters = () => {
     setSearchTerm('');
     setShowKgpOnly(false);
+    setShowKsOnly(false);
   };
 
   const handleMobileCardClick = (rangeId: number) => {
@@ -87,12 +96,16 @@ export const MountainCardsView = ({ ranges }: MountainCardsViewProps) => {
         onSearchChange={setSearchTerm}
         showKgpOnly={showKgpOnly}
         onToggleKgp={() => setShowKgpOnly(!showKgpOnly)}
+        showKsOnly={showKsOnly}
+        onToggleKs={() => setShowKsOnly(!showKsOnly)}
       />
 
       {/* Cards Grid */}
       <div className="grid gap-3 sm:gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
         {filteredRanges.map((range) => {
-          const isKgp = isKgpPeak(range.peak, koronaGorPolski);
+          // Use isKs and isKgp fields directly from data
+          const isKs = range.isKs ?? false;
+          const isKgp = range.isKgp ?? isKgpPeak(range.peak, koronaGorPolski);
 
           // Mobile View: Expandable Cards
           if (isMobile) {
@@ -101,6 +114,7 @@ export const MountainCardsView = ({ ranges }: MountainCardsViewProps) => {
                 key={range.id}
                 range={range}
                 isKgp={isKgp}
+                isKs={isKs}
                 isSelected={selectedRangeId === range.id}
                 onClick={() => handleMobileCardClick(range.id)}
               />
@@ -108,7 +122,7 @@ export const MountainCardsView = ({ ranges }: MountainCardsViewProps) => {
           }
 
           return (
-            <DesktopMountainCard key={range.id} range={range} isKgp={isKgp} />
+            <DesktopMountainCard key={range.id} range={range} isKgp={isKgp} isKs={isKs} />
           );
         })}
       </div>
@@ -126,6 +140,8 @@ const FilterBar = ({
   onSearchChange,
   showKgpOnly,
   onToggleKgp,
+  showKsOnly,
+  onToggleKs,
 }: FilterBarProps) => {
   return (
     <FadeIn
@@ -148,28 +164,54 @@ const FilterBar = ({
           />
         </div>
 
-        {/* KGP Filter Toggle */}
-        <button
-          onClick={onToggleKgp}
-          className={cn(
-            'group flex items-center justify-center gap-2 rounded-xl border-2 px-6 py-3 text-sm font-bold uppercase tracking-wide transition-all',
-            showKgpOnly
-              ? 'border-accent bg-accent text-cream shadow-vintage'
-              : 'border-forest-200 bg-cream text-forest-700 hover:border-forest-300 hover:bg-forest-50'
-          )}
-        >
-          <span>Korona Gór Polski</span>
-          <div
+        {/* Filter Buttons */}
+        <div className="flex gap-2">
+          {/* KS Filter Toggle */}
+          <button
+            onClick={onToggleKs}
             className={cn(
-              'flex h-5 w-5 items-center justify-center rounded-full border-2 transition-colors',
-              showKgpOnly
-                ? 'border-cream bg-cream text-accent'
-                : 'border-forest-300 group-hover:border-forest-400'
+              'group flex items-center justify-center gap-2 rounded-xl border-2 px-4 py-3 text-sm font-bold uppercase tracking-wide transition-all md:px-6',
+              showKsOnly
+                ? 'border-amber-600 bg-gradient-to-br from-amber-700 to-amber-900 text-cream shadow-vintage'
+                : 'border-forest-200 bg-cream text-forest-700 hover:border-forest-300 hover:bg-forest-50'
             )}
           >
-            {showKgpOnly && <CheckIcon />}
-          </div>
-        </button>
+            <span>Korona Sudetów</span>
+            <div
+              className={cn(
+                'flex h-5 w-5 items-center justify-center rounded-full border-2 transition-colors',
+                showKsOnly
+                  ? 'border-cream bg-cream text-yellow-600'
+                  : 'border-forest-300 group-hover:border-forest-400'
+              )}
+            >
+              {showKsOnly && <CheckIcon />}
+            </div>
+          </button>
+
+          {/* KGP Filter Toggle */}
+          <button
+            onClick={onToggleKgp}
+            className={cn(
+              'group flex items-center justify-center gap-2 rounded-xl border-2 px-4 py-3 text-sm font-bold uppercase tracking-wide transition-all md:px-6',
+              showKgpOnly
+                ? 'border-orange-500 bg-gradient-to-br from-orange-500 to-orange-700 text-cream shadow-vintage'
+                : 'border-forest-200 bg-cream text-forest-700 hover:border-forest-300 hover:bg-forest-50'
+            )}
+          >
+            <span>Korona Gór Polski</span>
+            <div
+              className={cn(
+                'flex h-5 w-5 items-center justify-center rounded-full border-2 transition-colors',
+                showKgpOnly
+                  ? 'border-cream bg-cream text-accent'
+                  : 'border-forest-300 group-hover:border-forest-400'
+              )}
+            >
+              {showKgpOnly && <CheckIcon />}
+            </div>
+          </button>
+        </div>
       </div>
     </FadeIn>
   );
@@ -178,6 +220,7 @@ const FilterBar = ({
 const MobileMountainCard = ({
   range,
   isKgp,
+  isKs,
   isSelected,
   onClick,
 }: MobileMountainCardProps) => {
@@ -190,7 +233,7 @@ const MobileMountainCard = ({
         )}
         onClick={onClick}
       >
-        <MountainCardVisuals range={range} isKgp={isKgp} />
+        <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} />
 
         {/* Expanded Details (Collapsible) */}
         <div
@@ -210,7 +253,7 @@ const MobileMountainCard = ({
   );
 };
 
-const DesktopMountainCard = ({ range, isKgp }: MountainCardProps) => {
+const DesktopMountainCard = ({ range, isKgp, isKs }: MountainCardProps) => {
   return (
     <FadeIn direction="up" offset={20} duration={0.3} delay={0.1} inView>
       <MorphingDialog
@@ -222,7 +265,7 @@ const DesktopMountainCard = ({ range, isKgp }: MountainCardProps) => {
       >
         <MorphingDialogTrigger className="w-full text-left">
           <div className="card-vintage group relative h-full overflow-hidden p-4 transition-all duration-300 md:p-6">
-            <MountainCardVisuals range={range} isKgp={isKgp} />
+            <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} />
             {/* Hover Overlay Effect */}
             <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-forest-700/5 to-earth-700/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </div>
@@ -230,7 +273,7 @@ const DesktopMountainCard = ({ range, isKgp }: MountainCardProps) => {
         <MorphingDialogContainer>
           <MorphingDialogContent className="relative h-auto w-[500px] rounded-2xl border-2 border-forest-200 bg-cream shadow-vintage-lg [&_.mountain-image-container]:h-64">
             <div className="p-6">
-              <MountainCardVisuals range={range} isKgp={isKgp} />
+              <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} />
               <div className="mt-4 border-t border-forest-200 pt-4">
                 <MountainDetails range={range} />
               </div>
@@ -242,13 +285,13 @@ const DesktopMountainCard = ({ range, isKgp }: MountainCardProps) => {
   );
 };
 
-const MountainCardVisuals = ({ range, isKgp }: MountainCardProps) => (
+const MountainCardVisuals = ({ range, isKgp, isKs }: MountainCardProps) => (
   <div className="relative flex h-full items-center md:block">
     <Watermark className="absolute -bottom-6 -right-6 z-0 opacity-[0.08] transition-opacity duration-300 group-hover:opacity-[0.12]" />
 
     {/* Rank Badge - Left on mobile, Top Left on Desktop */}
     <div className="mr-4 flex-shrink-0 md:mb-4 md:mr-0 md:flex md:items-start md:justify-between">
-      <RankBadge rank={range.rank} isKgp={isKgp} />
+      <RankBadge rank={range.rank} isKgp={isKgp} isKs={isKs} />
       {/* Desktop Flag */}
       <div className="hidden text-2xl md:block">
         {getCountryFlag(range.country)}
@@ -264,15 +307,11 @@ const MountainCardVisuals = ({ range, isKgp }: MountainCardProps) => (
 );
 
 const MountainInfo = ({ range }: { range: SudetenRange }) => {
-  // Śnieżnik (id: 3) uses the provided image
-  const isSnieznik = range.id === 3;
-  const imageUrl = isSnieznik
-    ? 'https://d34-a.sdn.cz/d_34/c_img_QR_m/LUNSxQ.jpeg?fl=res,667,500,1'
-    : null;
+  const imageUrl = range.imageUrl;
 
   return (
     <div className="flex min-w-0 flex-col justify-center md:block">
-      {isSnieznik && imageUrl ? (
+      {imageUrl ? (
         <div className="mountain-image-container relative hidden h-32 w-full overflow-hidden rounded-lg md:mb-3 md:block [&_img]:transition-transform [&_img]:duration-300 group-hover:[&_img]:scale-105">
           <Image
             src={imageUrl}
@@ -280,7 +319,7 @@ const MountainInfo = ({ range }: { range: SudetenRange }) => {
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority={isSnieznik}
+            priority={range.id <= 3}
           />
         </div>
       ) : (
@@ -317,6 +356,9 @@ const MountainDetails = ({ range }: { range: SudetenRange }) => (
         label={`Szczyt (${getCountryFlag(range.country)})`}
         value={range.peakCs}
       />
+      {range.peakDe && (
+        <DetailRow label="Szczyt (niem.)" value={range.peakDe} />
+      )}
       <DetailRow label="Kraje" value={range.country} />
     </div>
   </div>
@@ -331,7 +373,7 @@ const DetailRow = ({ label, value }: { label: string; value: string }) => (
   </div>
 );
 
-const RankBadge = ({ rank, isKgp }: { rank: number; isKgp: boolean }) => (
+const RankBadge = ({ rank, isKgp, isKs }: { rank: number; isKgp: boolean; isKs: boolean }) => (
   <div className="relative flex-shrink-0">
     <div
       className={cn(
@@ -342,11 +384,21 @@ const RankBadge = ({ rank, isKgp }: { rank: number; isKgp: boolean }) => (
       {rank}
     </div>
 
-    {isKgp && (
-      <div className="absolute -bottom-2 -right-2 flex size-5 items-center justify-center rounded-full bg-accent p-3 text-[10px] font-bold leading-none text-cream shadow-sm md:-right-6 md:bottom-auto md:top-1 md:size-6 md:p-0 md:text-[8px]">
-        KGP
-      </div>
-    )}
+    {/* Badge container - position badges relative to rank badge */}
+    <div className="absolute -bottom-0.5 -right-0.5 flex shrink-0 gap-1 md:left-full md:top-0 md:ml-2 md:flex-row md:gap-1.5">
+      {isKs && (
+        <div className="relative flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-700 to-amber-900 text-[10px] font-black leading-none text-cream shadow-[0_4px_12px_rgba(180,83,9,0.4),0_2px_4px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.2),inset_0_-1px_2px_rgba(0,0,0,0.2)] ring-2 ring-amber-500/30 md:h-7 md:w-7 md:text-[8px]">
+          <span className="relative z-10">KS</span>
+          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400/20 to-transparent" />
+        </div>
+      )}
+      {isKgp && (
+        <div className="relative flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-orange-600 to-red-700 text-[10px] font-black leading-none text-cream shadow-[0_4px_12px_rgba(234,88,12,0.4),0_2px_4px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.2),inset_0_-1px_2px_rgba(0,0,0,0.2)] ring-2 ring-orange-400/30 md:h-7 md:w-7 md:text-[8px]">
+          <span className="relative z-10">KGP</span>
+          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-orange-300/20 to-transparent" />
+        </div>
+      )}
+    </div>
   </div>
 );
 

@@ -47,7 +47,7 @@ export const TrailPlannerView = ({
 
   const handleQuickSelectKgp = () => {
     const kgpRangeIds = ranges
-      .filter((range) => isKgpPeak(range.peak, kgpPeaks))
+      .filter((range) => range.isKgp ?? isKgpPeak(range.peak, kgpPeaks))
       .map((r) => r.id);
     onQuickSelect(kgpRangeIds);
   };
@@ -150,12 +150,21 @@ export const TrailPlannerView = ({
                         <span className="text-xs">
                           {getCountryFlag(range.country)}
                         </span>
-                        {/* KGP Badge */}
-                        {isKgpPeak(range.peak, kgpPeaks) && (
-                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-accent text-xs font-bold text-cream">
-                            KGP
-                          </div>
-                        )}
+                        {/* Badges */}
+                        <div className="flex gap-1.5">
+                          {(range.isKs ?? false) && (
+                            <div className="relative flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-amber-700 to-amber-900 text-[10px] font-black text-cream shadow-[0_4px_12px_rgba(180,83,9,0.4),0_2px_4px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.2),inset_0_-1px_2px_rgba(0,0,0,0.2)] ring-2 ring-amber-500/30">
+                              <span className="relative z-10">KS</span>
+                              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400/20 to-transparent" />
+                            </div>
+                          )}
+                          {(range.isKgp ?? isKgpPeak(range.peak, kgpPeaks)) && (
+                            <div className="relative flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-orange-600 to-red-700 text-[10px] font-black text-cream shadow-[0_4px_12px_rgba(234,88,12,0.4),0_2px_4px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.2),inset_0_-1px_2px_rgba(0,0,0,0.2)] ring-2 ring-orange-400/30">
+                              <span className="relative z-10">KGP</span>
+                              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-orange-300/20 to-transparent" />
+                            </div>
+                          )}
+                        </div>
                         <div
                           className={`h-6 w-6 bg-gradient-to-br ${getRankColor(
                             range.rank

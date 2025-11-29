@@ -1,35 +1,12 @@
 'use client';
 
-import { useState } from 'react';
 import { Section } from '../Section';
-import { sudetenRanges, koronaGorPolski } from './data';
+import { sudetenRanges } from './data';
 import { MountainCardsView } from './MountainCardsView';
-import { TrailPlannerView } from './TrailPlannerView';
 import { FadeIn, ScaleIn } from '@/components/motion';
 import { SummaryStats } from './SummaryStats';
 
-const ViewModes = {
-  Grid: 'grid',
-  Planner: 'planner',
-} as const;
-
-type ViewMode = (typeof ViewModes)[keyof typeof ViewModes];
-
 export const SudetenCrownSection = () => {
-  const [viewMode, setViewMode] = useState<ViewMode>(ViewModes.Grid);
-  const [selectedPeaks, setSelectedPeaks] = useState<number[]>([]);
-
-  const togglePeak = (rangeId: number) => {
-    setSelectedPeaks((prev) =>
-      prev.includes(rangeId)
-        ? prev.filter((id) => id !== rangeId)
-        : [...prev, rangeId]
-    );
-  };
-
-  const handleQuickSelect = (peakIds: number[]) => {
-    setSelectedPeaks(peakIds);
-  };
 
   return (
     <Section className="bg-forest-50 py-24" ariaLabel="Sekcja Korona Sudetów">
@@ -60,50 +37,12 @@ export const SudetenCrownSection = () => {
           <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
 
           <p className="text-fluid-xl mx-auto mb-8 max-w-5xl font-medium leading-relaxed text-mountain-600">
-            22 pasma górskie. 22 najwyższe szczyty. Jeden szlak. Kompletne
+            29 szczytów. 22 pasma górskie. Jeden szlak. Kompletne
             podbicie Sudetów od Śnieżki (1603m) po Lázek (714m).
           </p>
-
-          {/* View Mode Toggle */}
-          <div className="mb-8 flex justify-center">
-            <div className="flex rounded-xl bg-forest-100 p-1">
-              <button
-                onClick={() => setViewMode(ViewModes.Grid)}
-                className={`rounded-lg px-6 py-2 text-sm font-bold uppercase tracking-wide transition-all ${
-                  viewMode === ViewModes.Grid
-                    ? 'bg-forest-700 text-cream shadow-vintage'
-                    : 'text-forest-700 hover:bg-forest-200'
-                }`}
-              >
-                Siatka
-              </button>
-              <button
-                onClick={() => setViewMode(ViewModes.Planner)}
-                className={`rounded-lg px-6 py-2 text-sm font-bold uppercase tracking-wide transition-all ${
-                  viewMode === ViewModes.Planner
-                    ? 'bg-forest-700 text-cream shadow-vintage'
-                    : 'text-forest-700 hover:bg-forest-200'
-                }`}
-              >
-                Planer Trasy
-              </button>
-            </div>
-          </div>
         </FadeIn>
 
-        {viewMode === ViewModes.Grid && (
-          <MountainCardsView ranges={sudetenRanges} />
-        )}
-
-        {viewMode === ViewModes.Planner && (
-          <TrailPlannerView
-            ranges={sudetenRanges}
-            kgpPeaks={koronaGorPolski}
-            selectedPeaks={selectedPeaks}
-            onTogglePeak={togglePeak}
-            onQuickSelect={handleQuickSelect}
-          />
-        )}
+        <MountainCardsView ranges={sudetenRanges} />
 
         <FadeIn
           direction="up"
