@@ -3,66 +3,43 @@ import { ScaleIn } from '@/components/motion/ScaleIn';
 import {
   MapIcon,
   DownloadIcon,
-  ExternalLinkIcon,
   SparklesIcon,
   ClockIcon,
 } from '@/components/icons';
 import Link from 'next/link';
 import { Section } from './Section';
+import { SectionHeader } from './SectionHeader';
+import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 
 export const TrailMapSection = () => {
   return (
-    <Section ariaLabel="Oficjalna Trasa Szlaku" className="bg-cream">
-      <div className="fluid-container">
+    <Section
+      ariaLabel="Oficjalna Trasa Szlaku"
+      className="relative min-h-0 overflow-hidden bg-gradient-to-br from-mountain-100 to-cream"
+    >
+      <VintageMountainsBackground className="opacity-10" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-forest-200/30 via-transparent to-earth-200/30" />
+      <div className="fluid-container relative z-10">
+        <SectionHeader
+          title="Poznaj Mapę"
+          icon={<MapIcon className="size-6 text-cream" />}
+          variant="default"
+        />
+
         <FadeIn
           direction="down"
-          offset={50}
+          offset={30}
           duration={0.8}
+          delay={0.3}
           inView={true}
-          inViewMargin="-100px"
-          className="mb-16 text-center"
+          className="mx-auto mb-16 max-w-5xl text-center"
         >
-          <h2 className="section-title mb-6">
-            Oficjalna <span className="text-gradient">Trasa Szlaku</span>
-          </h2>
-
-          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-
-          <p className="text-fluid-lg mx-auto mb-8 font-medium leading-relaxed text-mountain-600">
-            Nadszedł moment, by oficjalnie przedstawić trasę wyznaczoną
-            specjalnie na potrzeby tej wyprawy. To nie przypadkowy kierunek ani
-            luźny pomysł – to{' '}
-            <strong className="text-accent">przemyślana ścieżka</strong>, która
-            idealnie wpisuje się w ideę i wartości całego przedsięwzięcia.
+          <p className="text-fluid-lg font-medium leading-relaxed text-mountain-600">
+            Poniżej znajduje się mapa trasy prowadzącej przez wszystkie 22 pasma
+            Sudetów. Każdy odcinek został starannie wyznaczony i dopracowany,
+            tworząc spójną drogę od pierwszego kroku w Jarnołtówku po finał pod
+            Ślężą.
           </p>
-
-          {/* Download GPX Button */}
-          <FadeIn
-            direction="down"
-            offset={20}
-            duration={0.6}
-            delay={0.3}
-            inView={true}
-            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
-          >
-            <Link
-              href="https://pro.mapy.com/mapybox-export/v1/path/gpx?id=688fa97f662a3fae890f5f13&rand=0.7002222504750357"
-              download="sudety-grand-trail.gpx"
-              className="btn-primary group inline-flex items-center space-x-3 px-8 py-4 text-lg"
-            >
-              <DownloadIcon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-              <span>Pobierz Mapę GPX</span>
-            </Link>
-            <Link
-              href="https://mapy.com/s/barusofola"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary group inline-flex items-center space-x-3 border-forest-600 px-8 py-4 text-lg text-forest-700 hover:bg-forest-700 hover:text-cream"
-            >
-              <ExternalLinkIcon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-              <span>Otwórz w Mapy.com</span>
-            </Link>
-          </FadeIn>
         </FadeIn>
 
         <ScaleIn
@@ -88,15 +65,6 @@ export const TrailMapSection = () => {
                 title="Grand Trail Sudety Map"
                 frameBorder="0"
               />
-            </div>
-
-            <div className="absolute left-6 top-6 rounded-xl border-2 border-forest-600 bg-forest-800/90 p-4 shadow-vintage backdrop-blur-sm">
-              <div className="flex items-center space-x-3">
-                <div className="h-4 w-4 animate-pulse rounded-full bg-accent" />
-                <span className="text-sm font-bold uppercase tracking-wide text-cream">
-                  Grand Trail Sudety
-                </span>
-              </div>
             </div>
           </div>
         </ScaleIn>

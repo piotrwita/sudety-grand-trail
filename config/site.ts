@@ -23,8 +23,8 @@ export const siteConfig = {
     alt: 'Sudety Grand Trail Logo',
   },
   navigation: [
-    { href: siteRoutes.home, label: 'Home' },
-    { href: siteRoutes.trail, label: 'Trail' },
+    { href: siteRoutes.home, label: 'Strona główna' },
+    { href: siteRoutes.trail, label: 'Trasa' },
     { href: siteRoutes.korona, label: 'Korona Sudetów' },
     { href: siteRoutes.live, label: 'Live', isLive: true },
     { href: siteRoutes.hallOfFame, label: 'Hall of Fame' },
