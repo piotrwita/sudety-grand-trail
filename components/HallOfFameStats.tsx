@@ -69,15 +69,8 @@ const statCards = [
 ];
 
 export const HallOfFameStats = () => {
-  // Hover animation variants for stat cards
-  const hoverVariants = {
-    y: -8,
-    scale: 1.02,
-    transition: { duration: 0.3, ease: 'easeOut' },
-  };
-
   return (
-    <Section ariaLabel="Statystyki Szlaku" className='items-start'>
+    <Section ariaLabel="Statystyki Szlaku">
       <VintageMountainsBackground className="opacity-10" />
 
       <div className="fluid-container relative z-10">
@@ -85,7 +78,6 @@ export const HallOfFameStats = () => {
           title="Statystyki Szlaku"
           icon={<StarIcon className="size-6 text-cream/80" />}
         />
-
         <FadeIn
           direction="up"
           offset={30}
@@ -115,7 +107,6 @@ export const HallOfFameStats = () => {
               duration={0.6}
               delay={0.8 + index * 0.1}
               inView={true}
-              whileHover={hoverVariants}
               className="group"
             >
               <div className="card-vintage relative h-full p-6 text-center">
