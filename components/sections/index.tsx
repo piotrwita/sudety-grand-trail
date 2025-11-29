@@ -1,3 +1,5 @@
+export { Section } from './Section';
+export { SectionHeader } from './SectionHeader';
 export { HomeHeroSection } from './HomeHeroSection';
 export { WhyChooseSection } from './WhyChooseSection';
 export { AboutProjectSection } from './AboutProjectSection';
@@ -5,4 +7,4 @@ export { SudetenCrownSection } from './SudetenCrownSection/SudetenCrownSection';
 export { default as MotivationSection } from './MotivationSection';
 export { TrailMapSection } from './TrailMapSection';
 export { LiveTrackingSection } from './LiveTrackingSection';
-export { Section } from './Section';
+export { SubmissionFormSection } from './SubmissionFormSection';

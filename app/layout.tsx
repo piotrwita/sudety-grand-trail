@@ -6,6 +6,7 @@ import ScrollProgressBar from '@/components/ScrollProgressBar';
 import { siteMetadata } from '@/config/metadata';
 
 import './globals.css';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: {
@@ -37,9 +38,13 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
       className={`${inter.variable} ${oswald.variable} ${montserratAlternates.variable}`}
     >
       <body className="antialiased">
-        <a href="#main-content" className="skip-to-content">
-          Przejdź do treści
-        </a>
+        <Link
+          href="#main-content"
+          className="skip-to-content"
+          aria-label="Przejdź do treści"
+        >
+          <span className="sr-only">Przejdź do treści</span>
+        </Link>
         <ScrollProgressBar />
         <SiteHeader />
         <main id="main-content" className="min-h-screen">
