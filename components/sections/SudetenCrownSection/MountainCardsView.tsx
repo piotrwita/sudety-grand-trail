@@ -228,11 +228,16 @@ const MobileMountainCard = ({
     <FadeIn direction="up" offset={20} duration={0.3} delay={0.1} inView={true}>
       <div
         className={cn(
-          'card-vintage group relative cursor-pointer overflow-hidden p-4 transition-all duration-300 hover:scale-100 hover:shadow-vintage-lg md:p-6',
-          isSelected && 'ring-2 ring-accent'
+          'group relative cursor-pointer overflow-hidden rounded-2xl border-2 border-forest-200/60 bg-gradient-to-br from-cream via-forest-50/20 to-cream p-4 shadow-vintage-lg transition-all duration-300 hover:scale-[1.02] hover:border-forest-400/60 hover:shadow-vintage-xl md:p-6',
+          isSelected && 'ring-2 ring-forest-500/50 border-forest-500/80'
         )}
         onClick={onClick}
       >
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-forest-500/3 via-transparent to-forest-600/3 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        
+        {/* Hover glow effect - only outside */}
+        <div className="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-to-br from-forest-400/15 via-forest-500/8 to-forest-600/15 opacity-0 blur-lg transition-opacity duration-300 group-hover:opacity-100 -z-10" />
         <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} />
 
         {/* Expanded Details (Collapsible) */}
@@ -240,7 +245,7 @@ const MobileMountainCard = ({
           className={cn(
             'grid transition-all duration-300 ease-in-out',
             isSelected
-              ? 'mt-4 grid-rows-[1fr] border-t border-forest-200 pt-4 opacity-100'
+              ? 'mt-4 grid-rows-[1fr] border-t border-forest-300/60 bg-gradient-to-r from-transparent via-forest-100/30 to-transparent pt-4 opacity-100'
               : 'grid-rows-[0fr] opacity-0'
           )}
         >
@@ -264,17 +269,21 @@ const DesktopMountainCard = ({ range, isKgp, isKs }: MountainCardProps) => {
         }}
       >
         <MorphingDialogTrigger className="w-full text-left">
-          <div className="card-vintage group relative h-full overflow-hidden p-4 transition-all duration-300 md:p-6">
+          <div className="group relative h-full overflow-hidden rounded-2xl border-2 border-forest-200/60 bg-gradient-to-br from-cream via-forest-50/20 to-cream p-4 shadow-vintage-lg transition-all duration-300 hover:scale-[1.02] hover:border-forest-400/60 hover:shadow-vintage-xl md:p-6">
+            {/* Subtle gradient overlay */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-forest-500/3 via-transparent to-forest-600/3 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            
+            {/* Hover glow effect - only outside */}
+            <div className="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-to-br from-forest-400/15 via-forest-500/8 to-forest-600/15 opacity-0 blur-lg transition-opacity duration-300 group-hover:opacity-100 -z-10" />
+            
             <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} />
-            {/* Hover Overlay Effect */}
-            <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-forest-700/5 to-earth-700/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </div>
         </MorphingDialogTrigger>
         <MorphingDialogContainer>
-          <MorphingDialogContent className="relative h-auto w-[500px] rounded-2xl border-2 border-forest-200 bg-cream shadow-vintage-lg [&_.mountain-image-container]:h-64">
+          <MorphingDialogContent className="relative h-auto w-[500px] rounded-2xl border-2 border-forest-300/80 bg-cream shadow-vintage-lg [&_.mountain-image-container]:h-64">
             <div className="p-6">
               <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} />
-              <div className="mt-4 border-t border-forest-200 pt-4">
+              <div className="mt-4 border-t border-forest-300/60 pt-4">
                 <MountainDetails range={range} />
               </div>
             </div>
@@ -348,7 +357,7 @@ const ElevationStats = ({ range }: { range: SudetenRange }) => (
 );
 
 const MountainDetails = ({ range }: { range: SudetenRange }) => (
-  <div className="space-y-2 text-sm text-mountain-500 md:space-y-1">
+  <div className="space-y-2 text-sm text-forest-700 md:space-y-1">
     <div className="grid grid-cols-2 gap-2 md:block md:space-y-1">
       <DetailRow label="Czeski" value={range.nameCs} />
       <DetailRow label="Niemiecki" value={range.nameDe} />
@@ -366,10 +375,10 @@ const MountainDetails = ({ range }: { range: SudetenRange }) => (
 
 const DetailRow = ({ label, value }: { label: string; value: string }) => (
   <div>
-    <span className="block font-bold text-forest-700 md:mr-2 md:inline">
+    <span className="block font-bold text-forest-800 md:mr-2 md:inline">
       {label}:
     </span>
-    <span className="block md:inline">{value}</span>
+    <span className="block text-forest-700 md:inline">{value}</span>
   </div>
 );
 

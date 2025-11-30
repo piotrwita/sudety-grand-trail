@@ -5,7 +5,7 @@
 export const siteRoutes = {
   home: '/',
   trail: '/trail',
-  korona: '/korona',
+  korona: '/szczyty',
   live: '/live',
   hallOfFame: '/hall-of-fame',
   about: '/about',
@@ -32,7 +32,7 @@ export const routeConfig = [
     path: siteRoutes.korona,
     priority: 0.8,
     changeFrequency: 'weekly' as const,
-    label: 'Korona Sudetów',
+    label: 'Wykaz szczytów',
   },
   {
     path: siteRoutes.live,

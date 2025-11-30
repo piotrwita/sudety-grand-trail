@@ -6,6 +6,7 @@ import { pageMetadata } from '@/config/metadata';
 import type { Metadata } from 'next';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 import { Section, SubmissionFormSection } from '@/components/sections';
+import { LogoImage } from '@/components/LogoImage';
 import Link from 'next/link';
 
 export const metadata: Metadata = pageMetadata.hallOfFame;
@@ -42,6 +43,11 @@ const HallOfFameHeroSection = () => (
 
     {/* Radial glow effect */}
     <div className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-yellow-400/10 via-yellow-400/5 to-transparent blur-3xl" />
+
+    {/* Logo in background */}
+    <div className="absolute left-1/2 top-1/2 z-0 size-[400px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 lg:size-[500px] 2xl:size-[600px]">
+      <LogoImage fill priority />
+    </div>
 
     <div className="fluid-container relative z-10 text-center">
       <FadeIn direction="up" offset={60} duration={0.6}>

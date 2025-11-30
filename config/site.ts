@@ -25,8 +25,8 @@ export const siteConfig = {
   navigation: [
     { href: siteRoutes.home, label: 'Strona główna' },
     { href: siteRoutes.trail, label: 'Trasa' },
-    { href: siteRoutes.korona, label: 'Korona Sudetów' },
     { href: siteRoutes.live, label: 'Live', isLive: true },
+    { href: siteRoutes.korona, label: 'Szczyty' },
     { href: siteRoutes.hallOfFame, label: 'Hall of Fame' },
     { href: siteRoutes.about, label: 'O Mnie' },
   ],
