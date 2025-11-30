@@ -1,12 +1,11 @@
 import { HallOfFameStats } from '@/components/HallOfFameStats';
 import { PreTrailRegistration } from '@/components/PreTrailRegistration';
 import { HallOfFameList } from '@/components/HallOfFameList';
-import SubmissionForm from '@/components/SubmissionForm';
 import { FadeIn, ScaleIn } from '@/components/motion';
 import { pageMetadata } from '@/config/metadata';
 import type { Metadata } from 'next';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
-import { Section } from '@/components/sections/Section';
+import { Section, SubmissionFormSection } from '@/components/sections';
 import Link from 'next/link';
 
 export const metadata: Metadata = pageMetadata.hallOfFame;
@@ -18,7 +17,7 @@ export default function HallOfFamePage() {
       <HallOfFameStats />
       <PreTrailRegistration />
       <HallOfFameList />
-      <SubmissionForm />
+      <SubmissionFormSection />
     </>
   );
 }
