@@ -118,6 +118,9 @@
   .card-vintage {
     @apply rounded-2xl border-2 border-forest-200 bg-cream shadow-vintage-lg transition-all duration-300 hover:scale-105 hover:shadow-vintage-xl;
   }
+  .card-vintage-noanim {
+    @apply rounded-2xl border-2 border-forest-200 bg-cream shadow-vintage-lg;
+  }
 
   .hero-title {
     @apply font-display font-black uppercase tracking-wider text-cream drop-shadow-lg;

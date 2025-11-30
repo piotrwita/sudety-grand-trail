@@ -5,6 +5,21 @@ import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 /**
+ * Check if code is running on the server (SSR).
+ * Useful for skipping browser-only validation or APIs during SSR.
+ * @example
+ * if (isServer()) return true; // Skip validation during SSR
+ */
+export const isServer = () => typeof window === 'undefined';
+
+/**
+ * Check if code is running in the browser (client-side).
+ * @example
+ * if (isClient()) { window.scrollTo(0, 0); }
+ */
+export const isClient = () => typeof window !== 'undefined';
+
+/**
  * Utility for combining CSS class names with Tailwind conflict resolution.
  * Combines clsx (conditional classes) with tailwind-merge (deduplicates conflicting Tailwind classes).
  * @example
