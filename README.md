@@ -130,13 +130,35 @@ A modern, minimalist website for the Sudety Grand Trail built with Next.js 16, T
 npm install
 ```
 
-2. Run the development server:
+2. Set up environment variables:
+
+Copy the `.env.sample` file to `.env.local` and fill in the required values:
+
+```bash
+cp .env.sample .env.local
+```
+
+Edit `.env.local` and configure the following variables:
+
+- **Gmail OAuth2 Credentials** (required for email submission form):
+  - `GMAIL_CLIENT_ID` - Your Gmail OAuth2 Client ID
+  - `GMAIL_CLIENT_SECRET` - Your Gmail OAuth2 Client Secret
+  - `GMAIL_REFRESH_TOKEN` - Your Gmail OAuth2 Refresh Token
+  - `GMAIL_USER` - Gmail address used as sender
+  - `GMAIL_RECIPIENT` - Email address to receive form submissions
+
+- **Site Configuration** (optional):
+  - `NEXT_PUBLIC_SITE_URL` - Your site URL (defaults to production URL)
+
+> **Note**: The email submission form will not work without proper Gmail OAuth2 credentials. If you don't need email functionality for development, you can skip these variables, but form submissions will fail.
+
+3. Run the development server:
 
 ```bash
 npm run dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Build & Deploy
 
