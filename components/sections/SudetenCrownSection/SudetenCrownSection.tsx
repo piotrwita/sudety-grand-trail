@@ -1,18 +1,14 @@
-'use client';
-
 import { Section } from '../Section';
 import { sudetenRanges } from './data';
 import { MountainCardsView } from './MountainCardsView';
-import { FadeIn, ScaleIn } from '@/components/motion';
+import { FadeIn } from '@/components/motion';
 import { SummaryStats } from './SummaryStats';
 
 export const SudetenCrownSection = () => {
-
   return (
-    <Section className="bg-forest-50 py-24" ariaLabel="Sekcja wykaz szczytów">
+    <Section className="bg-forest-50 py-20" ariaLabel="Sekcja wykaz szczytów">
       <div className="fluid-container">
         <MountainCardsView ranges={sudetenRanges} />
-
         <FadeIn
           direction="up"
           offset={30}
