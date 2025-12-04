@@ -4,8 +4,16 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useForm, Controller, Control } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { isServer } from '@/lib/utils';
+import { sendSubmissionEmail } from '@/actions/send-email';
+import {
+  submissionFormSchema,
+  SubmissionFormData,
+  EmailSubmissionData,
+  MAX_DESCRIPTION_LENGTH,
+  MAX_ADDITIONAL_PHOTOS,
+  ACCEPTED_IMAGE_TYPES,
+  TRAIL_TYPES,
+} from '@/schemas/submission';
 import { FadeIn, ScaleIn } from '@/components/motion';
 import {
   CheckCircleSolidIcon,
@@ -21,99 +29,6 @@ import {
   PhotoStackIcon,
   CheckIcon,
 } from '@/components/icons';
-
-/* ============================================================================
-   CONSTANTS
-   ============================================================================ */
-const MAX_DESCRIPTION_LENGTH = 200;
-const MAX_ADDITIONAL_PHOTOS = 5;
-const ACCEPTED_IMAGE_TYPES = [
-  'image/jpeg',
-  'image/jpg',
-  'image/png',
-  'image/webp',
-];
-const TRAIL_TYPES = ['Solo', 'Grupa', 'Z psem', 'Ultralight', 'Inne'] as const;
-
-/* ============================================================================
-   ZOD SCHEMA
-   ============================================================================ */
-const submissionSchema = z
-  .object({
-    name: z
-      .string()
-      .min(1, 'Imię i nazwisko jest wymagane')
-      .min(3, 'Imię i nazwisko musi mieć minimum 3 znaki'),
-    nickname: z.string().optional(),
-    email: z
-      .string()
-      .min(1, 'Email jest wymagany')
-      .email('Wprowadź poprawny adres email'),
-    type: z.enum(TRAIL_TYPES, {
-      message: 'Wybierz typ przejścia',
-    }),
-    startDate: z.string().min(1, 'Data rozpoczęcia jest wymagana'),
-    endDate: z.string().min(1, 'Data zakończenia jest wymagana'),
-    photo: z
-      .any()
-      .refine((val) => {
-        if (isServer()) return true;
-        return val instanceof FileList && val.length > 0;
-      }, 'Zdjęcie profilowe jest wymagane')
-      .refine((files) => {
-        if (isServer()) return true;
-        return (
-          !files ||
-          files.length === 0 ||
-          ACCEPTED_IMAGE_TYPES.includes(files[0]?.type)
-        );
-      }, 'Akceptowane formaty: JPG, PNG, WebP'),
-    gpxFile: z
-      .any()
-      //   .refine((val) => {
-      //     if (isServer()) return true;
-      //     return val instanceof FileList && val.length > 0;
-      //   }, 'Plik GPX jest wymagany')
-      .refine((files) => {
-        if (isServer()) return true;
-        return (
-          !files ||
-          files.length === 0 ||
-          files[0]?.name.toLowerCase().endsWith('.gpx')
-        );
-      }, 'Plik musi mieć rozszerzenie .gpx'),
-    additionalPhotos: z
-      .any()
-      .optional()
-      .refine((files) => {
-        if (isServer()) return true;
-        return !files || files.length <= MAX_ADDITIONAL_PHOTOS;
-      }, `Maksymalnie ${MAX_ADDITIONAL_PHOTOS} zdjęć`),
-    description: z
-      .string()
-      .max(
-        MAX_DESCRIPTION_LENGTH,
-        `Maksymalnie ${MAX_DESCRIPTION_LENGTH} znaków`
-      )
-      .optional(),
-    favoriteSection: z.string().optional(),
-    hardestSection: z.string().optional(),
-    isFirstSudety: z.boolean(),
-    additionalAchievements: z.string().optional(),
-  })
-  .refine(
-    (data) => {
-      if (!data.startDate || !data.endDate) return true;
-      return new Date(data.endDate) >= new Date(data.startDate);
-    },
-    {
-      message:
-        'Data zakończenia musi być późniejsza lub równa dacie rozpoczęcia',
-      path: ['endDate'],
-    }
-  );
-
-type SubmissionFormData = z.infer<typeof submissionSchema>;
 
 /* ============================================================================
    FORM FIELD COMPONENTS
@@ -288,7 +203,7 @@ export const SubmissionForm = () => {
     control,
     formState: { errors, isSubmitting },
   } = useForm<SubmissionFormData>({
-    resolver: zodResolver(submissionSchema),
+    resolver: zodResolver(submissionFormSchema),
     defaultValues: {
       name: '',
       nickname: '',
@@ -304,9 +219,9 @@ export const SubmissionForm = () => {
     },
   });
 
-  const startDate = watch('startDate');
-  const endDate = watch('endDate');
-  const description = watch('description') || '';
+  const startDate = watch('startDate') as string | undefined;
+  const endDate = watch('endDate') as string | undefined;
+  const description = (watch('description') as string | undefined) || '';
 
   const calculateDays = () => {
     if (startDate && endDate) {
@@ -319,55 +234,88 @@ export const SubmissionForm = () => {
     return 0;
   };
 
+  const fileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const result = reader.result as string;
+        // Remove data URL prefix (e.g., "data:image/jpeg;base64,")
+        const base64 = result.split(',')[1] || result;
+        resolve(base64);
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  };
+
   const onSubmit = async (data: SubmissionFormData) => {
     try {
-      console.log('Form data:', data);
-      console.log('Photo:', data.photo);
-      console.log('GPX File:', data.gpxFile);
-      console.log('Additional Photos:', data.additionalPhotos);
+      // Convert files to base64 attachments
+      const emailData: EmailSubmissionData = {
+        name: data.name,
+        nickname: data.nickname,
+        email: data.email,
+        type: data.type,
+        startDate: data.startDate,
+        endDate: data.endDate,
+        description: data.description,
+        favoriteSection: data.favoriteSection,
+        hardestSection: data.hardestSection,
+        isFirstSudety: data.isFirstSudety,
+        additionalAchievements: data.additionalAchievements,
+      };
 
-      // Create FormData for file upload
-      const formData = new FormData();
-
-      // Add text fields
-      formData.append('name', data.name);
-      formData.append('nickname', data.nickname || '');
-      formData.append('email', data.email);
-      formData.append('type', data.type);
-      formData.append('startDate', data.startDate);
-      formData.append('endDate', data.endDate);
-      formData.append('description', data.description || '');
-      formData.append('favoriteSection', data.favoriteSection || '');
-      formData.append('hardestSection', data.hardestSection || '');
-      formData.append('isFirstSudety', String(data.isFirstSudety));
-      formData.append(
-        'additionalAchievements',
-        data.additionalAchievements || ''
-      );
-
-      // Add files
-      if (data.photo && data.photo.length > 0) {
-        formData.append('photo', data.photo[0]);
-      }
-      if (data.gpxFile && data.gpxFile.length > 0) {
-        formData.append('gpxFile', data.gpxFile[0]);
-      }
-      if (data.additionalPhotos && data.additionalPhotos.length > 0) {
-        Array.from(data.additionalPhotos as FileList).forEach((file) => {
-          formData.append('additionalPhotos', file);
-        });
+      // Convert photo to base64
+      if (data.photo && (data.photo as FileList).length > 0) {
+        const photoFile = (data.photo as FileList)[0];
+        const base64Content = await fileToBase64(photoFile);
+        emailData.photo = {
+          filename: photoFile.name,
+          content: base64Content,
+          contentType: photoFile.type,
+        };
       }
 
-      // Log FormData entries for debugging
-      console.log('FormData entries:');
-      Array.from(formData.entries()).forEach(([key, value]) => {
-        console.log(`  ${key}:`, value);
-      });
+      // Convert GPX file to base64
+      if (data.gpxFile && (data.gpxFile as FileList).length > 0) {
+        const gpxFile = (data.gpxFile as FileList)[0];
+        const base64Content = await fileToBase64(gpxFile);
+        emailData.gpxFile = {
+          filename: gpxFile.name,
+          content: base64Content,
+          contentType: 'application/gpx+xml',
+        };
+      }
 
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      reset();
+      // Convert additional photos to base64
+      if (
+        data.additionalPhotos &&
+        (data.additionalPhotos as FileList).length > 0
+      ) {
+        const photosFileList = data.additionalPhotos as FileList;
+        emailData.additionalPhotos = await Promise.all(
+          Array.from(photosFileList).map(async (file: File) => {
+            const base64Content = await fileToBase64(file);
+            return {
+              filename: file.name,
+              content: base64Content,
+              contentType: file.type,
+            };
+          })
+        );
+      }
+
+      const result = await sendSubmissionEmail(emailData);
+
+      if (result.success) {
+        setSubmitStatus('success');
+        reset();
+      } else {
+        console.error('Error submitting form:', result.message);
+        setSubmitStatus('error');
+      }
     } catch (error) {
+      console.error('Error processing form:', error);
       setSubmitStatus('error');
     }
   };
