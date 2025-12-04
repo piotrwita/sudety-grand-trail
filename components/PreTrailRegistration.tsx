@@ -10,6 +10,9 @@ import { VintageMountainsBackground } from './VintageMountainsBackground';
 import Link from 'next/link';
 import { SectionHeader } from './sections/SectionHeader';
 import { ReactNode } from 'react';
+import { sectionIds } from '@/config/section-ids';
+import { getSectionUrl, getSectionHash } from '@/lib/section-navigation';
+import { siteRoutes } from '@/config/site-routes';
 
 /*  ==========================================================================
         TYPES & DATA                               
@@ -36,7 +39,7 @@ const PROCESS_STEPS: ProcessStep[] = [
     description:
       'Przed startem wypełnij formularz zgłoszenia próby przejścia. Otrzymasz darmowy tracker GPS i będziesz widoczny na mapie live tracking.',
     linkText: 'Zgłoś próbę przejścia',
-    linkHref: '/live#tracker-form',
+    linkHref: getSectionUrl(siteRoutes.live, sectionIds.trackerForm),
     gradientClass: 'from-forest-600 to-forest-700',
   },
   {
@@ -54,7 +57,7 @@ const PROCESS_STEPS: ProcessStep[] = [
     description:
       'Po ukończeniu szlaku zgłoś swoje przejście z materiałami (zdjęcia, GPX). Po weryfikacji dołączysz do oficjalnego Hall of Fame!',
     linkText: 'Formularz ukończenia',
-    linkHref: '#zglos-przejscie',
+    linkHref: getSectionHash(sectionIds.submission),
     gradientClass: 'from-accent to-yellow-600',
   },
 ];
@@ -77,7 +80,7 @@ const BENEFITS: Benefit[] = [
         Po ukończeniu szlaku dołączysz do elitarnego grona zdobywców. Twoje imię
         w{' '}
         <Link
-          href="/hall-of-fame#hall-of-fame"
+          href={getSectionUrl(siteRoutes.hallOfFame, sectionIds.hallOfFame)}
           className="font-semibold text-forest-700 underline decoration-2 underline-offset-2 transition-colors hover:text-forest-800"
         >
           Hall of Fame
@@ -194,7 +197,7 @@ const BenefitsCard = () => (
 
       <div className="mt-8 border-t border-forest-200 pt-8 text-center">
         <Link
-          href="/live#tracker-form"
+          href={getSectionUrl(siteRoutes.live, sectionIds.trackerForm)}
           className="btn-primary w-full py-4 text-lg"
         >
           Zgłoś Próbę Przejścia
@@ -244,7 +247,7 @@ const WarningBox = () => (
             bez wcześniejszego zgłoszenia mogą nie zostać uwzględnione w
             oficjalnych statystykach{' '}
             <Link
-              href="/hall-of-fame#hall-of-fame"
+              href={getSectionUrl(siteRoutes.hallOfFame, sectionIds.hallOfFame)}
               className="font-bold text-yellow-800 underline decoration-2 underline-offset-2 transition-colors hover:text-yellow-900"
             >
               Hall of Fame

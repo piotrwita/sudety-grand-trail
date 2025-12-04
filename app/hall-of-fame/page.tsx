@@ -8,6 +8,8 @@ import { VintageMountainsBackground } from '@/components/VintageMountainsBackgro
 import { Section, SubmissionFormSection } from '@/components/sections';
 import { LogoImage } from '@/components/LogoImage';
 import Link from 'next/link';
+import { sectionIds } from '@/config/section-ids';
+import { getSectionHash } from '@/lib/section-navigation';
 
 export const metadata: Metadata = pageMetadata.hallOfFame;
 
@@ -46,7 +48,7 @@ const HallOfFameHeroSection = () => (
 
     {/* Logo in background */}
     <div className="absolute left-1/2 top-1/2 z-0 size-[400px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 lg:size-[500px] 2xl:size-[600px]">
-      <LogoImage fill priority />
+      <LogoImage fill preload />
     </div>
 
     <div className="fluid-container relative z-10 text-center">
@@ -103,14 +105,14 @@ const HallOfFameHeroSection = () => (
           className="flex flex-col items-center justify-center gap-6 sm:flex-row"
         >
           <Link
-            href="#zglos-przejscie"
+            href={getSectionHash(sectionIds.submission)}
             className="btn-primary px-10 py-4 text-lg"
             aria-label="Zgłoś Swoje Przejście"
           >
             Zgłoś Swoje Przejście
           </Link>
           <Link
-            href="#hall-of-fame"
+            href={getSectionHash(sectionIds.hallOfFame)}
             className="btn-secondary border-cream/60 px-10 py-4 text-lg text-cream/90 hover:bg-cream/90 hover:text-forest-800"
             aria-label="Zobacz Zdobywców"
           >

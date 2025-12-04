@@ -14,6 +14,9 @@ import {
   ACCEPTED_IMAGE_TYPES,
   TRAIL_TYPES,
 } from '@/schemas/submission';
+import { sectionIds } from '@/config/section-ids';
+import { scrollToSection, getSectionUrl } from '@/lib/section-navigation';
+import { siteRoutes } from '@/config/site-routes';
 import { FadeIn, ScaleIn } from '@/components/motion';
 import {
   CheckCircleSolidIcon,
@@ -194,6 +197,7 @@ export const SubmissionForm = () => {
   const [submitStatus, setSubmitStatus] = useState<
     'idle' | 'success' | 'error'
   >('idle');
+  const [hasValidationErrors, setHasValidationErrors] = useState(false);
 
   const {
     register,
@@ -248,7 +252,12 @@ export const SubmissionForm = () => {
     });
   };
 
+  const onInvalid = () => {
+    setHasValidationErrors(true);
+  };
+
   const onSubmit = async (data: SubmissionFormData) => {
+    setHasValidationErrors(false);
     try {
       // Convert files to base64 attachments
       const emailData: EmailSubmissionData = {
@@ -310,6 +319,11 @@ export const SubmissionForm = () => {
       if (result.success) {
         setSubmitStatus('success');
         reset();
+        // Scroll to the top of the submission section
+        scrollToSection(sectionIds.submission, {
+          delay: 100,
+          behavior: 'smooth',
+        });
       } else {
         console.error('Error submitting form:', result.message);
         setSubmitStatus('error');
@@ -322,6 +336,7 @@ export const SubmissionForm = () => {
 
   const handleReset = () => {
     setSubmitStatus('idle');
+    setHasValidationErrors(false);
     reset();
   };
 
@@ -363,7 +378,7 @@ export const SubmissionForm = () => {
         </div>
       ) : (
         <form
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(onSubmit, onInvalid)}
           className="divide-y divide-forest-100"
         >
           {/* ============ DANE PODSTAWOWE ============ */}
@@ -614,7 +629,10 @@ export const SubmissionForm = () => {
                     wcześniej zgłosić próbę i otrzymać tracker GPS.
                   </p>
                   <Link
-                    href="/live#tracker-form"
+                    href={getSectionUrl(
+                      siteRoutes.live,
+                      sectionIds.trackerForm
+                    )}
                     className="mt-2 inline-flex items-center text-xs font-semibold text-forest-600 transition-colors hover:text-forest-800"
                   >
                     Zgłoś próbę na przyszłość
@@ -640,9 +658,17 @@ export const SubmissionForm = () => {
           {/* ============ SUBMIT ============ */}
           <div className="bg-forest-50/50 px-4 py-5 sm:px-6 sm:py-6">
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
-              <p className="order-2 text-center text-xs text-mountain-500 sm:order-1 sm:text-left">
-                Zgłoszenie zostanie zweryfikowane przed publikacją
-              </p>
+              <div className="order-2 flex-1 sm:order-1">
+                {hasValidationErrors && Object.keys(errors).length > 0 && (
+                  <div className="mb-2 flex items-center gap-2 text-xs text-red-600">
+                    <InfoCircleSolidIcon className="h-4 w-4 flex-shrink-0" />
+                    <span>Proszę poprawić błędy w formularzu</span>
+                  </div>
+                )}
+                <p className="text-center text-xs text-mountain-500 sm:text-left">
+                  Zgłoszenie zostanie zweryfikowane przed publikacją
+                </p>
+              </div>
               <button
                 type="submit"
                 disabled={isSubmitting}

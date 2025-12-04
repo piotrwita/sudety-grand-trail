@@ -38,7 +38,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL/CZ',
     isKs: true,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gY_T/f3RVVv.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gY_T/f3RVVv.jpeg?fl=res,,400,1',
   },
   {
     id: 2,
@@ -53,7 +53,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gW_p/HIydYU.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gW_p/HIydYU.jpeg?fl=res,,400,1',
   },
   {
     id: 3,
@@ -68,7 +68,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL/CZ',
     isKs: true,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QQ_f/21iGzM.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QQ_f/21iGzM.jpeg?fl=res,,400,1',
   },
   {
     id: 4,
@@ -83,7 +83,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gY_5/HhqXgh.jpeg?fl=rot,180,0%7Cres,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gY_5/HhqXgh.jpeg?fl=rot,180,0%7Cres,,400,1',
   },
   {
     id: 5,
@@ -98,7 +98,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL/CZ',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_G_W/hyN3UJ.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_G_W/hyN3UJ.jpeg?fl=res,,400,1',
   },
   {
     id: 6,
@@ -113,7 +113,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL/CZ',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QN_2/lUpg9J.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QN_2/lUpg9J.jpeg?fl=res,,400,1',
   },
   {
     id: 7,
@@ -128,7 +128,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL/CZ',
     isKs: true,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_H_T/gR8BeBW.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_H_T/gR8BeBW.jpeg?fl=res,,400,1',
   },
   {
     id: 8,
@@ -143,7 +143,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QR_5/IXDEH5.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QR_5/IXDEH5.jpeg?fl=res,,400,1',
   },
   {
     id: 9,
@@ -158,7 +158,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gZ_R/ePxDlu.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gZ_R/ePxDlu.jpeg?fl=res,,400,1',
   },
   {
     id: 10,
@@ -173,7 +173,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL/CZ',
     isKs: false,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QP_l/90RIpm.mpo?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QP_l/90RIpm.mpo?fl=res,,400,1',
   },
   {
     id: 11,
@@ -188,7 +188,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gS_q/HC8l6H.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gS_q/HC8l6H.jpeg?fl=res,,400,1',
   },
   {
     id: 12,
@@ -218,7 +218,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL/CZ',
     isKs: true,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QJ_v/xPoV6s.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QJ_v/xPoV6s.jpeg?fl=res,,400,1',
   },
   {
     id: 14,
@@ -233,7 +233,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gW_f/WNtH0o.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gW_f/WNtH0o.jpeg?fl=res,,400,1',
   },
   {
     id: 15,
@@ -248,7 +248,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QO_N/2qKNS.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QO_N/2qKNS.jpeg?fl=res,,400,1',
   },
   {
     id: 16,
@@ -263,7 +263,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gX_e/Dmj5ru.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gX_e/Dmj5ru.jpeg?fl=res,,400,1',
   },
   {
     id: 17,
@@ -278,7 +278,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oZ_A/kBkJRwehYQKXlCDPDMpU7r/c11b.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oZ_A/kBkJRwehYQKXlCDPDMpU7r/c11b.jpeg?fl=res,,400,1',
   },
   {
     id: 18,
@@ -293,7 +293,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QM_y/h4Un27.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QM_y/h4Un27.jpeg?fl=res,,400,1',
   },
   {
     id: 19,
@@ -308,7 +308,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL/CZ',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gU_h/ACbNtQ.mpo?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gU_h/ACbNtQ.mpo?fl=res,,400,1',
   },
   {
     id: 20,
@@ -323,7 +323,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QP_BJ/llLHyl.mpo?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QP_BJ/llLHyl.mpo?fl=res,,400,1',
   },
   {
     id: 21,
@@ -338,7 +338,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QM_W/OMquq.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QM_W/OMquq.jpeg?fl=res,,400,1',
   },
   {
     id: 22,
@@ -353,7 +353,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL/CZ',
     isKs: true,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_ob_B/kBj94XhVwDuD8OBlID4Xp4i/7bbd.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_ob_B/kBj94XhVwDuD8OBlID4Xp4i/7bbd.jpeg?fl=res,,400,1',
   },
   {
     id: 23,
@@ -368,7 +368,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: true,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QN_o/NSOFpE.mpo?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QN_o/NSOFpE.mpo?fl=res,,400,1',
   },
   {
     id: 24,
@@ -383,7 +383,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QO_8/LavBKN.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QO_8/LavBKN.jpeg?fl=res,,400,1',
   },
   {
     id: 25,
@@ -398,7 +398,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL/CZ',
     isKs: true,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QP_BG/M0u4F9.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QP_BG/M0u4F9.jpeg?fl=res,,400,1',
   },
   {
     id: 26,
@@ -413,7 +413,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QO_6/9hkB6P6.mpo?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QO_6/9hkB6P6.mpo?fl=res,,400,1',
   },
   {
     id: 27,
@@ -428,7 +428,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gR_n/K91F2O.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gR_n/K91F2O.jpeg?fl=res,,400,1',
   },
   {
     id: 28,
@@ -443,7 +443,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oc_A/kcukOQcMmRUmqByJEBUujI/ac3f.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oc_A/kcukOQcMmRUmqByJEBUujI/ac3f.jpeg?fl=res,,400,1',
   },
   {
     id: 29,
@@ -458,7 +458,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QL_1/zWfBYIM.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QL_1/zWfBYIM.jpeg?fl=res,,400,1',
   },
   {
     id: 30,
@@ -473,7 +473,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_E_L/ucSIp.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_E_L/ucSIp.jpeg?fl=res,,400,1',
   },
   {
     id: 31,
@@ -488,7 +488,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oe_A/kOzmiQlmfoQAuL6JEmRKoN/10fc.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oe_A/kOzmiQlmfoQAuL6JEmRKoN/10fc.jpeg?fl=res,,400,1',
   },
   {
     id: 32,
@@ -503,7 +503,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gZ_8/MJrgkC.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gZ_8/MJrgkC.jpeg?fl=res,,400,1',
   },
   {
     id: 33,
@@ -518,7 +518,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gR_z/ZWoNj6.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gR_z/ZWoNj6.jpeg?fl=res,,400,1',
   },
   {
     id: 34,
@@ -533,7 +533,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QI_w/IL8BG40.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QI_w/IL8BG40.jpeg?fl=res,,400,1',
   },
   {
     id: 35,
@@ -548,7 +548,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL/CZ',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gS_o/lHvqYn.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gS_o/lHvqYn.jpeg?fl=res,,400,1',
   },
   {
     id: 36,
@@ -563,7 +563,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_E_L/t1QBOd.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_E_L/t1QBOd.jpeg?fl=res,,400,1',
   },
   {
     id: 37,
@@ -578,7 +578,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QR_2/pSVGiD.mpo?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QR_2/pSVGiD.mpo?fl=res,,400,1',
   },
   {
     id: 38,
@@ -593,7 +593,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oa_A/nO7kYQIzllDshrEBXuDiT20x/fc81.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oa_A/nO7kYQIzllDshrEBXuDiT20x/fc81.jpeg?fl=res,,400,1',
   },
   {
     id: 39,
@@ -608,7 +608,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gX_o/EWrGt3.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gX_o/EWrGt3.jpeg?fl=res,,400,1',
   },
   {
     id: 40,
@@ -623,7 +623,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QJ_w/41nfE6.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QJ_w/41nfE6.jpeg?fl=res,,400,1',
   },
   {
     id: 41,
@@ -638,7 +638,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gU_5/jfNE4x.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gU_5/jfNE4x.jpeg?fl=res,,400,1',
   },
   {
     id: 42,
@@ -653,7 +653,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: true,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oY_A/nsLxLojIIE33fGC4jmXp/1429.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oY_A/nsLxLojIIE33fGC4jmXp/1429.jpeg?fl=res,,400,1',
   },
   {
     id: 43,
@@ -668,7 +668,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oZ_A/kBkJRwehYBM7PH96DSXdt0/60ab.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oZ_A/kBkJRwehYBM7PH96DSXdt0/60ab.jpeg?fl=res,,400,1',
   },
   {
     id: 44,
@@ -683,7 +683,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oW_A/kPWmeC9soBDmlC1UjCcedyp/7a93.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oW_A/kPWmeC9soBDmlC1UjCcedyp/7a93.jpeg?fl=res,,400,1',
   },
   {
     id: 45,
@@ -698,7 +698,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gU_i/Lk2ENs.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gU_i/Lk2ENs.jpeg?fl=res,,400,1',
   },
   {
     id: 46,
@@ -713,7 +713,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: true,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gW_e/r3koNk.mpo?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gW_e/r3koNk.mpo?fl=res,,400,1',
   },
   {
     id: 47,
@@ -728,7 +728,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_E_M/9EMY0F.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_E_M/9EMY0F.jpeg?fl=res,,400,1',
   },
   {
     id: 48,
@@ -743,7 +743,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_ob_A/nPTQKDwGerDgEH8a9Dta14D/6940.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_ob_A/nPTQKDwGerDgEH8a9Dta14D/6940.jpeg?fl=res,,400,1',
   },
   {
     id: 49,
@@ -758,7 +758,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QN_y/pm1F8V.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QN_y/pm1F8V.jpeg?fl=res,,400,1',
   },
   {
     id: 50,
@@ -773,7 +773,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QM_l/ucHMKh.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QM_l/ucHMKh.jpeg?fl=res,,400,1',
   },
   {
     id: 51,
@@ -788,7 +788,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gT_r/8sMBza.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gT_r/8sMBza.jpeg?fl=res,,400,1',
   },
   {
     id: 52,
@@ -803,7 +803,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/d_15120355/img/8/960x720_5OfVZo.jpg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/d_15120355/img/8/960x720_5OfVZo.jpg?fl=res,,400,1',
   },
   {
     id: 53,
@@ -818,7 +818,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_H_I/q0JBO6e.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_H_I/q0JBO6e.jpeg?fl=res,,400,1',
   },
   {
     id: 54,
@@ -833,7 +833,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_ob_A/kBj94XhVwBhVo6BRFDw05Ml/d53d.mpo?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_ob_A/kBj94XhVwBhVo6BRFDw05Ml/d53d.mpo?fl=res,,400,1',
   },
   {
     id: 55,
@@ -848,7 +848,7 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gV_Z/NY4DV3.jpeg?fl=res,,500,1',
+    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gV_Z/NY4DV3.jpeg?fl=res,,400,1',
   },
 ];
 
