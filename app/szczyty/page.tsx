@@ -39,7 +39,7 @@ const SzczytyHeroSection = () => (
 
     {/* Logo in background */}
     <div className="absolute left-1/2 top-1/2 z-0 size-[400px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 lg:size-[500px] 2xl:size-[600px]">
-      <LogoImage fill priority />
+      <LogoImage fill preload />
     </div>
 
     <div className="fluid-container relative z-10 text-center">
@@ -93,4 +93,3 @@ const SzczytyHeroSection = () => (
     </div>
   </Section>
 );
-

@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { Section } from './sections';
 import { SectionHeader } from './sections/SectionHeader';
 import { FadeIn } from './motion';
+import { sectionIds } from '@/config/section-ids';
+import { getSectionHash } from '@/lib/section-navigation';
 
 // Mock data - przykładowe przejścia
 const mockCompletions = [
@@ -109,7 +111,7 @@ export const HallOfFameList = () => {
 
   return (
     <Section
-      id="hall-of-fame"
+      id={sectionIds.hallOfFame}
       ariaLabel="Zdobywcy Korony Sudetów"
       className="bg-cream"
     >
@@ -348,7 +350,7 @@ export const HallOfFameList = () => {
               oficjalnym zdobywcą Korony Sudetów!
             </p>
             <a
-              href="#zglos-przejscie"
+              href={getSectionHash(sectionIds.submission)}
               className="btn-primary px-10 py-4 text-lg"
             >
               Zgłoś Swoje Przejście

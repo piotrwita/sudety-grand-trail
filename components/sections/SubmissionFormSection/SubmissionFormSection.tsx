@@ -2,11 +2,12 @@ import { Section, SectionHeader } from '@/components/sections';
 import { FadeIn } from '@/components/motion';
 import { DocumentIcon } from '@/components/icons';
 import { SubmissionForm } from './SubmissionForm';
+import { sectionIds } from '@/config/section-ids';
 
 export const SubmissionFormSection = () => {
   return (
     <Section
-      id="zglos-przejscie"
+      id={sectionIds.submission}
       ariaLabel="Zgłoś Swoje Przejście"
       className="bg-forest-800"
     >

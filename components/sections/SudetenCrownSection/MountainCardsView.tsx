@@ -1,7 +1,6 @@
 'use client';
 
 import { useReducer, useMemo, useCallback, memo } from 'react';
-import { motion } from 'framer-motion';
 import { FadeIn } from '@/components/motion';
 import {
   MorphingDialog,
@@ -376,7 +375,6 @@ const MountainCardVisuals = memo(
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              priority={range.id <= 3}
             />
             {/* Gradient overlay for better text readability */}
             <div className="absolute inset-0 bg-gradient-to-t from-forest-900/60 via-transparent to-transparent" />

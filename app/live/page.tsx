@@ -6,6 +6,7 @@ import { ScaleIn } from '@/components/motion/ScaleIn';
 import { pageMetadata } from '@/config/metadata';
 import { Metadata } from 'next';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
+import { sectionIds } from '@/config/section-ids';
 import {
   MapIcon,
   LocationIcon,
@@ -117,7 +118,11 @@ const LiveHeroSection = () => {
 
 const ModernTrackerSection = () => {
   return (
-    <section className="section-padding relative bg-gradient-to-br from-slate-50 via-white to-slate-100">
+    <Section
+      id={sectionIds.trackerForm}
+      ariaLabel="Zgłoś Próbę Przejścia - Tracker GPS"
+      className="section-padding relative bg-gradient-to-br from-slate-50 via-white to-slate-100"
+    >
       <div className="fluid-container">
         {/* Header */}
         <FadeIn
@@ -331,7 +336,7 @@ const ModernTrackerSection = () => {
           </FadeIn>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 
