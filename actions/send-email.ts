@@ -167,3 +167,98 @@ export const sendSubmissionEmail = async (
     };
   }
 };
+
+export interface TrackerRequestData {
+  email: string;
+  startDate: string;
+  plannedDays: string;
+}
+
+export const sendTrackerRequestEmail = async (
+  data: TrackerRequestData
+): Promise<ActionResult> => {
+  try {
+    // Basic validation
+    if (!data.email || !data.email.includes('@')) {
+      return {
+        success: false,
+        message: 'Proszę podać prawidłowy adres email.',
+      };
+    }
+
+    if (!data.startDate) {
+      return {
+        success: false,
+        message: 'Proszę podać planowaną datę startu.',
+      };
+    }
+
+    const sender = process.env.GMAIL_USER || '';
+
+    if (!sender) {
+      console.error('Missing sender email address');
+      return {
+        success: false,
+        message:
+          'Adres email nadawcy nie jest skonfigurowany. Skontaktuj się z administratorem.',
+      };
+    }
+
+    const recipient = process.env.GMAIL_RECIPIENT || '';
+    if (!recipient) {
+      console.error('Missing recipient email address');
+      return {
+        success: false,
+        message:
+          'Adres email odbiorcy nie jest skonfigurowany. Skontaktuj się z administratorem.',
+      };
+    }
+
+    const transporter = getTransporter(sender);
+    if (!transporter) {
+      console.error('Missing Gmail OAuth2 credentials');
+      return {
+        success: false,
+        message:
+          'Konfiguracja serwera email jest nieprawidłowa. Skontaktuj się z administratorem.',
+      };
+    }
+
+    const formattedDate = new Date(data.startDate).toLocaleDateString('pl-PL', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+
+    const htmlContent = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #1f2937;">Nowe zgłoszenie tracker GPS</h2>
+        <div style="background-color: #f9fafb; padding: 20px; border-radius: 8px; margin-top: 20px;">
+          <p><strong>Email:</strong> ${data.email}</p>
+          <p><strong>Planowana data startu:</strong> ${formattedDate}</p>
+          <p><strong>Planowana długość wyprawy:</strong> ${data.plannedDays}</p>
+        </div>
+      </div>
+    `;
+
+    const mailOptions: nodemailer.SendMailOptions = {
+      from: sender,
+      to: recipient,
+      subject: `Zgłoszenie tracker GPS - ${data.email}`,
+      html: htmlContent,
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    return {
+      success: true,
+      message: 'Zgłoszenie zostało wysłane pomyślnie. Skontaktujemy się z Tobą wkrótce!',
+    };
+  } catch (error) {
+    console.error('Error sending tracker request email:', error);
+    return {
+      success: false,
+      message: 'Nie udało się wysłać zgłoszenia. Spróbuj ponownie później.',
+    };
+  }
+};

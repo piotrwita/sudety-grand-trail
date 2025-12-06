@@ -7,5 +7,6 @@ export { SudetenCrownSection } from './SudetenCrownSection';
 export { default as MotivationSection } from './MotivationSection';
 export { TrailMapSection } from './TrailMapSection';
 export { LiveTrackingSection } from './LiveTrackingSection';
+export { ModernTrackerSection } from './ModernTrackerSection';
 export { SubmissionFormSection } from './SubmissionFormSection';
 export { BadgeSection } from './BadgeSection';

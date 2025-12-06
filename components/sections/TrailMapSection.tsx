@@ -113,15 +113,9 @@ export const TrailMapSection = () => {
               {(!isMapInteractive || isScrolling) && (
                 <div
                   onClick={handleMapClick}
-                  className="absolute inset-0 z-10 flex cursor-pointer items-center justify-center bg-transparent transition-opacity duration-200 hover:bg-black/5"
-                  aria-label="Kliknij, aby korzystać z mapy"
-                >
-                  {!isMapInteractive && (
-                    <div className="rounded-lg bg-cream/95 px-4 py-2 text-sm font-medium text-forest-700 shadow-lg backdrop-blur-sm">
-                      Kliknij, aby korzystać z mapy
-                    </div>
-                  )}
-                </div>
+                  className="absolute inset-0 z-10 cursor-pointer bg-transparent transition-opacity duration-200"
+                  aria-label="Kliknij na mapę, aby ją przesunąć"
+                />
               )}
             </div>
           </div>

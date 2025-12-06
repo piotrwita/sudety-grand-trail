@@ -1,9 +1,47 @@
 'use client';
 
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ClockIcon, FlagIcon, LocationIcon } from '../icons';
 
 export const LiveTrackingSection = () => {
+  const [isMapInteractive, setIsMapInteractive] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let scrollTimer: NodeJS.Timeout | null = null;
+
+    const handleScroll = () => {
+      setIsScrolling(true);
+      setIsMapInteractive(false);
+
+      if (scrollTimer) {
+        clearTimeout(scrollTimer);
+      }
+
+      scrollTimer = setTimeout(() => {
+        setIsScrolling(false);
+      }, 150);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('wheel', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('wheel', handleScroll);
+      if (scrollTimer) {
+        clearTimeout(scrollTimer);
+      }
+    };
+  }, []);
+
+  const handleMapClick = () => {
+    setIsMapInteractive(true);
+  };
+
   return (
     <section className="section-padding relative overflow-hidden bg-cream">
       {/* Background elements */}
@@ -49,17 +87,11 @@ export const LiveTrackingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mx-auto text-xl font-medium leading-relaxed text-mountain-600"
+            className="mx-auto max-w-5xl text-xl font-medium leading-relaxed text-mountain-600"
           >
             Dzięki współpracy z <strong className="text-orange-500">Poltrax</strong>{' '}
-            możesz śledzić moją wyprawę w czasie rzeczywistym. Mapa pokazuje
-            aktualną pozycję, przebytą trasę oraz{' '}
-            <strong className="text-orange-500">
-              orientacyjne punkty noclegów
-            </strong>
-            . Widoczny jest także limit czasowy – to będzie{' '}
-            <strong className="text-orange-600">wyścig z czasem</strong>
-            przez wszystkie 22 pasma Sudetów.
+            możesz śledzić swoją wyprawę w czasie rzeczywistym. Mapa pokazuje Twoją
+            aktualną pozycję, przebytą trasę, limit czasowy oraz orientacyjne punkty noclegów.
           </motion.p>
         </motion.div>
 
@@ -71,39 +103,33 @@ export const LiveTrackingSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="relative"
         >
-          <div className="card-vintage relative overflow-hidden">
-            <div className="aspect-video">
+          <div
+            ref={mapContainerRef}
+            className="card-vintage relative overflow-hidden"
+          >
+            <div className="aspect-video relative">
               <iframe
                 src="https://poltrax.live/sgt"
                 width="100%"
                 height="100%"
-                style={{ border: 'none' }}
+                style={{
+                  border: 'none',
+                  pointerEvents: isMapInteractive && !isScrolling ? 'auto' : 'none',
+                }}
                 allowFullScreen
                 loading="lazy"
                 className="h-full w-full"
                 title="Sudety Grand Trail - Live Tracking"
                 frameBorder="0"
               />
-            </div>
-
-            {/* Live Overlay */}
-            <div className="absolute left-6 top-6 rounded-xl border-2 border-orange-400 bg-orange-500/90 p-4 shadow-vintage backdrop-blur-sm">
-              <div className="flex items-center space-x-3">
-                <div className="h-4 w-4 animate-pulse rounded-full bg-cream" />
-                <span className="text-sm font-bold uppercase tracking-wide text-cream">
-                  OFICJALNA TRASA
-                </span>
-              </div>
-            </div>
-
-            {/* Info Badge */}
-            <div className="absolute right-6 top-6 rounded-xl border border-orange-600 bg-orange-700/90 p-4 shadow-vintage backdrop-blur-sm">
-              <div className="text-center">
-                <div className="text-sm font-bold uppercase tracking-wide text-orange-200">
-                  Powered by
-                </div>
-                <div className="text-lg font-bold text-cream">POLTRAX</div>
-              </div>
+              {/* Overlay that blocks interaction during scroll */}
+              {(!isMapInteractive || isScrolling) && (
+                <div
+                  onClick={handleMapClick}
+                  className="absolute inset-0 z-10 cursor-pointer bg-transparent transition-opacity duration-200"
+                  aria-label="Kliknij na mapę, aby ją przesunąć"
+                />
+              )}
             </div>
           </div>
 
