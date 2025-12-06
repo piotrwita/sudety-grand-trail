@@ -38,10 +38,10 @@ const HallOfFameHeroSection = () => (
 
     {/* Epic Conqueror Background Elements */}
     <div className="absolute inset-0">
-      <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-gold-500/5 to-transparent" />
-      <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-gold-500/5 to-transparent" />
+      <div className="from-gold-500/5 absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r to-transparent" />
+      <div className="from-gold-500/5 absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l to-transparent" />
       {/* Smooth bottom glow - no hard edges */}
-      <div className="absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial theme-halloffame-glow blur-3xl" />
+      <div className="theme-halloffame-glow absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial blur-xl md:blur-3xl" />
     </div>
 
     {/* Radial glow effect */}
@@ -74,15 +74,24 @@ const HallOfFameHeroSection = () => (
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.4}>
           <h1 className="hero-title mb-6 text-cream">
             <span className="theme-halloffame-text-gradient">Hall of Fame</span>
-            <span className="text-fluid-lg mt-6 block font-display font-bold uppercase tracking-wider text-gold-400 drop-shadow-lg">
+            <span className="text-fluid-lg text-gold-400 mt-6 block font-display font-bold uppercase tracking-wider drop-shadow-lg">
               Oficjalne Przejścia Sudety Grand Trail
             </span>
           </h1>
         </FadeIn>
 
-        <FadeIn direction="up" offset={30} duration={0.8} delay={0.5}>
-          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent" />
-        </FadeIn>
+        <ScaleIn
+          duration={0.6}
+          delay={0.5}
+          initialScale={0}
+          finalScale={1}
+          initialOpacity={0}
+          finalOpacity={1}
+          className="mx-auto my-4 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent lg:my-6"
+          style={{ transformOrigin: 'center' }}
+        >
+          <div />
+        </ScaleIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
           <p className="text-fluid-xl mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-cream/90">
@@ -101,20 +110,20 @@ const HallOfFameHeroSection = () => (
         <FadeIn
           direction="up"
           offset={30}
-          duration={0.8}
+          duration={0.6}
           delay={0.8}
-          className="flex flex-col items-center justify-center gap-6 sm:flex-row"
+          className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 md:gap-6"
         >
           <Link
             href={getSectionHash(sectionIds.submission)}
-            className="theme-btn-base theme-halloffame-btn-primary px-10 py-4 text-lg"
+            className="theme-btn-base theme-halloffame-btn-primary w-full px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
             aria-label="Zgłoś Swoje Przejście"
           >
             Zgłoś Swoje Przejście
           </Link>
           <Link
             href={getSectionHash(sectionIds.hallOfFame)}
-            className="theme-btn-base theme-halloffame-btn-secondary border-2 px-10 py-4 text-lg"
+            className="theme-btn-base theme-halloffame-btn-secondary w-full border-2 px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
             aria-label="Zobacz Zdobywców"
           >
             Zobacz Zdobywców

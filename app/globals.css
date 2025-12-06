@@ -305,15 +305,15 @@
   }
 
   .theme-halloffame-badge {
-    @apply border-gold-400/30 bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 shadow-gold-glow;
+    @apply border-gold-400/30 from-gold-400 via-gold-500 to-gold-600 shadow-gold-glow bg-gradient-to-br;
   }
 
   .theme-halloffame-text-gradient {
-    @apply bg-gradient-to-r from-gold-400 via-gold-500 to-accent bg-clip-text text-transparent;
+    @apply from-gold-400 via-gold-500 bg-gradient-to-r to-accent bg-clip-text text-transparent;
   }
 
   .theme-halloffame-btn-primary {
-    @apply bg-gold-500 text-forest-900 hover:bg-gold-400 focus:ring-gold-400/50;
+    @apply bg-gold-500 hover:bg-gold-400 focus:ring-gold-400/50 text-forest-900;
   }
 
   .theme-halloffame-btn-secondary {
@@ -330,7 +330,7 @@
   }
 
   .theme-trail-badge {
-    @apply border-earth-500/30 bg-gradient-to-br from-earth-500 via-earth-600 to-earth-700 shadow-brown-glow;
+    @apply shadow-brown-glow border-earth-500/30 bg-gradient-to-br from-earth-500 via-earth-600 to-earth-700;
   }
 
   .theme-trail-text-gradient {
@@ -355,7 +355,7 @@
   }
 
   .theme-szczyty-badge {
-    @apply border-forest-400/30 bg-gradient-to-br from-forest-400 via-forest-500 to-forest-600 shadow-green-glow;
+    @apply shadow-green-glow border-forest-400/30 bg-gradient-to-br from-forest-400 via-forest-500 to-forest-600;
   }
 
   .theme-szczyty-text-gradient {
@@ -380,7 +380,7 @@
   }
 
   .theme-live-badge {
-    @apply border-orange-400/30 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 shadow-orange-glow;
+    @apply shadow-orange-glow border-orange-400/30 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600;
   }
 
   .theme-live-text-gradient {
@@ -405,19 +405,19 @@
   }
 
   .theme-badge-badge {
-    @apply border-gold-300/40 bg-gradient-to-br from-gold-300 via-gold-500 to-gold-700 shadow-[0_0_60px_rgba(251,191,36,0.6),0_0_100px_rgba(251,191,36,0.3)] ring-4 ring-gold-400/20;
+    @apply border-gold-300/40 from-gold-300 via-gold-500 to-gold-700 ring-gold-400/20 bg-gradient-to-br shadow-[0_0_60px_rgba(251,191,36,0.6),0_0_100px_rgba(251,191,36,0.3)] ring-4;
   }
 
   .theme-badge-text-gradient {
-    @apply bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(251,191,36,0.5)];
+    @apply from-gold-300 via-gold-400 to-gold-500 bg-gradient-to-r bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(251,191,36,0.5)];
   }
 
   .theme-badge-btn-primary {
-    @apply bg-gradient-to-r from-gold-500 via-gold-600 to-gold-700 text-forest-900 hover:from-gold-400 hover:via-gold-500 hover:to-gold-600 focus:ring-gold-400/50 shadow-[0_0_20px_rgba(251,191,36,0.4)];
+    @apply from-gold-500 via-gold-600 to-gold-700 hover:from-gold-400 hover:via-gold-500 hover:to-gold-600 focus:ring-gold-400/50 bg-gradient-to-r text-forest-900 shadow-[0_0_20px_rgba(251,191,36,0.4)];
   }
 
   .theme-badge-btn-secondary {
-    @apply border-2 border-gold-400/80 text-gold-300 hover:bg-gold-400/20 hover:border-gold-300 focus:ring-gold-400/50 shadow-[0_0_15px_rgba(251,191,36,0.3)];
+    @apply border-gold-400/80 text-gold-300 hover:bg-gold-400/20 hover:border-gold-300 focus:ring-gold-400/50 border-2 shadow-[0_0_15px_rgba(251,191,36,0.3)];
   }
 
   .theme-badge-glow {
@@ -434,7 +434,7 @@
   }
 
   .theme-hero-glow {
-    @apply absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial blur-3xl;
+    @apply absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial blur-xl md:blur-3xl;
   }
 
   .theme-badge-base {
