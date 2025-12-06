@@ -399,6 +399,31 @@
     @apply from-orange-400/10 via-orange-400/5 to-transparent;
   }
 
+  /* BADGE THEME - Epic Gold/Medal - More prestigious than Hall of Fame */
+  .theme-badge-hero {
+    @apply bg-gradient-to-br from-forest-900 via-earth-900 to-forest-800;
+  }
+
+  .theme-badge-badge {
+    @apply border-gold-300/40 bg-gradient-to-br from-gold-300 via-gold-500 to-gold-700 shadow-[0_0_60px_rgba(251,191,36,0.6),0_0_100px_rgba(251,191,36,0.3)] ring-4 ring-gold-400/20;
+  }
+
+  .theme-badge-text-gradient {
+    @apply bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(251,191,36,0.5)];
+  }
+
+  .theme-badge-btn-primary {
+    @apply bg-gradient-to-r from-gold-500 via-gold-600 to-gold-700 text-forest-900 hover:from-gold-400 hover:via-gold-500 hover:to-gold-600 focus:ring-gold-400/50 shadow-[0_0_20px_rgba(251,191,36,0.4)];
+  }
+
+  .theme-badge-btn-secondary {
+    @apply border-2 border-gold-400/80 text-gold-300 hover:bg-gold-400/20 hover:border-gold-300 focus:ring-gold-400/50 shadow-[0_0_15px_rgba(251,191,36,0.3)];
+  }
+
+  .theme-badge-glow {
+    @apply from-gold-300/15 via-gold-400/10 to-transparent;
+  }
+
   /* Universal theme classes that work with any theme */
   .theme-hero-bg {
     @apply relative overflow-hidden;

@@ -8,6 +8,7 @@ export const siteRoutes = {
   korona: '/szczyty',
   live: '/live',
   hallOfFame: '/hall-of-fame',
+  badge: '/badge',
   about: '/about',
 } as const;
 
@@ -46,6 +47,12 @@ export const routeConfig = [
     priority: 0.8,
     changeFrequency: 'weekly' as const,
     label: 'Hall of Fame',
+  },
+  {
+    path: siteRoutes.badge,
+    priority: 0.8,
+    changeFrequency: 'weekly' as const,
+    label: 'Odznaka',
   },
   {
     path: siteRoutes.about,

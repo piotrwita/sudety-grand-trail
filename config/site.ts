@@ -28,6 +28,7 @@ export const siteConfig = {
     { href: siteRoutes.live, label: 'Live', isLive: true },
     { href: siteRoutes.korona, label: 'Szczyty' },
     { href: siteRoutes.hallOfFame, label: 'Hall of Fame' },
+    { href: siteRoutes.badge, label: 'Odznaka' },
     { href: siteRoutes.about, label: 'O Mnie' },
   ],
   socialLinks: Object.values(socialLinks),
