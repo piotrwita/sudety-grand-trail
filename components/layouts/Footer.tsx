@@ -53,21 +53,7 @@ export const Footer = () => {
             <h4 className="mb-4 font-display text-base font-bold sm:mb-5 sm:text-lg lg:mb-6">
               Społeczność
             </h4>
-            <div className="space-y-4 sm:space-y-5">
-              <SocialLinkList className="flex gap-3 border-forest-600" />
-
-              <div className="space-y-2 pt-2 sm:space-y-2.5 sm:pt-3">
-                {stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 text-sm text-mountain-400 sm:gap-2.5"
-                  >
-                    <div className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent sm:h-2 sm:w-2"></div>
-                    <span>{stat}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <SocialLinkList className="flex gap-3 border-forest-600" />
           </div>
         </div>
 
