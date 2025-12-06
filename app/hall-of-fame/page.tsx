@@ -41,7 +41,7 @@ const HallOfFameHeroSection = () => (
       <div className="from-gold-500/5 absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r to-transparent" />
       <div className="from-gold-500/5 absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l to-transparent" />
       {/* Smooth bottom glow - no hard edges */}
-      <div className="theme-halloffame-glow absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial blur-xl md:blur-3xl" />
+      <div className="theme-halloffame-glow absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial lg:blur-xl" />
     </div>
 
     {/* Radial glow effect */}
