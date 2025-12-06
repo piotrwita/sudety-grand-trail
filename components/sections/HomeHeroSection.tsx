@@ -207,9 +207,9 @@ const ScrollIndicator = () => (
 
 const DecorativeVintageElements = () => (
   <>
-    <div className="absolute left-10 top-20 h-24 w-24 animate-pulse rounded-full bg-accent/10 blur-xl" />
+    <div className="absolute left-10 top-20 h-24 w-24 animate-pulse rounded-full bg-mountain-700/10 blur-xl" />
     <div
-      className="absolute bottom-20 right-10 h-32 w-32 animate-pulse rounded-full bg-forest-700/10 blur-2xl"
+      className="absolute bottom-20 right-10 h-32 w-32 animate-pulse rounded-full bg-mountain-600/10 blur-2xl"
       style={{ animationDelay: '1s' }}
     />
   </>

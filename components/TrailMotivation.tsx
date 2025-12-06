@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const TrailMotivation = () => {
   return (
-    <section className="relative overflow-hidden bg-earth-800 py-32">
+    <section className="relative overflow-hidden bg-earth-900 py-32">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -14,7 +14,7 @@ const TrailMotivation = () => {
           fill
           className="object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-earth-800/95 via-forest-800/90 to-earth-900/95" />
+        <div className="absolute inset-0 bg-gradient-to-br from-earth-900/95 via-earth-800/90 to-earth-900/95" />
       </div>
 
       <div className="fluid-container relative z-10">
@@ -33,7 +33,7 @@ const TrailMotivation = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="section-icon-badge-light mb-8 bg-gradient-to-br from-accent to-forest-700"
+              className="section-icon-badge-light mb-8 bg-gradient-to-br from-earth-600 to-earth-700"
             >
               <svg
                 className="h-8 w-8 text-cream/80"
@@ -78,7 +78,7 @@ const TrailMotivation = () => {
                   Przekrocz Swoje Granice
                 </h3>
 
-                <div className="mb-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
+                <div className="mb-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-earth-700/40 to-transparent" />
 
                 <p className="mb-8 text-lg font-medium leading-relaxed text-mountain-600">
                   Ten projekt powstał z miłości do gór, ale też z potrzeby
@@ -187,7 +187,7 @@ const TrailMotivation = () => {
               </div>
 
               {/* Call to Action */}
-              <div className="card-vintage border-forest-600 bg-gradient-to-br from-forest-700/20 to-earth-700/20 p-10 text-center">
+              <div className="card-vintage border-earth-600 bg-gradient-to-br from-earth-700/20 to-earth-800/20 p-10 text-center">
                 <h3 className="hero-title mb-6 text-2xl text-cream">
                   Gotowy na Przygodę?
                 </h3>
@@ -207,7 +207,7 @@ const TrailMotivation = () => {
                       href="https://mapy.com/s/barusofola"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-outline flex-1 border-cream/60 text-center text-cream/90 hover:bg-cream/90 hover:text-forest-800"
+                      className="btn-outline flex-1 border-cream/60 text-center text-cream/90 hover:bg-cream/90 hover:text-earth-800"
                     >
                       Mapa
                     </a>
@@ -215,7 +215,7 @@ const TrailMotivation = () => {
                       href="https://www.facebook.com/SudetyGrandTrail"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-outline flex-1 border-cream/60 text-center text-cream/90 hover:bg-cream/90 hover:text-forest-800"
+                      className="btn-outline flex-1 border-cream/60 text-center text-cream/90 hover:bg-cream/90 hover:text-earth-800"
                     >
                       Facebook
                     </a>

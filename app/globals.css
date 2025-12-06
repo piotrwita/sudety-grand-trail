@@ -266,4 +266,157 @@
   .skip-to-content:focus {
     @apply top-4;
   }
+
+  /* ============================================
+     PAGE-SPECIFIC THEME UTILITY CLASSES
+     ============================================
+     Each page has its own color theme:
+     - HOME (/): Neutral/Basic - uses mountain/cream colors
+     - HALL OF FAME (/hall-of-fame): Gold/Treasure - uses gold colors
+     - TRAIL (/trail): Brown/Earth - uses earth colors
+     - SZCZYTY (/szczyty): Green/Forest - uses forest colors
+     - LIVE (/live): Orange - uses orange colors
+     ============================================ */
+
+  /* HOME THEME - Neutral/Basic */
+  .theme-home-hero {
+    @apply bg-gradient-to-br from-mountain-800 via-mountain-700 to-mountain-900;
+  }
+
+  .theme-home-badge {
+    @apply border-mountain-500/30 bg-gradient-to-br from-mountain-500 via-mountain-600 to-mountain-700 shadow-[0_0_40px_rgba(82,82,91,0.4)];
+  }
+
+  .theme-home-text-gradient {
+    @apply bg-gradient-to-r from-mountain-400 via-mountain-500 to-mountain-600 bg-clip-text text-transparent;
+  }
+
+  .theme-home-btn-primary {
+    @apply bg-mountain-700 text-cream hover:bg-mountain-600 focus:ring-mountain-500/50;
+  }
+
+  .theme-home-btn-secondary {
+    @apply border-mountain-600 text-mountain-600 hover:bg-mountain-600 hover:text-cream focus:ring-mountain-500/50;
+  }
+
+  /* HALL OF FAME THEME - Gold/Treasure */
+  .theme-halloffame-hero {
+    @apply bg-gradient-to-br from-forest-900 via-earth-900 to-forest-800;
+  }
+
+  .theme-halloffame-badge {
+    @apply border-gold-400/30 bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 shadow-gold-glow;
+  }
+
+  .theme-halloffame-text-gradient {
+    @apply bg-gradient-to-r from-gold-400 via-gold-500 to-accent bg-clip-text text-transparent;
+  }
+
+  .theme-halloffame-btn-primary {
+    @apply bg-gold-500 text-forest-900 hover:bg-gold-400 focus:ring-gold-400/50;
+  }
+
+  .theme-halloffame-btn-secondary {
+    @apply border-gold-400/60 text-gold-400 hover:bg-gold-400/20 focus:ring-gold-400/50;
+  }
+
+  .theme-halloffame-glow {
+    @apply from-gold-400/10 via-gold-400/5 to-transparent;
+  }
+
+  /* TRAIL THEME - Brown/Earth */
+  .theme-trail-hero {
+    @apply bg-gradient-to-br from-earth-900 via-earth-800 to-earth-900;
+  }
+
+  .theme-trail-badge {
+    @apply border-earth-500/30 bg-gradient-to-br from-earth-500 via-earth-600 to-earth-700 shadow-brown-glow;
+  }
+
+  .theme-trail-text-gradient {
+    @apply bg-gradient-to-r from-earth-400 via-earth-500 to-earth-600 bg-clip-text text-transparent;
+  }
+
+  .theme-trail-btn-primary {
+    @apply bg-earth-700 text-cream hover:bg-earth-600 focus:ring-earth-500/50;
+  }
+
+  .theme-trail-btn-secondary {
+    @apply border-earth-500/60 text-earth-400 hover:bg-earth-500/20 focus:ring-earth-500/50;
+  }
+
+  .theme-trail-glow {
+    @apply from-earth-400/10 via-earth-400/5 to-transparent;
+  }
+
+  /* SZCZYTY THEME - Green/Forest */
+  .theme-szczyty-hero {
+    @apply bg-gradient-to-br from-forest-900 via-forest-800 to-forest-900;
+  }
+
+  .theme-szczyty-badge {
+    @apply border-forest-400/30 bg-gradient-to-br from-forest-400 via-forest-500 to-forest-600 shadow-green-glow;
+  }
+
+  .theme-szczyty-text-gradient {
+    @apply bg-gradient-to-r from-forest-400 via-forest-500 to-forest-600 bg-clip-text text-transparent;
+  }
+
+  .theme-szczyty-btn-primary {
+    @apply bg-forest-700 text-cream hover:bg-forest-600 focus:ring-forest-500/50;
+  }
+
+  .theme-szczyty-btn-secondary {
+    @apply border-forest-500/60 text-forest-400 hover:bg-forest-500/20 focus:ring-forest-500/50;
+  }
+
+  .theme-szczyty-glow {
+    @apply from-forest-400/10 via-forest-400/5 to-transparent;
+  }
+
+  /* LIVE THEME - Orange */
+  .theme-live-hero {
+    @apply bg-gradient-to-br from-forest-800 via-forest-700 to-forest-900;
+  }
+
+  .theme-live-badge {
+    @apply border-orange-400/30 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 shadow-orange-glow;
+  }
+
+  .theme-live-text-gradient {
+    @apply bg-gradient-to-r from-orange-400 via-orange-500 to-accent bg-clip-text text-transparent;
+  }
+
+  .theme-live-btn-primary {
+    @apply bg-orange-500 text-cream hover:bg-orange-400 focus:ring-orange-400/50;
+  }
+
+  .theme-live-btn-secondary {
+    @apply border-orange-400/60 text-orange-400 hover:bg-orange-400/20 focus:ring-orange-400/50;
+  }
+
+  .theme-live-glow {
+    @apply from-orange-400/10 via-orange-400/5 to-transparent;
+  }
+
+  /* Universal theme classes that work with any theme */
+  .theme-hero-bg {
+    @apply relative overflow-hidden;
+  }
+
+  .theme-hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-br opacity-95;
+  }
+
+  .theme-hero-glow {
+    @apply absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial blur-3xl;
+  }
+
+  .theme-badge-base {
+    @apply inline-flex size-28 items-center justify-center rounded-full border-4;
+  }
+
+  .theme-btn-base {
+    @apply rounded-xl px-8 py-4 font-bold uppercase tracking-wide transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-offset-2;
+  }
 }

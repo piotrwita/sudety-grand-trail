@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const TrailDescription = () => {
   return (
-    <section className="section-padding overflow-hidden bg-forest-50">
+    <section className="section-padding overflow-hidden bg-earth-50">
       <div className="fluid-container">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Text Content */}
@@ -16,14 +16,14 @@ const TrailDescription = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="section-title mb-8 text-left">
-              O <span className="text-gradient">Szlaku</span>
+              O <span className="theme-trail-text-gradient">Szlaku</span>
             </h2>
 
-            <div className="my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
+            <div className="my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-earth-700/40 to-transparent" />
 
             <div className="space-y-6 leading-relaxed text-mountain-600">
               <p className="text-xl font-medium">
-                <span className="font-bold text-forest-800">
+                <span className="font-bold text-earth-800">
                   KORONA SUDETÓW
                 </span>{' '}
                 – pierwszy szlak umożliwiający zdobycie najwyższego szczytu
@@ -47,32 +47,32 @@ const TrailDescription = () => {
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-700 to-earth-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
+                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-earth-600 to-earth-700" />
+                  <span className="font-bold uppercase tracking-wide text-earth-800">
                     24 pasma górskie
                   </span>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-700 to-earth-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
+                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-earth-600 to-earth-700" />
+                  <span className="font-bold uppercase tracking-wide text-earth-800">
                     16 szczytów Korony Gór Polski
                   </span>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-700 to-earth-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
+                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-earth-600 to-earth-700" />
+                  <span className="font-bold uppercase tracking-wide text-earth-800">
                     3 kraje: Polska, Czechy, Niemcy
                   </span>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-700 to-earth-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
+                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-earth-600 to-earth-700" />
+                  <span className="font-bold uppercase tracking-wide text-earth-800">
                     Legendarny finał pod Ślężą
                   </span>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-accent to-earth-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
+                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-earth-500 to-earth-700" />
+                  <span className="font-bold uppercase tracking-wide text-earth-800">
                     Plik GPX dostępny do pobrania
                   </span>
                 </div>
@@ -96,7 +96,7 @@ const TrailDescription = () => {
                 height={450}
                 className="h-auto w-full"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-800/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-earth-800/50 to-transparent" />
 
               {/* Vintage corner decorations */}
               <div className="absolute left-4 top-4 h-8 w-8 border-l-2 border-t-2 border-cream/60" />

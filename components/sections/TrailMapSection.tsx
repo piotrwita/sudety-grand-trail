@@ -53,10 +53,10 @@ export const TrailMapSection = () => {
   return (
     <Section
       ariaLabel="Oficjalna Trasa Szlaku"
-      className="relative min-h-0 overflow-hidden bg-gradient-to-br from-mountain-100 to-cream"
+      className="relative min-h-0 overflow-hidden bg-gradient-to-br from-earth-50 to-cream"
     >
       <VintageMountainsBackground className="opacity-10" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-forest-200/30 via-transparent to-earth-200/30" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-earth-200/30 via-transparent to-earth-300/30" />
       <div className="fluid-container relative z-10">
         <SectionHeader
           title="Poznaj Mapę"
@@ -138,18 +138,18 @@ export const TrailMapSection = () => {
         >
           <div className="mx-auto max-w-4xl space-y-6">
             {/* Summary Stats - Simple List */}
-            <div className="rounded-lg border border-forest-300/30 bg-cream/50 p-6 backdrop-blur-sm sm:p-8">
+            <div className="rounded-lg border border-earth-300/30 bg-cream/50 p-6 backdrop-blur-sm sm:p-8">
               <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3 sm:gap-6">
                 <div>
-                  <p className="text-2xl font-bold text-forest-700 sm:text-3xl">900 km</p>
+                  <p className="text-2xl font-bold text-earth-700 sm:text-3xl">900 km</p>
                   <p className="mt-1 text-sm text-mountain-600">Długość trasy</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-forest-700 sm:text-3xl">30 000 m</p>
+                  <p className="text-2xl font-bold text-earth-700 sm:text-3xl">30 000 m</p>
                   <p className="mt-1 text-sm text-mountain-600">Przewyższenia</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-forest-700 sm:text-3xl">1602 m</p>
+                  <p className="text-2xl font-bold text-earth-700 sm:text-3xl">1602 m</p>
                   <p className="mt-1 text-sm text-mountain-600">Śnieżka</p>
                 </div>
               </div>
@@ -161,7 +161,7 @@ export const TrailMapSection = () => {
                 href={siteConfig.links.map.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary flex w-full items-center justify-center gap-2 border-forest-700/30 px-6 py-3 text-forest-700 hover:bg-forest-700 hover:text-cream sm:w-auto"
+                className="theme-btn-base theme-trail-btn-secondary flex w-full items-center justify-center gap-2 px-6 py-3 sm:w-auto"
               >
                 <MapIcon className="size-5" />
                 Otwórz na Mapy.cz

@@ -75,6 +75,59 @@ module.exports = {
           hover: '#f5f2e7e6', // Cream with opacity
           DEFAULT: '#f5f2e7',
         },
+        // Page-specific theme colors
+        // HOME - Neutral/Basic theme (uses existing mountain/cream)
+        home: {
+          primary: '#52525b', // mountain-700
+          secondary: '#71717a', // mountain-600
+          accent: '#a1a1aa', // mountain-400
+          bg: '#f5f2e7', // cream-500
+          text: '#27272a', // mountain-900
+        },
+        // HALL OF FAME - Gold/Treasure theme
+        gold: {
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24', // Main gold
+          500: '#f59e0b', // Rich gold
+          600: '#d97706', // Dark gold
+          700: '#b45309', // Deep gold
+          800: '#92400e',
+          900: '#78350f',
+          DEFAULT: '#fbbf24',
+        },
+        // TRAIL - Brown/Earth theme (uses existing earth)
+        trail: {
+          primary: '#6b4423', // earth-700
+          secondary: '#8b6b47', // earth-600
+          accent: '#a8825f', // earth-500
+          bg: '#4d321b', // earth-900
+          text: '#f5f2e7', // cream-500
+        },
+        // SZCZYTY - Green/Forest theme (uses existing forest)
+        szczyty: {
+          primary: '#2f4f3e', // forest-700
+          secondary: '#3d6045', // forest-600
+          accent: '#4f7a58', // forest-500
+          bg: '#22342b', // forest-900
+          text: '#f5f2e7', // cream-500
+        },
+        // LIVE - Orange theme
+        orange: {
+          50: '#fff7ed',
+          100: '#ffedd5',
+          200: '#fed7aa',
+          300: '#fdba74',
+          400: '#fb923c', // Main orange
+          500: '#f97316', // Rich orange
+          600: '#ea580c', // Dark orange
+          700: '#c2410c', // Deep orange
+          800: '#9a3412',
+          900: '#7c2d12',
+          DEFAULT: '#fb923c',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
@@ -93,6 +146,17 @@ module.exports = {
           'linear-gradient(135deg, rgba(47, 79, 62, 0.8) 0%, rgba(107, 68, 35, 0.6) 100%)',
         'vintage-texture':
           'linear-gradient(45deg, rgba(245, 242, 231, 0.1) 25%, transparent 25%), linear-gradient(-45deg, rgba(245, 242, 231, 0.1) 25%, transparent 25%)',
+        // Page-specific hero gradients
+        'hero-home':
+          'linear-gradient(135deg, rgba(82, 82, 91, 0.9) 0%, rgba(39, 39, 42, 0.95) 100%)',
+        'hero-halloffame':
+          'linear-gradient(135deg, rgba(217, 119, 6, 0.9) 0%, rgba(120, 53, 15, 0.95) 100%)',
+        'hero-trail':
+          'linear-gradient(135deg, rgba(107, 68, 35, 0.9) 0%, rgba(77, 50, 27, 0.95) 100%)',
+        'hero-szczyty':
+          'linear-gradient(135deg, rgba(47, 79, 62, 0.9) 0%, rgba(34, 52, 43, 0.95) 100%)',
+        'hero-live':
+          'linear-gradient(135deg, rgba(251, 146, 60, 0.9) 0%, rgba(194, 65, 12, 0.95) 100%)',
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease-out',
@@ -134,6 +198,15 @@ module.exports = {
           '0 10px 15px -3px rgba(47, 79, 62, 0.1), 0 4px 6px -2px rgba(47, 79, 62, 0.05)',
         'vintage-xl':
           '0 20px 25px -5px rgba(47, 79, 62, 0.1), 0 10px 10px -5px rgba(47, 79, 62, 0.04)',
+        // Page-specific shadows
+        'gold-glow': '0 0 40px rgba(251, 191, 36, 0.4)',
+        'gold-glow-lg': '0 0 60px rgba(251, 191, 36, 0.5)',
+        'brown-glow': '0 0 40px rgba(139, 69, 19, 0.4)',
+        'brown-glow-lg': '0 0 60px rgba(139, 69, 19, 0.5)',
+        'green-glow': '0 0 40px rgba(22, 163, 74, 0.4)',
+        'green-glow-lg': '0 0 60px rgba(22, 163, 74, 0.5)',
+        'orange-glow': '0 0 40px rgba(251, 146, 60, 0.4)',
+        'orange-glow-lg': '0 0 60px rgba(251, 146, 60, 0.5)',
       },
     },
   },

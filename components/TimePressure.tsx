@@ -35,7 +35,7 @@ export const TimePressure = () => {
   }, []);
 
   return (
-    <section className="section-padding border-t border-accent/20 bg-gradient-to-r from-accent/5 via-orange-500/5 to-red-500/5">
+    <section className="section-padding border-t border-orange-400/20 bg-gradient-to-r from-orange-400/5 via-orange-500/5 to-orange-600/5">
       <div className="fluid-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -46,7 +46,7 @@ export const TimePressure = () => {
         >
           {/* Header */}
           <div className="mb-12">
-            <div className="mb-6 inline-flex items-center space-x-2 rounded-full bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
+            <div className="mb-6 inline-flex items-center space-x-2 rounded-full bg-orange-500/10 px-4 py-2 text-sm font-medium text-orange-600">
               <svg
                 className="h-4 w-4 animate-pulse"
                 fill="none"
@@ -65,7 +65,7 @@ export const TimePressure = () => {
 
             <h2 className="mb-4 text-3xl font-bold text-slate-900 md:text-4xl">
               Wyścig z{' '}
-              <span className="bg-gradient-to-r from-accent to-red-500 bg-clip-text text-transparent">
+              <span className="theme-live-text-gradient">
                 Czasem
               </span>
             </h2>
@@ -85,7 +85,7 @@ export const TimePressure = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl"
             >
-              <div className="mb-2 text-3xl font-bold text-accent md:text-4xl">
+              <div className="mb-2 text-3xl font-bold text-orange-500 md:text-4xl">
                 {timeLeft.days.toString().padStart(2, '0')}
               </div>
               <div className="text-sm font-medium uppercase tracking-wide text-slate-600">
@@ -100,7 +100,7 @@ export const TimePressure = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl"
             >
-              <div className="mb-2 text-3xl font-bold text-accent md:text-4xl">
+              <div className="mb-2 text-3xl font-bold text-orange-500 md:text-4xl">
                 {timeLeft.hours.toString().padStart(2, '0')}
               </div>
               <div className="text-sm font-medium uppercase tracking-wide text-slate-600">
@@ -115,7 +115,7 @@ export const TimePressure = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl"
             >
-              <div className="mb-2 text-3xl font-bold text-accent md:text-4xl">
+              <div className="mb-2 text-3xl font-bold text-orange-500 md:text-4xl">
                 {timeLeft.minutes.toString().padStart(2, '0')}
               </div>
               <div className="text-sm font-medium uppercase tracking-wide text-slate-600">
@@ -231,7 +231,7 @@ export const TimePressure = () => {
               Każda sekunda ma znaczenie. Śledź wyprawę na żywo i kibicuj w
               najtrudniejszych momentach!
             </p>
-            <button className="mx-auto flex items-center justify-center space-x-2 rounded-xl bg-accent px-8 py-4 font-medium text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-accent/90 hover:shadow-xl">
+            <button className="theme-btn-base theme-live-btn-primary mx-auto flex items-center justify-center space-x-2 px-8 py-4 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
               <svg
                 className="h-5 w-5"
                 fill="none"
