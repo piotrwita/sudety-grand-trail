@@ -1,15 +1,14 @@
+'use client';
+
 import { TrailMapSection } from '@/components/sections';
 import TrailDescription from '@/components/TrailDescription';
 import TrailMotivation from '@/components/TrailMotivation';
 import { FadeIn, ScaleIn } from '@/components/motion';
 import { MapIcon } from '@/components/icons';
-import { pageMetadata } from '@/config/metadata';
-import type { Metadata } from 'next';
 import { Section } from '@/components/sections/Section';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 import { LogoImage } from '@/components/LogoImage';
-
-export const metadata: Metadata = pageMetadata.trail;
+import { motion } from 'framer-motion';
 
 export default function TrailPage() {
   return (
@@ -72,27 +71,40 @@ const TrailHeroSection = () => (
         </FadeIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
-          <p className="text-fluid-xl mx-auto mb-4 max-w-6xl font-medium leading-relaxed text-cream/90">
-            Nadszedł moment, by przedstawić trasę jaka kryje się za inicjatywą{' '}
-            <span className="bg-gradient-to-r from-earth-400 via-earth-500 to-earth-600 bg-clip-text font-bold text-transparent">
-              SUDETY GRAND TRAIL
-            </span>
-            . To nie przypadkowy wybór, lecz koncept, który oddaje założenia, charakter i ideę całego projektu.
-          </p>
-        </FadeIn>
-
-        <FadeIn direction="up" offset={30} duration={0.8} delay={0.7}>
-          <p className="text-fluid-xl mx-auto mb-8 max-w-6xl font-medium leading-relaxed text-cream/90">
+          <p className="text-fluid-xl mx-auto mb-8 max-w-5xl font-medium leading-relaxed text-cream/90">
             Cała{' '}
             <span className="bg-gradient-to-r from-earth-400 via-earth-500 to-earth-600 bg-clip-text font-bold text-transparent">
               KORONA SUDETÓW
             </span>{' '}
-            w jednym szlaku. 900 kilometrów przez 22 pasma i wejście na najwyższy
+            w jednym szlaku. 900 kilometrów przez 22 pasma oraz wejście na najwyższy
             szczyt każdego z nich. Od Jarnołtówka w Górach Opawskich po finał na
-            Ślęży. Kompletny, zamknięty obraz Sudetów ułożony w jeden ambitny szlak.
+            Ślęży. Kompletne oblicze Sudetów ułożone w jeden ambitny szlak.
           </p>
         </FadeIn>
       </FadeIn>
     </div>
+
+    <ScrollIndicator />
   </Section>
+);
+
+const ScrollIndicator = () => (
+  <FadeIn
+    duration={0.6}
+    delay={1.4}
+    offset={0}
+    className="absolute bottom-16 left-1/2 -translate-x-1/2 transform lg:bottom-20"
+  >
+    <motion.div
+      animate={{ y: [0, 10, 0] }}
+      transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+      className="flex h-10 w-6 justify-center rounded-full border-2 border-cream/40"
+    >
+      <motion.div
+        animate={{ y: [0, 12, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        className="mt-2 h-3 w-1 rounded-full bg-cream/60"
+      />
+    </motion.div>
+  </FadeIn>
 );
