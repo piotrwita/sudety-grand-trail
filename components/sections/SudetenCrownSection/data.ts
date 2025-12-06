@@ -1,4 +1,3 @@
-// Type definitions
 export interface SudetenRange {
   id: number;
   rank: number;
@@ -83,7 +82,8 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gY_5/HhqXgh.jpeg?fl=rot,180,0%7Cres,,400,1',
+    imageUrl:
+      'https://d34-a.sdn.cz/d_34/c_img_gY_5/HhqXgh.jpeg?fl=rot,180,0%7Cres,,400,1',
   },
   {
     id: 5,
@@ -203,7 +203,8 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_gR_o/XW0Fwq.jpeg?fl=res,2200,2200,1',
+    imageUrl:
+      'https://d34-a.sdn.cz/d_34/c_img_gR_o/XW0Fwq.jpeg?fl=res,2200,2200,1',
   },
   {
     id: 13,
@@ -278,7 +279,8 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: true,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oZ_A/kBkJRwehYQKXlCDPDMpU7r/c11b.jpeg?fl=res,,400,1',
+    imageUrl:
+      'https://d34-a.sdn.cz/d_34/c_img_oZ_A/kBkJRwehYQKXlCDPDMpU7r/c11b.jpeg?fl=res,,400,1',
   },
   {
     id: 18,
@@ -353,7 +355,8 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL/CZ',
     isKs: true,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_ob_B/kBj94XhVwDuD8OBlID4Xp4i/7bbd.jpeg?fl=res,,400,1',
+    imageUrl:
+      'https://d34-a.sdn.cz/d_34/c_img_ob_B/kBj94XhVwDuD8OBlID4Xp4i/7bbd.jpeg?fl=res,,400,1',
   },
   {
     id: 23,
@@ -443,7 +446,8 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oc_A/kcukOQcMmRUmqByJEBUujI/ac3f.jpeg?fl=res,,400,1',
+    imageUrl:
+      'https://d34-a.sdn.cz/d_34/c_img_oc_A/kcukOQcMmRUmqByJEBUujI/ac3f.jpeg?fl=res,,400,1',
   },
   {
     id: 29,
@@ -488,7 +492,8 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oe_A/kOzmiQlmfoQAuL6JEmRKoN/10fc.jpeg?fl=res,,400,1',
+    imageUrl:
+      'https://d34-a.sdn.cz/d_34/c_img_oe_A/kOzmiQlmfoQAuL6JEmRKoN/10fc.jpeg?fl=res,,400,1',
   },
   {
     id: 32,
@@ -593,7 +598,8 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oa_A/nO7kYQIzllDshrEBXuDiT20x/fc81.jpeg?fl=res,,400,1',
+    imageUrl:
+      'https://d34-a.sdn.cz/d_34/c_img_oa_A/nO7kYQIzllDshrEBXuDiT20x/fc81.jpeg?fl=res,,400,1',
   },
   {
     id: 39,
@@ -653,7 +659,8 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: true,
     isKgp: true,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oY_A/nsLxLojIIE33fGC4jmXp/1429.jpeg?fl=res,,400,1',
+    imageUrl:
+      'https://d34-a.sdn.cz/d_34/c_img_oY_A/nsLxLojIIE33fGC4jmXp/1429.jpeg?fl=res,,400,1',
   },
   {
     id: 43,
@@ -668,7 +675,8 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oZ_A/kBkJRwehYBM7PH96DSXdt0/60ab.jpeg?fl=res,,400,1',
+    imageUrl:
+      'https://d34-a.sdn.cz/d_34/c_img_oZ_A/kBkJRwehYBM7PH96DSXdt0/60ab.jpeg?fl=res,,400,1',
   },
   {
     id: 44,
@@ -683,7 +691,8 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_oW_A/kPWmeC9soBDmlC1UjCcedyp/7a93.jpeg?fl=res,,400,1',
+    imageUrl:
+      'https://d34-a.sdn.cz/d_34/c_img_oW_A/kPWmeC9soBDmlC1UjCcedyp/7a93.jpeg?fl=res,,400,1',
   },
   {
     id: 45,
@@ -743,7 +752,8 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_ob_A/nPTQKDwGerDgEH8a9Dta14D/6940.jpeg?fl=res,,400,1',
+    imageUrl:
+      'https://d34-a.sdn.cz/d_34/c_img_ob_A/nPTQKDwGerDgEH8a9Dta14D/6940.jpeg?fl=res,,400,1',
   },
   {
     id: 49,
@@ -803,7 +813,8 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'CZ',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/d_15120355/img/8/960x720_5OfVZo.jpg?fl=res,,400,1',
+    imageUrl:
+      'https://d34-a.sdn.cz/d_34/d_15120355/img/8/960x720_5OfVZo.jpg?fl=res,,400,1',
   },
   {
     id: 53,
@@ -833,7 +844,8 @@ export const sudetenRanges: SudetenRange[] = [
     country: 'PL',
     isKs: false,
     isKgp: false,
-    imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_ob_A/kBj94XhVwBhVo6BRFDw05Ml/d53d.mpo?fl=res,,400,1',
+    imageUrl:
+      'https://d34-a.sdn.cz/d_34/c_img_ob_A/kBj94XhVwBhVo6BRFDw05Ml/d53d.mpo?fl=res,,400,1',
   },
   {
     id: 55,
@@ -967,4 +979,3 @@ export const koronaGorPolski: KgpPeak[] = [
     range: 'Masyw Ślęży',
   },
 ];
-

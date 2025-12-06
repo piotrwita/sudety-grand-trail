@@ -40,11 +40,11 @@ const HallOfFameHeroSection = () => (
       <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-yellow-500/5 to-transparent" />
       <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-yellow-500/5 to-transparent" />
       {/* Smooth bottom glow - no hard edges */}
-      <div className="from-yellow-400/8 via-yellow-400/4 absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial to-transparent blur-3xl" />
+      <div className="from-yellow-400/8 via-yellow-400/4 absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial to-transparent blur-lg md:blur-3xl" />
     </div>
 
     {/* Radial glow effect */}
-    <div className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-yellow-400/10 via-yellow-400/5 to-transparent blur-3xl" />
+    <div className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-yellow-400/10 via-yellow-400/5 to-transparent blur-xl md:blur-3xl" />
 
     {/* Logo in background */}
     <div className="absolute left-1/2 top-1/2 z-0 size-[400px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 lg:size-[500px] 2xl:size-[600px]">
@@ -79,9 +79,18 @@ const HallOfFameHeroSection = () => (
           </h1>
         </FadeIn>
 
-        <FadeIn direction="up" offset={30} duration={0.8} delay={0.5}>
-          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent" />
-        </FadeIn>
+        <ScaleIn
+          duration={0.6}
+          delay={0.5}
+          initialScale={0}
+          finalScale={1}
+          initialOpacity={0}
+          finalOpacity={1}
+          className="mx-auto my-4 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent lg:my-6"
+          style={{ transformOrigin: 'center' }}
+        >
+          <div />
+        </ScaleIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
           <p className="text-fluid-xl mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-cream/90">
@@ -102,18 +111,18 @@ const HallOfFameHeroSection = () => (
           offset={30}
           duration={0.8}
           delay={0.8}
-          className="flex flex-col items-center justify-center gap-6 sm:flex-row"
+          className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 md:gap-6"
         >
           <Link
             href={getSectionHash(sectionIds.submission)}
-            className="btn-primary px-10 py-4 text-lg"
+            className="btn-primary w-full px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
             aria-label="Zgłoś Swoje Przejście"
           >
             Zgłoś Swoje Przejście
           </Link>
           <Link
             href={getSectionHash(sectionIds.hallOfFame)}
-            className="btn-secondary border-cream/60 px-10 py-4 text-lg text-cream/90 hover:bg-cream/90 hover:text-forest-800"
+            className="btn-secondary w-full transform border-cream/60 px-6 py-3 text-sm text-cream/90 hover:scale-105 hover:bg-cream/90 hover:text-forest-800 focus:ring-cream/50 sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
             aria-label="Zobacz Zdobywców"
           >
             Zobacz Zdobywców

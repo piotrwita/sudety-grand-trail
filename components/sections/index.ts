@@ -3,7 +3,7 @@ export { SectionHeader } from './SectionHeader';
 export { HomeHeroSection } from './HomeHeroSection';
 export { WhyChooseSection } from './WhyChooseSection';
 export { AboutProjectSection } from './AboutProjectSection';
-export { SudetenCrownSection } from './SudetenCrownSection/SudetenCrownSection';
+export { SudetenCrownSection } from './SudetenCrownSection';
 export { default as MotivationSection } from './MotivationSection';
 export { TrailMapSection } from './TrailMapSection';
 export { LiveTrackingSection } from './LiveTrackingSection';
