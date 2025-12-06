@@ -28,7 +28,7 @@ const cardBaseStyles =
 
 const LazyMountainCard = memo((props: MountainCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '100px' });
+  const isInView = useInView(ref, { once: true, margin: '40px' });
 
   return (
     <div ref={ref} className="h-full">
@@ -39,6 +39,7 @@ const LazyMountainCard = memo((props: MountainCardProps) => {
           delay={0.1}
           duration={0.4}
           className="h-full"
+          inViewMargin={props.isMobile ? '-100px' : '-250px'}
         >
           <MountainCard {...props} />
         </FadeIn>
@@ -88,6 +89,7 @@ const MountainCard = ({
         className={cn(
           cardBaseStyles,
           'cursor-pointer',
+          isMobile && 'hover:scale-100',
           isSelected && 'border-forest-500/80 ring-2 ring-forest-500/50'
         )}
         onClick={onClick}
