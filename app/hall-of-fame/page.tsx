@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 import { Section, SubmissionFormSection } from '@/components/sections';
 import { LogoImage } from '@/components/LogoImage';
+import { ScrollIndicator } from '@/components/ScrollIndicator';
 import Link from 'next/link';
 import { sectionIds } from '@/config/section-ids';
 import { getSectionHash } from '@/lib/section-navigation';
@@ -27,24 +28,24 @@ export default function HallOfFamePage() {
 
 const HallOfFameHeroSection = () => (
   <Section
-    className="relative overflow-hidden bg-gradient-to-br from-forest-900 via-earth-900 to-forest-800 pt-16"
+    className="theme-hero-bg theme-halloffame-hero pt-16"
     ariaLabel="Sekcja główna - Hall of Fame"
   >
     {/* Epic Background Effects */}
-    <div className="absolute inset-0 bg-gradient-to-br from-forest-900/95 via-earth-900/95 to-forest-800/95" />
+    <div className="theme-hero-overlay theme-halloffame-hero" />
     <div className="gradient-mesh-overlay absolute inset-0 opacity-30" />
     <VintageMountainsBackground className="opacity-15" />
 
     {/* Epic Conqueror Background Elements */}
     <div className="absolute inset-0">
-      <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-yellow-500/5 to-transparent" />
-      <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-yellow-500/5 to-transparent" />
+      <div className="from-gold-500/5 absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r to-transparent" />
+      <div className="from-gold-500/5 absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l to-transparent" />
       {/* Smooth bottom glow - no hard edges */}
-      <div className="from-yellow-400/8 via-yellow-400/4 absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial to-transparent blur-lg md:blur-3xl" />
+      <div className="theme-halloffame-glow absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial blur-xl md:blur-3xl" />
     </div>
 
     {/* Radial glow effect */}
-    <div className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-yellow-400/10 via-yellow-400/5 to-transparent blur-xl md:blur-3xl" />
+    <div className="theme-hero-glow theme-halloffame-glow" />
 
     {/* Logo in background */}
     <div className="absolute left-1/2 top-1/2 z-0 size-[400px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 lg:size-[500px] 2xl:size-[600px]">
@@ -58,7 +59,7 @@ const HallOfFameHeroSection = () => (
           initialScale={0.5}
           duration={0.6}
           delay={0.2}
-          className="mb-8 inline-flex size-28 items-center justify-center rounded-full border-4 border-yellow-400/30 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 shadow-[0_0_40px_rgba(250,204,21,0.4)]"
+          className="theme-badge-base theme-halloffame-badge mb-8"
         >
           <svg
             className="h-14 w-14 text-forest-900/80"
@@ -72,8 +73,8 @@ const HallOfFameHeroSection = () => (
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.4}>
           <h1 className="hero-title mb-6 text-cream">
-            <span className="gradient-text-mesh">Hall of Fame</span>
-            <span className="text-fluid-lg mt-6 block font-display font-bold uppercase tracking-wider text-yellow-400 drop-shadow-lg">
+            <span className="theme-halloffame-text-gradient">Hall of Fame</span>
+            <span className="text-fluid-lg text-gold-400 mt-6 block font-display font-bold uppercase tracking-wider drop-shadow-lg">
               Oficjalne Przejścia Sudety Grand Trail
             </span>
           </h1>
@@ -95,7 +96,7 @@ const HallOfFameHeroSection = () => (
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
           <p className="text-fluid-xl mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-cream/90">
             Niezłomni wędrowcy zdobyli pełną{' '}
-            <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-accent bg-clip-text font-bold text-transparent">
+            <span className="theme-halloffame-text-gradient font-bold">
               Koronę Sudetów
             </span>
             . Przeszli 900 kilometrów przez 22 pasma górskie.
@@ -109,20 +110,20 @@ const HallOfFameHeroSection = () => (
         <FadeIn
           direction="up"
           offset={30}
-          duration={0.8}
+          duration={0.6}
           delay={0.8}
           className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 md:gap-6"
         >
           <Link
             href={getSectionHash(sectionIds.submission)}
-            className="btn-primary w-full px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
+            className="theme-btn-base theme-halloffame-btn-primary w-full px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
             aria-label="Zgłoś Swoje Przejście"
           >
             Zgłoś Swoje Przejście
           </Link>
           <Link
             href={getSectionHash(sectionIds.hallOfFame)}
-            className="btn-secondary w-full transform border-cream/60 px-6 py-3 text-sm text-cream/90 hover:scale-105 hover:bg-cream/90 hover:text-forest-800 focus:ring-cream/50 sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
+            className="theme-btn-base theme-halloffame-btn-secondary w-full border-2 px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
             aria-label="Zobacz Zdobywców"
           >
             Zobacz Zdobywców
@@ -130,5 +131,7 @@ const HallOfFameHeroSection = () => (
         </FadeIn>
       </FadeIn>
     </div>
+
+    <ScrollIndicator />
   </Section>
 );

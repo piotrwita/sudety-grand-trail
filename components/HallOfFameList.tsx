@@ -136,13 +136,13 @@ export const HallOfFameList = () => {
 
           {/* Sort Controls */}
           <div className="flex justify-center">
-            <div className="flex rounded-xl bg-forest-100 p-1">
+            <div className="flex rounded-xl bg-gold-100 p-1">
               <button
                 onClick={() => setSortBy('date')}
                 className={`rounded-lg px-6 py-2 text-sm font-bold uppercase tracking-wide transition-all ${
                   sortBy === 'date'
-                    ? 'bg-forest-700 text-cream shadow-vintage'
-                    : 'text-forest-700 hover:bg-forest-200'
+                    ? 'bg-gold-500 text-forest-900 shadow-vintage'
+                    : 'text-gold-700 hover:bg-gold-200'
                 }`}
               >
                 Data
@@ -151,8 +151,8 @@ export const HallOfFameList = () => {
                 onClick={() => setSortBy('time')}
                 className={`rounded-lg px-6 py-2 text-sm font-bold uppercase tracking-wide transition-all ${
                   sortBy === 'time'
-                    ? 'bg-forest-700 text-cream shadow-vintage'
-                    : 'text-forest-700 hover:bg-forest-200'
+                    ? 'bg-gold-500 text-forest-900 shadow-vintage'
+                    : 'text-gold-700 hover:bg-gold-200'
                 }`}
               >
                 Czas
@@ -161,8 +161,8 @@ export const HallOfFameList = () => {
                 onClick={() => setSortBy('name')}
                 className={`rounded-lg px-6 py-2 text-sm font-bold uppercase tracking-wide transition-all ${
                   sortBy === 'name'
-                    ? 'bg-forest-700 text-cream shadow-vintage'
-                    : 'text-forest-700 hover:bg-forest-200'
+                    ? 'bg-gold-500 text-forest-900 shadow-vintage'
+                    : 'text-gold-700 hover:bg-gold-200'
                 }`}
               >
                 Nazwa
@@ -201,7 +201,7 @@ export const HallOfFameList = () => {
                       ? 'bg-gradient-to-br from-gray-300 to-gray-500 text-white'
                       : completion.rank === 3
                         ? 'bg-gradient-to-br from-amber-600 to-amber-800 text-white'
-                        : 'bg-gradient-to-br from-forest-400 to-forest-600 text-cream'
+                        : 'bg-gradient-to-br from-gold-400 to-gold-600 text-forest-900'
                 }`}
               >
                 #{completion.rank}
@@ -341,7 +341,7 @@ export const HallOfFameList = () => {
           inView={true}
           className="mt-16 text-center"
         >
-          <div className="card-vintage border-forest-300 bg-gradient-to-br from-forest-700/10 to-earth-700/10 p-10">
+          <div className="card-vintage border-gold-300 bg-gradient-to-br from-gold-500/10 to-gold-600/10 p-10">
             <h3 className="section-title mb-6 text-2xl">
               Dołącz do Elitarnego Grona!
             </h3>
@@ -351,7 +351,7 @@ export const HallOfFameList = () => {
             </p>
             <a
               href={getSectionHash(sectionIds.submission)}
-              className="btn-primary px-10 py-4 text-lg"
+              className="theme-btn-base theme-halloffame-btn-primary px-10 py-4 text-lg"
             >
               Zgłoś Swoje Przejście
             </a>

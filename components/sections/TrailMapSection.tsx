@@ -1,24 +1,62 @@
+'use client';
+
+import { useState, useEffect, useRef } from 'react';
 import { FadeIn } from '@/components/motion/FadeIn';
 import { ScaleIn } from '@/components/motion/ScaleIn';
 import {
   MapIcon,
   DownloadIcon,
-  SparklesIcon,
-  ClockIcon,
 } from '@/components/icons';
 import Link from 'next/link';
 import { Section } from './Section';
 import { SectionHeader } from './SectionHeader';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
+import { siteConfig } from '@/config/site';
 
 export const TrailMapSection = () => {
+  const [isMapInteractive, setIsMapInteractive] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let scrollTimer: NodeJS.Timeout | null = null;
+
+    const handleScroll = () => {
+      setIsScrolling(true);
+      setIsMapInteractive(false);
+
+      if (scrollTimer) {
+        clearTimeout(scrollTimer);
+      }
+
+      scrollTimer = setTimeout(() => {
+        setIsScrolling(false);
+      }, 150);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('wheel', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('wheel', handleScroll);
+      if (scrollTimer) {
+        clearTimeout(scrollTimer);
+      }
+    };
+  }, []);
+
+  const handleMapClick = () => {
+    setIsMapInteractive(true);
+  };
   return (
     <Section
       ariaLabel="Oficjalna Trasa Szlaku"
-      className="relative min-h-0 overflow-hidden bg-gradient-to-br from-mountain-100 to-cream"
+      className="relative min-h-0 overflow-hidden bg-gradient-to-br from-earth-50 to-cream"
     >
       <VintageMountainsBackground className="opacity-10" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-forest-200/30 via-transparent to-earth-200/30" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-earth-200/30 via-transparent to-earth-300/30" />
       <div className="fluid-container relative z-10">
         <SectionHeader
           title="Poznaj Mapę"
@@ -51,13 +89,19 @@ export const TrailMapSection = () => {
           className="relative"
         >
           {/* Map Container - Hidden on mobile */}
-          <div className="card-vintage relative hidden overflow-hidden md:block">
-            <div className="aspect-video">
+          <div
+            ref={mapContainerRef}
+            className="card-vintage relative hidden overflow-hidden md:block"
+          >
+            <div className="aspect-video relative">
               <iframe
                 src="https://mapy.com/s/barusofola"
                 width="100%"
                 height="100%"
-                style={{ border: 'none' }}
+                style={{
+                  border: 'none',
+                  pointerEvents: isMapInteractive && !isScrolling ? 'auto' : 'none',
+                }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -65,91 +109,74 @@ export const TrailMapSection = () => {
                 title="Grand Trail Sudety Map"
                 frameBorder="0"
               />
+              {/* Overlay that blocks interaction during scroll */}
+              {(!isMapInteractive || isScrolling) && (
+                <div
+                  onClick={handleMapClick}
+                  className="absolute inset-0 z-10 flex cursor-pointer items-center justify-center bg-transparent transition-opacity duration-200 hover:bg-black/5"
+                  aria-label="Kliknij, aby korzystać z mapy"
+                >
+                  {!isMapInteractive && (
+                    <div className="rounded-lg bg-cream/95 px-4 py-2 text-sm font-medium text-forest-700 shadow-lg backdrop-blur-sm">
+                      Kliknij, aby korzystać z mapy
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </ScaleIn>
 
-        {/* Map Info Cards */}
-        <div className="py-12 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          <FadeIn
-            direction="down"
-            offset={30}
-            duration={0.6}
-            delay={0.3}
-            inView={true}
-          >
-            <div className="card-vintage h-full p-8 text-center">
-              <div className="badge-circle mx-auto size-16 transition-transform duration-300 group-hover:scale-110">
-                <MapIcon className="size-6" />
+        {/* Modest Summary Section */}
+        <FadeIn
+          direction="up"
+          offset={30}
+          duration={0.6}
+          delay={0.3}
+          inView={true}
+          className="mt-12"
+        >
+          <div className="mx-auto max-w-4xl space-y-6">
+            {/* Summary Stats - Simple List */}
+            <div className="rounded-lg border border-earth-300/30 bg-cream/50 p-6 backdrop-blur-sm sm:p-8">
+              <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3 sm:gap-6">
+                <div>
+                  <p className="text-2xl font-bold text-earth-700 sm:text-3xl">900 km</p>
+                  <p className="mt-1 text-sm text-mountain-600">Długość trasy</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-earth-700 sm:text-3xl">30 000 m</p>
+                  <p className="mt-1 text-sm text-mountain-600">Przewyższenia</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-earth-700 sm:text-3xl">1602 m</p>
+                  <p className="mt-1 text-sm text-mountain-600">Śnieżka</p>
+                </div>
               </div>
-              <h3 className="section-title mt-6 text-xl">Długość</h3>
-              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-              <p className="stats-number mt-3 text-2xl">900 km</p>
             </div>
-          </FadeIn>
 
-          <FadeIn
-            direction="down"
-            offset={30}
-            duration={0.6}
-            delay={0.45}
-            inView={true}
-          >
-            <div className="card-vintage h-full p-8 text-center">
-              <div className="badge-circle mx-auto size-16 transition-transform duration-300 group-hover:scale-110">
-                <SparklesIcon className="size-6" />
-              </div>
-              <h3 className="section-title mt-6 text-xl">Najwyższy punkt</h3>
-              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-              <p className="font-bold text-mountain-600">Śnieżka</p>
-              <p className="stats-number text-2xl">1602 m</p>
-            </div>
-          </FadeIn>
-
-          <FadeIn
-            direction="down"
-            offset={30}
-            duration={0.6}
-            delay={0.6}
-            inView={true}
-          >
-            <div className="card-vintage h-full p-8 text-center">
-              <div className="badge-circle mx-auto mb-6 h-16 w-16 transition-transform duration-300 group-hover:scale-110">
-                <ClockIcon className="size-6" />
-              </div>
-              <h3 className="section-title mb-2 text-xl">Przewyższenia</h3>
-              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-              <p className="stats-number text-2xl">30 000 m</p>
-            </div>
-          </FadeIn>
-
-          {/* GPX Download Card */}
-          <FadeIn
-            direction="down"
-            offset={30}
-            duration={0.6}
-            delay={0.75}
-            inView={true}
-          >
-            <div className="card-vintage group border-accent/30 bg-gradient-to-br from-accent/10 to-earth/10 p-8 text-center">
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-accent to-earth-700 shadow-vintage transition-transform duration-300 group-hover:scale-110">
-                <DownloadIcon className="size-6 text-cream" />
-              </div>
-              <h3 className="section-title mb-2 text-xl">Plik GPX</h3>
-              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-              <p className="mb-3 font-bold text-mountain-600">
-                Gotowy do pobrania
-              </p>
+            {/* Action Buttons */}
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link
+                href={siteConfig.links.map.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="theme-btn-base theme-trail-btn-secondary flex w-full items-center justify-center gap-2 px-6 py-3 sm:w-auto"
+              >
+                <MapIcon className="size-5" />
+                Otwórz na Mapy.cz
+              </Link>
               <Link
                 href="https://pro.mapy.com/mapybox-export/v1/path/gpx?id=688fa97f662a3fae890f5f13&rand=0.7002222504750357"
                 download="sudety-grand-trail.gpx"
-                className="btn-outline border-accent px-4 py-2 text-sm text-accent hover:bg-accent hover:text-cream"
+                className="btn-primary flex w-full items-center justify-center gap-2 px-6 py-3 sm:w-auto"
               >
-                Pobierz GPX
+                <DownloadIcon className="size-5" />
+                Pobierz Plik GPX
               </Link>
             </div>
-          </FadeIn>
-        </div>
+          </div>
+        </FadeIn>
       </div>
     </Section>
   );

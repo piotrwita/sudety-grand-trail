@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { FacebookIcon } from '@/components/icons';
 import { FadeIn } from '@/components/motion';
 import { siteConfig } from '@/config/site';
+import { siteRoutes } from '@/config/site-routes';
 import { Section } from './Section';
 import { SectionHeader } from './SectionHeader';
 
@@ -16,7 +17,7 @@ const FADE_IN_PROPS = {
 };
 
 export const AboutProjectSection = () => {
-  const { facebook, map } = siteConfig.links;
+  const { facebook } = siteConfig.links;
 
   return (
     <Section
@@ -261,8 +262,8 @@ export const AboutProjectSection = () => {
                         Dołącz do Społeczności
                       </ActionButton>
                       <ActionButton
-                        href={map.href}
-                        external={map.external}
+                        href={siteRoutes.trail}
+                        external={false}
                         variant="secondary"
                       >
                         Sprawdź Trasę

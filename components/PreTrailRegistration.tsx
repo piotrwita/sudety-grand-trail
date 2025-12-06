@@ -58,7 +58,7 @@ const PROCESS_STEPS: ProcessStep[] = [
       'Po ukończeniu szlaku zgłoś swoje przejście z materiałami (zdjęcia, GPX). Po weryfikacji dołączysz do oficjalnego Hall of Fame!',
     linkText: 'Formularz ukończenia',
     linkHref: getSectionHash(sectionIds.submission),
-    gradientClass: 'from-accent to-yellow-600',
+    gradientClass: 'from-gold-500 to-gold-600',
   },
 ];
 
@@ -181,7 +181,7 @@ const BenefitsCard = () => (
   <FadeIn direction="up" offset={30} duration={0.6} delay={0.5} inView={true}>
     <div className="card-vintage-noanim p-8">
       <div className="text-center">
-        <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-gradient-to-br from-accent to-yellow-600 shadow-vintage">
+        <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-gradient-to-br from-gold-500 to-gold-600 shadow-vintage">
           <StarIcon className="size-8 text-cream" />
         </div>
         <h3 className="mb-4 text-center font-display text-2xl font-bold uppercase tracking-wide text-forest-800">
@@ -220,9 +220,9 @@ const WarningBox = () => (
     inViewMargin="-50px"
     className="mt-16"
   >
-    <div className="card-vintage-noanim border-2 border-yellow-400 bg-gradient-to-br from-yellow-50 to-orange-50 p-8">
+    <div className="card-vintage-noanim border-2 border-gold-400 bg-gradient-to-br from-gold-50 to-gold-100 p-8">
       <div className="flex items-start gap-6">
-        <div className="flex size-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 shadow-vintage">
+        <div className="flex size-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-500 to-gold-600 shadow-vintage">
           <svg
             className="size-7 text-white"
             fill="currentColor"
@@ -237,10 +237,10 @@ const WarningBox = () => (
           </svg>
         </div>
         <div className="flex-1">
-          <h4 className="mb-3 text-lg font-bold text-yellow-800">
+          <h4 className="mb-3 text-lg font-bold text-gold-800">
             Ważne: Zgłoś się przed startem!
           </h4>
-          <p className="leading-relaxed text-yellow-700">
+          <p className="leading-relaxed text-gold-700">
             <strong>Aby Twoje przejście zostało uznane za oficjalne</strong>,
             musisz zgłosić próbę przejścia
             <strong> przed rozpoczęciem wędrówki</strong>. Przejścia rozpoczęte
@@ -248,7 +248,7 @@ const WarningBox = () => (
             oficjalnych statystykach{' '}
             <Link
               href={getSectionUrl(siteRoutes.hallOfFame, sectionIds.hallOfFame)}
-              className="font-bold text-yellow-800 underline decoration-2 underline-offset-2 transition-colors hover:text-yellow-900"
+              className="font-bold text-gold-800 underline decoration-2 underline-offset-2 transition-colors hover:text-gold-900"
             >
               Hall of Fame
             </Link>
@@ -267,7 +267,7 @@ export const PreTrailRegistration = () => {
   return (
     <Section
       ariaLabel="Zanim Wyruszysz"
-      className="overflow-hidden bg-gradient-to-br from-accent/10 to-earth/10"
+      className="overflow-hidden bg-gradient-to-br from-gold-500/10 to-gold-600/10"
     >
       <VintageMountainsBackground className="opacity-15" />
 

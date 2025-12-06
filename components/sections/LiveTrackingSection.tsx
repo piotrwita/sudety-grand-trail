@@ -24,10 +24,10 @@ export const LiveTrackingSection = () => {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8 inline-flex items-center space-x-3 rounded-full border-2 border-accent bg-accent/20 px-6 py-3 backdrop-blur-sm"
+            className="mb-8 inline-flex items-center space-x-3 rounded-full border-2 border-orange-400 bg-orange-500/20 px-6 py-3 backdrop-blur-sm"
           >
-            <div className="h-3 w-3 animate-pulse rounded-full bg-accent" />
-            <span className="text-sm font-bold uppercase tracking-wide text-accent">
+            <div className="h-3 w-3 animate-pulse rounded-full bg-orange-500" />
+            <span className="text-sm font-bold uppercase tracking-wide text-orange-600">
               ŚLEDŹ NA ŻYWO
             </span>
           </motion.div>
@@ -39,10 +39,10 @@ export const LiveTrackingSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="section-title mb-6 text-forest-800"
           >
-            Live <span className="text-gradient">Tracking</span>
+            Live <span className="theme-live-text-gradient">Tracking</span>
           </motion.h2>
 
-          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
+          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -51,14 +51,14 @@ export const LiveTrackingSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mx-auto text-xl font-medium leading-relaxed text-mountain-600"
           >
-            Dzięki współpracy z <strong className="text-accent">Poltrax</strong>{' '}
+            Dzięki współpracy z <strong className="text-orange-500">Poltrax</strong>{' '}
             możesz śledzić moją wyprawę w czasie rzeczywistym. Mapa pokazuje
             aktualną pozycję, przebytą trasę oraz{' '}
-            <strong className="text-accent">
+            <strong className="text-orange-500">
               orientacyjne punkty noclegów
             </strong>
             . Widoczny jest także limit czasowy – to będzie{' '}
-            <strong className="text-forest-800">wyścig z czasem</strong>
+            <strong className="text-orange-600">wyścig z czasem</strong>
             przez wszystkie 22 pasma Sudetów.
           </motion.p>
         </motion.div>
@@ -87,7 +87,7 @@ export const LiveTrackingSection = () => {
             </div>
 
             {/* Live Overlay */}
-            <div className="absolute left-6 top-6 rounded-xl border-2 border-accent bg-accent/90 p-4 shadow-vintage backdrop-blur-sm">
+            <div className="absolute left-6 top-6 rounded-xl border-2 border-orange-400 bg-orange-500/90 p-4 shadow-vintage backdrop-blur-sm">
               <div className="flex items-center space-x-3">
                 <div className="h-4 w-4 animate-pulse rounded-full bg-cream" />
                 <span className="text-sm font-bold uppercase tracking-wide text-cream">
@@ -97,9 +97,9 @@ export const LiveTrackingSection = () => {
             </div>
 
             {/* Info Badge */}
-            <div className="absolute right-6 top-6 rounded-xl border border-forest-600 bg-forest-800/90 p-4 shadow-vintage backdrop-blur-sm">
+            <div className="absolute right-6 top-6 rounded-xl border border-orange-600 bg-orange-700/90 p-4 shadow-vintage backdrop-blur-sm">
               <div className="text-center">
-                <div className="text-sm font-bold uppercase tracking-wide text-accent">
+                <div className="text-sm font-bold uppercase tracking-wide text-orange-200">
                   Powered by
                 </div>
                 <div className="text-lg font-bold text-cream">POLTRAX</div>
@@ -114,12 +114,12 @@ export const LiveTrackingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="rounded-2xl border border-forest-100 bg-white p-6 text-center shadow-lg transition-shadow duration-300 hover:shadow-xl"
+              className="rounded-2xl border border-orange-100 bg-white p-6 text-center shadow-lg transition-shadow duration-300 hover:shadow-xl"
             >
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
-                <LocationIcon className="size-6 text-accent" />
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10">
+                <LocationIcon className="size-6 text-orange-500" />
               </div>
-              <h3 className="mb-2 text-lg font-bold text-forest-800">
+              <h3 className="mb-2 text-lg font-bold text-orange-800">
                 Aktualna Pozycja
               </h3>
               <p className="text-sm text-mountain-600">
@@ -134,10 +134,10 @@ export const LiveTrackingSection = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="rounded-2xl border border-forest-100 bg-white p-6 text-center shadow-lg transition-shadow duration-300 hover:shadow-xl"
             >
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
-                <ClockIcon className="size-6 text-accent" />
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10">
+                <ClockIcon className="size-6 text-orange-500" />
               </div>
-              <h3 className="mb-2 text-lg font-bold text-forest-800">
+              <h3 className="mb-2 text-lg font-bold text-orange-800">
                 Limit Czasowy
               </h3>
               <p className="text-sm text-mountain-600">
@@ -150,12 +150,12 @@ export const LiveTrackingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.9 }}
-              className="rounded-2xl border border-forest-100 bg-white p-6 text-center shadow-lg transition-shadow duration-300 hover:shadow-xl"
+              className="rounded-2xl border border-orange-100 bg-white p-6 text-center shadow-lg transition-shadow duration-300 hover:shadow-xl"
             >
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
-                <FlagIcon className="size-6 text-accent" />
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10">
+                <FlagIcon className="size-6 text-orange-500" />
               </div>
-              <h3 className="mb-2 text-lg font-bold text-forest-800">
+              <h3 className="mb-2 text-lg font-bold text-orange-800">
                 Punkty Etapów
               </h3>
               <p className="text-sm text-mountain-600">

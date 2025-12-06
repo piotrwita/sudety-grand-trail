@@ -1,11 +1,12 @@
 import { LiveTrackingSection, Section } from '@/components/sections';
 import { TimePressure } from '@/components/TimePressure';
 import { Stats, StatsSeparator } from '@/components/Stats';
-import { FadeIn } from '@/components/motion/FadeIn';
-import { ScaleIn } from '@/components/motion/ScaleIn';
+import { FadeIn, ScaleIn } from '@/components/motion';
 import { pageMetadata } from '@/config/metadata';
 import { Metadata } from 'next';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
+import { LogoImage } from '@/components/LogoImage';
+import { ScrollIndicator } from '@/components/ScrollIndicator';
 import { sectionIds } from '@/config/section-ids';
 import {
   MapIcon,
@@ -32,13 +33,27 @@ export default function LivePage() {
 const LiveHeroSection = () => {
   return (
     <Section
-      className="bg-gradient-to-br from-forest-800 via-forest-700 to-forest-900 py-24"
+      className="theme-hero-bg theme-live-hero pt-16"
       ariaLabel="Sekcja główna - Śledź Wyprawę"
     >
-      {/* Background */}
+      {/* Epic Background Effects */}
+      <div className="theme-hero-overlay theme-live-hero" />
+      <div className="gradient-mesh-overlay absolute inset-0 opacity-30" />
+      <VintageMountainsBackground className="opacity-15" />
+
+      {/* Epic Background Elements */}
       <div className="absolute inset-0">
-        <VintageMountainsBackground className="opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-forest-800/50 to-forest-900" />
+        <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-orange-500/5 to-transparent" />
+        <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-orange-500/5 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial theme-live-glow blur-3xl" />
+      </div>
+
+      {/* Radial glow effect */}
+      <div className="theme-hero-glow theme-live-glow" />
+
+      {/* Logo in background */}
+      <div className="absolute left-1/2 top-1/2 z-0 size-[400px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 lg:size-[500px] 2xl:size-[600px]">
+        <LogoImage fill preload />
       </div>
 
       {/* Content */}
@@ -56,9 +71,9 @@ const LiveHeroSection = () => {
             duration={0.6}
             delay={0.4}
             inView={false}
-            className="mb-8 inline-flex items-center space-x-3 rounded-full border-2 border-accent bg-accent/20 px-8 py-4 backdrop-blur-sm"
+            className="mb-8 inline-flex items-center space-x-3 rounded-full border-2 border-orange-400 bg-orange-500/20 px-8 py-4 backdrop-blur-sm"
           >
-            <div className="h-4 w-4 animate-pulse rounded-full bg-accent" />
+            <div className="h-4 w-4 animate-pulse rounded-full bg-orange-500" />
             <span className="text-lg font-bold uppercase tracking-wide text-cream">
               LIVE TRACKING
             </span>
@@ -72,7 +87,7 @@ const LiveHeroSection = () => {
             inView={false}
           >
             <h1 className="hero-title mb-6 leading-tight text-cream">
-              Śledź <span className="text-gradient">Wyprawę</span>
+              Śledź <span className="theme-live-text-gradient">Wyprawę</span>
             </h1>
           </FadeIn>
 
@@ -107,11 +122,13 @@ const LiveHeroSection = () => {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute left-10 top-20 h-24 w-24 animate-pulse rounded-full bg-accent/10 blur-xl" />
+      <div className="absolute left-10 top-20 h-24 w-24 animate-pulse rounded-full bg-orange-500/10 blur-xl" />
       <div
-        className="absolute bottom-20 right-10 h-32 w-32 animate-pulse rounded-full bg-forest-600/10 blur-2xl"
+        className="absolute bottom-20 right-10 h-32 w-32 animate-pulse rounded-full bg-orange-600/10 blur-2xl"
         style={{ animationDelay: '1s' }}
       />
+
+      <ScrollIndicator />
     </Section>
   );
 };
@@ -151,7 +168,7 @@ const ModernTrackerSection = () => {
 
           <h2 className="section-title mb-6 text-slate-900">
             Twoja{' '}
-            <span className="bg-gradient-to-r from-accent to-orange-500 bg-clip-text text-transparent">
+            <span className="theme-live-text-gradient">
               Własna Historia
             </span>
           </h2>
@@ -235,7 +252,7 @@ const ModernTrackerSection = () => {
 
             {/* CTA */}
             <div className="flex flex-col gap-4 pt-4 sm:flex-row">
-              <button className="flex items-center justify-center space-x-2 rounded-xl bg-accent px-6 py-3 font-medium text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-accent/90 hover:shadow-xl">
+              <button className="theme-btn-base theme-live-btn-primary flex items-center justify-center space-x-2 px-6 py-3 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 <svg
                   className="h-5 w-5"
                   fill="none"
@@ -309,7 +326,7 @@ const ModernTrackerSection = () => {
               {/* Content */}
               <div className="relative z-10 space-y-6 text-center">
                 <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-white shadow-lg">
-                  <LocationIcon className="size-10 text-accent" />
+                  <LocationIcon className="size-10 text-orange-500" />
                 </div>
 
                 <div className="space-y-2">
@@ -323,11 +340,11 @@ const ModernTrackerSection = () => {
 
                 <div className="grid grid-cols-2 gap-4 pt-4">
                   <div className="rounded-xl bg-white/50 p-4 backdrop-blur-sm">
-                    <div className="text-2xl font-bold text-accent">900</div>
+                    <div className="text-2xl font-bold text-orange-500">900</div>
                     <div className="text-sm text-slate-600">Kilometrów</div>
                   </div>
                   <div className="rounded-xl bg-white/50 p-4 backdrop-blur-sm">
-                    <div className="text-2xl font-bold text-accent">22</div>
+                    <div className="text-2xl font-bold text-orange-500">22</div>
                     <div className="text-sm text-slate-600">Pasma</div>
                   </div>
                 </div>
@@ -353,14 +370,14 @@ const AdditionalInfoSection = () => {
           className="text-center"
         >
           <h2 className="section-title">
-            Jak działa <span className="text-gradient">Live Tracking</span>?
+            Jak działa <span className="theme-live-text-gradient">Live Tracking</span>?
           </h2>
 
           <div className="mx-auto mt-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
 
           <p className="text-fluid-lg mx-auto max-w-5xl font-medium leading-relaxed text-mountain-600">
             Dzięki współpracy z firmą{' '}
-            <strong className="text-accent">Poltrax</strong> powstała
+            <strong className="text-orange-500">Poltrax</strong> powstała
             interaktywna mapa, która pokazuje moją lokalizację w czasie
             rzeczywistym oraz orientacyjne punkty etapów.
           </p>

@@ -5,6 +5,7 @@ import { Section } from '@/components/sections/Section';
 import { FadeIn, ScaleIn } from '@/components/motion';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 import { LogoImage } from '@/components/LogoImage';
+import { ScrollIndicator } from '@/components/ScrollIndicator';
 
 export const metadata: Metadata = pageMetadata.korona;
 
@@ -19,11 +20,11 @@ export default function SzczytyPage() {
 
 const SzczytyHeroSection = () => (
   <Section
-    className="relative overflow-hidden bg-gradient-to-br from-forest-900 via-forest-800 to-forest-900 pt-16"
+    className="theme-hero-bg theme-szczyty-hero pt-16"
     ariaLabel="Sekcja główna - Wykaz szczytów"
   >
     {/* Epic Background Effects */}
-    <div className="absolute inset-0 bg-gradient-to-br from-forest-900/95 via-forest-800/95 to-forest-900/95" />
+    <div className="theme-hero-overlay theme-szczyty-hero" />
     <div className="gradient-mesh-overlay absolute inset-0 opacity-30" />
     <VintageMountainsBackground className="opacity-15" />
 
@@ -31,15 +32,15 @@ const SzczytyHeroSection = () => (
     <div className="absolute inset-0">
       <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-forest-500/5 to-transparent" />
       <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-forest-500/5 to-transparent" />
-      <div className="from-forest-400/8 via-forest-400/4 absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial to-transparent blur-lg md:blur-3xl" />
+      <div className="theme-szczyty-glow absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial blur-xl md:blur-3xl" />
     </div>
 
     {/* Radial glow effect */}
-    <div className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-forest-400/10 via-forest-400/5 to-transparent blur-xl md:blur-3xl" />
+    <div className="theme-hero-glow theme-szczyty-glow" />
 
     {/* Logo in background */}
     <div className="absolute left-1/2 top-1/2 z-0 size-[400px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 lg:size-[500px] 2xl:size-[600px]">
-      <LogoImage fill preload />
+      <LogoImage fill preload fetchPriority="high" />
     </div>
 
     <div className="fluid-container relative z-10 text-center">
@@ -49,7 +50,7 @@ const SzczytyHeroSection = () => (
           initialScale={0.5}
           duration={0.6}
           delay={0.2}
-          className="mb-8 inline-flex size-28 items-center justify-center rounded-full border-4 border-forest-400/30 bg-gradient-to-br from-forest-400 via-forest-500 to-forest-600 shadow-[0_0_40px_rgba(22,163,74,0.4)]"
+          className="theme-badge-base theme-szczyty-badge mb-8"
         >
           <svg
             className="h-14 w-14 text-forest-900/80"
@@ -63,7 +64,7 @@ const SzczytyHeroSection = () => (
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.4}>
           <h1 className="hero-title mb-6 text-cream">
-            <span className="gradient-text-mesh">Wykaz szczytów</span>
+            <span className="theme-szczyty-text-gradient">Wykaz szczytów</span>
             <span className="text-fluid-lg mt-6 block font-display font-bold uppercase tracking-wider text-forest-400 drop-shadow-lg">
               Szczyty na szlaku Sudety Grand Trail
             </span>
@@ -88,11 +89,11 @@ const SzczytyHeroSection = () => (
             Wykaz najciekawszych szczytów na szlaku Sudety Grand Trail. 29
             wierzchołków w 22 pasmach górskich, które spotkasz przemierzając
             Sudety od{' '}
-            <span className="bg-gradient-to-r from-forest-400 via-forest-500 to-forest-600 bg-clip-text font-bold text-transparent">
+            <span className="theme-szczyty-text-gradient font-bold">
               Śnieżki (1603m)
             </span>{' '}
             po{' '}
-            <span className="bg-gradient-to-r from-forest-400 via-forest-500 to-forest-600 bg-clip-text font-bold text-transparent">
+            <span className="theme-szczyty-text-gradient font-bold">
               Lázek (714m)
             </span>
             .
@@ -100,5 +101,7 @@ const SzczytyHeroSection = () => (
         </FadeIn>
       </FadeIn>
     </div>
+
+    <ScrollIndicator />
   </Section>
 );
