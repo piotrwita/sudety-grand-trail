@@ -38,10 +38,10 @@ const HallOfFameHeroSection = () => (
 
     {/* Epic Conqueror Background Elements */}
     <div className="absolute inset-0">
-      <div className="from-gold-500/5 absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r to-transparent" />
-      <div className="from-gold-500/5 absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l to-transparent" />
+      <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-gold-500/5 to-transparent" />
+      <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-gold-500/5 to-transparent" />
       {/* Smooth bottom glow - no hard edges */}
-      <div className="theme-halloffame-glow absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial lg:blur-xl" />
+      <div className="theme-halloffame-glow absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial" />
     </div>
 
     {/* Radial glow effect */}
@@ -74,7 +74,7 @@ const HallOfFameHeroSection = () => (
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.4}>
           <h1 className="hero-title mb-6 text-cream">
             <span className="theme-halloffame-text-gradient">Hall of Fame</span>
-            <span className="text-fluid-lg text-gold-400 mt-6 block font-display font-bold uppercase tracking-wider drop-shadow-lg">
+            <span className="text-fluid-lg mt-6 block font-display font-bold uppercase tracking-wider text-gold-400 drop-shadow-lg">
               Oficjalne Przejścia Sudety Grand Trail
             </span>
           </h1>

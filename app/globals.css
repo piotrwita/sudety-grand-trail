@@ -434,7 +434,7 @@
   }
 
   .theme-hero-glow {
-    @apply absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial blur-xl md:blur-3xl;
+    @apply absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial blur-lg;
   }
 
   .theme-badge-base {

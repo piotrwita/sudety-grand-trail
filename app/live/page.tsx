@@ -6,14 +6,7 @@ import { Metadata } from 'next';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 import { LogoImage } from '@/components/LogoImage';
 import { ScrollIndicator } from '@/components/ScrollIndicator';
-import { sectionIds } from '@/config/section-ids';
-import {
-  MapIcon,
-  LocationIcon,
-  ClockIcon,
-  FlagIcon,
-  CheckIcon,
-} from '@/components/icons';
+import { MapIcon, LocationIcon, ClockIcon, FlagIcon } from '@/components/icons';
 import { ModernTrackerSection } from '@/components/sections/ModernTrackerSection';
 
 export const metadata: Metadata = pageMetadata.live;
@@ -44,7 +37,7 @@ const LiveHeroSection = () => {
       <div className="absolute inset-0">
         <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-orange-500/5 to-transparent" />
         <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-orange-500/5 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial theme-live-glow blur-3xl" />
+        <div className="theme-live-glow absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial" />
       </div>
 
       {/* Radial glow effect */}
@@ -99,7 +92,8 @@ const LiveHeroSection = () => {
           >
             <p className="text-fluid-base lg:text-fluid-lg mx-auto mb-8 max-w-3xl font-medium leading-relaxed text-cream/85">
               <span className="italic text-cream/60">
-                Na żywo pokażesz innym, gdzie obecnie jesteś i jak przebiega Twoja własna przygoda.
+                Na żywo pokażesz innym, gdzie obecnie jesteś i jak przebiega
+                Twoja własna przygoda.
               </span>
             </p>
           </FadeIn>
@@ -131,7 +125,6 @@ const LiveHeroSection = () => {
   );
 };
 
-
 const AdditionalInfoSection = () => {
   return (
     <Section className="bg-cream">
@@ -145,7 +138,8 @@ const AdditionalInfoSection = () => {
           className="text-center"
         >
           <h2 className="section-title">
-            Jak działa <span className="theme-live-text-gradient">Live Tracking</span>?
+            Jak działa{' '}
+            <span className="theme-live-text-gradient">Live Tracking</span>?
           </h2>
 
           <div className="mx-auto mt-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
