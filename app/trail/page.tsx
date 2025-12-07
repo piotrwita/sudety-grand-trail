@@ -1,5 +1,3 @@
-'use client';
-
 import { TrailMapSection } from '@/components/sections';
 import TrailDescription from '@/components/TrailDescription';
 import TrailMotivation from '@/components/TrailMotivation';
@@ -8,7 +6,11 @@ import { MapIcon } from '@/components/icons';
 import { Section } from '@/components/sections/Section';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 import { LogoImage } from '@/components/LogoImage';
-import { motion } from 'framer-motion';
+import { ScrollIndicator } from '@/components/ScrollIndicator';
+import { Metadata } from 'next';
+import { pageMetadata } from '@/config/metadata';
+
+export const metadata: Metadata = pageMetadata.trail;
 
 export default function TrailPage() {
   return (
@@ -35,7 +37,7 @@ const TrailHeroSection = () => (
     <div className="absolute inset-0">
       <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-earth-500/5 to-transparent" />
       <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-earth-500/5 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial theme-trail-glow blur-3xl" />
+      <div className="theme-trail-glow absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial" />
     </div>
 
     {/* Radial glow effect */}
@@ -76,9 +78,10 @@ const TrailHeroSection = () => (
             <span className="theme-trail-text-gradient font-bold">
               KORONA SUDETÓW
             </span>{' '}
-            w jednym szlaku. 900 kilometrów przez 22 pasma oraz wejście na najwyższy
-            szczyt każdego z nich. Od Jarnołtówka w Górach Opawskich po finał na
-            Ślęży. Kompletne oblicze Sudetów ułożone w jeden ambitny szlak.
+            w jednym szlaku. 900 kilometrów przez 22 pasma oraz wejście na
+            najwyższy szczyt każdego z nich. Od Jarnołtówka w Górach Opawskich
+            po finał na Ślęży. Kompletne oblicze Sudetów ułożone w jeden ambitny
+            szlak.
           </p>
         </FadeIn>
       </FadeIn>
@@ -86,25 +89,4 @@ const TrailHeroSection = () => (
 
     <ScrollIndicator />
   </Section>
-);
-
-const ScrollIndicator = () => (
-  <FadeIn
-    duration={0.6}
-    delay={1.4}
-    offset={0}
-    className="absolute bottom-16 left-1/2 -translate-x-1/2 transform lg:bottom-20"
-  >
-    <motion.div
-      animate={{ y: [0, 10, 0] }}
-      transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-      className="flex h-10 w-6 justify-center rounded-full border-2 border-cream/40"
-    >
-      <motion.div
-        animate={{ y: [0, 12, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-        className="mt-2 h-3 w-1 rounded-full bg-cream/60"
-      />
-    </motion.div>
-  </FadeIn>
 );

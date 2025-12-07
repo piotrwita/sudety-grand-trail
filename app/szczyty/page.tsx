@@ -32,7 +32,7 @@ const SzczytyHeroSection = () => (
     <div className="absolute inset-0">
       <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-forest-500/5 to-transparent" />
       <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-forest-500/5 to-transparent" />
-      <div className="theme-szczyty-glow absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial blur-xl md:blur-3xl" />
+      <div className="theme-szczyty-glow absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial" />
     </div>
 
     {/* Radial glow effect */}
@@ -40,7 +40,7 @@ const SzczytyHeroSection = () => (
 
     {/* Logo in background */}
     <div className="absolute left-1/2 top-1/2 z-0 size-[400px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 lg:size-[500px] 2xl:size-[600px]">
-      <LogoImage fill preload fetchPriority="high" />
+      <LogoImage fill preload />
     </div>
 
     <div className="fluid-container relative z-10 text-center">
