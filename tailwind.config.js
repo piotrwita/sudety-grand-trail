@@ -98,20 +98,20 @@ module.exports = {
           900: '#78350f',
           DEFAULT: '#fbbf24',
         },
-        // TRAIL - Brown/Earth theme (uses existing earth)
+        // TRAIL - Green/Forest theme (uses existing forest)
         trail: {
-          primary: '#6b4423', // earth-700
-          secondary: '#8b6b47', // earth-600
-          accent: '#a8825f', // earth-500
-          bg: '#4d321b', // earth-900
-          text: '#f5f2e7', // cream-500
-        },
-        // SZCZYTY - Green/Forest theme (uses existing forest)
-        szczyty: {
           primary: '#2f4f3e', // forest-700
           secondary: '#3d6045', // forest-600
           accent: '#4f7a58', // forest-500
           bg: '#22342b', // forest-900
+          text: '#f5f2e7', // cream-500
+        },
+        // SZCZYTY - Brown/Earth theme (uses existing earth)
+        szczyty: {
+          primary: '#6b4423', // earth-700
+          secondary: '#8b6b47', // earth-600
+          accent: '#a8825f', // earth-500
+          bg: '#4d321b', // earth-900
           text: '#f5f2e7', // cream-500
         },
         // LIVE - Orange theme
@@ -152,9 +152,9 @@ module.exports = {
         'hero-halloffame':
           'linear-gradient(135deg, rgba(217, 119, 6, 0.9) 0%, rgba(120, 53, 15, 0.95) 100%)',
         'hero-trail':
-          'linear-gradient(135deg, rgba(107, 68, 35, 0.9) 0%, rgba(77, 50, 27, 0.95) 100%)',
-        'hero-szczyty':
           'linear-gradient(135deg, rgba(47, 79, 62, 0.9) 0%, rgba(34, 52, 43, 0.95) 100%)',
+        'hero-szczyty':
+          'linear-gradient(135deg, rgba(107, 68, 35, 0.9) 0%, rgba(77, 50, 27, 0.95) 100%)',
         'hero-live':
           'linear-gradient(135deg, rgba(251, 146, 60, 0.9) 0%, rgba(194, 65, 12, 0.95) 100%)',
       },

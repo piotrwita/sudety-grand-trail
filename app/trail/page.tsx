@@ -33,8 +33,8 @@ const TrailHeroSection = () => (
 
     {/* Epic Background Elements */}
     <div className="absolute inset-0">
-      <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-earth-500/5 to-transparent" />
-      <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-earth-500/5 to-transparent" />
+      <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-forest-500/5 to-transparent" />
+      <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-forest-500/5 to-transparent" />
       <div className="theme-trail-glow absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial" />
     </div>
 
@@ -54,13 +54,13 @@ const TrailHeroSection = () => (
           delay={0.2}
           className="theme-badge-base theme-trail-badge mb-8"
         >
-          <MapIcon className="h-14 w-14 text-earth-900/80" />
+          <MapIcon className="h-14 w-14 text-forest-900/80" />
         </ScaleIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.4}>
           <h1 className="hero-title mb-6 text-cream">
             <span className="theme-trail-text-gradient">Poznaj Mapę</span>
-            <span className="text-fluid-lg mt-6 block font-display font-bold uppercase tracking-wider text-earth-400 drop-shadow-lg">
+            <span className="text-fluid-lg mt-6 block font-display font-bold uppercase tracking-wider text-forest-400 drop-shadow-lg">
               Trasa Sudety Grand Trail
             </span>
           </h1>

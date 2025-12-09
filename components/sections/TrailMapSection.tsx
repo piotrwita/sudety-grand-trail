@@ -53,10 +53,10 @@ export const TrailMapSection = () => {
   return (
     <Section
       ariaLabel="Oficjalna Trasa Szlaku"
-      className="relative min-h-0 overflow-hidden bg-gradient-to-br from-earth-50 to-cream"
+      className="relative min-h-0 overflow-hidden bg-gradient-to-br from-forest-50 to-cream"
     >
       <VintageMountainsBackground className="opacity-10" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-earth-200/30 via-transparent to-earth-300/30" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-forest-200/30 via-transparent to-forest-300/30" />
       <div className="fluid-container relative z-10">
         <SectionHeader
           title="Poznaj Mapę"
@@ -94,7 +94,7 @@ export const TrailMapSection = () => {
               href={siteConfig.links.map.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-earth-400/50 bg-transparent px-5 py-2.5 font-bold uppercase tracking-wide text-earth-600 transition-all duration-300 hover:scale-105 hover:bg-earth-100/50 sm:w-auto"
+              className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-forest-400/50 bg-transparent px-5 py-2.5 font-bold uppercase tracking-wide text-forest-600 transition-all duration-300 hover:scale-105 hover:bg-forest-100/50 sm:w-auto"
             >
               <MapIcon className="size-5" />
               Otwórz na Mapy.cz
@@ -162,18 +162,18 @@ export const TrailMapSection = () => {
         >
           <div className="mx-auto max-w-4xl space-y-6">
             {/* Summary Stats - Simple List */}
-            <div className="rounded-lg border border-earth-300/30 bg-cream/50 p-6 backdrop-blur-sm sm:p-8">
+            <div className="rounded-lg border border-forest-300/30 bg-cream/50 p-6 backdrop-blur-sm sm:p-8">
               <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3 sm:gap-6">
                 <div>
-                  <p className="text-2xl font-bold text-earth-700 sm:text-3xl">900 km</p>
+                  <p className="text-2xl font-bold text-forest-700 sm:text-3xl">900 km</p>
                   <p className="mt-1 text-sm text-mountain-600">Długość trasy</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-earth-700 sm:text-3xl">30 000 m</p>
+                  <p className="text-2xl font-bold text-forest-700 sm:text-3xl">30 000 m</p>
                   <p className="mt-1 text-sm text-mountain-600">Przewyższenia</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-earth-700 sm:text-3xl">1602 m</p>
+                  <p className="text-2xl font-bold text-forest-700 sm:text-3xl">1602 m</p>
                   <p className="mt-1 text-sm text-mountain-600">Najwyższy szczyt</p>
                 </div>
               </div>

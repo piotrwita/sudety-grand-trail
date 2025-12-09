@@ -324,54 +324,54 @@
     @apply from-gold-400/10 via-gold-400/5 to-transparent;
   }
 
-  /* TRAIL THEME - Brown/Earth */
+  /* TRAIL THEME - Green/Forest */
   .theme-trail-hero {
-    @apply bg-gradient-to-br from-earth-900 via-earth-800 to-earth-900;
-  }
-
-  .theme-trail-badge {
-    @apply shadow-brown-glow border-earth-500/30 bg-gradient-to-br from-earth-500 via-earth-600 to-earth-700;
-  }
-
-  .theme-trail-text-gradient {
-    @apply bg-gradient-to-r from-earth-400 via-earth-500 to-earth-600 bg-clip-text text-transparent;
-  }
-
-  .theme-trail-btn-primary {
-    @apply bg-earth-700 text-cream hover:bg-earth-600 focus:ring-earth-500/50;
-  }
-
-  .theme-trail-btn-secondary {
-    @apply border-earth-500/60 text-earth-400 hover:bg-earth-500/20 focus:ring-earth-500/50;
-  }
-
-  .theme-trail-glow {
-    @apply from-earth-400/10 via-earth-400/5 to-transparent;
-  }
-
-  /* SZCZYTY THEME - Green/Forest */
-  .theme-szczyty-hero {
     @apply bg-gradient-to-br from-forest-900 via-forest-800 to-forest-900;
   }
 
-  .theme-szczyty-badge {
+  .theme-trail-badge {
     @apply shadow-green-glow border-forest-400/30 bg-gradient-to-br from-forest-400 via-forest-500 to-forest-600;
   }
 
-  .theme-szczyty-text-gradient {
+  .theme-trail-text-gradient {
     @apply bg-gradient-to-r from-forest-400 via-forest-500 to-forest-600 bg-clip-text text-transparent;
   }
 
-  .theme-szczyty-btn-primary {
+  .theme-trail-btn-primary {
     @apply bg-forest-700 text-cream hover:bg-forest-600 focus:ring-forest-500/50;
   }
 
-  .theme-szczyty-btn-secondary {
+  .theme-trail-btn-secondary {
     @apply border-forest-500/60 text-forest-400 hover:bg-forest-500/20 focus:ring-forest-500/50;
   }
 
-  .theme-szczyty-glow {
+  .theme-trail-glow {
     @apply from-forest-400/10 via-forest-400/5 to-transparent;
+  }
+
+  /* SZCZYTY THEME - Brown/Earth */
+  .theme-szczyty-hero {
+    @apply bg-gradient-to-br from-earth-900 via-earth-800 to-earth-900;
+  }
+
+  .theme-szczyty-badge {
+    @apply shadow-brown-glow border-earth-500/30 bg-gradient-to-br from-earth-500 via-earth-600 to-earth-700;
+  }
+
+  .theme-szczyty-text-gradient {
+    @apply bg-gradient-to-r from-earth-400 via-earth-500 to-earth-600 bg-clip-text text-transparent;
+  }
+
+  .theme-szczyty-btn-primary {
+    @apply bg-earth-700 text-cream hover:bg-earth-600 focus:ring-earth-500/50;
+  }
+
+  .theme-szczyty-btn-secondary {
+    @apply border-earth-500/60 text-earth-400 hover:bg-earth-500/20 focus:ring-earth-500/50;
+  }
+
+  .theme-szczyty-glow {
+    @apply from-earth-400/10 via-earth-400/5 to-transparent;
   }
 
   /* LIVE THEME - Orange */
