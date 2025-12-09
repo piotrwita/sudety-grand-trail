@@ -171,7 +171,7 @@ export const sudetenRanges: SudetenRange[] = [
     peakDe: 'Riedelberg',
     elevation: 1112,
     country: 'PL/CZ',
-    isKs: false,
+    isKs: true,
     isKgp: true,
     imageUrl: 'https://d34-a.sdn.cz/d_34/c_img_QP_l/90RIpm.mpo?fl=res,,400,1',
   },

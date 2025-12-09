@@ -81,7 +81,7 @@ export const BadgeSection = () => {
                         <span>
                           Przejścia{' '}
                           <span className="font-bold text-gold-300">
-                            900 kilometrów przez 22 pasma górskie
+                            900 kilometrów przez 23 pasma górskie
                           </span>
                         </span>
                       </li>
@@ -147,7 +147,7 @@ export const BadgeSection = () => {
                     <div className="relative h-full w-full">
                       <Image
                         src="https://scontent.flcj1-1.fna.fbcdn.net/v/t1.15752-9/592139478_1340256487899607_675340442172499047_n.png?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_ohc=P5gCY3Gfi9MQ7kNvwGW0vr4&_nc_oc=AdnZ6jGL_7HQkWKszUHTkKTFfv-XG91f2_2-gussACbUxVjZd-3FUlSyWlkIqLvHsGQ&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&oh=03_Q7cD4AH-9_VJJzXuWnqCIkdOHhKc9D3Rir1b839QUhCFXq6OWQ&oe=695B616A"
-                        alt="Oficjalna odznaka Sudety Grand Trail - 900km przez 22 pasma górskie"
+                        alt="Oficjalna odznaka Sudety Grand Trail - 900km przez 23 pasma górskie"
                         fill
                         className="object-contain p-6 drop-shadow-[0_0_40px_rgba(251,191,36,0.7)]"
                         priority
@@ -197,7 +197,7 @@ export const BadgeSection = () => {
                     <RegulationItem number={2}>
                       Zdobycie wszystkich{' '}
                       <span className="font-bold text-gold-300">
-                        najwyższych szczytów każdego z 22 pasm górskich
+                        najwyższych szczytów każdego z 23 pasm górskich
                       </span>{' '}
                       znajdujących się na trasie.
                     </RegulationItem>

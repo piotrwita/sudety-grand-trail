@@ -78,7 +78,7 @@ const TrailHeroSection = () => (
               Kompletne oblicze <span className="theme-trail-text-gradient">SUDETÓW</span> ułożone w jeden ambitny szlak.
             </p>
             <p className="text-fluid-base lg:text-fluid-lg mx-auto max-w-4xl font-medium italic leading-relaxed text-cream/85">
-              900 kilometrów przez 22 pasma górskie oraz wejście na najwyższy
+              900 kilometrów przez 23 pasma górskie oraz wejście na najwyższy
               szczyt każdego z nich. Od Jarnołtówka w Górach Opawskich po finał
               na Ślęży.
             </p>

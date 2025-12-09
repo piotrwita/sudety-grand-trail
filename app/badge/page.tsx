@@ -109,7 +109,7 @@ const BadgeHeroSection = () => (
             </p>
             <p className="text-fluid-lg font-bold leading-relaxed text-gold-200/95">
               <span className="font-black text-gold-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
-                900 kilometrów. 22 pasma górskie. Niezłomność. Duma.
+                900 kilometrów. 23 pasma górskie. Niezłomność. Duma.
               </span>
             </p>
             <p className="text-fluid-base font-medium leading-relaxed text-cream/90">

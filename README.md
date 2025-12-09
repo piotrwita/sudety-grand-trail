@@ -98,7 +98,7 @@ A modern, minimalist website for the Sudety Grand Trail built with Next.js 16, T
 
 ### Korona Sudetów (`/korona`)
 
-- Interactive section showcasing all 22 mountain ranges
+- Interactive section showcasing all 23 mountain ranges
 - Mountain cards view with detailed information
 - Trail planner view
 - Summary statistics

@@ -4,7 +4,7 @@ import { siteRoutes } from './site-routes';
 export const siteMetadata = {
   title: 'Sudety Grand Trail',
   description:
-    'Wyrusz w niezapomnianą podróż przez najpiękniejsze szlaki Sudetów. 900 km przez 24 pasma górskie - odkryj magię Korony Sudetów.',
+    'Wyrusz w niezapomnianą podróż przez najpiękniejsze szlaki Sudetów. 900 km przez 23 pasma górskie - odkryj magię Korony Sudetów.',
   // Use environment variable for flexible deployment (dev, staging, production)
   siteUrl:
     process.env.NEXT_PUBLIC_SITE_URL || 'https://sudety-grand-trail.vercel.app',
@@ -121,7 +121,7 @@ export const pageMetadata = {
   home: generatePageMetadata({
     title: 'Sudety Grand Trail - Odkryj Magię Gór',
     description:
-      'Wyrusz w niezapomnianą podróż przez najpiękniejsze szlaki Sudetów. 900 km przez 24 pasma górskie - odkryj magię Korony Sudetów. Przygoda, natura i wyzwanie czekają na Ciebie.',
+      'Wyrusz w niezapomnianą podróż przez najpiękniejsze szlaki Sudetów. 900 km przez 23 pasma górskie - odkryj magię Korony Sudetów. Przygoda, natura i wyzwanie czekają na Ciebie.',
     path: siteRoutes.home,
     keywords: ['strona główna', 'home', 'sudety trail', 'górskie wyzwanie'],
   }),
@@ -129,7 +129,7 @@ export const pageMetadata = {
   trail: generatePageMetadata({
     title: 'Trasa - Sudety Grand Trail',
     description:
-      'Poznaj trasę Sudety Grand Trail: 900 km przez 24 pasma Sudetów. Szczegółowa mapa, opis szlaku i wszystkie szczyty Korony Sudetów. Od Jarnołtówka po Ślężę.',
+      'Poznaj trasę Sudety Grand Trail: 900 km przez 23 pasma Sudetów. Szczegółowa mapa, opis szlaku i wszystkie szczyty Korony Sudetów. Od Jarnołtówka po Ślężę.',
     path: siteRoutes.trail,
     keywords: [
       'trasa',
@@ -144,7 +144,7 @@ export const pageMetadata = {
   korona: generatePageMetadata({
     title: 'Korona Sudetów - Sudety Grand Trail',
     description:
-      'Korona Sudetów to 24 najwyższych szczytów w 24 pasmach górskich Sudetów. Poznaj historię, zasady zdobywania i wszystkie szczyty wchodzące w skład Korony Sudetów.',
+      'Korona Sudetów to 23 najwyższych szczytów w 23 pasmach górskich Sudetów. Poznaj historię, zasady zdobywania i wszystkie szczyty wchodzące w skład Korony Sudetów.',
     path: siteRoutes.korona,
     keywords: [
       'Korona Sudetów',
@@ -174,7 +174,7 @@ export const pageMetadata = {
   hallOfFame: generatePageMetadata({
     title: 'Hall of Fame - Zdobywcy Sudety Grand Trail',
     description:
-      'Hall of Fame Sudety Grand Trail - poznaj odważnych, którzy zdobyli pełną Koronę Sudetów. 900 km przez 24 pasma górskie. Dołącz do elitarnego grona zdobywców!',
+      'Hall of Fame Sudety Grand Trail - poznaj odważnych, którzy zdobyli pełną Koronę Sudetów. 900 km przez 23 pasma górskie. Dołącz do elitarnego grona zdobywców!',
     path: siteRoutes.hallOfFame,
     keywords: [
       'hall of fame',
@@ -189,7 +189,7 @@ export const pageMetadata = {
   badge: generatePageMetadata({
     title: 'Oficjalna Odznaka - Sudety Grand Trail',
     description:
-      'Zdobyj oficjalną odznakę Sudety Grand Trail! Wyróżnienie dla wszystkich, którzy ukończyli pełne przejście 900 km przez 22 pasma górskie. Poznaj regulamin i dołącz do elitarnego grona zdobywców.',
+      'Zdobyj oficjalną odznakę Sudety Grand Trail! Wyróżnienie dla wszystkich, którzy ukończyli pełne przejście 900 km przez 23 pasma górskie. Poznaj regulamin i dołącz do elitarnego grona zdobywców.',
     path: siteRoutes.badge,
     keywords: [
       'odznaka',

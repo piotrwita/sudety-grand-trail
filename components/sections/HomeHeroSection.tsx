@@ -158,7 +158,7 @@ export const HomeHeroSection = () => {
                 ariaLabel="900 Kilometrów"
               />
               <StatsSeparator />
-              <Stats value="22" label="Pasma" ariaLabel="22 Pasma" />
+              <Stats value="23" label="Pasma" ariaLabel="23 Pasma" />
               <StatsSeparator />
               <Stats value="3" label="Kraje" ariaLabel="3 Kraje" />
               <StatsSeparator />

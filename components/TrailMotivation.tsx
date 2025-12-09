@@ -154,7 +154,7 @@ const TrailMotivation = () => {
                         Korona Sudetów w jednym szlaku
                       </h4>
                       <p className="text-sm font-medium text-mountain-500">
-                        24 najwyższe szczyty plus 16 szczytów KGP
+                        23 najwyższe szczyty plus 16 szczytów KGP
                       </p>
                     </div>
                   </div>

@@ -234,7 +234,7 @@ export const HallOfFameStats = () => {
         >
           <h3 className="section-title mb-8 text-2xl">Osiągnięcia Zdobywców</h3>
           <div className="flex flex-wrap justify-center gap-8">
-            {/* 22 pasma */}
+            {/* 23 pasma */}
             <div className="group relative flex h-28 w-28 flex-col items-center justify-center transition-all duration-300 hover:scale-110">
               {/* Badge base with metallic effect */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-forest-600 via-forest-700 to-forest-800 shadow-[0_12px_24px_rgba(47,79,62,0.4),inset_0_4px_8px_rgba(255,255,255,0.15),inset_0_-4px_8px_rgba(0,0,0,0.4)]" />
@@ -251,7 +251,7 @@ export const HallOfFameStats = () => {
                 🏔️
               </span>
               <span className="relative z-10 text-xs font-bold uppercase tracking-wide text-cream drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
-                22 pasma
+                23 pasma
               </span>
             </div>
 

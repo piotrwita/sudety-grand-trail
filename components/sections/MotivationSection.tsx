@@ -92,7 +92,7 @@ const MotivationSection = () => {
             className="mt-16 border-t border-cream/20 pt-12"
           >
             <p className="mb-8 text-center text-xl font-medium text-cream/90">
-              Gotowy na nieprzewidywalną przygodę przez 24 pasma Sudetów?
+              Gotowy na nieprzewidywalną przygodę przez 23 pasma Sudetów?
             </p>
             <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
               <a

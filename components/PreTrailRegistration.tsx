@@ -46,7 +46,7 @@ const PROCESS_STEPS: ProcessStep[] = [
     number: 2,
     title: 'Pokonaj Szlak',
     description:
-      'Wyrusz na trasę z trackerem GPS. Twoje postępy będą widoczne na żywo dla wszystkich obserwujących. Zdobądź wszystkie 22 najwyższe szczyty pasm Sudetów.',
+      'Wyrusz na trasę z trackerem GPS. Twoje postępy będą widoczne na żywo dla wszystkich obserwujących. Zdobądź wszystkie 23 najwyższe szczyty pasm Sudetów.',
     linkText: 'Poznaj trasę',
     linkHref: '/trail',
     gradientClass: 'from-earth-600 to-earth-700',

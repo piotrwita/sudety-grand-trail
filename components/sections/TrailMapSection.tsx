@@ -73,7 +73,7 @@ export const TrailMapSection = () => {
           className="mx-auto mb-8 max-w-5xl text-center"
         >
           <p className="text-fluid-lg font-medium leading-relaxed text-mountain-600">
-            Poniżej znajduje się mapa trasy prowadzącej przez wszystkie 22 pasma
+            Poniżej znajduje się mapa trasy prowadzącej przez wszystkie 23 pasma
             Sudetów. Każdy odcinek został starannie wyznaczony i dopracowany,
             tworząc spójną drogę od pierwszego kroku w Jarnołtówku po finał pod
             Ślężą.

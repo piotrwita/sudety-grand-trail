@@ -166,7 +166,7 @@ export const TimePressure = () => {
                 </div>
                 <h3 className="text-lg font-bold text-green-800">Ukończone</h3>
               </div>
-              <div className="mb-1 text-2xl font-bold text-green-700">8/22</div>
+              <div className="mb-1 text-2xl font-bold text-green-700">8/23</div>
               <div className="text-sm text-green-600">Pasma Sudetów</div>
             </div>
 

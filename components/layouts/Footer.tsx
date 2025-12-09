@@ -3,7 +3,7 @@ import { SocialLinkList } from './SocialLinkList';
 import { LogoImage } from '../LogoImage';
 
 export const Footer = () => {
-  const stats = ['24 Pasma Górskie', '16 Szczytów KGP', '900 km Wyzwania'];
+  const stats = ['23 Pasma Górskie', '16 Szczytów KGP', '900 km Wyzwania'];
 
   return (
     <footer className="bg-forest-900 py-12 text-cream sm:py-16 lg:py-20">
@@ -26,7 +26,7 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-sm leading-relaxed text-mountain-300 sm:text-base">
-              900 km przez 24 pasma górskie. Zdobądź najwyższe szczyty Sudetów i
+              900 km przez 23 pasma górskie. Zdobądź najwyższe szczyty Sudetów i
               16 szczytów Korony Gór Polski w jednej epickiej wędrówce.
             </p>
           </div>
@@ -79,7 +79,7 @@ export const Footer = () => {
                 <LogoImage width={32} height={32} className="rounded-full" />
               </div>
               <p className="text-xs text-mountain-400 sm:text-sm">
-                © 2024 Sudety Grand Trail. Wszystkie prawa zastrzeżone.
+                © 2025 Sudety Grand Trail. Wszystkie prawa zastrzeżone.
               </p>
             </div>
             <div className="text-xs text-mountain-400 sm:text-sm">

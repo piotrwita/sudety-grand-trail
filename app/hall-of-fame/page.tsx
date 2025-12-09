@@ -99,7 +99,7 @@ const HallOfFameHeroSection = () => (
             <span className="theme-halloffame-text-gradient font-bold">
               Koronę Sudetów
             </span>
-            . Przeszli 900 kilometrów przez 22 pasma górskie.
+            . Przeszli 900 kilometrów przez 23 pasma górskie.
             <br />
             <span className="mt-4 block italic text-cream/90">
               Ty możesz dołączyć do elitarnego grona zdobywców!

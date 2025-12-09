@@ -99,7 +99,7 @@ export const AboutProjectSection = () => {
                     </span>{' '}
                     przewyższeń. Przebiega przez{' '}
                     <span className="text-lg font-bold text-accent sm:text-xl">
-                      22 pasma
+                      23 pasma
                     </span>{' '}
                     górskie, prowadząc przez{' '}
                     <span className="text-lg font-bold text-accent sm:text-xl">

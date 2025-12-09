@@ -27,7 +27,7 @@ const TrailDescription = () => {
                   KORONA SUDETÓW
                 </span>{' '}
                 – pierwszy szlak umożliwiający zdobycie najwyższego szczytu
-                każdego z 24 pasm Sudetów w jednej trasie. 900 km długości, 30
+                każdego z 23 pasm Sudetów w jednej trasie. 900 km długości, 30
                 000 m przewyższeń przez Polskę, Czechy i Niemcy. Początek w
                 Jarnołtówku, finał pod Ślężą – górą o duchowym znaczeniu.
               </p>
@@ -49,7 +49,7 @@ const TrailDescription = () => {
                 <div className="flex items-center space-x-4">
                   <div className="h-3 w-3 rounded-full bg-gradient-to-r from-earth-600 to-earth-700" />
                   <span className="font-bold uppercase tracking-wide text-earth-800">
-                    24 pasma górskie
+                    23 pasma górskie
                   </span>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -113,7 +113,7 @@ const TrailDescription = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="card-vintage absolute -bottom-8 -left-8 p-6 text-center"
             >
-              <div className="stats-number text-3xl">24</div>
+              <div className="stats-number text-3xl">23</div>
               <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
                 Pasma
               </div>
