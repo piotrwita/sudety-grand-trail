@@ -70,7 +70,7 @@ export const TrailMapSection = () => {
           duration={0.8}
           delay={0.3}
           inView={true}
-          className="mx-auto mb-16 max-w-5xl text-center"
+          className="mx-auto mb-8 max-w-5xl text-center"
         >
           <p className="text-fluid-lg font-medium leading-relaxed text-mountain-600">
             Poniżej znajduje się mapa trasy prowadzącej przez wszystkie 22 pasma
@@ -78,6 +78,36 @@ export const TrailMapSection = () => {
             tworząc spójną drogę od pierwszego kroku w Jarnołtówku po finał pod
             Ślężą.
           </p>
+        </FadeIn>
+
+        {/* Action Buttons */}
+        <FadeIn
+          direction="up"
+          offset={30}
+          duration={0.6}
+          delay={0.3}
+          inView={true}
+          className="mb-8"
+        >
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href={siteConfig.links.map.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-earth-400/50 bg-transparent px-5 py-2.5 font-bold uppercase tracking-wide text-earth-600 transition-all duration-300 hover:scale-105 hover:bg-earth-100/50 sm:w-auto"
+            >
+              <MapIcon className="size-5" />
+              Otwórz na Mapy.cz
+            </Link>
+            <Link
+              href="https://pro.mapy.com/mapybox-export/v1/path/gpx?id=688fa97f662a3fae890f5f13&rand=0.7002222504750357"
+              download="sudety-grand-trail.gpx"
+              className="btn-primary flex w-full items-center justify-center gap-2 px-6 py-3 sm:w-auto"
+            >
+              <DownloadIcon className="size-5" />
+              Pobierz Plik GPX
+            </Link>
+          </div>
         </FadeIn>
 
         <ScaleIn
@@ -113,8 +143,8 @@ export const TrailMapSection = () => {
               {(!isMapInteractive || isScrolling) && (
                 <div
                   onClick={handleMapClick}
-                  className="absolute inset-0 z-10 cursor-pointer bg-transparent transition-opacity duration-200"
-                  aria-label="Kliknij na mapę, aby ją przesunąć"
+                  className="absolute inset-0 z-10 cursor-pointer bg-transparent transition-opacity duration-200 hover:bg-black/5"
+                  aria-label="Kliknij, aby korzystać z mapy"
                 />
               )}
             </div>
@@ -144,31 +174,11 @@ export const TrailMapSection = () => {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-earth-700 sm:text-3xl">1602 m</p>
-                  <p className="mt-1 text-sm text-mountain-600">Śnieżka</p>
+                  <p className="mt-1 text-sm text-mountain-600">Najwyższy szczyt</p>
                 </div>
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href={siteConfig.links.map.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="theme-btn-base theme-trail-btn-secondary flex w-full items-center justify-center gap-2 px-6 py-3 sm:w-auto"
-              >
-                <MapIcon className="size-5" />
-                Otwórz na Mapy.cz
-              </Link>
-              <Link
-                href="https://pro.mapy.com/mapybox-export/v1/path/gpx?id=688fa97f662a3fae890f5f13&rand=0.7002222504750357"
-                download="sudety-grand-trail.gpx"
-                className="btn-primary flex w-full items-center justify-center gap-2 px-6 py-3 sm:w-auto"
-              >
-                <DownloadIcon className="size-5" />
-                Pobierz Plik GPX
-              </Link>
-            </div>
           </div>
         </FadeIn>
       </div>
