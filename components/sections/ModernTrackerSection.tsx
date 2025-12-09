@@ -6,6 +6,8 @@ import { Section } from './Section';
 import { sectionIds } from '@/config/section-ids';
 import { CheckIcon, LocationIcon } from '@/components/icons';
 import { sendTrackerRequestEmail } from '@/actions/send-email';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const ModernTrackerSection = () => {
   const [email, setEmail] = useState('');
@@ -83,11 +85,6 @@ export const ModernTrackerSection = () => {
             Twoja{' '}
             <span className="theme-live-text-gradient">Własna Historia</span>
           </h2>
-
-          <p className="text-fluid-lg mx-auto max-w-3xl leading-relaxed text-slate-600">
-            A jeśli kiedyś sami będziecie chcieli spróbować przejść ten szlak,
-            to mam dla Was dobrą wiadomość.
-          </p>
         </FadeIn>
 
         {/* Main Content */}
@@ -102,26 +99,23 @@ export const ModernTrackerSection = () => {
             className="space-y-8"
           >
             <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
-                  <svg
-                    className="h-6 w-6 text-accent"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 01-2 2H10a2 2 0 01-2-2V6m8 0H8"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900">POLTRAX</h3>
-                  <p className="text-slate-500">Partner technologiczny</p>
-                </div>
+              <div className="flex flex-col space-y-2">
+                <Link
+                  href="https://poltrax.live/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative h-12 w-auto inline-block transition-opacity hover:opacity-80"
+                >
+                  <Image
+                    src="https://poltrax.live/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Flogo.fd1fe14c.png&w=128&q=75"
+                    alt="Poltrax Logo"
+                    width={250}
+                    height={48}
+                    className="object-contain h-12 w-auto"
+                    unoptimized
+                  />
+                </Link>
+                <p className="text-slate-500">Partner technologiczny</p>
               </div>
 
               <p className="text-lg leading-relaxed text-slate-700">
@@ -172,32 +166,9 @@ export const ModernTrackerSection = () => {
             inView={true}
             className="relative"
           >
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-accent/10 to-orange-500/10 p-6 max-w-md mx-auto lg:mx-0">
-              {/* Background Pattern */}
-              <div className="absolute inset-0 opacity-5">
-                <svg
-                  className="h-full w-full"
-                  viewBox="0 0 100 100"
-                  preserveAspectRatio="none"
-                >
-                  <defs>
-                    <pattern
-                      id="grid"
-                      width="10"
-                      height="10"
-                      patternUnits="userSpaceOnUse"
-                    >
-                      <path
-                        d="M 10 0 L 0 0 0 10"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="0.5"
-                      />
-                    </pattern>
-                  </defs>
-                  <rect width="100" height="100" fill="url(#grid)" />
-                </svg>
-              </div>
+            <div className="card-vintage relative overflow-hidden p-6 max-w-md mx-auto lg:mx-0">
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-orange-50/40 via-cream to-forest-50/30 opacity-50" />
 
               {/* Form Content */}
               <div className="relative z-10">
@@ -206,7 +177,10 @@ export const ModernTrackerSection = () => {
                     Zostań Legendą
                   </h4>
                   <p className="mt-2 text-sm text-slate-600">
-                    Dołącz do grona zdobywców Korony Sudetów
+                    Dołącz do grona zdobywców{' '}
+                    <span className="theme-live-text-gradient font-bold uppercase">
+                      Sudety Grand Trail
+                    </span>
                   </p>
                 </div>
 
@@ -225,7 +199,7 @@ export const ModernTrackerSection = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       required
                       className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm transition-all duration-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-                      placeholder="twoj@email.pl"
+                      placeholder="sgt@gmail.com"
                     />
                   </div>
 

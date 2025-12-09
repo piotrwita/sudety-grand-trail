@@ -6,7 +6,6 @@ import { Metadata } from 'next';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 import { LogoImage } from '@/components/LogoImage';
 import { ScrollIndicator } from '@/components/ScrollIndicator';
-import { MapIcon, LocationIcon, ClockIcon, FlagIcon } from '@/components/icons';
 import { ModernTrackerSection } from '@/components/sections/ModernTrackerSection';
 
 export const metadata: Metadata = pageMetadata.live;
@@ -17,7 +16,6 @@ export default function LivePage() {
       <LiveHeroSection />
       <LiveTrackingSection />
       <ModernTrackerSection />
-      <AdditionalInfoSection />
     </>
   );
 }
@@ -125,119 +123,3 @@ const LiveHeroSection = () => {
   );
 };
 
-const AdditionalInfoSection = () => {
-  return (
-    <Section className="bg-cream">
-      <div className="fluid-container">
-        <FadeIn
-          direction="up"
-          offset={50}
-          duration={0.8}
-          inView={true}
-          inViewMargin="-100px"
-          className="text-center"
-        >
-          <h2 className="section-title">
-            Jak działa{' '}
-            <span className="theme-live-text-gradient">Live Tracking</span>?
-          </h2>
-
-          <div className="mx-auto mt-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-
-          <p className="text-fluid-lg mx-auto max-w-5xl font-medium leading-relaxed text-mountain-600">
-            Dzięki współpracy z firmą{' '}
-            <strong className="text-orange-500">Poltrax</strong> powstała
-            interaktywna mapa, która pokazuje moją lokalizację w czasie
-            rzeczywistym oraz orientacyjne punkty etapów.
-          </p>
-        </FadeIn>
-
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <FadeIn
-            direction="up"
-            offset={30}
-            duration={0.6}
-            delay={0.2}
-            inView={true}
-          >
-            <div className="card-vintage h-full p-8 text-center">
-              <div className="badge-circle mx-auto size-16 transition-transform duration-300 group-hover:scale-110">
-                <LocationIcon className="size-6" />
-              </div>
-              <h3 className="section-title mt-6 text-xl">Real-time GPS</h3>
-
-              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-
-              <p className="text-sm text-mountain-600">
-                Aktualna pozycja co kilka minut
-              </p>
-            </div>
-          </FadeIn>
-
-          <FadeIn
-            direction="up"
-            offset={30}
-            duration={0.6}
-            delay={0.3}
-            inView={true}
-          >
-            <div className="card-vintage h-full p-8 text-center">
-              <div className="badge-circle mx-auto size-16 transition-transform duration-300 group-hover:scale-110">
-                <MapIcon className="size-6" />
-              </div>
-              <h3 className="section-title mt-6 text-xl">Przebyta Trasa</h3>
-
-              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-
-              <p className="text-sm text-mountain-600">
-                Historia całej wędrówki
-              </p>
-            </div>
-          </FadeIn>
-
-          <FadeIn
-            direction="up"
-            offset={30}
-            duration={0.6}
-            delay={0.4}
-            inView={true}
-          >
-            <div className="card-vintage h-full p-8 text-center">
-              <div className="badge-circle mx-auto size-16 transition-transform duration-300 group-hover:scale-110">
-                <ClockIcon className="size-6" />
-              </div>
-              <h3 className="section-title mt-6 text-xl">Limit Czasowy</h3>
-
-              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-
-              <p className="text-sm text-mountain-600">
-                Presja czasu widoczna na mapie
-              </p>
-            </div>
-          </FadeIn>
-
-          <FadeIn
-            direction="up"
-            offset={30}
-            duration={0.6}
-            delay={0.5}
-            inView={true}
-          >
-            <div className="card-vintage h-full p-8 text-center">
-              <div className="badge-circle mx-auto size-16 transition-transform duration-300 group-hover:scale-110">
-                <FlagIcon className="size-6" />
-              </div>
-              <h3 className="section-title mt-6 text-xl">Punkty Etapów</h3>
-
-              <div className="mx-auto my-3 h-0.5 w-12 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
-
-              <p className="text-sm text-mountain-600">
-                Planowane miejsca noclegów
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-      </div>
-    </Section>
-  );
-};

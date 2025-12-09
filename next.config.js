@@ -10,6 +10,11 @@ const nextConfig = {
         hostname: 'd34-a.sdn.cz',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'poltrax.live',
+        pathname: '/**',
+      },
     ],
   },
 };

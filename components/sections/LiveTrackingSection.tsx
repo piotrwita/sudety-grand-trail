@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ClockIcon, FlagIcon, LocationIcon } from '../icons';
+import Link from 'next/link';
 
 export const LiveTrackingSection = () => {
   const [isMapInteractive, setIsMapInteractive] = useState(false);
@@ -89,9 +90,18 @@ export const LiveTrackingSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mx-auto max-w-5xl text-xl font-medium leading-relaxed text-mountain-600"
           >
-            Dzięki współpracy z <strong className="text-orange-500">Poltrax</strong>{' '}
-            możesz śledzić swoją wyprawę w czasie rzeczywistym. Mapa pokazuje Twoją
-            aktualną pozycję, przebytą trasę, limit czasowy oraz orientacyjne punkty noclegów.
+            Dzięki współpracy z{' '}
+            <Link
+              href="https://poltrax.live/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-orange-500 transition-colors hover:text-orange-600 underline decoration-2 underline-offset-2"
+            >
+              Poltrax
+            </Link>{' '}
+            możecie śledzić swoją wyprawę w czasie rzeczywistym.
+            <br />
+            Mapa pokazuje aktualną pozycję, przebytą trasę, limit czasowy oraz orientacyjne punkty noclegów.
           </motion.p>
         </motion.div>
 
@@ -140,17 +150,25 @@ export const LiveTrackingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="rounded-2xl border border-orange-100 bg-white p-6 text-center shadow-lg transition-shadow duration-300 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-2xl border-2 border-orange-200/60 bg-gradient-to-br from-white via-orange-50/30 to-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/80 hover:shadow-xl"
             >
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10">
-                <LocationIcon className="size-6 text-orange-500" />
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-orange-600/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              
+              {/* Icon container with enhanced styling */}
+              <div className="relative mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100/80 transition-all duration-300 group-hover:scale-110">
+                <LocationIcon className="size-6 text-orange-600" />
               </div>
-              <h3 className="mb-2 text-lg font-bold text-orange-800">
+              
+              <h3 className="relative mb-1.5 text-lg font-bold text-orange-800">
                 Aktualna Pozycja
               </h3>
-              <p className="text-sm text-mountain-600">
+              <p className="relative text-sm leading-relaxed text-mountain-600">
                 Lokalizacja w czasie rzeczywistym
               </p>
+              
+              {/* Decorative bottom border */}
+              <div className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 bg-gradient-to-r from-orange-500 to-orange-600 transition-transform duration-300 group-hover:scale-x-100" />
             </motion.div>
 
             <motion.div
@@ -158,17 +176,25 @@ export const LiveTrackingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="rounded-2xl border border-forest-100 bg-white p-6 text-center shadow-lg transition-shadow duration-300 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-2xl border-2 border-orange-200/60 bg-gradient-to-br from-white via-orange-50/30 to-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/80 hover:shadow-xl"
             >
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10">
-                <ClockIcon className="size-6 text-orange-500" />
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-orange-600/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              
+              {/* Icon container with enhanced styling */}
+              <div className="relative mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100/80 transition-all duration-300 group-hover:scale-110">
+                <ClockIcon className="size-6 text-orange-600" />
               </div>
-              <h3 className="mb-2 text-lg font-bold text-orange-800">
+              
+              <h3 className="relative mb-1.5 text-lg font-bold text-orange-800">
                 Limit Czasowy
               </h3>
-              <p className="text-sm text-mountain-600">
+              <p className="relative text-sm leading-relaxed text-mountain-600">
                 Wyścig z czasem przez Sudety
               </p>
+              
+              {/* Decorative bottom border */}
+              <div className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 bg-gradient-to-r from-orange-500 to-orange-600 transition-transform duration-300 group-hover:scale-x-100" />
             </motion.div>
 
             <motion.div
@@ -176,17 +202,25 @@ export const LiveTrackingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.9 }}
-              className="rounded-2xl border border-orange-100 bg-white p-6 text-center shadow-lg transition-shadow duration-300 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-2xl border-2 border-orange-200/60 bg-gradient-to-br from-white via-orange-50/30 to-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/80 hover:shadow-xl"
             >
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10">
-                <FlagIcon className="size-6 text-orange-500" />
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-orange-600/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              
+              {/* Icon container with enhanced styling */}
+              <div className="relative mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100/80 transition-all duration-300 group-hover:scale-110">
+                <FlagIcon className="size-6 text-orange-600" />
               </div>
-              <h3 className="mb-2 text-lg font-bold text-orange-800">
+              
+              <h3 className="relative mb-1.5 text-lg font-bold text-orange-800">
                 Punkty Etapów
               </h3>
-              <p className="text-sm text-mountain-600">
+              <p className="relative text-sm leading-relaxed text-mountain-600">
                 Planowane miejsca noclegów
               </p>
+              
+              {/* Decorative bottom border */}
+              <div className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 bg-gradient-to-r from-orange-500 to-orange-600 transition-transform duration-300 group-hover:scale-x-100" />
             </motion.div>
           </div>
         </motion.div>
