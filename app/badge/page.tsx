@@ -57,31 +57,27 @@ const BadgeHeroSection = () => (
 
     <div className="fluid-container relative z-10 text-center">
       <FadeIn direction="up" offset={60} duration={0.6}>
-        {/* Epic Badge Icon - Without circular frame */}
+        {/* Enhanced Badge Icon */}
         <ScaleIn
-          initialScale={0.3}
-          duration={0.8}
+          initialScale={0.5}
+          duration={0.6}
           delay={0.2}
-          className="mb-4 inline-block"
+          className="theme-badge-base theme-badge-badge mb-8"
         >
-          <div className="relative inline-block">
-            {/* Glow effect without circular border */}
-            <div className="absolute inset-0 -z-10 rounded-lg bg-gold-400/20 blur-2xl animate-pulse" />
-            <svg
-              className="h-20 w-20 text-gold-300 drop-shadow-[0_0_20px_rgba(251,191,36,0.8)] sm:h-24 sm:w-24 md:h-28 md:w-28"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2.5}
-              viewBox="0 0 24 24"
-              aria-label="Odznaka"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-              />
-            </svg>
-          </div>
+          <svg
+            className="h-14 w-14 text-forest-900/80"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2.5}
+            viewBox="0 0 24 24"
+            aria-label="Odznaka"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+            />
+          </svg>
         </ScaleIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.4}>
