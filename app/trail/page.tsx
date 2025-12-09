@@ -1,6 +1,5 @@
 import { TrailMapSection } from '@/components/sections';
 import TrailDescription from '@/components/TrailDescription';
-import TrailMotivation from '@/components/TrailMotivation';
 import { FadeIn, ScaleIn } from '@/components/motion';
 import { MapIcon } from '@/components/icons';
 import { Section } from '@/components/sections/Section';
@@ -18,7 +17,6 @@ export default function TrailPage() {
       <TrailHeroSection />
       <TrailMapSection />
       <TrailDescription />
-      <TrailMotivation />
     </>
   );
 }
