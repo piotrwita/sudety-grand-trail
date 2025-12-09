@@ -24,7 +24,7 @@ interface MountainCardProps {
 }
 
 const cardBaseStyles =
-  'group relative overflow-hidden rounded-2xl border-2 border-forest-200/60 bg-gradient-to-br from-cream via-forest-50/20 to-cream p-3 shadow-vintage-lg transition-all duration-300 hover:scale-[1.02] hover:border-forest-400/60 hover:shadow-vintage-xl sm:p-4 md:p-5 lg:p-6';
+  'group relative overflow-hidden rounded-2xl border-2 border-earth-200/60 bg-gradient-to-br from-cream via-earth-50/20 to-cream p-3 shadow-vintage-lg transition-all duration-300 hover:scale-[1.02] hover:border-earth-400/60 hover:shadow-vintage-xl sm:p-4 md:p-5 lg:p-6';
 
 const LazyMountainCard = memo((props: MountainCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -57,19 +57,19 @@ const MountainCardSkeleton = ({ isMobile }: { isMobile: boolean }) => (
     className={cn(
       cardBaseStyles,
       !isMobile && 'h-full hover:scale-100',
-      'animate-pulse bg-forest-100/20'
+      'animate-pulse bg-earth-100/20'
     )}
   >
     <div className="relative mb-3 w-full overflow-hidden rounded-xl">
-      <div className="relative h-40 w-full bg-forest-200/30 sm:h-48 md:h-56 lg:h-64"></div>
+      <div className="relative h-40 w-full bg-earth-200/30 sm:h-48 md:h-56 lg:h-64"></div>
     </div>
     <div className="flex flex-1 flex-col justify-between">
       <div className="mb-2 text-center">
-        <div className="mx-auto mb-2 h-5 w-3/4 rounded bg-forest-200/30"></div>
-        <div className="mx-auto h-4 w-1/2 rounded bg-forest-200/30"></div>
+        <div className="mx-auto mb-2 h-5 w-3/4 rounded bg-earth-200/30"></div>
+        <div className="mx-auto h-4 w-1/2 rounded bg-earth-200/30"></div>
       </div>
       <div className="text-center">
-        <div className="mx-auto h-8 w-1/4 rounded bg-forest-200/30"></div>
+        <div className="mx-auto h-8 w-1/4 rounded bg-earth-200/30"></div>
       </div>
     </div>
   </div>
@@ -90,15 +90,15 @@ const MountainCard = ({
           cardBaseStyles,
           'cursor-pointer',
           isMobile && 'hover:scale-100',
-          isSelected && 'border-forest-500/80 ring-2 ring-forest-500/50'
+          isSelected && 'border-earth-500/80 ring-2 ring-earth-500/50'
         )}
         onClick={onClick}
       >
         {/* Subtle gradient overlay */}
-        <div className="from-forest-500/3 to-forest-600/3 absolute inset-0 rounded-2xl bg-gradient-to-br via-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="from-earth-500/3 to-earth-600/3 absolute inset-0 rounded-2xl bg-gradient-to-br via-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
         {/* Hover glow effect - only outside */}
-        <div className="via-forest-500/8 pointer-events-none absolute -inset-1 -z-10 rounded-2xl bg-gradient-to-br from-forest-400/15 to-forest-600/15 opacity-0 blur-lg transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="via-earth-500/8 pointer-events-none absolute -inset-1 -z-10 rounded-2xl bg-gradient-to-br from-earth-400/15 to-earth-600/15 opacity-0 blur-lg transition-opacity duration-300 group-hover:opacity-100" />
         <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} />
 
         {/* Expanded Details (Collapsible) */}
@@ -106,7 +106,7 @@ const MountainCard = ({
           className={cn(
             'grid transition-all duration-200 ease-in-out',
             isSelected
-              ? 'mt-3 grid-rows-[1fr] border-t border-forest-300/60 bg-gradient-to-r from-transparent via-forest-100/30 to-transparent pt-3 opacity-100 sm:mt-4 sm:pt-4'
+              ? 'mt-3 grid-rows-[1fr] border-t border-earth-300/60 bg-gradient-to-r from-transparent via-earth-100/30 to-transparent pt-3 opacity-100 sm:mt-4 sm:pt-4'
               : 'grid-rows-[0fr] opacity-0'
           )}
         >
@@ -129,19 +129,19 @@ const MountainCard = ({
       <MorphingDialogTrigger className="w-full text-left">
         <div className={cn(cardBaseStyles, 'h-full')}>
           {/* Subtle gradient overlay */}
-          <div className="from-forest-500/3 to-forest-600/3 absolute inset-0 rounded-2xl bg-gradient-to-br via-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          <div className="from-earth-500/3 to-earth-600/3 absolute inset-0 rounded-2xl bg-gradient-to-br via-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
           {/* Hover glow effect - only outside */}
-          <div className="via-forest-500/8 pointer-events-none absolute -inset-1 -z-10 rounded-2xl bg-gradient-to-br from-forest-400/15 to-forest-600/15 opacity-0 blur-lg transition-opacity duration-300 group-hover:opacity-100" />
+          <div className="via-earth-500/8 pointer-events-none absolute -inset-1 -z-10 rounded-2xl bg-gradient-to-br from-earth-400/15 to-earth-600/15 opacity-0 blur-lg transition-opacity duration-300 group-hover:opacity-100" />
 
           <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} />
         </div>
       </MorphingDialogTrigger>
       <MorphingDialogContainer>
-        <MorphingDialogContent className="relative h-auto w-[500px] rounded-2xl border-2 border-forest-300/80 bg-cream shadow-vintage-lg [&_.mountain-image-container]:h-80">
+        <MorphingDialogContent className="relative h-auto w-[500px] rounded-2xl border-2 border-earth-300/80 bg-cream shadow-vintage-lg [&_.mountain-image-container]:h-80">
           <div className="p-4 sm:p-5 md:p-6 lg:p-8">
             <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} />
-            <div className="mt-4 border-t border-forest-300/60 pt-4">
+            <div className="mt-4 border-t border-earth-300/60 pt-4">
               <MountainDetails range={range} />
             </div>
           </div>
@@ -172,10 +172,10 @@ const MountainCardVisuals = memo(
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             {/* Gradient overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-earth-900/60 via-transparent to-transparent" />
           </div>
         ) : (
-          <div className="flex h-40 items-center justify-center bg-gradient-to-br from-forest-100 to-forest-200 text-4xl sm:h-48 md:h-56 lg:h-64">
+          <div className="flex h-40 items-center justify-center bg-gradient-to-br from-earth-100 to-earth-200 text-4xl sm:h-48 md:h-56 lg:h-64">
             🏔️
           </div>
         )}
@@ -209,7 +209,7 @@ const CountryBadge = ({ country }: { country: string }) => {
         <span
           key={code}
           className={cn(
-            'flex h-6 min-w-[24px] items-center justify-center rounded bg-forest-900/80 px-1.5 text-xs font-bold text-cream shadow-sm sm:h-7 sm:text-sm',
+            'flex h-6 min-w-[24px] items-center justify-center rounded bg-earth-900/80 px-1.5 text-xs font-bold text-cream shadow-sm sm:h-7 sm:text-sm',
             code === 'PL' && 'bg-red-900/80',
             code === 'CZ' && 'bg-blue-900/80',
             code === 'DE' && 'bg-yellow-900/80'
@@ -225,7 +225,7 @@ const CountryBadge = ({ country }: { country: string }) => {
 const MountainInfo = memo(({ range }: { range: SudetenRange }) => {
   return (
     <div className="mb-2 text-center">
-      <h3 className="font-display text-sm font-bold uppercase leading-tight text-forest-800 sm:text-base md:text-lg md:normal-case lg:text-xl">
+      <h3 className="font-display text-sm font-bold uppercase leading-tight text-earth-800 sm:text-base md:text-lg md:normal-case lg:text-xl">
         {range.name}
       </h3>
       <p className="truncate text-xs font-medium text-mountain-600 sm:text-sm md:font-bold lg:text-base">
@@ -239,7 +239,7 @@ MountainInfo.displayName = 'MountainInfo';
 
 const ElevationStats = memo(({ range }: { range: SudetenRange }) => (
   <div className="text-center">
-    <div className="stats-number text-lg font-bold text-forest-700 sm:text-xl md:text-2xl lg:text-3xl">
+    <div className="stats-number text-lg font-bold text-earth-700 sm:text-xl md:text-2xl lg:text-3xl">
       {range.elevation}M
     </div>
   </div>
@@ -256,7 +256,7 @@ const getCountryFlag = (country: string): string => {
 
 const MountainDetails = memo(({ range }: { range: SudetenRange }) => {
   return (
-    <div className="space-y-2 text-sm text-forest-700 md:space-y-1">
+    <div className="space-y-2 text-sm text-earth-700 md:space-y-1">
       <div className="grid grid-cols-2 gap-2 md:block md:space-y-1">
         <DetailRow label="Czeski" value={range.nameCs} />
         <DetailRow label="Niemiecki" value={range.nameDe} />
@@ -277,10 +277,10 @@ MountainDetails.displayName = 'MountainDetails';
 
 const DetailRow = memo(({ label, value }: { label: string; value: string }) => (
   <div>
-    <span className="block font-bold text-forest-800 md:mr-2 md:inline">
+    <span className="block font-bold text-earth-800 md:mr-2 md:inline">
       {label}:
     </span>
-    <span className="block text-forest-700 md:inline">{value}</span>
+    <span className="block text-earth-700 md:inline">{value}</span>
   </div>
 ));
 
@@ -288,7 +288,7 @@ DetailRow.displayName = 'DetailRow';
 
 const rankColors = {
   1: 'from-yellow-400 to-yellow-600',
-  2: 'from-forest-400 to-forest-600',
+  2: 'from-earth-400 to-earth-600',
   3: 'from-mountain-400 to-mountain-600',
 };
 export const getRankColor = (rank: number): string => {

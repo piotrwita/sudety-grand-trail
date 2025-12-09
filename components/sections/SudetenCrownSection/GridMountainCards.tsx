@@ -190,12 +190,12 @@ const FilterBar = ({
     <FadeIn
       direction="up"
       duration={0.5}
-      className="z-30 -mx-4 bg-forest-50/80 p-3 backdrop-blur-sm md:mx-0 md:bg-transparent md:p-0 md:backdrop-blur-none"
+      className="z-30 -mx-4 bg-earth-50/80 p-3 backdrop-blur-sm md:mx-0 md:bg-transparent md:p-0 md:backdrop-blur-none"
     >
       <div className="flex flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3 md:gap-4">
         {/* Search Input */}
         <div className="relative w-full md:max-w-md">
-          <div className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-forest-400 sm:left-4">
+          <div className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-earth-400 sm:left-4">
             <SearchIcon />
           </div>
           <input
@@ -203,7 +203,7 @@ const FilterBar = ({
             placeholder="Szukaj pasma, szczytu..."
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full rounded-xl border-2 border-forest-200 bg-cream py-2 pl-10 pr-3 text-sm text-forest-800 shadow-sm transition-all placeholder:text-forest-400 hover:border-forest-300 focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/20 sm:py-2.5 sm:pl-12 sm:pr-4 sm:text-base md:py-3"
+            className="w-full rounded-xl border-2 border-earth-200 bg-cream py-2 pl-10 pr-3 text-sm text-earth-800 shadow-sm transition-all placeholder:text-earth-400 hover:border-earth-300 focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/20 sm:py-2.5 sm:pl-12 sm:pr-4 sm:text-base md:py-3"
           />
         </div>
 
@@ -216,7 +216,7 @@ const FilterBar = ({
               'group flex flex-1 items-center justify-center gap-1.5 rounded-xl border-2 px-3 py-2 text-xs font-bold uppercase tracking-wide transition-all sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm md:px-6 md:py-3',
               showKsOnly
                 ? 'border-amber-600 bg-gradient-to-br from-amber-700 to-amber-900 text-cream shadow-vintage'
-                : 'border-forest-200 bg-cream text-forest-700 hover:border-forest-300 hover:bg-forest-50'
+                : 'border-earth-200 bg-cream text-earth-700 hover:border-earth-300 hover:bg-earth-50'
             )}
           >
             <span className="whitespace-nowrap">Korona Sudetów</span>
@@ -225,7 +225,7 @@ const FilterBar = ({
                 'flex size-4 items-center justify-center rounded-full border-2 transition-colors sm:size-5',
                 showKsOnly
                   ? 'border-cream bg-cream text-yellow-600'
-                  : 'border-forest-300 group-hover:border-forest-400'
+                  : 'border-earth-300 group-hover:border-earth-400'
               )}
             >
               {showKsOnly && <CheckIcon />}
@@ -239,7 +239,7 @@ const FilterBar = ({
               'group flex flex-1 items-center justify-center gap-1.5 rounded-xl border-2 px-3 py-2 text-xs font-bold uppercase tracking-wide transition-all sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm md:px-6 md:py-3',
               showKgpOnly
                 ? 'border-orange-500 bg-gradient-to-br from-orange-500 to-orange-700 text-cream shadow-vintage'
-                : 'border-forest-200 bg-cream text-forest-700 hover:border-forest-300 hover:bg-forest-50'
+                : 'border-earth-200 bg-cream text-earth-700 hover:border-earth-300 hover:bg-earth-50'
             )}
           >
             <span className="whitespace-nowrap">Korona Gór Polski</span>
@@ -248,7 +248,7 @@ const FilterBar = ({
                 'flex size-4 items-center justify-center rounded-full border-2 transition-colors sm:size-5',
                 showKgpOnly
                   ? 'border-cream bg-cream text-accent'
-                  : 'border-forest-300 group-hover:border-forest-400'
+                  : 'border-earth-300 group-hover:border-earth-400'
               )}
             >
               {showKgpOnly && <CheckIcon />}

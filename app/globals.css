@@ -334,7 +334,7 @@
   }
 
   .theme-trail-text-gradient {
-    @apply bg-gradient-to-r from-forest-400 via-forest-500 to-forest-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-forest-400 via-forest-500 to-forest-300 bg-clip-text text-transparent;
   }
 
   .theme-trail-btn-primary {

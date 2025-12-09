@@ -122,7 +122,7 @@ export const ModernTrackerSection = () => {
                 <strong className="text-accent">
                   Poltrax udostępni Wam specjalny tracker zupełnie bezpłatnie
                 </strong>
-                , abyście i Wy mogli zapisać swoją własną historię na tej
+                , abyście mogli zapisać swoją własną historię na tej
                 trasie.
               </p>
             </div>

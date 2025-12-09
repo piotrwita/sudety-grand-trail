@@ -85,19 +85,17 @@ const SzczytyHeroSection = () => (
         </ScaleIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
-          <p className="text-fluid-xl mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-cream/90">
-            Wykaz najciekawszych szczytów na szlaku Sudety Grand Trail. 29
-            wierzchołków w 23 pasmach górskich, które spotkasz przemierzając
-            Sudety od{' '}
-            <span className="theme-szczyty-text-gradient font-bold">
-              Śnieżki (1603m)
-            </span>{' '}
-            po{' '}
-            <span className="theme-szczyty-text-gradient font-bold">
-              Lázek (714m)
-            </span>
-            .
-          </p>
+          <div className="mx-auto w-full space-y-4 text-center">
+            <p className="text-fluid-xl font-bold leading-relaxed text-cream/95 whitespace-nowrap">
+              Wykaz najciekawszych szczytów na szlaku{' '}
+              <span className="theme-szczyty-text-gradient">SUDETY GRAND TRAIL</span>.
+            </p>
+            <p className="text-fluid-base lg:text-fluid-lg mx-auto max-w-4xl font-medium italic leading-relaxed text-cream/85">
+              Kilkadziesiąt ciekawych wierzchołków w 23 pasmach górskich, które spotkasz przemierzając szlak od{' '}
+              <span className="theme-szczyty-text-gradient font-bold">Śnieżki</span> po{' '}
+              <span className="theme-szczyty-text-gradient font-bold">Lázek</span>.
+            </p>
+          </div>
         </FadeIn>
       </FadeIn>
     </div>

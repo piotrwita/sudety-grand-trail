@@ -5,7 +5,7 @@ import { VintageMountainsBackground } from '@/components/VintageMountainsBackgro
 
 export const SudetenCrownSection = () => {
   return (
-    <Section className="bg-forest-50 py-20 relative overflow-hidden" ariaLabel="Sekcja wykaz szczytów">
+    <Section className="bg-earth-50 py-20 relative overflow-hidden" ariaLabel="Sekcja wykaz szczytów">
       <VintageMountainsBackground className="opacity-10" />
       <div className="fluid-container min-h-screen relative z-10">
         <GridMountainCards ranges={sudetenRanges} />
