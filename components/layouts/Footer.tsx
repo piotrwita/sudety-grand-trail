@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import { SocialLinkList } from './SocialLinkList';
 import { LogoImage } from '../LogoImage';
+import { siteConfig } from '@/config/site';
+import { FacebookIcon, MapIcon } from '../icons';
 
 export const Footer = () => {
-  const stats = ['23 Pasma Górskie', '16 Szczytów KGP', '900 km Wyzwania'];
-
   return (
     <footer className="bg-forest-900 py-12 text-cream sm:py-16 lg:py-20">
       <div className="fluid-container">
@@ -26,22 +25,20 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-sm leading-relaxed text-mountain-300 sm:text-base">
-              900 km przez 23 pasma górskie. Zdobądź najwyższe szczyty Sudetów i
+              900 km przez 23 pasma górskie.
+              Zdobądź wszystkie najwyższe szczyty Sudetów i
               16 szczytów Korony Gór Polski w jednej epickiej wędrówce.
             </p>
           </div>
 
           {/* Quick Links Section */}
           <div className="flex flex-col items-start md:items-center">
-            <h4 className="mb-4 font-display text-base font-bold sm:mb-5 sm:text-lg lg:mb-6">
-              Szlak
-            </h4>
             <div className="space-y-2.5 sm:space-y-3">
-              <FooterLink href="/">Strona Główna</FooterLink>
-              <FooterLink href="/trail">Poznaj Trasę</FooterLink>
-              <FooterLink href="/live">Live Tracking</FooterLink>
-              <FooterLink href="/hall-of-fame">Hall of Fame</FooterLink>
-              <FooterLink href="/about">O Mnie</FooterLink>
+              {siteConfig.navigation.map((item) => (
+                <FooterLink key={item.href} href={item.href}>
+                  {item.label}
+                </FooterLink>
+              ))}
               <FooterLink href="https://mapy.com/s/barusofola" isExternal>
                 Mapa Szlaku
               </FooterLink>
@@ -54,18 +51,55 @@ export const Footer = () => {
               Społeczność
             </h4>
             <div className="space-y-4 sm:space-y-5">
-              <SocialLinkList className="flex gap-3 border-forest-600" />
+              <div className="flex gap-3 border-forest-600">
+                {siteConfig.socialLinks.map((link) => {
+                  const getIcon = () => {
+                    switch (link.icon) {
+                      case 'map':
+                        return <MapIcon />;
+                      case 'facebook':
+                        return <FacebookIcon />;
+                      default:
+                        return null;
+                    }
+                  };
 
-              <div className="space-y-2 pt-2 sm:space-y-2.5 sm:pt-3">
-                {stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 text-sm text-mountain-400 sm:gap-2.5"
-                  >
-                    <div className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent sm:h-2 sm:w-2"></div>
-                    <span>{stat}</span>
-                  </div>
-                ))}
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-accent-hover rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50"
+                      title={link.label}
+                    >
+                      {getIcon()}
+                    </Link>
+                  );
+                })}
+                {/* Private Facebook Group */}
+                <Link
+                  href="https://www.facebook.com/groups/opowiescizeszlaku"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50 hover:text-accent"
+                  title="Facebook - Opowieści ze Szlaku"
+                >
+                  <FacebookIcon />
+                  <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent/20">
+                    <svg
+                      className="h-2.5 w-2.5 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </Link>
               </div>
             </div>
           </div>
@@ -83,7 +117,7 @@ export const Footer = () => {
               </p>
             </div>
             <div className="text-xs text-mountain-400 sm:text-sm">
-              Stworzony z ❤️ dla miłośników gór
+              Szlak stworzony z ❤️ dla miłośników gór
             </div>
           </div>
         </div>

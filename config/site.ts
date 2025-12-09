@@ -3,13 +3,13 @@ import { siteRoutes } from './site-routes';
 const socialLinks = {
   map: {
     href: 'https://mapy.com/s/barusofola',
-    label: 'Mapa',
+    label: 'Mapa szlaku',
     external: true,
     icon: 'map',
   },
   facebook: {
     href: 'https://www.facebook.com/SudetyGrandTrail',
-    label: 'Facebook',
+    label: 'Facebook - Sudety Grand Trail',
     external: true,
     icon: 'facebook',
   },

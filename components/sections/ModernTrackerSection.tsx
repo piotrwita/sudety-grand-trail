@@ -199,7 +199,7 @@ export const ModernTrackerSection = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       required
                       className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm transition-all duration-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-                      placeholder="sgt@gmail.com"
+                      placeholder="twojanazwa@gmail.com"
                     />
                   </div>
 
