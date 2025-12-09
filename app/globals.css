@@ -330,11 +330,11 @@
   }
 
   .theme-trail-badge {
-    @apply shadow-brown-glow border-earth-500/30 bg-gradient-to-br from-earth-500 via-earth-600 to-earth-700;
+    @apply shadow-brown-glow border-earth-400/40 bg-gradient-to-br from-earth-400 via-earth-500 to-earth-600;
   }
 
   .theme-trail-text-gradient {
-    @apply bg-gradient-to-r from-earth-400 via-earth-500 to-earth-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-earth-300 via-earth-400 to-earth-500 bg-clip-text text-transparent;
   }
 
   .theme-trail-btn-primary {

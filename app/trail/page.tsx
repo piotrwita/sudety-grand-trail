@@ -73,16 +73,16 @@ const TrailHeroSection = () => (
         </FadeIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
-          <p className="text-fluid-xl mx-auto mb-8 max-w-5xl font-medium leading-relaxed text-cream/90">
-            Cała{' '}
-            <span className="theme-trail-text-gradient font-bold">
-              KORONA SUDETÓW
-            </span>{' '}
-            w jednym szlaku. 900 kilometrów przez 22 pasma oraz wejście na
-            najwyższy szczyt każdego z nich. Od Jarnołtówka w Górach Opawskich
-            po finał na Ślęży. Kompletne oblicze Sudetów ułożone w jeden ambitny
-            szlak.
-          </p>
+          <div className="mx-auto w-full space-y-4 text-center">
+            <p className="text-fluid-xl font-bold leading-relaxed text-cream/95 whitespace-nowrap">
+              Kompletne oblicze <span className="theme-trail-text-gradient">SUDETÓW</span> ułożone w jeden ambitny szlak.
+            </p>
+            <p className="text-fluid-base lg:text-fluid-lg mx-auto max-w-4xl font-medium italic leading-relaxed text-cream/85">
+              900 kilometrów przez 22 pasma górskie oraz wejście na najwyższy
+              szczyt każdego z nich. Od Jarnołtówka w Górach Opawskich po finał
+              na Ślęży.
+            </p>
+          </div>
         </FadeIn>
       </FadeIn>
     </div>
