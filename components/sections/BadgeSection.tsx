@@ -19,108 +19,107 @@ const FADE_IN_PROPS = {
 
 export const BadgeSection = () => {
   return (
-    <Section
-      ariaLabel="Odznaka Sudety Grand Trail"
-      className="relative items-start overflow-hidden bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700"
-    >
-      <DecorativeBackground />
+    <>
+      <Section
+        ariaLabel="Odznaka Sudety Grand Trail"
+        className="relative items-start overflow-hidden bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700"
+      >
+        <DecorativeBackground />
 
-      <div className="fluid-container relative z-10">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeader
-            title="Odznaka Sudety Grand Trail"
-            icon={<BadgeIcon className="size-5 text-cream/80 sm:size-6" />}
-            variant="light"
-          />
+        <div className="fluid-container relative z-10">
+          <div className="mx-auto max-w-6xl">
+            <SectionHeader
+              title="Odznaka Sudety Grand Trail"
+              icon={<BadgeIcon className="size-5 text-cream/80 sm:size-6" />}
+              variant="light"
+            />
 
-          {/* Main Content */}
-          <div className="space-y-8 sm:space-y-10 md:space-y-12">
-            {/* Informacja o możliwości zdobycia - EPIC VERSION */}
-            <FadeIn
-              {...FADE_IN_PROPS}
-              className="relative overflow-hidden rounded-2xl border-2 border-gold-400/40 bg-gradient-to-br from-forest-800/95 via-forest-800/75 to-earth-800/95 p-6 backdrop-blur-sm shadow-[0_0_50px_rgba(251,191,36,0.3)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14"
-            >
-              {/* Enhanced decorative gold glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-gold-400/8 via-transparent to-gold-500/8 rounded-2xl" />
-              <div className="absolute -right-16 top-0 h-48 w-48 rounded-full bg-gold-400/15 blur-3xl animate-pulse" />
-              <div className="absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-gold-500/12 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-              
-              <div className="relative space-y-5 text-base leading-relaxed text-cream/95 sm:space-y-6 sm:text-lg md:space-y-8">
-                <div className="space-y-3 sm:space-y-4">
-                  <p className="text-2xl font-black text-gold-300 sm:text-3xl md:text-4xl">
-                    <span className="drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
-                      Zdobyj Oficjalną Odznakę
-                    </span>
-                  </p>
-                  <p className="text-xl font-bold text-cream sm:text-2xl">
-                    Najwyższe wyróżnienie dla zdobywców
-                  </p>
-                  <p className="text-lg leading-relaxed">
-                    Po{' '}
-                    <span className="font-bold text-gold-300">
-                      kompletnym przejściu całego szlaku
-                    </span>{' '}
-                    masz możliwość zdobycia oficjalnej odznaki{' '}
-                    <span className="text-xl font-black text-gold-300 sm:text-2xl drop-shadow-[0_0_8px_rgba(251,191,36,0.4)]">
-                      SUDETY GRAND TRAIL
-                    </span>
-                    . To nie jest zwykłe wyróżnienie – to{' '}
-                    <span className="font-bold text-cream">
-                      symbol pokonania własnych granic
-                    </span>
-                    , dowód niezłomności i potwierdzenie ukończenia jednego z
-                    najbardziej wymagających szlaków w Sudetach.
-                  </p>
-                  <div className="rounded-lg border-l-4 border-gold-400/60 bg-gold-400/10 p-4 sm:p-6">
-                    <p className="font-bold text-gold-200 sm:text-lg">
-                      Odznaka jest potwierdzeniem:
+            {/* Main Content */}
+            <div className="space-y-8 sm:space-y-10 md:space-y-12">
+              {/* Informacja o możliwości zdobycia - EPIC VERSION */}
+              <FadeIn
+                {...FADE_IN_PROPS}
+                className="relative overflow-hidden rounded-2xl border-2 border-gold-400/40 bg-gradient-to-br from-forest-800/95 via-forest-800/75 to-earth-800/95 p-6 backdrop-blur-sm shadow-[0_0_50px_rgba(251,191,36,0.3)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14"
+              >
+                {/* Enhanced decorative gold glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-400/8 via-transparent to-gold-500/8 rounded-2xl" />
+                <div className="absolute -right-16 top-0 h-48 w-48 rounded-full bg-gold-400/15 blur-3xl animate-pulse" />
+                <div className="absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-gold-500/12 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+                
+                <div className="relative space-y-5 text-base leading-relaxed text-cream/95 sm:space-y-6 sm:text-lg md:space-y-8">
+                  <div className="space-y-3 sm:space-y-4">
+                    <p className="text-2xl font-black text-gold-300 sm:text-3xl md:text-4xl">
+                      <span className="drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
+                        Zdobądź Oficjalną Odznakę
+                      </span>
                     </p>
-                    <ul className="mt-2 space-y-2 text-cream/90">
-                      <li className="flex items-start gap-2">
-                        <span className="mt-1 text-gold-400">✓</span>
-                        <span>
-                          Przejścia{' '}
-                          <span className="font-bold text-gold-300">
-                            900 kilometrów przez 23 pasma górskie
+                    <p className="text-xl font-bold text-cream sm:text-2xl">
+                      Najwyższe wyróżnienie dla zdobywców
+                    </p>
+                    <p className="text-lg leading-relaxed">
+                      Po{' '}
+                      <span className="font-bold text-gold-300">
+                        kompletnym przejściu całego szlaku
+                      </span>{' '}
+                      masz możliwość zdobycia oficjalnej odznaki{' '}
+                      <span className="text-xl font-black text-gold-300 sm:text-2xl drop-shadow-[0_0_8px_rgba(251,191,36,0.4)]">
+                        SUDETY GRAND TRAIL
+                      </span>
+                      . To nie jest zwykłe wyróżnienie – to{' '}
+                      <span className="font-bold text-cream">
+                        symbol pokonania własnych granic
+                      </span>
+                      , dowód niezłomności i potwierdzenie ukończenia jednego z
+                      najbardziej wymagających szlaków w Sudetach.
+                    </p>
+                    <div className="rounded-lg border-l-4 border-gold-400/60 bg-gold-400/10 p-4 sm:p-6">
+                      <p className="font-bold text-gold-200 sm:text-lg">
+                        Odznaka jest potwierdzeniem:
+                      </p>
+                      <ul className="mt-2 space-y-2 text-cream/90">
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1 text-gold-400">✓</span>
+                          <span>
+                            Przejścia{' '}
+                            <span className="font-bold text-gold-300">
+                              900 kilometrów przez 23 pasma górskie
+                            </span>
                           </span>
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="mt-1 text-gold-400">✓</span>
-                        <span>
-                          Zdobycia{' '}
-                          <span className="font-bold text-gold-300">
-                            wszystkich najwyższych szczytów
-                          </span>{' '}
-                          każdego pasma
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="mt-1 text-gold-400">✓</span>
-                        <span>
-                          Pokonania{' '}
-                          <span className="font-bold text-gold-300">
-                            ponad 30 000 metrów przewyższeń
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1 text-gold-400">✓</span>
+                          <span>
+                            Zdobycia{' '}
+                            <span className="font-bold text-gold-300">
+                              wszystkich najwyższych szczytów
+                            </span>{' '}
+                            każdego pasma
                           </span>
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="mt-1 text-gold-400">✓</span>
-                        <span>
-                          Dołączenia do{' '}
-                          <span className="font-bold text-gold-300">
-                            elitarnego grona zdobywców
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1 text-gold-400">✓</span>
+                          <span>
+                            Pokonania{' '}
+                            <span className="font-bold text-gold-300">
+                              ponad 30 000 metrów przewyższeń
+                            </span>
                           </span>
-                        </span>
-                      </li>
-                    </ul>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-1 text-gold-400">✓</span>
+                          <span>
+                            Dołączenia do{' '}
+                            <span className="font-bold text-gold-300">
+                              elitarnego grona zdobywców
+                            </span>
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
 
-            {/* Zdjęcie odznaki i regulamin */}
-            <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
               {/* Zdjęcie odznaki - EPIC VERSION WITH 3D EFFECT */}
               <FadeIn
                 {...FADE_IN_PROPS}
@@ -165,73 +164,90 @@ export const BadgeSection = () => {
                   <div className="absolute -bottom-2 -left-2 size-2 rounded-full bg-gold-500/60 blur-sm animate-ping" style={{ animationDelay: '1.5s' }} />
                 </div>
               </FadeIn>
-
-              {/* Regulamin - EPIC VERSION */}
-              <FadeIn
-                {...FADE_IN_PROPS}
-                delay={0.4}
-                className="relative overflow-hidden rounded-2xl border-2 border-gold-400/40 bg-gradient-to-br from-accent/25 via-accent/20 to-earth-700/30 p-6 backdrop-blur-sm shadow-[0_0_50px_rgba(251,191,36,0.3)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14"
-              >
-                {/* Enhanced gold accent glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-400/8 via-transparent to-gold-500/8 rounded-2xl" />
-                <div className="absolute left-0 top-1/4 h-24 w-24 rounded-full bg-gold-400/15 blur-2xl" />
-                <div className="absolute right-0 bottom-1/4 h-32 w-32 rounded-full bg-gold-500/15 blur-2xl" />
-                
-                <div className="relative space-y-4 text-base leading-relaxed text-cream/95 sm:space-y-6 sm:text-lg">
-                  <div className="mb-4">
-                    <p className="text-xl font-black text-gold-300 sm:text-2xl">
-                      Regulamin Zdobycia Odznaki
-                    </p>
-                    <p className="mt-2 text-sm text-cream/70 sm:text-base">
-                      Wymagania, które musisz spełnić, aby zdobyć oficjalną odznakę
-                    </p>
-                  </div>
-                  <ul className="space-y-3 sm:space-y-4">
-                    <RegulationItem number={1}>
-                      Przejście całego szlaku{' '}
-                      <span className="font-bold text-gold-300">
-                        Sudety Grand Trail
-                      </span>{' '}
-                      zgodnie z oficjalną trasą, od Jarnołtówka do Ślęży.
-                    </RegulationItem>
-                    <RegulationItem number={2}>
-                      Zdobycie wszystkich{' '}
-                      <span className="font-bold text-gold-300">
-                        najwyższych szczytów każdego z 23 pasm górskich
-                      </span>{' '}
-                      znajdujących się na trasie.
-                    </RegulationItem>
-                    <RegulationItem number={3}>
-                      Po polskiej stronie – zdobycie wszystkich{' '}
-                      <span className="font-bold text-gold-300">
-                        16 sudeckich szczytów należących do Korony Gór Polski
-                      </span>
-                      .
-                    </RegulationItem>
-                    <RegulationItem number={4}>
-                      Dokumentacja przejścia w formie{' '}
-                      <span className="font-bold text-gold-300">
-                        zdjęć, relacji lub trackingu GPS
-                      </span>
-                      , potwierdzająca ukończenie szlaku.
-                    </RegulationItem>
-                    <RegulationItem number={5}>
-                      Zgłoszenie przejścia poprzez{' '}
-                      <span className="font-bold text-gold-300">
-                        oficjalny formularz
-                      </span>
-                      , wraz z udostępnieniem dokumentacji i relacji z
-                      przejścia.
-                    </RegulationItem>
-                  </ul>
-                </div>
-              </FadeIn>
             </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section
+        ariaLabel="Regulamin zdobycia odznaki"
+        className="relative items-start overflow-hidden bg-gradient-to-br from-forest-900 via-earth-900 to-forest-800"
+      >
+        <DecorativeBackground />
+
+        <div className="fluid-container relative z-10">
+          <div className="mx-auto max-w-6xl space-y-8 sm:space-y-10 md:space-y-12">
+            <SectionHeader
+              title="Regulamin Zdobycia Odznaki"
+              icon={<BadgeIcon className="size-5 text-cream/80 sm:size-6" />}
+              variant="light"
+            />
+
+            {/* Regulamin - przeniesiony do osobnej sekcji */}
+            <FadeIn
+              {...FADE_IN_PROPS}
+              delay={0.2}
+              className="relative overflow-hidden rounded-2xl border-2 border-gold-400/40 bg-gradient-to-br from-accent/25 via-accent/20 to-earth-700/30 p-6 backdrop-blur-sm shadow-[0_0_50px_rgba(251,191,36,0.3)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14"
+            >
+              {/* Enhanced gold accent glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-gold-400/8 via-transparent to-gold-500/8 rounded-2xl" />
+              <div className="absolute left-0 top-1/4 h-24 w-24 rounded-full bg-gold-400/15 blur-2xl" />
+              <div className="absolute right-0 bottom-1/4 h-32 w-32 rounded-full bg-gold-500/15 blur-2xl" />
+              
+              <div className="relative space-y-4 text-base leading-relaxed text-cream/95 sm:space-y-6 sm:text-lg">
+                <div className="mb-4">
+                  <p className="text-xl font-black text-gold-300 sm:text-2xl">
+                    Regulamin Zdobycia Odznaki
+                  </p>
+                  <p className="mt-2 text-sm text-cream/70 sm:text-base">
+                    Wymagania, które musisz spełnić, aby zdobyć oficjalną odznakę
+                  </p>
+                </div>
+                <ul className="space-y-3 sm:space-y-4">
+                  <RegulationItem number={1}>
+                    Przejście całego szlaku{' '}
+                    <span className="font-bold text-gold-300">
+                      Sudety Grand Trail
+                    </span>{' '}
+                    zgodnie z oficjalną trasą, od Jarnołtówka do Ślęży.
+                  </RegulationItem>
+                  <RegulationItem number={2}>
+                    Zdobycie wszystkich{' '}
+                    <span className="font-bold text-gold-300">
+                      najwyższych szczytów każdego z 23 pasm górskich
+                    </span>{' '}
+                    znajdujących się na trasie.
+                  </RegulationItem>
+                  <RegulationItem number={3}>
+                    Po polskiej stronie – zdobycie wszystkich{' '}
+                    <span className="font-bold text-gold-300">
+                      16 sudeckich szczytów należących do Korony Gór Polski
+                    </span>
+                    .
+                  </RegulationItem>
+                  <RegulationItem number={4}>
+                    Dokumentacja przejścia w formie{' '}
+                    <span className="font-bold text-gold-300">
+                      zdjęć, relacji lub trackingu GPS
+                    </span>
+                    , potwierdzająca ukończenie szlaku.
+                  </RegulationItem>
+                  <RegulationItem number={5}>
+                    Zgłoszenie przejścia poprzez{' '}
+                    <span className="font-bold text-gold-300">
+                      oficjalny formularz
+                    </span>
+                    , wraz z udostępnieniem dokumentacji i relacji z
+                    przejścia.
+                  </RegulationItem>
+                </ul>
+              </div>
+            </FadeIn>
 
             {/* Call to Action - EPIC VERSION */}
             <FadeIn
               {...FADE_IN_PROPS}
-              delay={0.5}
+              delay={0.35}
               className="relative overflow-hidden rounded-2xl border-2 border-gold-400/50 bg-gradient-to-br from-gold-400/25 via-gold-500/20 to-gold-600/25 p-6 backdrop-blur-sm shadow-[0_0_80px_rgba(251,191,36,0.5)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14"
             >
               {/* Enhanced epic gold glow effects */}
@@ -271,8 +287,8 @@ export const BadgeSection = () => {
             </FadeIn>
           </div>
         </div>
-      </div>
-    </Section>
+      </Section>
+    </>
   );
 };
 

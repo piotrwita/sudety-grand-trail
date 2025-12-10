@@ -189,7 +189,7 @@ export const pageMetadata = {
   badge: generatePageMetadata({
     title: 'Oficjalna Odznaka - Sudety Grand Trail',
     description:
-      'Zdobyj oficjalną odznakę Sudety Grand Trail! Wyróżnienie dla wszystkich, którzy ukończyli pełne przejście 900 km przez 23 pasma górskie. Poznaj regulamin i dołącz do elitarnego grona zdobywców.',
+      'Zdobądź oficjalną odznakę Sudety Grand Trail! Wyróżnienie dla wszystkich, którzy ukończyli pełne przejście 900 km przez 23 pasma górskie. Poznaj regulamin i dołącz do elitarnego grona zdobywców.',
     path: siteRoutes.badge,
     keywords: [
       'odznaka',

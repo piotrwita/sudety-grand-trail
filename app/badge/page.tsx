@@ -24,7 +24,7 @@ export default function BadgePage() {
 
 const BadgeHeroSection = () => (
   <Section
-    className="theme-hero-bg theme-badge-hero pt-16"
+    className="theme-hero-bg theme-badge-hero pt-16 pb-28 sm:pb-32"
     ariaLabel="Sekcja główna - Odznaka"
   >
     {/* Epic Background Effects */}
@@ -42,9 +42,6 @@ const BadgeHeroSection = () => (
       <div className="absolute left-1/4 top-1/3 h-[500px] w-[500px] rounded-full bg-gold-400/8 blur-3xl animate-pulse" />
       <div className="absolute right-1/4 top-2/3 h-[500px] w-[500px] rounded-full bg-gold-500/8 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-300/6 blur-3xl" />
-      {/* Floating particles */}
-      <div className="absolute left-1/3 top-1/4 h-2 w-2 rounded-full bg-gold-400/40 blur-sm animate-ping" style={{ animationDelay: '0.5s' }} />
-      <div className="absolute right-1/3 bottom-1/4 h-3 w-3 rounded-full bg-gold-500/40 blur-sm animate-ping" style={{ animationDelay: '2s' }} />
     </div>
 
     {/* Radial glow effect - enhanced */}
@@ -103,11 +100,6 @@ const BadgeHeroSection = () => (
               </span>{' '}
               dla tych, którzy ukończyli pełne przejście szlaku.
             </p>
-            <p className="text-fluid-lg font-bold leading-relaxed text-gold-200/95">
-              <span className="font-black text-gold-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
-                900 kilometrów. 23 pasma górskie. Niezłomność. Duma.
-              </span>
-            </p>
             <p className="text-fluid-base font-medium leading-relaxed text-cream/90">
               <span className="text-lg italic text-gold-200/90 sm:text-xl">
                 To nie tylko odznaka.
@@ -131,14 +123,14 @@ const BadgeHeroSection = () => (
             className="theme-btn-base theme-badge-btn-primary px-10 py-4 text-lg font-black shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:shadow-[0_0_40px_rgba(251,191,36,0.7)]"
             aria-label="Zgłoś Swoje Przejście"
           >
-            Zgłoś Przejście i Zdobądź Odznakę
+            Zgłoś Przejście
           </Link>
           <Link
             href={siteRoutes.hallOfFame}
             className="theme-btn-base theme-badge-btn-secondary px-10 py-4 text-lg font-bold"
             aria-label="Zobacz Zdobywców"
           >
-            Zobacz Hall of Fame
+            Hall of Fame
           </Link>
         </FadeIn>
       </FadeIn>

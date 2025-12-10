@@ -28,7 +28,7 @@ export default function HallOfFamePage() {
 
 const HallOfFameHeroSection = () => (
   <Section
-    className="theme-hero-bg theme-halloffame-hero pt-16"
+    className="theme-hero-bg theme-halloffame-hero pt-16 pb-28 sm:pb-32"
     ariaLabel="Sekcja główna - Hall of Fame"
   >
     {/* Epic Background Effects */}
@@ -117,9 +117,9 @@ const HallOfFameHeroSection = () => (
           <Link
             href={getSectionHash(sectionIds.submission)}
             className="theme-btn-base theme-halloffame-btn-primary w-full px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
-            aria-label="Zgłoś Swoje Przejście"
+            aria-label="Zgłoś Przejście"
           >
-            Zgłoś Swoje Przejście
+            Zgłoś Przejście
           </Link>
           <Link
             href={getSectionHash(sectionIds.hallOfFame)}
