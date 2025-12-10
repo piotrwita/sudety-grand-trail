@@ -1,67 +1,36 @@
-'use client';
-
-import { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { ClockIcon, FlagIcon, LocationIcon } from '../icons';
 import Link from 'next/link';
+import { ClockIcon, FlagIcon, LocationIcon } from '@/components/icons';
+import { InteractiveIframe } from '@/components/InteractiveIframe';
+import { FadeIn, ScaleIn } from '@/components/motion';
+import { Section } from './Section';
 
 export const LiveTrackingSection = () => {
-  const [isMapInteractive, setIsMapInteractive] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const mapContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    let scrollTimer: NodeJS.Timeout | null = null;
-
-    const handleScroll = () => {
-      setIsScrolling(true);
-      setIsMapInteractive(false);
-
-      if (scrollTimer) {
-        clearTimeout(scrollTimer);
-      }
-
-      scrollTimer = setTimeout(() => {
-        setIsScrolling(false);
-      }, 150);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('wheel', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('wheel', handleScroll);
-      if (scrollTimer) {
-        clearTimeout(scrollTimer);
-      }
-    };
-  }, []);
-
-  const handleMapClick = () => {
-    setIsMapInteractive(true);
-  };
-
   return (
-    <section className="section-padding relative overflow-hidden bg-cream">
+    <Section
+      className="bg-cream pt-20"
+      ariaLabel="Live Tracking - Sudety Grand Trail"
+    >
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-cream via-forest-50 to-cream" />
       <div className="absolute inset-0 bg-[url('/images/vintage-mountains.svg')] bg-cover bg-center opacity-10" />
 
       <div className="fluid-container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.8 }}
+        <FadeIn
+          inView
+          inViewMargin="-100px"
+          offset={50}
+          direction="up"
+          transition={{ duration: 0.8, delay: 0 }}
           className="mb-16 text-center"
         >
           {/* Live Badge */}
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
+          <ScaleIn
+            inView
+            inViewMargin="0px"
+            initialScale={0}
+            finalScale={1}
+            initialOpacity={1}
+            finalOpacity={1}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-8 inline-flex items-center space-x-3 rounded-full border-2 border-orange-400 bg-orange-500/20 px-6 py-3 backdrop-blur-sm"
           >
@@ -69,24 +38,26 @@ export const LiveTrackingSection = () => {
             <span className="text-sm font-bold uppercase tracking-wide text-orange-600">
               ŚLEDŹ NA ŻYWO
             </span>
-          </motion.div>
+          </ScaleIn>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <FadeIn
+            inView
+            inViewMargin="0px"
+            offset={30}
+            direction="up"
             transition={{ duration: 0.8, delay: 0.3 }}
             className="section-title mb-6 text-forest-800"
           >
             Live <span className="theme-live-text-gradient">Tracking</span>
-          </motion.h2>
+          </FadeIn>
 
           <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <FadeIn
+            inView
+            inViewMargin="0px"
+            offset={30}
+            direction="up"
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mx-auto max-w-5xl text-xl font-medium leading-relaxed text-mountain-600"
           >
@@ -95,136 +66,120 @@ export const LiveTrackingSection = () => {
               href="https://poltrax.live/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-orange-500 transition-colors hover:text-orange-600 underline decoration-2 underline-offset-2"
+              className="font-bold text-orange-500 underline decoration-2 underline-offset-2 transition-colors hover:text-orange-600"
             >
               Poltrax
             </Link>{' '}
             możecie śledzić swoją wyprawę w czasie rzeczywistym.
             <br />
-            Mapa pokazuje aktualną pozycję, przebytą trasę, limit czasowy oraz orientacyjne punkty noclegów.
-          </motion.p>
-        </motion.div>
+            Mapa pokazuje aktualną pozycję, przebytą trasę, limit czasowy oraz
+            orientacyjne punkty noclegów.
+          </FadeIn>
+        </FadeIn>
 
         {/* Live Map Container */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: '-50px' }}
+        <ScaleIn
+          inView
+          inViewMargin="-50px"
+          initialScale={0.95}
+          finalScale={1}
+          initialOpacity={0}
+          finalOpacity={1}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="relative"
         >
-          <div
-            ref={mapContainerRef}
-            className="card-vintage relative overflow-hidden"
-          >
-            <div className="aspect-video relative">
-              <iframe
-                src="https://poltrax.live/sgt"
-                width="100%"
-                height="100%"
-                style={{
-                  border: 'none',
-                  pointerEvents: isMapInteractive && !isScrolling ? 'auto' : 'none',
-                }}
-                allowFullScreen
-                loading="lazy"
-                className="h-full w-full"
-                title="Sudety Grand Trail - Live Tracking"
-                frameBorder="0"
-              />
-              {/* Overlay that blocks interaction during scroll */}
-              {(!isMapInteractive || isScrolling) && (
-                <div
-                  onClick={handleMapClick}
-                  className="absolute inset-0 z-10 cursor-pointer bg-transparent transition-opacity duration-200"
-                  aria-label="Kliknij na mapę, aby ją przesunąć"
-                />
-              )}
-            </div>
-          </div>
+          <InteractiveIframe
+            src="https://poltrax.live/sgt"
+            className="card-vintage"
+            title="Sudety Grand Trail - Live Tracking"
+            frameBorder="0"
+          />
 
           {/* Quick Info Cards */}
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            <FadeIn
+              inView
+              inViewMargin="0px"
+              offset={30}
+              direction="up"
               transition={{ duration: 0.6, delay: 0.7 }}
               className="group relative overflow-hidden rounded-2xl border-2 border-orange-200/60 bg-gradient-to-br from-white via-orange-50/30 to-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/80 hover:shadow-xl"
             >
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-orange-600/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              
+
               {/* Icon container with enhanced styling */}
               <div className="relative mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100/80 transition-all duration-300 group-hover:scale-110">
                 <LocationIcon className="size-6 text-orange-600" />
               </div>
-              
+
               <h3 className="relative mb-1.5 text-lg font-bold text-orange-800">
                 Aktualna Pozycja
               </h3>
               <p className="relative text-sm leading-relaxed text-mountain-600">
                 Lokalizacja w czasie rzeczywistym
               </p>
-              
+
               {/* Decorative bottom border */}
               <div className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 bg-gradient-to-r from-orange-500 to-orange-600 transition-transform duration-300 group-hover:scale-x-100" />
-            </motion.div>
+            </FadeIn>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            <FadeIn
+              inView
+              inViewMargin="0px"
+              offset={30}
+              direction="up"
               transition={{ duration: 0.6, delay: 0.8 }}
               className="group relative overflow-hidden rounded-2xl border-2 border-orange-200/60 bg-gradient-to-br from-white via-orange-50/30 to-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/80 hover:shadow-xl"
             >
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-orange-600/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              
+
               {/* Icon container with enhanced styling */}
               <div className="relative mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100/80 transition-all duration-300 group-hover:scale-110">
                 <ClockIcon className="size-6 text-orange-600" />
               </div>
-              
+
               <h3 className="relative mb-1.5 text-lg font-bold text-orange-800">
                 Limit Czasowy
               </h3>
               <p className="relative text-sm leading-relaxed text-mountain-600">
                 Wyścig z czasem przez Sudety
               </p>
-              
+
               {/* Decorative bottom border */}
               <div className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 bg-gradient-to-r from-orange-500 to-orange-600 transition-transform duration-300 group-hover:scale-x-100" />
-            </motion.div>
+            </FadeIn>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            <FadeIn
+              inView
+              inViewMargin="0px"
+              offset={30}
+              direction="up"
               transition={{ duration: 0.6, delay: 0.9 }}
               className="group relative overflow-hidden rounded-2xl border-2 border-orange-200/60 bg-gradient-to-br from-white via-orange-50/30 to-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/80 hover:shadow-xl"
             >
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-orange-600/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              
+
               {/* Icon container with enhanced styling */}
               <div className="relative mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100/80 transition-all duration-300 group-hover:scale-110">
                 <FlagIcon className="size-6 text-orange-600" />
               </div>
-              
+
               <h3 className="relative mb-1.5 text-lg font-bold text-orange-800">
                 Punkty Etapów
               </h3>
               <p className="relative text-sm leading-relaxed text-mountain-600">
                 Planowane miejsca noclegów
               </p>
-              
+
               {/* Decorative bottom border */}
               <div className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 bg-gradient-to-r from-orange-500 to-orange-600 transition-transform duration-300 group-hover:scale-x-100" />
-            </motion.div>
+            </FadeIn>
           </div>
-        </motion.div>
+        </ScaleIn>
       </div>
-    </section>
+    </Section>
   );
 };
