@@ -9,16 +9,16 @@ import { ScrollIndicator } from '@/components/ScrollIndicator';
 
 export const metadata: Metadata = pageMetadata.korona;
 
-export default function SzczytyPage() {
+export default function MountainsPage() {
   return (
     <>
-      <SzczytyHeroSection />
+      <MountainsHeroSection />
       <SudetenCrownSection />
     </>
   );
 }
 
-const SzczytyHeroSection = () => (
+const MountainsHeroSection = () => (
   <Section
     className="theme-hero-bg theme-szczyty-hero pt-16"
     ariaLabel="Sekcja główna - Wykaz szczytów"
@@ -103,3 +103,4 @@ const SzczytyHeroSection = () => (
     <ScrollIndicator />
   </Section>
 );
+

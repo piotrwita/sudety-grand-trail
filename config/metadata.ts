@@ -142,7 +142,7 @@ export const pageMetadata = {
   }),
 
   korona: generatePageMetadata({
-    title: 'Korona Sudetów - Sudety Grand Trail',
+    title: 'Szczyty - Sudety Grand Trail',
     description:
       'Korona Sudetów to 23 najwyższych szczytów w 23 pasmach górskich Sudetów. Poznaj historię, zasady zdobywania i wszystkie szczyty wchodzące w skład Korony Sudetów.',
     path: siteRoutes.korona,
@@ -156,7 +156,7 @@ export const pageMetadata = {
   }),
 
   live: generatePageMetadata({
-    title: 'Live Tracking - Śledź Wyprawę na Żywo | Sudety Grand Trail',
+    title: 'Live Tracking - Śledź Wyprawę na Żywo',
     description:
       'Śledź na żywo przejście Sudety Grand Trail! Real-time GPS tracking, aktualna pozycja, przebyta trasa i statystyki. Zobacz, jak przebiega zdobywanie Korony Sudetów w czasie rzeczywistym.',
     path: siteRoutes.live,

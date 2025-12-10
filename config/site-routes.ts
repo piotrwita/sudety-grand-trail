@@ -5,7 +5,7 @@
 export const siteRoutes = {
   home: '/',
   trail: '/trail',
-  korona: '/szczyty',
+  korona: '/mountains',
   live: '/live',
   hallOfFame: '/hall-of-fame',
   badge: '/badge',

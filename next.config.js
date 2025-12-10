@@ -17,6 +17,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/szczyty',
+        destination: '/mountains',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
