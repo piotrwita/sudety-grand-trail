@@ -1,9 +1,9 @@
 import { FadeIn } from '@/components/motion';
-import { Section } from './Section';
+import { Section } from '@/components/sections/Section';
 import { sectionIds } from '@/config/section-ids';
 import { CheckIcon } from '@/components/icons';
 import { sendTrackerRequestEmail } from '@/actions/send-email';
-import { TrackerRequestForm } from './ModernTrackerSection/TrackerRequestForm';
+import { TrackerRequestForm } from './TrackerRequestForm';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -12,7 +12,7 @@ export const ModernTrackerSection = () => {
     <Section
       id={sectionIds.trackerForm}
       ariaLabel="Zgłoś Próbę Przejścia - Tracker GPS"
-      className="section-padding relative bg-gradient-to-br from-slate-50 via-white to-slate-100"
+      className="bg-gradient-to-br from-slate-50 via-white to-slate-100"
     >
       <div className="fluid-container">
         {/* Header */}

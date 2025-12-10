@@ -1,12 +1,17 @@
 'use server';
 
 import nodemailer from 'nodemailer';
-import {
-  emailSubmissionSchema,
+import { emailSubmissionSchema } from '@/schemas/submission';
+import { trackerRequestSchema } from '@/schemas/tracker';
+import type {
   EmailSubmissionData,
   EmailAttachment,
 } from '@/schemas/submission';
-import { formatSubmissionEmail } from '@/lib/email-templates';
+import type { TrackerRequestData } from '@/schemas/tracker';
+import {
+  formatSubmissionEmail,
+  formatTrackerRequestEmail,
+} from '@/lib/email-templates';
 
 /* ============================================================================
    TYPES
@@ -19,7 +24,7 @@ export interface ActionResult {
 
 // Re-export types for backward compatibility
 // Note: Constants cannot be re-exported from 'use server' files
-export type { EmailSubmissionData, EmailAttachment };
+export type { EmailSubmissionData, EmailAttachment, TrackerRequestData };
 
 /* ============================================================================
    EMAIL CONFIGURATION
@@ -168,30 +173,22 @@ export const sendSubmissionEmail = async (
   }
 };
 
-export interface TrackerRequestData {
-  email: string;
-  startDate: string;
-  plannedDays: string;
-}
-
 export const sendTrackerRequestEmail = async (
-  data: TrackerRequestData
+  data: unknown
 ): Promise<ActionResult> => {
   try {
-    // Basic validation
-    if (!data.email || !data.email.includes('@')) {
+    // Validate input data
+    const validationResult = trackerRequestSchema.safeParse(data);
+
+    if (!validationResult.success) {
+      const firstError = validationResult.error.issues[0];
       return {
         success: false,
-        message: 'Proszę podać prawidłowy adres email.',
+        message: firstError?.message || 'Nieprawidłowe dane formularza.',
       };
     }
 
-    if (!data.startDate) {
-      return {
-        success: false,
-        message: 'Proszę podać planowaną datę startu.',
-      };
-    }
+    const validatedData = validationResult.data;
 
     const sender = process.env.GMAIL_USER || '';
 
@@ -224,35 +221,23 @@ export const sendTrackerRequestEmail = async (
       };
     }
 
-    const formattedDate = new Date(data.startDate).toLocaleDateString('pl-PL', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-
-    const htmlContent = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #1f2937;">Nowe zgłoszenie tracker GPS</h2>
-        <div style="background-color: #f9fafb; padding: 20px; border-radius: 8px; margin-top: 20px;">
-          <p><strong>Email:</strong> ${data.email}</p>
-          <p><strong>Planowana data startu:</strong> ${formattedDate}</p>
-          <p><strong>Planowana długość wyprawy:</strong> ${data.plannedDays}</p>
-        </div>
-      </div>
-    `;
-
     const mailOptions: nodemailer.SendMailOptions = {
       from: sender,
       to: recipient,
-      subject: `Zgłoszenie tracker GPS - ${data.email}`,
-      html: htmlContent,
+      subject: `Zgłoszenie tracker GPS - ${validatedData.email}`,
+      html: formatTrackerRequestEmail(validatedData),
     };
+
+    console.log('sender', sender);
+    console.log('recipient', recipient);
+    console.log('email', validatedData.email);
 
     await transporter.sendMail(mailOptions);
 
     return {
       success: true,
-      message: 'Zgłoszenie zostało wysłane pomyślnie. Skontaktujemy się z Tobą wkrótce!',
+      message:
+        'Zgłoszenie zostało wysłane pomyślnie. Skontaktujemy się z Tobą wkrótce!',
     };
   } catch (error) {
     console.error('Error sending tracker request email:', error);
