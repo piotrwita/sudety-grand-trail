@@ -16,6 +16,12 @@ const TrailDescription = () => {
     offset: ['start end', 'end start'],
   });
 
+  // Section-level progress so parallax ends with the text content
+  const { scrollYProgress: sectionProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end end'],
+  });
+
   // Transform scroll progress to image opacity
   // Image 1: visible at start - original image (visible longer)
   const image1Opacity = useTransform(
@@ -27,22 +33,24 @@ const TrailDescription = () => {
   // Image 2: visible in middle - first new image
   const image2Opacity = useTransform(
     scrollYProgress,
-    [0.4, 0.44, 0.48, 0.58],
+    [0.4, 0.48, 0.62, 0.72],
     [0, 1, 1, 0]
   );
   
   // Image 3: visible at end - second new image (starts slightly earlier)
   const image3Opacity = useTransform(
     scrollYProgress,
-    [0.48, 0.58, 1],
+    [0.62, 0.72, 1],
     [0, 1, 1]
   );
+  // Faster parallax slide for the sticky image column, ending with the section
+  const imageParallaxY = useTransform(sectionProgress, [0, 1], [0, 240]);
 
   return (
     <section ref={sectionRef} className="section-padding overflow-hidden bg-forest-50 relative">
       <VintageMountainsBackground className="opacity-10" />
       <div className="fluid-container relative z-10">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+        <div className="grid items-start gap-16 lg:grid-cols-2">
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -177,7 +185,8 @@ const TrailDescription = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative mt-8"
+            className="relative mt-8 lg:mt-0 lg:sticky lg:top-24 lg:self-start"
+            style={{ y: imageParallaxY }}
           >
             <div ref={imageContainerRef} className="card-vintage overflow-hidden min-h-[550px] relative">
               {/* Image 1 - First image */}
