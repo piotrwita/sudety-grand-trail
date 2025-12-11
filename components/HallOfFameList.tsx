@@ -14,71 +14,20 @@ const mockCompletions = [
   {
     id: 1,
     rank: 1,
-    name: 'Jan Kowalski',
-    nickname: 'Górski',
-    startDate: '2024-05-15',
-    endDate: '2024-06-30',
-    days: 45,
+    name: 'Piotr Witaszewski',
+    nickname: '',
+    startDate: '2025-06-07',
+    endDate: '2025-06-21',
+    days: 15,
     type: 'Solo',
     description:
-      'Najpiękniejsza przygoda mojego życia. Każdy dzień przynosił nowe wyzwania i niesamowite widoki.',
+      'Przejście całych Sudetów było intensywną i piękną przygodą. Każdy dzień oferował nowe wyzwania i krajobrazy, które trudno porównać z czymkolwiek innym.',
     photo: '/images/creator-photo.svg', // placeholder
     isFirstCompleter: true,
-    achievements: ['Pierwszy zdobywca', 'Najszybsze przejście', 'KGP Complete'],
+    achievements: ['Pierwszy zdobywca', 'Najszybsze przejście'],
     favoriteSection: 'Karkonosze - Śnieżka',
     hardestSection: 'Góry Sowie w deszczu',
-  },
-  {
-    id: 2,
-    rank: 2,
-    name: 'Anna Nowak',
-    nickname: 'Wędrowniczka',
-    startDate: '2024-06-01',
-    endDate: '2024-08-15',
-    days: 75,
-    type: 'Solo',
-    description:
-      'Szlak zmienił moje życie. Odkryłam w sobie siłę, o której nie wiedziałam.',
-    photo: '/images/creator-photo.svg',
-    isFirstCompleter: false,
-    achievements: ['Pierwsza kobieta', 'KGP Complete'],
-    favoriteSection: 'Masyw Śnieżnika',
-    hardestSection: 'Góry Stołowe - mgła',
-  },
-  {
-    id: 3,
-    rank: 3,
-    name: 'Piotr Górnik',
-    nickname: 'Sudecki',
-    startDate: '2024-07-10',
-    endDate: '2024-09-20',
-    days: 72,
-    type: 'Z psem',
-    description:
-      'Razem z moim psem Reksem pokonaliśmy wszystkie 24 pasma. Niezapomniane chwile!',
-    photo: '/images/creator-photo.svg',
-    isFirstCompleter: false,
-    achievements: ['Pierwszy z psem', 'KGP Complete'],
-    favoriteSection: 'Góry Izerskie',
-    hardestSection: 'Pradziad w burzy',
-  },
-  {
-    id: 4,
-    rank: 4,
-    name: 'Michał Szczyciński',
-    nickname: 'Ultralight',
-    startDate: '2024-08-01',
-    endDate: '2024-10-10',
-    days: 70,
-    type: 'Ultralight',
-    description:
-      'Minimalizm w górach - tylko 8kg plecak i maksimum doświadczeń.',
-    photo: '/images/creator-photo.svg',
-    isFirstCompleter: false,
-    achievements: ['Najlżejszy ekwipunek', 'KGP Complete'],
-    favoriteSection: 'Góry Złote',
-    hardestSection: 'Hanušovická vrchovina',
-  },
+  }
 ];
 
 export const HallOfFameList = () => {
@@ -130,7 +79,9 @@ export const HallOfFameList = () => {
           className="mb-16 text-center"
         >
           <p className="text-fluid-lg mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-mountain-600">
-            Ci odważni wędrowcy ukończyli pełny szlak Sudety Grand Trail. Każde
+            Wędrowcy, którzy ukończyli pełny szlak <span className="theme-halloffame-text-gradient font-bold">
+              SUDETY GRAND TRAIL
+            </span>.<br />Każde
             przejście to unikalna historia determinacji i pasji do gór.
           </p>
 
@@ -346,14 +297,15 @@ export const HallOfFameList = () => {
               Dołącz do Elitarnego Grona!
             </h3>
             <p className="mx-auto mb-8 max-w-3xl text-lg font-medium text-mountain-600">
-              Ukończyłeś Sudety Grand Trail? Zgłoś swoje przejście i zostań
+              Ukończyłeś Sudety Grand Trail? <br />
+              Zgłoś swoje przejście i zostań
               oficjalnym zdobywcą Korony Sudetów!
             </p>
             <a
               href={getSectionHash(sectionIds.submission)}
               className="theme-btn-base theme-halloffame-btn-primary px-10 py-4 text-lg"
             >
-              Zgłoś Swoje Przejście
+              Zgłoś Przejście
             </a>
           </div>
         </FadeIn>

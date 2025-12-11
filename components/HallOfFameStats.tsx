@@ -86,13 +86,11 @@ export const HallOfFameStats = () => {
           inView={true}
           className="mb-16 text-center"
         >
-          <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-mountain-600">
-            Odkąd szlak został oficjalnie wyznaczony, wędrowcy podejmują
-            wyzwanie{' '}
+          <p className="text-fluid-lg mx-auto max-w-6xl font-medium leading-relaxed text-mountain-600">
+            Odkąd szlak został oficjalnie wyznaczony, wędrowcy podejmują wyzwanie {' '}
             <span className="theme-halloffame-text-gradient font-bold">
               SUDETY GRAND TRAIL
-            </span>
-            <br />
+            </span>. <br />
             Poniżej ogólne statystyki wszystkich zdobywców.
           </p>
         </FadeIn>

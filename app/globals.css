@@ -274,7 +274,7 @@
      - HOME (/): Neutral/Basic - uses mountain/cream colors
      - HALL OF FAME (/hall-of-fame): Gold/Treasure - uses gold colors
      - TRAIL (/trail): Brown/Earth - uses earth colors
-     - SZCZYTY (/mountains): Green/Forest - uses forest colors
+     - SZCZYTY (/szczyty): Green/Forest - uses forest colors
      - LIVE (/live): Orange - uses orange colors
      ============================================ */
 
@@ -309,7 +309,7 @@
   }
 
   .theme-halloffame-text-gradient {
-    @apply from-gold-400 via-gold-500 bg-gradient-to-r to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-gold-500 via-gold-600 to-accent bg-clip-text text-transparent;
   }
 
   .theme-halloffame-btn-primary {
@@ -334,7 +334,7 @@
   }
 
   .theme-trail-text-gradient {
-    @apply bg-gradient-to-r from-forest-400 via-forest-500 to-forest-300 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-forest-400 via-forest-500 to-forest-600 bg-clip-text text-transparent;
   }
 
   .theme-trail-btn-primary {

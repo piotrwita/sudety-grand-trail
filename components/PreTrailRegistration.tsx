@@ -286,7 +286,9 @@ export const PreTrailRegistration = () => {
           className="mb-16 text-center"
         >
           <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-mountain-600">
-            Planujesz podbój Korony Sudetów? Najpierw zgłoś swoją próbę
+            Planujesz podbój {' '} <span className="theme-halloffame-text-gradient font-bold">
+              KORONY SUDETÓW
+            </span>? Najpierw zgłoś swoją próbę
             przejścia i otrzymaj darmowy tracker GPS do śledzenia postępów!
           </p>
         </FadeIn>
