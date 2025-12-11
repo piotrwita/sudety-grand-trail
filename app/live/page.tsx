@@ -23,7 +23,7 @@ export default function LivePage() {
 const LiveHeroSection = () => {
   return (
     <Section
-      className="theme-hero-bg theme-live-hero pt-16"
+      className="theme-hero-bg theme-live-hero pt-24 pb-16 sm:pt-32 sm:pb-24"
       ariaLabel="Sekcja główna - Śledź Wyprawę"
     >
       {/* Epic Background Effects */}
@@ -42,7 +42,7 @@ const LiveHeroSection = () => {
       <div className="theme-hero-glow theme-live-glow" />
 
       {/* Logo in background */}
-      <div className="absolute left-1/2 top-1/2 z-0 size-[400px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 lg:size-[500px] 2xl:size-[600px]">
+      <div className="absolute left-1/2 top-1/2 z-0 size-[300px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 sm:size-[400px] lg:size-[500px] 2xl:size-[600px]">
         <LogoImage fill preload />
       </div>
 
@@ -61,10 +61,10 @@ const LiveHeroSection = () => {
             duration={0.6}
             delay={0.4}
             inView={false}
-            className="mb-8 inline-flex items-center space-x-3 rounded-full border-2 border-orange-400 bg-orange-500/20 px-8 py-4 backdrop-blur-sm"
+            className="mb-6 inline-flex items-center space-x-2 rounded-full border-2 border-orange-400 bg-orange-500/20 px-6 py-3 backdrop-blur-sm sm:mb-8 sm:space-x-3 sm:px-8 sm:py-4"
           >
-            <div className="h-4 w-4 animate-pulse rounded-full bg-orange-500" />
-            <span className="text-lg font-bold uppercase tracking-wide text-cream">
+            <div className="h-3 w-3 animate-pulse rounded-full bg-orange-500 sm:h-4 sm:w-4" />
+            <span className="text-base font-bold uppercase tracking-wide text-cream sm:text-lg">
               LIVE TRACKING
             </span>
           </ScaleIn>
@@ -76,7 +76,7 @@ const LiveHeroSection = () => {
             delay={0.6}
             inView={false}
           >
-            <h1 className="hero-title mb-6 leading-tight text-cream">
+            <h1 className="hero-title mb-4 leading-tight text-cream sm:mb-6">
               Śledź <span className="theme-live-text-gradient">Wyprawę</span>
             </h1>
           </FadeIn>
@@ -88,7 +88,7 @@ const LiveHeroSection = () => {
             delay={0.8}
             inView={false}
           >
-            <p className="text-fluid-base lg:text-fluid-lg mx-auto mb-8 max-w-3xl font-medium leading-relaxed text-cream/85">
+            <p className="text-fluid-base lg:text-fluid-lg mx-auto mb-6 max-w-3xl font-medium leading-relaxed text-cream/85 sm:mb-8">
               <span className="italic text-cream/60">
                 Na żywo pokażesz innym, gdzie obecnie jesteś i jak przebiega
                 Twoja własna przygoda.
@@ -102,7 +102,7 @@ const LiveHeroSection = () => {
             duration={0.8}
             delay={1.0}
             inView={false}
-            className="flex flex-wrap items-center justify-center gap-8 text-center"
+            className="flex flex-wrap items-center justify-center gap-6 text-center sm:gap-8"
           >
             <Stats value="900" label="Kilometrów" ariaLabel="900 Kilometrów" />
             <StatsSeparator />

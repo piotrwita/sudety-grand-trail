@@ -25,3 +25,5 @@ export { PhotoIcon } from './PhotoIcon';
 export { DocumentTextIcon } from './DocumentTextIcon';
 export { PencilIcon } from './PencilIcon';
 export { PhotoStackIcon } from './PhotoStackIcon';
+export { TrophyIcon } from './TrophyIcon';
+export { BadgeSealCheckIcon } from './BadgeSealCheckIcon';
