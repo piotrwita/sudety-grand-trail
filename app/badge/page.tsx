@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { sectionIds } from '@/config/section-ids';
 import { getSectionUrl } from '@/lib/section-navigation';
 import { siteRoutes } from '@/config/site-routes';
+import { BadgeSealCheckIcon } from '@/components/icons';
 
 export const metadata: Metadata = pageMetadata.badge;
 
@@ -24,7 +25,7 @@ export default function BadgePage() {
 
 const BadgeHeroSection = () => (
   <Section
-    className="theme-hero-bg theme-badge-hero pt-16 pb-28 sm:pb-32"
+    className="theme-hero-bg theme-badge-hero pb-16 pt-24 sm:pb-24 sm:pt-32"
     ariaLabel="Sekcja główna - Odznaka"
   >
     {/* Epic Background Effects */}
@@ -37,18 +38,21 @@ const BadgeHeroSection = () => (
       <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-gold-400/10 to-transparent" />
       <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-gold-400/10 to-transparent" />
       {/* Enhanced bottom glow - more intense */}
-      <div className="absolute bottom-0 left-0 right-0 h-[80%] bg-gradient-radial theme-badge-glow blur-[120px]" />
+      <div className="theme-badge-glow absolute bottom-0 left-0 right-0 h-[80%] bg-gradient-radial blur-[120px]" />
       {/* Additional radial glows for epic effect with animation */}
-      <div className="absolute left-1/4 top-1/3 h-[500px] w-[500px] rounded-full bg-gold-400/8 blur-3xl animate-pulse" />
-      <div className="absolute right-1/4 top-2/3 h-[500px] w-[500px] rounded-full bg-gold-500/8 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-300/6 blur-3xl" />
+      <div className="bg-gold-400/8 absolute left-1/4 top-1/3 h-[500px] w-[500px] animate-pulse rounded-full blur-3xl" />
+      <div
+        className="bg-gold-500/8 absolute right-1/4 top-2/3 h-[500px] w-[500px] animate-pulse rounded-full blur-3xl"
+        style={{ animationDelay: '1s' }}
+      />
+      <div className="bg-gold-300/6 absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" />
     </div>
 
     {/* Radial glow effect - enhanced */}
     <div className="theme-hero-glow theme-badge-glow" />
 
     {/* Logo in background */}
-    <div className="absolute left-1/2 top-1/2 z-0 size-[400px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 lg:size-[500px] 2xl:size-[600px]">
+    <div className="absolute left-1/2 top-1/2 z-0 size-[300px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 sm:size-[400px] lg:size-[500px] 2xl:size-[600px]">
       <LogoImage fill preload />
     </div>
 
@@ -59,22 +63,9 @@ const BadgeHeroSection = () => (
           initialScale={0.5}
           duration={0.6}
           delay={0.2}
-          className="theme-badge-base theme-badge-badge mb-8"
+          className="theme-badge-base theme-badge-badge mb-6 sm:mb-8"
         >
-          <svg
-            className="h-14 w-14 text-forest-900/80"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2.5}
-            viewBox="0 0 24 24"
-            aria-label="Odznaka"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-            />
-          </svg>
+          <BadgeSealCheckIcon className="h-10 w-10 text-forest-900/80 sm:h-12 sm:w-12 md:h-14 md:w-14" />
         </ScaleIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.4}>
@@ -88,9 +79,18 @@ const BadgeHeroSection = () => (
           </h1>
         </FadeIn>
 
-        <FadeIn direction="up" offset={30} duration={0.8} delay={0.5}>
-          <div className="mx-auto my-4 h-1.5 w-48 bg-gradient-to-r from-transparent via-gold-400/70 to-transparent shadow-[0_0_15px_rgba(251,191,36,0.6)]" />
-        </FadeIn>
+        <ScaleIn
+          duration={0.6}
+          delay={0.5}
+          initialScale={0}
+          finalScale={1}
+          initialOpacity={0}
+          finalOpacity={1}
+          className="mx-auto my-4 h-0.5 w-24 bg-gradient-to-r from-transparent via-gold-400/70 to-transparent shadow-[0_0_15px_rgba(251,191,36,0.6)] sm:w-32 lg:my-6"
+          style={{ transformOrigin: 'center' }}
+        >
+          <div />
+        </ScaleIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
           <div className="mx-auto max-w-5xl space-y-3">
@@ -104,7 +104,7 @@ const BadgeHeroSection = () => (
               <span className="text-lg italic text-gold-200/90 sm:text-xl">
                 To nie tylko odznaka.
               </span>{' '}
-              <span className="text-xl font-bold text-gold-300 sm:text-2xl drop-shadow-[0_0_12px_rgba(251,191,36,0.5)]">
+              <span className="text-xl font-bold text-gold-300 drop-shadow-[0_0_12px_rgba(251,191,36,0.5)] sm:text-2xl">
                 To symbol pokonania własnych granic.
               </span>
             </p>
@@ -116,18 +116,18 @@ const BadgeHeroSection = () => (
           offset={30}
           duration={0.8}
           delay={0.8}
-          className="mt-8 flex flex-col items-center justify-center gap-6 sm:mt-10 sm:flex-row"
+          className="mt-6 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row sm:gap-6"
         >
           <Link
             href={getSectionUrl(siteRoutes.hallOfFame, sectionIds.submission)}
-            className="theme-btn-base theme-badge-btn-primary px-10 py-4 text-lg font-black shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:shadow-[0_0_40px_rgba(251,191,36,0.7)]"
+            className="theme-btn-base theme-badge-btn-primary w-full px-6 py-3 text-sm font-black shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:shadow-[0_0_40px_rgba(251,191,36,0.7)] sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
             aria-label="Zgłoś Swoje Przejście"
           >
             Zgłoś Przejście
           </Link>
           <Link
             href={siteRoutes.hallOfFame}
-            className="theme-btn-base theme-badge-btn-secondary px-10 py-4 text-lg font-bold"
+            className="theme-btn-base theme-badge-btn-secondary w-full px-6 py-3 text-sm font-bold sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
             aria-label="Zobacz Zdobywców"
           >
             Hall of Fame

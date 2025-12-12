@@ -23,7 +23,7 @@ export default function TrailPage() {
 
 const TrailHeroSection = () => (
   <Section
-    className="theme-hero-bg theme-trail-hero pt-16"
+    className="theme-hero-bg theme-trail-hero pt-24 pb-16 sm:pt-32 sm:pb-24"
     ariaLabel="Sekcja główna - Poznaj Trasę"
   >
     {/* Epic Background Effects */}
@@ -42,7 +42,7 @@ const TrailHeroSection = () => (
     <div className="theme-hero-glow theme-trail-glow" />
 
     {/* Logo in background */}
-    <div className="absolute left-1/2 top-1/2 z-0 size-[400px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 lg:size-[500px] 2xl:size-[600px]">
+    <div className="absolute left-1/2 top-1/2 z-0 size-[300px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 sm:size-[400px] lg:size-[500px] 2xl:size-[600px]">
       <LogoImage fill priority />
     </div>
 
@@ -52,26 +52,26 @@ const TrailHeroSection = () => (
           initialScale={0.5}
           duration={0.6}
           delay={0.2}
-          className="theme-badge-base theme-trail-badge mb-8"
+          className="theme-badge-base theme-trail-badge mb-6 sm:mb-8"
         >
-          <MapIcon className="h-14 w-14 text-forest-900/80" />
+          <MapIcon className="h-10 w-10 text-forest-900/80 sm:h-12 sm:w-12 md:h-14 md:w-14" />
         </ScaleIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.4}>
-          <h1 className="hero-title mb-6 text-cream">
+          <h1 className="hero-title mb-4 text-cream sm:mb-6">
             <span className="theme-trail-text-gradient">Poznaj Mapę</span>
-            <span className="text-fluid-lg mt-6 block font-display font-bold uppercase tracking-wider text-forest-400 drop-shadow-lg">
+            <span className="text-fluid-lg mt-4 block font-display font-bold uppercase tracking-wider text-forest-400 drop-shadow-lg sm:mt-6">
               Trasa Sudety Grand Trail
             </span>
           </h1>
         </FadeIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.5}>
-          <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent" />
+          <div className="mx-auto my-4 h-0.5 w-24 bg-gradient-to-r from-transparent via-cream/40 to-transparent sm:w-32 sm:my-6" />
         </FadeIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
-          <div className="mx-auto w-full space-y-4 text-center">
+          <div className="mx-auto w-full space-y-3 text-center sm:space-y-4">
             <p className="text-fluid-xl font-bold leading-relaxed text-cream/95 whitespace-nowrap">
               Kompletne oblicze <span className="theme-trail-text-gradient">SUDETÓW</span> ułożone w jeden ambitny szlak.
             </p>

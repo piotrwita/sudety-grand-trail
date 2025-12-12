@@ -11,6 +11,7 @@ import { ScrollIndicator } from '@/components/ScrollIndicator';
 import Link from 'next/link';
 import { sectionIds } from '@/config/section-ids';
 import { getSectionHash } from '@/lib/section-navigation';
+import { TrophyIcon } from '@/components/icons';
 
 export const metadata: Metadata = pageMetadata.hallOfFame;
 
@@ -28,7 +29,7 @@ export default function HallOfFamePage() {
 
 const HallOfFameHeroSection = () => (
   <Section
-    className="theme-hero-bg theme-halloffame-hero pt-16 pb-28 sm:pb-32"
+    className="theme-hero-bg theme-halloffame-hero pb-16 pt-24 sm:pb-24 sm:pt-32"
     ariaLabel="Sekcja główna - Hall of Fame"
   >
     {/* Epic Background Effects */}
@@ -48,7 +49,7 @@ const HallOfFameHeroSection = () => (
     <div className="theme-hero-glow theme-halloffame-glow" />
 
     {/* Logo in background */}
-    <div className="absolute left-1/2 top-1/2 z-0 size-[400px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 lg:size-[500px] 2xl:size-[600px]">
+    <div className="absolute left-1/2 top-1/2 z-0 size-[300px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 sm:size-[400px] lg:size-[500px] 2xl:size-[600px]">
       <LogoImage fill preload />
     </div>
 
@@ -59,22 +60,15 @@ const HallOfFameHeroSection = () => (
           initialScale={0.5}
           duration={0.6}
           delay={0.2}
-          className="theme-badge-base theme-halloffame-badge mb-8"
+          className="theme-badge-base theme-halloffame-badge mb-6 sm:mb-8"
         >
-          <svg
-            className="h-14 w-14 text-forest-900/80"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            aria-label="Puchar"
-          >
-            <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z" />
-          </svg>
+          <TrophyIcon className="h-10 w-10 text-forest-900/80 sm:h-12 sm:w-12 md:h-14 md:w-14" />
         </ScaleIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.4}>
-          <h1 className="hero-title mb-6 text-cream">
+          <h1 className="hero-title mb-4 text-cream sm:mb-6">
             <span className="theme-halloffame-text-gradient">Hall of Fame</span>
-            <span className="text-fluid-lg mt-6 block font-display font-bold uppercase tracking-wider text-gold-400 drop-shadow-lg">
+            <span className="text-fluid-lg mt-4 block font-display font-bold uppercase tracking-wider text-gold-400 drop-shadow-lg sm:mt-6">
               Oficjalne Przejścia Sudety Grand Trail
             </span>
           </h1>
@@ -87,21 +81,21 @@ const HallOfFameHeroSection = () => (
           finalScale={1}
           initialOpacity={0}
           finalOpacity={1}
-          className="mx-auto my-4 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent lg:my-6"
+          className="mx-auto my-4 h-0.5 w-24 bg-gradient-to-r from-transparent via-cream/40 to-transparent sm:w-32 lg:my-6"
           style={{ transformOrigin: 'center' }}
         >
           <div />
         </ScaleIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
-          <p className="text-fluid-xl mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-cream/90">
+          <p className="text-fluid-xl mx-auto mb-6 max-w-4xl font-medium leading-relaxed text-cream/90 sm:mb-8">
             Niezłomni wędrowcy zdobyli pełną{' '}
             <span className="theme-halloffame-text-gradient font-bold">
               Koronę Sudetów
             </span>
             . Przeszli 900 kilometrów przez 23 pasma górskie.
             <br />
-            <span className="mt-4 block italic text-cream/90">
+            <span className="mt-3 block italic text-cream/90 sm:mt-4">
               Ty możesz dołączyć do elitarnego grona zdobywców!
             </span>
           </p>

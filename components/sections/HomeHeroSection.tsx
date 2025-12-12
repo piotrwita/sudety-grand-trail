@@ -34,7 +34,7 @@ export const HomeHeroSection = () => {
     <Section
       ref={ref}
       ariaLabel="Sekcja główna - Sudety Grand Trail"
-      className="pt-16"
+      className="pt-24 pb-16 sm:pt-32 sm:pb-24"
     >
       {/* Parallax Background Image */}
       <motion.div
@@ -50,7 +50,7 @@ export const HomeHeroSection = () => {
         className="z-5 absolute inset-0 will-change-transform"
         style={{ scale: logoScale, opacity: logoOpacity }}
       >
-        <div className="absolute left-1/2 top-1/2 size-[500px] -translate-x-1/2 -translate-y-1/2 transform lg:size-[600px] 2xl:size-[800px]">
+        <div className="absolute left-1/2 top-1/2 size-[300px] -translate-x-1/2 -translate-y-1/2 transform sm:size-[400px] md:size-[500px] lg:size-[600px] 2xl:size-[800px]">
           <LogoImage
             fill
             sizes="(min-width: 1536px) 800px, (min-width: 1024px) 600px, 100vw"

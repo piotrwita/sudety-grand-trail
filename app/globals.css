@@ -438,7 +438,7 @@
   }
 
   .theme-badge-base {
-    @apply inline-flex size-28 items-center justify-center rounded-full border-4;
+    @apply inline-flex size-20 sm:size-24 md:size-28 items-center justify-center rounded-full border-4;
   }
 
   .theme-btn-base {

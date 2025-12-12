@@ -20,7 +20,7 @@ export default function MountainsPage() {
 
 const MountainsHeroSection = () => (
   <Section
-    className="theme-hero-bg theme-szczyty-hero pt-16"
+    className="theme-hero-bg theme-szczyty-hero pt-24 pb-16 sm:pt-32 sm:pb-24"
     ariaLabel="Sekcja główna - Wykaz szczytów"
   >
     {/* Epic Background Effects */}
@@ -39,7 +39,7 @@ const MountainsHeroSection = () => (
     <div className="theme-hero-glow theme-szczyty-glow" />
 
     {/* Logo in background */}
-    <div className="absolute left-1/2 top-1/2 z-0 size-[400px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 lg:size-[500px] 2xl:size-[600px]">
+    <div className="absolute left-1/2 top-1/2 z-0 size-[300px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 sm:size-[400px] lg:size-[500px] 2xl:size-[600px]">
       <LogoImage fill preload />
     </div>
 
@@ -50,10 +50,10 @@ const MountainsHeroSection = () => (
           initialScale={0.5}
           duration={0.6}
           delay={0.2}
-          className="theme-badge-base theme-szczyty-badge mb-8"
+          className="theme-badge-base theme-szczyty-badge mb-6 sm:mb-8"
         >
           <svg
-            className="h-14 w-14 text-earth-900/80"
+            className="h-10 w-10 text-earth-900/80 sm:h-12 sm:w-12 md:h-14 md:w-14"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-label="Góra"
@@ -63,9 +63,9 @@ const MountainsHeroSection = () => (
         </ScaleIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.4}>
-          <h1 className="hero-title mb-6 text-cream">
+          <h1 className="hero-title mb-4 text-cream sm:mb-6">
             <span className="theme-szczyty-text-gradient">Wykaz szczytów</span>
-            <span className="text-fluid-lg mt-6 block font-display font-bold uppercase tracking-wider text-earth-400 drop-shadow-lg">
+            <span className="text-fluid-lg mt-4 block font-display font-bold uppercase tracking-wider text-earth-400 drop-shadow-lg sm:mt-6">
               Szczyty na szlaku Sudety Grand Trail
             </span>
           </h1>
@@ -78,14 +78,14 @@ const MountainsHeroSection = () => (
           finalScale={1}
           initialOpacity={0}
           finalOpacity={1}
-          className="mx-auto my-4 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent lg:my-6"
+          className="mx-auto my-4 h-0.5 w-24 bg-gradient-to-r from-transparent via-cream/40 to-transparent sm:w-32 lg:my-6"
           style={{ transformOrigin: 'center' }}
         >
           <div />
         </ScaleIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
-          <div className="mx-auto w-full space-y-4 text-center">
+          <div className="mx-auto w-full space-y-3 text-center sm:space-y-4">
             <p className="text-fluid-xl font-bold leading-relaxed text-cream/95 whitespace-nowrap">
               Wykaz najciekawszych szczytów na szlaku{' '}
               <span className="theme-szczyty-text-gradient">SUDETY GRAND TRAIL</span>.

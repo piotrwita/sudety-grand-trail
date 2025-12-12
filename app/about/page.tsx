@@ -18,7 +18,7 @@ export default function AboutPage() {
 
 const AboutHeroSection = () => (
   <Section
-    className="min-h-0 bg-gradient-to-br from-forest-800 via-forest-700 to-earth-800 py-24"
+    className="min-h-0 bg-gradient-to-br from-forest-800 via-forest-700 to-earth-800 pt-24 pb-16 sm:pt-32 sm:pb-24"
     ariaLabel="Sekcja główna - O Projekcie"
   >
     {/* Background Pattern */}
