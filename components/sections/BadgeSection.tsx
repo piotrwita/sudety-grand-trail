@@ -21,7 +21,7 @@ export const BadgeSection = () => {
     <>
       <Section
         ariaLabel="Odznaka Sudety Grand Trail"
-        className="relative items-start overflow-hidden bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700"
+        className="relative min-h-0 items-start overflow-hidden bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700"
       >
         <DecorativeBackground />
 
@@ -64,7 +64,10 @@ export const BadgeSection = () => {
                       <span className="text-xl font-black text-gold-300 sm:text-2xl drop-shadow-[0_0_8px_rgba(251,191,36,0.4)]">
                         SUDETY GRAND TRAIL
                       </span>
-                      . To nie jest zwykłe wyróżnienie – to{' '}
+                      .
+                    </p>
+                    <p className="text-lg leading-relaxed">
+                      To nie jest zwykłe wyróżnienie – to{' '}
                       <span className="font-bold text-cream">
                         symbol pokonania własnych granic
                       </span>
@@ -160,34 +163,48 @@ export const BadgeSection = () => {
                 </div>
                 <ul className="space-y-3 sm:space-y-4">
                   <RegulationItem number={1}>
+                    Zgłoszenie chęci przejścia szlaku poprzez{' '}
+                    <Link
+                      href={getSectionUrl(siteRoutes.live, sectionIds.trackerForm)}
+                      className="font-bold text-gold-300 underline decoration-gold-400/50 underline-offset-2 transition-colors hover:text-gold-200 hover:decoration-gold-300"
+                    >
+                      oficjalny formularz
+                    </Link>{' '}
+                    i pobranie{' '}
+                    <span className="font-bold text-gold-300">
+                      GPS trackera
+                    </span>{' '}
+                    do śledzenia trasy.
+                  </RegulationItem>
+                  <RegulationItem number={2}>
                     Przejście całego szlaku{' '}
                     <span className="font-bold text-gold-300">
                       Sudety Grand Trail
                     </span>{' '}
                     zgodnie z oficjalną trasą, od Jarnołtówka do Ślęży.
                   </RegulationItem>
-                  <RegulationItem number={2}>
+                  <RegulationItem number={3}>
                     Zdobycie wszystkich{' '}
                     <span className="font-bold text-gold-300">
                       najwyższych szczytów każdego z 23 pasm górskich
                     </span>{' '}
                     znajdujących się na trasie.
                   </RegulationItem>
-                  <RegulationItem number={3}>
-                    Po polskiej stronie – zdobycie wszystkich{' '}
+                  <RegulationItem number={4}>
+                    Po polskiej stronie zdobycie wszystkich{' '}
                     <span className="font-bold text-gold-300">
                       16 sudeckich szczytów należących do Korony Gór Polski
                     </span>
                     .
                   </RegulationItem>
-                  <RegulationItem number={4}>
+                  <RegulationItem number={5}>
                     Dokumentacja przejścia w formie{' '}
                     <span className="font-bold text-gold-300">
                       zdjęć, relacji lub trackingu GPS
                     </span>
                     , potwierdzająca ukończenie szlaku.
                   </RegulationItem>
-                  <RegulationItem number={5}>
+                  <RegulationItem number={6}>
                     Zgłoszenie przejścia poprzez{' '}
                     <span className="font-bold text-gold-300">
                       oficjalny formularz
@@ -212,12 +229,14 @@ export const BadgeSection = () => {
               <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-300/20 blur-2xl" />
               
               <div className="relative space-y-5 text-center sm:space-y-6 md:space-y-8">
-                <p className="text-xl font-black text-gold-300 sm:text-2xl drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
-                  Ukończyłeś Szlak?
-                </p>
-                <p className="text-lg font-bold text-cream/95 sm:text-xl">
-                  Zgłoś swoje przejście i zdobądź oficjalną odznakę!
-                </p>
+                <div className="space-y-2">
+                  <p className="text-xl font-black text-gold-300 sm:text-2xl drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
+                    Ukończyłeś Szlak?
+                  </p>
+                  <p className="text-lg font-bold text-cream/95 sm:text-xl">
+                    Zgłoś swoje przejście i zdobądź oficjalną odznakę!
+                  </p>
+                </div>
                 <p className="text-base text-cream/80 sm:text-lg">
                   Dołącz do elitarnego grona zdobywców i otrzymaj swoje
                   wyróżnienie
@@ -228,7 +247,7 @@ export const BadgeSection = () => {
                     external={false}
                     variant="primary"
                   >
-                    Zgłoś Przejście i Zdobądź Odznakę
+                    Zgłoś Przejście
                   </ActionButton>
                   <ActionButton
                     href={siteRoutes.hallOfFame}
@@ -280,11 +299,11 @@ const RegulationItem = ({
   number: number;
   children: ReactNode;
 }) => (
-  <li className="flex gap-3 sm:gap-4">
+  <li className="flex items-center gap-3 sm:gap-4">
     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-400/30 via-gold-500/30 to-gold-600/30 font-black text-gold-300 ring-2 ring-gold-400/40 shadow-[0_0_15px_rgba(251,191,36,0.3)] sm:h-12 sm:w-12">
       {number}
     </div>
-    <div className="flex-1 pt-1 text-cream/95">{children}</div>
+    <div className="flex-1 text-cream/95">{children}</div>
   </li>
 );
 
