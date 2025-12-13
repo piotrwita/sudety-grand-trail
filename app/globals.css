@@ -349,29 +349,41 @@
     @apply from-forest-400/10 via-forest-400/5 to-transparent;
   }
 
-  /* SZCZYTY THEME - Brown/Earth */
+  /* SZCZYTY THEME - Pure Earth tones */
   .theme-szczyty-hero {
     @apply bg-gradient-to-br from-earth-900 via-earth-800 to-earth-900;
+    background-image: 
+      radial-gradient(ellipse 100% 70% at 0% 100%, rgba(139, 107, 71, 0.20) 0%, transparent 55%),
+      radial-gradient(ellipse 90% 60% at 100% 0%, rgba(168, 130, 95, 0.18) 0%, transparent 50%),
+      radial-gradient(ellipse 120% 80% at 25% 25%, rgba(139, 90, 43, 0.28) 0%, transparent 50%),
+      radial-gradient(ellipse 100% 60% at 75% 75%, rgba(107, 68, 35, 0.32) 0%, transparent 50%),
+      linear-gradient(160deg, rgba(77, 50, 27, 1) 0%, rgba(85, 54, 29, 1) 100%);
   }
 
   .theme-szczyty-badge {
-    @apply shadow-brown-glow border-earth-500/30 bg-gradient-to-br from-earth-500 via-earth-600 to-earth-700;
+    @apply bg-gradient-to-br from-earth-400 via-earth-500 to-earth-700 ring-2 ring-earth-400/40 ring-offset-2 ring-offset-transparent;
+    box-shadow: 
+      0 0 50px rgba(168, 130, 95, 0.5),
+      0 0 100px rgba(107, 68, 35, 0.35),
+      inset 0 2px 4px rgba(255, 255, 255, 0.2);
   }
 
   .theme-szczyty-text-gradient {
-    @apply bg-gradient-to-r from-earth-400 via-earth-500 to-earth-600 bg-clip-text text-transparent;
+    @apply inline-block bg-gradient-to-r from-cream-200 via-earth-200 to-cream-300 bg-clip-text text-transparent px-1;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   .theme-szczyty-btn-primary {
-    @apply bg-earth-700 text-cream hover:bg-earth-600 focus:ring-earth-500/50;
+    @apply bg-gradient-to-r from-earth-500 to-earth-700 text-cream hover:from-earth-400 hover:to-earth-600 focus:ring-earth-500/50;
   }
 
   .theme-szczyty-btn-secondary {
-    @apply border-earth-500/60 text-earth-400 hover:bg-earth-500/20 focus:ring-earth-500/50;
+    @apply border-earth-400/60 text-earth-300 hover:bg-earth-500/20 focus:ring-earth-400/50;
   }
 
   .theme-szczyty-glow {
-    @apply from-earth-400/10 via-earth-400/5 to-transparent;
+    @apply from-earth-400/30 via-earth-500/15 to-transparent;
   }
 
   /* LIVE THEME - Orange */

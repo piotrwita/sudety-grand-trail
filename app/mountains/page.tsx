@@ -24,8 +24,7 @@ const MountainsHeroSection = () => (
     ariaLabel="Sekcja główna - Wykaz szczytów"
   >
     {/* Epic Background Effects */}
-    <div className="theme-hero-overlay theme-szczyty-hero" />
-    <div className="gradient-mesh-overlay absolute inset-0 opacity-30" />
+    <div className="gradient-mesh-overlay absolute inset-0 opacity-20" />
     <VintageMountainsBackground className="opacity-15" />
 
     {/* Epic Background Elements */}
