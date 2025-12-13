@@ -5,28 +5,28 @@ import Image from 'next/image';
 
 const AboutCreator = () => {
   return (
-    <section className="section-padding relative overflow-hidden bg-cream">
+    <section className="section-padding relative bg-cream">
       {/* Background elements */}
       <div className="gradient-mesh-subtle absolute inset-0 opacity-30" />
       <div className="absolute inset-0 bg-[url('/images/vintage-mountains.svg')] bg-cover bg-center opacity-5" />
 
       <div className="fluid-container relative z-10">
         {/* Main Content */}
-        <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl items-start gap-16 lg:grid-cols-2">
           {/* Left - Photo & Visual */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative lg:sticky lg:top-24"
           >
             {/* Main Photo Container */}
             <div className="relative">
               <div className="rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-2xl">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                   <Image
-                    src="/images/creator-photo.svg"
+                    src="https://scontent.flcj1-1.fna.fbcdn.net/v/t45.1600-4/516180726_122134477196817418_4024637466607253337_n.jpg?stp=c0.256.1536.1536a_cp0_dst-jpg_q75_s565x565_spS444_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c02adf&_nc_ohc=EcbKTER9DYoQ7kNvwHw3sDQ&_nc_oc=Adk2_qMsBmTLSDIfVz_lypnxq3DEf4dmoNFLbh-pTSr91ApbW0yv-6p4l28gyKS0-sc&_nc_zt=1&_nc_ht=scontent.flcj1-1.fna&_nc_gid=TSDykpnF5g0zyzt6GHvBXw&oh=00_AfkuEgenDTGuRGDJqWVgfLCeF2stmdrlagSMJFIhRp3Xxw&oe=694355FE"
                     alt="Twórca Sudety Grand Trail"
                     fill
                     className="object-cover"
@@ -39,7 +39,7 @@ const AboutCreator = () => {
                 {/* Photo Caption */}
                 <div className="mt-6 text-center">
                   <p className="text-sm font-medium text-forest-700">
-                    "Zwykły chłopak z Łodzi z plecakiem, butami i głową pełną
+                    "Zwykły chłopak z Łodzi z plecakiem i głową pełną
                     pomysłów"
                   </p>
                 </div>
@@ -57,39 +57,10 @@ const AboutCreator = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M5 3l6 6 6-6M5 21l6-6 6 6M12 3v18"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                   />
                 </svg>
               </div>
-            </div>
-
-            {/* Stats Cards */}
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="rounded-2xl border border-white/20 bg-white/10 p-4 text-center shadow-xl backdrop-blur-xl"
-              >
-                <div className="mb-1 text-2xl font-bold text-accent">∞</div>
-                <div className="text-sm font-medium text-forest-600">
-                  Kilometrów za sobą
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="rounded-2xl border border-white/20 bg-white/10 p-4 text-center shadow-xl backdrop-blur-xl"
-              >
-                <div className="mb-1 text-2xl font-bold text-accent">1</div>
-                <div className="text-sm font-medium text-forest-600">
-                  Wielki sen
-                </div>
-              </motion.div>
             </div>
           </motion.div>
 
@@ -127,7 +98,8 @@ const AboutCreator = () => {
               </motion.div>
 
               <h2 className="section-title mb-6 text-left">
-                Sudety Grand Trail –{' '}
+                Sudety Grand Trail
+                <br />
                 <span className="gradient-text-mesh">O Mnie</span>
               </h2>
             </div>
@@ -141,7 +113,7 @@ const AboutCreator = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-fluid-base leading-relaxed text-forest-700"
               >
-                Zanim wyruszę na szlak, pomyślałem, że warto powiedzieć kilka
+                Jako twórca szlaku pomyślałem, że warto powiedzieć kilka
                 słów o sobie. Może wtedy łatwiej będzie zrozumieć skąd się w
                 ogóle wziąłem i jak to się stało, że właśnie w taki sposób
                 próbuję nadawać sens codzienności. Bo choć każdy z moich

@@ -15,6 +15,11 @@ const nextConfig = {
         hostname: 'poltrax.live',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: '*.fbcdn.net',
+        pathname: '/**',
+      },
     ],
   },
   async redirects() {

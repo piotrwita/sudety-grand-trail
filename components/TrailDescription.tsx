@@ -10,10 +10,10 @@ const TrailDescription = () => {
   const imageContainerRef = useRef<HTMLDivElement>(null);
   
   // Scroll progress based on image container visibility in viewport
-  // Effect starts when image enters viewport and ends when it leaves
+  // Effect starts when image enters viewport and ends before footer
   const { scrollYProgress } = useScroll({
     target: imageContainerRef,
-    offset: ['start end', 'end start'],
+    offset: ['start end', 'end 0.6'],
   });
 
   // Section-level progress so parallax ends with the text content
@@ -23,31 +23,31 @@ const TrailDescription = () => {
   });
 
   // Transform scroll progress to image opacity
-  // Image 1: visible at start - original image (visible longer)
+  // Image 1: visible 0-68%, smooth fade out 68-74%
   const image1Opacity = useTransform(
     scrollYProgress,
-    [0, 0.4, 0.48],
+    [0, 0.68, 0.74],
     [1, 1, 0]
   );
   
-  // Image 2: visible in middle - first new image
+  // Image 2: fade in 68-74% (synced with img1 fade out), visible 74-88%, fade out 88-94%
   const image2Opacity = useTransform(
     scrollYProgress,
-    [0.4, 0.48, 0.62, 0.72],
+    [0.68, 0.74, 0.88, 0.94],
     [0, 1, 1, 0]
   );
   
-  // Image 3: visible at end - second new image (starts slightly earlier)
+  // Image 3: fade in 88-94% (synced with img2 fade out), visible 94-100%
   const image3Opacity = useTransform(
     scrollYProgress,
-    [0.62, 0.72, 1],
+    [0.88, 0.94, 1],
     [0, 1, 1]
   );
   // Faster parallax slide for the sticky image column, ending with the section
   const imageParallaxY = useTransform(sectionProgress, [0, 1], [0, 240]);
 
   return (
-    <section ref={sectionRef} className="section-padding overflow-hidden bg-forest-50 relative">
+    <section ref={sectionRef} className="section-padding bg-forest-50 relative">
       <VintageMountainsBackground className="opacity-10" />
       <div className="fluid-container relative z-10">
         <div className="grid items-start gap-16 lg:grid-cols-2">
@@ -186,7 +186,6 @@ const TrailDescription = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative mt-8 lg:mt-0 lg:sticky lg:top-24 lg:self-start"
-            style={{ y: imageParallaxY }}
           >
             <div ref={imageContainerRef} className="card-vintage overflow-hidden min-h-[550px] relative">
               {/* Image 1 - First image */}

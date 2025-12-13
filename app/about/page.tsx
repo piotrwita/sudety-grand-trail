@@ -32,15 +32,17 @@ const AboutHeroSection = () => (
             Poznaj <br />
             <span className="gradient-text-mesh">Człowieka</span>
             <span className="text-fluid-lg mt-4 block font-medium normal-case tracking-normal text-cream/80">
-              za Sudety Grand Trail
+              Twórca Sudety Grand Trail
             </span>
           </h1>
         </FadeIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
-          <p className="text-fluid-lg mx-auto mb-8 max-w-3xl font-medium leading-relaxed text-cream/80">
-            Historia zwykłego chłopaka z Łodzi, który postanowił użyć własnych
-            nóg, by zmieniać świat na lepszy.
+          <p className="text-fluid-base lg:text-fluid-lg mx-auto mb-8 max-w-3xl font-medium leading-relaxed text-cream/85">
+            <span className="italic text-cream/60">
+              Historia chłopaka z Łodzi, który postanowił użyć własnych
+              nóg, by zmieniać świat na lepszy.
+            </span>
           </p>
         </FadeIn>
       </FadeIn>
