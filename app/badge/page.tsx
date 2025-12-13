@@ -29,8 +29,7 @@ const BadgeHeroSection = () => (
     ariaLabel="Sekcja główna - Odznaka"
   >
     {/* Epic Background Effects */}
-    <div className="theme-hero-overlay theme-badge-hero" />
-    <div className="gradient-mesh-overlay absolute inset-0 opacity-30" />
+    <div className="gradient-mesh-overlay absolute inset-0 opacity-20" />
     <VintageMountainsBackground className="opacity-15" />
 
     {/* Epic Badge Background Elements - More intense than Hall of Fame */}

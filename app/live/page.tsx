@@ -111,13 +111,6 @@ const LiveHeroSection = () => {
         </FadeIn>
       </div>
 
-      {/* Decorative elements */}
-      <div className="absolute left-10 top-20 h-24 w-24 animate-pulse rounded-full bg-orange-500/10 blur-xl" />
-      <div
-        className="absolute bottom-20 right-10 h-32 w-32 animate-pulse rounded-full bg-orange-600/10 blur-2xl"
-        style={{ animationDelay: '1s' }}
-      />
-
       <ScrollIndicator />
     </Section>
   );
