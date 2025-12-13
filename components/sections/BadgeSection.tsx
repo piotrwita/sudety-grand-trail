@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { ReactNode } from 'react';
 import { FadeIn } from '@/components/motion';
 import { siteRoutes } from '@/config/site-routes';
@@ -120,50 +119,6 @@ export const BadgeSection = () => {
                 </div>
               </FadeIn>
 
-              {/* Zdjęcie odznaki - EPIC VERSION WITH 3D EFFECT */}
-              <FadeIn
-                {...FADE_IN_PROPS}
-                className="relative overflow-visible rounded-xl border-2 border-gold-400/40 bg-gradient-to-br from-forest-800/90 via-forest-800/70 to-earth-800/90 p-6 backdrop-blur-sm shadow-[0_0_60px_rgba(251,191,36,0.4)] sm:rounded-2xl sm:p-8 md:p-10"
-              >
-                {/* Enhanced Gold glow effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-400/15 via-transparent to-gold-500/15 rounded-xl" />
-                <div className="absolute -left-8 top-1/4 h-32 w-32 rounded-full bg-gold-400/20 blur-3xl animate-pulse" />
-                <div className="absolute -right-8 bottom-1/4 h-40 w-40 rounded-full bg-gold-500/20 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-                <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-300/10 blur-2xl" />
-                
-                {/* Badge Container with 3D effect */}
-                <div className="relative w-full">
-                  {/* 3D Shadow layers */}
-                  <div className="absolute inset-0 translate-y-4 rounded-[2rem] bg-gold-900/30 blur-2xl" />
-                  <div className="absolute inset-0 translate-y-2 rounded-[2rem] bg-gold-800/20 blur-xl" />
-                  
-                  {/* Badge Image Container - Without circular ring, cleaner design */}
-                  <div className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-2xl bg-gradient-to-br from-gold-400/10 via-gold-500/5 to-gold-600/10 shadow-[0_0_50px_rgba(251,191,36,0.6),inset_0_0_30px_rgba(251,191,36,0.2)]">
-                    {/* Inner glow */}
-                    <div className="absolute inset-0 bg-gradient-radial from-gold-300/20 via-transparent to-transparent" />
-                    
-                    {/* Badge Image */}
-                    <div className="relative h-full w-full">
-                      <Image
-                        src="https://scontent.flcj1-1.fna.fbcdn.net/v/t1.15752-9/592139478_1340256487899607_675340442172499047_n.png?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_ohc=P5gCY3Gfi9MQ7kNvwGW0vr4&_nc_oc=AdnZ6jGL_7HQkWKszUHTkKTFfv-XG91f2_2-gussACbUxVjZd-3FUlSyWlkIqLvHsGQ&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&oh=03_Q7cD4AH-9_VJJzXuWnqCIkdOHhKc9D3Rir1b839QUhCFXq6OWQ&oe=695B616A"
-                        alt="Oficjalna odznaka Sudety Grand Trail - 900km przez 23 pasma górskie"
-                        fill
-                        className="object-contain p-6 drop-shadow-[0_0_40px_rgba(251,191,36,0.7)]"
-                        priority
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        unoptimized
-                      />
-                    </div>
-                    
-                    {/* Shine effect overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent opacity-50" />
-                  </div>
-                  
-                  {/* Floating particles effect */}
-                  <div className="absolute -top-2 -right-2 size-3 rounded-full bg-gold-400/60 blur-sm animate-ping" style={{ animationDelay: '0.5s' }} />
-                  <div className="absolute -bottom-2 -left-2 size-2 rounded-full bg-gold-500/60 blur-sm animate-ping" style={{ animationDelay: '1.5s' }} />
-                </div>
-              </FadeIn>
             </div>
           </div>
         </div>
