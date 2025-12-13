@@ -1,4 +1,5 @@
 import AboutCreator from '@/components/AboutCreator';
+import { TrailJourneySection } from '@/components/TrailJourneySection';
 import { FadeIn } from '@/components/motion';
 import { pageMetadata } from '@/config/metadata';
 import { Metadata } from 'next';
@@ -12,6 +13,7 @@ export default function AboutPage() {
     <>
       <AboutHeroSection />
       <AboutCreator />
+      <TrailJourneySection />
     </>
   );
 }
