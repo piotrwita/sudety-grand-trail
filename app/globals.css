@@ -327,26 +327,42 @@
   /* TRAIL THEME - Green/Forest */
   .theme-trail-hero {
     @apply bg-gradient-to-br from-forest-900 via-forest-800 to-forest-900;
+    background-image: 
+      radial-gradient(ellipse 100% 70% at 0% 100%, rgba(79, 122, 88, 0.22) 0%, transparent 55%),
+      radial-gradient(ellipse 90% 60% at 100% 0%, rgba(107, 148, 116, 0.18) 0%, transparent 50%),
+      radial-gradient(ellipse 120% 80% at 25% 25%, rgba(61, 96, 69, 0.28) 0%, transparent 50%),
+      radial-gradient(ellipse 100% 60% at 75% 75%, rgba(47, 79, 62, 0.32) 0%, transparent 50%),
+      linear-gradient(160deg, rgba(34, 52, 43, 1) 0%, rgba(40, 63, 51, 1) 100%);
   }
 
   .theme-trail-badge {
-    @apply shadow-green-glow border-forest-400/30 bg-gradient-to-br from-forest-400 via-forest-500 to-forest-600;
+    @apply bg-gradient-to-br from-forest-400 via-forest-500 to-forest-700 ring-2 ring-forest-400/40 ring-offset-2 ring-offset-transparent;
+    box-shadow: 
+      0 0 50px rgba(79, 122, 88, 0.5),
+      0 0 100px rgba(47, 79, 62, 0.35),
+      inset 0 2px 4px rgba(255, 255, 255, 0.2);
   }
 
   .theme-trail-text-gradient {
-    @apply bg-gradient-to-r from-forest-400 via-forest-500 to-forest-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-forest-600 via-forest-700 to-forest-600 bg-clip-text text-transparent;
+  }
+
+  .theme-trail-text-gradient-light {
+    @apply inline-block bg-gradient-to-r from-cream-200 via-forest-200 to-cream-300 bg-clip-text text-transparent px-1;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   .theme-trail-btn-primary {
-    @apply bg-forest-700 text-cream hover:bg-forest-600 focus:ring-forest-500/50;
+    @apply bg-gradient-to-r from-forest-500 to-forest-700 text-cream hover:from-forest-400 hover:to-forest-600 focus:ring-forest-500/50;
   }
 
   .theme-trail-btn-secondary {
-    @apply border-forest-500/60 text-forest-400 hover:bg-forest-500/20 focus:ring-forest-500/50;
+    @apply border-forest-400/60 text-forest-300 hover:bg-forest-500/20 focus:ring-forest-400/50;
   }
 
   .theme-trail-glow {
-    @apply from-forest-400/10 via-forest-400/5 to-transparent;
+    @apply from-forest-400/30 via-forest-500/15 to-transparent;
   }
 
   /* SZCZYTY THEME - Pure Earth tones */

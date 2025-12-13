@@ -27,8 +27,7 @@ const TrailHeroSection = () => (
     ariaLabel="Sekcja główna - Poznaj Trasę"
   >
     {/* Epic Background Effects */}
-    <div className="theme-hero-overlay theme-trail-hero" />
-    <div className="gradient-mesh-overlay absolute inset-0 opacity-30" />
+    <div className="gradient-mesh-overlay absolute inset-0 opacity-20" />
     <VintageMountainsBackground className="opacity-15" />
 
     {/* Epic Background Elements */}
@@ -59,7 +58,7 @@ const TrailHeroSection = () => (
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.4}>
           <h1 className="hero-title mb-4 text-cream sm:mb-6">
-            <span className="theme-trail-text-gradient">Poznaj Mapę</span>
+            <span className="theme-trail-text-gradient-light">Poznaj Mapę</span>
             <span className="text-fluid-lg mt-4 block font-display font-bold uppercase tracking-wider text-forest-400 drop-shadow-lg sm:mt-6">
               Trasa Sudety Grand Trail
             </span>
@@ -73,7 +72,7 @@ const TrailHeroSection = () => (
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
           <div className="mx-auto w-full space-y-3 text-center sm:space-y-4">
             <p className="text-fluid-xl font-bold leading-relaxed text-cream/95 whitespace-nowrap">
-              Kompletne oblicze <span className="theme-trail-text-gradient">SUDETÓW</span> ułożone w jeden ambitny szlak.
+              Kompletne oblicze <span className="theme-trail-text-gradient-light">SUDETÓW</span> ułożone w jeden ambitny szlak.
             </p>
             <p className="text-fluid-base lg:text-fluid-lg mx-auto max-w-4xl font-medium italic leading-relaxed text-cream/85">
               900 kilometrów przez 23 pasma górskie oraz wejście na najwyższy
