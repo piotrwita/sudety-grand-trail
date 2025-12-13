@@ -296,12 +296,7 @@ const ProjectIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const DecorativeBackground = () => (
-  <>
-    <div className="absolute right-4 top-4 h-32 w-32 rounded-full bg-accent/10 blur-lg sm:right-8 sm:top-8 sm:h-48 sm:w-48 md:right-12 md:top-12 md:h-56 md:w-56 lg:right-20 lg:top-20 lg:h-64 lg:w-64" />
-    <div className="absolute bottom-4 left-4 h-24 w-24 rounded-full bg-cream/5 blur-xl sm:bottom-8 sm:left-8 sm:h-36 sm:w-36 md:bottom-12 md:left-12 md:h-40 md:w-40 lg:bottom-20 lg:left-20 lg:h-48 lg:w-48" />
-  </>
-);
+const DecorativeBackground = () => null;
 
 const Separator = ({ variant = 'cream' }: { variant?: 'cream' | 'accent' }) => {
   const classes =
