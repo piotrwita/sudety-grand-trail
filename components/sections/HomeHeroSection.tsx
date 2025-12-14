@@ -34,7 +34,7 @@ export const HomeHeroSection = () => {
     <Section
       ref={ref}
       ariaLabel="Sekcja główna - Sudety Grand Trail"
-      className="pt-24 pb-16 sm:pt-32 sm:pb-24"
+      className="min-h-screen pt-24 pb-16 sm:pt-32 sm:pb-24"
     >
       {/* Parallax Background Image */}
       <motion.div

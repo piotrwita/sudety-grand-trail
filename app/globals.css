@@ -466,7 +466,7 @@
 
   /* Universal theme classes that work with any theme */
   .theme-hero-bg {
-    @apply relative overflow-hidden;
+    @apply relative min-h-screen overflow-hidden;
   }
 
   .theme-hero-overlay {
