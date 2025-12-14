@@ -20,7 +20,7 @@ export default function MountainsPage() {
 
 const MountainsHeroSection = () => (
   <Section
-    className="theme-hero-bg theme-szczyty-hero pt-24 pb-16 sm:pt-32 sm:pb-24"
+    className="theme-hero-bg theme-szczyty-hero pb-16 pt-24 sm:pb-24 sm:pt-32"
     ariaLabel="Sekcja główna - Wykaz szczytów"
   >
     {/* Epic Background Effects */}
@@ -85,14 +85,23 @@ const MountainsHeroSection = () => (
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
           <div className="mx-auto w-full space-y-3 text-center sm:space-y-4">
-            <p className="text-fluid-xl font-bold leading-relaxed text-cream/95 whitespace-nowrap">
+            <p className="text-fluid-xl font-bold leading-relaxed text-cream/95">
               Wykaz najciekawszych szczytów na szlaku{' '}
-              <span className="theme-szczyty-text-gradient">SUDETY GRAND TRAIL</span>.
+              <span className="theme-szczyty-text-gradient">
+                SUDETY GRAND TRAIL
+              </span>
             </p>
             <p className="text-fluid-base lg:text-fluid-lg mx-auto max-w-4xl font-medium italic leading-relaxed text-cream/85">
-              Kilkadziesiąt ciekawych wierzchołków w 23 pasmach górskich, które spotkasz przemierzając szlak od{' '}
-              <span className="theme-szczyty-text-gradient font-bold">Śnieżki</span> po{' '}
-              <span className="theme-szczyty-text-gradient font-bold">Lázek</span>.
+              Kilkadziesiąt ciekawych wierzchołków w 23 pasmach górskich, które
+              spotkasz przemierzając szlak od{' '}
+              <span className="theme-szczyty-text-gradient font-bold">
+                Śnieżki
+              </span>{' '}
+              po{' '}
+              <span className="theme-szczyty-text-gradient font-bold">
+                Lázek
+              </span>
+              .
             </p>
           </div>
         </FadeIn>
@@ -102,4 +111,3 @@ const MountainsHeroSection = () => (
     <ScrollIndicator />
   </Section>
 );
-

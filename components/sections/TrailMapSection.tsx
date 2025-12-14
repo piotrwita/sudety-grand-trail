@@ -1,59 +1,18 @@
-'use client';
-
-import { useState, useEffect, useRef } from 'react';
 import { FadeIn } from '@/components/motion/FadeIn';
 import { ScaleIn } from '@/components/motion/ScaleIn';
-import {
-  MapIcon,
-  DownloadIcon,
-} from '@/components/icons';
+import { MapIcon, DownloadIcon } from '@/components/icons';
 import Link from 'next/link';
 import { Section } from './Section';
 import { SectionHeader } from './SectionHeader';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 import { siteConfig } from '@/config/site';
+import { InteractiveIframe } from '@/components/InteractiveIframe';
 
 export const TrailMapSection = () => {
-  const [isMapInteractive, setIsMapInteractive] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const mapContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    let scrollTimer: NodeJS.Timeout | null = null;
-
-    const handleScroll = () => {
-      setIsScrolling(true);
-      setIsMapInteractive(false);
-
-      if (scrollTimer) {
-        clearTimeout(scrollTimer);
-      }
-
-      scrollTimer = setTimeout(() => {
-        setIsScrolling(false);
-      }, 150);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('wheel', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('wheel', handleScroll);
-      if (scrollTimer) {
-        clearTimeout(scrollTimer);
-      }
-    };
-  }, []);
-
-  const handleMapClick = () => {
-    setIsMapInteractive(true);
-  };
   return (
     <Section
       ariaLabel="Oficjalna Trasa Szlaku"
-      className="relative min-h-0 overflow-hidden bg-gradient-to-br from-forest-50 to-cream"
+      className="min-h-0 bg-gradient-to-br from-forest-50 to-cream"
     >
       <VintageMountainsBackground className="opacity-10" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-forest-200/30 via-transparent to-forest-300/30" />
@@ -119,36 +78,13 @@ export const TrailMapSection = () => {
           className="relative"
         >
           {/* Map Container - Hidden on mobile */}
-          <div
-            ref={mapContainerRef}
-            className="card-vintage relative hidden overflow-hidden md:block"
-          >
-            <div className="aspect-video relative">
-              <iframe
-                src="https://mapy.com/s/barusofola"
-                width="100%"
-                height="100%"
-                style={{
-                  border: 'none',
-                  pointerEvents: isMapInteractive && !isScrolling ? 'auto' : 'none',
-                }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="h-full w-full"
-                title="Grand Trail Sudety Map"
-                frameBorder="0"
-              />
-              {/* Overlay that blocks interaction during scroll */}
-              {(!isMapInteractive || isScrolling) && (
-                <div
-                  onClick={handleMapClick}
-                  className="absolute inset-0 z-10 cursor-pointer bg-transparent transition-opacity duration-200 hover:bg-black/5"
-                  aria-label="Kliknij, aby korzystać z mapy"
-                />
-              )}
-            </div>
-          </div>
+          <InteractiveIframe
+            src="https://mapy.com/s/barusofola"
+            className="card-vintage-noanim hidden md:block"
+            title="Grand Trail Sudety Map"
+            overlayAriaLabel="Kliknij, aby korzystać z mapy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </ScaleIn>
 
         {/* Modest Summary Section */}
@@ -165,23 +101,35 @@ export const TrailMapSection = () => {
             <div className="rounded-lg border border-forest-300/30 bg-cream/50 p-6 backdrop-blur-sm sm:p-8">
               <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3 sm:gap-6">
                 <div>
-                  <p className="text-2xl font-bold text-forest-700 sm:text-3xl">900 km</p>
-                  <p className="mt-1 text-sm text-mountain-600">Długość trasy</p>
+                  <p className="text-2xl font-bold text-forest-700 sm:text-3xl">
+                    900 km
+                  </p>
+                  <p className="mt-1 text-sm text-mountain-600">
+                    Długość trasy
+                  </p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-forest-700 sm:text-3xl">30 000 m</p>
-                  <p className="mt-1 text-sm text-mountain-600">Przewyższenia</p>
+                  <p className="text-2xl font-bold text-forest-700 sm:text-3xl">
+                    30 000 m
+                  </p>
+                  <p className="mt-1 text-sm text-mountain-600">
+                    Przewyższenia
+                  </p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-forest-700 sm:text-3xl">1602 m</p>
-                  <p className="mt-1 text-sm text-mountain-600">Najwyższy szczyt</p>
+                  <p className="text-2xl font-bold text-forest-700 sm:text-3xl">
+                    1602 m
+                  </p>
+                  <p className="mt-1 text-sm text-mountain-600">
+                    Najwyższy szczyt
+                  </p>
                 </div>
               </div>
             </div>
-
           </div>
         </FadeIn>
       </div>
     </Section>
   );
 };
+

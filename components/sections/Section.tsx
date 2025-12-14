@@ -15,10 +15,10 @@ interface SectionProps extends PropsWithChildren {
   style?: CSSProperties;
 }
 
-export const Section = forwardRef<HTMLDivElement, SectionProps>(
+export const Section = forwardRef<HTMLElement, SectionProps>(
   (
     { children, className, ariaLabel, id, ...rest }: SectionProps,
-    ref: Ref<HTMLDivElement>
+    ref: Ref<HTMLElement>
   ) => (
     <section
       id={id}

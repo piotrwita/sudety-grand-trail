@@ -23,7 +23,7 @@ export default function TrailPage() {
 
 const TrailHeroSection = () => (
   <Section
-    className="theme-hero-bg theme-trail-hero pt-24 pb-16 sm:pt-32 sm:pb-24"
+    className="theme-hero-bg theme-trail-hero pb-16 pt-24 sm:pb-24 sm:pt-32"
     ariaLabel="Sekcja główna - Poznaj Trasę"
   >
     {/* Epic Background Effects */}
@@ -66,13 +66,15 @@ const TrailHeroSection = () => (
         </FadeIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.5}>
-          <div className="mx-auto my-4 h-0.5 w-24 bg-gradient-to-r from-transparent via-cream/40 to-transparent sm:w-32 sm:my-6" />
+          <div className="mx-auto my-4 h-0.5 w-24 bg-gradient-to-r from-transparent via-cream/40 to-transparent sm:my-6 sm:w-32" />
         </FadeIn>
 
         <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
           <div className="mx-auto w-full space-y-3 text-center sm:space-y-4">
-            <p className="text-fluid-xl font-bold leading-relaxed text-cream/95 whitespace-nowrap">
-              Kompletne oblicze <span className="theme-trail-text-gradient-light">SUDETÓW</span> ułożone w jeden ambitny szlak.
+            <p className="text-fluid-xl font-bold leading-relaxed text-cream/95">
+              Kompletne oblicze{' '}
+              <span className="theme-trail-text-gradient-light">SUDETÓW</span>{' '}
+              ułożone w jeden ambitny szlak
             </p>
             <p className="text-fluid-base lg:text-fluid-lg mx-auto max-w-4xl font-medium italic leading-relaxed text-cream/85">
               900 kilometrów przez 23 pasma górskie oraz wejście na najwyższy
