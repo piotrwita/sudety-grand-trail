@@ -7,7 +7,7 @@ import { Section } from './Section';
 export const LiveTrackingSection = () => {
   return (
     <Section
-      className="bg-cream pt-20"
+      className="bg-cream"
       ariaLabel="Live Tracking - Sudety Grand Trail"
     >
       {/* Background elements */}

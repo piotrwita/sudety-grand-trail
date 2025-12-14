@@ -15,7 +15,7 @@ const MotivationSection = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.05, 1.1]);
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-forest-800 py-32">
+    <section ref={ref} className="section-padding relative overflow-hidden bg-forest-800">
       {/* Parallax Background Image */}
       <motion.div
         className="absolute inset-0 z-0"

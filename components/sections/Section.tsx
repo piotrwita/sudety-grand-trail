@@ -24,7 +24,7 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(
       id={id}
       ref={ref}
       className={cn(
-        'full-width relative flex min-h-screen items-center justify-center overflow-hidden py-12',
+        'section-padding full-width relative flex items-center justify-center overflow-hidden',
         className
       )}
       aria-label={ariaLabel}

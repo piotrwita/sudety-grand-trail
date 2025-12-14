@@ -215,14 +215,9 @@ export const TrailJourneySection = () => {
   const sortedDays = [...trailJournalData].sort((a, b) => b.day - a.day);
 
   return (
-    <section id="trail-journey" className="section-padding relative overflow-hidden bg-gradient-to-b from-cream to-cream-100">
+    <section id="trail-journey" className="section-padding relative overflow-hidden bg-gradient-to-br from-gold-500/10 to-gold-600/10">
       {/* Background elements */}
-      <div className="gradient-mesh-subtle absolute inset-0 opacity-20" />
-      <VintageMountainsBackground className="opacity-[0.07]" />
-      
-      {/* Decorative corner glows */}
-      <div className="pointer-events-none absolute -right-32 top-1/4 h-64 w-64 rounded-full bg-forest-500/5 blur-3xl" />
-      <div className="pointer-events-none absolute -left-32 bottom-1/4 h-64 w-64 rounded-full bg-earth-500/5 blur-3xl" />
+      <VintageMountainsBackground className="opacity-15" />
 
       <div className="fluid-container relative z-10">
         <div className="mx-auto max-w-4xl">

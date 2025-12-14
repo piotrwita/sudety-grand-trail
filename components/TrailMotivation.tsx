@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const TrailMotivation = () => {
   return (
-    <section className="relative overflow-hidden bg-earth-900 py-32">
+    <section className="section-padding relative overflow-hidden bg-earth-900">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
