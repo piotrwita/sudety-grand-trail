@@ -44,7 +44,7 @@ const badgeVariants = {
   },
   forest: {
     badge:
-      'section-icon-badge size-14 shrink-0 bg-gradient-to-br from-forest-700 to-earth-700',
+      'section-icon-badge size-14 shrink-0 bg-gradient-to-br from-accent to-earth-700',
     separator:
       'mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent',
     textGradient: 'text-gradient',

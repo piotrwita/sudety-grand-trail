@@ -60,7 +60,7 @@ export const TrailMapSection = () => {
       <div className="fluid-container relative z-10">
         <SectionHeader
           title="Poznaj Mapę"
-          icon={<MapIcon className="size-6 text-cream" />}
+          icon={<MapIcon className="size-6 text-cream/80" />}
           variant="default"
         />
 
