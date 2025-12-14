@@ -2,13 +2,18 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 
 const AboutCreator = () => {
   return (
-    <section className="section-padding relative bg-cream">
+    <section className="section-padding relative overflow-hidden bg-cream">
       {/* Background elements */}
       <div className="gradient-mesh-subtle absolute inset-0 opacity-30" />
-      <div className="absolute inset-0 bg-[url('/images/vintage-mountains.svg')] bg-cover bg-center opacity-5" />
+      <VintageMountainsBackground className="opacity-[0.08]" />
+      
+      {/* Decorative corner glows */}
+      <div className="pointer-events-none absolute -left-32 -top-32 h-64 w-64 rounded-full bg-forest-500/5 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 -right-32 h-64 w-64 rounded-full bg-earth-500/5 blur-3xl" />
 
       <div className="fluid-container relative z-10">
         {/* Main Content */}

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { trailJournalData, type JournalDay } from '@/data/trail-journal';
 import { PhotoIcon } from '@/components/icons';
+import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 
 const ChevronIcon = ({ isOpen }: { isOpen: boolean }) => (
   <motion.svg
@@ -164,10 +165,14 @@ export const TrailJourneySection = () => {
   const sortedDays = [...trailJournalData].sort((a, b) => b.day - a.day);
 
   return (
-    <section className="section-padding relative bg-gradient-to-b from-cream to-cream-100">
+    <section className="section-padding relative overflow-hidden bg-gradient-to-b from-cream to-cream-100">
       {/* Background elements */}
       <div className="gradient-mesh-subtle absolute inset-0 opacity-20" />
-      <div className="absolute inset-0 bg-[url('/images/vintage-mountains.svg')] bg-cover bg-center opacity-[0.03]" />
+      <VintageMountainsBackground className="opacity-[0.07]" />
+      
+      {/* Decorative corner glows */}
+      <div className="pointer-events-none absolute -right-32 top-1/4 h-64 w-64 rounded-full bg-forest-500/5 blur-3xl" />
+      <div className="pointer-events-none absolute -left-32 bottom-1/4 h-64 w-64 rounded-full bg-earth-500/5 blur-3xl" />
 
       <div className="fluid-container relative z-10">
         <div className="mx-auto max-w-4xl">
