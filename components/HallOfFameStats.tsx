@@ -91,7 +91,7 @@ export const HallOfFameStats = () => {
         >
           <p className="text-fluid-lg mx-auto max-w-6xl font-medium leading-relaxed text-mountain-600">
             Odkąd szlak został oficjalnie wyznaczony, wędrowcy podejmują wyzwanie {' '}
-            <span className="theme-halloffame-text-gradient font-bold">
+            <span className="theme-halloffame-text-gradient-light font-bold">
               SUDETY GRAND TRAIL
             </span>. <br />
             Poniżej ogólne statystyki wszystkich zdobywców.

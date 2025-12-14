@@ -312,6 +312,10 @@
     @apply bg-gradient-to-r from-gold-500 via-gold-600 to-accent bg-clip-text text-transparent;
   }
 
+  .theme-halloffame-text-gradient-light {
+    @apply bg-gradient-to-r from-gold-600 via-gold-500 to-accent bg-clip-text text-transparent;
+  }
+
   .theme-halloffame-btn-primary {
     @apply bg-gold-500 hover:bg-gold-400 focus:ring-gold-400/50 text-forest-900;
   }

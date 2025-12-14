@@ -26,8 +26,8 @@ export const SubmissionFormSection = () => {
           className="mb-16 text-center"
         >
           <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-cream/90">
-            Ukończyłeś Sudety Grand Trail? Podziel się swoją historią i dołącz
-            do oficjalnego Hall of Fame!
+            Ukończyłeś <span className="theme-halloffame-text-gradient-light font-bold">Sudety Grand Trail</span>? Podziel się swoją historią i dołącz
+            do oficjalnego <span className="theme-halloffame-text-gradient-light font-bold">Hall of Fame</span>!
           </p>
         </FadeIn>
 

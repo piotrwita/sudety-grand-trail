@@ -28,8 +28,8 @@ const mockCompletions = [
     photo: 'https://scontent.flcj1-1.fna.fbcdn.net/v/t45.1600-4/516180726_122134477196817418_4024637466607253337_n.jpg?stp=c0.256.1536.1536a_cp0_dst-jpg_q75_s565x565_spS444_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c02adf&_nc_ohc=EcbKTER9DYoQ7kNvwHw3sDQ&_nc_oc=Adk2_qMsBmTLSDIfVz_lypnxq3DEf4dmoNFLbh-pTSr91ApbW0yv-6p4l28gyKS0-sc&_nc_zt=1&_nc_ht=scontent.flcj1-1.fna&_nc_gid=TSDykpnF5g0zyzt6GHvBXw&oh=00_AfkuEgenDTGuRGDJqWVgfLCeF2stmdrlagSMJFIhRp3Xxw&oe=694355FE',
     isFirstCompleter: true,
     achievements: ['Pierwszy zdobywca', 'Najszybsze przejście'],
-    favoriteSection: 'Karkonosze - Śnieżka',
-    hardestSection: 'Góry Sowie w deszczu',
+    favoriteSection: 'Równia pod Śnieżką w Karkonoszach, przy słonecznej pogodzie i bezchmurnym niebie',
+    hardestSection: 'Cały dzień wędrówki pasmem grzbietu Ještědsko-Kozákowskiego w deszczu i mgle',
     hasStoryPage: true, // tylko ten kafelek ma link do /about
   }
 ];
@@ -84,7 +84,7 @@ export const HallOfFameList = () => {
           className="mb-16 text-center"
         >
           <p className="text-fluid-lg mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-mountain-600">
-            Wędrowcy, którzy ukończyli pełny szlak <span className="theme-halloffame-text-gradient font-bold">
+            Wędrowcy, którzy ukończyli pełny szlak             <span className="theme-halloffame-text-gradient-light font-bold">
               SUDETY GRAND TRAIL
             </span>.<br />Każde
             przejście to unikalna historia determinacji i pasji do gór.
