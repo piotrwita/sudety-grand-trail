@@ -4,8 +4,83 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { trailJournalData, type JournalDay } from '@/data/trail-journal';
-import { PhotoIcon } from '@/components/icons';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
+
+// Splits paragraphs into chunks and interleaves floating images (alternating left/right)
+const renderContentWithImages = (
+  content: string,
+  images: string[] | undefined,
+  dayNumber: number,
+  dayTitle: string
+) => {
+  const paragraphs = content.split('\n\n');
+  
+  if (!images || images.length === 0) {
+    // No images - just render paragraphs
+    return paragraphs.map((paragraph, idx) => (
+      <p
+        key={idx}
+        className="mb-5 text-base leading-loose text-forest-700 last:mb-0 sm:text-lg sm:leading-loose"
+      >
+        {paragraph}
+      </p>
+    ));
+  }
+
+  // Calculate where to insert images (roughly evenly spaced)
+  const totalParagraphs = paragraphs.length;
+  const imagePositions = [
+    Math.floor(totalParagraphs * 0.1),  // After ~10% of paragraphs
+    Math.floor(totalParagraphs * 0.4),  // After ~40% of paragraphs
+    Math.floor(totalParagraphs * 0.7),  // After ~70% of paragraphs
+  ];
+
+  const result: React.ReactNode[] = [];
+  let imageIndex = 0;
+
+  paragraphs.forEach((paragraph, idx) => {
+    // Check if we should insert an image before this paragraph
+    if (imageIndex < 3 && idx === imagePositions[imageIndex] && images[imageIndex]) {
+      const isLeft = imageIndex % 2 === 0; // Alternate: 0=left, 1=right, 2=left
+      
+      result.push(
+        <div
+          key={`img-${imageIndex}`}
+          className={`relative mb-4 mt-2 w-1/2 max-w-[280px] overflow-hidden rounded-xl bg-forest-100 shadow-lg ring-1 ring-forest-200/50 sm:max-w-[320px] ${
+            isLeft 
+              ? 'float-left mr-5 sm:mr-6' 
+              : 'float-right ml-5 sm:ml-6'
+          }`}
+        >
+          <div className="relative aspect-[3/4] w-full">
+            <Image
+              src={images[imageIndex]}
+              alt={`Dzień ${dayNumber} - ${dayTitle} - zdjęcie ${imageIndex + 1}`}
+              fill
+              className="object-cover"
+              sizes="320px"
+            />
+          </div>
+        </div>
+      );
+      imageIndex++;
+    }
+
+    result.push(
+      <p
+        key={`p-${idx}`}
+        className="mb-5 text-base leading-loose text-forest-700 last:mb-0 sm:text-lg sm:leading-loose"
+      >
+        {paragraph}
+      </p>
+    );
+  });
+
+  // Add clearfix at the end to prevent float issues
+  result.push(<div key="clearfix" className="clear-both" />);
+
+  return result;
+};
 
 const ChevronIcon = ({ isOpen }: { isOpen: boolean }) => (
   <motion.svg
@@ -117,35 +192,9 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
             <div className="border-t border-forest-100 px-4 pb-5 pt-4 sm:px-5 sm:pb-6">
-              {/* Image placeholder */}
-              <div className="mb-5 overflow-hidden rounded-lg border-2 border-dashed border-forest-200 bg-forest-50/50">
-                {day.image ? (
-                  <div className="relative aspect-video w-full">
-                    <Image
-                      src={day.image}
-                      alt={`Dzień ${day.day} - ${day.title}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                ) : (
-                  <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 text-forest-400">
-                    <PhotoIcon className="h-10 w-10 opacity-50" />
-                    <span className="text-sm">Zdjęcie wkrótce</span>
-                  </div>
-                )}
-              </div>
-
-              {/* Content */}
+              {/* Content with interspersed images */}
               <div className="prose prose-forest max-w-none rounded-xl bg-forest-50/50 p-4 sm:p-6">
-                {day.content.split('\n\n').map((paragraph, idx) => (
-                  <p
-                    key={idx}
-                    className="mb-5 text-base leading-loose text-forest-700 last:mb-0 sm:text-lg sm:leading-loose"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
+                {renderContentWithImages(day.content, day.images, day.day, day.title)}
               </div>
             </div>
           </motion.div>
