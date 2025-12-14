@@ -6,7 +6,7 @@ import { VintageMountainsBackground } from '@/components/VintageMountainsBackgro
 
 const AboutCreator = () => {
   return (
-    <section className="section-padding relative overflow-hidden bg-cream">
+    <section className="section-padding relative bg-cream">
       {/* Background elements */}
       <div className="gradient-mesh-subtle absolute inset-0 opacity-30" />
       <VintageMountainsBackground className="opacity-[0.08]" />

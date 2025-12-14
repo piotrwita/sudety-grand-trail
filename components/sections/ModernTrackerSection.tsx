@@ -87,30 +87,22 @@ export const ModernTrackerSection = () => {
 
             {/* Features */}
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <div className="flex size-6 items-center justify-center rounded-full bg-green-100">
-                  <CheckIcon className="size-4 text-green-600" />
+              {[
+                'Kompletnie darmowy - bez ukrytych kosztów',
+                'Profesjonalne narzędzie do trackingu',
+                'Zapisz i udostępnij swoją przygodę',
+              ].map((feature, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <div className="flex size-7 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-sm">
+                    <svg className="size-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-slate-700 font-medium">
+                    {feature}
+                  </span>
                 </div>
-                <span className="text-slate-700">
-                  Kompletnie darmowy - bez ukrytych kosztów
-                </span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="flex size-6 items-center justify-center rounded-full bg-green-100">
-                  <CheckIcon className="size-4 text-green-600" />
-                </div>
-                <span className="text-slate-700">
-                  Profesjonalne narzędzie do trackingu
-                </span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="flex size-6 items-center justify-center rounded-full bg-green-100">
-                  <CheckIcon className="size-4 text-green-600" />
-                </div>
-                <span className="text-slate-700">
-                  Zapisz i udostępnij swoją przygodę
-                </span>
-              </div>
+              ))}
             </div>
           </FadeIn>
 

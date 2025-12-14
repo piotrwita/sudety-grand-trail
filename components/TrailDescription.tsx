@@ -104,77 +104,33 @@ const TrailDescription = () => {
             </div>
 
             {/* Trail Features */}
-            <div className="mt-12 space-y-4">
+            <div className="mt-12">
               <h3 className="section-title mb-6 text-left text-xl">
                 Główne Atrakcje:
               </h3>
               <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-600 to-forest-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
-                    16 szczytów Korony Gór Polski
-                  </span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-600 to-forest-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
-                    Legendarny finał pod Ślężą
-                  </span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-600 to-forest-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
-                    Parki narodowe i rezerwaty
-                  </span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-600 to-forest-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
-                    Zamki i ruiny
-                  </span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-600 to-forest-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
-                    Schroniska z klimatem
-                  </span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-600 to-forest-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
-                    Wieże widokowe
-                  </span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-600 to-forest-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
-                    Zabytkowe kopalnie i sztolnie
-                  </span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-600 to-forest-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
-                    Niezapomniane widoki
-                  </span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-600 to-forest-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
-                    Unikatowe formacje skalne
-                  </span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-600 to-forest-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
-                    Trójstyk granic Polska-Czechy-Niemcy
-                  </span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="h-3 w-3 rounded-full bg-gradient-to-r from-forest-600 to-forest-700" />
-                  <span className="font-bold uppercase tracking-wide text-forest-800">
-                    Miejsca związane z legendami i mitami Sudetów
-                  </span>
-                </div>
+                {[
+                  '16 szczytów Korony Gór Polski',
+                  'Legendarny finał pod Ślężą',
+                  'Parki narodowe i rezerwaty',
+                  'Zamki i ruiny',
+                  'Schroniska z klimatem',
+                  'Wieże widokowe',
+                  'Zabytkowe kopalnie i sztolnie',
+                  'Niezapomniane widoki',
+                  'Unikatowe formacje skalne',
+                  'Trójstyk granic Polska-Czechy-Niemcy',
+                  'Miejsca związane z legendami i mitami Sudetów',
+                ].map((attraction, index) => (
+                  <div key={index} className="flex items-center gap-4">
+                    <svg className="size-4 flex-shrink-0 text-forest-600" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 2l4 4-4 4" />
+                    </svg>
+                    <span className="text-base font-medium text-forest-700">
+                      {attraction}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -251,10 +207,10 @@ const TrailDescription = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="card-vintage absolute -bottom-8 -left-8 p-6 text-center z-20"
+              className="absolute -bottom-8 -left-8 z-20 rounded-2xl border border-forest-200/50 bg-gradient-to-br from-white via-cream to-forest-50 p-6 text-center shadow-xl backdrop-blur-sm"
             >
-              <div className="stats-number text-3xl">23</div>
-              <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
+              <div className="bg-gradient-to-br from-forest-600 to-forest-800 bg-clip-text text-4xl font-black text-transparent">23</div>
+              <div className="mt-1 text-sm font-bold uppercase tracking-wide text-forest-600">
                 Pasma
               </div>
             </motion.div>
@@ -264,10 +220,10 @@ const TrailDescription = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="card-vintage absolute -right-8 -top-8 p-6 text-center z-20"
+              className="absolute -right-8 -top-8 z-20 rounded-2xl border border-forest-200/50 bg-gradient-to-br from-white via-cream to-forest-50 p-6 text-center shadow-xl backdrop-blur-sm"
             >
-              <div className="stats-number text-3xl">900</div>
-              <div className="text-sm font-bold uppercase tracking-wide text-mountain-600">
+              <div className="bg-gradient-to-br from-forest-600 to-forest-800 bg-clip-text text-4xl font-black text-transparent">900</div>
+              <div className="mt-1 text-sm font-bold uppercase tracking-wide text-forest-600">
                 Kilometrów
               </div>
             </motion.div>

@@ -80,8 +80,9 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
       >
         <div className="flex flex-1 flex-wrap items-center gap-3 sm:gap-4">
           {/* Day badge */}
-          <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-forest-600 to-forest-700 font-display text-lg font-bold text-cream shadow-md sm:h-14 sm:w-14">
-            {day.day}
+          <div className="relative flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-forest-500 via-forest-600 to-forest-700 font-display text-lg font-black text-cream shadow-lg sm:h-14 sm:w-14">
+            <span className="relative z-10">{day.day}</span>
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-black/20 to-white/10" />
           </div>
 
           {/* Title and stats */}
@@ -136,11 +137,11 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
               </div>
 
               {/* Content */}
-              <div className="prose prose-forest max-w-none">
+              <div className="prose prose-forest max-w-none rounded-xl bg-forest-50/50 p-4 sm:p-6">
                 {day.content.split('\n\n').map((paragraph, idx) => (
                   <p
                     key={idx}
-                    className="mb-4 text-base leading-relaxed text-forest-700 last:mb-0"
+                    className="mb-5 text-base leading-loose text-forest-700 last:mb-0 sm:text-lg sm:leading-loose"
                   >
                     {paragraph}
                   </p>
@@ -165,7 +166,7 @@ export const TrailJourneySection = () => {
   const sortedDays = [...trailJournalData].sort((a, b) => b.day - a.day);
 
   return (
-    <section className="section-padding relative overflow-hidden bg-gradient-to-b from-cream to-cream-100">
+    <section id="trail-journey" className="section-padding relative overflow-hidden bg-gradient-to-b from-cream to-cream-100">
       {/* Background elements */}
       <div className="gradient-mesh-subtle absolute inset-0 opacity-20" />
       <VintageMountainsBackground className="opacity-[0.07]" />

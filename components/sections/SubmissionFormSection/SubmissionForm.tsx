@@ -371,7 +371,7 @@ export const SubmissionForm = () => {
             </p>
           </FadeIn>
           <FadeIn direction="up" delay={0.5}>
-            <button onClick={handleReset} className="btn-primary">
+            <button onClick={handleReset} className="theme-btn-base theme-halloffame-btn-primary px-8 py-4">
               Zgłoś Kolejne Przejście
             </button>
           </FadeIn>
@@ -672,7 +672,7 @@ export const SubmissionForm = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`btn-primary order-1 w-full px-8 py-3 text-sm sm:order-2 sm:w-auto ${
+                className={`theme-btn-base theme-halloffame-btn-primary order-1 w-full px-8 py-3 text-sm sm:order-2 sm:w-auto ${
                   isSubmitting ? 'cursor-not-allowed opacity-50' : ''
                 }`}
               >

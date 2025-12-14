@@ -117,7 +117,7 @@ const ProcessStepItem = ({
       className="relative flex items-start gap-6"
     >
       <div
-        className={`relative z-10 flex size-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${step.gradientClass} text-xl font-bold text-cream shadow-vintage ring-4 ring-cream`}
+        className={`relative z-10 flex size-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${step.gradientClass} text-xl font-black text-cream shadow-lg`}
       >
         {step.number}
       </div>
@@ -198,7 +198,7 @@ const BenefitsCard = () => (
       <div className="mt-8 border-t border-forest-200 pt-8 text-center">
         <Link
           href={getSectionUrl(siteRoutes.live, sectionIds.trackerForm)}
-          className="btn-primary w-full py-4 text-lg"
+          className="theme-btn-base theme-halloffame-btn-primary w-full py-4 text-lg"
         >
           Zgłoś Próbę Przejścia
         </Link>

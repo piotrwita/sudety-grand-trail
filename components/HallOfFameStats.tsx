@@ -1,3 +1,5 @@
+'use client';
+
 import {
   BadgeIcon,
   LightningIcon,
@@ -8,6 +10,7 @@ import { FadeIn, ScaleIn } from '@/components/motion';
 import { VintageMountainsBackground } from './VintageMountainsBackground';
 import { Section } from './sections';
 import { SectionHeader } from './sections/SectionHeader';
+import Link from 'next/link';
 
 // Mock data - później będzie z API/bazy danych
 const stats = {
@@ -97,17 +100,9 @@ export const HallOfFameStats = () => {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
-          {statCards.map((card, index) => (
-            <FadeIn
-              key={card.id}
-              direction="up"
-              offset={30}
-              duration={0.6}
-              delay={0.8 + index * 0.1}
-              inView={true}
-              className="group"
-            >
-              <div className="card-vintage relative h-full p-6 text-center">
+          {statCards.map((card, index) => {
+            const cardContent = (
+              <>
                 {/* Subtle gradient overlay */}
                 <div
                   className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${card.bgGradient} opacity-30`}
@@ -216,9 +211,31 @@ export const HallOfFameStats = () => {
                 <div
                   className={`absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r ${card.gradient} origin-left scale-x-0 transform transition-transform duration-300 group-hover:scale-x-100`}
                 />
-              </div>
-            </FadeIn>
-          ))}
+              </>
+            );
+
+            return (
+              <FadeIn
+                key={card.id}
+                direction="up"
+                offset={30}
+                duration={0.6}
+                delay={0.8 + index * 0.1}
+                inView={true}
+                className="group"
+              >
+                {card.id === 'first' ? (
+                  <Link href="/about#trail-journey" className="card-vintage relative block h-full p-6 text-center cursor-pointer">
+                    {cardContent}
+                  </Link>
+                ) : (
+                  <div className="card-vintage relative h-full p-6 text-center">
+                    {cardContent}
+                  </div>
+                )}
+              </FadeIn>
+            );
+          })}
         </div>
 
         {/* Achievement Badges */}
