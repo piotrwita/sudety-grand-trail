@@ -208,12 +208,12 @@ const FilterBar = ({
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex gap-1.5 sm:gap-2">
+        <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
           {/* KS Filter Toggle */}
           <button
             onClick={onToggleKs}
             className={cn(
-              'group flex flex-1 items-center justify-center gap-1.5 rounded-xl border-2 px-3 py-2 text-xs font-bold uppercase tracking-wide transition-all sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm md:px-6 md:py-3',
+              'group flex flex-1 items-center justify-center gap-2 rounded-xl border-2 px-4 py-2 text-xs font-bold uppercase tracking-wide transition-all sm:px-5 sm:py-2.5 sm:text-sm md:px-6 md:py-3',
               showKsOnly
                 ? 'border-amber-600 bg-gradient-to-br from-amber-700 to-amber-900 text-cream shadow-vintage'
                 : 'border-earth-200 bg-cream text-earth-700 hover:border-earth-300 hover:bg-earth-50'
@@ -236,7 +236,7 @@ const FilterBar = ({
           <button
             onClick={onToggleKgp}
             className={cn(
-              'group flex flex-1 items-center justify-center gap-1.5 rounded-xl border-2 px-3 py-2 text-xs font-bold uppercase tracking-wide transition-all sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm md:px-6 md:py-3',
+              'group flex flex-1 items-center justify-center gap-2 rounded-xl border-2 px-4 py-2 text-xs font-bold uppercase tracking-wide transition-all sm:px-5 sm:py-2.5 sm:text-sm md:px-6 md:py-3',
               showKgpOnly
                 ? 'border-orange-500 bg-gradient-to-br from-orange-500 to-orange-700 text-cream shadow-vintage'
                 : 'border-earth-200 bg-cream text-earth-700 hover:border-earth-300 hover:bg-earth-50'
