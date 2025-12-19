@@ -198,7 +198,7 @@ const BenefitsCard = () => (
       <div className="mt-8 border-t border-forest-200 pt-8 text-center">
         <Link
           href={getSectionUrl(siteRoutes.live, sectionIds.trackerForm)}
-          className="theme-btn-base theme-halloffame-btn-primary w-full py-4 text-lg"
+          className="theme-btn-base theme-halloffame-btn-primary flex w-full items-center justify-center px-4 py-3 text-sm sm:px-8 sm:py-4 sm:text-base md:text-lg"
         >
           Zgłoś Próbę Przejścia
         </Link>
@@ -220,11 +220,11 @@ const WarningBox = () => (
     inViewMargin="-50px"
     className="mt-16"
   >
-    <div className="card-vintage-noanim border-2 border-gold-400 bg-gradient-to-br from-gold-50 to-gold-100 p-8">
-      <div className="flex items-start gap-6">
-        <div className="flex size-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-500 to-gold-600 shadow-vintage">
+    <div className="card-vintage-noanim border-2 border-gold-400 bg-gradient-to-br from-gold-50 to-gold-100 p-5 sm:p-8">
+      <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-start sm:gap-6 sm:text-left">
+        <div className="flex size-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-500 to-gold-600 shadow-vintage sm:size-14">
           <svg
-            className="size-7 text-white"
+            className="size-6 text-white sm:size-7"
             fill="currentColor"
             viewBox="0 0 20 20"
             aria-hidden="true"
@@ -237,10 +237,10 @@ const WarningBox = () => (
           </svg>
         </div>
         <div className="flex-1">
-          <h4 className="mb-3 text-lg font-bold text-gold-800">
+          <h4 className="mb-2 text-base font-bold text-gold-800 sm:mb-3 sm:text-lg">
             Ważne: Zgłoś się przed startem!
           </h4>
-          <p className="leading-relaxed text-gold-700">
+          <p className="text-sm leading-relaxed text-gold-700 sm:text-base">
             <strong>Aby Twoje przejście zostało uznane za oficjalne</strong>,
             musisz zgłosić próbę przejścia
             <strong> przed rozpoczęciem wędrówki</strong>. Przejścia rozpoczęte
@@ -286,10 +286,12 @@ export const PreTrailRegistration = () => {
           className="mb-16 text-center"
         >
           <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-mountain-600">
-            Planujesz podbój {' '}             <span className="theme-halloffame-text-gradient-light font-bold">
+            Planujesz podbój{' '}
+            <span className="theme-halloffame-text-gradient-light font-bold">
               KORONY SUDETÓW
-            </span>? Najpierw zgłoś swoją próbę
-            przejścia i otrzymaj darmowy tracker GPS do śledzenia postępów!
+            </span>
+            ? Najpierw zgłoś swoją próbę przejścia i otrzymaj darmowy tracker
+            GPS do śledzenia postępów!
           </p>
         </FadeIn>
 

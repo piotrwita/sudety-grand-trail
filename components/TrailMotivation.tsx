@@ -51,7 +51,8 @@ const TrailMotivation = () => {
             </motion.div>
 
             <h2 className="section-title mb-6 text-cream">
-              <span className="text-gradient-light">Motywacja</span> do Działania
+              <span className="text-gradient-light">Motywacja</span> do
+              Działania
             </h2>
 
             <div className="mx-auto my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-cream/40 to-transparent" />
@@ -198,7 +199,7 @@ const TrailMotivation = () => {
                 <div className="space-y-6">
                   <a
                     href="#"
-                    className="btn-primary inline-block w-full py-4 text-lg"
+                    className="btn-primary flex w-full items-center justify-center px-4 py-3 text-sm sm:px-8 sm:py-4 sm:text-base md:text-lg"
                   >
                     Rozpocznij Swoją Przygodę
                   </a>

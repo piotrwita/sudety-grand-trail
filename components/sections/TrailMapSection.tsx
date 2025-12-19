@@ -77,11 +77,13 @@ export const TrailMapSection = () => {
           inView={true}
           className="relative"
         >
-          {/* Map Container - Hidden on mobile */}
+          {/* Map Container */}
           <InteractiveIframe
             src="https://mapy.com/s/barusofola"
-            className="card-vintage-noanim hidden md:block"
+            className="card-vintage-noanim"
             title="Grand Trail Sudety Map"
+            overlayTitle="Interaktywna Mapa"
+            icon={<MapIcon className="size-8 sm:size-10" />}
             overlayAriaLabel="Kliknij, aby korzystać z mapy"
             referrerPolicy="no-referrer-when-downgrade"
           />
@@ -132,4 +134,3 @@ export const TrailMapSection = () => {
     </Section>
   );
 };
-

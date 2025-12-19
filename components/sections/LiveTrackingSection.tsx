@@ -92,6 +92,8 @@ export const LiveTrackingSection = () => {
             src="https://poltrax.live/sgt"
             className="card-vintage-noanim"
             title="Sudety Grand Trail - Live Tracking"
+            overlayTitle="Śledzenie na Żywo"
+            icon={<LocationIcon className="size-8 sm:size-10" />}
             frameBorder="0"
           />
 

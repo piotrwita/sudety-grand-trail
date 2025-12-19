@@ -15,7 +15,10 @@ const MotivationSection = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.05, 1.1]);
 
   return (
-    <section ref={ref} className="section-padding relative overflow-hidden bg-forest-800">
+    <section
+      ref={ref}
+      className="section-padding relative overflow-hidden bg-forest-800"
+    >
       {/* Parallax Background Image */}
       <motion.div
         className="absolute inset-0 z-0"
@@ -94,12 +97,12 @@ const MotivationSection = () => {
             <p className="mb-8 text-center text-xl font-medium text-cream/90">
               Gotowy na nieprzewidywalną przygodę przez 23 pasma Sudetów?
             </p>
-            <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
               <a
                 href="https://www.facebook.com/SudetyGrandTrail"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary px-10 py-4 text-lg"
+                className="btn-primary w-full px-6 py-3 text-sm sm:w-auto sm:px-10 sm:py-4 sm:text-base md:text-lg"
               >
                 Dołącz do Społeczności
               </a>
@@ -107,7 +110,7 @@ const MotivationSection = () => {
                 href="https://mapy.com/s/barusofola"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary border-cream/60 px-10 py-4 text-lg text-cream/90 hover:bg-cream/90 hover:text-forest-800"
+                className="btn-secondary w-full border-cream/60 px-6 py-3 text-sm text-cream/90 hover:bg-cream/90 hover:text-forest-800 sm:w-auto sm:px-10 sm:py-4 sm:text-base md:text-lg"
               >
                 Sprawdź Trasę
               </a>

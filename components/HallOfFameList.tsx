@@ -25,13 +25,16 @@ const mockCompletions = [
     type: 'Solo',
     description:
       'Przejście całych Sudetów było intensywną i piękną przygodą. Każdy dzień oferował nowe wyzwania i krajobrazy, które trudno porównać z czymkolwiek innym.',
-    photo: 'https://scontent.flcj1-1.fna.fbcdn.net/v/t45.1600-4/516180726_122134477196817418_4024637466607253337_n.jpg?stp=c0.256.1536.1536a_cp0_dst-jpg_q75_s565x565_spS444_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c02adf&_nc_ohc=EcbKTER9DYoQ7kNvwHw3sDQ&_nc_oc=Adk2_qMsBmTLSDIfVz_lypnxq3DEf4dmoNFLbh-pTSr91ApbW0yv-6p4l28gyKS0-sc&_nc_zt=1&_nc_ht=scontent.flcj1-1.fna&_nc_gid=TSDykpnF5g0zyzt6GHvBXw&oh=00_AfkuEgenDTGuRGDJqWVgfLCeF2stmdrlagSMJFIhRp3Xxw&oe=694355FE',
+    photo:
+      'https://scontent.flcj1-1.fna.fbcdn.net/v/t45.1600-4/516180726_122134477196817418_4024637466607253337_n.jpg?stp=c0.256.1536.1536a_cp0_dst-jpg_q75_s565x565_spS444_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c02adf&_nc_ohc=EcbKTER9DYoQ7kNvwHw3sDQ&_nc_oc=Adk2_qMsBmTLSDIfVz_lypnxq3DEf4dmoNFLbh-pTSr91ApbW0yv-6p4l28gyKS0-sc&_nc_zt=1&_nc_ht=scontent.flcj1-1.fna&_nc_gid=TSDykpnF5g0zyzt6GHvBXw&oh=00_AfkuEgenDTGuRGDJqWVgfLCeF2stmdrlagSMJFIhRp3Xxw&oe=694355FE',
     isFirstCompleter: true,
     achievements: ['Pierwszy zdobywca', 'Najszybsze przejście'],
-    favoriteSection: 'Równia pod Śnieżką w Karkonoszach, przy słonecznej pogodzie i bezchmurnym niebie',
-    hardestSection: 'Cały dzień wędrówki pasmem grzbietu Ještědsko-Kozákowskiego w deszczu i mgle',
+    favoriteSection:
+      'Równia pod Śnieżką w Karkonoszach, przy słonecznej pogodzie i bezchmurnym niebie',
+    hardestSection:
+      'Cały dzień wędrówki pasmem grzbietu Ještědsko-Kozákowskiego w deszczu i mgle',
     hasStoryPage: true, // tylko ten kafelek ma link do /about
-  }
+  },
 ];
 
 export const HallOfFameList = () => {
@@ -84,10 +87,12 @@ export const HallOfFameList = () => {
           className="mb-16 text-center"
         >
           <p className="text-fluid-lg mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-mountain-600">
-            Wędrowcy, którzy ukończyli pełny szlak             <span className="theme-halloffame-text-gradient-light font-bold">
+            Wędrowcy, którzy ukończyli pełny szlak{' '}
+            <span className="theme-halloffame-text-gradient-light font-bold">
               SUDETY GRAND TRAIL
-            </span>.<br />Każde
-            przejście to unikalna historia determinacji i pasji do gór.
+            </span>
+            .<br />
+            Każde przejście to unikalna historia determinacji i pasji do gór.
           </p>
 
           {/* Sort Controls */}
@@ -151,7 +156,7 @@ export const HallOfFameList = () => {
                   selectedCompletion === completion.id ? null : completion.id
                 );
               }}
-              className="group relative cursor-pointer overflow-hidden rounded-2xl border border-gold-200/60 bg-gradient-to-br from-cream via-white to-gold-50/50 p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:border-gold-300/80"
+              className="group relative cursor-pointer overflow-hidden rounded-2xl border border-gold-200/60 bg-gradient-to-br from-cream via-white to-gold-50/50 p-8 shadow-lg transition-all duration-300 hover:border-gold-300/80 hover:shadow-xl"
             >
               {/* Rank Badge - nowoczesny styl */}
               <div
@@ -202,8 +207,18 @@ export const HallOfFameList = () => {
                         }}
                         className="relative z-30 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-accent to-orange-500 px-4 py-2 text-sm font-bold text-white shadow-md ring-2 ring-accent/30 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:ring-accent/50"
                       >
-                        <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        <svg
+                          className="size-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                          />
                         </svg>
                         Przeczytaj moją relację
                       </button>
@@ -244,8 +259,16 @@ export const HallOfFameList = () => {
                         key={i}
                         className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 px-3 py-1.5 text-xs font-bold text-white shadow-sm"
                       >
-                        <svg className="size-3" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                        <svg
+                          className="size-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                         {achievement}
                       </span>
@@ -283,7 +306,6 @@ export const HallOfFameList = () => {
                           </div>
                         </div>
                       </div>
-
                     </motion.div>
                   )}
                 </div>
@@ -310,12 +332,11 @@ export const HallOfFameList = () => {
             </h3>
             <p className="mx-auto mb-8 max-w-3xl text-lg font-medium text-mountain-600">
               Ukończyłeś Sudety Grand Trail? <br />
-              Zgłoś swoje przejście i zostań
-              oficjalnym zdobywcą Korony Sudetów!
+              Zgłoś swoje przejście i zostań oficjalnym zdobywcą Korony Sudetów!
             </p>
             <a
               href={getSectionHash(sectionIds.submission)}
-              className="theme-btn-base theme-halloffame-btn-primary px-10 py-4 text-lg"
+              className="theme-btn-base theme-halloffame-btn-primary flex w-full items-center justify-center px-6 py-3 text-sm sm:inline-flex sm:w-auto sm:px-10 sm:py-4 sm:text-base md:text-lg"
             >
               Zgłoś Przejście
             </a>
