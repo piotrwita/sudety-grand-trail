@@ -50,6 +50,7 @@ const TrailDescription = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8 }}
+            className="order-2 lg:order-1"
           >
             <h2 className="section-title mb-8 text-left">
               <span className="theme-trail-text-gradient">O Szlaku</span>
@@ -138,11 +139,11 @@ const TrailDescription = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative mt-8 lg:sticky lg:top-24 lg:mt-0 lg:self-start"
+            className="order-1 relative mt-8 lg:order-2 lg:sticky lg:top-24 lg:mt-0 lg:self-start"
           >
             <div
               ref={imageContainerRef}
-              className="card-vintage relative min-h-[550px] overflow-hidden"
+              className="card-vintage relative aspect-square overflow-hidden lg:min-h-[550px] lg:aspect-auto"
             >
               {/* Image 1 - First image */}
               <motion.div
@@ -154,7 +155,7 @@ const TrailDescription = () => {
                   alt="Sudety Grand Trail - widok górski"
                   width={600}
                   height={550}
-                  className="h-full min-h-[550px] w-full object-cover"
+                  className="h-full w-full object-cover lg:min-h-[550px]"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   unoptimized
                 />
@@ -170,7 +171,7 @@ const TrailDescription = () => {
                   alt="Sudety Grand Trail - widok górski"
                   width={600}
                   height={550}
-                  className="h-full min-h-[550px] w-full object-cover"
+                  className="h-full w-full object-cover lg:min-h-[550px]"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   unoptimized
                 />
@@ -186,7 +187,7 @@ const TrailDescription = () => {
                   alt="Sudety Grand Trail - widok górski"
                   width={600}
                   height={550}
-                  className="h-full min-h-[550px] w-full object-cover"
+                  className="h-full w-full object-cover lg:min-h-[550px]"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   unoptimized
                 />
@@ -207,12 +208,12 @@ const TrailDescription = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="absolute -bottom-8 -left-8 z-20 rounded-2xl border border-forest-200/50 bg-gradient-to-br from-white via-cream to-forest-50 p-6 text-center shadow-xl backdrop-blur-sm"
+              className="absolute -bottom-4 -left-4 z-20 rounded-xl border border-forest-200/50 bg-gradient-to-br from-white via-cream to-forest-50 p-3 text-center shadow-xl backdrop-blur-sm lg:-bottom-8 lg:-left-8 lg:rounded-2xl lg:p-6"
             >
-              <div className="bg-gradient-to-br from-forest-600 to-forest-800 bg-clip-text text-4xl font-black text-transparent">
+              <div className="bg-gradient-to-br from-forest-600 to-forest-800 bg-clip-text text-2xl font-black text-transparent lg:text-4xl">
                 23
               </div>
-              <div className="mt-1 text-sm font-bold uppercase tracking-wide text-forest-600">
+              <div className="mt-1 text-xs font-bold uppercase tracking-wide text-forest-600 lg:text-sm">
                 Pasma
               </div>
             </motion.div>
@@ -222,12 +223,12 @@ const TrailDescription = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="absolute -right-8 -top-8 z-20 rounded-2xl border border-forest-200/50 bg-gradient-to-br from-white via-cream to-forest-50 p-6 text-center shadow-xl backdrop-blur-sm"
+              className="absolute -right-4 -top-4 z-20 rounded-xl border border-forest-200/50 bg-gradient-to-br from-white via-cream to-forest-50 p-3 text-center shadow-xl backdrop-blur-sm lg:-right-8 lg:-top-8 lg:rounded-2xl lg:p-6"
             >
-              <div className="bg-gradient-to-br from-forest-600 to-forest-800 bg-clip-text text-4xl font-black text-transparent">
+              <div className="bg-gradient-to-br from-forest-600 to-forest-800 bg-clip-text text-2xl font-black text-transparent lg:text-4xl">
                 900
               </div>
-              <div className="mt-1 text-sm font-bold uppercase tracking-wide text-forest-600">
+              <div className="mt-1 text-xs font-bold uppercase tracking-wide text-forest-600 lg:text-sm">
                 Kilometrów
               </div>
             </motion.div>
