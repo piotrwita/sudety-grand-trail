@@ -9,7 +9,7 @@ import { SectionHeader } from './SectionHeader';
 
 const FADE_IN_PROPS = {
   inView: true,
-  inViewMargin: '0px' as const,
+  inViewMargin: '100px' as const,
   direction: 'up' as const,
   offset: 30,
   delay: 0.3,

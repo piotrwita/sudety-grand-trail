@@ -39,7 +39,7 @@ const LazyMountainCard = memo((props: MountainCardProps) => {
           delay={0.1}
           duration={0.4}
           className="h-full"
-          inViewMargin={props.isMobile ? '0px' : '0px'}
+          inViewMargin={props.isMobile ? '50px' : '100px'}
         >
           <MountainCard {...props} />
         </FadeIn>

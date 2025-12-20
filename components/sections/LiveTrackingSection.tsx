@@ -17,7 +17,7 @@ export const LiveTrackingSection = () => {
       <div className="fluid-container relative z-10">
         <FadeIn
           inView
-          inViewMargin="0px"
+          inViewMargin="100px"
           offset={50}
           direction="up"
           transition={{ duration: 0.8, delay: 0 }}
@@ -80,7 +80,7 @@ export const LiveTrackingSection = () => {
         {/* Live Map Container */}
         <ScaleIn
           inView
-          inViewMargin="0px"
+          inViewMargin="50px"
           initialScale={0.95}
           finalScale={1}
           initialOpacity={0}

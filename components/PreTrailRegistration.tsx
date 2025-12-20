@@ -113,7 +113,7 @@ const ProcessStepItem = ({
       duration={0.6}
       delay={delay}
       inView={true}
-      inViewMargin="0px"
+      inViewMargin="50px"
       className="relative flex items-start gap-6"
     >
       <div
