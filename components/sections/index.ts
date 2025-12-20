@@ -10,3 +10,4 @@ export { LiveTrackingSection } from './LiveTrackingSection';
 export { ModernTrackerSection } from './ModernTrackerSection';
 export { SubmissionFormSection } from './SubmissionFormSection';
 export { BadgeSection } from './BadgeSection';
+export { TrailJourneySection } from './TrailJourneySection';

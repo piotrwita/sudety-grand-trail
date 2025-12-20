@@ -14,7 +14,7 @@ const renderContentWithImages = (
   dayTitle: string
 ) => {
   const paragraphs = content.split('\n\n');
-  
+
   if (!images || images.length === 0) {
     // No images - just render paragraphs
     return paragraphs.map((paragraph, idx) => (
@@ -30,9 +30,9 @@ const renderContentWithImages = (
   // Calculate where to insert images (roughly evenly spaced)
   const totalParagraphs = paragraphs.length;
   const imagePositions = [
-    Math.floor(totalParagraphs * 0.1),  // After ~10% of paragraphs
-    Math.floor(totalParagraphs * 0.4),  // After ~40% of paragraphs
-    Math.floor(totalParagraphs * 0.7),  // After ~70% of paragraphs
+    Math.floor(totalParagraphs * 0.1), // After ~10% of paragraphs
+    Math.floor(totalParagraphs * 0.4), // After ~40% of paragraphs
+    Math.floor(totalParagraphs * 0.7), // After ~70% of paragraphs
   ];
 
   const result: React.ReactNode[] = [];
@@ -40,16 +40,18 @@ const renderContentWithImages = (
 
   paragraphs.forEach((paragraph, idx) => {
     // Check if we should insert an image before this paragraph
-    if (imageIndex < 3 && idx === imagePositions[imageIndex] && images[imageIndex]) {
+    if (
+      imageIndex < 3 &&
+      idx === imagePositions[imageIndex] &&
+      images[imageIndex]
+    ) {
       const isLeft = imageIndex % 2 === 0; // Alternate: 0=left, 1=right, 2=left
-      
+
       result.push(
         <div
           key={`img-${imageIndex}`}
           className={`relative mb-4 mt-2 w-1/2 max-w-[280px] overflow-hidden rounded-xl bg-forest-100 shadow-lg ring-1 ring-forest-200/50 sm:max-w-[320px] ${
-            isLeft 
-              ? 'float-left mr-5 sm:mr-6' 
-              : 'float-right ml-5 sm:ml-6'
+            isLeft ? 'float-left mr-5 sm:mr-6' : 'float-right ml-5 sm:ml-6'
           }`}
         >
           <div className="relative aspect-[3/4] w-full">
@@ -194,7 +196,12 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
             <div className="border-t border-forest-100 px-4 pb-5 pt-4 sm:px-5 sm:pb-6">
               {/* Content with interspersed images */}
               <div className="prose prose-forest max-w-none rounded-xl bg-forest-50/50 p-4 sm:p-6">
-                {renderContentWithImages(day.content, day.images, day.day, day.title)}
+                {renderContentWithImages(
+                  day.content,
+                  day.images,
+                  day.day,
+                  day.title
+                )}
               </div>
             </div>
           </motion.div>
@@ -215,7 +222,10 @@ export const TrailJourneySection = () => {
   const sortedDays = [...trailJournalData].sort((a, b) => b.day - a.day);
 
   return (
-    <section id="trail-journey" className="section-padding relative overflow-hidden bg-gradient-to-br from-gold-500/10 to-gold-600/10">
+    <section
+      id="trail-journey"
+      className="section-padding relative overflow-hidden bg-gradient-to-br from-gold-500/10 to-gold-600/10"
+    >
       {/* Background elements */}
       <VintageMountainsBackground className="opacity-15" />
 
@@ -278,4 +288,3 @@ export const TrailJourneySection = () => {
 };
 
 export default TrailJourneySection;
-
