@@ -14,9 +14,9 @@ export const trailJournalData: JournalDay[] = [
     distanceTotal: 71,
     title: 'Niefortunny start',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/504552786_122129532890817418_7751893112523631895_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=TrbvG40PHioQ7kNvwHqSsOK&_nc_oc=AdnVHMZDiQmC47mIrz4yg44dVDG4wbHPBhzVc7H371fh8mOElo6kbn0Wph79jSHh81o&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=Erp1GmGn2zcNmBFWkG53lg&oh=00_Afkp-jv-Z7iAD_evCKednR4s5d_6Xf7Cdkk63MeBf86_cw&oe=69445DE3',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/504643743_122129532572817418_9104499533799054478_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=-UhllzYjTOUQ7kNvwHuUmQO&_nc_oc=AdkrnsxLaf368tzb3Ti5SXgVMyPyZ_3Tx_SCnZ2rZcSC5rUYoH0LxJOsGSW9L_fV8uQ&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=ROnAyLSNl3n7pqc3HMF6_Q&oh=00_AflsBUN_crT18-HV2F5YTb3uZU-h2O8HPrk4eQ2sjeiLzw&oe=694459EE',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/500831336_122129537114817418_2108883889855533510_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=no-ky1oXnOkQ7kNvwEJuK3s&_nc_oc=AdklPBcvEWvy5kDYgC5Qz96ttj_ysPF4uxS2aUqHh2kJsJh_zz2ue8eAIqBqwh3iSfk&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=Jvop5_Pp4GFqUiBsfyuiew&oh=00_AfkSil0jgdJUz5votPfNEuffWwlHL1dQdbCZH-MjhFTspA&oe=69448A71',
+      '/images/journal/504552786_122129532890817418_7751893112523631895_n.jpg',
+      '/images/journal/504643743_122129532572817418_9104499533799054478_n.jpg',
+      '/images/journal/500831336_122129537114817418_2108883889855533510_n.jpg',
     ],
     content: `Tuż przed 1:00 dojechałem do Jarnołtówka. Jest to miejscowość, w której rozpoczyna się ten szlak. Tuż obok ronda odnalazłem oznaczenie, na którym widniała żółta kropka definiująca początek mojej przygody. Potrzebowałem chwili by ogarnąć się do startu, a gdy już to zrobiłem kilka minut po 1:00 wyruszyłem w nieodkrytą sudecką drogę.
 
@@ -64,9 +64,9 @@ Zjem jeszcze małą kolację i kładę się spać. Dobranoc.`,
     distanceTotal: 133,
     title: 'Jeszcze więcej deszczu',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/493951881_122129784794817418_7875151465583809820_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=xn5o38TgVtkQ7kNvwEY08YO&_nc_oc=AdlBIljfprET0MFEgFT4yxlcYsuueIyFeDXI9d37d0InLKbMlvDJGb5zAxIk0_KktYQ&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=KbVPMSJo8O8bzjMRjadWYA&oh=00_AfkrAHfUidQMUR_h7gtBg7Aro7VYR_Jrq11iysusNfIMUA&oe=69446449',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/505216371_122129763416817418_7446443056167038074_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=sENGaVHyxWkQ7kNvwEycVpk&_nc_oc=Adn0FAcbKXBWb_NUx-pgIcXBjj9b_xF_4VeA8f3agSeZuUDSEIUShdo6Q0TQgZ5xscI&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=E3xV8B9CypmVBEwYwZcwdQ&oh=00_Afmsho5CVvOUcTfC56WXt2pJQ4GrvlcUAdL80oMVA5Rx0g&oe=69448627',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/502654536_122129762348817418_4792367101052190477_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=qrVCtj6kB0YQ7kNvwE9hHRo&_nc_oc=AdmOHscSCKuLvfg7Wjy3p_fkVhe5e_gR7yF1h-8mwYRe9NRIRGS2EDVgMMQmJgiVhp4&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=UaBhtzs2RKYTLBspmMvO3w&oh=00_AfnJ4WcFGImgUk3POCbldPw6alX2bC4RLFgIK1O2Guju5w&oe=69447027',
+      '/images/journal/493951881_122129784794817418_7875151465583809820_n.jpg',
+      '/images/journal/505216371_122129763416817418_7446443056167038074_n.jpg',
+      '/images/journal/502654536_122129762348817418_4792367101052190477_n.jpg',
     ],
     content: `Zdecydowanie nie był to dobry pomysł bym nie wyciągał śpiwora na noc. Chwilę po tym jak się położyłem już o tym wiedziałem i szybko zmieniłem decyzję. To było bardzo mądre posunięcie.
 
@@ -110,9 +110,9 @@ Ostatecznie o 20:20, po raz kolejny przemoczony do suchej nitki dotarłem do ko�
     distanceTotal: 197,
     title: 'Nareszcie słońce',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/505488378_122129904326817418_7149298245936764407_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=QK4c-Y7pmjAQ7kNvwFNlUon&_nc_oc=AdmtarfafJW41uIZv-Uej2iT_YCcYSPLkWjmJqcuW6ppR-c8_5ex5nguCVlJq0Gsn6E&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=_GUwcAcqRAKco-aBrChDJg&oh=00_Afmd7VC_rhrzjPPrKEX5jsHZcp3iUw2D34pY8puTS2DpvQ&oe=69446C77',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/505225707_122129903762817418_3317118233045709315_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=5uNoAfpACXsQ7kNvwHm0zp1&_nc_oc=Admpd-FnkY781wRsmNOnbmuH2zjTEgnWV8abmTMSG29d8RGxE3RVW2b95qEP1qs8lIc&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=buudacKX2QnxW6_BUYgh4g&oh=00_Afkkyk35NWEyms7NUQ_LKWCuxywb_haJj_NP9ek0UIS5ZQ&oe=694465E7',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/505227435_122129905196817418_6051139545939365271_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=SIhw9ZMpc7IQ7kNvwFOXR2R&_nc_oc=Adlp50ic0t4-P0oUqBrQG4VuD9zAMgb8Fwzx0nzWcAvE2RHQ3GQg29IIiR3wxsNOSwY&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=RDATCHtRx2nBOjh1MIPMng&oh=00_Afncsc-nbH4li1G6aFAQUmrPj62863yQ1vt61TYEWCyxtQ&oe=69446B3D',
+      '/images/journal/505488378_122129904326817418_7149298245936764407_n.jpg',
+      '/images/journal/505225707_122129903762817418_3317118233045709315_n.jpg',
+      '/images/journal/505227435_122129905196817418_6051139545939365271_n.jpg',
     ],
     content: `Noc była dla mnie niesamowicie zimna. Co prawda dziś nie budziłem się aż tak często, ale wyjście rano ze śpiwora wymagało ode mnie wiele samozaparcia. Nie spało mi się bardzo komfortowo, ponieważ wąska ławka w wiacie sprawiała, że musiałem cały czas uważać by nie spaść. Zastanawiam się teraz dlaczego tak właściwie nie spałem na glebie skoro podłoga była wyłożona deskami. Nigdy nie poznamy odpowiedzi na to pytanie.
 
@@ -158,9 +158,9 @@ Już nie mam siły na dużo. Po prostu rozkładam rzeczy na ławkach, a swój ś
     distanceTotal: 258,
     title: 'Powrót na ojczyznę',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/505750204_122130170252817418_1325811376313184370_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=_F4FzdSHDE0Q7kNvwEOImbN&_nc_oc=AdnpXCnnv7CH4uM6WQ23_nUTdf2108NXTrl6V2mSYqgDhW-OstemkuRam2FQRy8ZuVA&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=Ir0cLQ2ci30Zhk-9KjXOwQ&oh=00_AfmNxSAyIGm__nI8j25g_ol9vCq_eJl-ZOWHcYMlAyETdA&oe=69448299',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/502865755_122130169982817418_2271864530706033258_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1X-VymyY8wUQ7kNvwGakZfR&_nc_oc=Adm3dQU_yRU5pHAPxuQKXZcH19RwqGyM3rl8axbJI11B44Y-jDvS2MeiSJW8URuP9o8&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=grkw5VnsbqCU9j0GDVEyGQ&oh=00_AfkkDwMjSHIc9FhX3KyW9QtRCWXZIe6JCr6nwH3dKPw9lg&oe=69447C43',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/502608848_122130168392817418_6310693191860465129_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=zVBip4e6mh0Q7kNvwGIsHOK&_nc_oc=Adk4zqjewkQGjfYpY1atHupNWSwA4KgtH-4gUJiohJF5BaXpvQGKZKid70cENxXxorY&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=StJsJhKorrnPdAY7pHW1eA&oh=00_AfnJdzQIok8QpwiLNoOyG4_M03Lp0DLuymiQWoaJaqPxLg&oe=69446EA6',
+      '/images/journal/505750204_122130170252817418_1325811376313184370_n.jpg',
+      '/images/journal/502865755_122130169982817418_2271864530706033258_n.jpg',
+      '/images/journal/502608848_122130168392817418_6310693191860465129_n.jpg',
     ],
     content: `To była zdecydowanie najzimniejsza noc dotychczas. Już wieczorem wchodząc do śpiwora wiedziałem, że tak będzie, gdy czułem wielką ulgę z samego faktu pobytu w nim. Nad ranem, gdy zadzwonił budzik, czułem, że nie chcę za nic w świecie z niego wychodzić. Miałem w głowie myśli, że oddałbym wiele by móc poczekać aż zrobi się cieplej.
 
@@ -222,9 +222,9 @@ Rozkładam legowisko i idę spać.`,
     distanceTotal: 318,
     title: 'Pora na zmianę',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/506115658_122130276290817418_7571632201748144527_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=dhP3obuYAfkQ7kNvwFDPqVT&_nc_oc=Adnyy4246M3aFMcs0C4wFzjkFxamKdELhAip7m-eZxVkyQhVAkaiRDcbEykHjVuYGp4&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=az9eZ8v54KAQAAm_zU3ndw&oh=00_AfnOPWe2FV30UAwSQG8592pqPIAvDgZhqSJjraOGLFAD3g&oe=694476D0',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/504759212_122130276188817418_2623603330925827220_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=xuKe1d__GXgQ7kNvwEjUS3y&_nc_oc=Adl9TYsCdInAFCi2JsHuxgfP8CA-usSu5YO2BkMBt-TcjogaAtIdksXDqjRiJc1bdrE&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=mtaPTM-5vyR2JQzjFpcMpg&oh=00_AfmQ0lBCOZosOMEAYU9WtECSEE7l7hF_45J5biG17IrTfA&oe=69446DD3',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/506051845_122130275240817418_710741359122761896_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=r1yl6vYqatkQ7kNvwF7-5xD&_nc_oc=AdmPSqlKk890FjlaTg05OPDTgkhOiX7P2NZzKBL-c1CNDC5B1r74XZG9qGe0fFq5dH8&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=uOWoFRK08hdTneZHJS927g&oh=00_Afki9ZByO2uOL2BGc0Ml9727TCJEx4DouJN8ummlLKiZcA&oe=69448710',
+      '/images/journal/506115658_122130276290817418_7571632201748144527_n.jpg',
+      '/images/journal/504759212_122130276188817418_2623603330925827220_n.jpg',
+      '/images/journal/506051845_122130275240817418_710741359122761896_n.jpg',
     ],
     content: `Standardowo już wstałem dziś o 3:00. Ten rytuał zaczyna mi już wchodzić w krew, ponieważ coraz lepiej się z tym czuję. Spało mi się dzisiaj doskonale, przede wszystkim dlatego, że było mi ciepło. Nie przebudziłem się chyba ani razu.
 
@@ -288,9 +288,9 @@ O 21:00 wracam do schroniska, gdzie muszę się wykąpać, zrobić pranie i nał
     distanceTotal: 380,
     title: 'Lampa',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/505352824_122130480284817418_814713398910904659_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=I_vK_m8YxiAQ7kNvwHttcVM&_nc_oc=Adm2hkpBEtfzxOqsAzp94aphZl_2IMpeFABMjJFowiqyAS6-0O8b3_98KXpLoc0G2JM&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=DYzbMB7wHo4zkEhsGQBU3w&oh=00_Afm5Q4GZLLfTEObzKWqQ2MHd3GxuP8nyPfyuM6rbVO8nLw&oe=69448866',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/505420706_122130477578817418_4478254056939628772_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=CFxZA4thhp4Q7kNvwFHXXxy&_nc_oc=Admi9PNO2ZwR96Pu3v-8TdTGWI2pFpkJVpxdvBH00B4Oaa83Xz752q1BeLopvNM-L0Q&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=MXT1QA7lHNw9ontBoZlJyQ&oh=00_Afl613qS3sI8pTTkoClSluQzIqAiyu_vSEMW7reqF_6l8A&oe=69446A6F',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/499708739_122130477368817418_1040246709276253922_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=shWSr4Y9Q0YQ7kNvwGj_UKb&_nc_oc=Adm_KlxKBg6SNRiwbcKe057jvgnWLZ8SaOvpWKPEHt8z6KQLqYG-7bfiT4AdvRJpcms&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=_BNR79c8SoIJmTkzXxe1dQ&oh=00_AfmLFd8eSbR3UU4x_-yACDdD4bljV8l7Som1ZG_UQMn8zA&oe=69447693',
+      '/images/journal/505352824_122130480284817418_814713398910904659_n.jpg',
+      '/images/journal/505420706_122130477578817418_4478254056939628772_n.jpg',
+      '/images/journal/499708739_122130477368817418_1040246709276253922_n.jpg',
     ],
     content: `Noc ponownie była bardzo udana. Szczególnie po tym, gdy w końcu dokładnie się umyłem. Pełne dświeżenie daje taką nową energię, trochę jak zmycie z siebie trudu dni poprzednich.
 
@@ -348,9 +348,9 @@ Tak jak sobie wymarzyłem o 20:30 docieram do wieży widokowej. Zostawiam tutaj 
     distanceTotal: 445,
     title: 'Drugie życie',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/506249308_122130642956817418_2157982343260541799_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=3jOSbtOMJe4Q7kNvwEA9jcS&_nc_oc=AdksieQ37W21SROrWNyq76MH_F6NDv_GgPXMeOMV4bAP_goTLLwi6jD2z-AY4nS7fl0&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=dpFB73cCiE54goDWdypQLA&oh=00_Afme7LezhX1E0QChGDa6u4bkPMAwdENhl1GrmyZzVZkflQ&oe=69448C87',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/505899143_122130643472817418_1836975492835395875_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=umTxRR77ACUQ7kNvwFUlQmo&_nc_oc=AdlXqpdqGqdwQvFzJOKnKEm-HATpXMo0JMfzaaOrD5VedwMsc0VOTgR9HwMPrUTo-yk&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=FzMxEtlj9ufdbh1nelaTzg&oh=00_AfmxnJspKon4xY2z2Z9mM8CyCkAbcnsQWZFlAFa0EFSYDg&oe=69448AD5',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/500987884_122130643214817418_2516459976252552673_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=2qTugZjIRUcQ7kNvwEZbbhe&_nc_oc=Adl_9oOHwVhLCSOTvdP1IgvshO6uFwJDegtXh2JMfM54Xo8WEh1CH9twdzxoMypg_uc&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=pPJM7MmySWsLTsmro7u1sg&oh=00_Afm7Ijva7EbPhwK64eoXN75Wp2kXOmIRhkJzINYNZmLKQg&oe=69447EE0',
+      '/images/journal/506249308_122130642956817418_2157982343260541799_n.jpg',
+      '/images/journal/505899143_122130643472817418_1836975492835395875_n.jpg',
+      '/images/journal/500987884_122130643214817418_2516459976252552673_n.jpg',
     ],
     content: `Noc na wieży widokowej była bardzo udana. Przede wszystkim miałem bardzo dużo miejsca, więc nie musiałem się martwić o to, że zaraz spadnę, jak to miało miejsce w przypadku kilku innych skromnych ławeczek wcześniej. Dzięki temu wyspałem się bardzo dobrze.
 
@@ -412,9 +412,9 @@ Ogarniam się do spania i zasypiam wśród drzew.`,
     distanceTotal: 506,
     title: 'Dobro wraca',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/507069022_122130805124817418_6516784777419314105_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=xyZRshW1zyoQ7kNvwHQ3QCr&_nc_oc=AdmGadG5XdN-UByFhMVoZ5c9cowjxwafZpg6rLpHQ903fh9fs9cXvbDWaK2soZAtRm4&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=y_Byb56YjY6EMi_uCUWsLA&oh=00_AfnERkEz-MzkHot6NLoLNDCsHoBMNINregbIkUtyhnDkog&oe=694486CB',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/508197782_122130805190817418_4204763973876219683_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=O0gdeKUdovoQ7kNvwGCENGU&_nc_oc=Adl3HxuYN97vI-MdgYhg-Lst8jPiiU_8wfZ6LV55IEZDoBX0S8d6WeH9sd78L3kwv8w&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=WiUKkRoJvizV4ZgJ-qYzSw&oh=00_AfmEyJgiV4tnpEctZtkPwf-017WTwM2Fta0Gx9Ypc0ym9A&oe=694463CE',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/499723818_122130806408817418_8632046605986379869_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=3vcNiPM2XC0Q7kNvwEsQ0h7&_nc_oc=AdleH4NAEk4ovHP0XtyfUxqOwVUr1BigFOLJeca97AmhTE1e-7thopqWdxrM253uUxI&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=8IBxAFicXk-SXEysfDVbXQ&oh=00_Afn6uTGrujJDVqI8pJsr5_WIwpB_CYMwYPhpCRc-qY0JNw&oe=69447251',
+      '/images/journal/507069022_122130805124817418_6516784777419314105_n.jpg',
+      '/images/journal/508197782_122130805190817418_4204763973876219683_n.jpg',
+      '/images/journal/499723818_122130806408817418_8632046605986379869_n.jpg',
     ],
     content: `Wczoraj zasnąłem nawet nie pamiętam kiedy. Szum wodospadu tak mnie uśpił. Miał on też swoje drugie oblicze, ponieważ wstawałem siku rekordowe trzy razy. Nienawidzę tego robić w nocy, gdy trzeba wyjść z ciepłego śpiwora. 
 
@@ -468,9 +468,9 @@ Czekał mnie jeszcze stromy, ostatni odcinek trasy. Nakręcony dobrą energią, 
     distanceTotal: 566,
     title: 'Piekło w Karkonoszach',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/506691124_122131031126817418_303354785766547542_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=fNnDXOF-nbEQ7kNvwHmNFA3&_nc_oc=AdkuKWUziajc33MkPhJC0rFXfw-cfLyI61GDZu1ycP771kq2A3bFQjZXND9qv3uEt2k&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=sL_e_3x4UQ0XENdzEVorFw&oh=00_AfkbcSDIGzzFfMs1C_qd1L5VUtKsGOVSh5aAnBf45ozNsQ&oe=69446DD7',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/506699154_122131031036817418_2006791559270932315_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=_f8b-ZB55Y8Q7kNvwHn2ev4&_nc_oc=Adk2uGStzAZG_nJtBJoc5i7EgS1eC4YwdkxEp3bTLFwnAd-bdSJ-nTKNmT7bckoI97s&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=91gblRju6sfKoHIm6Tw8Xw&oh=00_AfkhuEcsgaezHzczs-jnw2tFcLhCpXc8UfcsDw1crZS2Ag&oe=69448D80',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/493282644_122131031618817418_7042493934502959056_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=05vaxKh3AoUQ7kNvwFhooCC&_nc_oc=AdmhP3bxKMtfx-4QTGj4NJGS6FnqmV6LO7zGrw0cmVbB0oXjmOKS4A9_XUxNf747VWs&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=joioTClYkJwau-C8fyA1KQ&oh=00_Afm8VYdMMCpmwEp0cce7uy2ubnS-kGrCPgKsoadLKpMCpA&oe=69447B5B',
+      '/images/journal/506691124_122131031126817418_303354785766547542_n.jpg',
+      '/images/journal/506699154_122131031036817418_2006791559270932315_n.jpg',
+      '/images/journal/493282644_122131031618817418_7042493934502959056_n.jpg',
     ],
     content: `Niestety, ale w nocy długo nie nacieszyłem się samotnością. Chwilę po tym jak usnąłem przyjechał jakiś rowerzysta. Dobrze, że go uprzedziłem, bo na dole są dużo gorsze warunki, a ja mogłem wygodnie spać na górze i przy okazji spełnić swoje marzenie. Szkoda tylko, że przez kolejną godzinę on się szykował do spania i był tak głośny, że nie mogłem zasnąć. Mam tak mało snu, że ten czas na pewno wpłynie na dzisiejszą energię.
 
@@ -534,9 +534,9 @@ Rozkładam na stole płachtę i kładę na niej śpiwór. To był bardzo długi 
     distanceTotal: 626,
     title: 'Zatopiony',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/494211157_122131222958817418_740638590282812523_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=7FrGevc8s6YQ7kNvwGLhXBN&_nc_oc=AdmR3sd2FlZjvS4EN_CoBgOKZApe_xY95ZvBHGcm50Unc-H8ZfsLJ925nyrXLGvmUq8&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=80DNWirdzS5ku1uJ1sS7yQ&oh=00_AflxFE5bk5H5IH9ncP0uF826aYhqokT_aXaRnJDBcbzs1Q&oe=69447919',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/508185790_122131217330817418_3996502202273052150_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=YlV_cr_kshoQ7kNvwGWsHxr&_nc_oc=Adl2gIJci9ykROigd6qch1OEYwYRKjzfD6-lcq12li1p96gvpsZ4u35EWtNV8A_KU10&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=twwMtSZSam90TnuYDp-toQ&oh=00_AfnrlQ1XgZ1Oln-CUpgloacuPX_fUmA7SaoR-M1lBCgmAQ&oe=69445AF9',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/497134275_122131218734817418_546946266681541002_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=jIGm5WjRTRoQ7kNvwFqis4V&_nc_oc=AdnmfGv95YeFg6luKLqIt9KPNLq6eh1tN7s34RfOpWHydAE3HhZHc3XHPnrmC6X2g4I&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=bqsI6btzY3e3rrKbL9psZw&oh=00_AfnF_KGexaDolNUZNyhux6NoCHP2UtRI1itV6SCiYmZIdQ&oe=69445D2C',
+      '/images/journal/494211157_122131222958817418_740638590282812523_n.jpg',
+      '/images/journal/508185790_122131217330817418_3996502202273052150_n.jpg',
+      '/images/journal/497134275_122131218734817418_546946266681541002_n.jpg',
     ],
     content: `To była dla mnie ciężka noc po tym niezwykle długim i wymagającym dniu poprzednim. Usnąłem przed telefonem w ręku pisząc relacje i obudziłem się dopiero o 1:30. Całe szczęście, że w ogóle się obudziłem, ponieważ mogłem przynajmniej dokończyć pisać. Niestety nie zostało mi już za dużo czasu na sen, bo o 3:00 wszystkie budziki dzwonią i trzeba wstawać. 
 
@@ -594,9 +594,9 @@ Pogadaliśmy sobie jakieś dwadzieścia minut i ja już musiałem iść spać. J
     distanceTotal: 687,
     title: 'Spokój',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/500032044_122131410836817418_3593360910453275065_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=fq9VryhiSlQQ7kNvwG7KzbZ&_nc_oc=AdnmQGXiOWD4ltR2Y5qDwFu953ixOd-QtqUYNUn5sWwsc8HzXDwl3HgVVohQT7FqDhQ&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=GrO5KyHHXlxETrjnamS98Q&oh=00_AfkDfd-BjYjka0o9zVMbNtzm8J-sAfTUIinilGoUdOt8Tg&oe=694484C7',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/494267540_122131409540817418_2149115453646802369_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=CNyyGLBSOGEQ7kNvwGjcE-x&_nc_oc=AdlUtoqAmGcIxVeu5V4jj2cxJbX9-VLslxCQHxaGfYRnkdFdwSz-urLNRdtkQdVYGCI&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=BqeaabokmNHDyrWHFn5odQ&oh=00_AfmjqgfTGWE8wTqTgjTO02dcDaGOOd12IVrOIhSplr9fNA&oe=694481AE',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/502668961_122131409060817418_1989248827362906498_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=JxZ4-tcDy8oQ7kNvwFJsy6Z&_nc_oc=AdljfXZDZ4E67b7_pXKXVEaWLAsJBLU41H07OYvCvH1gm--Gpjbp1ll5LM94Y5mtRoE&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=1aPId2eIR0wSxFq-EVYweg&oh=00_AfmQBJRzcmnF_LL6R7yqptSkwzZc3fvGC5Z_txPqBTWZ1Q&oe=69447174',
+      '/images/journal/500032044_122131410836817418_3593360910453275065_n.jpg',
+      '/images/journal/494267540_122131409540817418_2149115453646802369_n.jpg',
+      '/images/journal/502668961_122131409060817418_1989248827362906498_n.jpg',
     ],
     content: `Noc była zdecydowanie jedną z najspokojniejszych jakie przeżyłem na tej wyprawie. Po prostu, gdy poszedłem spać po kilku godzinach obudził mnie budzik. To może świadczyć o tym, że już jestem na tyle zmęczony, że organizm czerpie z każdej możliwości ny regenerację pełnymi garściami. Nie słyszałem nawet mitycznego chrapania kolegi, które miało podobno znacząco uprzykrzać mi sen. Ja się bardzo cieszę z tego powodu, ponieważ wstałem niezwykle wypoczęty. Spakowałem wszystko co mi potrzebne, wrzuciłem coś małego na ząb i po prostu poszedłem dalej. 
 
@@ -656,9 +656,9 @@ Dopiero kilka minut przed 22:00 docieram na pole przed lasem, na którym jest st
     distanceTotal: 749,
     title: 'Głodny',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/499351233_122131538354817418_1451332710248471112_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=5nPPohYBHyUQ7kNvwE72IQr&_nc_oc=Adk_TTLAg3X0EI-sTDMpg7xpP5C0lUCYu6NO7Xdn1VuM5-Qf8n8dVsFSO2X4CMoL1c0&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=nr3TYWKqCK_Dt5mK_vfuvA&oh=00_AflSSccoEeNBXWdkYWz-z2Edt08vOLrQgdTMlTvy16kIQA&oe=694472FF',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/497768535_122131538126817418_5161520953664839637_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=BZgoDpiu_JwQ7kNvwF2nVc2&_nc_oc=AdmaHd5lI6HvDs1sandTFxmfj2a_X6zM_GKyrEG1yvi_Q2FlIGs3xkjlAylVAOUm_o4&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=8NTXmZI2zUvmfkttRBHlug&oh=00_AflPxgdEoybfeBy8lwoMEa1ebBSRPBenQ1vojLItE9CqCA&oe=69448D8B',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/495119101_122131534718817418_7203255923605437877_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=D5RPo0tC3IQQ7kNvwHGuuWw&_nc_oc=AdloUUoeOW4DC1weYxDGN6Brc11k-xfax6SrZ3ZdKj2TBr4k1kJBtCq2Wq4j2WIN3nc&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=6_bFpeYeFnF0yiZvVmcBDQ&oh=00_Afk_swyQUFdPiEU-VLCD0hY8kH7m1Sl5gSERoL1hYP0ZfQ&oe=694468D3',
+      '/images/journal/499351233_122131538354817418_1451332710248471112_n.jpg',
+      '/images/journal/497768535_122131538126817418_5161520953664839637_n.jpg',
+      '/images/journal/495119101_122131534718817418_7203255923605437877_n.jpg',
     ],
     content: `Spało mi się dzisiaj bardzo średnio. Miejsce było niewygodne, było go mało i miałem jakieś podskórnie niepokój w sobie przez całą noc. Ogólnie nie polecam studni jako nocleg. 
 
@@ -720,9 +720,9 @@ Nie pozostaje mi nic innego jak wejść w końcu śpiwór i pójść spać.`,
     distanceTotal: 811,
     title: 'Urodziny',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/506708684_122131737014817418_1696552050522679549_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=jZuRQ0Pq-t0Q7kNvwHj5LMN&_nc_oc=AdnFbYGdEoCL0_jDSSlyzSa2Od6AC-A2wYwYOqb8sGIhu9RyojzPkpQMc_dBvRARFvo&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=9AiQwJh8aNRWl0LFsmJDCw&oh=00_Afm0L_LYXeV3G7macOVHzCg6ngu2cvyczGnqk8r0uiWEmw&oe=69448742',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/504248572_122131712432817418_6240953394787966690_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=RccySRr2xYYQ7kNvwEc3uW6&_nc_oc=AdlShXvRw79xPacVHSTSWIoPApnbDTlw6a8NXO0P_QVAo1of1M2B-eE_4w5i4hHGvN0&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=KKo1Ie7fI_oqxpbJXchCAw&oh=00_AfnjPxW9X2I0m6mzW0fIgHTLoVYtgO85DDVOGUUt5WFngw&oe=69445A93',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/508604936_122131712252817418_5701523042514559789_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=eJ3JpB2Fw84Q7kNvwGc_x42&_nc_oc=AdnG9ecdXWP0exlVtsWbNL4yUuPufyYJKrSAQR1p8r2O3ETfYDNDXxfEEAzqaRjdwQc&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=-wxVPmk8s8y9tTVYMJio1A&oh=00_AfnSngl-HHb4wDJ55zUAlf3fa6owGUNH6eNX8h9FluPLog&oe=69445DF6',
+      '/images/journal/506708684_122131737014817418_1696552050522679549_n.jpg',
+      '/images/journal/504248572_122131712432817418_6240953394787966690_n.jpg',
+      '/images/journal/508604936_122131712252817418_5701523042514559789_n.jpg',
     ],
     content: `Noc na placu zabaw była całkiem przyjemna. Temperatura w tym miejscu dopisała, a mimo oświetlenia, które paliło się cały czas, nie przeszkadzało mi to za bardzo. Byłem zwinięty tak w śpiwór, że i tak widziałem tylko ciemność. Chociaż dzięki temu rano miałem łatwiejsze pakowanie. Zauważyłem też, że barierki są całe w rosie, trochę tutaj zawiodłem, ponieważ nie wszystko na noc wsadziłem do plecaka, ale nic wielkiego się nie stało. 
 
@@ -780,9 +780,10 @@ W końcu znalazłem takowe tuż przy drodze, ale muszę trochę uporządkować p
     distanceTotal: 872,
     title: 'Gość',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/505782566_122131892408817418_4849795871337601430_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=K5iMxyFAK6MQ7kNvwEEicpS&_nc_oc=Adm7imobAo2jiSyh47fNsO_h7CiksiX4bv9CJU4wN-LRgixH_IIMjSxPeaYI6wdfVSs&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=eYl4kA9gO-IeLpl_YAcdQA&oh=00_AfnJVm49irKPMxj2IvunYRihubjLojuM_g7KEEBGu9GuZA&oe=6944767B',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/504856407_122131900598817418_7147433793005134484_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=CPv9zqmBJocQ7kNvwFHGPb0&_nc_oc=AdmpOxMbm-HUn5UI21LGDeu_oczVzjRgfTp2DyMZCDaIT6bNNhC9xlx0Eotlal0xVhk&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=VtmuKciVEOC8adoao9xwfA&oh=00_AflcetqHCf5RKRz_7a5Y3BS1VE-co4rAdFx3R5sGkMXALw&oe=69448F30',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/502651158_122131885046817418_7255559384465152327_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=3HTgfzQlsSgQ7kNvwGtMyE0&_nc_oc=AdneMbRNEs-aGo4v8zpUhTGfFqlnSF9QWYHvLiytA15AZjBKtjG5TjiML-Ws8I-H5lg&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=R8SaewS4_c0KQ5YVj-E-HA&oh=00_AflIgcDKEwcu70pIxb5hWuitOKuyydbJi2OqGcyugJkeOQ&oe=694474D8',
+      '/images/journal/505782566_122131892408817418_4849795871337601430_n.jpg',
+      '/images/journal/504856407_122131900598817418_7147433793005134484_n.jpg',
+      '/images/journal/502651158_122131885046817418_7255559384465152327_n.jpg',
+
     ],
     content: `Wczoraj bardzo późno skończyłem marsz. Już było grubo po 22:00 i zrobiło się ciemno. Położyłem się i nawet nie pamiętam kiedy usnąłem podczas pisania relacji. Przebudziłem się o 2:00 zauważając telefon leżący na ziemi. To oznaczało, że muszę dokończyć pisać. Na szczęście było jeszcze przed budzikiem. 
 
@@ -860,9 +861,9 @@ Najedzony kładę się do swojego posłania. To będzie moja ostatnia noc na tej
     distanceTotal: 924,
     title: 'Koniec',
     images: [
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/496642889_122132023880817418_4620056584754404304_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=QnBzx-FMgAMQ7kNvwHAsKdq&_nc_oc=AdnCvTvvOLi5rViejiSJ886aH9h8qIMrgGUYUOeTRZ3b5CNmUVjx8w1vKJ8LOH2Scws&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=LWzv6pBfQFdRluZX_gElXw&oh=00_AfkzBOF0i_1Wgxpc1kLLs4JnYRQwbH7lTj21VFihjlhD3A&oe=694474E7',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/500128343_122132022212817418_8077796719377449615_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=iDrMSF8kvecQ7kNvwGUwEzc&_nc_oc=AdnLWaltJB4xZaDkkq483tbAaMnZ4lNNmZojy1J-Ui7NC_E6EOau7cTuxWp5MYeM-bQ&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=QI5xHSp_yLNZ-Sb_jAjp5g&oh=00_AfnpxJP4sV9m6aNQw_jj_NK3FjlJBNRX2a9-6RNL0y1kWA&oe=6944844E',
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/499555405_122132021846817418_7735605071501266001_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=BInZel7Vk40Q7kNvwGN4Vn4&_nc_oc=AdkWx-ZbssRYa_DEFL48q2kDRErd2eXwO3S2y7ldsV-hi6SeB1h3yUqqexazQFlT5rY&_nc_zt=23&_nc_ht=scontent.flcj1-1.fna&_nc_gid=BELi2vl524L2S-mmWylpdQ&oh=00_AfmWw8hTdgGQJ6jnsfOv9EzWzyFP34nkkp6poIyvvfurzg&oe=694477B4',
+      '/images/journal/516180726_122134477196817418_4024637466607253337_n.jpg',
+      '/images/journal/494475691_122132023760817418_7655748656508993716_n.jpg',
+      '/images/journal/500128343_122132022212817418_8077796719377449615_n.jpg',
     ],
     content: `Gdy wszedłem do śpiwora to nawet nie pamiętam kiedy zasnąłem, nie wiem też czy się dobrze zdążyłem ułożyć, było to takie szybkie. 
 

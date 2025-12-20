@@ -7,7 +7,7 @@ export const siteMetadata = {
     'Wyrusz w niezapomnianą podróż przez najpiękniejsze szlaki Sudetów. 900 km przez 23 pasma górskie - odkryj magię Korony Sudetów.',
   // Use environment variable for flexible deployment (dev, staging, production)
   siteUrl:
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://sudety-grand-trail.vercel.app',
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sudety-grand-trail.com',
   siteName: 'Sudety Grand Trail',
   locale: 'pl_PL',
   type: 'website' as const,
@@ -30,7 +30,7 @@ export const siteMetadata = {
   openGraph: {
     type: 'website' as const,
     locale: 'pl_PL',
-    url: 'https://sudetygrandtrail.pl',
+    url: 'https://www.sudety-grand-trail.com',
     siteName: 'Sudety Grand Trail',
     images: [
       {
