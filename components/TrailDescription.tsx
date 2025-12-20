@@ -17,12 +17,6 @@ const TrailDescription = () => {
     offset: ['start end', 'end 0.6'],
   });
 
-  // Section-level progress so parallax ends with the text content
-  const { scrollYProgress: sectionProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end end'],
-  });
-
   // Transform scroll progress to image opacity
   // Image 1: visible 0-68%, smooth fade out 68-74%
   const image1Opacity = useTransform(
@@ -44,8 +38,6 @@ const TrailDescription = () => {
     [0.88, 0.94, 1],
     [0, 1, 1]
   );
-  // Faster parallax slide for the sticky image column, ending with the section
-  const imageParallaxY = useTransform(sectionProgress, [0, 1], [0, 240]);
 
   return (
     <Section ref={sectionRef} className="bg-forest-50" ariaLabel="Opis Szlaku">

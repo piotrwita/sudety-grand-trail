@@ -25,8 +25,7 @@ const mockCompletions = [
     type: 'Solo',
     description:
       'Przejście całych Sudetów było intensywną i piękną przygodą. Każdy dzień oferował nowe wyzwania i krajobrazy, które trudno porównać z czymkolwiek innym.',
-    photo:
-      'https://scontent.flcj1-1.fna.fbcdn.net/v/t45.1600-4/516180726_122134477196817418_4024637466607253337_n.jpg?stp=c0.256.1536.1536a_cp0_dst-jpg_q75_s565x565_spS444_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c02adf&_nc_ohc=EcbKTER9DYoQ7kNvwHw3sDQ&_nc_oc=Adk2_qMsBmTLSDIfVz_lypnxq3DEf4dmoNFLbh-pTSr91ApbW0yv-6p4l28gyKS0-sc&_nc_zt=1&_nc_ht=scontent.flcj1-1.fna&_nc_gid=TSDykpnF5g0zyzt6GHvBXw&oh=00_AfkuEgenDTGuRGDJqWVgfLCeF2stmdrlagSMJFIhRp3Xxw&oe=694355FE',
+    photo: '/images/author.jpg',
     isFirstCompleter: true,
     achievements: ['Pierwszy zdobywca', 'Najszybsze przejście'],
     favoriteSection:
