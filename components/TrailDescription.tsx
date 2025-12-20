@@ -48,7 +48,7 @@ const TrailDescription = () => {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: '0px' }}
             transition={{ duration: 0.8 }}
             className="order-2 lg:order-1"
           >
@@ -137,7 +137,7 @@ const TrailDescription = () => {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: '0px' }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="order-1 relative mt-8 lg:order-2 lg:sticky lg:top-24 lg:mt-0 lg:self-start"
           >

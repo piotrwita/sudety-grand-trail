@@ -9,7 +9,7 @@ import { SectionHeader } from './SectionHeader';
 
 const FADE_IN_PROPS = {
   inView: true,
-  inViewMargin: '-200px' as const,
+  inViewMargin: '0px' as const,
   direction: 'up' as const,
   offset: 30,
   delay: 0.3,
@@ -39,7 +39,7 @@ export const AboutProjectSection = () => {
             {/* Historia powstania i koncepcja */}
             <FadeIn
               {...FADE_IN_PROPS}
-              className="relative overflow-hidden rounded-xl border border-cream/20 bg-gradient-to-br from-forest-800/80 via-forest-800/60 to-earth-800/80 p-4 backdrop-blur-sm sm:rounded-2xl sm:p-6 md:p-8 lg:p-12"
+              className="relative overflow-hidden rounded-xl border border-cream/20 bg-gradient-to-br from-forest-800/80 via-forest-800/60 to-earth-800/80 p-4 bg-forest-800/95 sm:rounded-2xl sm:p-6 md:p-8 lg:p-12 supports-[backdrop-filter]:backdrop-blur-sm"
             >
               <div className="relative space-y-4 text-base leading-relaxed text-cream/90 sm:space-y-6 sm:text-lg md:space-y-8">
                 {/* Historia powstania */}
@@ -125,7 +125,7 @@ export const AboutProjectSection = () => {
             {/* Cel i Legendy */}
             <FadeIn
               {...FADE_IN_PROPS}
-              className="relative overflow-hidden rounded-xl border border-accent/30 bg-gradient-to-br from-accent/15 via-accent/10 to-earth-700/20 p-4 backdrop-blur-sm sm:rounded-2xl sm:p-6 md:p-8 lg:p-12"
+              className="relative overflow-hidden rounded-xl border border-accent/30 bg-gradient-to-br from-accent/15 via-accent/10 to-earth-700/20 p-4 bg-accent/20 sm:rounded-2xl sm:p-6 md:p-8 lg:p-12 supports-[backdrop-filter]:backdrop-blur-sm"
             >
               <div className="relative space-y-4 text-base leading-relaxed text-cream/90 sm:space-y-6 sm:text-lg md:space-y-8">
                 {/* Cel Szlaku */}
@@ -191,7 +191,7 @@ export const AboutProjectSection = () => {
             {/* Filozofia */}
             <FadeIn
               {...FADE_IN_PROPS}
-              className="relative overflow-hidden rounded-xl border border-cream/20 bg-gradient-to-br from-forest-800/80 via-forest-800/60 to-earth-800/80 p-4 backdrop-blur-sm sm:rounded-2xl sm:p-6 md:p-8 lg:p-12"
+              className="relative overflow-hidden rounded-xl border border-cream/20 bg-gradient-to-br from-forest-800/80 via-forest-800/60 to-earth-800/80 p-4 bg-forest-800/95 sm:rounded-2xl sm:p-6 md:p-8 lg:p-12 supports-[backdrop-filter]:backdrop-blur-sm"
             >
               <div className="relative space-y-4 text-base leading-relaxed text-cream/90 sm:space-y-5 sm:text-lg md:space-y-6">
                 <p className="text-xl font-bold text-cream sm:text-2xl">
@@ -227,7 +227,7 @@ export const AboutProjectSection = () => {
 
             {/* Zakończenie */}
             <FadeIn {...FADE_IN_PROPS} className="text-center">
-              <div className="relative overflow-hidden rounded-xl border border-accent/40 bg-gradient-to-br from-accent/25 via-accent/20 to-earth-700/25 p-4 backdrop-blur-sm sm:rounded-2xl sm:p-6 md:p-8 lg:p-12">
+              <div className="relative overflow-hidden rounded-xl border border-accent/40 bg-gradient-to-br from-accent/25 via-accent/20 to-earth-700/25 p-4 bg-accent/30 sm:rounded-2xl sm:p-6 md:p-8 lg:p-12 supports-[backdrop-filter]:backdrop-blur-sm">
                 <div className="relative space-y-4 sm:space-y-6 md:space-y-8">
                   {/* Zakończenie */}
                   <div>

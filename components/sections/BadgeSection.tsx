@@ -9,7 +9,7 @@ import { SectionHeader } from './SectionHeader';
 
 const FADE_IN_PROPS = {
   inView: true,
-  inViewMargin: '-200px' as const,
+  inViewMargin: '0px' as const,
   direction: 'up' as const,
   offset: 30,
   delay: 0.3,
@@ -35,7 +35,7 @@ export const BadgeSection = () => {
           {/* Informacja o możliwości zdobycia */}
           <FadeIn
             {...FADE_IN_PROPS}
-            className="relative overflow-hidden rounded-2xl border-2 border-gold-400/40 bg-gradient-to-br from-forest-800/95 via-forest-800/75 to-earth-800/95 p-6 backdrop-blur-sm shadow-[0_0_50px_rgba(251,191,36,0.3)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14"
+            className="relative overflow-hidden rounded-2xl border-2 border-gold-400/40 bg-gradient-to-br from-forest-800/95 via-forest-800/75 to-earth-800/95 p-6 bg-forest-800/98 shadow-[0_0_50px_rgba(251,191,36,0.3)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14 supports-[backdrop-filter]:backdrop-blur-sm"
           >
             {/* Enhanced decorative gold glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-gold-400/8 via-transparent to-gold-500/8 rounded-2xl" />
@@ -123,7 +123,7 @@ export const BadgeSection = () => {
           <FadeIn
             {...FADE_IN_PROPS}
             delay={0.2}
-            className="relative overflow-hidden rounded-2xl border-2 border-gold-400/40 bg-gradient-to-br from-accent/25 via-accent/20 to-earth-700/30 p-6 backdrop-blur-sm shadow-[0_0_50px_rgba(251,191,36,0.3)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14"
+            className="relative overflow-hidden rounded-2xl border-2 border-gold-400/40 bg-gradient-to-br from-accent/25 via-accent/20 to-earth-700/30 p-6 bg-accent/30 shadow-[0_0_50px_rgba(251,191,36,0.3)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14 supports-[backdrop-filter]:backdrop-blur-sm"
           >
             {/* Enhanced gold accent glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-gold-400/8 via-transparent to-gold-500/8 rounded-2xl" />
@@ -201,7 +201,7 @@ export const BadgeSection = () => {
           <FadeIn
             {...FADE_IN_PROPS}
             delay={0.35}
-            className="relative overflow-hidden rounded-2xl border-2 border-gold-400/50 bg-gradient-to-br from-gold-400/25 via-gold-500/20 to-gold-600/25 p-6 backdrop-blur-sm shadow-[0_0_80px_rgba(251,191,36,0.5)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14"
+            className="relative overflow-hidden rounded-2xl border-2 border-gold-400/50 bg-gradient-to-br from-gold-400/25 via-gold-500/20 to-gold-600/25 p-6 bg-gold-400/30 shadow-[0_0_80px_rgba(251,191,36,0.5)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14 supports-[backdrop-filter]:backdrop-blur-sm"
           >
             {/* Enhanced epic gold glow effects */}
             <div className="absolute inset-0 bg-gradient-to-br from-gold-300/15 via-transparent to-gold-500/15 rounded-2xl" />
