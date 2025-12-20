@@ -151,7 +151,7 @@ const TrailDescription = () => {
                 style={{ opacity: image1Opacity }}
               >
                 <Image
-                  src="https://d34-a.sdn.cz/d_34/c_img_H_K/NaRvEW.jpeg?fl=res,2200,2200,1"
+                  src="/images/mountains/NaRvEW.jpeg"
                   alt="Sudety Grand Trail - widok górski"
                   width={600}
                   height={550}
@@ -167,7 +167,7 @@ const TrailDescription = () => {
                 style={{ opacity: image2Opacity }}
               >
                 <Image
-                  src="https://d34-a.sdn.cz/d_34/c_img_QP_y/3DRRSH.jpeg?fl=res,2200,2200,1"
+                  src="/images/mountains/3DRRSH.jpeg"
                   alt="Sudety Grand Trail - widok górski"
                   width={600}
                   height={550}
@@ -183,7 +183,7 @@ const TrailDescription = () => {
                 style={{ opacity: image3Opacity }}
               >
                 <Image
-                  src="https://d34-a.sdn.cz/d_34/c_img_m3_A/kPX8laQTIipeEeWM1acO/c156.jpeg?fl=res,2200,2200,1"
+                  src="/images/mountains/c156.jpeg"
                   alt="Sudety Grand Trail - widok górski"
                   width={600}
                   height={550}

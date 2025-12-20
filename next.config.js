@@ -7,11 +7,6 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'd34-a.sdn.cz',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
         hostname: 'poltrax.live',
         pathname: '/**',
       },
