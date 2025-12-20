@@ -87,7 +87,7 @@ const MountainsHeroSection = () => (
           <div className="mx-auto w-full space-y-3 text-center sm:space-y-4">
             <p className="text-fluid-xl font-bold leading-relaxed text-cream/95">
               Wykaz najciekawszych szczytów na szlaku{' '}
-              <span className="theme-szczyty-text-gradient">
+              <span className="theme-szczyty-text-gradient font-bold">
                 SUDETY GRAND TRAIL
               </span>
             </p>
@@ -101,7 +101,7 @@ const MountainsHeroSection = () => (
               <span className="theme-szczyty-text-gradient font-bold">
                 Lázek
               </span>
-              .
+              .            
             </p>
           </div>
         </FadeIn>
