@@ -19,6 +19,13 @@ export const TRAIL_TYPES = [
   'Grupa',
   'Z psem',
   'Ultralight',
+  'Fastpacking',
+  'Ze wsparciem',
+  'Rower',
+  'Ultra running',
+  'Bez pośpiechu',
+  'Na dziko',
+  'Fragmentami',
   'Inne',
 ] as const;
 

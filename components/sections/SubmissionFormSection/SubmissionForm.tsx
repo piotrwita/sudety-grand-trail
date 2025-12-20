@@ -408,7 +408,7 @@ export const SubmissionForm = () => {
                   type="text"
                   {...register('nickname')}
                   className={inputClassName(!!errors.nickname)}
-                  placeholder="Górski"
+                  placeholder="Włóczykij"
                 />
               </FormField>
 
@@ -422,7 +422,7 @@ export const SubmissionForm = () => {
                   type="email"
                   {...register('email')}
                   className={inputClassName(!!errors.email)}
-                  placeholder="jan@example.com"
+                  placeholder="twojanazwa@gmail.com"
                 />
               </FormField>
 
