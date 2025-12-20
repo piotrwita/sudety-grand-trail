@@ -11,9 +11,11 @@ const AboutCreator = () => {
       <div className="gradient-mesh-subtle absolute inset-0 opacity-30" />
       <VintageMountainsBackground className="opacity-[0.08]" />
       
-      {/* Decorative corner glows */}
-      <div className="pointer-events-none absolute -left-32 -top-32 h-64 w-64 rounded-full bg-forest-500/5 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-32 -right-32 h-64 w-64 rounded-full bg-earth-500/5 blur-3xl" />
+      {/* Decorative corner glows - wrapped in overflow container */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -left-32 -top-32 h-64 w-64 rounded-full bg-forest-500/5 blur-3xl" />
+        <div className="absolute -bottom-32 -right-32 h-64 w-64 rounded-full bg-earth-500/5 blur-3xl" />
+      </div>
 
       <div className="fluid-container relative z-10">
         {/* Main Content */}
