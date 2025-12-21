@@ -80,7 +80,7 @@ const TrailHeroSection = () => (
               <span className="theme-szczyty-text-gradient font-bold">
                 900 kilometrów
               </span>{' '}  
-                przez {' '}
+                przez{' '}
               <span className="theme-szczyty-text-gradient font-bold">
                 23 pasma górskie
               </span>{' '}  
@@ -88,7 +88,7 @@ const TrailHeroSection = () => (
               <span className="theme-szczyty-text-gradient font-bold">
                 Jarnołtówka w Górach Opawskich
               </span>{' '}  
-                po finał na {' '}
+                po finał na{' '}
               <span className="theme-szczyty-text-gradient font-bold">
                 Ślęży.
               </span>
