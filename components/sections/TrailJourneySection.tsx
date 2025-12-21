@@ -145,6 +145,10 @@ interface DayAccordionProps {
 const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
   const { t } = useTranslations('trailJourney');
   
+  // Get translated title and content from JSON, fallback to original if translation not available
+  const translatedTitle = t(`days.${day.day}.title`) || day.title;
+  const translatedContent = t(`days.${day.day}.content`) || day.content;
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -169,7 +173,7 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
           {/* Title and stats */}
           <div className="flex-1">
             <h3 className="font-display text-lg font-bold text-forest-800 sm:text-xl">
-              „{day.title}"
+              „{translatedTitle}"
             </h3>
             <div className="mt-1 flex flex-wrap items-center gap-2 text-sm text-forest-600 sm:gap-3">
               <span className="inline-flex items-center gap-1">
@@ -201,10 +205,10 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
               {/* Content with interspersed images */}
               <div className="prose prose-forest max-w-none rounded-xl bg-forest-50/50 p-4 sm:p-6">
                 {renderContentWithImages(
-                  day.content,
+                  translatedContent,
                   day.images,
                   day.day,
-                  day.title,
+                  translatedTitle,
                   t
                 )}
               </div>
