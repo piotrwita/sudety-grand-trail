@@ -92,8 +92,11 @@ const MountainsHeroSection = () => (
               </span>
             </p>
             <p className="text-fluid-base lg:text-fluid-lg mx-auto max-w-4xl font-medium italic leading-relaxed text-cream/85">
-              Kilkadziesiąt ciekawych wierzchołków w 23 pasmach górskich, które
-              spotkasz przemierzając szlak od{' '}
+              Kilkadziesiąt ciekawych wierzchołków w{' '}
+              <span className="theme-szczyty-text-gradient font-bold">
+              23 pasmach górskich
+              </span> 
+              , które spotkasz przemierzając szlak od{' '}
               <span className="theme-szczyty-text-gradient font-bold">
                 Śnieżki
               </span>{' '}

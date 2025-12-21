@@ -4,7 +4,7 @@ import { siteRoutes } from './site-routes';
 export const siteMetadata = {
   title: 'Sudety Grand Trail',
   description:
-    'Wyrusz w niezapomnianą podróż przez najpiękniejsze szlaki Sudetów. 900 km przez 23 pasma górskie - odkryj magię Korony Sudetów.',
+    'Wyrusz w niezapomnianą podróż najpiękniejszymi szlakami Sudetów. 900 km i 23 pasma górskie do pokonania na trasie SGT.',
   // Use environment variable for flexible deployment (dev, staging, production)
   siteUrl:
     process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sudety-grand-trail.com',
@@ -121,7 +121,7 @@ export const pageMetadata = {
   home: generatePageMetadata({
     title: 'Sudety Grand Trail - Odkryj Magię Gór',
     description:
-      'Wyrusz w niezapomnianą podróż przez najpiękniejsze szlaki Sudetów. 900 km przez 23 pasma górskie - odkryj magię Korony Sudetów. Przygoda, natura i wyzwanie czekają na Ciebie.',
+      'Wyrusz w niezapomnianą podróż najpiękniejszymi szlakami Sudetów. 900 km i 23 pasma górskie do pokonania na trasie SGT.',
     path: siteRoutes.home,
     keywords: ['strona główna', 'home', 'sudety trail', 'górskie wyzwanie'],
   }),

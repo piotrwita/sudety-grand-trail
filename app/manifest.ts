@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Sudety Grand Trail',
     short_name: 'SGT',
     description:
-      'Wyrusz w niezapomnianą podróż przez najpiękniejsze szlaki Sudetów. 900 km przez 24 pasma górskie - odkryj magię Korony Sudetów.',
+      'Wyrusz w niezapomnianą podróż najpiękniejszymi szlakami Sudetów. 900 km i 23 pasma górskie do pokonania na trasie SGT.',
     start_url: '/',
     display: 'standalone',
     background_color: '#1a3a2e',
