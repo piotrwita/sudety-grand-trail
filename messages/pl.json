@@ -165,6 +165,7 @@
       "title": "Kompletne przejście Sudetów.",
       "p1": "Celem szlaku jest zdobycie",
       "p1Highlight1": "wszystkich najwyższych szczytów każdego pasma",
+      "p1Middle": ", a także – po polskiej stronie – wszystkich",
       "p1Highlight2": "16 sudeckich szczytów należących do Korony Gór Polski",
       "highlightBox": "W wielu przypadkach oznacza to",
       "highlightBoxBold": "podwójne wejścia",
@@ -192,6 +193,7 @@
       "title": "Dla tych, którzy chcą się zgubić, by się odnaleźć.",
       "p1": "Ten projekt powstał z",
       "p1Highlight1": "miłości do gór",
+      "p1Middle": ", ale też z potrzeby stworzenia czegoś własnego – ścieżki, która nie tylko prowadzi przez szczyty, ale",
       "p1Highlight2": "łączy pasma, kraje, emocje i doświadczenia",
       "p2": "to propozycja dla każdego, kto pragnie odkryć Sudety w ich pełni – nie tylko fizycznie, ale też",
       "p2Highlight": "duchowo",
@@ -401,6 +403,7 @@
     "tagline": "Korona Sudetów w jednym szlaku",
     "description": "900 km przez 23 pasma górskie. Zdobądź wszystkie najwyższe szczyty Sudetów i 16 szczytów Korony Gór Polski w jednej epickiej wędrówce.",
     "mapLink": "Mapa Szlaku",
+    "mapIconTitle": "Mapa szlaku",
     "community": "Społeczność",
     "copyright": "© 2025 Sudety Grand Trail. Wszystkie prawa zastrzeżone.",
     "madeWith": "Szlak stworzony z ❤️ dla miłośników gór"
@@ -589,6 +592,10 @@
     "thisYear": {
       "title": "W Tym Roku",
       "description": "Przejścia w 2025 roku"
+    },
+    "first": {
+      "title": "Pierwszy Zdobywca",
+      "description": "Czerwiec 2025"
     }
   },
   "hallOfFameList": {
@@ -652,7 +659,7 @@
     "cta": {
       "title": "Dołącz do społeczności",
       "description": "Jeśli chcesz się dowiedzieć, jak to wszystko się zaczęło, co mnie napędza i jak wyglądają góry oczami kogoś, kto zna wagę ciszy i potrafi znaleźć dom w miejscu, gdzie inni widzą tylko drzewa, to zapraszam Cię na moją prywatną grupę.",
-      "button": "Opowieści ze Szlaku",
+      "button": "Opowieści ze szlaku",
       "quote": "\"Bo marsz to nie tylko kilometry. To też ludzie, emocje, porażki i małe zwycięstwa. A ja po prostu lubię się tym dzielić.\""
     }
   },

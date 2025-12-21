@@ -69,6 +69,13 @@ export const Footer = () => {
                     }
                   };
 
+                  const getTitle = () => {
+                    if (link.icon === 'map') {
+                      return t('mapIconTitle');
+                    }
+                    return link.label;
+                  };
+
                   return (
                     <Link
                       key={link.href}
@@ -76,7 +83,7 @@ export const Footer = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-accent-hover rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50"
-                      title={link.label}
+                      title={getTitle()}
                     >
                       {getIcon()}
                     </Link>
@@ -88,7 +95,7 @@ export const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50 hover:text-accent"
-                  title="Facebook - Opowieści ze Szlaku"
+                  title="Facebook - Opowieści ze szlaku"
                 >
                   <FacebookIcon />
                   <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent/20">

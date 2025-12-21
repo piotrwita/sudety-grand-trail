@@ -139,7 +139,7 @@
       "p1": "I have traversed the Sudetes multiple times. More than once I discovered their secrets along officially marked trails. Yet none of the existing trails led me",
       "p1Highlight": "comprehensively through this incredibly diverse range",
       "p2": "That is why the idea of",
-      "p2Rest": " SUDETY GRAND TRAIL, a trail that will become not only the culmination of my Sudeten wanderings, but also",
+      "p2Rest": ", a trail that will become not only the culmination of my Sudeten wanderings, but also",
       "p2Highlight": "a new challenge for all mountain lovers"
     },
     "concept": {
@@ -165,6 +165,7 @@
       "title": "Complete Sudetes crossing.",
       "p1": "The goal of the trail is to conquer",
       "p1Highlight1": "all the highest peaks of each range",
+      "p1Middle": ", and also – on the Polish side – all",
       "p1Highlight2": "16 Sudeten peaks belonging to the Crown of Polish Mountains",
       "highlightBox": "In many cases, this means",
       "highlightBoxBold": "double ascents",
@@ -192,6 +193,7 @@
       "title": "For those who want to get lost to find themselves.",
       "p1": "This project was born from",
       "p1Highlight1": "love for mountains",
+      "p1Middle": ", but also from the need to create something of one's own – a path that not only leads through peaks, but",
       "p1Highlight2": "connects ranges, countries, emotions, and experiences",
       "p2": "is a proposal for everyone who wants to discover the Sudetes in their fullness – not only physically but also",
       "p2Highlight": "spiritually",
@@ -401,6 +403,7 @@
     "tagline": "Sudeten Crown in one trail",
     "description": "900 km through 23 mountain ranges. Conquer all the highest peaks of the Sudetes and 16 peaks of the Crown of Polish Mountains in one epic journey.",
     "mapLink": "Trail Map",
+    "mapIconTitle": "Trail Map",
     "community": "Community",
     "copyright": "© 2025 Sudety Grand Trail. All rights reserved.",
     "madeWith": "Trail created with ❤️ for mountain lovers"
@@ -589,6 +592,10 @@
     "thisYear": {
       "title": "This Year",
       "description": "Crossings in 2025"
+    },
+    "first": {
+      "title": "First Completer",
+      "description": "June 2025"
     }
   },
   "hallOfFameList": {
@@ -652,7 +659,7 @@
     "cta": {
       "title": "Join the Community",
       "description": "If you want to find out how it all started, what drives me, and what mountains look like through the eyes of someone who knows the weight of silence and can find home in a place where others see only trees, I invite you to my private group.",
-      "button": "Stories from the Trail",
+      "button": "Opowieści ze szlaku",
       "quote": "\"Because walking is not just kilometers. It's also people, emotions, failures, and small victories. And I just like to share that.\""
     }
   },

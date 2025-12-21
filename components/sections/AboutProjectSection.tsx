@@ -138,7 +138,7 @@ export const AboutProjectSection = () => {
                     <span className="font-bold text-cream">
                       {t('goal.p1Highlight1')}
                     </span>
-                    , a także – po polskiej stronie – wszystkich{' '}
+                    {t('goal.p1Middle')}{' '}
                     <span className="font-bold text-cream">
                       {t('goal.p1Highlight2')}
                     </span>
@@ -197,9 +197,8 @@ export const AboutProjectSection = () => {
                 <div className="space-y-3 text-justify sm:space-y-4">
                 <p>
                   {t('philosophy.p1')}{' '}
-                  <span className="font-bold text-accent">{t('philosophy.p1Highlight1')}</span>,
-                  ale też z potrzeby stworzenia czegoś własnego – ścieżki, która
-                  nie tylko prowadzi przez szczyty, ale{' '}
+                  <span className="font-bold text-accent">{t('philosophy.p1Highlight1')}</span>
+                  {t('philosophy.p1Middle')}{' '}
                   <span className="font-bold text-cream">
                     {t('philosophy.p1Highlight2')}
                   </span>

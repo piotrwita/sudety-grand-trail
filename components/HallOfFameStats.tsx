@@ -61,8 +61,8 @@ const getStatCards = (t: (key: string) => string) => [
   {
     id: 'first',
     value: stats.firstCompleter,
-    title: 'Pierwszy Zdobywca',
-    description: 'Czerwiec 2025',
+    title: t('first.title'),
+    description: t('first.description'),
     icon: null,
     gradient: 'from-yellow-300 via-yellow-400 to-yellow-500',
     bgGradient: 'from-yellow-50 via-cream to-yellow-50',
