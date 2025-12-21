@@ -198,6 +198,7 @@ export const SubmissionForm = () => {
     'idle' | 'success' | 'error'
   >('idle');
   const [hasValidationErrors, setHasValidationErrors] = useState(false);
+  const [serverMessage, setServerMessage] = useState('');
 
   const {
     register,
@@ -258,6 +259,7 @@ export const SubmissionForm = () => {
 
   const onSubmit = async (data: SubmissionFormData) => {
     setHasValidationErrors(false);
+    setServerMessage('');
     try {
       // Convert files to base64 attachments
       const emailData: EmailSubmissionData = {
@@ -327,16 +329,21 @@ export const SubmissionForm = () => {
       } else {
         console.error('Error submitting form:', result.message);
         setSubmitStatus('error');
+        setServerMessage(
+          result.message || 'Wystąpił błąd. Spróbuj ponownie później.'
+        );
       }
     } catch (error) {
       console.error('Error processing form:', error);
       setSubmitStatus('error');
+      setServerMessage('Wystąpił błąd. Spróbuj ponownie później.');
     }
   };
 
   const handleReset = () => {
     setSubmitStatus('idle');
     setHasValidationErrors(false);
+    setServerMessage('');
     reset();
   };
 
@@ -654,6 +661,13 @@ export const SubmissionForm = () => {
               />
             </FormField>
           </div>
+
+          {/* ============ ERROR MESSAGE ============ */}
+          {submitStatus === 'error' && serverMessage && (
+            <div className="mx-4 mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 sm:mx-6">
+              {serverMessage}
+            </div>
+          )}
 
           {/* ============ SUBMIT ============ */}
           <div className="bg-forest-50/50 px-4 py-5 sm:px-6 sm:py-6">
