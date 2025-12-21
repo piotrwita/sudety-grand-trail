@@ -22,7 +22,7 @@ const renderContentWithImages = (
     return paragraphs.map((paragraph, idx) => (
       <p
         key={idx}
-        className="mb-5 text-base leading-loose text-forest-700 last:mb-0 sm:text-lg sm:leading-loose"
+        className="mb-5 text-base text-justify leading-loose text-forest-700 last:mb-0 sm:text-lg sm:leading-loose"
       >
         {paragraph}
       </p>
@@ -73,7 +73,7 @@ const renderContentWithImages = (
     result.push(
       <p
         key={`p-${idx}`}
-        className="mb-5 text-base leading-loose text-forest-700 last:mb-0 sm:text-lg sm:leading-loose"
+        className="mb-5 text-base text-justify leading-loose text-forest-700 last:mb-0 sm:text-lg sm:leading-loose"
       >
         {paragraph}
       </p>
@@ -224,8 +224,8 @@ export const TrailJourneySection = () => {
     setOpenDay(openDay === day ? null : day);
   };
 
-  // Sort days in descending order (newest first)
-  const sortedDays = [...trailJournalData].sort((a, b) => b.day - a.day);
+  // Sort days in ascending order (oldest first)
+  const sortedDays = [...trailJournalData].sort((a, b) => a.day - b.day);
 
   return (
     <section

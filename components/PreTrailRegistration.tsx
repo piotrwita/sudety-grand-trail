@@ -119,7 +119,7 @@ const ProcessStepItem = ({
       </div>
       <div className="flex-1 pt-1">
         <h4 className="mb-2 text-lg font-bold text-forest-800">{step.title}</h4>
-        <p className="mb-3 leading-relaxed text-mountain-600">
+        <p className="mb-3 text-justify leading-relaxed text-mountain-600">
           {step.description}
         </p>
         <Link
@@ -171,7 +171,7 @@ const BenefitItem = ({ benefit }: { benefit: Benefit }) => (
     </div>
     <div>
       <h4 className="mb-1 font-bold text-forest-800">{benefit.title}</h4>
-      <p className="text-sm leading-relaxed text-mountain-600">
+      <p className="text-sm text-justify leading-relaxed text-mountain-600">
         {benefit.description}
       </p>
     </div>
@@ -249,7 +249,7 @@ const WarningBox = () => {
             <h4 className="mb-2 text-base font-bold text-gold-800 sm:mb-3 sm:text-lg">
               {t('warning.title')}
             </h4>
-            <p className="text-sm leading-relaxed text-gold-700 sm:text-base">
+            <p className="text-sm text-justify leading-relaxed text-gold-700 sm:text-base">
               <strong>{t('warning.text.part1')}</strong>
               {t('warning.text.part2')}
               <strong>{t('warning.text.part3')}</strong>
@@ -296,7 +296,7 @@ export const PreTrailRegistration = () => {
           inView={true}
           className="mb-16 text-center"
         >
-          <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-mountain-600">
+          <p className="text-fluid-lg mx-auto max-w-4xl text-justify font-medium leading-relaxed text-mountain-600">
             {t('intro.text')}{' '}
             <span className="theme-halloffame-text-gradient-light font-bold">
               {t('intro.highlight')}

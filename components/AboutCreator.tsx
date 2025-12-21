@@ -133,7 +133,7 @@ export const AboutCreator = () => {
                 delay={0.1}
                 inView
               >
-                <p className="text-fluid-base leading-relaxed text-forest-700">
+                <p className="text-fluid-base text-justify leading-relaxed text-forest-700">
                   {t('p1')}
                 </p>
               </FadeIn>
@@ -145,7 +145,7 @@ export const AboutCreator = () => {
                 delay={0.2}
                 inView
               >
-                <p className="text-fluid-base leading-relaxed text-forest-700">
+                <p className="text-fluid-base text-justify leading-relaxed text-forest-700">
                   <strong className="text-accent">
                     {t('p2')}
                   </strong>
@@ -160,7 +160,7 @@ export const AboutCreator = () => {
                 delay={0.3}
                 inView
               >
-                <p className="text-fluid-base leading-relaxed text-forest-700">
+                <p className="text-fluid-base text-justify leading-relaxed text-forest-700">
                   {t('p3')}
                   <strong className="text-accent">
                     {' '}
@@ -177,7 +177,7 @@ export const AboutCreator = () => {
                 delay={0.4}
                 inView
               >
-                <p className="text-fluid-base leading-relaxed text-forest-700">
+                <p className="text-fluid-base text-justify leading-relaxed text-forest-700">
                   {t('p4')}{' '}
                   <strong className="text-accent">
                     {t('p4Highlight')}
