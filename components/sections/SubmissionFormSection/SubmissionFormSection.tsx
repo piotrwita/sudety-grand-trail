@@ -31,8 +31,8 @@ export const SubmissionFormSection = () => {
           className="mb-16 text-center"
         >
           <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-cream/90">
-            {t('description')} <span className="theme-halloffame-text-gradient-light font-bold">{t('descriptionHighlight')}</span>{t('descriptionEnd')}{' '}
-            <span className="theme-halloffame-text-gradient-light font-bold">{t('hallOfFame')}</span>{t('descriptionEnd2')}
+            {t('description')} <span className="bg-gradient-to-r from-gold-700 via-gold-600 to-gold-800 bg-clip-text text-transparent font-bold">{t('descriptionHighlight')}</span>{t('descriptionEnd')}{' '}
+            <span className="bg-gradient-to-r from-gold-700 via-gold-600 to-gold-800 bg-clip-text text-transparent font-bold">{t('hallOfFame')}</span>{t('descriptionEnd2')}
           </p>
         </FadeIn>
 

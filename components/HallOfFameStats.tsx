@@ -95,7 +95,7 @@ export const HallOfFameStats = () => {
         >
           <p className="text-fluid-lg mx-auto max-w-6xl font-medium leading-relaxed text-mountain-600">
             {t('description')}{' '}
-            <span className="theme-halloffame-text-gradient-light font-bold">
+            <span className="bg-gradient-to-r from-gold-700 via-gold-600 to-gold-800 bg-clip-text text-transparent font-bold">
               SUDETY GRAND TRAIL
             </span>. <br />
             {t('descriptionEnd')}

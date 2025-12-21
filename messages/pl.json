@@ -4,7 +4,7 @@
     "trail": "Trasa",
     "live": "Live",
     "peaks": "Szczyty",
-    "hallOfFame": "Hall of Fame",
+    "hallOfFame": "Galeria Sław",
     "badge": "Odznaka",
     "about": "O Mnie"
   },
@@ -62,10 +62,10 @@
     "quote": "To nie tylko odznaka.",
     "symbol": "To symbol pokonania własnych granic.",
     "submit": "Zgłoś Przejście",
-    "hallOfFame": "Hall of Fame"
+    "hallOfFame": "Galeria Sław"
   },
   "hallOfFame": {
-    "title": "Hall of Fame",
+    "title": "Galeria Sław",
     "subtitle": "Oficjalne Przejścia Sudety Grand Trail",
     "description": "Niezłomni wędrowcy zdobyli pełną Koronę Sudetów. Przeszli 900 kilometrów przez 23 pasma górskie.",
     "join": "Ty możesz dołączyć do elitarnego grona zdobywców!",
@@ -97,7 +97,7 @@
     }
   },
   "hallOfFameHero": {
-    "title": "Hall of Fame",
+    "title": "Galeria Sław",
     "subtitle": "Oficjalne Przejścia Sudety Grand Trail",
     "description": {
       "part1": "Niezłomni wędrowcy zdobyli pełną ",
@@ -254,7 +254,7 @@
       "sending": "Wysyłanie...",
       "success": {
         "title": "Zgłoszenie Wysłane!",
-        "message": "Dziękujemy za zgłoszenie! Twoje przejście zostanie zweryfikowane i wkrótce pojawi się w Hall of Fame.",
+        "message": "Dziękujemy za zgłoszenie! Twoje przejście zostanie zweryfikowane i wkrótce pojawi się w Galerii Sław.",
         "another": "Zgłoś Kolejne Przejście"
       },
       "error": "Wystąpił błąd. Spróbuj ponownie później.",
@@ -348,7 +348,7 @@
       },
       "step3": {
         "title": "Zgłoś Ukończenie",
-        "description": "Po ukończeniu szlaku zgłoś swoje przejście z materiałami (zdjęcia, GPX). Po weryfikacji dołączysz do oficjalnego Hall of Fame!",
+        "description": "Po ukończeniu szlaku zgłoś swoje przejście z materiałami (zdjęcia, GPX). Po weryfikacji dołączysz do oficjalnej Galerii Sław!",
         "linkText": "Formularz ukończenia"
       }
     },
@@ -366,7 +366,7 @@
       "benefit3": {
         "title": "Oficjalne Uznanie",
         "description": "Po ukończeniu szlaku dołączysz do elitarnego grona zdobywców. Twoje imię w",
-        "hallOfFame": "Hall of Fame",
+        "hallOfFame": "Galerii Sław",
         "descriptionEnd": "i oficjalny certyfikat ukończenia."
       },
       "benefit4": {
@@ -387,12 +387,14 @@
         "part3": " przed rozpoczęciem wędrówki.",
         "part4": " Przejścia rozpoczęte bez wcześniejszego zgłoszenia mogą nie zostać uwzględnione w oficjalnych statystykach"
       },
-      "hallOfFame": "Hall of Fame"
+      "hallOfFame": "Galerii Sław"
     },
-    "intro": {
+    "callToAction": {
       "text": "Planujesz podbój",
       "highlight": "KORONY SUDETÓW",
-      "textEnd": "? Najpierw zgłoś swoją próbę przejścia i otrzymaj darmowy tracker GPS do śledzenia postępów!"
+      "textMiddle": "? Najpierw zgłoś swoją próbę przejścia i otrzymaj darmowy",
+      "highlight2": "TRACKER GPS",
+      "textEnd": " do śledzenia postępów!"
     }
   },
   "footer": {
@@ -552,7 +554,7 @@
       "subtitle": "Zgłoś swoje przejście i zdobądź oficjalną odznakę!",
       "description": "Dołącz do elitarnego grona zdobywców i otrzymaj swoje wyróżnienie",
       "submit": "Zgłoś Przejście",
-      "hallOfFame": "Zobacz Hall of Fame"
+      "hallOfFame": "Zobacz Galerię Sław"
     }
   },
   "sudetenCrown": {
@@ -627,8 +629,8 @@
     "title": "Zgłoś Swoje Przejście",
     "description": "Ukończyłeś",
     "descriptionHighlight": "Sudety Grand Trail",
-    "descriptionEnd": "? Podziel się swoją historią i dołącz do oficjalnego",
-    "hallOfFame": "Hall of Fame",
+    "descriptionEnd": "? Podziel się swoją historią i dołącz do oficjalnej",
+    "hallOfFame": "Galerii Sław",
     "descriptionEnd2": "!"
   },
   "aboutCreator": {

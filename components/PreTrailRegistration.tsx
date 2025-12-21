@@ -296,12 +296,16 @@ export const PreTrailRegistration = () => {
           inView={true}
           className="mb-16 text-center"
         >
-          <p className="text-fluid-lg mx-auto max-w-4xl text-justify font-medium leading-relaxed text-mountain-600">
-            {t('intro.text')}{' '}
-            <span className="theme-halloffame-text-gradient-light font-bold">
-              {t('intro.highlight')}
+          <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-mountain-600">
+            {t('callToAction.text')}{' '}
+            <span className="bg-gradient-to-r from-gold-700 via-gold-600 to-gold-800 bg-clip-text text-transparent font-bold">
+              {t('callToAction.highlight')}
             </span>
-            {t('intro.textEnd')}
+            {t('callToAction.textMiddle')}{' '}
+            <span className="bg-gradient-to-r from-gold-700 via-gold-600 to-gold-800 bg-clip-text text-transparent font-bold">
+              {t('callToAction.highlight2')}
+            </span>
+            {t('callToAction.textEnd')}
           </p>
         </FadeIn>
 

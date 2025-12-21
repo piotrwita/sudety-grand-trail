@@ -172,12 +172,12 @@ export const pageMetadata = {
   }),
 
   hallOfFame: generatePageMetadata({
-    title: 'Hall of Fame - Zdobywcy Sudety Grand Trail',
+    title: 'Galeria Sław - Zdobywcy Sudety Grand Trail',
     description:
-      'Hall of Fame Sudety Grand Trail - poznaj odważnych, którzy zdobyli pełną Koronę Sudetów. 900 km przez 23 pasma górskie. Dołącz do elitarnego grona zdobywców!',
+      'Galeria Sław Sudety Grand Trail - poznaj odważnych, którzy zdobyli pełną Koronę Sudetów. 900 km przez 23 pasma górskie. Dołącz do elitarnego grona zdobywców!',
     path: siteRoutes.hallOfFame,
     keywords: [
-      'hall of fame',
+      'galeria sław',
       'zdobywcy',
       'finishers',
       'rekordy',

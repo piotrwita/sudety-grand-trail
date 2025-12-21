@@ -389,10 +389,12 @@
       },
       "hallOfFame": "Hall of Fame"
     },
-    "intro": {
+    "callToAction": {
       "text": "Planning to conquer the",
       "highlight": "SUDETEN CROWN",
-      "textEnd": "? First register your crossing attempt and receive a free GPS tracker to track your progress!"
+      "textMiddle": "? First register your crossing attempt and receive a free",
+      "highlight2": "GPS TRACKER",
+      "textEnd": " to track your progress!"
     }
   },
   "footer": {
