@@ -336,9 +336,7 @@ export const SubmissionForm = () => {
       } else {
         console.error('Error submitting form:', result.message);
         setSubmitStatus('error');
-        setServerMessage(
-          result.message || t('submit.error')
-        );
+        setServerMessage(t('submit.error'));
       }
     } catch (error) {
       console.error('Error processing form:', error);

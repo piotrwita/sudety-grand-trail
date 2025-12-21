@@ -49,15 +49,11 @@ export const TrackerRequestForm = ({
 
       if (result.success) {
         setSubmitStatus('success');
-        setServerMessage(
-          result.message || t('submit.success')
-        );
+        setServerMessage(t('submit.success'));
         reset();
       } else {
         setSubmitStatus('error');
-        setServerMessage(
-          result.message || t('submit.error')
-        );
+        setServerMessage(t('submit.error'));
       }
     } catch (error) {
       setSubmitStatus('error');
