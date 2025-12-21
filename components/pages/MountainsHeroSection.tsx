@@ -7,8 +7,8 @@ import { LogoImage } from '@/components/LogoImage';
 import { ScrollIndicator } from '@/components/ScrollIndicator';
 import { useTranslations } from '@/lib/i18n-utils';
 
-export const MountainsHeroSection = () => {
-  const { t } = useTranslations('mountains');
+export const PeaksHeroSection = () => {
+  const { t } = useTranslations('peaks');
   
   return (
     <Section

@@ -79,7 +79,7 @@ Każda podstrona ma swój unikalny motyw kolorystyczny, który zachowuje spójno
 
 ---
 
-### ⛰️ SZCZYTY (`/mountains`) - Zielony/Las
+### ⛰️ SZCZYTY (`/peaks`) - Zielony/Las
 **Kolor dominujący:** Zielone odcienie (forest)
 **Charakterystyka:** Naturalny, świeży, górski
 **Użycie:** Lista szczytów, Korona Sudetów, interaktywne karty

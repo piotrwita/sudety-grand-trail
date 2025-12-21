@@ -64,7 +64,7 @@ export function useNavigationTranslations() {
     home: t('home'),
     trail: t('trail'),
     live: t('live'),
-    mountains: t('mountains'),
+    peaks: t('peaks'),
     hallOfFame: t('hallOfFame'),
     badge: t('badge'),
     about: t('about'),

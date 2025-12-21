@@ -20,7 +20,12 @@ const nextConfig = {
     return [
       {
         source: '/szczyty',
-        destination: '/mountains',
+        destination: '/peaks',
+        permanent: true,
+      },
+      {
+        source: '/mountains',
+        destination: '/peaks',
         permanent: true,
       },
     ];

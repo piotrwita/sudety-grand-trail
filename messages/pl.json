@@ -3,7 +3,7 @@
     "home": "Strona główna",
     "trail": "Trasa",
     "live": "Live",
-    "mountains": "Szczyty",
+    "peaks": "Szczyty",
     "hallOfFame": "Hall of Fame",
     "badge": "Odznaka",
     "about": "O Mnie"
@@ -83,7 +83,7 @@
       "end": "Ślęży"
     }
   },
-  "mountains": {
+  "peaks": {
     "title": "Wykaz Szczytów",
     "subtitle": "Szczyty na szlaku Sudety Grand Trail",
     "description": "Wykaz najciekawszych szczytów na szlaku SUDETY GRAND TRAIL",

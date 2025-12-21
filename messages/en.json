@@ -3,7 +3,7 @@
     "home": "Home",
     "trail": "Trail",
     "live": "Live",
-    "mountains": "Peaks",
+    "peaks": "Peaks",
     "hallOfFame": "Hall of Fame",
     "badge": "Badge",
     "about": "About Me"
@@ -83,7 +83,7 @@
       "end": "Ślęża"
     }
   },
-  "mountains": {
+  "peaks": {
     "title": "Peaks List",
     "subtitle": "Peaks on the Sudety Grand Trail",
     "description": "List of the most interesting peaks on the SUDETY GRAND TRAIL",
