@@ -13,6 +13,7 @@ import {
   MorphingDialogContent,
   MorphingDialogTrigger,
 } from '@/components/motion/MorphingDialog';
+import { useTranslations } from '@/lib/i18n-utils';
 
 interface MountainCardProps {
   range: SudetenRange;
@@ -256,19 +257,21 @@ const getCountryFlag = (country: string): string => {
 };
 
 const MountainDetails = memo(({ range }: { range: SudetenRange }) => {
+  const { t } = useTranslations('sudetenCrown');
+  
   return (
     <div className="space-y-2 text-sm text-earth-700 md:space-y-1">
       <div className="grid grid-cols-2 gap-2 md:block md:space-y-1">
-        <DetailRow label="Czeski" value={range.nameCs} />
-        <DetailRow label="Niemiecki" value={range.nameDe} />
+        <DetailRow label={t('czech')} value={range.nameCs} />
+        <DetailRow label={t('german')} value={range.nameDe} />
         <DetailRow
-          label={`Szczyt (${getCountryFlag(range.country)})`}
+          label={`${t('peak')} (${getCountryFlag(range.country)})`}
           value={range.peakCs}
         />
         {range.peakDe && (
-          <DetailRow label="Szczyt (niem.)" value={range.peakDe} />
+          <DetailRow label={t('peakGerman')} value={range.peakDe} />
         )}
-        <DetailRow label="Kraje" value={range.country} />
+        <DetailRow label={t('countries')} value={range.country} />
       </div>
     </div>
   );

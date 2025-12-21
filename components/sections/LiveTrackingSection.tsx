@@ -1,10 +1,16 @@
+'use client';
+
 import Link from 'next/link';
 import { ClockIcon, FlagIcon, LocationIcon } from '@/components/icons';
 import { InteractiveIframe } from '@/components/InteractiveIframe';
 import { FadeIn, ScaleIn } from '@/components/motion';
 import { Section } from './Section';
+import { useTranslations } from '@/lib/i18n-utils';
 
 export const LiveTrackingSection = () => {
+  const { t } = useTranslations('liveTracking');
+  const { t: tGlobal } = useTranslations();
+  
   return (
     <Section
       className="bg-cream"
@@ -36,7 +42,7 @@ export const LiveTrackingSection = () => {
           >
             <div className="h-3 w-3 animate-pulse rounded-full bg-orange-500" />
             <span className="text-sm font-bold uppercase tracking-wide text-orange-600">
-              ŚLEDŹ NA ŻYWO
+              {t('badge')}
             </span>
           </ScaleIn>
 
@@ -61,19 +67,18 @@ export const LiveTrackingSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mx-auto max-w-5xl text-xl font-medium leading-relaxed text-mountain-600"
           >
-            Dzięki współpracy z{' '}
+            {t('description')}{' '}
             <Link
               href="https://poltrax.live/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-bold text-orange-500 underline decoration-2 underline-offset-2 transition-colors hover:text-orange-600"
             >
-              Poltrax
+              {t('poltrax')}
             </Link>{' '}
-            możecie śledzić swoją wyprawę w czasie rzeczywistym.
+            {t('descriptionEnd')}
             <br />
-            Mapa pokazuje aktualną pozycję, przebytą trasę, limit czasowy oraz
-            orientacyjne punkty noclegów.
+            {t('descriptionLine2')}
           </FadeIn>
         </FadeIn>
 
@@ -92,7 +97,8 @@ export const LiveTrackingSection = () => {
             src="https://poltrax.live/sgt"
             className="card-vintage-noanim"
             title="Sudety Grand Trail - Live Tracking"
-            overlayTitle="Śledzenie na Żywo"
+            overlayTitle={t('mapTitle')}
+            overlayDescription={tGlobal('interactiveMap.clickToUse')}
             icon={<LocationIcon className="size-8 sm:size-10" />}
             frameBorder="0"
           />
@@ -116,10 +122,10 @@ export const LiveTrackingSection = () => {
               </div>
 
               <h3 className="relative mb-1.5 text-lg font-bold text-orange-800">
-                Aktualna Pozycja
+                {t('cards.position.title')}
               </h3>
               <p className="relative text-sm leading-relaxed text-mountain-600">
-                Lokalizacja w czasie rzeczywistym
+                {t('cards.position.description')}
               </p>
 
               {/* Decorative bottom border */}
@@ -143,10 +149,10 @@ export const LiveTrackingSection = () => {
               </div>
 
               <h3 className="relative mb-1.5 text-lg font-bold text-orange-800">
-                Limit Czasowy
+                {t('cards.timeLimit.title')}
               </h3>
               <p className="relative text-sm leading-relaxed text-mountain-600">
-                Wyścig z czasem przez Sudety
+                {t('cards.timeLimit.description')}
               </p>
 
               {/* Decorative bottom border */}
@@ -170,10 +176,10 @@ export const LiveTrackingSection = () => {
               </div>
 
               <h3 className="relative mb-1.5 text-lg font-bold text-orange-800">
-                Punkty Etapów
+                {t('cards.stages.title')}
               </h3>
               <p className="relative text-sm leading-relaxed text-mountain-600">
-                Planowane miejsca noclegów
+                {t('cards.stages.description')}
               </p>
 
               {/* Decorative bottom border */}

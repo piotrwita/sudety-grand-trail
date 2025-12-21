@@ -1,9 +1,16 @@
+'use client';
+
 import Link from 'next/link';
 import { LogoImage } from '../LogoImage';
 import { siteConfig } from '@/config/site';
 import { FacebookIcon, MapIcon } from '../icons';
+import { useTranslations } from '@/lib/i18n-utils';
+import { useNavigation } from '@/lib/get-navigation';
 
 export const Footer = () => {
+  const { t } = useTranslations('footer');
+  const navigation = useNavigation();
+  
   return (
     <footer className="bg-forest-900 py-12 text-cream sm:py-16 lg:py-20">
       <div className="fluid-container">
@@ -20,27 +27,25 @@ export const Footer = () => {
                   Sudety Grand Trail
                 </h3>
                 <p className="text-xs text-mountain-400 sm:text-sm">
-                  Korona Sudetów w jednym szlaku
+                  {t('tagline')}
                 </p>
               </div>
             </div>
             <p className="text-sm leading-relaxed text-mountain-300 sm:text-base">
-              900 km przez 23 pasma górskie.
-              Zdobądź wszystkie najwyższe szczyty Sudetów i
-              16 szczytów Korony Gór Polski w jednej epickiej wędrówce.
+              {t('description')}
             </p>
           </div>
 
           {/* Quick Links Section */}
           <div className="flex flex-col items-start md:items-center">
             <div className="space-y-2.5 sm:space-y-3">
-              {siteConfig.navigation.map((item) => (
+              {navigation.map((item) => (
                 <FooterLink key={item.href} href={item.href}>
                   {item.label}
                 </FooterLink>
               ))}
               <FooterLink href="https://mapy.com/s/barusofola" isExternal>
-                Mapa Szlaku
+                {t('mapLink')}
               </FooterLink>
             </div>
           </div>
@@ -48,7 +53,7 @@ export const Footer = () => {
           {/* Social & Stats Section */}
           <div className="md:col-span-2 lg:col-span-1">
             <h4 className="mb-4 font-display text-base font-bold sm:mb-5 sm:text-lg lg:mb-6">
-              Społeczność
+              {t('community')}
             </h4>
             <div className="space-y-4 sm:space-y-5">
               <div className="flex gap-3 border-forest-600">
@@ -113,11 +118,11 @@ export const Footer = () => {
                 <LogoImage width={32} height={32} className="rounded-full" />
               </div>
               <p className="text-xs text-mountain-400 sm:text-sm">
-                © 2025 Sudety Grand Trail. Wszystkie prawa zastrzeżone.
+                {t('copyright')}
               </p>
             </div>
             <div className="text-xs text-mountain-400 sm:text-sm">
-              Szlak stworzony z ❤️ dla miłośników gór
+              {t('madeWith')}
             </div>
           </div>
         </div>

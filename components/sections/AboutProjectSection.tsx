@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import { FacebookIcon } from '@/components/icons';
@@ -6,6 +8,7 @@ import { siteConfig } from '@/config/site';
 import { siteRoutes } from '@/config/site-routes';
 import { Section } from './Section';
 import { SectionHeader } from './SectionHeader';
+import { useTranslations } from '@/lib/i18n-utils';
 
 const FADE_IN_PROPS = {
   inView: true,
@@ -17,11 +20,12 @@ const FADE_IN_PROPS = {
 };
 
 export const AboutProjectSection = () => {
+  const { t } = useTranslations('aboutProject');
   const { facebook } = siteConfig.links;
 
   return (
     <Section
-      ariaLabel="O Projekcie"
+      ariaLabel={t('title')}
       className="relative items-start overflow-hidden bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700"
     >
       <DecorativeBackground />
@@ -29,7 +33,7 @@ export const AboutProjectSection = () => {
       <div className="fluid-container relative z-10">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            title="O Projekcie"
+            title={t('title')}
             icon={<ProjectIcon className="size-5 text-cream/80 sm:size-6" />}
             variant="light"
           />
@@ -43,28 +47,25 @@ export const AboutProjectSection = () => {
             >
               <div className="relative space-y-4 text-base leading-relaxed text-cream/90 sm:space-y-6 sm:text-lg md:space-y-8">
                 {/* Historia powstania */}
-                <div className="space-y-3 sm:space-y-4">
+                <div className="space-y-3 text-justify sm:space-y-4">
                   <p className="text-xl font-bold text-cream sm:text-2xl">
-                    Z pasji, doświadczenia i... niedosytu.
+                    {t('history.title')}
                   </p>
                   <p>
-                    Sudety zostały przeze mnie przebyte już kilkukrotnie. Nie
-                    raz odkrywałem ich tajemnice wytyczonymi oficjalnie trasami.
-                    A jednak żaden z istniejących szlaków nie poprowadził mnie{' '}
+                    {t('history.p1')}{' '}
                     <span className="font-bold text-accent">
-                      kompleksowo przez to niezwykle różnorodne pasmo
+                      {t('history.p1Highlight')}
                     </span>
                     .
                   </p>
                   <p>
-                    Właśnie dlatego narodziła się idea{' '}
+                    {t('history.p2')}{' '}
                     <span className="text-lg font-bold text-accent sm:text-xl">
                       SUDETY GRAND TRAIL
                     </span>
-                    , czyli szlaku, który stanie się nie tylko zwieńczeniem
-                    moich sudeckich wędrówek, ale i{' '}
+                    {t('history.p2Rest')}{' '}
                     <span className="font-bold text-cream">
-                      nowym wyzwaniem dla wszystkich miłośników gór
+                      {t('history.p2Highlight')}
                     </span>
                     .
                   </p>
@@ -73,50 +74,49 @@ export const AboutProjectSection = () => {
                 <Separator variant="cream" />
 
                 {/* Koncepcja */}
-                <div className="space-y-3 sm:space-y-4">
+                <div className="space-y-3 text-justify sm:space-y-4">
                   <p className="text-xl font-bold text-cream sm:text-2xl">
-                    To nie tylko kolejna linia na mapie.
+                    {t('concept.title')}
                   </p>
                   <p>
                     <span className="font-bold text-accent">
                       SUDETY GRAND TRAIL
                     </span>{' '}
-                    to koncepcyjny szlak, który{' '}
+                    {t('concept.p1')}{' '}
                     <span className="font-bold text-cream">
-                      łączy wszystkie pasma górskie Sudetów w jedną logiczną i
-                      wymagającą całość
+                      {t('concept.p1Highlight')}
                     </span>
                     .
                   </p>
                   <p>
-                    Trasa mierzy{' '}
+                    {t('concept.p2')}{' '}
                     <span className="text-lg font-bold text-accent sm:text-xl">
-                      900 kilometrów
+                      {t('concept.p2Part1')}
                     </span>{' '}
-                    długości i{' '}
+                    {t('concept.p2Part2')}{' '}
                     <span className="text-lg font-bold text-accent sm:text-xl">
-                      niespełna 30 000 metrów
+                      {t('concept.p2Part3')}
                     </span>{' '}
-                    przewyższeń. Przebiega przez{' '}
+                    {t('concept.p2Part4')}{' '}
                     <span className="text-lg font-bold text-accent sm:text-xl">
-                      23 pasma
+                      {t('concept.p2Part5')}
                     </span>{' '}
-                    górskie, prowadząc przez{' '}
+                    {t('concept.p2Part6')}{' '}
                     <span className="text-lg font-bold text-accent sm:text-xl">
-                      trzy kraje
+                      {t('concept.p2Part7')}
                     </span>{' '}
-                    – Polskę, Czechy, zahaczając także o Niemcy.
+                    {t('concept.p2Part8')}
                   </p>
                   <p className="border-t border-cream/20 pt-3 italic text-cream/95 sm:pt-4">
-                    Początek trasy znajduje się w{' '}
+                    {t('concept.p3')}{' '}
                     <span className="font-bold not-italic text-cream">
-                      Jarnołtówku (Góry Opawskie)
+                      {t('concept.p3Start')}
                     </span>
-                    , a finał – symboliczny i majestatyczny – pod{' '}
+                    {t('concept.p3Middle')}{' '}
                     <span className="font-bold not-italic text-cream">
-                      Ślężą
+                      {t('concept.p3End')}
                     </span>
-                    , górą o duchowym znaczeniu, tuż pod Wrocławiem.
+                    {t('concept.p3EndDesc')}
                   </p>
                 </div>
               </div>
@@ -129,60 +129,57 @@ export const AboutProjectSection = () => {
             >
               <div className="relative space-y-4 text-base leading-relaxed text-cream/90 sm:space-y-6 sm:text-lg md:space-y-8">
                 {/* Cel Szlaku */}
-                <div className="space-y-3 sm:space-y-4">
+                <div className="space-y-3 text-justify sm:space-y-4">
                   <p className="text-xl font-bold text-cream sm:text-2xl">
-                    Kompletne przejście Sudetów.
+                    {t('goal.title')}
                   </p>
                   <p>
-                    Celem szlaku jest zdobycie{' '}
+                    {t('goal.p1')}{' '}
                     <span className="font-bold text-cream">
-                      wszystkich najwyższych szczytów każdego pasma
+                      {t('goal.p1Highlight1')}
                     </span>
                     , a także – po polskiej stronie – wszystkich{' '}
                     <span className="font-bold text-cream">
-                      16 sudeckich szczytów należących do Korony Gór Polski
+                      {t('goal.p1Highlight2')}
                     </span>
                     .
                   </p>
                   <HighlightedBox>
-                    W wielu przypadkach oznacza to{' '}
-                    <span className="font-bold not-italic">
-                      podwójne wejścia
+                    {t('goal.highlightBox')}{' '}
+                    <span className="font-bold">
+                      {t('goal.highlightBoxBold')}
                     </span>{' '}
-                    – na faktyczny najwyższy punkt i na szczyt koronny, jeśli
-                    różnią się od siebie. To czyni trasę jeszcze bardziej
-                    wymagającą i wyjątkową.
+                    {t('goal.highlightBoxRest')}
                   </HighlightedBox>
                 </div>
 
                 <Separator variant="accent" />
 
                 {/* Legendy */}
-                <div className="space-y-3 sm:space-y-4">
+                <div className="space-y-3 text-justify sm:space-y-4">
                   <p className="text-xl font-bold text-cream sm:text-2xl">
-                    Legendy Sudetów czekają.
+                    {t('legends.title')}
                   </p>
                   <p>
-                    Na trasie nie zabraknie ikonicznych szczytów – od
-                    majestatycznej{' '}
-                    <span className="font-bold text-cream">Śnieżki</span>,
-                    najwyższego wierzchołka całego pasma, przez potężny{' '}
-                    <span className="font-bold text-cream">Śnieżnik</span> i
-                    dumnie górującego nad Jesionikami{' '}
-                    <span className="font-bold text-cream">Pradziada</span>, po
-                    charakterystyczną{' '}
-                    <span className="font-bold text-cream">Wielką Sowę</span>,
-                    skalny labirynt{' '}
+                    {t('legends.p1')}{' '}
+                    <span className="font-bold text-cream">{t('legends.p1Peaks')}</span>
+                    {t('legends.p1PeaksDesc')}{' '}
+                    <span className="font-bold text-cream">{t('legends.p1Peaks2')}</span>{' '}
+                    {t('legends.p1Peaks3')}{' '}
+                    <span className="font-bold text-cream">{t('legends.p1Peaks4')}</span>
+                    {t('legends.p1Peaks5')}{' '}
+                    <span className="font-bold text-cream">{t('legends.p1Peaks6')}</span>
+                    {t('legends.p1Peaks7')}{' '}
                     <span className="font-bold text-cream">
-                      Szczelińca Wielkiego
+                      {t('legends.p1Peaks8')}
                     </span>
-                    , graniczną{' '}
-                    <span className="font-bold text-cream">Biskupią Kopę</span>{' '}
-                    i mistyczną{' '}
-                    <span className="font-bold text-cream">Ślężę</span>.
+                    {t('legends.p1Peaks9')}{' '}
+                    <span className="font-bold text-cream">{t('legends.p1Peaks10')}</span>{' '}
+                    {t('legends.p1Peaks11')}{' '}
+                    <span className="font-bold text-cream">{t('legends.p1Peaks12')}</span>.
                   </p>
                   <p className="text-lg font-medium text-cream sm:text-xl">
-                    A to dopiero początek tej górskiej mozaiki.
+                    {t('legends.p2')}
                   </p>
                 </div>
               </div>
@@ -195,15 +192,16 @@ export const AboutProjectSection = () => {
             >
               <div className="relative space-y-4 text-base leading-relaxed text-cream/90 sm:space-y-5 sm:text-lg md:space-y-6">
                 <p className="text-xl font-bold text-cream sm:text-2xl">
-                  Dla tych, którzy chcą się zgubić, by się odnaleźć.
+                  {t('philosophy.title')}
                 </p>
+                <div className="space-y-3 text-justify sm:space-y-4">
                 <p>
-                  Ten projekt powstał z{' '}
-                  <span className="font-bold text-accent">miłości do gór</span>,
+                  {t('philosophy.p1')}{' '}
+                  <span className="font-bold text-accent">{t('philosophy.p1Highlight1')}</span>,
                   ale też z potrzeby stworzenia czegoś własnego – ścieżki, która
                   nie tylko prowadzi przez szczyty, ale{' '}
                   <span className="font-bold text-cream">
-                    łączy pasma, kraje, emocje i doświadczenia
+                    {t('philosophy.p1Highlight2')}
                   </span>
                   .
                 </p>
@@ -211,17 +209,14 @@ export const AboutProjectSection = () => {
                   <span className="text-lg font-bold text-accent sm:text-xl">
                     SUDETY GRAND TRAIL
                   </span>{' '}
-                  to propozycja dla każdego, kto pragnie odkryć Sudety w ich
-                  pełni – nie tylko fizycznie, ale też{' '}
-                  <span className="font-bold text-cream">duchowo</span>. Dla
-                  ludzi gór – wędrowców, marzycieli, samotników, sportowców –
-                  dla wszystkich, którzy kochają góry i pragną zmierzyć się z
-                  takim wyzwaniem.
+                  {t('philosophy.p2')}{' '}
+                  <span className="font-bold text-cream">{t('philosophy.p2Highlight')}</span>
+                  {t('philosophy.p2Rest')}
                 </p>
                 <p className="border-t border-cream/20 pt-3 text-lg italic text-cream/90 sm:pt-4 sm:text-xl">
-                  To szlak stworzony z myślą o tych, którzy szukają czegoś
-                  więcej niż tylko oznakowanej drogi.
+                  {t('philosophy.p3')}
                 </p>
+                </div>
               </div>
             </FadeIn>
 
@@ -232,25 +227,22 @@ export const AboutProjectSection = () => {
                   {/* Zakończenie */}
                   <div>
                     <p className="mb-3 text-xl font-bold italic leading-relaxed text-cream sm:mb-4 sm:text-2xl md:text-3xl">
-                      Nieprzewidywalna przygoda. Przemyślana koncepcja.
+                      {t('ending.title')}
                     </p>
                     <p className="text-lg text-cream/90 sm:text-xl">
-                      Zapraszam do zmierzenia się z tym wyzwaniem – na własnych
-                      zasadach, we własnym tempie.
+                      {t('ending.p1')}
                     </p>
                   </div>
 
                   {/* Cytat w ramce */}
-                  <HighlightedBox className="text-left">
-                    W przestrzeni, w rytmie marszu, w samych sobie — Twórca
-                    Sudety Grand Trail
+                  <HighlightedBox>
+                    {t('ending.quote')}
                   </HighlightedBox>
 
                   {/* Call to Action */}
                   <div className="border-t border-cream/20 pt-4 sm:pt-6">
                     <p className="mb-4 text-lg font-medium text-cream/90 sm:mb-6 sm:text-xl">
-                      Gotowy na nieprzewidywalną przygodę przez 24 pasma
-                      Sudetów?
+                      {t('ending.cta')}
                     </p>
                     <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                       <ActionButton
@@ -259,14 +251,14 @@ export const AboutProjectSection = () => {
                         variant="primary"
                       >
                         <FacebookIcon className="size-4 sm:size-5" />
-                        Dołącz do Społeczności
+                        {t('ending.joinCommunity')}
                       </ActionButton>
                       <ActionButton
                         href={siteRoutes.trail}
                         external={false}
                         variant="secondary"
                       >
-                        Sprawdź Trasę
+                        {t('ending.checkTrail')}
                       </ActionButton>
                     </div>
                   </div>
@@ -314,7 +306,7 @@ const HighlightedBox = ({
   className?: string;
 }) => (
   <div
-    className={`rounded-r border-l-4 border-accent bg-accent/10 py-2 pl-4 text-base font-medium italic text-cream sm:py-3 sm:pl-6 sm:text-lg md:text-xl ${className}`}
+    className={`rounded-r border-l-4 border-accent bg-accent/10 py-2 pl-4 pr-4 text-base font-medium italic text-cream text-justify sm:py-3 sm:pl-6 sm:pr-6 sm:text-lg md:text-xl ${className}`}
   >
     {children}
   </div>

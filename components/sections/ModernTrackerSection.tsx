@@ -1,3 +1,5 @@
+'use client';
+
 import { FadeIn } from '@/components/motion';
 import { Section } from './Section';
 import { sectionIds } from '@/config/section-ids';
@@ -6,12 +8,15 @@ import { sendTrackerRequestEmail } from '@/actions/send-email';
 import { TrackerRequestForm } from './ModernTrackerSection/TrackerRequestForm';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from '@/lib/i18n-utils';
 
 export const ModernTrackerSection = () => {
+  const { t, tArray } = useTranslations('modernTracker');
+  
   return (
     <Section
       id={sectionIds.trackerForm}
-      ariaLabel="Zgłoś Próbę Przejścia - Tracker GPS"
+      ariaLabel={t('badge')}
       className="section-padding relative bg-gradient-to-br from-slate-50 via-white to-slate-100"
     >
       <div className="fluid-container">
@@ -37,12 +42,12 @@ export const ModernTrackerSection = () => {
                 d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
               />
             </svg>
-            Bezpłatny Tracker
+            {t('badge')}
           </div>
 
           <h2 className="section-title mb-6 text-slate-900">
-            Twoja{' '}
-            <span className="theme-live-text-gradient">Własna Historia</span>
+            {t('title')}{' '}
+            <span className="theme-live-text-gradient">{t('titleHighlight')}</span>
           </h2>
         </FadeIn>
 
@@ -74,24 +79,20 @@ export const ModernTrackerSection = () => {
                     unoptimized
                   />
                 </Link>
-                <p className="text-slate-500">Partner technologiczny</p>
+                <p className="text-slate-500">{t('partner')}</p>
               </div>
 
-              <p className="text-lg leading-relaxed text-slate-700">
+              <p className="text-lg leading-relaxed text-slate-700 text-justify">
                 <strong className="text-accent">
-                  Poltrax udostępni Wam specjalny tracker zupełnie bezpłatnie
+                  {t('description.part1')}
                 </strong>
-                , abyście mogli zapisać swoją własną historię na tej trasie.
+                {t('description.part2')}
               </p>
             </div>
 
             {/* Features */}
             <div className="space-y-4">
-              {[
-                'Kompletnie darmowy - bez ukrytych kosztów',
-                'Profesjonalne narzędzie do trackingu',
-                'Zapisz i udostępnij swoją przygodę',
-              ].map((feature, index) => (
+              {tArray('features').map((feature: string, index: number) => (
                 <div key={index} className="flex items-center space-x-3">
                   <div className="flex size-7 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-sm">
                     <svg className="size-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

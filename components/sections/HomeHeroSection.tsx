@@ -11,8 +11,10 @@ import { siteConfig } from '@/config/site';
 import { siteRoutes } from '@/config/site-routes';
 import { FadeIn, ScaleIn } from '@/components/motion';
 import { ScrollIndicator } from '@/components/ScrollIndicator';
+import { useTranslations } from '@/lib/i18n-utils';
 
 export const HomeHeroSection = () => {
+  const { t } = useTranslations('homeHero');
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -73,8 +75,8 @@ export const HomeHeroSection = () => {
             offset={30}
             className="hero-title"
           >
-            <span className="mb-1 block sm:mb-2">Sudety</span>
-            <span className="gradient-text-mesh block">Grand Trail</span>
+            <span className="mb-1 block sm:mb-2">{t('title').split(' ')[0]}</span>
+            <span className="gradient-text-mesh block">{t('title').split(' ').slice(1).join(' ')}</span>
           </FadeIn>
 
           {/* Separator */}
@@ -101,13 +103,12 @@ export const HomeHeroSection = () => {
           >
             <FadeIn direction="up" duration={0.8} delay={0.9} offset={20}>
               <p className="mb-3 text-lg font-bold sm:mb-4 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-                <span className="gradient-text-mesh">KORONA SUDETÓW</span> w
-                jednym szlaku!
+                <span className="gradient-text-mesh">{t('subtitle.part1')}</span>{' '}
+                <span className="font-bold text-cream/90">{t('subtitle.part2')}</span>
               </p>
               <p className="text-fluid-base lg:text-fluid-lg mx-auto max-w-3xl font-medium leading-relaxed text-cream/85">
                 <span className="italic text-cream/60">
-                  Autorski projekt zdobycia najwyższych szczytów wszystkich pasm
-                  górskich Sudetów.
+                  {t('description')}
                 </span>
               </p>
             </FadeIn>
@@ -124,18 +125,18 @@ export const HomeHeroSection = () => {
             <Link
               href={siteRoutes.trail}
               className="btn-primary w-full px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
-              aria-label="Rozpocznij podróż przez Sudety Grand Trail"
+              aria-label={t('startJourney')}
             >
-              Rozpocznij Podróż
+              {t('startJourney')}
             </Link>
             <Link
               href={siteConfig.links.map.href}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary w-full border-cream/80 px-6 py-3 text-sm text-cream hover:bg-cream hover:text-forest-800 focus:ring-cream/50 sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
-              aria-label="Zobacz interaktywną mapę trasy (otworzy się w nowej karcie)"
+              aria-label={t('viewMap')}
             >
-              Zobacz Mapę
+              {t('viewMap')}
             </Link>
           </FadeIn>
 
@@ -154,24 +155,24 @@ export const HomeHeroSection = () => {
             >
               <Stats
                 value="900"
-                label="Kilometrów"
-                ariaLabel="900 Kilometrów"
+                label={t('stats.kilometers')}
+                ariaLabel={`900 ${t('stats.kilometers')}`}
               />
               <StatsSeparator />
-              <Stats value="23" label="Pasma" ariaLabel="23 Pasma" />
+              <Stats value="23" label={t('stats.ranges')} ariaLabel={`23 ${t('stats.ranges')}`} />
               <StatsSeparator />
-              <Stats value="3" label="Kraje" ariaLabel="3 Kraje" />
+              <Stats value="3" label={t('stats.countries')} ariaLabel={`3 ${t('stats.countries')}`} />
               <StatsSeparator />
               <Stats
                 value="30k"
-                label="Przewyższeń"
-                ariaLabel="30 tysięcy Przewyższeń"
+                label={t('stats.elevation')}
+                ariaLabel={`30k ${t('stats.elevation')}`}
               />
               <StatsSeparator />
               <Stats
                 value="16"
-                label="Szczytów KGP"
-                ariaLabel="16 Szczytów Korony Gór Polski"
+                label={t('stats.kgpPeaks')}
+                ariaLabel={`16 ${t('stats.kgpPeaks')}`}
               />
             </div>
           </FadeIn>

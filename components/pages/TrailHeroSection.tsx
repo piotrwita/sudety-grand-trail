@@ -1,0 +1,95 @@
+'use client';
+
+import { FadeIn, ScaleIn } from '@/components/motion';
+import { MapIcon } from '@/components/icons';
+import { Section } from '@/components/sections/Section';
+import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
+import { LogoImage } from '@/components/LogoImage';
+import { ScrollIndicator } from '@/components/ScrollIndicator';
+import { useTranslations } from '@/lib/i18n-utils';
+
+export const TrailHeroSection = () => {
+  const { t } = useTranslations('trailHero');
+  
+  return (
+    <Section
+      className="theme-hero-bg theme-trail-hero pb-16 pt-24 sm:pb-24 sm:pt-32"
+      ariaLabel="Sekcja główna - Poznaj Trasę"
+    >
+      {/* Epic Background Effects */}
+      <div className="gradient-mesh-overlay absolute inset-0 opacity-20" />
+      <VintageMountainsBackground className="opacity-15" />
+
+      {/* Epic Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-forest-500/5 to-transparent" />
+        <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-forest-500/5 to-transparent" />
+        <div className="theme-trail-glow absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-radial" />
+      </div>
+
+      {/* Radial glow effect */}
+      <div className="theme-hero-glow theme-trail-glow" />
+
+      {/* Logo in background */}
+      <div className="absolute left-1/2 top-1/2 z-0 size-[300px] -translate-x-1/2 -translate-y-1/2 transform opacity-10 sm:size-[400px] lg:size-[500px] 2xl:size-[600px]">
+        <LogoImage fill priority />
+      </div>
+
+      <div className="fluid-container relative z-10 text-center">
+        <FadeIn direction="up" offset={60} duration={0.6}>
+          <ScaleIn
+            initialScale={0.5}
+            duration={0.6}
+            delay={0.2}
+            className="theme-badge-base theme-trail-badge mb-6 sm:mb-8"
+          >
+            <MapIcon className="h-10 w-10 text-forest-900/80 sm:h-12 sm:w-12 md:h-14 md:w-14" />
+          </ScaleIn>
+
+          <FadeIn direction="up" offset={30} duration={0.8} delay={0.4}>
+            <h1 className="hero-title mb-4 text-cream sm:mb-6">
+              <span className="theme-trail-text-gradient-light">{t('title')}</span>
+              <span className="text-fluid-lg mt-4 block font-display font-bold uppercase tracking-wider text-forest-400 drop-shadow-lg sm:mt-6">
+                {t('subtitle')}
+              </span>
+            </h1>
+          </FadeIn>
+
+          <FadeIn direction="up" offset={30} duration={0.8} delay={0.5}>
+            <div className="mx-auto my-4 h-0.5 w-24 bg-gradient-to-r from-transparent via-cream/40 to-transparent sm:my-6 sm:w-32" />
+          </FadeIn>
+
+          <FadeIn direction="up" offset={30} duration={0.8} delay={0.6}>
+            <div className="mx-auto w-full space-y-3 text-center sm:space-y-4">
+              <p className="text-fluid-xl font-bold leading-relaxed text-cream/95">
+                {t('description.part1')}
+                <span className="theme-trail-text-gradient-light">{t('description.part2')}</span>
+                {t('description.part3')}
+              </p>
+              <p className="text-fluid-base lg:text-fluid-lg mx-auto max-w-4xl font-medium italic leading-relaxed text-cream/85">
+                <span className="theme-szczyty-text-gradient font-bold">
+                  {t('details.part1')}
+                </span>{' '}
+                {t('details.part2')}{' '}
+                <span className="theme-szczyty-text-gradient font-bold">
+                  {t('details.part3')}
+                </span>{' '}
+                {t('details.part4')}{' '}
+                <span className="theme-szczyty-text-gradient font-bold">
+                  {t('details.part5')}
+                </span>{' '}
+                {t('details.part6')}{' '}
+                <span className="theme-szczyty-text-gradient font-bold">
+                  {t('details.part7')}
+                </span>
+              </p>
+            </div>
+          </FadeIn>
+        </FadeIn>
+      </div>
+
+      <ScrollIndicator />
+    </Section>
+  );
+};
+

@@ -1,0 +1,667 @@
+{
+  "navigation": {
+    "home": "Home",
+    "trail": "Trail",
+    "live": "Live",
+    "mountains": "Peaks",
+    "hallOfFame": "Hall of Fame",
+    "badge": "Badge",
+    "about": "About Me"
+  },
+  "homeHero": {
+    "title": "Sudety Grand Trail",
+    "subtitle": {
+      "part1": "SUDETEN CROWN",
+      "part2": "in one trail!"
+    },
+    "description": "An original project to conquer the highest peaks of all mountain ranges in the Sudetes.",
+    "startJourney": "Start Journey",
+    "viewMap": "View Map",
+    "stats": {
+      "kilometers": "Kilometers",
+      "ranges": "Ranges",
+      "countries": "Countries",
+      "elevation": "Elevation Gain",
+      "kgpPeaks": "KGP Peaks"
+    }
+  },
+  "whyChoose": {
+    "title": "Why this trail",
+    "features": {
+      "complete": {
+        "title": "Complete Sudetes crossing",
+        "description": "The first trail that truly connects the Sudetes into one coherent story. You start from Jarnołtówek in the Opawskie Mountains, and after hundreds of kilometers, you stand on the summit of the mystical Ślęża and end your journey in Sobótka. Along the way, you conquer everything – from the highest Śnieżka to the lowest Lázek. It's a complete, uninterrupted journey through the entire Sudetes, through their diversity, heights, and wilderness. One road. One challenge. One complete whole."
+      },
+      "threeCountries": {
+        "title": "Three countries, one range",
+        "description": "You wander through Poland, Czech Republic, and Germany – three cultures, three perspectives, one mountain world. The trail crosses borders not only on the map but above all in the mind. It connects landscapes, languages, and rhythms of life, creating one common space from them. The Sudetes in full dimension. Without borders."
+      },
+      "transformative": {
+        "title": "A journey that transforms",
+        "description": "900 kilometers and almost 30,000 meters of elevation gain. It's not just a path through the mountains, but a meeting with yourself. Every kilometer teaches perseverance, wonder, and humility towards nature. It's more than a route to traverse. It's an experience that stays with a person for a lifetime."
+      }
+    }
+  },
+  "live": {
+    "title": {
+      "part1": "Track",
+      "part2": "the Journey"
+    },
+    "badge": "LIVE TRACKING",
+    "description": "Show others live where you currently are and how your own adventure is progressing.",
+    "stats": {
+      "kilometers": "Kilometers",
+      "tracking": "Tracking"
+    }
+  },
+  "badge": {
+    "title": "Official Badge",
+    "subtitle": "Sudety Grand Trail",
+    "highest": "Highest recognition",
+    "description": "for those who completed the full trail crossing.",
+    "quote": "It's not just a badge.",
+    "symbol": "It's a symbol of overcoming your own limits.",
+    "submit": "Submit Crossing",
+    "hallOfFame": "Hall of Fame"
+  },
+  "hallOfFame": {
+    "title": "Hall of Fame",
+    "subtitle": "Official Sudety Grand Trail Crossings",
+    "description": "Unyielding wanderers conquered the full Sudeten Crown. They walked 900 kilometers through 23 mountain ranges.",
+    "join": "You can join the elite group of conquerors!",
+    "submit": "Submit Crossing",
+    "view": "View Conquerors"
+  },
+  "trail": {
+    "title": "Discover the Map",
+    "subtitle": "Sudety Grand Trail Route",
+    "description": "The complete face of the SUDETES arranged in one ambitious trail",
+    "stats": {
+      "kilometers": "900 kilometers",
+      "ranges": "23 mountain ranges",
+      "start": "Jarnołtówek in the Opawskie Mountains",
+      "end": "Ślęża"
+    }
+  },
+  "mountains": {
+    "title": "Peaks List",
+    "subtitle": "Peaks on the Sudety Grand Trail",
+    "description": "List of the most interesting peaks on the SUDETY GRAND TRAIL",
+    "details": {
+      "part1": "Dozens of interesting summits in",
+      "part2": "23 mountain ranges",
+      "part3": "that you'll encounter traversing the trail from",
+      "part4": "Śnieżka",
+      "part5": "to",
+      "part6": "Lázek."
+    }
+  },
+  "hallOfFameHero": {
+    "title": "Hall of Fame",
+    "subtitle": "Official Sudety Grand Trail Crossings",
+    "description": {
+      "part1": "Unyielding wanderers conquered the full ",
+      "part2": "Sudeten Crown",
+      "part3": ". They walked 900 kilometers through 23 mountain ranges."
+    },
+    "join": "You can join the elite group of conquerors!",
+    "submit": "Submit Crossing",
+    "view": "View Conquerors"
+  },
+  "trailHero": {
+    "title": "Discover the Map",
+    "subtitle": "Sudety Grand Trail Route",
+    "description": {
+      "part1": "The complete face of the ",
+      "part2": "SUDETES",
+      "part3": " arranged in one ambitious trail"
+    },
+    "details": {
+      "part1": "900 kilometers",
+      "part2": "through",
+      "part3": "23 mountain ranges",
+      "part4": "and climbing the highest peak of each. From",
+      "part5": "Jarnołtówek in the Opawskie Mountains",
+      "part6": "to the finale at",
+      "part7": "Ślęża."
+    }
+  },
+  "aboutHero": {
+    "title": "Meet the",
+    "titleHighlight": "Creator",
+    "subtitle": "Creator of Sudety Grand Trail",
+    "description": "The story of a guy from Łódź who decided to use his own legs to change the world for the better."
+  },
+  "aboutProject": {
+    "title": "About the Project",
+    "history": {
+      "title": "From passion, experience, and... dissatisfaction.",
+      "p1": "I have traversed the Sudetes multiple times. More than once I discovered their secrets along officially marked trails. Yet none of the existing trails led me",
+      "p1Highlight": "comprehensively through this incredibly diverse range",
+      "p2": "That is why the idea of",
+      "p2Rest": " SUDETY GRAND TRAIL, a trail that will become not only the culmination of my Sudeten wanderings, but also",
+      "p2Highlight": "a new challenge for all mountain lovers"
+    },
+    "concept": {
+      "title": "It's not just another line on the map.",
+      "p1": "is a conceptual trail that",
+      "p1Highlight": "connects all mountain ranges of the Sudetes into one logical and demanding whole",
+      "p2": "The route measures",
+      "p2Part1": "900 kilometers",
+      "p2Part2": "in length and",
+      "p2Part3": "nearly 30,000 meters",
+      "p2Part4": "of elevation gain. It runs through",
+      "p2Part5": "23 mountain ranges",
+      "p2Part6": ", leading through",
+      "p2Part7": "three countries",
+      "p2Part8": "– Poland, Czech Republic, also touching Germany.",
+      "p3": "The start of the route is in",
+      "p3Start": "Jarnołtówek (Opawskie Mountains)",
+      "p3Middle": ", and the finale – symbolic and majestic – at",
+      "p3End": "Ślęża",
+      "p3EndDesc": ", a mountain of spiritual significance, just below Wrocław."
+    },
+    "goal": {
+      "title": "Complete Sudetes crossing.",
+      "p1": "The goal of the trail is to conquer",
+      "p1Highlight1": "all the highest peaks of each range",
+      "p1Highlight2": "16 Sudeten peaks belonging to the Crown of Polish Mountains",
+      "highlightBox": "In many cases, this means",
+      "highlightBoxBold": "double ascents",
+      "highlightBoxRest": "– to the actual highest point and to the crown peak, if they differ. This makes the route even more demanding and unique."
+    },
+    "legends": {
+      "title": "Legends of the Sudetes await.",
+      "p1": "The route will not lack iconic peaks – from the majestic",
+      "p1Peaks": "Śnieżka",
+      "p1PeaksDesc": ", the highest summit of the entire range, through the mighty",
+      "p1Peaks2": "Śnieżnik",
+      "p1Peaks3": "and proudly towering over the Jeseníky",
+      "p1Peaks4": "Praděd",
+      "p1Peaks5": ", to the characteristic",
+      "p1Peaks6": "Wielka Sowa",
+      "p1Peaks7": ", the rocky labyrinth of",
+      "p1Peaks8": "Szczeliniec Wielki",
+      "p1Peaks9": ", the border",
+      "p1Peaks10": "Biskupia Kopa",
+      "p1Peaks11": "and the mystical",
+      "p1Peaks12": "Ślęża",
+      "p2": "And this is just the beginning of this mountain mosaic."
+    },
+    "philosophy": {
+      "title": "For those who want to get lost to find themselves.",
+      "p1": "This project was born from",
+      "p1Highlight1": "love for mountains",
+      "p1Highlight2": "connects ranges, countries, emotions, and experiences",
+      "p2": "is a proposal for everyone who wants to discover the Sudetes in their fullness – not only physically but also",
+      "p2Highlight": "spiritually",
+      "p2Rest": ". For mountain people – wanderers, dreamers, loners, athletes – for all who love mountains and want to face such a challenge.",
+      "p3": "This is a trail created for those who seek something more than just a marked path."
+    },
+    "ending": {
+      "title": "Unpredictable adventure. Thoughtful concept.",
+      "p1": "I invite you to face this challenge – on your own terms, at your own pace.",
+      "quote": "In space, in the rhythm of walking, in oneself — Creator of Sudety Grand Trail",
+      "cta": "Ready for an unpredictable adventure through 24 Sudeten ranges?",
+      "joinCommunity": "Join the Community",
+      "checkTrail": "Check the Trail"
+    }
+  },
+  "submissionForm": {
+    "sections": {
+      "basic": "Basic Information",
+      "dates": "Crossing Dates",
+      "materials": "Materials",
+      "description": "Crossing Description",
+      "additional": "Additional Information"
+    },
+    "fields": {
+      "name": "Full Name",
+      "nickname": "Nickname",
+      "email": "Email",
+      "emailHint": "Will not be published",
+      "type": "Crossing Type",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "duration": "Crossing Duration",
+      "days": "days",
+      "photo": "Profile Photo",
+      "gpxFile": "GPX File",
+      "gpxHint": "GPS track from crossing",
+      "additionalPhotos": "Additional Photos",
+      "description": "Short description (max {max} characters)",
+      "favoriteSection": "Most Beautiful Moment",
+      "hardestSection": "Hardest Section",
+      "isFirstSudety": "This is my first Sudetes crossing",
+      "additionalAchievements": "Additional Achievements"
+    },
+    "placeholders": {
+      "name": "John Doe",
+      "nickname": "Wanderer",
+      "email": "yourname@gmail.com",
+      "description": "The most beautiful adventure of my life...",
+      "favoriteSection": "Sunrise on Śnieżka",
+      "hardestSection": "Sowie Mountains in the rain",
+      "additionalAchievements": "E.g. completing KGP, other long-distance trails..."
+    },
+    "trackerInfo": {
+      "title": "📍 Did you register your crossing attempt before starting?",
+      "description": "For the crossing to be recognized as official, you should register your attempt in advance and receive a GPS tracker.",
+      "link": "Register attempt for the future"
+    },
+    "submit": {
+      "button": "Submit Crossing",
+      "sending": "Sending...",
+      "success": {
+        "title": "Submission Sent!",
+        "message": "Thank you for your submission! Your crossing will be verified and will appear in the Hall of Fame soon.",
+        "another": "Submit Another Crossing"
+      },
+      "error": "An error occurred. Please try again later.",
+      "fixErrors": "Please fix errors in the form",
+      "verification": "Submission will be verified before publication"
+    },
+    "hints": {
+      "photo": "JPG, PNG, WebP",
+      "additionalPhotos": "Max. {max} photos"
+    },
+    "fileUpload": {
+      "clickOrDrag": "Click or drag file",
+      "noFileSelected": "No file selected",
+      "filesSelected": "{count} files selected",
+      "filesSelectedMany": "{count} files selected"
+    }
+  },
+  "trackerForm": {
+    "title": "Become a Legend",
+    "subtitle": "Join the group of conquerors",
+    "fields": {
+      "email": "Email",
+      "startDate": "Planned Start Date",
+      "plannedDays": "Planned Expedition Duration"
+    },
+    "placeholders": {
+      "email": "yourname@gmail.com",
+      "plannedDays": "e.g. 30 days, 2 weeks"
+    },
+    "submit": {
+      "button": "Register",
+      "sending": "Sending...",
+      "success": "Registration sent successfully! We will contact you soon.",
+      "error": "An error occurred. Please try again later."
+    }
+  },
+  "validation": {
+    "submission": {
+      "nameRequired": "Full name is required",
+      "nameMin": "Full name must be at least 3 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Enter a valid email address",
+      "typeRequired": "Select crossing type",
+      "startDateRequired": "Start date is required",
+      "endDateRequired": "End date is required",
+      "endDateAfterStart": "End date must be later than or equal to start date",
+      "descriptionMax": "Maximum {max} characters",
+      "photoRequired": "Profile photo is required",
+      "photoFormat": "Accepted formats: JPG, PNG, WebP",
+      "photoSize": "File cannot be larger than 1MB",
+      "gpxExtension": "File must have .gpx extension",
+      "gpxSize": "File cannot be larger than 1MB",
+      "additionalPhotosMax": "Maximum {max} photos",
+      "additionalPhotosSize": "Each file cannot be larger than 1MB",
+      "additionalPhotosFormat": "Accepted formats: JPG, PNG, WebP"
+    },
+    "tracker": {
+      "emailInvalid": "Please provide a valid email address.",
+      "emailRequired": "Please provide a valid email address.",
+      "startDateRequired": "Please provide planned start date.",
+      "plannedDaysRequired": "Please provide planned expedition duration."
+    }
+  },
+  "trailTypes": {
+    "Solo": "Solo",
+    "Grupa": "Group",
+    "Z psem": "With Dog",
+    "Ultralight": "Ultralight",
+    "Fastpacking": "Fastpacking",
+    "Ze wsparciem": "Supported",
+    "Rower": "Bike",
+    "Ultra running": "Ultra Running",
+    "Bez pośpiechu": "No Rush",
+    "Na dziko": "Wild",
+    "Fragmentami": "In Sections",
+    "Inne": "Other"
+  },
+  "preTrailRegistration": {
+    "title": "Before You Set Out",
+    "process": {
+      "title": "SGT Crossing Process",
+      "step1": {
+        "title": "Register Crossing Attempt",
+        "description": "Before starting, fill out the crossing attempt registration form. You'll receive a free GPS tracker and will be visible on the live tracking map.",
+        "linkText": "Register crossing attempt"
+      },
+      "step2": {
+        "title": "Conquer the Trail",
+        "description": "Set out on the route with a GPS tracker. Your progress will be visible live to all observers. Conquer all 23 highest peaks of the Sudeten ranges.",
+        "linkText": "Discover the route"
+      },
+      "step3": {
+        "title": "Submit Completion",
+        "description": "After completing the trail, submit your crossing with materials (photos, GPX). After verification, you'll join the official Hall of Fame!",
+        "linkText": "Completion form"
+      }
+    },
+    "benefits": {
+      "title": "Benefits",
+      "subtitle": "What You Gain",
+      "benefit1": {
+        "title": "Free GPS Tracker",
+        "description": "Receive a professional Poltrax tracker completely free for the entire crossing duration. You don't need to buy equipment - we provide it!"
+      },
+      "benefit2": {
+        "title": "Live Tracking",
+        "description": "Your expedition live on the internet! Family, friends, and the entire community can track your every step through 900 kilometers of trail."
+      },
+      "benefit3": {
+        "title": "Official Recognition",
+        "description": "After completing the trail, you'll join the elite group of conquerors. Your name in",
+        "hallOfFame": "Hall of Fame",
+        "descriptionEnd": "and an official completion certificate."
+      },
+      "benefit4": {
+        "title": "Community",
+        "description": "Join the exclusive group of those who have conquered the Sudeten Crown. Share experiences and inspire others to take on the challenge."
+      }
+    },
+    "benefitsCard": {
+      "title": "Registration Benefits",
+      "button": "Register Crossing Attempt",
+      "footer": "Everything in one place • Quick registration • Instant access"
+    },
+    "warning": {
+      "title": "Important: Register before starting!",
+      "text": {
+        "part1": "For your crossing to be recognized as official,",
+        "part2": " you must register your crossing attempt",
+        "part3": " before starting your journey.",
+        "part4": " Crossings started without prior registration may not be included in official statistics"
+      },
+      "hallOfFame": "Hall of Fame"
+    },
+    "intro": {
+      "text": "Planning to conquer the",
+      "highlight": "SUDETEN CROWN",
+      "textEnd": "? First register your crossing attempt and receive a free GPS tracker to track your progress!"
+    }
+  },
+  "footer": {
+    "tagline": "Sudeten Crown in one trail",
+    "description": "900 km through 23 mountain ranges. Conquer all the highest peaks of the Sudetes and 16 peaks of the Crown of Polish Mountains in one epic journey.",
+    "mapLink": "Trail Map",
+    "community": "Community",
+    "copyright": "© 2025 Sudety Grand Trail. All rights reserved.",
+    "madeWith": "Trail created with ❤️ for mountain lovers"
+  },
+  "trailDescription": {
+    "title": "About the Trail",
+    "p1": {
+      "part1": "– the first trail enabling the conquest of the highest peak of each of",
+      "part2": "23 Sudeten mountain ranges",
+      "part3": "in one route.",
+      "part4": "900 km",
+      "part5": "in length, approximately",
+      "part6": "30,000 m",
+      "part7": "of elevation gain through",
+      "part8": "Poland, Czech Republic, and Germany",
+      "part9": ". Start in",
+      "part10": "Jarnołtówek",
+      "part11": ", finish at",
+      "part12": "Ślęża",
+      "part13": ", a mountain of spiritual significance."
+    },
+    "p2": {
+      "part1": "From the highest Śnieżka (1603m) through Praděd (1491m), Śnieżnik (1426m), Wielka Sowa (1015m), the rocky labyrinth of Szczeliniec Wielki (919m), the border Biskupia Kopa (890m), to the lowest Lázek (714m) and the mystical Ślęża (718m).",
+      "highlight": "This is the complete conquest of the Sudetes!"
+    },
+    "features": {
+      "title": "Main Attractions:",
+      "items": [
+        "16 peaks of the Crown of Polish Mountains",
+        "Legendary finale at Ślęża",
+        "National parks and reserves",
+        "Castles and ruins",
+        "Atmospheric mountain huts",
+        "Observation towers",
+        "Historic mines and adits",
+        "Unforgettable views",
+        "Unique rock formations",
+        "Three-country border point Poland-Czech Republic-Germany",
+        "Places related to Sudeten legends and myths"
+      ]
+    },
+    "stats": {
+      "ranges": "Ranges",
+      "kilometers": "Kilometers"
+    }
+  },
+  "trailMap": {
+    "title": "Discover the Map",
+    "description": "Below is the map of the route leading through all 23 Sudeten ranges. Each section has been carefully marked and refined, creating a coherent path from the first step in Jarnołtówek to the finale at Ślęża.",
+    "openMap": "Open on Mapy.cz",
+    "downloadGpx": "Download GPX File",
+    "mapTitle": "Interactive Map",
+    "mapAriaLabel": "Click to use the map",
+    "stats": {
+      "length": "Route Length",
+      "elevation": "Elevation Gain",
+      "highestPeak": "Highest Peak"
+    }
+  },
+  "liveTracking": {
+    "badge": "TRACK LIVE",
+    "description": "Thanks to cooperation with",
+    "poltrax": "Poltrax",
+    "descriptionEnd": "you can track your expedition in real time.",
+    "descriptionLine2": "The map shows current position, route traveled, time limit, and approximate accommodation points.",
+    "mapTitle": "Live Tracking",
+    "mapClickText": "Click or tap to use",
+    "cards": {
+      "position": {
+        "title": "Current Position",
+        "description": "Real-time location"
+      },
+      "timeLimit": {
+        "title": "Time Limit",
+        "description": "Race against time through the Sudetes"
+      },
+      "stages": {
+        "title": "Stage Points",
+        "description": "Planned accommodation locations"
+      }
+    }
+  },
+  "modernTracker": {
+    "badge": "Free Tracker",
+    "title": "Your",
+    "titleHighlight": "Own Story",
+    "partner": "Technology Partner",
+    "description": {
+      "part1": "Poltrax will provide you with a special tracker completely free of charge, ",
+      "part2": "so you can record your own story on this route."
+    },
+    "features": [
+      "Completely free - no hidden costs",
+      "Professional tracking tool",
+      "Save and share your adventure"
+    ]
+  },
+  "interactiveMap": {
+    "clickToUse": "Click or tap to use"
+  },
+  "badgeSection": {
+    "title": "Sudety Grand Trail Badge",
+    "getBadge": "Earn the Official Badge",
+    "highestAward": "Highest recognition for conquerors",
+    "p1": "After",
+    "p1Highlight": "completing the entire trail",
+    "p1End": "you have the opportunity to earn the official badge",
+    "p2": "This is not just an ordinary recognition – it's a",
+    "p2Highlight": "symbol of overcoming your own limits",
+    "p2End": ", proof of resilience and confirmation of completing one of the most demanding trails in the Sudetes.",
+    "confirmation": "The badge confirms:",
+    "confirmations": [
+      "Crossing",
+      "900 kilometers through 23 mountain ranges",
+      "Conquering",
+      "all the highest peaks",
+      "of each range",
+      "Overcoming",
+      "over 30,000 meters of elevation gain",
+      "Joining",
+      "the elite group of conquerors"
+    ],
+    "regulations": {
+      "title": "Badge Acquisition Regulations",
+      "subtitle": "Requirements you must meet to earn the official badge",
+      "items": [
+        "Registering your intention to cross the trail through",
+        "official form",
+        "and downloading",
+        "GPS tracker",
+        "to track the route.",
+        "Completing the entire trail",
+        "Sudety Grand Trail",
+        "according to the official route, from Jarnołtówek to Ślęża.",
+        "Conquering all",
+        "highest peaks of each of the 23 mountain ranges",
+        "located on the route.",
+        "On the Polish side, conquering all",
+        "16 Sudeten peaks belonging to the Crown of Polish Mountains",
+        ".",
+        "Documentation of the crossing in the form of",
+        "photos, reports, or GPS tracking",
+        ", confirming trail completion.",
+        "Submitting the crossing through",
+        "official form",
+        ", along with sharing documentation and report from the crossing."
+      ]
+    },
+    "cta": {
+      "title": "Completed the Trail?",
+      "subtitle": "Submit your crossing and earn the official badge!",
+      "description": "Join the elite group of conquerors and receive your recognition",
+      "submit": "Submit Crossing",
+      "hallOfFame": "View Hall of Fame"
+    }
+  },
+  "sudetenCrown": {
+    "searchPlaceholder": "Search range, peak...",
+    "koronaSudetow": "Sudeten Crown",
+    "koronaGorPolski": "Crown of Polish Mountains",
+    "noResults": "No ranges found matching the criteria.",
+    "clearFilters": "Clear filters",
+    "ranges": "Ranges",
+    "czech": "Czech",
+    "german": "German",
+    "peak": "Peak",
+    "peakGerman": "Peak (Ger.)",
+    "countries": "Countries"
+  },
+  "hallOfFameStats": {
+    "title": "Trail Statistics",
+    "description": "Since the trail was officially marked, wanderers have been taking on the challenge",
+    "descriptionEnd": "Below are general statistics of all conquerors.",
+    "achievements": "Conqueror Achievements",
+    "badges": {
+      "ranges": "23 ranges"
+    },
+    "completions": {
+      "title": "Official Crossings",
+      "description": "Sudety Grand Trail Conquerors"
+    },
+    "fastest": {
+      "title": "Fastest Crossing",
+      "description": "Days on trail"
+    },
+    "thisYear": {
+      "title": "This Year",
+      "description": "Crossings in 2025"
+    }
+  },
+  "hallOfFameList": {
+    "title": "Sudeten Crown Conquerors",
+    "description": "Wanderers who completed the full trail",
+    "descriptionEnd": "Each crossing is a unique story of determination and passion for mountains.",
+    "sortBy": "Sort by",
+    "sortOptions": {
+      "date": "Date",
+      "time": "Time",
+      "name": "Name"
+    },
+    "readMyStory": "Read My Story",
+    "start": "Start",
+    "end": "End",
+    "time": "Time",
+    "days": "days",
+    "type": "Type",
+    "achievements": {
+      "firstCompleter": "First Completer",
+      "fastestCrossing": "Fastest Crossing"
+    },
+    "favoriteSection": "Favorite Section",
+    "hardestSection": "Hardest Moment",
+    "cta": {
+      "title": "Join the Elite Group!",
+      "description": "Completed Sudety Grand Trail?",
+      "descriptionEnd": "Submit your crossing and become an official Sudeten Crown conqueror!",
+      "submit": "Submit Crossing"
+    },
+    "mockData": {
+      "description": "Crossing the entire Sudetes was an intense and beautiful adventure. Each day offered new challenges and landscapes that are hard to compare with anything else.",
+      "favoriteSection": "Równia pod Śnieżką in the Karkonosze, in sunny weather and cloudless sky",
+      "hardestSection": "An entire day of hiking along the ridge of the Ještědsko-Kozákovské range in rain and fog"
+    }
+  },
+  "submissionFormSection": {
+    "title": "Submit Your Crossing",
+    "description": "Completed",
+    "descriptionHighlight": "Sudety Grand Trail",
+    "descriptionEnd": "? Share your story and join the official",
+    "hallOfFame": "Hall of Fame",
+    "descriptionEnd2": "!"
+  },
+  "aboutCreator": {
+    "title": {
+      "part1": "Sudety Grand Trail",
+      "part2": "About Me"
+    },
+    "badge": "My Story",
+    "photoCaption": "\"An ordinary guy from Łódź with a backpack and a head full of ideas\"",
+    "p1": "As the trail creator, I thought it would be worth saying a few words about myself. Maybe then it will be easier to understand where I came from and how it happened that I'm trying to give meaning to everyday life in this way. Because although each of my projects is a different adventure, they all have a common beginning.",
+    "p2": "I'm not a professional athlete",
+    "p2Rest": ", I don't have a team of trainers or sponsors on call. I'm an ordinary guy from Łódź who decided to use my own legs to change the world for the better. I have a backpack, shoes, a head full of ideas, and probably a bit too much ambition. For several years I've been wandering in the mountains, sometimes long, sometimes fast, most often with some stupid plan and an even nobler goal.",
+    "p3": "This site is a space dedicated to the project of my life, but it's only one chapter of a larger story. Because I've already walked several such wild, long, sometimes completely illogical routes in my life.",
+    "p3Highlight": "Each of these journeys changed me in its own way",
+    "p3Rest": "and led me step by step to where I am now.",
+    "p4": "It was they who taught me how important it is to appreciate those small, often unnoticed moments that really give life meaning. Thanks to them, I began to get to know myself anew, I came to like my flaws and virtues, I learned to live in harmony with myself, and above all",
+    "p4Highlight": "I understood who I really am and what I really need",
+    "p4Rest": ".",
+    "cta": {
+      "title": "Join the Community",
+      "description": "If you want to find out how it all started, what drives me, and what mountains look like through the eyes of someone who knows the weight of silence and can find home in a place where others see only trees, I invite you to my private group.",
+      "button": "Stories from the Trail",
+      "quote": "\"Because walking is not just kilometers. It's also people, emotions, failures, and small victories. And I just like to share that.\""
+    }
+  },
+  "trailJourney": {
+    "badge": "15 days of hiking",
+    "title": "My report",
+    "titleHighlight": "from the trail",
+    "description": "924 kilometers covered in 15 days. Each day is a separate story full of challenges, beautiful views, and unforgettable moments.",
+    "moreDays": "Remaining days coming soon...",
+    "day": "Day",
+    "photo": "photo",
+    "total": "Total"
+  }
+}

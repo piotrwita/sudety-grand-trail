@@ -32,6 +32,7 @@ import {
   PhotoStackIcon,
   CheckIcon,
 } from '@/components/icons';
+import { useTranslations } from '@/lib/i18n-utils';
 
 /* ============================================================================
    FORM FIELD COMPONENTS
@@ -74,17 +75,19 @@ const inputClassName = (hasError: boolean) =>
 
 const getFileDisplayText = (
   files: FileList | null | undefined,
-  multiple?: boolean
+  multiple: boolean | undefined,
+  t: (key: string, params?: Record<string, string | number>) => string
 ): string => {
   if (!files || files.length === 0) {
-    return 'Kliknij lub przeciągnij plik';
+    return t('fileUpload.clickOrDrag');
   }
 
   if (files.length === 1) {
     return files[0].name;
   }
 
-  return `${files.length} ${files.length < 5 ? 'pliki wybrane' : 'plików wybranych'}`;
+  const key = files.length < 5 ? 'fileUpload.filesSelected' : 'fileUpload.filesSelectedMany';
+  return t(key, { count: files.length });
 };
 
 const FileUploadField = ({
@@ -97,6 +100,7 @@ const FileUploadField = ({
   icon,
   name,
   control,
+  t,
 }: {
   label: string;
   required?: boolean;
@@ -107,6 +111,7 @@ const FileUploadField = ({
   icon: React.ReactNode;
   name: 'photo' | 'gpxFile' | 'additionalPhotos';
   control: Control<SubmissionFormData>;
+  t: (key: string, params?: Record<string, string | number>) => string;
 }) => (
   <div>
     <label className="mb-1.5 block text-sm font-semibold text-forest-700">
@@ -157,7 +162,7 @@ const FileUploadField = ({
                 <p
                   className={`truncate text-sm font-medium ${hasFiles ? 'text-green-700' : 'text-forest-700'}`}
                 >
-                  {getFileDisplayText(files, multiple)}
+                  {getFileDisplayText(files, multiple, t)}
                 </p>
                 {hint && (
                   <p className="truncate text-xs text-mountain-500">{hint}</p>
@@ -194,6 +199,8 @@ const SectionDivider = ({
    MAIN FORM COMPONENT
    ============================================================================ */
 export const SubmissionForm = () => {
+  const { t } = useTranslations('submissionForm');
+  const { t: tGlobal } = useTranslations();
   const [submitStatus, setSubmitStatus] = useState<
     'idle' | 'success' | 'error'
   >('idle');
@@ -330,13 +337,13 @@ export const SubmissionForm = () => {
         console.error('Error submitting form:', result.message);
         setSubmitStatus('error');
         setServerMessage(
-          result.message || 'Wystąpił błąd. Spróbuj ponownie później.'
+          result.message || t('submit.error')
         );
       }
     } catch (error) {
       console.error('Error processing form:', error);
       setSubmitStatus('error');
-      setServerMessage('Wystąpił błąd. Spróbuj ponownie później.');
+      setServerMessage(t('submit.error'));
     }
   };
 
@@ -368,18 +375,17 @@ export const SubmissionForm = () => {
           </ScaleIn>
           <FadeIn direction="up" delay={0.3}>
             <h3 className="mb-3 font-display text-xl font-bold uppercase tracking-wide text-forest-800 sm:text-2xl">
-              Zgłoszenie Wysłane!
+              {t('submit.success.title')}
             </h3>
           </FadeIn>
           <FadeIn direction="up" delay={0.4}>
             <p className="mx-auto mb-6 max-w-md text-sm text-mountain-600 sm:text-base">
-              Dziękujemy za zgłoszenie! Twoje przejście zostanie zweryfikowane i
-              wkrótce pojawi się w Hall of Fame.
+              {t('submit.success.message')}
             </p>
           </FadeIn>
           <FadeIn direction="up" delay={0.5}>
             <button onClick={handleReset} className="theme-btn-base theme-halloffame-btn-primary px-8 py-4">
-              Zgłoś Kolejne Przejście
+              {t('submit.success.another')}
             </button>
           </FadeIn>
         </div>
@@ -392,12 +398,12 @@ export const SubmissionForm = () => {
           <div className="space-y-4 px-4 py-5 sm:px-6 sm:py-6">
             <SectionDivider
               icon={<UserIcon className="h-4 w-4" />}
-              title="Dane podstawowe"
+              title={t('sections.basic')}
             />
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <FormField
-                label="Imię i Nazwisko"
+                label={t('fields.name')}
                 required
                 error={errors.name?.message}
                 className="sm:col-span-2 lg:col-span-1"
@@ -406,41 +412,41 @@ export const SubmissionForm = () => {
                   type="text"
                   {...register('name')}
                   className={inputClassName(!!errors.name)}
-                  placeholder="Jan Kowalski"
+                  placeholder={t('placeholders.name')}
                 />
               </FormField>
 
-              <FormField label="Pseudonim" error={errors.nickname?.message}>
+              <FormField label={t('fields.nickname')} error={errors.nickname?.message}>
                 <input
                   type="text"
                   {...register('nickname')}
                   className={inputClassName(!!errors.nickname)}
-                  placeholder="Włóczykij"
+                  placeholder={t('placeholders.nickname')}
                 />
               </FormField>
 
               <FormField
-                label="Email"
+                label={t('fields.email')}
                 required
                 error={errors.email?.message}
-                hint="Nie będzie publikowany"
+                hint={t('fields.emailHint')}
               >
                 <input
                   type="email"
                   {...register('email')}
                   className={inputClassName(!!errors.email)}
-                  placeholder="twojanazwa@gmail.com"
+                  placeholder={t('placeholders.email')}
                 />
               </FormField>
 
-              <FormField label="Typ przejścia" error={errors.type?.message}>
+              <FormField label={t('fields.type')} error={errors.type?.message}>
                 <select
                   {...register('type')}
                   className={inputClassName(!!errors.type)}
                 >
                   {TRAIL_TYPES.map((type) => (
                     <option key={type} value={type}>
-                      {type}
+                      {tGlobal(`trailTypes.${type}`)}
                     </option>
                   ))}
                 </select>
@@ -452,12 +458,12 @@ export const SubmissionForm = () => {
           <div className="space-y-4 px-4 py-5 sm:px-6 sm:py-6">
             <SectionDivider
               icon={<CalendarIcon className="h-4 w-4" />}
-              title="Terminy przejścia"
+              title={t('sections.dates')}
             />
 
             <div className="grid gap-4 sm:grid-cols-3">
               <FormField
-                label="Data rozpoczęcia"
+                label={t('fields.startDate')}
                 required
                 error={errors.startDate?.message}
               >
@@ -469,7 +475,7 @@ export const SubmissionForm = () => {
               </FormField>
 
               <FormField
-                label="Data zakończenia"
+                label={t('fields.endDate')}
                 required
                 error={errors.endDate?.message}
               >
@@ -482,14 +488,14 @@ export const SubmissionForm = () => {
 
               <div>
                 <label className="mb-1.5 block text-sm font-semibold text-forest-700">
-                  Czas przejścia
+                  {t('fields.duration')}
                 </label>
                 <div className="flex h-[42px] items-center justify-center rounded-lg border border-forest-200 bg-gradient-to-r from-forest-50 to-forest-100/50">
                   <span className="font-display text-xl font-bold text-forest-700">
                     {calculateDays()}
                   </span>
                   <span className="ml-1.5 text-sm font-medium text-forest-600">
-                    dni
+                    {t('fields.days')}
                   </span>
                 </div>
               </div>
@@ -500,52 +506,55 @@ export const SubmissionForm = () => {
           <div className="space-y-4 px-4 py-5 sm:px-6 sm:py-6">
             <SectionDivider
               icon={<PhotoIcon className="h-4 w-4" />}
-              title="Materiały"
+              title={t('sections.materials')}
             />
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <FileUploadField
-                label="Zdjęcie profilowe"
+                label={t('fields.photo')}
                 required
                 error={
                   errors.photo?.message
                     ? String(errors.photo.message)
                     : undefined
                 }
-                hint="JPG, PNG, WebP"
+                hint={t('hints.photo')}
                 accept="image/*"
                 icon={<PhotoIcon className="h-5 w-5" />}
                 name="photo"
                 control={control}
+                t={t}
               />
 
               <FileUploadField
-                label="Plik GPX"
+                label={t('fields.gpxFile')}
                 error={
                   errors.gpxFile?.message
                     ? String(errors.gpxFile.message)
                     : undefined
                 }
-                hint="Ślad GPS z przejścia"
+                hint={t('fields.gpxHint')}
                 accept=".gpx"
                 icon={<MapIcon className="h-5 w-5" />}
                 name="gpxFile"
                 control={control}
+                t={t}
               />
 
               <FileUploadField
-                label="Dodatkowe zdjęcia"
+                label={t('fields.additionalPhotos')}
                 error={
                   errors.additionalPhotos?.message
                     ? String(errors.additionalPhotos.message)
                     : undefined
                 }
-                hint={`Max. ${MAX_ADDITIONAL_PHOTOS} zdjęć`}
+                hint={t('hints.additionalPhotos', { max: MAX_ADDITIONAL_PHOTOS })}
                 accept="image/*"
                 multiple
                 icon={<PhotoStackIcon className="h-5 w-5" />}
                 name="additionalPhotos"
                 control={control}
+                t={t}
               />
             </div>
           </div>
@@ -554,11 +563,11 @@ export const SubmissionForm = () => {
           <div className="space-y-4 px-4 py-5 sm:px-6 sm:py-6">
             <SectionDivider
               icon={<PencilIcon className="h-4 w-4" />}
-              title="Opis przejścia"
+              title={t('sections.description')}
             />
 
             <FormField
-              label={`Krótki opis (max ${MAX_DESCRIPTION_LENGTH} znaków)`}
+              label={t('fields.description', { max: MAX_DESCRIPTION_LENGTH })}
               error={errors.description?.message}
             >
               <div className="relative">
@@ -567,7 +576,7 @@ export const SubmissionForm = () => {
                   maxLength={MAX_DESCRIPTION_LENGTH}
                   rows={2}
                   className={inputClassName(!!errors.description)}
-                  placeholder="Najpiękniejsza przygoda mojego życia..."
+                  placeholder={t('placeholders.description')}
                 />
                 <span className="absolute bottom-2 right-3 text-xs text-mountain-400">
                   {description.length}/{MAX_DESCRIPTION_LENGTH}
@@ -577,26 +586,26 @@ export const SubmissionForm = () => {
 
             <div className="grid gap-4 sm:grid-cols-2">
               <FormField
-                label="Najpiękniejszy moment"
+                label={t('fields.favoriteSection')}
                 error={errors.favoriteSection?.message}
               >
                 <input
                   type="text"
                   {...register('favoriteSection')}
                   className={inputClassName(!!errors.favoriteSection)}
-                  placeholder="Wschód słońca na Śnieżce"
+                  placeholder={t('placeholders.favoriteSection')}
                 />
               </FormField>
 
               <FormField
-                label="Najtrudniejszy fragment"
+                label={t('fields.hardestSection')}
                 error={errors.hardestSection?.message}
               >
                 <input
                   type="text"
                   {...register('hardestSection')}
                   className={inputClassName(!!errors.hardestSection)}
-                  placeholder="Góry Sowie w deszczu"
+                  placeholder={t('placeholders.hardestSection')}
                 />
               </FormField>
             </div>
@@ -606,7 +615,7 @@ export const SubmissionForm = () => {
           <div className="space-y-4 px-4 py-5 sm:px-6 sm:py-6">
             <SectionDivider
               icon={<DocumentTextIcon className="h-4 w-4" />}
-              title="Dodatkowe informacje"
+              title={t('sections.additional')}
             />
 
             {/* First Sudety Checkbox */}
@@ -617,7 +626,7 @@ export const SubmissionForm = () => {
                 className="h-5 w-5 rounded border-forest-300 text-forest-600 focus:ring-forest-500"
               />
               <span className="text-sm font-medium text-forest-700">
-                To moje pierwsze przejście Sudetów
+                {t('fields.isFirstSudety')}
               </span>
             </label>
 
@@ -629,11 +638,10 @@ export const SubmissionForm = () => {
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-semibold text-forest-800">
-                    📍 Zgłosiłeś próbę przejścia przed startem?
+                    {t('trackerInfo.title')}
                   </p>
                   <p className="mt-1 text-xs leading-relaxed text-mountain-600">
-                    Aby przejście zostało uznane za oficjalne, powinieneś
-                    wcześniej zgłosić próbę i otrzymać tracker GPS.
+                    {t('trackerInfo.description')}
                   </p>
                   <Link
                     href={getSectionUrl(
@@ -642,7 +650,7 @@ export const SubmissionForm = () => {
                     )}
                     className="mt-2 inline-flex items-center text-xs font-semibold text-forest-600 transition-colors hover:text-forest-800"
                   >
-                    Zgłoś próbę na przyszłość
+                    {t('trackerInfo.link')}
                     <ExternalLinkIcon className="ml-1 h-3 w-3" />
                   </Link>
                 </div>
@@ -650,14 +658,14 @@ export const SubmissionForm = () => {
             </div>
 
             <FormField
-              label="Dodatkowe osiągnięcia"
+              label={t('fields.additionalAchievements')}
               error={errors.additionalAchievements?.message}
             >
               <textarea
                 {...register('additionalAchievements')}
                 rows={2}
                 className={inputClassName(!!errors.additionalAchievements)}
-                placeholder="Np. ukończenie KGP, inne szlaki długodystansowe..."
+                placeholder={t('placeholders.additionalAchievements')}
               />
             </FormField>
           </div>
@@ -676,11 +684,11 @@ export const SubmissionForm = () => {
                 {hasValidationErrors && Object.keys(errors).length > 0 && (
                   <div className="mb-2 flex items-center gap-2 text-xs text-red-600">
                     <InfoCircleSolidIcon className="h-4 w-4 flex-shrink-0" />
-                    <span>Proszę poprawić błędy w formularzu</span>
+                    <span>{t('submit.fixErrors')}</span>
                   </div>
                 )}
                 <p className="text-center text-xs text-mountain-500 sm:text-left">
-                  Zgłoszenie zostanie zweryfikowane przed publikacją
+                  {t('submit.verification')}
                 </p>
               </div>
               <button
@@ -693,10 +701,10 @@ export const SubmissionForm = () => {
                 {isSubmitting ? (
                   <>
                     <SpinnerIcon className="-ml-1 mr-2 inline h-4 w-4 animate-spin text-white" />
-                    Wysyłanie...
+                    {t('submit.sending')}
                   </>
                 ) : (
-                  'Wyślij Zgłoszenie'
+                  t('submit.button')
                 )}
               </button>
             </div>

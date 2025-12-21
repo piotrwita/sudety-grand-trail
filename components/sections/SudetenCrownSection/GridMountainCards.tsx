@@ -9,6 +9,7 @@ import { KgpPeak, koronaGorPolski, type SudetenRange } from './data';
 import { CheckIcon } from '@/components/icons';
 import { SearchIcon } from '@/components/icons/SearchIcon';
 import { MountainCard } from './MountainCard';
+import { useTranslations } from '@/lib/i18n-utils';
 
 interface GridMountainCardsProps {
   ranges: SudetenRange[];
@@ -186,6 +187,8 @@ const FilterBar = ({
   showKsOnly,
   onToggleKs,
 }: FilterBarProps) => {
+  const { t } = useTranslations('sudetenCrown');
+  
   return (
     <FadeIn
       direction="up"
@@ -200,7 +203,7 @@ const FilterBar = ({
           </div>
           <input
             type="text"
-            placeholder="Szukaj pasma, szczytu..."
+            placeholder={t('searchPlaceholder')}
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
             className="w-full rounded-xl border-2 border-earth-200 bg-cream py-2 pl-10 pr-3 text-sm text-earth-800 shadow-sm transition-all placeholder:text-earth-400 hover:border-earth-300 focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/20 sm:py-2.5 sm:pl-12 sm:pr-4 sm:text-base md:py-3"
@@ -219,7 +222,7 @@ const FilterBar = ({
                 : 'border-earth-200 bg-cream text-earth-700 hover:border-earth-300 hover:bg-earth-50'
             )}
           >
-            <span className="whitespace-nowrap">Korona Sudetów</span>
+            <span className="whitespace-nowrap">{t('koronaSudetow')}</span>
             <div
               className={cn(
                 'flex size-4 items-center justify-center rounded-full border-2 transition-colors sm:size-5',
@@ -242,7 +245,7 @@ const FilterBar = ({
                 : 'border-earth-200 bg-cream text-earth-700 hover:border-earth-300 hover:bg-earth-50'
             )}
           >
-            <span className="whitespace-nowrap">Korona Gór Polski</span>
+            <span className="whitespace-nowrap">{t('koronaGorPolski')}</span>
             <div
               className={cn(
                 'flex size-4 items-center justify-center rounded-full border-2 transition-colors sm:size-5',
@@ -260,14 +263,18 @@ const FilterBar = ({
   );
 };
 
-const EmptyState = ({ onClearFilters }: { onClearFilters: () => void }) => (
-  <div className="py-12 text-center text-mountain-500">
-    <p className="text-lg">Nie znaleziono pasm spełniających kryteria.</p>
-    <button
-      onClick={onClearFilters}
-      className="mt-4 text-accent-hover hover:underline"
-    >
-      Wyczyść filtry
-    </button>
-  </div>
-);
+const EmptyState = ({ onClearFilters }: { onClearFilters: () => void }) => {
+  const { t } = useTranslations('sudetenCrown');
+  
+  return (
+    <div className="py-12 text-center text-mountain-500">
+      <p className="text-lg">{t('noResults')}</p>
+      <button
+        onClick={onClearFilters}
+        className="mt-4 text-accent-hover hover:underline"
+      >
+        {t('clearFilters')}
+      </button>
+    </div>
+  );
+};

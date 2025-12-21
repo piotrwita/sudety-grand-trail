@@ -1,29 +1,21 @@
+'use client';
+
 import { FadeIn } from '@/components/motion';
 import { CheckIcon, LightningIcon } from '@/components/icons';
+import { useTranslations } from '@/lib/i18n-utils';
 
-const features = [
+const getFeatures = (t: (key: string) => string) => [
   {
-    title: 'Kompletne przejście Sudetów',
-    description: (
-      <>
-        Pierwszy szlak, który naprawdę łączy Sudety w jedną spójną opowieść.
-        Wyruszasz z Jarnołtówka w Górach Opawskich, by po setkach kilometrów
-        stanąć na szczycie mistycznej Ślęży i zakończyć wędrówkę w Sobótce. Po
-        drodze zdobywasz wszystko – od najwyższej Śnieżki po najniższy Lázek. To
-        pełna, nieprzerwana podróż przez całe Sudety, przez ich zmienność,
-        wysokości i dzikość. Jedna droga. Jedno wyzwanie. Jedna kompletna
-        całość.
-      </>
-    ),
+    title: t('features.complete.title'),
+    description: t('features.complete.description'),
     icon: <CheckIcon className="size-12" />,
     color: 'from-forest-600 to-forest-700',
     bgColor: 'bg-forest-50',
     textColor: 'text-forest-700',
   },
   {
-    title: 'Trzy kraje, jedno pasmo',
-    description:
-      'Wędrujesz przez Polskę, Czechy i Niemcy – trzy kultury, trzy spojrzenia, jeden górski świat. Szlak przekracza granice nie tylko na mapie, ale przede wszystkim w umyśle. Łączy krajobrazy, języki i rytmy życia, tworząc z nich jedną wspólną przestrzeń. To Sudety w pełnym wymiarze. Bez granic.',
+    title: t('features.threeCountries.title'),
+    description: t('features.threeCountries.description'),
     icon: (
       <svg
         className="size-12"
@@ -45,9 +37,8 @@ const features = [
     textColor: 'text-earth-700',
   },
   {
-    title: 'Wyprawa, która zmienia',
-    description:
-      '900 kilometrów i prawie 30 000 metrów przewyższeń. To nie tylko droga przez góry, ale spotkanie z samym sobą. Każdy kilometr uczy wytrwałości, zachwytu i pokory wobec natury. To coś więcej niż trasa do przejścia. To doświadczenie, które zostaje w człowieku na całe życie.',
+    title: t('features.transformative.title'),
+    description: t('features.transformative.description'),
     icon: <LightningIcon className="size-12" />,
     color: 'from-accent to-accent/90',
     bgColor: 'bg-mountain-100',
@@ -56,6 +47,9 @@ const features = [
 ];
 
 export const FeatureCards = () => {
+  const { t } = useTranslations('whyChoose');
+  const features = getFeatures(t);
+  
   return (
     <div className="grid gap-8 lg:grid-cols-3 lg:gap-10">
       {features.map((feature, index) => (
@@ -87,9 +81,9 @@ export const FeatureCards = () => {
               {feature.title}
             </h3>
 
-            <div className="text-justify font-medium leading-relaxed text-forest-700/90">
+            <p className="text-justify font-medium leading-relaxed text-forest-700/90">
               {feature.description}
-            </div>
+            </p>
 
             {/* Decorative Element */}
             <div

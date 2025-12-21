@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 import { Section } from './sections';
@@ -5,12 +7,15 @@ import { FadeIn } from '@/components/motion/FadeIn';
 import { ScaleIn } from '@/components/motion/ScaleIn';
 import { FacebookIcon } from '@/components/icons';
 import Link from 'next/link';
+import { useTranslations } from '@/lib/i18n-utils';
 
 export const AboutCreator = () => {
+  const { t } = useTranslations('aboutCreator');
+  
   return (
     <Section
       className="bg-cream"
-      ariaLabel="O Mnie - Twórca Sudety Grand Trail"
+      ariaLabel={t('title')}
     >
       {/* Background elements */}
       <div className="gradient-mesh-subtle absolute inset-0 opacity-30" />
@@ -51,7 +56,7 @@ export const AboutCreator = () => {
                 {/* Photo Caption */}
                 <div className="mt-6 text-center">
                   <p className="text-sm font-medium text-forest-700">
-                    "Zwykły chłopak z Łodzi z plecakiem i głową pełną pomysłów"
+                    {t('photoCaption')}
                   </p>
                 </div>
               </div>
@@ -110,13 +115,12 @@ export const AboutCreator = () => {
                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                   />
                 </svg>
-                <span>Moja historia</span>
+                <span>{t('badge')}</span>
               </FadeIn>
 
               <h2 className="section-title mb-6 text-left">
-                Sudety Grand Trail
-                <br />
-                <span className="gradient-text-mesh">O Mnie</span>
+                {t('title.part1')} <br />
+                <span className="gradient-text-mesh">{t('title.part2')}</span>
               </h2>
             </div>
 
@@ -130,11 +134,7 @@ export const AboutCreator = () => {
                 inView
               >
                 <p className="text-fluid-base leading-relaxed text-forest-700">
-                  Jako twórca szlaku pomyślałem, że warto powiedzieć kilka słów
-                  o sobie. Może wtedy łatwiej będzie zrozumieć skąd się w ogóle
-                  wziąłem i jak to się stało, że właśnie w taki sposób próbuję
-                  nadawać sens codzienności. Bo choć każdy z moich projektów to
-                  inna przygoda, wszystkie mają wspólny początek.
+                  {t('p1')}
                 </p>
               </FadeIn>
 
@@ -147,14 +147,9 @@ export const AboutCreator = () => {
               >
                 <p className="text-fluid-base leading-relaxed text-forest-700">
                   <strong className="text-accent">
-                    Nie jestem zawodowym sportowcem
+                    {t('p2')}
                   </strong>
-                  , nie mam sztabu trenerów ani sponsorów na zawołanie. Jestem
-                  zwykłym chłopakiem z Łodzi, który postanowił użyć własnych
-                  nóg, by zmieniać świat na lepszy. Mam plecak, buty, głowę
-                  pełną pomysłów i chyba trochę za dużo ambicji. Od kilku lat
-                  wędruję po górach, czasem długo, czasem szybko, najczęściej z
-                  jakimś głupim planem i jeszcze szlachetniejszym celem.
+                  {t('p2Rest')}
                 </p>
               </FadeIn>
 
@@ -166,16 +161,12 @@ export const AboutCreator = () => {
                 inView
               >
                 <p className="text-fluid-base leading-relaxed text-forest-700">
-                  Ta strona to przestrzeń poświęcona projektowi mojego życia,
-                  ale to tylko jeden rozdział większej historii. Bo takich
-                  dzikich, długich, czasem kompletnie nielogicznych tras
-                  przeszedłem już kilka w swoim życiu.
+                  {t('p3')}
                   <strong className="text-accent">
                     {' '}
-                    Każda z tych wędrówek zmieniała mnie na swój sposób
+                    {t('p3Highlight')}
                   </strong>{' '}
-                  i prowadziła krok po kroku do miejsca, w którym się obecnie
-                  znajduję.
+                  {t('p3Rest')}
                 </p>
               </FadeIn>
 
@@ -187,15 +178,11 @@ export const AboutCreator = () => {
                 inView
               >
                 <p className="text-fluid-base leading-relaxed text-forest-700">
-                  To właśnie one nauczyły mnie, jak ważne jest docenianie tych
-                  małych, często niezauważalnych momentów, które naprawdę nadają
-                  życiu sens. Dzięki nim zacząłem poznawać siebie na nowo,
-                  polubiłem swoje wady i zalety, nauczyłem się żyć w zgodzie ze
-                  sobą, a przede wszystkim{' '}
+                  {t('p4')}{' '}
                   <strong className="text-accent">
-                    zrozumiałem, kim naprawdę jestem i czego naprawdę potrzebuję
+                    {t('p4Highlight')}
                   </strong>
-                  .
+                  {t('p4Rest')}
                 </p>
               </FadeIn>
             </div>
@@ -225,14 +212,11 @@ export const AboutCreator = () => {
                 </div>
 
                 <h3 className="text-xl font-bold text-forest-800">
-                  Dołącz do społeczności
+                  {t('cta.title')}
                 </h3>
 
                 <p className="leading-relaxed text-forest-600">
-                  Jeśli chcesz się dowiedzieć, jak to wszystko się zaczęło, co
-                  mnie napędza i jak wyglądają góry oczami kogoś, kto zna wagę
-                  ciszy i potrafi znaleźć dom w miejscu, gdzie inni widzą tylko
-                  drzewa, to zapraszam Cię na moją prywatną grupę.
+                  {t('cta.description')}
                 </p>
 
                 <Link
@@ -242,13 +226,11 @@ export const AboutCreator = () => {
                   className="inline-flex items-center space-x-3 rounded-xl bg-accent px-8 py-4 font-bold text-cream shadow-xl transition-all duration-300 hover:scale-105 hover:bg-accent/90 hover:shadow-2xl"
                 >
                   <FacebookIcon className="h-5 w-5" />
-                  <span>Opowieści ze Szlaku</span>
+                  <span>{t('cta.button')}</span>
                 </Link>
 
                 <p className="text-sm italic text-forest-500">
-                  "Bo marsz to nie tylko kilometry. To też ludzie, emocje,
-                  porażki i małe zwycięstwa. A ja po prostu lubię się tym
-                  dzielić."
+                  {t('cta.quote')}
                 </p>
               </div>
             </ScaleIn>

@@ -5,13 +5,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { trailJournalData, type JournalDay } from '@/data/trail-journal';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
+import { useTranslations } from '@/lib/i18n-utils';
 
 // Splits paragraphs into chunks and interleaves floating images (alternating left/right)
 const renderContentWithImages = (
   content: string,
   images: string[] | undefined,
   dayNumber: number,
-  dayTitle: string
+  dayTitle: string,
+  t: (key: string) => string
 ) => {
   const paragraphs = content.split('\n\n');
 
@@ -57,7 +59,7 @@ const renderContentWithImages = (
           <div className="relative aspect-[3/4] w-full">
             <Image
               src={images[imageIndex]}
-              alt={`Dzień ${dayNumber} - ${dayTitle} - zdjęcie ${imageIndex + 1}`}
+              alt={`${t('trailJourney.day')} ${dayNumber} - ${dayTitle} - ${t('trailJourney.photo')} ${imageIndex + 1}`}
               fill
               className="object-cover"
               sizes="320px"
@@ -141,6 +143,8 @@ interface DayAccordionProps {
 }
 
 const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
+  const { t } = useTranslations('trailJourney');
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -174,7 +178,7 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
               </span>
               <span className="text-forest-400">|</span>
               <span className="text-forest-500">
-                Łącznie: {day.distanceTotal} km
+                {t('total')}: {day.distanceTotal} km
               </span>
             </div>
           </div>
@@ -200,7 +204,8 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
                   day.content,
                   day.images,
                   day.day,
-                  day.title
+                  day.title,
+                  t
                 )}
               </div>
             </div>
@@ -212,6 +217,7 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
 };
 
 export const TrailJourneySection = () => {
+  const { t } = useTranslations('trailJourney');
   const [openDay, setOpenDay] = useState<number | null>(null);
 
   const handleToggle = (day: number) => {
@@ -242,18 +248,17 @@ export const TrailJourneySection = () => {
             {/* Badge */}
             <div className="mb-6 inline-flex items-center space-x-2 rounded-full bg-forest-100 px-4 py-2 text-sm font-medium text-forest-700">
               <CalendarDayIcon />
-              <span>15 dni wędrówki</span>
+              <span>{t('badge')}</span>
             </div>
 
             <h2 className="section-title mb-4">
-              Moja relacja
+              {t('title')}
               <br />
-              <span className="gradient-text-mesh">ze szlaku</span>
+              <span className="gradient-text-mesh">{t('titleHighlight')}</span>
             </h2>
 
             <p className="mx-auto max-w-2xl text-base leading-relaxed text-forest-600 sm:text-lg">
-              924 kilometry pokonane w 15 dni. Każdy dzień to osobna historia
-              pełna wyzwań, pięknych widoków i niezapomnianych chwil.
+              {t('description')}
             </p>
           </motion.div>
 
@@ -278,7 +283,7 @@ export const TrailJourneySection = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-8 text-center text-sm italic text-forest-500"
             >
-              Pozostałe dni wkrótce...
+              {t('moreDays')}
             </motion.p>
           )}
         </div>

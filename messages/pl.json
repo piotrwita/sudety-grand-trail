@@ -1,0 +1,667 @@
+{
+  "navigation": {
+    "home": "Strona główna",
+    "trail": "Trasa",
+    "live": "Live",
+    "mountains": "Szczyty",
+    "hallOfFame": "Hall of Fame",
+    "badge": "Odznaka",
+    "about": "O Mnie"
+  },
+  "homeHero": {
+    "title": "Sudety Grand Trail",
+    "subtitle": {
+      "part1": "KORONA SUDETÓW",
+      "part2": "w jednym szlaku!"
+    },
+    "description": "Autorski projekt zdobycia najwyższych szczytów wszystkich pasm górskich Sudetów.",
+    "startJourney": "Rozpocznij Podróż",
+    "viewMap": "Zobacz Mapę",
+    "stats": {
+      "kilometers": "Kilometrów",
+      "ranges": "Pasma",
+      "countries": "Kraje",
+      "elevation": "Przewyższeń",
+      "kgpPeaks": "Szczytów KGP"
+    }
+  },
+  "whyChoose": {
+    "title": "Dlaczego ten szlak",
+    "features": {
+      "complete": {
+        "title": "Kompletne przejście Sudetów",
+        "description": "Pierwszy szlak, który naprawdę łączy Sudety w jedną spójną opowieść. Wyruszasz z Jarnołtówka w Górach Opawskich, by po setkach kilometrów stanąć na szczycie mistycznej Ślęży i zakończyć wędrówkę w Sobótce. Po drodze zdobywasz wszystko – od najwyższej Śnieżki po najniższy Lázek. To pełna, nieprzerwana podróż przez całe Sudety, przez ich zmienność, wysokości i dzikość. Jedna droga. Jedno wyzwanie. Jedna kompletna całość."
+      },
+      "threeCountries": {
+        "title": "Trzy kraje, jedno pasmo",
+        "description": "Wędrujesz przez Polskę, Czechy i Niemcy – trzy kultury, trzy spojrzenia, jeden górski świat. Szlak przekracza granice nie tylko na mapie, ale przede wszystkim w umyśle. Łączy krajobrazy, języki i rytmy życia, tworząc z nich jedną wspólną przestrzeń. To Sudety w pełnym wymiarze. Bez granic."
+      },
+      "transformative": {
+        "title": "Wyprawa, która zmienia",
+        "description": "900 kilometrów i prawie 30 000 metrów przewyższeń. To nie tylko droga przez góry, ale spotkanie z samym sobą. Każdy kilometr uczy wytrwałości, zachwytu i pokory wobec natury. To coś więcej niż trasa do przejścia. To doświadczenie, które zostaje w człowieku na całe życie."
+      }
+    }
+  },
+  "live": {
+    "title": {
+      "part1": "Śledź",
+      "part2": "Wyprawę"
+    },
+    "badge": "LIVE TRACKING",
+    "description": "Na żywo pokażesz innym, gdzie obecnie jesteś i jak przebiega Twoja własna przygoda.",
+    "stats": {
+      "kilometers": "Kilometrów",
+      "tracking": "Tracking"
+    }
+  },
+  "badge": {
+    "title": "Oficjalna Odznaka",
+    "subtitle": "Sudety Grand Trail",
+    "highest": "Najwyższe wyróżnienie",
+    "description": "dla tych, którzy ukończyli pełne przejście szlaku.",
+    "quote": "To nie tylko odznaka.",
+    "symbol": "To symbol pokonania własnych granic.",
+    "submit": "Zgłoś Przejście",
+    "hallOfFame": "Hall of Fame"
+  },
+  "hallOfFame": {
+    "title": "Hall of Fame",
+    "subtitle": "Oficjalne Przejścia Sudety Grand Trail",
+    "description": "Niezłomni wędrowcy zdobyli pełną Koronę Sudetów. Przeszli 900 kilometrów przez 23 pasma górskie.",
+    "join": "Ty możesz dołączyć do elitarnego grona zdobywców!",
+    "submit": "Zgłoś Przejście",
+    "view": "Zobacz Zdobywców"
+  },
+  "trail": {
+    "title": "Poznaj Mapę",
+    "subtitle": "Trasa Sudety Grand Trail",
+    "description": "Kompletne oblicze SUDETÓW ułożone w jeden ambitny szlak",
+    "stats": {
+      "kilometers": "900 kilometrów",
+      "ranges": "23 pasma górskie",
+      "start": "Jarnołtówka w Górach Opawskich",
+      "end": "Ślęży"
+    }
+  },
+  "mountains": {
+    "title": "Wykaz Szczytów",
+    "subtitle": "Szczyty na szlaku Sudety Grand Trail",
+    "description": "Wykaz najciekawszych szczytów na szlaku SUDETY GRAND TRAIL",
+    "details": {
+      "part1": "Kilkadziesiąt ciekawych wierzchołków w",
+      "part2": "23 pasmach górskich",
+      "part3": ", które spotkasz przemierzając szlak od",
+      "part4": "Śnieżki",
+      "part5": "po",
+      "part6": "Lázek."
+    }
+  },
+  "hallOfFameHero": {
+    "title": "Hall of Fame",
+    "subtitle": "Oficjalne Przejścia Sudety Grand Trail",
+    "description": {
+      "part1": "Niezłomni wędrowcy zdobyli pełną ",
+      "part2": "Koronę Sudetów",
+      "part3": ". Przeszli 900 kilometrów przez 23 pasma górskie."
+    },
+    "join": "Ty możesz dołączyć do elitarnego grona zdobywców!",
+    "submit": "Zgłoś Przejście",
+    "view": "Zobacz Zdobywców"
+  },
+  "trailHero": {
+    "title": "Poznaj Mapę",
+    "subtitle": "Trasa Sudety Grand Trail",
+    "description": {
+      "part1": "Kompletne oblicze ",
+      "part2": "SUDETÓW",
+      "part3": " ułożone w jeden ambitny szlak"
+    },
+    "details": {
+      "part1": "900 kilometrów",
+      "part2": "przez",
+      "part3": "23 pasma górskie",
+      "part4": "i wejście na najwyższy szczyt każdego z nich. Od",
+      "part5": "Jarnołtówka w Górach Opawskich",
+      "part6": "po finał na",
+      "part7": "Ślęży."
+    }
+  },
+  "aboutHero": {
+    "title": "Poznaj",
+    "titleHighlight": "Człowieka",
+    "subtitle": "Twórca Sudety Grand Trail",
+    "description": "Historia chłopaka z Łodzi, który postanowił użyć własnych nóg, by zmieniać świat na lepszy."
+  },
+  "aboutProject": {
+    "title": "O Projekcie",
+    "history": {
+      "title": "Z pasji, doświadczenia i... niedosytu.",
+      "p1": "Sudety zostały przeze mnie przebyte już kilkukrotnie. Nie raz odkrywałem ich tajemnice wytyczonymi oficjalnie trasami. A jednak żaden z istniejących szlaków nie poprowadził mnie",
+      "p1Highlight": "kompleksowo przez to niezwykle różnorodne pasmo",
+      "p2": "Właśnie dlatego narodziła się idea",
+      "p2Rest": ", czyli szlaku, który stanie się nie tylko zwieńczeniem moich sudeckich wędrówek, ale i",
+      "p2Highlight": "nowym wyzwaniem dla wszystkich miłośników gór"
+    },
+    "concept": {
+      "title": "To nie tylko kolejna linia na mapie.",
+      "p1": "to koncepcyjny szlak, który",
+      "p1Highlight": "łączy wszystkie pasma górskie Sudetów w jedną logiczną i wymagającą całość",
+      "p2": "Trasa mierzy",
+      "p2Part1": "900 kilometrów",
+      "p2Part2": "długości i",
+      "p2Part3": "niespełna 30 000 metrów",
+      "p2Part4": "przewyższeń. Przebiega przez",
+      "p2Part5": "23 pasma",
+      "p2Part6": "górskie, prowadząc przez",
+      "p2Part7": "trzy kraje",
+      "p2Part8": "– Polskę, Czechy, zahaczając także o Niemcy.",
+      "p3": "Początek trasy znajduje się w",
+      "p3Start": "Jarnołtówku (Góry Opawskie)",
+      "p3Middle": ", a finał – symboliczny i majestatyczny – pod",
+      "p3End": "Ślężą",
+      "p3EndDesc": ", górą o duchowym znaczeniu, tuż pod Wrocławiem."
+    },
+    "goal": {
+      "title": "Kompletne przejście Sudetów.",
+      "p1": "Celem szlaku jest zdobycie",
+      "p1Highlight1": "wszystkich najwyższych szczytów każdego pasma",
+      "p1Highlight2": "16 sudeckich szczytów należących do Korony Gór Polski",
+      "highlightBox": "W wielu przypadkach oznacza to",
+      "highlightBoxBold": "podwójne wejścia",
+      "highlightBoxRest": "– na faktyczny najwyższy punkt i na szczyt koronny, jeśli różnią się od siebie. To czyni trasę jeszcze bardziej wymagającą i wyjątkową."
+    },
+    "legends": {
+      "title": "Legendy Sudetów czekają.",
+      "p1": "Na trasie nie zabraknie ikonicznych szczytów – od majestatycznej",
+      "p1Peaks": "Śnieżki",
+      "p1PeaksDesc": ", najwyższego wierzchołka całego pasma, przez potężny",
+      "p1Peaks2": "Śnieżnik",
+      "p1Peaks3": "i dumnie górującego nad Jesionikami",
+      "p1Peaks4": "Pradziada",
+      "p1Peaks5": ", po charakterystyczną",
+      "p1Peaks6": "Wielką Sowę",
+      "p1Peaks7": ", skalny labirynt",
+      "p1Peaks8": "Szczelińca Wielkiego",
+      "p1Peaks9": ", graniczną",
+      "p1Peaks10": "Biskupią Kopę",
+      "p1Peaks11": "i mistyczną",
+      "p1Peaks12": "Ślężę",
+      "p2": "A to dopiero początek tej górskiej mozaiki."
+    },
+    "philosophy": {
+      "title": "Dla tych, którzy chcą się zgubić, by się odnaleźć.",
+      "p1": "Ten projekt powstał z",
+      "p1Highlight1": "miłości do gór",
+      "p1Highlight2": "łączy pasma, kraje, emocje i doświadczenia",
+      "p2": "to propozycja dla każdego, kto pragnie odkryć Sudety w ich pełni – nie tylko fizycznie, ale też",
+      "p2Highlight": "duchowo",
+      "p2Rest": ". Dla ludzi gór – wędrowców, marzycieli, samotników, sportowców – dla wszystkich, którzy kochają góry i pragną zmierzyć się z takim wyzwaniem.",
+      "p3": "To szlak stworzony z myślą o tych, którzy szukają czegoś więcej niż tylko oznakowanej drogi."
+    },
+    "ending": {
+      "title": "Nieprzewidywalna przygoda. Przemyślana koncepcja.",
+      "p1": "Zapraszam do zmierzenia się z tym wyzwaniem – na własnych zasadach, we własnym tempie.",
+      "quote": "W przestrzeni, w rytmie marszu, w samym sobie — Twórca Sudety Grand Trail",
+      "cta": "Gotowy na nieprzewidywalną przygodę przez 24 pasma Sudetów?",
+      "joinCommunity": "Dołącz do Społeczności",
+      "checkTrail": "Sprawdź Trasę"
+    }
+  },
+  "submissionForm": {
+    "sections": {
+      "basic": "Dane podstawowe",
+      "dates": "Terminy przejścia",
+      "materials": "Materiały",
+      "description": "Opis przejścia",
+      "additional": "Dodatkowe informacje"
+    },
+    "fields": {
+      "name": "Imię i Nazwisko",
+      "nickname": "Pseudonim",
+      "email": "Email",
+      "emailHint": "Nie będzie publikowany",
+      "type": "Typ przejścia",
+      "startDate": "Data rozpoczęcia",
+      "endDate": "Data zakończenia",
+      "duration": "Czas przejścia",
+      "days": "dni",
+      "photo": "Zdjęcie profilowe",
+      "gpxFile": "Plik GPX",
+      "gpxHint": "Ślad GPS z przejścia",
+      "additionalPhotos": "Dodatkowe zdjęcia",
+      "description": "Krótki opis (max {max} znaków)",
+      "favoriteSection": "Najpiękniejszy moment",
+      "hardestSection": "Najtrudniejszy fragment",
+      "isFirstSudety": "To moje pierwsze przejście Sudetów",
+      "additionalAchievements": "Dodatkowe osiągnięcia"
+    },
+    "placeholders": {
+      "name": "Jan Kowalski",
+      "nickname": "Włóczykij",
+      "email": "twojanazwa@gmail.com",
+      "description": "Najpiękniejsza przygoda mojego życia...",
+      "favoriteSection": "Wschód słońca na Śnieżce",
+      "hardestSection": "Góry Sowie w deszczu",
+      "additionalAchievements": "Np. ukończenie KGP, inne szlaki długodystansowe..."
+    },
+    "trackerInfo": {
+      "title": "📍 Zgłosiłeś próbę przejścia przed startem?",
+      "description": "Aby przejście zostało uznane za oficjalne, powinieneś wcześniej zgłosić próbę i otrzymać tracker GPS.",
+      "link": "Zgłoś próbę na przyszłość"
+    },
+    "submit": {
+      "button": "Wyślij Zgłoszenie",
+      "sending": "Wysyłanie...",
+      "success": {
+        "title": "Zgłoszenie Wysłane!",
+        "message": "Dziękujemy za zgłoszenie! Twoje przejście zostanie zweryfikowane i wkrótce pojawi się w Hall of Fame.",
+        "another": "Zgłoś Kolejne Przejście"
+      },
+      "error": "Wystąpił błąd. Spróbuj ponownie później.",
+      "fixErrors": "Proszę poprawić błędy w formularzu",
+      "verification": "Zgłoszenie zostanie zweryfikowane przed publikacją"
+    },
+    "hints": {
+      "photo": "JPG, PNG, WebP",
+      "additionalPhotos": "Max. {max} zdjęć"
+    },
+    "fileUpload": {
+      "clickOrDrag": "Kliknij lub przeciągnij plik",
+      "noFileSelected": "Nie wybrano pliku",
+      "filesSelected": "{count} pliki wybrane",
+      "filesSelectedMany": "{count} plików wybranych"
+    }
+  },
+  "trackerForm": {
+    "title": "Zostań Legendą",
+    "subtitle": "Dołącz do grona zdobywców",
+    "fields": {
+      "email": "Email",
+      "startDate": "Planowana data startu",
+      "plannedDays": "Planowana długość wyprawy"
+    },
+    "placeholders": {
+      "email": "twojanazwa@gmail.com",
+      "plannedDays": "np. 30 dni, 2 tygodnie"
+    },
+    "submit": {
+      "button": "Zgłoś się",
+      "sending": "Wysyłanie...",
+      "success": "Zgłoszenie zostało wysłane pomyślnie! Skontaktujemy się z Tobą wkrótce.",
+      "error": "Wystąpił błąd. Spróbuj ponownie później."
+    }
+  },
+  "validation": {
+    "submission": {
+      "nameRequired": "Imię i nazwisko jest wymagane",
+      "nameMin": "Imię i nazwisko musi mieć minimum 3 znaki",
+      "emailRequired": "Email jest wymagany",
+      "emailInvalid": "Wprowadź poprawny adres email",
+      "typeRequired": "Wybierz typ przejścia",
+      "startDateRequired": "Data rozpoczęcia jest wymagana",
+      "endDateRequired": "Data zakończenia jest wymagana",
+      "endDateAfterStart": "Data zakończenia musi być późniejsza lub równa dacie rozpoczęcia",
+      "descriptionMax": "Maksymalnie {max} znaków",
+      "photoRequired": "Zdjęcie profilowe jest wymagane",
+      "photoFormat": "Akceptowane formaty: JPG, PNG, WebP",
+      "photoSize": "Plik nie może być większy niż 1MB",
+      "gpxExtension": "Plik musi mieć rozszerzenie .gpx",
+      "gpxSize": "Plik nie może być większy niż 1MB",
+      "additionalPhotosMax": "Maksymalnie {max} zdjęć",
+      "additionalPhotosSize": "Każdy plik nie może być większy niż 1MB",
+      "additionalPhotosFormat": "Akceptowane formaty: JPG, PNG, WebP"
+    },
+    "tracker": {
+      "emailInvalid": "Proszę podać prawidłowy adres email.",
+      "emailRequired": "Proszę podać prawidłowy adres email.",
+      "startDateRequired": "Proszę podać planowaną datę startu.",
+      "plannedDaysRequired": "Proszę podać planowaną długość wyprawy."
+    }
+  },
+  "trailTypes": {
+    "Solo": "Solo",
+    "Grupa": "Grupa",
+    "Z psem": "Z psem",
+    "Ultralight": "Ultralight",
+    "Fastpacking": "Fastpacking",
+    "Ze wsparciem": "Ze wsparciem",
+    "Rower": "Rower",
+    "Ultra running": "Ultra running",
+    "Bez pośpiechu": "Bez pośpiechu",
+    "Na dziko": "Na dziko",
+    "Fragmentami": "Fragmentami",
+    "Inne": "Inne"
+  },
+  "preTrailRegistration": {
+    "title": "Zanim Wyruszysz",
+    "process": {
+      "title": "Proces Przejścia SGT",
+      "step1": {
+        "title": "Zgłoś Próbę Przejścia",
+        "description": "Przed startem wypełnij formularz zgłoszenia próby przejścia. Otrzymasz darmowy tracker GPS i będziesz widoczny na mapie live tracking.",
+        "linkText": "Zgłoś próbę przejścia"
+      },
+      "step2": {
+        "title": "Pokonaj Szlak",
+        "description": "Wyrusz na trasę z trackerem GPS. Twoje postępy będą widoczne na żywo dla wszystkich obserwujących. Zdobądź wszystkie 23 najwyższe szczyty pasm Sudetów.",
+        "linkText": "Poznaj trasę"
+      },
+      "step3": {
+        "title": "Zgłoś Ukończenie",
+        "description": "Po ukończeniu szlaku zgłoś swoje przejście z materiałami (zdjęcia, GPX). Po weryfikacji dołączysz do oficjalnego Hall of Fame!",
+        "linkText": "Formularz ukończenia"
+      }
+    },
+    "benefits": {
+      "title": "Korzyści",
+      "subtitle": "Co zyskujesz",
+      "benefit1": {
+        "title": "Darmowy Tracker GPS",
+        "description": "Otrzymaj profesjonalny tracker Poltrax całkowicie za darmo na cały czas przejścia. Nie musisz kupować sprzętu - my go dostarczamy!"
+      },
+      "benefit2": {
+        "title": "Live Tracking",
+        "description": "Twoja wyprawa na żywo w internecie! Rodzina, przyjaciele i cała społeczność mogą śledzić każdy Twój krok przez 900 kilometrów szlaku."
+      },
+      "benefit3": {
+        "title": "Oficjalne Uznanie",
+        "description": "Po ukończeniu szlaku dołączysz do elitarnego grona zdobywców. Twoje imię w",
+        "hallOfFame": "Hall of Fame",
+        "descriptionEnd": "i oficjalny certyfikat ukończenia."
+      },
+      "benefit4": {
+        "title": "Społeczność",
+        "description": "Dołącz do ekskluzywnego grona tych, którzy zdobyli Koronę Sudetów. Dziel się doświadczeniami i inspiruj innych do podjęcia wyzwania."
+      }
+    },
+    "benefitsCard": {
+      "title": "Korzyści z Rejestracji",
+      "button": "Zgłoś Próbę Przejścia",
+      "footer": "Wszystko w jednym miejscu • Szybka rejestracja • Natychmiastowy dostęp"
+    },
+    "warning": {
+      "title": "Ważne: Zgłoś się przed startem!",
+      "text": {
+        "part1": "Aby Twoje przejście zostało uznane za oficjalne,",
+        "part2": " musisz zgłosić próbę przejścia",
+        "part3": " przed rozpoczęciem wędrówki.",
+        "part4": " Przejścia rozpoczęte bez wcześniejszego zgłoszenia mogą nie zostać uwzględnione w oficjalnych statystykach"
+      },
+      "hallOfFame": "Hall of Fame"
+    },
+    "intro": {
+      "text": "Planujesz podbój",
+      "highlight": "KORONY SUDETÓW",
+      "textEnd": "? Najpierw zgłoś swoją próbę przejścia i otrzymaj darmowy tracker GPS do śledzenia postępów!"
+    }
+  },
+  "footer": {
+    "tagline": "Korona Sudetów w jednym szlaku",
+    "description": "900 km przez 23 pasma górskie. Zdobądź wszystkie najwyższe szczyty Sudetów i 16 szczytów Korony Gór Polski w jednej epickiej wędrówce.",
+    "mapLink": "Mapa Szlaku",
+    "community": "Społeczność",
+    "copyright": "© 2025 Sudety Grand Trail. Wszystkie prawa zastrzeżone.",
+    "madeWith": "Szlak stworzony z ❤️ dla miłośników gór"
+  },
+  "trailDescription": {
+    "title": "O Szlaku",
+    "p1": {
+      "part1": "– pierwszy szlak umożliwiający zdobycie najwyższego szczytu każdego z",
+      "part2": "23 pasm górskich Sudetów",
+      "part3": "w jednej trasie.",
+      "part4": "900 km",
+      "part5": "długości, około",
+      "part6": "30 000 m",
+      "part7": "przewyższeń przez",
+      "part8": "Polskę, Czechy i Niemcy",
+      "part9": ". Początek w",
+      "part10": "Jarnołtówku",
+      "part11": ", finał pod",
+      "part12": "Ślężą",
+      "part13": ", górą o duchowym znaczeniu."
+    },
+    "p2": {
+      "part1": "Od najwyższej Śnieżki (1603m) przez Pradziada (1491m), Śnieżnik (1426m), Wielką Sowę (1015m), skalny labirynt Szczelińca Wielkiego (919m), graniczną Biskupią Kopę (890m), aż po najniższy Lázek (714m) i mistyczną Ślężę (718m).",
+      "highlight": "To kompletne podbicie Sudetów!"
+    },
+    "features": {
+      "title": "Główne Atrakcje:",
+      "items": [
+        "16 szczytów Korony Gór Polski",
+        "Legendarny finał pod Ślężą",
+        "Parki narodowe i rezerwaty",
+        "Zamki i ruiny",
+        "Schroniska z klimatem",
+        "Wieże widokowe",
+        "Zabytkowe kopalnie i sztolnie",
+        "Niezapomniane widoki",
+        "Unikatowe formacje skalne",
+        "Trójstyk granic Polska-Czechy-Niemcy",
+        "Miejsca związane z legendami i mitami Sudetów"
+      ]
+    },
+    "stats": {
+      "ranges": "Pasma",
+      "kilometers": "Kilometrów"
+    }
+  },
+  "trailMap": {
+    "title": "Poznaj Mapę",
+    "description": "Poniżej znajduje się mapa trasy prowadzącej przez wszystkie 23 pasma Sudetów. Każdy odcinek został starannie wyznaczony i dopracowany, tworząc spójną drogę od pierwszego kroku w Jarnołtówku po finał pod Ślężą.",
+    "openMap": "Otwórz na Mapy.cz",
+    "downloadGpx": "Pobierz Plik GPX",
+    "mapTitle": "Interaktywna Mapa",
+    "mapAriaLabel": "Kliknij, aby korzystać z mapy",
+    "stats": {
+      "length": "Długość trasy",
+      "elevation": "Przewyższenia",
+      "highestPeak": "Najwyższy szczyt"
+    }
+  },
+  "liveTracking": {
+    "badge": "ŚLEDŹ NA ŻYWO",
+    "description": "Dzięki współpracy z",
+    "poltrax": "Poltrax",
+    "descriptionEnd": "możecie śledzić swoją wyprawę w czasie rzeczywistym.",
+    "descriptionLine2": "Mapa pokazuje aktualną pozycję, przebytą trasę, limit czasowy oraz orientacyjne punkty noclegów.",
+    "mapTitle": "Śledzenie na Żywo",
+    "mapClickText": "Kliknij lub dotknij, aby korzystać",
+    "cards": {
+      "position": {
+        "title": "Aktualna Pozycja",
+        "description": "Lokalizacja w czasie rzeczywistym"
+      },
+      "timeLimit": {
+        "title": "Limit Czasowy",
+        "description": "Wyścig z czasem przez Sudety"
+      },
+      "stages": {
+        "title": "Punkty Etapów",
+        "description": "Planowane miejsca noclegów"
+      }
+    }
+  },
+  "modernTracker": {
+    "badge": "Bezpłatny Tracker",
+    "title": "Twoja",
+    "titleHighlight": "Własna Historia",
+    "partner": "Partner technologiczny",
+    "description": {
+      "part1": "Poltrax udostępni Wam specjalny tracker zupełnie bezpłatnie, ",
+      "part2": "abyście mogli zapisać swoją własną historię na tej trasie."
+    },
+    "features": [
+      "Kompletnie darmowy - bez ukrytych kosztów",
+      "Profesjonalne narzędzie do trackingu",
+      "Zapisz i udostępnij swoją przygodę"
+    ]
+  },
+  "interactiveMap": {
+    "clickToUse": "Kliknij lub dotknij, aby korzystać"
+  },
+  "badgeSection": {
+    "title": "Odznaka Sudety Grand Trail",
+    "getBadge": "Zdobądź Oficjalną Odznakę",
+    "highestAward": "Najwyższe wyróżnienie dla zdobywców",
+    "p1": "Po",
+    "p1Highlight": "kompletnym przejściu całego szlaku",
+    "p1End": "masz możliwość zdobycia oficjalnej odznaki",
+    "p2": "To nie jest zwykłe wyróżnienie – to",
+    "p2Highlight": "symbol pokonania własnych granic",
+    "p2End": ", dowód niezłomności i potwierdzenie ukończenia jednego z najbardziej wymagających szlaków w Sudetach.",
+    "confirmation": "Odznaka jest potwierdzeniem:",
+    "confirmations": [
+      "Przejścia",
+      "900 kilometrów przez 23 pasma górskie",
+      "Zdobycia",
+      "wszystkich najwyższych szczytów",
+      "każdego pasma",
+      "Pokonania",
+      "ponad 30 000 metrów przewyższeń",
+      "Dołączenia do",
+      "elitarnego grona zdobywców"
+    ],
+    "regulations": {
+      "title": "Regulamin Zdobycia Odznaki",
+      "subtitle": "Wymagania, które musisz spełnić, aby zdobyć oficjalną odznakę",
+      "items": [
+        "Zgłoszenie chęci przejścia szlaku poprzez",
+        "oficjalny formularz",
+        "i pobranie",
+        "GPS trackera",
+        "do śledzenia trasy.",
+        "Przejście całego szlaku",
+        "Sudety Grand Trail",
+        "zgodnie z oficjalną trasą, od Jarnołtówka do Ślęży.",
+        "Zdobycie wszystkich",
+        "najwyższych szczytów każdego z 23 pasm górskich",
+        "znajdujących się na trasie.",
+        "Po polskiej stronie zdobycie wszystkich",
+        "16 sudeckich szczytów należących do Korony Gór Polski",
+        ".",
+        "Dokumentacja przejścia w formie",
+        "zdjęć, relacji lub trackingu GPS",
+        ", potwierdzająca ukończenie szlaku.",
+        "Zgłoszenie przejścia poprzez",
+        "oficjalny formularz",
+        ", wraz z udostępnieniem dokumentacji i relacji z przejścia."
+      ]
+    },
+    "cta": {
+      "title": "Ukończyłeś Szlak?",
+      "subtitle": "Zgłoś swoje przejście i zdobądź oficjalną odznakę!",
+      "description": "Dołącz do elitarnego grona zdobywców i otrzymaj swoje wyróżnienie",
+      "submit": "Zgłoś Przejście",
+      "hallOfFame": "Zobacz Hall of Fame"
+    }
+  },
+  "sudetenCrown": {
+    "searchPlaceholder": "Szukaj pasma, szczytu...",
+    "koronaSudetow": "Korona Sudetów",
+    "koronaGorPolski": "Korona Gór Polski",
+    "noResults": "Nie znaleziono pasm spełniających kryteria.",
+    "clearFilters": "Wyczyść filtry",
+    "ranges": "Pasma",
+    "czech": "Czeski",
+    "german": "Niemiecki",
+    "peak": "Szczyt",
+    "peakGerman": "Szczyt (niem.)",
+    "countries": "Kraje"
+  },
+  "hallOfFameStats": {
+    "title": "Statystyki Szlaku",
+    "description": "Odkąd szlak został oficjalnie wyznaczony, wędrowcy podejmują wyzwanie",
+    "descriptionEnd": "Poniżej ogólne statystyki wszystkich zdobywców.",
+    "achievements": "Osiągnięcia Zdobywców",
+    "badges": {
+      "ranges": "23 pasma"
+    },
+    "completions": {
+      "title": "Oficjalne Przejścia",
+      "description": "Zdobywcy Sudety Grand Trail"
+    },
+    "fastest": {
+      "title": "Najszybsze Przejście",
+      "description": "Dni na trasie"
+    },
+    "thisYear": {
+      "title": "W Tym Roku",
+      "description": "Przejścia w 2025 roku"
+    }
+  },
+  "hallOfFameList": {
+    "title": "Zdobywcy Korony Sudetów",
+    "description": "Wędrowcy, którzy ukończyli pełny szlak",
+    "descriptionEnd": "Każde przejście to unikalna historia determinacji i pasji do gór.",
+    "sortBy": "Sortuj według",
+    "sortOptions": {
+      "date": "Data",
+      "time": "Czas",
+      "name": "Nazwa"
+    },
+    "readMyStory": "Przeczytaj moją relację",
+    "start": "Start",
+    "end": "Koniec",
+    "time": "Czas",
+    "days": "dni",
+    "type": "Typ",
+    "achievements": {
+      "firstCompleter": "Pierwszy zdobywca",
+      "fastestCrossing": "Najszybsze przejście"
+    },
+    "favoriteSection": "Ulubiony odcinek",
+    "hardestSection": "Najtrudniejszy moment",
+    "cta": {
+      "title": "Dołącz do Elitarnego Grona!",
+      "description": "Ukończyłeś Sudety Grand Trail?",
+      "descriptionEnd": "Zgłoś swoje przejście i zostań oficjalnym zdobywcą Korony Sudetów!",
+      "submit": "Zgłoś Przejście"
+    },
+    "mockData": {
+      "description": "Przejście całych Sudetów było intensywną i piękną przygodą. Każdy dzień oferował nowe wyzwania i krajobrazy, które trudno porównać z czymkolwiek innym.",
+      "favoriteSection": "Równia pod Śnieżką w Karkonoszach, przy słonecznej pogodzie i bezchmurnym niebie",
+      "hardestSection": "Cały dzień wędrówki pasmem grzbietu Ještědsko-Kozákowskiego w deszczu i mgle"
+    }
+  },
+  "submissionFormSection": {
+    "title": "Zgłoś Swoje Przejście",
+    "description": "Ukończyłeś",
+    "descriptionHighlight": "Sudety Grand Trail",
+    "descriptionEnd": "? Podziel się swoją historią i dołącz do oficjalnego",
+    "hallOfFame": "Hall of Fame",
+    "descriptionEnd2": "!"
+  },
+  "aboutCreator": {
+    "title": {
+      "part1": "Sudety Grand Trail",
+      "part2": "O Mnie"
+    },
+    "badge": "Moja historia",
+    "photoCaption": "\"Zwykły chłopak z Łodzi z plecakiem i głową pełną pomysłów\"",
+    "p1": "Jako twórca szlaku pomyślałem, że warto powiedzieć kilka słów o sobie. Może wtedy łatwiej będzie zrozumieć skąd się w ogóle wziąłem i jak to się stało, że właśnie w taki sposób próbuję nadawać sens codzienności. Bo choć każdy z moich projektów to inna przygoda, wszystkie mają wspólny początek.",
+    "p2": "Nie jestem zawodowym sportowcem",
+    "p2Rest": ", nie mam sztabu trenerów ani sponsorów na zawołanie. Jestem zwykłym chłopakiem z Łodzi, który postanowił użyć własnych nóg, by zmieniać świat na lepszy. Mam plecak, buty, głowę pełną pomysłów i chyba trochę za dużo ambicji. Od kilku lat wędruję po górach, czasem długo, czasem szybko, najczęściej z jakimś głupim planem i jeszcze szlachetniejszym celem.",
+    "p3": "Ta strona to przestrzeń poświęcona projektowi mojego życia, ale to tylko jeden rozdział większej historii. Bo takich dzikich, długich, czasem kompletnie nielogicznych tras przeszedłem już kilka w swoim życiu.",
+    "p3Highlight": "Każda z tych wędrówek zmieniała mnie na swój sposób",
+    "p3Rest": "i prowadziła krok po kroku do miejsca, w którym się obecnie znajduję.",
+    "p4": "To właśnie one nauczyły mnie, jak ważne jest docenianie tych małych, często niezauważalnych momentów, które naprawdę nadają życiu sens. Dzięki nim zacząłem poznawać siebie na nowo, polubiłem swoje wady i zalety, nauczyłem się żyć w zgodzie ze sobą, a przede wszystkim",
+    "p4Highlight": "zrozumiałem, kim naprawdę jestem i czego naprawdę potrzebuję",
+    "p4Rest": ".",
+    "cta": {
+      "title": "Dołącz do społeczności",
+      "description": "Jeśli chcesz się dowiedzieć, jak to wszystko się zaczęło, co mnie napędza i jak wyglądają góry oczami kogoś, kto zna wagę ciszy i potrafi znaleźć dom w miejscu, gdzie inni widzą tylko drzewa, to zapraszam Cię na moją prywatną grupę.",
+      "button": "Opowieści ze Szlaku",
+      "quote": "\"Bo marsz to nie tylko kilometry. To też ludzie, emocje, porażki i małe zwycięstwa. A ja po prostu lubię się tym dzielić.\""
+    }
+  },
+  "trailJourney": {
+    "badge": "15 dni wędrówki",
+    "title": "Moja relacja",
+    "titleHighlight": "ze szlaku",
+    "description": "924 kilometry pokonane w 15 dni. Każdy dzień to osobna historia pełna wyzwań, pięknych widoków i niezapomnianych chwil.",
+    "moreDays": "Pozostałe dni wkrótce...",
+    "day": "Dzień",
+    "photo": "zdjęcie",
+    "total": "Łącznie"
+  }
+}

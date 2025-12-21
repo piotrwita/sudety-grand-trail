@@ -8,6 +8,7 @@ import {
   trackerRequestSchema,
   type TrackerRequestData,
 } from '@/schemas/tracker';
+import { useTranslations } from '@/lib/i18n-utils';
 
 type TrackerRequestFormValues = TrackerRequestData;
 
@@ -18,6 +19,7 @@ interface TrackerRequestFormProps {
 export const TrackerRequestForm = ({
   onSubmitAction,
 }: TrackerRequestFormProps) => {
+  const { t } = useTranslations('trackerForm');
   const today = useMemo(() => new Date().toISOString().split('T')[0], []);
   const [submitStatus, setSubmitStatus] = useState<
     'idle' | 'success' | 'error'
@@ -48,19 +50,18 @@ export const TrackerRequestForm = ({
       if (result.success) {
         setSubmitStatus('success');
         setServerMessage(
-          result.message ||
-            'Zgłoszenie zostało wysłane pomyślnie! Skontaktujemy się z Tobą wkrótce.'
+          result.message || t('submit.success')
         );
         reset();
       } else {
         setSubmitStatus('error');
         setServerMessage(
-          result.message || 'Wystąpił błąd. Spróbuj ponownie później.'
+          result.message || t('submit.error')
         );
       }
     } catch (error) {
       setSubmitStatus('error');
-      setServerMessage('Wystąpił błąd. Spróbuj ponownie później.');
+      setServerMessage(t('submit.error'));
     }
   });
 
@@ -70,9 +71,9 @@ export const TrackerRequestForm = ({
 
       <div className="relative z-10">
         <div className="mb-6 text-center">
-          <h4 className="text-xl font-bold text-slate-900">Zostań Legendą</h4>
+          <h4 className="text-xl font-bold text-slate-900">{t('title')}</h4>
           <p className="mt-2 text-sm text-slate-600">
-            Dołącz do grona zdobywców{' '}
+            {t('subtitle')}{' '}
             <span className="theme-live-text-gradient font-bold uppercase">
               Sudety Grand Trail
             </span>
@@ -85,14 +86,14 @@ export const TrackerRequestForm = ({
               htmlFor="email"
               className="mb-1.5 block text-sm font-semibold text-slate-700"
             >
-              Email <span className="text-accent">*</span>
+              {t('fields.email')} <span className="text-accent">*</span>
             </label>
             <input
               type="email"
               id="email"
               {...register('email')}
               className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm transition-all duration-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-              placeholder="twojanazwa@gmail.com"
+              placeholder={t('placeholders.email')}
               autoComplete="email"
             />
             {errors.email?.message && (
@@ -107,7 +108,7 @@ export const TrackerRequestForm = ({
               htmlFor="startDate"
               className="mb-1.5 block text-sm font-semibold text-slate-700"
             >
-              Planowana data startu <span className="text-accent">*</span>
+              {t('fields.startDate')} <span className="text-accent">*</span>
             </label>
             <input
               type="date"
@@ -128,14 +129,14 @@ export const TrackerRequestForm = ({
               htmlFor="plannedDays"
               className="mb-1.5 block text-sm font-semibold text-slate-700"
             >
-              Planowana długość wyprawy <span className="text-accent">*</span>
+              {t('fields.plannedDays')} <span className="text-accent">*</span>
             </label>
             <input
               type="text"
               id="plannedDays"
               {...register('plannedDays')}
               className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm transition-all duration-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-              placeholder="np. 30 dni, 2 tygodnie"
+              placeholder={t('placeholders.plannedDays')}
               autoComplete="off"
             />
             {errors.plannedDays?.message && (
@@ -183,7 +184,7 @@ export const TrackerRequestForm = ({
                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                   />
                 </svg>
-                <span>Wysyłanie...</span>
+                <span>{t('submit.sending')}</span>
               </>
             ) : (
               <>
@@ -200,7 +201,7 @@ export const TrackerRequestForm = ({
                     d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <span>Zgłoś się</span>
+                <span>{t('submit.button')}</span>
               </>
             )}
           </button>

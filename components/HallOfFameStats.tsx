@@ -11,6 +11,7 @@ import { VintageMountainsBackground } from './VintageMountainsBackground';
 import { Section } from './sections';
 import { SectionHeader } from './sections/SectionHeader';
 import Link from 'next/link';
+import { useTranslations } from '@/lib/i18n-utils';
 
 // Mock data - później będzie z API/bazy danych
 const stats = {
@@ -20,12 +21,12 @@ const stats = {
   thisYear: 1,
 };
 
-const statCards = [
+const getStatCards = (t: (key: string) => string) => [
   {
     id: 'completions',
     value: stats.totalCompletions,
-    title: 'Oficjalne Przejścia',
-    description: 'Zdobywcy Sudety Grand Trail',
+    title: t('completions.title'),
+    description: t('completions.description'),
     icon: <BadgeIcon className="h-6 w-6" />,
     gradient: 'from-forest-500 via-forest-600 to-forest-700',
     bgGradient: 'from-forest-50 via-cream to-forest-50',
@@ -36,8 +37,8 @@ const statCards = [
   {
     id: 'fastest',
     value: stats.fastestTime,
-    title: 'Najszybsze Przejście',
-    description: 'Dni na trasie',
+    title: t('fastest.title'),
+    description: t('fastest.description'),
     icon: <LightningIcon className="h-6 w-6" />,
     gradient: 'from-accent-400 via-accent-500 to-accent-600',
     bgGradient: 'from-accent/10 via-orange-50 to-accent/5',
@@ -48,8 +49,8 @@ const statCards = [
   {
     id: 'thisYear',
     value: stats.thisYear,
-    title: 'W Tym Roku',
-    description: 'Przejścia w 2025 roku',
+    title: t('thisYear.title'),
+    description: t('thisYear.description'),
     icon: <CalendarIcon className="h-6 w-6" />,
     gradient: 'from-earth-500 via-earth-600 to-earth-700',
     bgGradient: 'from-earth-50 via-amber-50 to-earth-50',
@@ -72,13 +73,16 @@ const statCards = [
 ];
 
 export const HallOfFameStats = () => {
+  const { t } = useTranslations('hallOfFameStats');
+  const statCards = getStatCards(t);
+  
   return (
-    <Section ariaLabel="Statystyki Szlaku">
+    <Section ariaLabel={t('title')}>
       <VintageMountainsBackground className="opacity-10" />
 
       <div className="fluid-container relative z-10">
         <SectionHeader
-          title="Statystyki Szlaku"
+          title={t('title')}
           icon={<StarIcon className="size-6 text-cream/80" />}
         />
         <FadeIn
@@ -90,11 +94,11 @@ export const HallOfFameStats = () => {
           className="mb-16 text-center"
         >
           <p className="text-fluid-lg mx-auto max-w-6xl font-medium leading-relaxed text-mountain-600">
-            Odkąd szlak został oficjalnie wyznaczony, wędrowcy podejmują wyzwanie {' '}
+            {t('description')}{' '}
             <span className="theme-halloffame-text-gradient-light font-bold">
               SUDETY GRAND TRAIL
             </span>. <br />
-            Poniżej ogólne statystyki wszystkich zdobywców.
+            {t('descriptionEnd')}
           </p>
         </FadeIn>
 
@@ -247,7 +251,7 @@ export const HallOfFameStats = () => {
           inView={true}
           className="mt-16 text-center"
         >
-          <h3 className="section-title mb-8 text-2xl">Osiągnięcia Zdobywców</h3>
+          <h3 className="section-title mb-8 text-2xl">{t('achievements')}</h3>
           <div className="flex flex-wrap justify-center gap-8">
             {/* 23 pasma */}
             <div className="group relative flex h-28 w-28 flex-col items-center justify-center transition-all duration-300 hover:scale-110">
@@ -266,7 +270,7 @@ export const HallOfFameStats = () => {
                 🏔️
               </span>
               <span className="relative z-10 text-xs font-bold uppercase tracking-wide text-cream drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
-                23 pasma
+                {t('badges.ranges')}
               </span>
             </div>
 

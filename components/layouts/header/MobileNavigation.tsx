@@ -3,18 +3,21 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { siteConfig } from '@/config/site';
+import { useNavigation } from '@/lib/get-navigation';
 import { SocialLinkList } from '../SocialLinkList';
+import { LanguageSwitcher } from './LanguageSwitcher';
 import { HamburgerIcon } from '@/components/icons';
 import { useState } from 'react';
 
 export const MobileNavigation = () => {
   const pathname = usePathname();
+  const navigation = useNavigation();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="flex gap-3 lg:hidden">
+      <LanguageSwitcher className="border-r border-forest-600 pr-3" />
       <SocialLinkList className="flex gap-3 border-r border-forest-600 pr-3" />
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -47,7 +50,7 @@ export const MobileNavigation = () => {
               className="via-forest-850 fixed left-0 right-0 top-16 z-50 border-b border-forest-700/40 bg-gradient-to-b from-forest-800 to-forest-900 p-6 shadow-2xl"
             >
               <ul className="flex flex-col items-center gap-3">
-                {siteConfig.navigation.map((item, idx) => (
+                {navigation.map((item, idx) => (
                   <motion.li
                     key={`${item.href}-${idx}`}
                     initial={{ scale: 0.8, opacity: 0, y: 20 }}

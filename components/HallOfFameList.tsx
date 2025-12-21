@@ -11,6 +11,7 @@ import { FadeIn } from './motion';
 import { TrophyIcon } from './icons';
 import { sectionIds } from '@/config/section-ids';
 import { getSectionHash } from '@/lib/section-navigation';
+import { useTranslations } from '@/lib/i18n-utils';
 
 // Mock data - przykładowe przejścia
 const mockCompletions = [
@@ -37,6 +38,8 @@ const mockCompletions = [
 ];
 
 export const HallOfFameList = () => {
+  const { t, locale } = useTranslations('hallOfFameList');
+  const { t: tGlobal } = useTranslations();
   const router = useRouter();
   const [selectedCompletion, setSelectedCompletion] = useState<number | null>(
     null
@@ -58,7 +61,8 @@ export const HallOfFameList = () => {
   });
 
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('pl-PL', {
+    const dateLocale = locale === 'en' ? 'en-US' : 'pl-PL';
+    return new Date(dateString).toLocaleDateString(dateLocale, {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
@@ -68,12 +72,12 @@ export const HallOfFameList = () => {
   return (
     <Section
       id={sectionIds.hallOfFame}
-      ariaLabel="Zdobywcy Korony Sudetów"
+      ariaLabel={t('title')}
       className="bg-cream"
     >
       <div className="fluid-container">
         <SectionHeader
-          title="Zdobywcy Korony Sudetów"
+          title={t('title')}
           icon={<TrophyIcon className="size-6 text-cream/80" />}
           variant="crown"
         />
@@ -86,12 +90,12 @@ export const HallOfFameList = () => {
           className="mb-16 text-center"
         >
           <p className="text-fluid-lg mx-auto mb-8 max-w-4xl font-medium leading-relaxed text-mountain-600">
-            Wędrowcy, którzy ukończyli pełny szlak{' '}
+            {t('description')}{' '}
             <span className="theme-halloffame-text-gradient-light font-bold">
               SUDETY GRAND TRAIL
             </span>
             .<br />
-            Każde przejście to unikalna historia determinacji i pasji do gór.
+            {t('descriptionEnd')}
           </p>
 
           {/* Sort Controls */}
@@ -105,7 +109,7 @@ export const HallOfFameList = () => {
                     : 'text-gold-700 hover:bg-gold-200'
                 }`}
               >
-                Data
+                {t('sortOptions.date')}
               </button>
               <button
                 onClick={() => setSortBy('time')}
@@ -115,7 +119,7 @@ export const HallOfFameList = () => {
                     : 'text-gold-700 hover:bg-gold-200'
                 }`}
               >
-                Czas
+                {t('sortOptions.time')}
               </button>
               <button
                 onClick={() => setSortBy('name')}
@@ -125,7 +129,7 @@ export const HallOfFameList = () => {
                     : 'text-gold-700 hover:bg-gold-200'
                 }`}
               >
-                Nazwa
+                {t('sortOptions.name')}
               </button>
             </div>
           </div>
@@ -219,64 +223,83 @@ export const HallOfFameList = () => {
                             d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                           />
                         </svg>
-                        Przeczytaj moją relację
+                        {t('readMyStory')}
                       </button>
                     </div>
                   )}
 
                   <div className="mb-4 grid grid-cols-2 gap-4 text-sm">
                     <div>
-                      <span className="text-mountain-500">Start:</span>
+                      <span className="text-mountain-500">{t('start')}:</span>
                       <div className="font-bold text-forest-800">
                         {formatDate(completion.startDate)}
                       </div>
                     </div>
                     <div>
-                      <span className="text-mountain-500">Koniec:</span>
+                      <span className="text-mountain-500">{t('end')}:</span>
                       <div className="font-bold text-forest-800">
                         {formatDate(completion.endDate)}
                       </div>
                     </div>
                     <div>
-                      <span className="text-mountain-500">Czas:</span>
+                      <span className="text-mountain-500">{t('time')}:</span>
                       <div className="font-bold text-accent">
-                        {completion.days} dni
+                        {completion.days} {t('days')}
                       </div>
                     </div>
                     <div>
-                      <span className="text-mountain-500">Typ:</span>
+                      <span className="text-mountain-500">{t('type')}:</span>
                       <div className="font-bold text-forest-800">
-                        {completion.type}
+                        {tGlobal(`trailTypes.${completion.type}`) || completion.type}
                       </div>
                     </div>
                   </div>
 
                   {/* Achievements */}
                   <div className="mb-4 flex flex-wrap gap-2">
-                    {completion.achievements.map((achievement, i) => (
-                      <span
-                        key={i}
-                        className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 px-3 py-1.5 text-xs font-bold text-white shadow-sm"
-                      >
-                        <svg
-                          className="size-3"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
+                    {completion.achievements.map((achievement, i) => {
+                      // Map Polish achievement text to translation keys
+                      let achievementKey: string;
+                      if (achievement === 'Pierwszy zdobywca' || achievement === 'First Completer') {
+                        achievementKey = 'firstCompleter';
+                      } else if (achievement === 'Najszybsze przejście' || achievement === 'Fastest Crossing') {
+                        achievementKey = 'fastestCrossing';
+                      } else {
+                        achievementKey = achievement;
+                      }
+                      
+                      const translatedAchievement = t(`achievements.${achievementKey}`);
+                      // Check if translation was found (if it returns the full key path, it means not found)
+                      const fullKeyPath = `hallOfFameList.achievements.${achievementKey}`;
+                      const displayText = translatedAchievement && translatedAchievement !== fullKeyPath
+                        ? translatedAchievement 
+                        : achievement;
+                      
+                      return (
+                        <span
+                          key={i}
+                          className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 px-3 py-1.5 text-xs font-bold text-white shadow-sm"
                         >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        {achievement}
-                      </span>
-                    ))}
+                          <svg
+                            className="size-3"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                          {displayText}
+                        </span>
+                      );
+                    })}
                   </div>
 
                   {/* Description */}
-                  <p className="mb-4 text-sm leading-relaxed text-mountain-600">
-                    "{completion.description}"
+                  <p className="mb-4 text-sm leading-relaxed text-mountain-600 text-justify italic">
+                    "{completion.id === 1 ? t('mockData.description') : completion.description}"
                   </p>
 
                   {/* Expanded Details */}
@@ -290,19 +313,19 @@ export const HallOfFameList = () => {
                       <div className="grid gap-4 text-sm md:grid-cols-2">
                         <div>
                           <span className="font-medium text-mountain-500">
-                            Ulubiony odcinek:
+                            {t('favoriteSection')}:
                           </span>
-                          <div className="font-bold text-forest-800">
-                            {completion.favoriteSection}
-                          </div>
+                          <p className="mt-1 text-sm leading-relaxed text-mountain-600 text-justify italic">
+                            {completion.id === 1 ? t('mockData.favoriteSection') : completion.favoriteSection}
+                          </p>
                         </div>
                         <div>
                           <span className="font-medium text-mountain-500">
-                            Najtrudniejszy moment:
+                            {t('hardestSection')}:
                           </span>
-                          <div className="font-bold text-forest-800">
-                            {completion.hardestSection}
-                          </div>
+                          <p className="mt-1 text-sm leading-relaxed text-mountain-600 text-justify italic">
+                            {completion.id === 1 ? t('mockData.hardestSection') : completion.hardestSection}
+                          </p>
                         </div>
                       </div>
                     </motion.div>
@@ -327,17 +350,17 @@ export const HallOfFameList = () => {
         >
           <div className="card-vintage border-gold-300 bg-gradient-to-br from-gold-500/10 to-gold-600/10 p-10">
             <h3 className="section-title mb-6 text-2xl">
-              Dołącz do Elitarnego Grona!
+              {t('cta.title')}
             </h3>
             <p className="mx-auto mb-8 max-w-3xl text-lg font-medium text-mountain-600">
-              Ukończyłeś Sudety Grand Trail? <br />
-              Zgłoś swoje przejście i zostań oficjalnym zdobywcą Korony Sudetów!
+              {t('cta.description')} <br />
+              {t('cta.descriptionEnd')}
             </p>
             <a
               href={getSectionHash(sectionIds.submission)}
               className="theme-btn-base theme-halloffame-btn-primary flex w-full items-center justify-center px-6 py-3 text-sm sm:inline-flex sm:w-auto sm:px-10 sm:py-4 sm:text-base md:text-lg"
             >
-              Zgłoś Przejście
+              {t('cta.submit')}
             </a>
           </div>
         </FadeIn>

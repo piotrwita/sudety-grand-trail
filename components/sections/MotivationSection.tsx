@@ -81,7 +81,7 @@ const MotivationSection = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-xl font-medium not-italic text-cream/80"
             >
-              "W przestrzeni, w rytmie marszu, w samych sobie." — Twórca Sudety
+              "W przestrzeni, w rytmie marszu, w samym sobie." — Twórca Sudety
               Grand Trail
             </motion.cite>
           </motion.div>

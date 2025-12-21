@@ -5,8 +5,10 @@ import Image from 'next/image';
 import { useRef } from 'react';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
 import { Section } from './sections';
+import { useTranslations } from '@/lib/i18n-utils';
 
 const TrailDescription = () => {
+  const { t, tArray } = useTranslations('trailDescription');
   const sectionRef = useRef<HTMLElement>(null);
   const imageContainerRef = useRef<HTMLDivElement>(null);
 
@@ -40,7 +42,7 @@ const TrailDescription = () => {
   );
 
   return (
-    <Section ref={sectionRef} className="bg-forest-50" ariaLabel="Opis Szlaku">
+    <Section ref={sectionRef} className="bg-forest-50" ariaLabel={t('title')}>
       <VintageMountainsBackground className="opacity-10" />
       <div className="fluid-container relative z-10">
         <div className="grid items-start gap-16 lg:grid-cols-2">
@@ -53,42 +55,38 @@ const TrailDescription = () => {
             className="order-2 lg:order-1"
           >
             <h2 className="section-title mb-8 text-left">
-              <span className="theme-trail-text-gradient">O Szlaku</span>
+              <span className="theme-trail-text-gradient">{t('title')}</span>
             </h2>
 
             <div className="my-6 h-0.5 w-32 bg-gradient-to-r from-transparent via-forest-700/40 to-transparent" />
 
             <div className="space-y-6 leading-relaxed text-mountain-600">
-              <p className="text-xl font-medium">
+              <p className="text-xl font-medium text-justify">
                 <span className="font-bold text-forest-800">
-                  SUDETY GRAN TRAIL
+                  SUDETY GRAND TRAIL
                 </span>{' '}
-                – pierwszy szlak umożliwiający zdobycie najwyższego szczytu
-                każdego z{' '}
+                {t('p1.part1')}{' '}
                 <span className="font-bold text-forest-800">
-                  23 pasm górskich Sudetów
+                  {t('p1.part2')}
                 </span>{' '}
-                w jednej trasie.{' '}
-                <span className="font-bold text-forest-800">900 km</span>{' '}
-                długości, około{' '}
-                <span className="font-bold text-forest-800">30 000 m</span>{' '}
-                przewyższeń przez{' '}
+                {t('p1.part3')}{' '}
+                <span className="font-bold text-forest-800">{t('p1.part4')}</span>{' '}
+                {t('p1.part5')}{' '}
+                <span className="font-bold text-forest-800">{t('p1.part6')}</span>{' '}
+                {t('p1.part7')}{' '}
                 <span className="font-bold text-forest-800">
-                  Polskę, Czechy i Niemcy
+                  {t('p1.part8')}
                 </span>{' '}
-                . Początek w{' '}
-                <span className="font-bold text-forest-800">Jarnołtówku</span> ,
-                finał pod{' '}
-                <span className="font-bold text-forest-800">Ślężą</span> , górą
-                o duchowym znaczeniu.
+                {t('p1.part9')}{' '}
+                <span className="font-bold text-forest-800">{t('p1.part10')}</span>
+                {t('p1.part11')}{' '}
+                <span className="font-bold text-forest-800">{t('p1.part12')}</span>
+                {t('p1.part13')}
               </p>
-              <p className="text-lg">
-                Od najwyższej Śnieżki (1603m) przez Pradziada (1491m), Śnieżnik
-                (1426m), Wielką Sowę (1015m), skalny labirynt Szczelińca
-                Wielkiego (919m), graniczną Biskupią Kopę (890m), aż po
-                najniższy Lázek (714m) i mistyczną Ślężę (718m).{' '}
+              <p className="text-lg text-justify">
+                {t('p2.part1')}{' '}
                 <span className="font-bold text-forest-800">
-                  To kompletne podbicie Sudetów!
+                  {t('p2.highlight')}
                 </span>
               </p>
             </div>
@@ -96,22 +94,10 @@ const TrailDescription = () => {
             {/* Trail Features */}
             <div className="mt-12">
               <h3 className="section-title mb-6 text-left text-xl">
-                Główne Atrakcje:
+                {t('features.title')}
               </h3>
               <div className="space-y-4">
-                {[
-                  '16 szczytów Korony Gór Polski',
-                  'Legendarny finał pod Ślężą',
-                  'Parki narodowe i rezerwaty',
-                  'Zamki i ruiny',
-                  'Schroniska z klimatem',
-                  'Wieże widokowe',
-                  'Zabytkowe kopalnie i sztolnie',
-                  'Niezapomniane widoki',
-                  'Unikatowe formacje skalne',
-                  'Trójstyk granic Polska-Czechy-Niemcy',
-                  'Miejsca związane z legendami i mitami Sudetów',
-                ].map((attraction, index) => (
+                {tArray('features.items').map((attraction: string, index: number) => (
                   <div key={index} className="flex items-center gap-4">
                     <svg
                       className="size-4 flex-shrink-0 text-forest-600"
@@ -214,7 +200,7 @@ const TrailDescription = () => {
                 23
               </div>
               <div className="mt-1 text-xs font-bold uppercase tracking-wide text-forest-600 lg:text-sm">
-                Pasma
+                {t('stats.ranges')}
               </div>
             </motion.div>
 
@@ -229,7 +215,7 @@ const TrailDescription = () => {
                 900
               </div>
               <div className="mt-1 text-xs font-bold uppercase tracking-wide text-forest-600 lg:text-sm">
-                Kilometrów
+                {t('stats.kilometers')}
               </div>
             </motion.div>
           </motion.div>

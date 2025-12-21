@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import { FadeIn } from '@/components/motion';
@@ -6,6 +8,7 @@ import { sectionIds } from '@/config/section-ids';
 import { getSectionUrl } from '@/lib/section-navigation';
 import { Section } from './Section';
 import { SectionHeader } from './SectionHeader';
+import { useTranslations } from '@/lib/i18n-utils';
 
 const FADE_IN_PROPS = {
   inView: true,
@@ -17,9 +20,11 @@ const FADE_IN_PROPS = {
 };
 
 export const BadgeSection = () => {
+  const { t, tArray } = useTranslations('badgeSection');
+  
   return (
     <Section
-      ariaLabel="Odznaka Sudety Grand Trail"
+      ariaLabel={t('title')}
       className="relative min-h-0 items-start overflow-hidden bg-gradient-to-br from-forest-900 via-earth-900 to-forest-800"
     >
       <DecorativeBackground />
@@ -27,7 +32,7 @@ export const BadgeSection = () => {
       <div className="fluid-container relative z-10">
         <div className="mx-auto max-w-6xl space-y-10 sm:space-y-12 md:space-y-16">
           <SectionHeader
-            title="Odznaka Sudety Grand Trail"
+            title={t('title')}
             icon={<BadgeIcon className="size-5 text-cream/80 sm:size-6" />}
             variant="light"
           />
@@ -46,70 +51,69 @@ export const BadgeSection = () => {
               <div className="space-y-3 sm:space-y-4">
                 <p className="text-2xl font-black text-gold-300 sm:text-3xl md:text-4xl">
                   <span className="drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
-                    Zdobądź Oficjalną Odznakę
+                    {t('getBadge')}
                   </span>
                 </p>
                 <p className="text-xl font-bold text-cream sm:text-2xl">
-                  Najwyższe wyróżnienie dla zdobywców
+                  {t('highestAward')}
                 </p>
                 <p className="text-lg leading-relaxed">
-                  Po{' '}
+                  {t('p1')}{' '}
                   <span className="font-bold text-gold-300">
-                    kompletnym przejściu całego szlaku
+                    {t('p1Highlight')}
                   </span>{' '}
-                  masz możliwość zdobycia oficjalnej odznaki{' '}
+                  {t('p1End')}{' '}
                   <span className="text-xl font-black text-gold-300 sm:text-2xl drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
                     SUDETY GRAND TRAIL
                   </span>
                   .
                 </p>
                 <p className="text-lg leading-relaxed">
-                  To nie jest zwykłe wyróżnienie – to{' '}
+                  {t('p2')}{' '}
                   <span className="font-bold text-cream">
-                    symbol pokonania własnych granic
+                    {t('p2Highlight')}
                   </span>
-                  , dowód niezłomności i potwierdzenie ukończenia jednego z
-                  najbardziej wymagających szlaków w Sudetach.
+                  {t('p2End')}
                 </p>
                 <div className="rounded-lg border-l-4 border-gold-400/60 bg-gold-400/10 p-4 sm:p-6">
                   <p className="font-bold text-gold-200 sm:text-lg">
-                    Odznaka jest potwierdzeniem:
+                    {t('confirmation')}
                   </p>
                   <ul className="mt-2 space-y-2 text-cream/90">
                     <li className="flex items-start gap-2">
                       <span className="mt-1 text-gold-400">✓</span>
                       <span>
-                        Przejścia{' '}
+                        {t('confirmations.0')}{' '}
                         <span className="font-bold text-gold-300">
-                          900 kilometrów przez 23 pasma górskie
+                          {t('confirmations.1')}
                         </span>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="mt-1 text-gold-400">✓</span>
                       <span>
-                        Zdobycia{' '}
+                        {t('confirmations.2')}{' '}
                         <span className="font-bold text-gold-300">
-                          wszystkich najwyższych szczytów
+                          {t('confirmations.3')}
                         </span>{' '}
-                        każdego pasma
+                        {t('confirmations.4')}
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="mt-1 text-gold-400">✓</span>
                       <span>
-                        Pokonania{' '}
+                        {t('confirmations.5')}{' '}
                         <span className="font-bold text-gold-300">
-                          ponad 30 000 metrów przewyższeń
+                          {t('confirmations.6')}
                         </span>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="mt-1 text-gold-400">✓</span>
                       <span>
-                        Dołączenia do{' '}
+                        {t('confirmations.7')}{' '}
                         <span className="font-bold text-gold-300">
-                          elitarnego grona zdobywców
+                          {t('confirmations.8')}
                         </span>
                       </span>
                     </li>
@@ -133,65 +137,64 @@ export const BadgeSection = () => {
             <div className="relative space-y-4 text-base leading-relaxed text-cream/95 sm:space-y-6 sm:text-lg">
               <div className="mb-4">
                 <p className="text-xl font-black text-gold-300 sm:text-2xl">
-                  Regulamin Zdobycia Odznaki
+                  {t('regulations.title')}
                 </p>
                 <p className="mt-2 text-sm text-cream/70 sm:text-base">
-                  Wymagania, które musisz spełnić, aby zdobyć oficjalną odznakę
+                  {t('regulations.subtitle')}
                 </p>
               </div>
               <ul className="space-y-3 sm:space-y-4">
                 <RegulationItem number={1}>
-                  Zgłoszenie chęci przejścia szlaku poprzez{' '}
+                  {t('regulations.items.0')}{' '}
                   <Link
                     href={getSectionUrl(siteRoutes.live, sectionIds.trackerForm)}
                     className="font-bold text-gold-300 underline decoration-gold-400/50 underline-offset-2 transition-colors hover:text-gold-200 hover:decoration-gold-300"
                   >
-                    oficjalny formularz
+                    {t('regulations.items.1')}
                   </Link>{' '}
-                  i pobranie{' '}
+                  {t('regulations.items.2')}{' '}
                   <span className="font-bold text-gold-300">
-                    GPS trackera
+                    {t('regulations.items.3')}
                   </span>{' '}
-                  do śledzenia trasy.
+                  {t('regulations.items.4')}
                 </RegulationItem>
                 <RegulationItem number={2}>
-                  Przejście całego szlaku{' '}
+                  {t('regulations.items.5')}{' '}
                   <span className="font-bold text-gold-300">
-                    Sudety Grand Trail
+                    {t('regulations.items.6')}
                   </span>{' '}
-                  zgodnie z oficjalną trasą, od Jarnołtówka do Ślęży.
+                  {t('regulations.items.7')}
                 </RegulationItem>
                 <RegulationItem number={3}>
-                  Zdobycie wszystkich{' '}
+                  {t('regulations.items.8')}{' '}
                   <span className="font-bold text-gold-300">
-                    najwyższych szczytów każdego z 23 pasm górskich
+                    {t('regulations.items.9')}
                   </span>{' '}
-                  znajdujących się na trasie.
+                  {t('regulations.items.10')}
                 </RegulationItem>
                 <RegulationItem number={4}>
-                  Po polskiej stronie zdobycie wszystkich{' '}
+                  {t('regulations.items.11')}{' '}
                   <span className="font-bold text-gold-300">
-                    16 sudeckich szczytów należących do Korony Gór Polski
+                    {t('regulations.items.12')}
                   </span>
-                  .
+                  {t('regulations.items.13')}
                 </RegulationItem>
                 <RegulationItem number={5}>
-                  Dokumentacja przejścia w formie{' '}
+                  {t('regulations.items.14')}{' '}
                   <span className="font-bold text-gold-300">
-                    zdjęć, relacji lub trackingu GPS
+                    {t('regulations.items.15')}
                   </span>
-                  , potwierdzająca ukończenie szlaku.
+                  {t('regulations.items.16')}
                 </RegulationItem>
                 <RegulationItem number={6}>
-                  Zgłoszenie przejścia poprzez{' '}
+                  {t('regulations.items.17')}{' '}
                   <Link
                     href={getSectionUrl(siteRoutes.hallOfFame, sectionIds.submission)}
                     className="font-bold text-gold-300 underline decoration-gold-400/50 underline-offset-2 transition-colors hover:text-gold-200 hover:decoration-gold-300"
                   >
-                    oficjalny formularz
+                    {t('regulations.items.18')}
                   </Link>
-                  , wraz z udostępnieniem dokumentacji i relacji z
-                  przejścia.
+                  {t('regulations.items.19')}
                 </RegulationItem>
               </ul>
             </div>
@@ -212,15 +215,14 @@ export const BadgeSection = () => {
             <div className="relative space-y-5 text-center sm:space-y-6 md:space-y-8">
               <div className="space-y-2">
                 <p className="text-xl font-black text-gold-300 sm:text-2xl drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
-                  Ukończyłeś Szlak?
+                  {t('cta.title')}
                 </p>
                 <p className="text-lg font-bold text-cream/95 sm:text-xl">
-                  Zgłoś swoje przejście i zdobądź oficjalną odznakę!
+                  {t('cta.subtitle')}
                 </p>
               </div>
               <p className="text-base text-cream/80 sm:text-lg">
-                Dołącz do elitarnego grona zdobywców i otrzymaj swoje
-                wyróżnienie
+                {t('cta.description')}
               </p>
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
                 <ActionButton
@@ -228,14 +230,14 @@ export const BadgeSection = () => {
                   external={false}
                   variant="primary"
                 >
-                  Zgłoś Przejście
+                  {t('cta.submit')}
                 </ActionButton>
                 <ActionButton
                   href={siteRoutes.hallOfFame}
                   external={false}
                   variant="secondary"
                 >
-                  Zobacz Hall of Fame
+                  {t('cta.hallOfFame')}
                 </ActionButton>
               </div>
             </div>
