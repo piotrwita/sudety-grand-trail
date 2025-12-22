@@ -1,5 +1,5 @@
 import { TrailMapSection } from '@/components/sections';
-import TrailDescription from '@/components/TrailDescription';
+import { TrailDescriptionSection } from '@/components/sections';
 import { TrailHeroSection } from '@/components/pages/TrailHeroSection';
 import { Metadata } from 'next';
 import { pageMetadata } from '@/config/metadata';
@@ -11,7 +11,7 @@ export default function TrailPage() {
     <>
       <TrailHeroSection />
       <TrailMapSection />
-      <TrailDescription />
+      <TrailDescriptionSection />
     </>
   );
 }
