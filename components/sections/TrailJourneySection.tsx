@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { trailJournalData, type JournalDay } from '@/data/trail-journal';
@@ -144,6 +144,8 @@ interface DayAccordionProps {
 
 const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
   const { t } = useTranslations('trailJourney');
+  const headerRef = useRef<HTMLButtonElement>(null);
+  const prevIsOpenRef = useRef(isOpen);
   
   // Get translated title - always needed for header
   const translatedTitle = t(`days.${day.day}.title`) || day.title;
@@ -153,6 +155,24 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
     if (!isOpen) return '';
     return t(`days.${day.day}.content`) || day.content;
   }, [isOpen, day.day, t]);
+  
+  // Scroll to header when accordion opens (transitioning from closed to open)
+  useEffect(() => {
+    // Only scroll when opening (transitioning from closed to open)
+    if (isOpen && !prevIsOpenRef.current && headerRef.current) {
+      // Small delay to ensure animation starts but scroll happens before full expansion
+      const timeoutId = setTimeout(() => {
+        headerRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }, 50);
+      
+      return () => clearTimeout(timeoutId);
+    }
+    // Update ref to track previous state
+    prevIsOpenRef.current = isOpen;
+  }, [isOpen]);
   
   return (
     <motion.div
@@ -164,8 +184,9 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
     >
       {/* Header - Always visible */}
       <button
+        ref={headerRef}
         onClick={onToggle}
-        className="flex w-full items-center justify-between gap-4 p-4 text-left transition-colors hover:bg-forest-50/50 sm:p-5"
+        className="scroll-mt-24 flex w-full items-center justify-between gap-4 p-4 text-left transition-colors hover:bg-forest-50/50 sm:p-5"
         aria-expanded={isOpen}
       >
         <div className="flex flex-1 flex-wrap items-center gap-3 sm:gap-4">
@@ -228,10 +249,38 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
 export const TrailJourneySection = () => {
   const { t } = useTranslations('trailJourney');
   const [openDay, setOpenDay] = useState<number | null>(null);
+  const [pendingDay, setPendingDay] = useState<number | null>(null);
 
   const handleToggle = (day: number) => {
-    setOpenDay(openDay === day ? null : day);
+    // If clicking the same day, just close it
+    if (openDay === day) {
+      setOpenDay(null);
+      setPendingDay(null);
+      return;
+    }
+    
+    // If there's an open day, close it first and set pending
+    if (openDay !== null) {
+      setPendingDay(day);
+      setOpenDay(null);
+    } else {
+      // No open day, open immediately
+      setOpenDay(day);
+    }
   };
+
+  // When openDay becomes null and there's a pending day, open it after closing animation completes
+  useEffect(() => {
+    if (openDay === null && pendingDay !== null) {
+      // Wait for closing animation to complete (300ms) before opening new one
+      const timeoutId = setTimeout(() => {
+        setOpenDay(pendingDay);
+        setPendingDay(null);
+      }, 300); // Match animation duration
+      
+      return () => clearTimeout(timeoutId);
+    }
+  }, [openDay, pendingDay]);
 
   // Sort days in ascending order (oldest first)
   const sortedDays = [...trailJournalData].sort((a, b) => a.day - b.day);
