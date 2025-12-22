@@ -203,7 +203,7 @@ const BenefitsCard = () => {
         <div className="mt-8 border-t border-forest-200 pt-8 text-center">
           <Link
             href={getSectionUrl(siteRoutes.live, sectionIds.trackerForm)}
-            className="theme-btn-base theme-halloffame-btn-primary flex w-full items-center justify-center px-4 py-3 text-sm sm:px-8 sm:py-4 sm:text-base md:text-lg"
+            className="theme-btn-base theme-halloffame-btn-primary inline-flex items-center justify-center px-4 py-3 text-sm sm:px-8 sm:py-4 sm:text-base md:text-lg"
           >
             {t('benefitsCard.button')}
           </Link>
