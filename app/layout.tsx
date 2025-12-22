@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { cookies } from 'next/headers';
 import { inter, oswald, montserratAlternates } from '@/lib/fonts';
 import { SiteHeader } from '@/components/layouts/header';
 import { Footer } from '@/components/layouts/Footer';
@@ -7,6 +8,7 @@ import { ScrollToTopButton } from '@/components/ScrollToTopButton';
 import { siteMetadata } from '@/config/metadata';
 import { LanguageProviderWrapper } from '@/components/providers/LanguageProviderWrapper';
 import { Analytics } from '@vercel/analytics/next';
+import type { Locale } from '@/lib/i18n-utils';
 
 import './globals.css';
 import Link from 'next/link';
@@ -34,14 +36,22 @@ export const metadata: Metadata = {
   icons: siteMetadata.icons,
 };
 
-export default function RootLayout({ children }: React.PropsWithChildren) {
+export default async function RootLayout({ children }: React.PropsWithChildren) {
+  // Read language preference from cookies on the server
+  const cookieStore = await cookies();
+  const languageCookie = cookieStore.get('sudety-grand-trail-language');
+  const initialLocale: Locale = 
+    languageCookie?.value === 'pl' || languageCookie?.value === 'en' 
+      ? languageCookie.value 
+      : 'pl';
+
   return (
     <html
-      lang="pl"
+      lang={initialLocale}
       className={`${inter.variable} ${oswald.variable} ${montserratAlternates.variable}`}
     >
       <body className="antialiased">
-        <LanguageProviderWrapper>
+        <LanguageProviderWrapper initialLocale={initialLocale}>
           <Link
             href="#main-content"
             className="skip-to-content"

@@ -4,6 +4,15 @@ import React, { createContext, useContext, useEffect, useState, useCallback } fr
 import type { Locale } from '@/lib/i18n-utils';
 
 const LANGUAGE_STORAGE_KEY = 'sudety-grand-trail-language';
+const LANGUAGE_COOKIE_KEY = 'sudety-grand-trail-language';
+
+// Helper function to set cookie
+function setCookie(name: string, value: string, days: number = 365) {
+  if (typeof document === 'undefined') return;
+  const expires = new Date();
+  expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+}
 
 interface LanguageContextType {
   locale: Locale;
@@ -12,21 +21,20 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [locale, setLocaleState] = useState<Locale>(() => {
-    // Initialize from localStorage or default to 'pl'
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem(LANGUAGE_STORAGE_KEY);
-      if (stored === 'pl' || stored === 'en') {
-        return stored;
-      }
-    }
-    return 'pl';
-  });
+interface LanguageProviderProps {
+  children: React.ReactNode;
+  initialLocale: Locale;
+}
+
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, initialLocale }) => {
+  // Use initialLocale from server (from cookies) to avoid hydration mismatch
+  const [locale, setLocaleState] = useState<Locale>(initialLocale);
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);
     if (typeof window !== 'undefined') {
+      // Store in both cookie (for SSR) and localStorage (for client-side access)
+      setCookie(LANGUAGE_COOKIE_KEY, newLocale);
       localStorage.setItem(LANGUAGE_STORAGE_KEY, newLocale);
     }
   }, []);
@@ -37,6 +45,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       if (e.key === LANGUAGE_STORAGE_KEY && e.newValue) {
         if (e.newValue === 'pl' || e.newValue === 'en') {
           setLocaleState(e.newValue);
+          setCookie(LANGUAGE_COOKIE_KEY, e.newValue);
         }
       }
     };
