@@ -9,14 +9,17 @@ import { useTranslations } from '@/lib/i18n-utils';
 import { RightArrowIcon } from '@/components/icons/RightArrowIcon';
 import { FadeIn } from '@/components/motion/FadeIn';
 import { ScaleIn } from '@/components/motion/ScaleIn';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 export const TrailDescriptionSection = () => {
   const { t, tArray } = useTranslations('trailDescription');
   const sectionRef = useRef<HTMLElement>(null);
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   // Scroll progress for the entire section
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
+    target: isMobile ? imageContainerRef : sectionRef,
     offset: ['start start', 'end end'],
   });
 
@@ -150,7 +153,10 @@ export const TrailDescriptionSection = () => {
             inViewMargin="50px"
             className="relative order-1 mt-8 lg:sticky lg:top-24 lg:order-2 lg:mt-0 lg:self-start"
           >
-            <div className="card-vintage-noanim relative aspect-square overflow-hidden lg:aspect-auto lg:min-h-[550px]">
+            <div
+              ref={imageContainerRef}
+              className="card-vintage-noanim relative aspect-square overflow-hidden lg:aspect-auto lg:min-h-[550px]"
+            >
               {trailImages.map((image, index) => (
                 <motion.div
                   key={index}
