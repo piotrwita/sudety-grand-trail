@@ -3,6 +3,7 @@ import { inter, oswald, montserratAlternates } from '@/lib/fonts';
 import { SiteHeader } from '@/components/layouts/header';
 import { Footer } from '@/components/layouts/Footer';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
+import { ScrollToTopButton } from '@/components/ScrollToTopButton';
 import { siteMetadata } from '@/config/metadata';
 import { LanguageProviderWrapper } from '@/components/providers/LanguageProviderWrapper';
 
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
             <span className="sr-only">Przejdź do treści</span>
           </Link>
           <ScrollProgressBar />
+          <ScrollToTopButton />
           <SiteHeader />
           <main id="main-content" className="min-h-screen">
             {children}

@@ -8,6 +8,9 @@
     "badge": "Badge",
     "about": "About Me"
   },
+  "scrollToTop": {
+    "ariaLabel": "Back to top"
+  },
   "homeHero": {
     "title": "Sudety Grand Trail",
     "subtitle": {

@@ -14,6 +14,7 @@ export { LightningIcon } from './LightningIcon';
 export { CalendarIcon } from './CalendarIcon';
 export { StarIcon } from './StarIcon';
 export { RightArrowIcon } from './RightArrowIcon';
+export { UpArrowIcon } from './UpArrowIcon';
 export { InfoIcon } from './InfoIcon';
 export { LightbulbIcon } from './LightbulbIcon';
 export { DocumentIcon } from './DocumentIcon';

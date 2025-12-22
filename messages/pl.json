@@ -8,6 +8,9 @@
     "badge": "Odznaka",
     "about": "O Mnie"
   },
+  "scrollToTop": {
+    "ariaLabel": "Powrót do góry"
+  },
   "homeHero": {
     "title": "Sudety Grand Trail",
     "subtitle": {
