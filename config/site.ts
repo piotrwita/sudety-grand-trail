@@ -25,6 +25,8 @@ export const siteConfig = {
   name: 'Sudety Grand Trail',
   description: 'Sudety Grand Trail - Trail running event',
   contactEmail: 'sgt.powiadomienia@gmail.com',
+  gpxDownloadUrl:
+    'https://pro.mapy.com/mapybox-export/v1/path/gpx?id=688fa97f662a3fae890f5f13&rand=0.7002222504750357',
   logo: {
     src: '/images/logo.png',
     alt: 'Sudety Grand Trail Logo',
