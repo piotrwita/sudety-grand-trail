@@ -407,6 +407,7 @@
     "navigation": "Navigation",
     "community": "Community",
     "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
     "copyright": "© 2025 Sudety Grand Trail. All rights reserved.",
     "madeWith": "Trail created with ❤️ for mountain lovers"
   },
@@ -539,6 +540,61 @@
         "content": [
           {
             "text": "If you have any questions about this Privacy Policy or our data practices, please contact us via email at: {email}"
+          }
+        ]
+      }
+    ]
+  },
+  "termsOfService": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: December 22, 2025",
+    "intro": "Welcome to Sudety Grand Trail. By accessing our website and using our services, you agree to comply with and be bound by the following terms and conditions.",
+    "sections": [
+      {
+        "title": "Acceptance of Terms",
+        "content": [
+          {
+            "text": "By using this website, you signify your acceptance of these terms. If you do not agree to these terms, please do not use our website."
+          }
+        ]
+      },
+      {
+        "title": "User Conduct",
+        "content": [
+          {
+            "text": "You agree to use our website and services only for lawful purposes. You are prohibited from using the site to engage in any activity that could damage, disable, or impair the site or interfere with any other party's use of the site."
+          }
+        ]
+      },
+      {
+        "title": "Intellectual Property",
+        "content": [
+          {
+            "text": "All content on this website, including text, graphics, logos, and images, is the property of Sudety Grand Trail or its content suppliers and is protected by international copyright laws."
+          }
+        ]
+      },
+      {
+        "title": "Limitation of Liability",
+        "content": [
+          {
+            "text": "Sudety Grand Trail shall not be liable for any direct, indirect, incidental, special, or consequential damages resulting from the use or inability to use our services."
+          }
+        ]
+      },
+      {
+        "title": "Changes to Terms",
+        "content": [
+          {
+            "text": "We reserve the right to modify these terms at any time. Your continued use of the site following any changes signifies your acceptance of the new terms."
+          }
+        ]
+      },
+      {
+        "title": "Contact Information",
+        "content": [
+          {
+            "text": "If you have any questions about these Terms of Service, please contact us at {email}."
           }
         ]
       }

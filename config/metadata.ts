@@ -231,4 +231,18 @@ export const pageMetadata = {
       'cookies',
     ],
   }),
+
+  termsOfService: generatePageMetadata({
+    title: 'Regulamin - Sudety Grand Trail',
+    description:
+      'Regulamin serwisu Sudety Grand Trail. Poznaj zasady korzystania z naszej strony internetowej i uczestnictwa w naszych inicjatywach.',
+    path: siteRoutes.termsOfService,
+    keywords: [
+      'regulamin',
+      'warunki korzystania',
+      'zasady',
+      'legalne',
+      'terms of service',
+    ],
+  }),
 } as const;

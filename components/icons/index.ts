@@ -28,3 +28,4 @@ export { PhotoStackIcon } from './PhotoStackIcon';
 export { TrophyIcon } from './TrophyIcon';
 export { BadgeSealCheckIcon } from './BadgeSealCheckIcon';
 export { MousePointerClickIcon } from './MousePointerClickIcon';
+export { LockIcon } from './LockIcon';

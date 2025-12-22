@@ -16,10 +16,16 @@ const getIcon = (iconName: string) => {
   }
 };
 
-export const SocialLinkList = ({ className }: { className?: string }) => {
+export const SocialLinkList = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) => {
   const { t } = useTranslations('footer');
 
-  const getTitle = (link: typeof siteConfig.socialLinks[0]) => {
+  const getTitle = (link: (typeof siteConfig.socialLinks)[number]) => {
     if (link.icon === 'map') {
       return t('mapIconTitle');
     }
@@ -38,25 +44,26 @@ export const SocialLinkList = ({ className }: { className?: string }) => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-accent-hover rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50"
+              className="rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50 hover:text-accent-hover"
               title={getTitle(link)}
             >
               {getIcon(link.icon)}
             </a>
           );
         }
-        
+
         return (
           <Link
             key={link.href}
             href={link.href}
-            className="hover:text-accent-hover rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50"
+            className="rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50 hover:text-accent-hover"
             title={getTitle(link)}
           >
             {getIcon(link.icon)}
           </Link>
         );
       })}
+      {children}
     </div>
   );
 };
