@@ -6,6 +6,7 @@ export const MapIcon = ({ className = 'size-5' }: { className?: string }) => {
       stroke="currentColor"
       viewBox="0 0 24 24"
       aria-label="Mapa"
+      pointerEvents="none"
     >
       <path
         strokeLinecap="round"
