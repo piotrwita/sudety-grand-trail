@@ -404,9 +404,145 @@
     "description": "900 km through 23 mountain ranges. Conquer all the highest peaks of the Sudetes and 16 peaks of the Crown of Polish Mountains in one epic journey.",
     "mapLink": "Trail Map",
     "mapIconTitle": "Trail Map",
+    "navigation": "Navigation",
     "community": "Community",
+    "privacyPolicy": "Privacy Policy",
     "copyright": "© 2025 Sudety Grand Trail. All rights reserved.",
     "madeWith": "Trail created with ❤️ for mountain lovers"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: December 22, 2025",
+    "intro": "This Privacy Policy describes how Sudety Grand Trail (\"we\", \"us\", or \"our\") collects, uses, and protects your information when you visit our website and use our services.",
+    "commitment": "We are committed to protecting your privacy and being transparent about our data practices. This policy explains what information we collect and how we use it.",
+    "sections": [
+      {
+        "title": "Information We Collect",
+        "content": [
+          {
+            "subtitle": "Personal Information You Provide",
+            "text": "We only collect personal information that you voluntarily provide to us, such as:",
+            "list": [
+              "Name and email address when you contact us through our contact form",
+              "Any additional information you choose to include in your messages"
+            ]
+          },
+          {
+            "subtitle": "Automatically Collected Information",
+            "text": "When you visit our website, we may automatically collect basic technical information including:",
+            "list": [
+              "IP address",
+              "Browser type and version",
+              "Pages visited and time spent on our site",
+              "Referring website",
+              "Device and operating system information"
+            ],
+            "footer": "This information is collected through standard web server logs and helps us improve our website's performance and user experience."
+          }
+        ]
+      },
+      {
+        "title": "Cookies and Tracking",
+        "content": [
+          {
+            "text": "We do not use cookies to track your personal information or browsing behavior.",
+            "subtitle": "Essential Cookies",
+            "list": ["Basic website functionality", "Security purposes"],
+            "footer": "We do not use analytics cookies, advertising cookies, or any tracking technologies that collect personal data about your browsing habits."
+          }
+        ]
+      },
+      {
+        "title": "How We Use Your Information",
+        "content": [
+          {
+            "text": "We use the information we collect to:",
+            "list": [
+              "Respond to your inquiries and provide customer service",
+              "Improve our website and services",
+              "Ensure the security and proper functioning of our website",
+              "Comply with legal obligations"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Information Sharing",
+        "content": [
+          {
+            "text": "We do not sell, trade, or otherwise transfer your personal information to third parties, except:",
+            "list": [
+              "When required by law or legal process",
+              "To protect our rights, property, or safety, or that of others",
+              "With your explicit consent"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Data Security",
+        "content": [
+          {
+            "text": "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure."
+          }
+        ]
+      },
+      {
+        "title": "Data Retention",
+        "content": [
+          {
+            "text": "We retain your personal information only for as long as necessary to fulfill the purposes outlined in this privacy policy or as required by law. Contact form submissions are typically retained for up to 2 years for business purposes."
+          }
+        ]
+      },
+      {
+        "title": "Your Rights",
+        "content": [
+          {
+            "text": "You have the right to:",
+            "list": [
+              "Request access to your personal information",
+              "Request correction of inaccurate data",
+              "Request deletion of your personal information",
+              "Withdraw consent for data processing"
+            ],
+            "footer": "To exercise these rights, please contact us using the information provided below."
+          }
+        ]
+      },
+      {
+        "title": "Third-Party Links",
+        "content": [
+          {
+            "text": "Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit."
+          }
+        ]
+      },
+      {
+        "title": "Children's Privacy",
+        "content": [
+          {
+            "text": "Our services are not directed to children under 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected such information, we will take steps to delete it promptly."
+          }
+        ]
+      },
+      {
+        "title": "Changes to This Privacy Policy",
+        "content": [
+          {
+            "text": "We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new Privacy Policy on this page and updating the \"Last updated\" date."
+          }
+        ]
+      },
+      {
+        "title": "Contact Us",
+        "content": [
+          {
+            "text": "If you have any questions about this Privacy Policy or our data practices, please contact us via email at: {email}"
+          }
+        ]
+      }
+    ]
   },
   "trailDescription": {
     "title": "About the Trail",

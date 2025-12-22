@@ -10,6 +10,7 @@ export const siteRoutes = {
   hallOfFame: '/hall-of-fame',
   badge: '/badge',
   about: '/about',
+  privacyPolicy: '/privacy-policy',
 } as const;
 
 // Array of all routes for iteration (e.g., in sitemap)
