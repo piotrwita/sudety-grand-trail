@@ -1,7 +1,6 @@
 'use client';
 
 import { FadeIn } from '@/components/motion/FadeIn';
-import { ScaleIn } from '@/components/motion/ScaleIn';
 import { MapIcon, DownloadIcon } from '@/components/icons';
 import Link from 'next/link';
 import { Section } from './Section';
@@ -14,7 +13,7 @@ import { useTranslations } from '@/lib/i18n-utils';
 export const TrailMapSection = () => {
   const { t } = useTranslations('trailMap');
   const { t: tGlobal } = useTranslations();
-  
+
   return (
     <Section
       ariaLabel={t('title')}
@@ -62,7 +61,7 @@ export const TrailMapSection = () => {
               {t('openMap')}
             </Link>
             <Link
-              href="https://pro.mapy.com/mapybox-export/v1/path/gpx?id=688fa97f662a3fae890f5f13&rand=0.7002222504750357"
+              href={siteConfig.gpxDownloadUrl}
               download="sudety-grand-trail.gpx"
               className="btn-primary flex w-full items-center justify-center gap-2 px-6 py-3 sm:w-auto"
             >
@@ -72,17 +71,16 @@ export const TrailMapSection = () => {
           </div>
         </FadeIn>
 
-        <ScaleIn
-          initialScale={0.95}
-          finalScale={1}
+        <FadeIn
+          direction="up"
+          offset={20}
           duration={0.8}
           delay={0.2}
           inView={true}
           className="relative"
         >
-          {/* Map Container */}
           <InteractiveIframe
-            src="https://mapy.com/s/barusofola"
+            src={siteConfig.links.map.href}
             className="card-vintage-noanim"
             title="Grand Trail Sudety Map"
             overlayTitle={t('mapTitle')}
@@ -91,7 +89,7 @@ export const TrailMapSection = () => {
             overlayAriaLabel={t('mapAriaLabel')}
             referrerPolicy="no-referrer-when-downgrade"
           />
-        </ScaleIn>
+        </FadeIn>
 
         {/* Modest Summary Section */}
         <FadeIn
