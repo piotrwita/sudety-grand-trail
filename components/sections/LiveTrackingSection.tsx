@@ -10,7 +10,7 @@ import { useTranslations } from '@/lib/i18n-utils';
 export const LiveTrackingSection = () => {
   const { t } = useTranslations('liveTracking');
   const { t: tGlobal } = useTranslations();
-  
+
   return (
     <Section
       className="bg-cream"
@@ -83,13 +83,11 @@ export const LiveTrackingSection = () => {
         </FadeIn>
 
         {/* Live Map Container */}
-        <ScaleIn
+        <FadeIn
           inView
           inViewMargin="50px"
-          initialScale={0.95}
-          finalScale={1}
-          initialOpacity={0}
-          finalOpacity={1}
+          offset={20}
+          direction="up"
           transition={{ duration: 0.8, delay: 0.5 }}
           className="relative"
         >
@@ -186,7 +184,7 @@ export const LiveTrackingSection = () => {
               <div className="absolute bottom-0 left-0 h-1 w-full origin-left scale-x-0 bg-gradient-to-r from-orange-500 to-orange-600 transition-transform duration-300 group-hover:scale-x-100" />
             </FadeIn>
           </div>
-        </ScaleIn>
+        </FadeIn>
       </div>
     </Section>
   );

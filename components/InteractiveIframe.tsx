@@ -25,22 +25,13 @@ export const InteractiveIframe = ({
   ...iframeProps
 }: InteractiveIframeProps) => {
   const [isInteractive, setIsInteractive] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
 
   useEffect(() => {
+    if (!isInteractive) return;
+
     const handleScroll = () => {
       setIsInteractive(false);
-      setIsScrolling(true);
-
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
-
-      scrollTimeoutRef.current = setTimeout(() => {
-        setIsScrolling(false);
-      }, 150);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -49,17 +40,14 @@ export const InteractiveIframe = ({
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('wheel', handleScroll);
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
     };
-  }, []);
+  }, [isInteractive]);
 
   const enableInteraction = () => {
     setIsInteractive(true);
   };
 
-  const pointerEvents = isInteractive && !isScrolling ? 'auto' : 'none';
+  const pointerEvents = isInteractive ? 'auto' : 'none';
 
   return (
     <div className={cn('group relative overflow-hidden', className)}>
@@ -84,7 +72,7 @@ export const InteractiveIframe = ({
         />
 
         {/* Overlay for interaction */}
-        {(!isInteractive || isScrolling) && (
+        {!isInteractive && (
           <div
             onClick={enableInteraction}
             className="absolute inset-0 z-10 cursor-pointer bg-forest-900/5 transition-colors duration-300 hover:bg-forest-900/10"
