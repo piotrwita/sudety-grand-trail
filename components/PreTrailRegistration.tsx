@@ -298,11 +298,11 @@ export const PreTrailRegistration = () => {
         >
           <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-mountain-600">
             {t('callToAction.text')}{' '}
-            <span className="bg-gradient-to-r from-gold-700 via-gold-600 to-gold-800 bg-clip-text text-transparent font-bold">
+            <span className="font-bold text-mountain-700">
               {t('callToAction.highlight')}
             </span>
             {t('callToAction.textMiddle')}{' '}
-            <span className="bg-gradient-to-r from-gold-700 via-gold-600 to-gold-800 bg-clip-text text-transparent font-bold">
+            <span className="font-bold text-mountain-700">
               {t('callToAction.highlight2')}
             </span>
             {t('callToAction.textEnd')}
