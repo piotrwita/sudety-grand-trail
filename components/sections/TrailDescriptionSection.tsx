@@ -9,14 +9,17 @@ import { useTranslations } from '@/lib/i18n-utils';
 import { RightArrowIcon } from '@/components/icons/RightArrowIcon';
 import { FadeIn } from '@/components/motion/FadeIn';
 import { ScaleIn } from '@/components/motion/ScaleIn';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 export const TrailDescriptionSection = () => {
   const { t, tArray } = useTranslations('trailDescription');
   const sectionRef = useRef<HTMLElement>(null);
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   // Scroll progress for the entire section
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
+    target: isMobile ? imageContainerRef : sectionRef,
     offset: ['start start', 'end end'],
   });
 
@@ -150,7 +153,10 @@ export const TrailDescriptionSection = () => {
             inViewMargin="50px"
             className="relative order-1 mt-8 lg:sticky lg:top-24 lg:order-2 lg:mt-0 lg:self-start"
           >
-            <div className="card-vintage-noanim relative aspect-square overflow-hidden lg:aspect-auto lg:min-h-[550px]">
+            <div
+              ref={imageContainerRef}
+              className="card-vintage-noanim relative aspect-square overflow-hidden lg:aspect-auto lg:min-h-[550px]"
+            >
               {trailImages.map((image, index) => (
                 <motion.div
                   key={index}
@@ -178,23 +184,9 @@ export const TrailDescriptionSection = () => {
             {/* Floating stats - always on top */}
             <ScaleIn
               duration={0.6}
-              delay={0.6}
-              inView
-              initialScale={0.8}
-              className="absolute -bottom-4 -left-4 z-20 rounded-xl border border-forest-200/50 bg-gradient-to-br from-white via-cream to-forest-50 p-3 text-center shadow-xl backdrop-blur-sm lg:-bottom-8 lg:-left-8 lg:rounded-2xl lg:p-6"
-            >
-              <div className="bg-gradient-to-br from-forest-600 to-forest-800 bg-clip-text text-2xl font-black text-transparent lg:text-4xl">
-                23
-              </div>
-              <div className="mt-1 text-xs font-bold uppercase tracking-wide text-forest-600 lg:text-sm">
-                {t('stats.ranges')}
-              </div>
-            </ScaleIn>
-
-            <ScaleIn
-              duration={0.6}
               delay={0.8}
               inView
+              inViewMargin={isMobile ? '-100px' : '0px'}
               initialScale={0.8}
               className="absolute -right-4 -top-4 z-20 rounded-xl border border-forest-200/50 bg-gradient-to-br from-white via-cream to-forest-50 p-3 text-center shadow-xl backdrop-blur-sm lg:-right-8 lg:-top-8 lg:rounded-2xl lg:p-6"
             >
@@ -203,6 +195,22 @@ export const TrailDescriptionSection = () => {
               </div>
               <div className="mt-1 text-xs font-bold uppercase tracking-wide text-forest-600 lg:text-sm">
                 {t('stats.kilometers')}
+              </div>
+            </ScaleIn>
+
+            <ScaleIn
+              duration={0.6}
+              delay={0.6}
+              inView
+              inViewMargin={isMobile ? '-100px' : '0px'}
+              initialScale={0.8}
+              className="absolute -bottom-4 -left-4 z-20 rounded-xl border border-forest-200/50 bg-gradient-to-br from-white via-cream to-forest-50 p-3 text-center shadow-xl backdrop-blur-sm lg:-bottom-8 lg:-left-8 lg:rounded-2xl lg:p-6"
+            >
+              <div className="bg-gradient-to-br from-forest-600 to-forest-800 bg-clip-text text-2xl font-black text-transparent lg:text-4xl">
+                23
+              </div>
+              <div className="mt-1 text-xs font-bold uppercase tracking-wide text-forest-600 lg:text-sm">
+                {t('stats.ranges')}
               </div>
             </ScaleIn>
           </FadeIn>

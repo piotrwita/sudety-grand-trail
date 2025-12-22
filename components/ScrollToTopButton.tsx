@@ -1,54 +1,28 @@
 'use client';
 
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from 'framer-motion';
 import { UpArrowIcon } from '@/components/icons';
 import { useTranslations } from '@/lib/i18n-utils';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useLayoutEffect } from 'react';
 
 const SCROLL_THRESHOLD = 500;
-const HIDE_DELAY = 150; // ms delay before hiding to prevent flickering
 
 export const ScrollToTopButton = () => {
   const { scrollY } = useScroll();
-  const [isVisible, setIsVisible] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return window.scrollY > SCROLL_THRESHOLD;
-    }
-    return false;
-  });
+  const [isVisible, setIsVisible] = useState(false);
   const { t } = useTranslations('scrollToTop');
-  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
-    const shouldBeVisible = latest > SCROLL_THRESHOLD;
-
-    // Clear any pending hide timeout
-    if (hideTimeoutRef.current) {
-      clearTimeout(hideTimeoutRef.current);
-      hideTimeoutRef.current = null;
-    }
-
-    if (shouldBeVisible) {
-      // Show immediately when scrolling down past threshold
-      setIsVisible(true);
-    } else {
-      // Delay hiding when scrolling up to prevent flickering during fast scrolling
-      hideTimeoutRef.current = setTimeout(() => {
-        setIsVisible(false);
-        hideTimeoutRef.current = null;
-      }, HIDE_DELAY);
-    }
+    setIsVisible(latest > SCROLL_THRESHOLD);
   });
 
-  // Check initial scroll position on mount
-  useEffect(() => {
+  useLayoutEffect(() => {
     setIsVisible(window.scrollY > SCROLL_THRESHOLD);
-
-    return () => {
-      if (hideTimeoutRef.current) {
-        clearTimeout(hideTimeoutRef.current);
-      }
-    };
   }, []);
 
   const scrollToTop = () => {
@@ -76,4 +50,3 @@ export const ScrollToTopButton = () => {
     </AnimatePresence>
   );
 };
-
