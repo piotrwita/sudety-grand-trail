@@ -11,6 +11,7 @@ export const siteRoutes = {
   badge: '/badge',
   about: '/about',
   privacyPolicy: '/privacy-policy',
+  termsOfService: '/terms-of-service',
 } as const;
 
 // Array of all routes for iteration (e.g., in sitemap)

@@ -407,6 +407,7 @@
     "navigation": "Nawigacja",
     "community": "Społeczność",
     "privacyPolicy": "Polityka Prywatności",
+    "termsOfService": "Regulamin",
     "copyright": "© 2025 Sudety Grand Trail. Wszystkie prawa zastrzeżone.",
     "madeWith": "Szlak stworzony z ❤️ dla miłośników gór"
   },
@@ -542,6 +543,61 @@
         "content": [
           {
             "text": "Jeśli masz jakiekolwiek pytania dotyczące niniejszej Polityki Prywatności lub naszych praktyk dotyczących danych, skontaktuj się z nami poprzez e-mail: {email}"
+          }
+        ]
+      }
+    ]
+  },
+  "termsOfService": {
+    "title": "Regulamin",
+    "lastUpdated": "Ostatnia aktualizacja: 22 grudnia 2025",
+    "intro": "Witamy w Sudety Grand Trail. Korzystając z naszej strony internetowej i naszych usług, zgadzasz się przestrzegać poniższych warunków.",
+    "sections": [
+      {
+        "title": "Akceptacja Warunków",
+        "content": [
+          {
+            "text": "Korzystając z tej strony internetowej, potwierdzasz akceptację niniejszych warunków. Jeśli nie zgadzasz się z nimi, prosimy o niekorzystanie z naszej strony."
+          }
+        ]
+      },
+      {
+        "title": "Zachowanie Użytkownika",
+        "content": [
+          {
+            "text": "Zgadzasz się korzystać z naszej strony internetowej i usług wyłącznie w celach zgodnych z prawem. Zabrania się korzystania ze strony w sposób, który mógłby uszkodzić, wyłączyć lub osłabić stronę lub zakłócać korzystanie z niej przez inne osoby."
+          }
+        ]
+      },
+      {
+        "title": "Własność Intelektualna",
+        "content": [
+          {
+            "text": "Wszystkie treści na tej stronie, w tym tekst, grafika, logo i obrazy, są własnością Sudety Grand Trail lub jej dostawców treści i są chronione międzynarodowymi prawami autorskimi."
+          }
+        ]
+      },
+      {
+        "title": "Ograniczenie Odpowiedzialności",
+        "content": [
+          {
+            "text": "Sudety Grand Trail nie ponosi odpowiedzialności za jakiekolwiek bezpośrednie, pośrednie, przypadkowe, specjalne lub wtórne szkody wynikające z korzystania lub niemożności korzystania z naszych usług."
+          }
+        ]
+      },
+      {
+        "title": "Zmiany w Regulaminie",
+        "content": [
+          {
+            "text": "Zastrzegamy sobie prawo do modyfikacji niniejszych warunków w dowolnym momencie. Dalsze korzystanie ze strony po wprowadzeniu zmian oznacza akceptację nowych warunków."
+          }
+        ]
+      },
+      {
+        "title": "Informacje Kontaktowe",
+        "content": [
+          {
+            "text": "Jeśli masz jakiekolwiek pytania dotyczące niniejszego Regulaminu, skontaktuj się z nami pod adresem {email}."
           }
         ]
       }

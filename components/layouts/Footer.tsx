@@ -4,9 +4,10 @@ import Link from 'next/link';
 import { LogoImage } from '../LogoImage';
 import { siteConfig } from '@/config/site';
 import { siteRoutes } from '@/config/site-routes';
-import { FacebookIcon, MapIcon } from '../icons';
+import { FacebookIcon, LockIcon } from '@/components/icons';
 import { useTranslations } from '@/lib/i18n-utils';
 import { useNavigation } from '@/lib/get-navigation';
+import { SocialLinkList } from './SocialLinkList';
 
 export const Footer = () => {
   const { t } = useTranslations('footer');
@@ -42,107 +43,47 @@ export const Footer = () => {
             <h4 className="mb-4 font-display text-base font-bold sm:mb-5 sm:text-lg lg:mb-6">
               {t('navigation')}
             </h4>
-            <div className="grid grid-cols-1 gap-x-8 gap-y-2.5 sm:grid-cols-2 sm:gap-y-3 lg:grid-cols-2">
-              <div className="space-y-1.5 sm:space-y-2">
-                {navigation.slice(0, 5).map((item) => (
-                  <FooterLink key={item.href} href={item.href}>
-                    {item.label}
-                  </FooterLink>
-                ))}
-              </div>
-              <div className="space-y-2.5 sm:space-y-3">
-                {navigation.slice(5).map((item) => (
-                  <FooterLink key={item.href} href={item.href}>
-                    {item.label}
-                  </FooterLink>
-                ))}
-                <FooterLink href="https://mapy.com/s/barusofola" isExternal>
-                  {t('mapLink')}
+            <div className="space-y-2.5 sm:space-y-3">
+              {navigation.map((item) => (
+                <FooterLink key={item.href} href={item.href}>
+                  {item.label}
                 </FooterLink>
-                <FooterLink href={siteRoutes.privacyPolicy}>
-                  {t('privacyPolicy')}
-                </FooterLink>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Social & Stats Section */}
+          {/* Social & Legal Section */}
           <div className="md:col-span-2 lg:col-span-1">
             <h4 className="mb-4 font-display text-base font-bold sm:mb-5 sm:text-lg lg:mb-6">
               {t('community')}
             </h4>
-            <div className="space-y-4 sm:space-y-5">
+            <div className="space-y-6">
               <div className="flex gap-3 border-forest-600">
-                {siteConfig.socialLinks.map((link) => {
-                  const getIcon = () => {
-                    switch (link.icon) {
-                      case 'map':
-                        return <MapIcon />;
-                      case 'facebook':
-                        return <FacebookIcon />;
-                      default:
-                        return null;
-                    }
-                  };
+                <SocialLinkList className="flex gap-3">
+                  {/* Private Facebook Group */}
+                  <a
+                    href={siteConfig.links.facebookGroup.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50 hover:text-accent"
+                    title={siteConfig.links.facebookGroup.label}
+                  >
+                    <FacebookIcon />
+                    <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent/20">
+                      <LockIcon className="h-2.5 w-2.5 text-accent" />
+                    </span>
+                  </a>
+                </SocialLinkList>
+              </div>
 
-                  const getTitle = () => {
-                    if (link.icon === 'map') {
-                      return t('mapIconTitle');
-                    }
-                    return link.label;
-                  };
-
-                  // Use regular <a> tag for external links to avoid issues on some mobile devices
-                  // Next.js Link can have problems with external links on certain browsers/devices
-                  if (link.external) {
-                    return (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50 hover:text-accent-hover"
-                        title={getTitle()}
-                      >
-                        {getIcon()}
-                      </a>
-                    );
-                  }
-
-                  return (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50 hover:text-accent-hover"
-                      title={getTitle()}
-                    >
-                      {getIcon()}
-                    </Link>
-                  );
-                })}
-                {/* Private Facebook Group */}
-                <a
-                  href="https://www.facebook.com/groups/opowiescizeszlaku"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50 hover:text-accent"
-                  title="Facebook - Opowieści ze szlaku"
-                >
-                  <FacebookIcon />
-                  <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent/20">
-                    <svg
-                      className="h-2.5 w-2.5 text-accent"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                </a>
+              {/* Legal Links */}
+              <div className="flex flex-col space-y-2.5 border-t border-forest-700/50 pt-5 sm:space-y-3">
+                <FooterLink href={siteRoutes.privacyPolicy}>
+                  {t('privacyPolicy')}
+                </FooterLink>
+                <FooterLink href={siteRoutes.termsOfService}>
+                  {t('termsOfService')}
+                </FooterLink>
               </div>
             </div>
           </div>

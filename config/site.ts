@@ -13,6 +13,12 @@ const socialLinks = {
     external: true,
     icon: 'facebook',
   },
+  facebookGroup: {
+    href: 'https://www.facebook.com/groups/opowiescizeszlaku',
+    label: 'Facebook - Opowieści ze szlaku',
+    external: true,
+    icon: 'facebook',
+  },
 } as const;
 
 export const siteConfig = {
@@ -32,7 +38,7 @@ export const siteConfig = {
     { href: siteRoutes.badge, label: 'Odznaka' },
     { href: siteRoutes.about, label: 'O Mnie' },
   ],
-  socialLinks: Object.values(socialLinks),
+  socialLinks: [socialLinks.map, socialLinks.facebook],
   links: socialLinks,
 } as const;
 
