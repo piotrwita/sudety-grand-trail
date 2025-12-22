@@ -18,6 +18,7 @@ const socialLinks = {
 export const siteConfig = {
   name: 'Sudety Grand Trail',
   description: 'Sudety Grand Trail - Trail running event',
+  contactEmail: 'sgt.powiadomienia@gmail.com',
   logo: {
     src: '/images/logo.png',
     alt: 'Sudety Grand Trail Logo',

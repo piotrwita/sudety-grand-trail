@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { LogoImage } from '../LogoImage';
 import { siteConfig } from '@/config/site';
+import { siteRoutes } from '@/config/site-routes';
 import { FacebookIcon, MapIcon } from '../icons';
 import { useTranslations } from '@/lib/i18n-utils';
 import { useNavigation } from '@/lib/get-navigation';
@@ -10,9 +11,9 @@ import { useNavigation } from '@/lib/get-navigation';
 export const Footer = () => {
   const { t } = useTranslations('footer');
   const navigation = useNavigation();
-  
+
   return (
-    <footer className="bg-forest-900 py-12 text-cream sm:py-16 lg:py-20">
+    <footer className="bg-forest-900 py-4 text-cream sm:py-6 lg:py-8">
       <div className="fluid-container">
         {/* Main Grid */}
         <div className="mb-8 grid gap-8 sm:mb-10 sm:gap-10 md:grid-cols-2 md:gap-12 lg:mb-12 lg:grid-cols-3">
@@ -37,16 +38,31 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links Section */}
-          <div className="flex flex-col items-start md:items-center">
-            <div className="space-y-2.5 sm:space-y-3">
-              {navigation.map((item) => (
-                <FooterLink key={item.href} href={item.href}>
-                  {item.label}
+          <div className="flex flex-col">
+            <h4 className="mb-4 font-display text-base font-bold sm:mb-5 sm:text-lg lg:mb-6">
+              {t('navigation')}
+            </h4>
+            <div className="grid grid-cols-1 gap-x-8 gap-y-2.5 sm:grid-cols-2 sm:gap-y-3 lg:grid-cols-2">
+              <div className="space-y-1.5 sm:space-y-2">
+                {navigation.slice(0, 5).map((item) => (
+                  <FooterLink key={item.href} href={item.href}>
+                    {item.label}
+                  </FooterLink>
+                ))}
+              </div>
+              <div className="space-y-2.5 sm:space-y-3">
+                {navigation.slice(5).map((item) => (
+                  <FooterLink key={item.href} href={item.href}>
+                    {item.label}
+                  </FooterLink>
+                ))}
+                <FooterLink href="https://mapy.com/s/barusofola" isExternal>
+                  {t('mapLink')}
                 </FooterLink>
-              ))}
-              <FooterLink href="https://mapy.com/s/barusofola" isExternal>
-                {t('mapLink')}
-              </FooterLink>
+                <FooterLink href={siteRoutes.privacyPolicy}>
+                  {t('privacyPolicy')}
+                </FooterLink>
+              </div>
             </div>
           </div>
 
@@ -82,7 +98,7 @@ export const Footer = () => {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-accent-hover rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50"
+                      className="rounded-lg p-2 text-cream/70 transition-all duration-300 hover:scale-110 hover:bg-forest-700/50 hover:text-accent-hover"
                       title={getTitle()}
                     >
                       {getIcon()}
@@ -148,7 +164,14 @@ const FooterLink = ({
   children: React.ReactNode;
 }) => {
   const linkClass =
-    'block text-sm text-mountain-300 transition-colors hover:text-accent-hover focus:text-accent focus:outline-none sm:text-base';
+    'group flex items-center text-xs text-mountain-300 transition-colors hover:text-accent-hover focus:text-accent focus:outline-none sm:text-sm';
+
+  const content = (
+    <>
+      <span className="mr-2 h-px w-0 bg-accent transition-all duration-300 group-hover:w-3" />
+      {children}
+    </>
+  );
 
   if (isExternal) {
     return (
@@ -158,14 +181,14 @@ const FooterLink = ({
         rel="noopener noreferrer"
         className={linkClass}
       >
-        {children}
+        {content}
       </Link>
     );
   }
 
   return (
     <Link href={href} className={linkClass}>
-      {children}
+      {content}
     </Link>
   );
 };

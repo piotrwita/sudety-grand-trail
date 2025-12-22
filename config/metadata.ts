@@ -217,4 +217,18 @@ export const pageMetadata = {
       'pasja do gór',
     ],
   }),
+
+  privacyPolicy: generatePageMetadata({
+    title: 'Polityka Prywatności - Sudety Grand Trail',
+    description:
+      'Polityka Prywatności serwisu Sudety Grand Trail. Dowiedz się, jak chronimy Twoje dane i jakie masz prawa w związku z korzystaniem z naszego serwisu.',
+    path: siteRoutes.privacyPolicy,
+    keywords: [
+      'polityka prywatności',
+      'prywatność',
+      'RODO',
+      'ochrona danych',
+      'cookies',
+    ],
+  }),
 } as const;

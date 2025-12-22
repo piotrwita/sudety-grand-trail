@@ -404,9 +404,148 @@
     "description": "900 km przez 23 pasma górskie. Zdobądź wszystkie najwyższe szczyty Sudetów i 16 szczytów Korony Gór Polski w jednej epickiej wędrówce.",
     "mapLink": "Mapa Szlaku",
     "mapIconTitle": "Mapa szlaku",
+    "navigation": "Nawigacja",
     "community": "Społeczność",
+    "privacyPolicy": "Polityka Prywatności",
     "copyright": "© 2025 Sudety Grand Trail. Wszystkie prawa zastrzeżone.",
     "madeWith": "Szlak stworzony z ❤️ dla miłośników gór"
+  },
+  "privacyPolicy": {
+    "title": "Polityka Prywatności",
+    "lastUpdated": "Ostatnia aktualizacja: 22 grudnia 2025",
+    "intro": "Niniejsza Polityka Prywatności opisuje, w jaki sposób Sudety Grand Trail („my”, „nas” lub „nasz”) gromadzi, wykorzystuje i chroni Twoje informacje podczas odwiedzania naszej strony internetowej i korzystania z naszych usług.",
+    "commitment": "Zobowiązujemy się do ochrony Twojej prywatności i przejrzystości w zakresie naszych praktyk dotyczących danych. Niniejsza polityka wyjaśnia, jakie informacje gromadzimy i jak je wykorzystujemy.",
+    "sections": [
+      {
+        "title": "Gromadzone Informacje",
+        "content": [
+          {
+            "subtitle": "Dane Osobowe, które Podajesz",
+            "text": "Gromadzimy tylko te dane osobowe, które dobrowolnie nam przekazujesz, takie jak:",
+            "list": [
+              "Imię i adres e-mail, gdy kontaktujesz się z nami za pomocą formularza kontaktowego",
+              "Wszelkie dodatkowe informacje, które zdecydujesz się zawrzeć w swoich wiadomościach"
+            ]
+          },
+          {
+            "subtitle": "Informacje Gromadzone Automatycznie",
+            "text": "Podczas odwiedzania naszej strony internetowej możemy automatycznie gromadzić podstawowe informacje techniczne, w tym:",
+            "list": [
+              "Adres IP",
+              "Typ i wersja przeglądarki",
+              "Odwiedzone strony i czas spędzony na naszej stronie",
+              "Strona odsyłająca",
+              "Informacje o urządzeniu i systemie operacyjnym"
+            ],
+            "footer": "Informacje te są gromadzone za pośrednictwem standardowych logów serwera WWW i pomagają nam ulepszać wydajność naszej strony oraz doświadczenia użytkowników."
+          }
+        ]
+      },
+      {
+        "title": "Pliki Cookie i Śledzenie",
+        "content": [
+          {
+            "text": "Nie używamy plików cookie do śledzenia Twoich danych osobowych ani zachowań związanych z przeglądaniem.",
+            "subtitle": "Niezbędne Pliki Cookie",
+            "list": [
+              "Podstawowa funkcjonalność strony internetowej",
+              "Celów bezpieczeństwa"
+            ],
+            "footer": "Nie używamy plików cookie analitycznych, reklamowych ani żadnych technologii śledzących, które gromadzą dane osobowe o Twoich nawykach przeglądania."
+          }
+        ]
+      },
+      {
+        "title": "Jak Wykorzystujemy Twoje Informacje",
+        "content": [
+          {
+            "text": "Gromadzone przez nas informacje wykorzystujemy do:",
+            "list": [
+              "Odpowiadania na Twoje zapytania i zapewniania obsługi klienta",
+              "Ulepszania naszej strony internetowej i usług",
+              "Zapewnienia bezpieczeństwa i prawidłowego funkcjonowania naszej strony internetowej",
+              "Wypełniania obowiązków prawnych"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Udostępnianie Informacji",
+        "content": [
+          {
+            "text": "Nie sprzedajemy, nie handlujemy ani w żaden inny sposób nie przekazujemy Twoich danych osobowych stronom trzecim, z wyjątkiem:",
+            "list": [
+              "Gdy jest to wymagane przez prawo lub proces prawny",
+              "W celu ochrony naszych praw, własności lub bezpieczeństwa, bądź innych osób",
+              "Za Twoją wyraźną zgodą"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bezpieczeństwo Danych",
+        "content": [
+          {
+            "text": "Wdrażamy odpowiednie środki bezpieczeństwa, aby chronić Twoje dane osobowe przed nieuprawnionym dostępem, zmianą, ujawnieniem lub zniszczeniem. Jednak żadna metoda transmisji przez internet nie jest w 100% bezpieczna."
+          }
+        ]
+      },
+      {
+        "title": "Przechowywanie Danych",
+        "content": [
+          {
+            "text": "Twoje dane osobowe przechowujemy tylko tak długo, jak jest to konieczne do realizacji celów określonych w niniejszej polityce prywatności lub zgodnie z wymogami prawa. Zgłoszenia z formularza kontaktowego są zazwyczaj przechowywane przez okres do 2 lat w celach biznesowych."
+          }
+        ]
+      },
+      {
+        "title": "Twoje Prawa",
+        "content": [
+          {
+            "text": "Masz prawo do:",
+            "list": [
+              "Żądania dostępu do swoich danych osobowych",
+              "Żądania sprostowania nieprawidłowych danych",
+              "Żądania usunięcia swoich danych osobowych",
+              "Wycofania zgody na przetwarzanie danych"
+            ],
+            "footer": "Aby skorzystać z tych praw, prosimy o kontakt przy użyciu informacji podanych poniżej."
+          }
+        ]
+      },
+      {
+        "title": "Linki Zewnętrzne",
+        "content": [
+          {
+            "text": "Nasza strona internetowa może zawierać linki do stron internetowych osób trzecich. Nie ponosimy odpowiedzialności za praktyki dotyczące prywatności ani treść tych zewnętrznych stron. Zachęcamy do zapoznania się z polityką prywatności każdej odwiedzanej witryny osób trzecich."
+          }
+        ]
+      },
+      {
+        "title": "Prywatność Dzieci",
+        "content": [
+          {
+            "text": "Nasze usługi nie są skierowane do dzieci poniżej 13 roku życia. Nie gromadzimy świadomie danych osobowych od dzieci poniżej 13 roku życia. Jeśli dowiemy się, że zgromadziliśmy takie informacje, podejmiemy kroki w celu ich niezwłocznego usunięcia."
+          }
+        ]
+      },
+      {
+        "title": "Zmiany w Niniejszej Polityce Prywatności",
+        "content": [
+          {
+            "text": "Od czasu do czasu możemy aktualizować naszą Politykę Prywatności. O wszelkich istotnych zmianach powiadomimy Cię, publikując nową Politykę Prywatności na tej stronie i aktualizując datę „Ostatniej aktualizacji”."
+          }
+        ]
+      },
+      {
+        "title": "Kontakt z Nami",
+        "content": [
+          {
+            "text": "Jeśli masz jakiekolwiek pytania dotyczące niniejszej Polityki Prywatności lub naszych praktyk dotyczących danych, skontaktuj się z nami poprzez e-mail: {email}"
+          }
+        ]
+      }
+    ]
   },
   "trailDescription": {
     "title": "O Szlaku",

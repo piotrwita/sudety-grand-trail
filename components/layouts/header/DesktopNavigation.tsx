@@ -40,6 +40,9 @@ export const DesktopNavigation = () => {
           underlineLeft.set(activeTab.offsetLeft);
           underlineWidth.set(activeTab.offsetWidth);
         }
+      } else {
+        // Reset underline if no navigation item is active
+        underlineWidth.set(0);
       }
     };
 
@@ -104,7 +107,7 @@ export const DesktopNavigation = () => {
       </ul>
 
       <SocialLinkList className="flex gap-3 border-l border-forest-600 pl-6" />
-      
+
       <div className="border-l border-forest-600 pl-6">
         <LanguageSwitcher />
       </div>
