@@ -305,7 +305,7 @@
       "typeRequired": "Wybierz typ przejścia",
       "startDateRequired": "Data rozpoczęcia jest wymagana",
       "endDateRequired": "Data zakończenia jest wymagana",
-      "endDateAfterStart": "Data zakończenia musi być późniejsza lub równa dacie rozpoczęcia",
+      "endDateAfterStart": "Data rozpoczęcia musi być wcześniejsza niż data zakończenia",
       "descriptionMax": "Maksymalnie {max} znaków",
       "photoRequired": "Zdjęcie profilowe jest wymagane",
       "photoFormat": "Akceptowane formaty: JPG, PNG, WebP",

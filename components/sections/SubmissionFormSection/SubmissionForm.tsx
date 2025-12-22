@@ -239,7 +239,7 @@ export const SubmissionForm = () => {
     if (startDate && endDate) {
       const start = new Date(startDate);
       const end = new Date(endDate);
-      const diffTime = Math.abs(end.getTime() - start.getTime());
+      const diffTime = end.getTime() - start.getTime();
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       return diffDays;
     }
@@ -488,14 +488,34 @@ export const SubmissionForm = () => {
                 <label className="mb-1.5 block text-sm font-semibold text-forest-700">
                   {t('fields.duration')}
                 </label>
-                <div className="flex h-[42px] items-center justify-center rounded-lg border border-forest-200 bg-gradient-to-r from-forest-50 to-forest-100/50">
-                  <span className="font-display text-xl font-bold text-forest-700">
-                    {calculateDays()}
-                  </span>
-                  <span className="ml-1.5 text-sm font-medium text-forest-600">
-                    {t('fields.days')}
-                  </span>
-                </div>
+                {(() => {
+                  const days = calculateDays();
+                  const isNegative = days < 0;
+                  return (
+                    <div
+                      className={`flex h-[42px] items-center justify-center rounded-lg border ${
+                        isNegative
+                          ? 'border-red-300 bg-gradient-to-r from-red-50 to-red-100/50'
+                          : 'border-forest-200 bg-gradient-to-r from-forest-50 to-forest-100/50'
+                      }`}
+                    >
+                      <span
+                        className={`font-display text-xl font-bold ${
+                          isNegative ? 'text-red-600' : 'text-forest-700'
+                        }`}
+                      >
+                        {days}
+                      </span>
+                      <span
+                        className={`ml-1.5 text-sm font-medium ${
+                          isNegative ? 'text-red-600' : 'text-forest-600'
+                        }`}
+                      >
+                        {t('fields.days')}
+                      </span>
+                    </div>
+                  );
+                })()}
               </div>
             </div>
           </div>

@@ -76,7 +76,7 @@ const baseDateRangeRefine = <T extends z.ZodObject<any>>(schema: T) =>
     },
     {
       message:
-        'Data zakończenia musi być późniejsza lub równa dacie rozpoczęcia',
+        'Data rozpoczęcia musi być wcześniejsza niż data zakończenia',
       path: ['endDate'],
     }
   ) as T;

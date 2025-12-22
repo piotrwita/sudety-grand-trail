@@ -305,7 +305,7 @@
       "typeRequired": "Select crossing type",
       "startDateRequired": "Start date is required",
       "endDateRequired": "End date is required",
-      "endDateAfterStart": "End date must be later than or equal to start date",
+      "endDateAfterStart": "Start date must be earlier than end date",
       "descriptionMax": "Maximum {max} characters",
       "photoRequired": "Profile photo is required",
       "photoFormat": "Accepted formats: JPG, PNG, WebP",
