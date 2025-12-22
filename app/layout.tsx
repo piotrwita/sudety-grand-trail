@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { cookies } from 'next/headers';
 import { inter, oswald, montserratAlternates } from '@/lib/fonts';
 import { SiteHeader } from '@/components/layouts/header';
 import { Footer } from '@/components/layouts/Footer';
@@ -12,6 +11,9 @@ import type { Locale } from '@/lib/i18n-utils';
 
 import './globals.css';
 import Link from 'next/link';
+
+// Force static rendering for all pages
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: {
@@ -36,14 +38,10 @@ export const metadata: Metadata = {
   icons: siteMetadata.icons,
 };
 
-export default async function RootLayout({ children }: React.PropsWithChildren) {
-  // Read language preference from cookies on the server
-  const cookieStore = await cookies();
-  const languageCookie = cookieStore.get('sudety-grand-trail-language');
-  const initialLocale: Locale = 
-    languageCookie?.value === 'pl' || languageCookie?.value === 'en' 
-      ? languageCookie.value 
-      : 'pl';
+export default function RootLayout({ children }: React.PropsWithChildren) {
+  // Use default locale 'pl' for static rendering
+  // LanguageProviderWrapper will read cookies on client side
+  const initialLocale: Locale = 'pl';
 
   return (
     <html

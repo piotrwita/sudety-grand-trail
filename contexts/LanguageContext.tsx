@@ -26,9 +26,28 @@ interface LanguageProviderProps {
   initialLocale: Locale;
 }
 
+// Helper function to read cookie on client side
+function getCookie(name: string): string | null {
+  if (typeof document === 'undefined') return null;
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(';').shift() || null;
+  return null;
+}
+
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, initialLocale }) => {
-  // Use initialLocale from server (from cookies) to avoid hydration mismatch
+  // Use initialLocale from server to avoid hydration mismatch
   const [locale, setLocaleState] = useState<Locale>(initialLocale);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Read cookie on client side after mount
+  useEffect(() => {
+    setIsMounted(true);
+    const cookieValue = getCookie(LANGUAGE_COOKIE_KEY);
+    if (cookieValue === 'pl' || cookieValue === 'en') {
+      setLocaleState(cookieValue);
+    }
+  }, []);
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);
@@ -41,6 +60,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, in
 
   // Sync with localStorage changes (e.g., from other tabs)
   useEffect(() => {
+    if (!isMounted) return;
+    
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === LANGUAGE_STORAGE_KEY && e.newValue) {
         if (e.newValue === 'pl' || e.newValue === 'en') {
@@ -52,7 +73,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, in
 
     window.addEventListener('storage', handleStorageChange);
     return () => window.removeEventListener('storage', handleStorageChange);
-  }, []);
+  }, [isMounted]);
 
   return (
     <LanguageContext.Provider value={{ locale, setLocale }}>
