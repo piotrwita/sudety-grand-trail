@@ -21,3 +21,5 @@ export const MousePointerClickIcon = (props: SVGProps<SVGSVGElement>) => (
     <path d="m3.328 9.328.02-.022" />
   </svg>
 );
+
+

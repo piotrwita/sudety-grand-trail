@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { useNavigation } from '@/lib/get-navigation';
 import { SocialLinkList } from '../SocialLinkList';
@@ -81,7 +80,7 @@ export const DesktopNavigation = () => {
               }}
             >
               <Link
-                href={item.href}
+                href={item.href as any}
                 className={cn(
                   'flex items-center gap-2 font-medium transition-colors duration-200',
                   isActive

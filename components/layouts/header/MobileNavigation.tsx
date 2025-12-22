@@ -1,7 +1,6 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigation } from '@/lib/get-navigation';
 import { SocialLinkList } from '../SocialLinkList';
@@ -10,14 +9,14 @@ import { HamburgerIcon } from '@/components/icons';
 import { useState, useCallback, memo } from 'react';
 
 // Memoized menu item component to prevent unnecessary re-renders
-const MenuItem = memo(({ 
-  item, 
-  isActive, 
-  index, 
-  onClose 
-}: { 
-  item: { href: string; label: string; isLive?: boolean }; 
-  isActive: boolean; 
+const MenuItem = memo(({
+  item,
+  isActive,
+  index,
+  onClose
+}: {
+  item: { href: string; label: string; isLive?: boolean };
+  isActive: boolean;
   index: number;
   onClose: () => void;
 }) => {
@@ -35,7 +34,7 @@ const MenuItem = memo(({
       style={{ willChange: 'opacity, transform' }}
     >
       <Link
-        href={item.href}
+        href={item.href as any}
         onClick={onClose}
         className={`group relative flex w-full items-center justify-between gap-3 overflow-hidden rounded-xl border px-8 py-5 font-medium shadow-lg transition-all duration-200 active:scale-[0.97] ${
           isActive

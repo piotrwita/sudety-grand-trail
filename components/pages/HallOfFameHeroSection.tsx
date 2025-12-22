@@ -5,7 +5,6 @@ import { VintageMountainsBackground } from '@/components/VintageMountainsBackgro
 import { Section } from '@/components/sections';
 import { LogoImage } from '@/components/LogoImage';
 import { ScrollIndicator } from '@/components/ScrollIndicator';
-import Link from 'next/link';
 import { sectionIds } from '@/config/section-ids';
 import { getSectionHash } from '@/lib/section-navigation';
 import { TrophyIcon } from '@/components/icons';
@@ -93,20 +92,20 @@ export const HallOfFameHeroSection = () => {
             delay={0.8}
             className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 md:gap-6"
           >
-            <Link
+            <a
               href={getSectionHash(sectionIds.submission)}
               className="theme-btn-base theme-halloffame-btn-primary w-full px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
               aria-label={t('submit')}
             >
               {t('submit')}
-            </Link>
-            <Link
+            </a>
+            <a
               href={getSectionHash(sectionIds.hallOfFame)}
               className="theme-btn-base theme-halloffame-btn-secondary w-full border-2 px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
               aria-label={t('view')}
             >
               {t('view')}
-            </Link>
+            </a>
           </FadeIn>
         </FadeIn>
       </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { LogoImage } from '../LogoImage';
 import { siteConfig } from '@/config/site';
 import { siteRoutes } from '@/config/site-routes';
@@ -143,7 +143,7 @@ const FooterLink = ({
   }
 
   return (
-    <Link href={href} className={linkClass}>
+    <Link href={href as any} className={linkClass}>
       {content}
     </Link>
   );

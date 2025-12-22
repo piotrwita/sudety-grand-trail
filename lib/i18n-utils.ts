@@ -1,7 +1,6 @@
 // Helper utilities for i18n
-import { useLanguage } from '@/contexts/LanguageContext';
-import plMessages from '@/messages/pl.json';
-import enMessages from '@/messages/en.json';
+// This file wraps next-intl's hooks to provide a consistent API across the app
+import { useTranslations as useNextIntlTranslations, useLocale as useNextIntlLocale } from 'next-intl';
 
 export type Locale = 'pl' | 'en';
 
@@ -9,11 +8,16 @@ export const defaultLocale: Locale = 'pl';
 
 export const locales: Locale[] = ['pl', 'en'];
 
-type Messages = typeof plMessages;
+// Re-export useLocale from next-intl
+export const useLocale = useNextIntlLocale;
 
-// Helper function to get nested translation value
-function getNestedValue(obj: any, path: string): any {
-  return path.split('.').reduce((current, key) => current?.[key], obj) || path;
+// Helper function to get nested translation value from next-intl's t function
+function getNestedValue(t: (key: string) => any, path: string): any {
+  try {
+    return t(path);
+  } catch {
+    return path;
+  }
 }
 
 // Helper function to replace placeholders in translation strings
@@ -26,34 +30,36 @@ function replacePlaceholders(text: string, params?: Record<string, string | numb
   return result;
 }
 
-// Hook to get translations
+// Hook to get translations that wraps next-intl's useTranslations
+// Provides backwards compatibility with the previous API
 export function useTranslations(namespace?: string) {
-  const { locale } = useLanguage();
-  
-  const messages = locale === 'en' ? enMessages : plMessages;
-  
+  const locale = useNextIntlLocale() as Locale;
+  const nextIntlT = useNextIntlTranslations(namespace);
+
   const t = (key: string, params?: Record<string, string | number>): string => {
-    const fullKey = namespace ? `${namespace}.${key}` : key;
-    const translation = getNestedValue(messages, fullKey);
-    if (Array.isArray(translation)) {
-      // If it's an array, return first element as string (fallback)
-      return String(translation[0] || '');
+    try {
+      const translation = nextIntlT(key, params);
+      if (typeof translation === 'string') {
+        return translation;
+      }
+      return String(translation);
+    } catch {
+      return key;
     }
-    if (typeof translation === 'string') {
-      return replacePlaceholders(translation, params);
-    }
-    return String(translation);
   };
-  
+
   const tArray = (key: string): string[] => {
-    const fullKey = namespace ? `${namespace}.${key}` : key;
-    const translation = getNestedValue(messages, fullKey);
-    if (Array.isArray(translation)) {
-      return translation;
+    try {
+      const translation = nextIntlT.raw(key);
+      if (Array.isArray(translation)) {
+        return translation;
+      }
+      return [];
+    } catch {
+      return [];
     }
-    return [];
   };
-  
+
   return { t, tArray, locale };
 }
 
