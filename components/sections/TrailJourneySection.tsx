@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { trailJournalData, type JournalDay } from '@/data/trail-journal';
@@ -145,9 +145,14 @@ interface DayAccordionProps {
 const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
   const { t } = useTranslations('trailJourney');
   
-  // Get translated title and content from JSON, fallback to original if translation not available
+  // Get translated title - always needed for header
   const translatedTitle = t(`days.${day.day}.title`) || day.title;
-  const translatedContent = t(`days.${day.day}.content`) || day.content;
+  
+  // Lazy load content only when opened - prevents calling t() for closed accordions
+  const translatedContent = useMemo(() => {
+    if (!isOpen) return '';
+    return t(`days.${day.day}.content`) || day.content;
+  }, [isOpen, day.day, t]);
   
   return (
     <motion.div
@@ -192,9 +197,9 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
         <ChevronIcon isOpen={isOpen} />
       </button>
 
-      {/* Content - Expandable */}
+      {/* Content - Expandable - Only rendered when open for lazy loading */}
       <AnimatePresence initial={false}>
-        {isOpen && (
+        {isOpen && translatedContent && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
