@@ -692,7 +692,7 @@ export const SubmissionForm = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`theme-btn-base theme-halloffame-btn-primary order-1 w-full px-8 py-3 text-sm sm:order-2 sm:w-auto ${
+                className={`theme-btn-base theme-halloffame-btn-primary order-1 w-auto px-8 py-3 text-sm sm:order-2 ${
                   isSubmitting ? 'cursor-not-allowed opacity-50' : ''
                 }`}
               >

@@ -6,6 +6,9 @@ import { DocumentIcon } from '@/components/icons';
 import { SubmissionForm } from './SubmissionForm';
 import { sectionIds } from '@/config/section-ids';
 import { useTranslations } from '@/lib/i18n-utils';
+import Link from 'next/link';
+import { getSectionUrl } from '@/lib/section-navigation';
+import { siteRoutes } from '@/config/site-routes';
 
 export const SubmissionFormSection = () => {
   const { t } = useTranslations('submissionFormSection');
@@ -31,8 +34,13 @@ export const SubmissionFormSection = () => {
           className="mb-16 text-center"
         >
           <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-cream/90">
-            {t('description')} <span className="bg-gradient-to-r from-gold-700 via-gold-600 to-gold-800 bg-clip-text text-transparent font-bold">{t('descriptionHighlight')}</span>{t('descriptionEnd')}{' '}
-            <span className="bg-gradient-to-r from-gold-700 via-gold-600 to-gold-800 bg-clip-text text-transparent font-bold">{t('hallOfFame')}</span>{t('descriptionEnd2')}
+            {t('description')} <span className="font-bold uppercase text-cream">{t('descriptionHighlight')}</span>{t('descriptionEnd')}{' '}
+            <Link
+              href={getSectionUrl(siteRoutes.hallOfFame, sectionIds.hallOfFame)}
+              className="font-bold text-cream underline decoration-2 underline-offset-2 transition-colors hover:text-cream"
+            >
+              {t('hallOfFame')}
+            </Link>{t('descriptionEnd2')}
           </p>
         </FadeIn>
 

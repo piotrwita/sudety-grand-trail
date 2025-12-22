@@ -203,7 +203,7 @@ const BenefitsCard = () => {
         <div className="mt-8 border-t border-forest-200 pt-8 text-center">
           <Link
             href={getSectionUrl(siteRoutes.live, sectionIds.trackerForm)}
-            className="theme-btn-base theme-halloffame-btn-primary flex w-full items-center justify-center px-4 py-3 text-sm sm:px-8 sm:py-4 sm:text-base md:text-lg"
+            className="theme-btn-base theme-halloffame-btn-primary inline-flex items-center justify-center px-4 py-3 text-sm sm:px-8 sm:py-4 sm:text-base md:text-lg"
           >
             {t('benefitsCard.button')}
           </Link>
@@ -298,11 +298,11 @@ export const PreTrailRegistration = () => {
         >
           <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-mountain-600">
             {t('callToAction.text')}{' '}
-            <span className="bg-gradient-to-r from-gold-700 via-gold-600 to-gold-800 bg-clip-text text-transparent font-bold">
+            <span className="font-bold text-mountain-700">
               {t('callToAction.highlight')}
             </span>
             {t('callToAction.textMiddle')}{' '}
-            <span className="bg-gradient-to-r from-gold-700 via-gold-600 to-gold-800 bg-clip-text text-transparent font-bold">
+            <span className="font-bold text-mountain-700">
               {t('callToAction.highlight2')}
             </span>
             {t('callToAction.textEnd')}
