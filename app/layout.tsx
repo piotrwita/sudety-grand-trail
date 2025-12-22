@@ -6,6 +6,7 @@ import ScrollProgressBar from '@/components/ScrollProgressBar';
 import { ScrollToTopButton } from '@/components/ScrollToTopButton';
 import { siteMetadata } from '@/config/metadata';
 import { LanguageProviderWrapper } from '@/components/providers/LanguageProviderWrapper';
+import { Analytics } from '@vercel/analytics/next';
 
 import './globals.css';
 import Link from 'next/link';
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           </main>
           <Footer />
         </LanguageProviderWrapper>
+        <Analytics />
       </body>
     </html>
   );
