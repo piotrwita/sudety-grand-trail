@@ -40,17 +40,17 @@ export const BadgeSection = () => {
           {/* Informacja o możliwości zdobycia */}
           <FadeIn
             {...FADE_IN_PROPS}
-            className="relative overflow-hidden rounded-2xl border-2 border-gold-400/40 bg-gradient-to-br from-forest-800/95 via-forest-800/75 to-earth-800/95 p-6 bg-forest-800/98 shadow-[0_0_50px_rgba(251,191,36,0.3)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14 supports-[backdrop-filter]:backdrop-blur-sm"
+            className="relative overflow-hidden rounded-2xl border-2 border-gold-400/25 bg-gradient-to-br from-forest-800/95 via-forest-800/75 to-earth-800/95 p-6 bg-forest-800/98 shadow-[0_0_30px_rgba(251,191,36,0.2)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14 supports-[backdrop-filter]:backdrop-blur-sm"
           >
-            {/* Enhanced decorative gold glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gold-400/8 via-transparent to-gold-500/8 rounded-2xl" />
-            <div className="absolute -right-16 top-0 h-48 w-48 rounded-full bg-gold-400/15 blur-3xl animate-pulse" />
-            <div className="absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-gold-500/12 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+            {/* Stonowany decorative glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-gold-400/4 via-transparent to-gold-500/4 rounded-2xl" />
+            <div className="absolute -right-16 top-0 h-48 w-48 rounded-full bg-gold-400/6 blur-3xl animate-pulse" />
+            <div className="absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-gold-500/5 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
             
             <div className="relative space-y-5 text-base leading-relaxed text-cream/95 sm:space-y-6 sm:text-lg md:space-y-8">
               <div className="space-y-3 sm:space-y-4">
-                <p className="text-2xl font-black text-gold-300 sm:text-3xl md:text-4xl">
-                  <span className="drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
+                <p className="text-2xl font-black text-gold-200 sm:text-3xl md:text-4xl">
+                  <span className="drop-shadow-[0_0_10px_rgba(251,191,36,0.4)]">
                     {t('getBadge')}
                   </span>
                 </p>
@@ -59,11 +59,11 @@ export const BadgeSection = () => {
                 </p>
                 <p className="text-lg leading-relaxed">
                   {t('p1')}{' '}
-                  <span className="font-bold text-gold-300">
+                  <span className="font-bold text-gold-200">
                     {t('p1Highlight')}
                   </span>{' '}
                   {t('p1End')}{' '}
-                  <span className="text-xl font-black text-gold-300 sm:text-2xl drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
+                  <span className="text-xl font-black text-gold-200 sm:text-2xl drop-shadow-[0_0_10px_rgba(251,191,36,0.4)]">
                     SUDETY GRAND TRAIL
                   </span>
                   .
@@ -75,49 +75,56 @@ export const BadgeSection = () => {
                   </span>
                   {t('p2End')}
                 </p>
-                <div className="rounded-lg border-l-4 border-gold-400/60 bg-gold-400/10 p-4 sm:p-6">
-                  <p className="font-bold text-gold-200 sm:text-lg">
-                    {t('confirmation')}
-                  </p>
-                  <ul className="mt-2 space-y-2 text-cream/90">
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1 text-gold-400">✓</span>
-                      <span>
-                        {t('confirmations.0')}{' '}
-                        <span className="font-bold text-gold-300">
-                          {t('confirmations.1')}
+                <div className="relative overflow-hidden rounded-lg border-l-4 border-gold-400/50 bg-gradient-to-br from-gold-400/10 via-gold-500/8 to-gold-400/12 p-4 sm:p-6">
+                  {/* Subtelne efekty tła */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-gold-400/5 via-transparent to-gold-500/5" />
+                  <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-gold-400/8 blur-2xl" />
+                  <div className="absolute bottom-0 left-0 h-24 w-24 rounded-full bg-gold-500/6 blur-xl" />
+                  
+                  <div className="relative">
+                    <p className="font-bold text-gold-200 sm:text-lg">
+                      {t('confirmation')}
+                    </p>
+                    <ul className="mt-2 space-y-2 text-cream/90">
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1 text-gold-400">✓</span>
+                        <span>
+                          {t('confirmations.0')}{' '}
+                          <span className="font-bold text-gold-200">
+                            {t('confirmations.1')}
+                          </span>
                         </span>
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1 text-gold-400">✓</span>
-                      <span>
-                        {t('confirmations.2')}{' '}
-                        <span className="font-bold text-gold-300">
-                          {t('confirmations.3')}
-                        </span>{' '}
-                        {t('confirmations.4')}
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1 text-gold-400">✓</span>
-                      <span>
-                        {t('confirmations.5')}{' '}
-                        <span className="font-bold text-gold-300">
-                          {t('confirmations.6')}
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1 text-gold-400">✓</span>
+                        <span>
+                          {t('confirmations.2')}{' '}
+                          <span className="font-bold text-gold-200">
+                            {t('confirmations.3')}
+                          </span>{' '}
+                          {t('confirmations.4')}
                         </span>
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1 text-gold-400">✓</span>
-                      <span>
-                        {t('confirmations.7')}{' '}
-                        <span className="font-bold text-gold-300">
-                          {t('confirmations.8')}
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1 text-gold-400">✓</span>
+                        <span>
+                          {t('confirmations.5')}{' '}
+                          <span className="font-bold text-gold-200">
+                            {t('confirmations.6')}
+                          </span>
                         </span>
-                      </span>
-                    </li>
-                  </ul>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1 text-gold-400">✓</span>
+                        <span>
+                          {t('confirmations.7')}{' '}
+                          <span className="font-bold text-gold-200">
+                            {t('confirmations.8')}
+                          </span>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -127,16 +134,16 @@ export const BadgeSection = () => {
           <FadeIn
             {...FADE_IN_PROPS}
             delay={0.2}
-            className="relative overflow-hidden rounded-2xl border-2 border-gold-400/40 bg-gradient-to-br from-accent/25 via-accent/20 to-earth-700/30 p-6 bg-accent/30 shadow-[0_0_50px_rgba(251,191,36,0.3)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14 supports-[backdrop-filter]:backdrop-blur-sm"
+            className="relative overflow-hidden rounded-2xl border-2 border-gold-400/25 bg-gradient-to-br from-accent/25 via-accent/20 to-earth-700/30 p-6 bg-accent/30 shadow-[0_0_30px_rgba(251,191,36,0.2)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14 supports-[backdrop-filter]:backdrop-blur-sm"
           >
-            {/* Enhanced gold accent glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gold-400/8 via-transparent to-gold-500/8 rounded-2xl" />
-            <div className="absolute left-0 top-1/4 h-24 w-24 rounded-full bg-gold-400/15 blur-2xl" />
-            <div className="absolute right-0 bottom-1/4 h-32 w-32 rounded-full bg-gold-500/15 blur-2xl" />
+            {/* Stonowany gold accent glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-gold-400/4 via-transparent to-gold-500/4 rounded-2xl" />
+            <div className="absolute left-0 top-1/4 h-24 w-24 rounded-full bg-gold-400/6 blur-2xl" />
+            <div className="absolute right-0 bottom-1/4 h-32 w-32 rounded-full bg-gold-500/6 blur-2xl" />
             
             <div className="relative space-y-4 text-base leading-relaxed text-cream/95 sm:space-y-6 sm:text-lg">
               <div className="mb-4">
-                <p className="text-xl font-black text-gold-300 sm:text-2xl">
+                <p className="text-xl font-black text-gold-200 sm:text-2xl">
                   {t('regulations.title')}
                 </p>
                 <p className="mt-2 text-sm text-cream/70 sm:text-base">
@@ -148,40 +155,40 @@ export const BadgeSection = () => {
                   {t('regulations.items.0')}{' '}
                   <Link
                     href={getSectionUrl(siteRoutes.live, sectionIds.trackerForm)}
-                    className="font-bold text-gold-300 underline decoration-gold-400/50 underline-offset-2 transition-colors hover:text-gold-200 hover:decoration-gold-300"
+                    className="font-bold text-gold-200 underline decoration-gold-400/50 underline-offset-2 transition-colors hover:text-gold-100 hover:decoration-gold-400/70"
                   >
                     {t('regulations.items.1')}
                   </Link>{' '}
                   {t('regulations.items.2')}{' '}
-                  <span className="font-bold text-gold-300">
+                  <span className="font-bold text-gold-200">
                     {t('regulations.items.3')}
                   </span>{' '}
                   {t('regulations.items.4')}
                 </RegulationItem>
                 <RegulationItem number={2}>
                   {t('regulations.items.5')}{' '}
-                  <span className="font-bold text-gold-300">
+                  <span className="font-bold text-gold-200">
                     {t('regulations.items.6')}
                   </span>{' '}
                   {t('regulations.items.7')}
                 </RegulationItem>
                 <RegulationItem number={3}>
                   {t('regulations.items.8')}{' '}
-                  <span className="font-bold text-gold-300">
+                  <span className="font-bold text-gold-200">
                     {t('regulations.items.9')}
                   </span>{' '}
                   {t('regulations.items.10')}
                 </RegulationItem>
                 <RegulationItem number={4}>
                   {t('regulations.items.11')}{' '}
-                  <span className="font-bold text-gold-300">
+                  <span className="font-bold text-gold-200">
                     {t('regulations.items.12')}
                   </span>
                   {t('regulations.items.13')}
                 </RegulationItem>
                 <RegulationItem number={5}>
                   {t('regulations.items.14')}{' '}
-                  <span className="font-bold text-gold-300">
+                  <span className="font-bold text-gold-200">
                     {t('regulations.items.15')}
                   </span>
                   {t('regulations.items.16')}
@@ -190,7 +197,7 @@ export const BadgeSection = () => {
                   {t('regulations.items.17')}{' '}
                   <Link
                     href={getSectionUrl(siteRoutes.hallOfFame, sectionIds.submission)}
-                    className="font-bold text-gold-300 underline decoration-gold-400/50 underline-offset-2 transition-colors hover:text-gold-200 hover:decoration-gold-300"
+                    className="font-bold text-gold-200 underline decoration-gold-400/50 underline-offset-2 transition-colors hover:text-gold-100 hover:decoration-gold-400/70"
                   >
                     {t('regulations.items.18')}
                   </Link>
@@ -204,17 +211,17 @@ export const BadgeSection = () => {
           <FadeIn
             {...FADE_IN_PROPS}
             delay={0.35}
-            className="relative overflow-hidden rounded-2xl border-2 border-gold-400/50 bg-gradient-to-br from-gold-400/25 via-gold-500/20 to-gold-600/25 p-6 bg-gold-400/30 shadow-[0_0_80px_rgba(251,191,36,0.5)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14 supports-[backdrop-filter]:backdrop-blur-sm"
+            className="relative overflow-hidden rounded-2xl border-2 border-gold-400/35 bg-gradient-to-br from-gold-400/15 via-gold-500/12 to-gold-600/15 p-6 bg-gold-400/20 shadow-[0_0_50px_rgba(251,191,36,0.3)] sm:rounded-3xl sm:p-8 md:p-10 lg:p-14 supports-[backdrop-filter]:backdrop-blur-sm"
           >
-            {/* Enhanced epic gold glow effects */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gold-300/15 via-transparent to-gold-500/15 rounded-2xl" />
-            <div className="absolute left-1/4 top-0 h-40 w-40 rounded-full bg-gold-400/25 blur-3xl animate-pulse" />
-            <div className="absolute right-1/4 bottom-0 h-48 w-48 rounded-full bg-gold-500/25 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-            <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-300/20 blur-2xl" />
+            {/* Stonowane gold glow effects */}
+            <div className="absolute inset-0 bg-gradient-to-br from-gold-300/8 via-transparent to-gold-500/8 rounded-2xl" />
+            <div className="absolute left-1/4 top-0 h-40 w-40 rounded-full bg-gold-400/12 blur-3xl animate-pulse" />
+            <div className="absolute right-1/4 bottom-0 h-48 w-48 rounded-full bg-gold-500/12 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+            <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold-300/10 blur-2xl" />
             
             <div className="relative space-y-5 text-center sm:space-y-6 md:space-y-8">
               <div className="space-y-2">
-                <p className="text-xl font-black text-gold-300 sm:text-2xl drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
+                <p className="text-xl font-black text-gold-200 sm:text-2xl drop-shadow-[0_0_10px_rgba(251,191,36,0.4)]">
                   {t('cta.title')}
                 </p>
                 <p className="text-lg font-bold text-cream/95 sm:text-xl">
@@ -277,10 +284,10 @@ const DecorativeBackgroundLight = () => (
 
 const DecorativeBackground = () => (
   <>
-    {/* Enhanced decorative elements with gold accents */}
-    <div className="absolute right-4 top-4 h-40 w-40 rounded-full bg-gold-400/8 blur-2xl sm:right-8 sm:top-8 sm:h-56 sm:w-56 md:right-12 md:top-12 md:h-64 md:w-64 lg:right-20 lg:top-20 lg:h-80 lg:w-80 animate-pulse" />
-    <div className="absolute bottom-4 left-4 h-32 w-32 rounded-full bg-gold-500/6 blur-2xl sm:bottom-8 sm:left-8 sm:h-48 sm:w-48 md:bottom-12 md:left-12 md:h-56 md:w-56 lg:bottom-20 lg:left-20 lg:h-72 lg:w-72 animate-pulse" style={{ animationDelay: '1.5s' }} />
-    <div className="absolute left-1/2 top-1/3 h-48 w-48 -translate-x-1/2 rounded-full bg-gold-300/5 blur-3xl md:h-64 md:w-64" />
+    {/* Stonowane decorative elements */}
+    <div className="absolute right-4 top-4 h-40 w-40 rounded-full bg-gold-400/4 blur-2xl sm:right-8 sm:top-8 sm:h-56 sm:w-56 md:right-12 md:top-12 md:h-64 md:w-64 lg:right-20 lg:top-20 lg:h-80 lg:w-80 animate-pulse" />
+    <div className="absolute bottom-4 left-4 h-32 w-32 rounded-full bg-gold-500/3 blur-2xl sm:bottom-8 sm:left-8 sm:h-48 sm:w-48 md:bottom-12 md:left-12 md:h-56 md:w-56 lg:bottom-20 lg:left-20 lg:h-72 lg:w-72 animate-pulse" style={{ animationDelay: '1.5s' }} />
+    <div className="absolute left-1/2 top-1/3 h-48 w-48 -translate-x-1/2 rounded-full bg-gold-300/3 blur-3xl md:h-64 md:w-64" />
     <div className="absolute right-1/3 bottom-1/4 h-36 w-36 rounded-full bg-accent/8 blur-xl md:h-48 md:w-48" />
   </>
 );
@@ -293,7 +300,7 @@ const RegulationItem = ({
   children: ReactNode;
 }) => (
   <li className="flex items-center gap-3 sm:gap-4">
-    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-400/30 via-gold-500/30 to-gold-600/30 font-black text-gold-300 ring-2 ring-gold-400/40 shadow-[0_0_15px_rgba(251,191,36,0.3)] sm:h-12 sm:w-12">
+    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-400/25 via-gold-500/25 to-gold-600/25 font-black text-gold-200 ring-2 ring-gold-400/40 shadow-[0_0_12px_rgba(251,191,36,0.3)] sm:h-12 sm:w-12">
       {number}
     </div>
     <div className="flex-1 text-cream/95">{children}</div>
@@ -315,8 +322,8 @@ const ActionButton = ({
     'flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-bold sm:w-auto sm:px-8 sm:py-3 sm:text-base md:px-10 md:py-4 md:text-lg w-full transition-all duration-300';
   const variantClasses =
     variant === 'primary'
-      ? 'bg-gradient-to-r from-gold-500 via-gold-600 to-gold-700 text-forest-900 hover:from-gold-400 hover:via-gold-500 hover:to-gold-600 shadow-[0_0_25px_rgba(251,191,36,0.5)] hover:shadow-[0_0_35px_rgba(251,191,36,0.7)] hover:scale-105'
-      : 'border-2 border-gold-400/80 bg-transparent text-gold-300 hover:bg-gold-400/20 hover:border-gold-300 shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(251,191,36,0.5)]';
+      ? 'bg-gradient-to-r from-gold-500 via-gold-600 to-gold-700 text-forest-900 hover:from-gold-400 hover:via-gold-500 hover:to-gold-600 shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:scale-105'
+      : 'border-2 border-gold-400/70 bg-transparent text-gold-200 hover:bg-gold-400/20 hover:border-gold-400/90 shadow-[0_0_15px_rgba(251,191,36,0.25)] hover:shadow-[0_0_25px_rgba(251,191,36,0.4)]';
 
   return (
     <Link
