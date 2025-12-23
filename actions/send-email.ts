@@ -22,10 +22,6 @@ export interface ActionResult {
   message: string;
 }
 
-// Re-export types for backward compatibility
-// Note: Constants cannot be re-exported from 'use server' files
-export type { EmailSubmissionData, EmailAttachment, TrackerRequestData };
-
 /* ============================================================================
    EMAIL CONFIGURATION
    ============================================================================ */
