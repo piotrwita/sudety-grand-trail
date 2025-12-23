@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { ReactNode } from 'react';
 import { FadeIn } from '@/components/motion';
 import { siteRoutes } from '@/config/site-routes';
@@ -154,7 +154,7 @@ export const BadgeSection = () => {
                 <RegulationItem number={1}>
                   {t('regulations.items.0')}{' '}
                   <Link
-                    href={getSectionUrl(siteRoutes.live, sectionIds.trackerForm)}
+                    href={{ pathname: siteRoutes.live as any, hash: sectionIds.trackerForm }}
                     className="font-bold text-gold-200 underline decoration-gold-400/50 underline-offset-2 transition-colors hover:text-gold-100 hover:decoration-gold-400/70"
                   >
                     {t('regulations.items.1')}
@@ -196,7 +196,7 @@ export const BadgeSection = () => {
                 <RegulationItem number={6}>
                   {t('regulations.items.17')}{' '}
                   <Link
-                    href={getSectionUrl(siteRoutes.hallOfFame, sectionIds.submission)}
+                    href={{ pathname: siteRoutes.hallOfFame as any, hash: sectionIds.submission }}
                     className="font-bold text-gold-200 underline decoration-gold-400/50 underline-offset-2 transition-colors hover:text-gold-100 hover:decoration-gold-400/70"
                   >
                     {t('regulations.items.18')}
@@ -233,7 +233,8 @@ export const BadgeSection = () => {
               </p>
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
                 <ActionButton
-                  href={getSectionUrl(siteRoutes.hallOfFame, sectionIds.submission)}
+                  href={siteRoutes.hallOfFame}
+                  hash={sectionIds.submission}
                   external={false}
                   variant="primary"
                 >
@@ -309,11 +310,13 @@ const RegulationItem = ({
 
 const ActionButton = ({
   href,
+  hash,
   external,
   children,
   variant = 'primary',
 }: {
   href: string;
+  hash?: string;
   external?: boolean;
   children: ReactNode;
   variant?: 'primary' | 'secondary';
@@ -325,11 +328,26 @@ const ActionButton = ({
       ? 'bg-gradient-to-r from-gold-500 via-gold-600 to-gold-700 text-forest-900 hover:from-gold-400 hover:via-gold-500 hover:to-gold-600 shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:scale-105'
       : 'border-2 border-gold-400/70 bg-transparent text-gold-200 hover:bg-gold-400/20 hover:border-gold-400/90 shadow-[0_0_15px_rgba(251,191,36,0.25)] hover:shadow-[0_0_25px_rgba(251,191,36,0.4)]';
 
+  if (external) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${baseClasses} ${variantClasses} rounded-xl`}
+      >
+        {children}
+      </a>
+    );
+  }
+
+  const linkHref = hash
+    ? { pathname: href as any, hash }
+    : (href as any);
+
   return (
     <Link
-      href={href}
-      target={external ? '_blank' : undefined}
-      rel={external ? 'noopener noreferrer' : undefined}
+      href={linkHref}
       className={`${baseClasses} ${variantClasses} rounded-xl`}
     >
       {children}

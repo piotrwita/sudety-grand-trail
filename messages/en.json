@@ -451,7 +451,10 @@
           {
             "text": "We do not use cookies to track your personal information or browsing behavior.",
             "subtitle": "Essential Cookies",
-            "list": ["Basic website functionality", "Security purposes"],
+            "list": [
+              "Basic website functionality",
+              "Security purposes"
+            ],
             "footer": "We do not use analytics cookies, advertising cookies, or any tracking technologies that collect personal data about your browsing habits."
           }
         ]
@@ -930,6 +933,51 @@
       "15": {
         "title": "End",
         "content": "When I entered the sleeping bag, I don't even remember when I fell asleep, I also don't know if I managed to position myself well, it was so quick.\n\nThe alarm that woke me today was set a bit later, at 3:45. This is because I have a slightly shorter distance to cover. Or rather I'd say that you can't walk any more - the trail has to end sometime. Moreover, I have a quite late train home, so I could afford this to make it on time.\n\nI slept so well that I could spend much more time here, but I know what consequences that would have, so I started packing. Packing the sleeping bag went especially reluctantly. A quarter past 4:00, I left Marcowa Pass.\n\nI start the walk with an ascent to the Włodarz summit, from which unfortunately there are no views. A shame, because I was there right during sunrise, which hid somewhere behind the trees. However, the entire orange-red color of the sky was breaking through between them.\n\nNext, I set my direction to the first goal. First, I descend to the town of Walim, to feel the morning freshness of the town there. When I had completely lost elevation, it's time to climb to the summit. I first approach Mała, to conquer Wielka Sowa a moment after 7:00.\n\nOn the mountain, you can already admire the renovated observation tower, which was out of use for several good years.\n\nSo I thought that today maybe I'll be able to use it, unfortunately it was closed and I couldn't get inside.\n\nI sat for a moment to catch my breath. I ate breakfast and was ready to set off towards the last peak on the trail.\n\nIt's incredible that today it will simply end like this. So many hours, enormous ascents, a mass of sacrifices just to stand in this place. To now be at the finish and appreciate the toil and path you walked to find yourself here.\n\nNow, to reach the Ślęża massif, I need to cover about thirty kilometers. First, I still need to descend from the current elevation, and then walking through villages, finally conquer the last artifact of this project.\n\nUnfortunately, my water is running out, and to the nearest village it's still a ways. I'll have to make do somehow.\n\nI can already see the Ślęża massif in the distance with the characteristic transmission tower on the summit. With each step, I'm getting closer to this place.\n\nI'm walking along flat terrain at noon. Around me are only fields and no trees. Heat is pouring from the sky, on which there's not a single cloud. Sometimes a light wind blows, which provides a bit of relief.\n\nIn the distance, I see Sudeten foothills that stretch all the way to Ślęża peak rising above them, which against their background seems colossal.\n\nSomewhere roughly in the middle of my route today, I reached the village of Mościenice. It so happened that this is the only store on the route that I'll pass today. I couldn't waste such an opportunity. However, I didn't have to buy anything for supplies. I only took those things that I planned to consume immediately in front of the store. These were standardly cottage cheese, bananas, and some roll, everything I finished off with a handful of nuts at the end. Full and energized, I continued on towards the ultimate goal.\n\nNow, unfortunately, another dozen or so kilometers of fields in full sun await me. This section is unbearable because of this. I feel so tired, as if my head hurts - this is definitely the effects of dehydration. I try to drink as much as I can, but in such conditions even this isn't enough.\n\nA plus is the abundance of cherry trees that occur here. I often pass some abundantly covered with fruit. I pick a few and while marching, snack on them one after another.\n\nFinally, I enter the forest. Finally, a bit of shade, instantly I feel relief, immediately I walk better.\n\nI reach Tąpadła Pass at 17:30. This is my official moment of starting the ascent to Ślęża.\n\nI have four hours left until the train and about ten kilometers of route.\n\nI feel that I need a moment of rest, so I stop here for a moment. My legs aren't carrying me as well as I'd like.\n\nFinally, I set off. At the beginning, I pass crowds of people who came to this area.\n\nHowever, turning after a moment onto an alternative trail, suddenly from the noise it became silence and peace - this is an extraordinary phenomenon.\n\nFrom this moment, I begin the final ascent. There won't be any more of them on this trail. This is the last one I have on the list.\n\nThis final ascent is quite demanding and will stay in memory longer. It leads me over rocks to the Olbrzymki viewpoint. Unfortunately, nothing is visible from this place now, because everything has been overgrown with trees. I need to climb even higher to see anything.\n\nExactly at 19:00, I finally climb this last peak and thus complete the full list of conquered peaks on this trail.\n\nThis is a quite specific observation tower with a ladder that strikes fear into the eyes of more than one tourist. I couldn't resist and went up to admire the views, which still against the background of the sun radiating above the horizon looked majestic. However, I realize that this was the last view on this expedition, and with sadness I start leaving this place.\n\nI have two hours left for the descent. However, the trail sign shows that it should take me an hour and a half. I'm very happy about this, because it means I'll definitely make it. Moreover, the sign with the inscription PKP Sobótka, i.e., the place where the trail ends, awakens no small emotions in me.\n\nI concluded that this trail is the pure definition of me. Every day that I planned, I realized scrupulously. This wasn't chance - pure consequence.\n\nDespite the difficulties of a given stage's fate, I knew what I had to do most importantly to fulfill the goal. There was no way out.\n\nEverything else was a result of variables over which I had no influence. You simply have to come to terms with this. You also have to be able to deal with such variability. And this is precisely what builds true character in a person - certainty that in every, even the worst situation, you're able to find yourself and come out of it unscathed. And there were already several such situations. Thanks to them, I'll certainly become a stronger person.\n\nA quarter before 21:00, I descend to Sobótka.\n\nHere I just need to pass through the city to get to the PKP train station, where my return train will arrive at the same time, and also where there's a dot marking the end of the trail.\n\nI reach it, ending another stage in my life. This was an incredible journey, a wonderful adventure, there will be time for summaries later."
+      }
+    }
+  },
+  "metadata": {
+    "site": {
+      "title": "Sudety Grand Trail",
+      "description": "Embark on an unforgettable journey through the most beautiful trails of the Sudetes. 900 km and 23 mountain ranges to conquer on the SGT route.",
+      "keywords": "sudetes, mountain trails, trekking, Crown of Sudetes, trail running, adventure, nature, mountains, hiking, ultramarathon, challenge"
+    },
+    "pages": {
+      "home": {
+        "title": "Sudety Grand Trail - Discover the Magic of Mountains",
+        "description": "Embark on an unforgettable journey through the most beautiful trails of the Sudetes. 900 km and 23 mountain ranges to conquer on the SGT route."
+      },
+      "trail": {
+        "title": "Trail - Sudety Grand Trail",
+        "description": "Explore the Sudety Grand Trail route: 900 km through 23 Sudetes ranges. Detailed map, trail description, and all the peaks of the Crown of Sudetes."
+      },
+      "peaks": {
+        "title": "Peaks - Sudety Grand Trail",
+        "description": "The Crown of Sudetes comprises 23 highest peaks in 23 mountain ranges. Learn the history, rules, and all peaks included in the Crown of Sudetes."
+      },
+      "live": {
+        "title": "Live Tracking - Follow the Expedition Live",
+        "description": "Follow the Sudety Grand Trail crossing live! Real-time GPS tracking, current position, traveled route, and statistics."
+      },
+      "hallOfFame": {
+        "title": "Hall of Fame - Sudety Grand Trail Conquerors",
+        "description": "Sudety Grand Trail Hall of Fame - meet the brave ones who conquered the full Crown of Sudetes. 900 km through 23 mountain ranges."
+      },
+      "badge": {
+        "title": "Official Badge - Sudety Grand Trail",
+        "description": "Earn the official Sudety Grand Trail badge! Recognition for all who completed the full 900 km crossing through 23 mountain ranges."
+      },
+      "about": {
+        "title": "About Me - Creator of Sudety Grand Trail",
+        "description": "Meet the person behind Sudety Grand Trail. The story of an ordinary guy from Łódź who decided to use his own legs to change the world for the better."
+      },
+      "privacyPolicy": {
+        "title": "Privacy Policy - Sudety Grand Trail",
+        "description": "Privacy Policy of Sudety Grand Trail website. Learn how we protect your data."
+      },
+      "termsOfService": {
+        "title": "Terms of Service - Sudety Grand Trail",
+        "description": "Terms of Service for Sudety Grand Trail website. Learn the rules for using our website."
       }
     }
   }
