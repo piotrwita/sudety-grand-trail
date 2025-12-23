@@ -769,7 +769,10 @@
     "german": "Niemiecki",
     "peak": "Szczyt",
     "peakGerman": "Szczyt (niem.)",
-    "countries": "Kraje"
+    "countries": "Kraje",
+    "imageCredits": {
+      "text": "Zdjęcia szczytów pochodzą z serwisu Mapy.cz i są autorstwa użytkowników tego serwisu."
+    }
   },
   "hallOfFameStats": {
     "title": "Statystyki Szlaku",

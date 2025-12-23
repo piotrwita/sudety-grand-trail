@@ -766,7 +766,10 @@
     "german": "German",
     "peak": "Peak",
     "peakGerman": "Peak (Ger.)",
-    "countries": "Countries"
+    "countries": "Countries",
+    "imageCredits": {
+      "text": "Peak images are sourced from Mapy.cz and are the work of users of that service."
+    }
   },
   "hallOfFameStats": {
     "title": "Trail Statistics",

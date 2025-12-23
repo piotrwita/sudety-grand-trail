@@ -2,6 +2,7 @@ import { Section } from '@/components/sections/Section';
 import { sudetenRanges } from './data';
 import { GridMountainCards } from './GridMountainCards';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
+import { ImageCredits } from './ImageCredits';
 
 export const SudetenCrownSection = () => {
   return (
@@ -9,6 +10,7 @@ export const SudetenCrownSection = () => {
       <VintageMountainsBackground className="opacity-10" />
       <div className="fluid-container min-h-screen relative z-10">
         <GridMountainCards ranges={sudetenRanges} />
+        <ImageCredits />
       </div>
     </Section>
   );
