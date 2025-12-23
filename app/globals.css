@@ -389,11 +389,13 @@
   }
 
   .theme-szczyty-text-gradient {
-    @apply inline-block bg-gradient-to-r from-cream-200 via-earth-200 to-cream-300 bg-clip-text text-transparent;
+    @apply inline bg-gradient-to-r from-cream-200 via-earth-200 to-cream-300 bg-clip-text text-transparent break-words;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     margin: 0;
     padding-right: 0.08em;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .theme-szczyty-btn-primary {

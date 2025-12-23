@@ -296,7 +296,10 @@ export const PreTrailRegistration = () => {
           inView={true}
           className="mb-16 text-center"
         >
-          <p className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-mountain-600">
+          <p 
+            className="text-fluid-lg mx-auto max-w-4xl font-medium leading-relaxed text-mountain-600 text-justify"
+            style={{ textAlignLast: 'center' }}
+          >
             {t('callToAction.text')}{' '}
             <span className="font-bold text-mountain-700">
               {t('callToAction.highlight')}

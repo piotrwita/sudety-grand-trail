@@ -65,7 +65,8 @@ export const LiveTrackingSection = () => {
             offset={30}
             direction="up"
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mx-auto max-w-5xl text-xl font-medium leading-relaxed text-mountain-600"
+            className="mx-auto max-w-5xl text-xl font-medium leading-relaxed text-mountain-600 text-justify"
+            style={{ textAlignLast: 'center' }}
           >
             {t('description')}{' '}
             <Link

@@ -66,7 +66,7 @@ export const TrailHeroSection = () => {
                 <span className="theme-trail-text-gradient-light">{t('description.part2')}</span>
                 {t('description.part3')}
               </p>
-              <p className="text-fluid-base lg:text-fluid-lg mx-auto max-w-4xl font-medium italic leading-relaxed text-cream/85">
+              <p className="text-fluid-base lg:text-fluid-lg mx-auto max-w-4xl font-medium italic leading-relaxed text-cream/85 break-words">
                 <span className="theme-szczyty-text-gradient font-bold">
                   {t('details.part1')}
                 </span>{' '}
@@ -76,7 +76,12 @@ export const TrailHeroSection = () => {
                 </span>{' '}
                 {t('details.part4')}{' '}
                 <span className="theme-szczyty-text-gradient font-bold">
-                  {t('details.part5')}
+                  {t('details.part5').split(' ').map((word, idx, arr) => (
+                    <span key={idx}>
+                      {word}
+                      {idx < arr.length - 1 && ' '}
+                    </span>
+                  ))}
                 </span>{' '}
                 {t('details.part6')}{' '}
                 <span className="theme-szczyty-text-gradient font-bold">

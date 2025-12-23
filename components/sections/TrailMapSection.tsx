@@ -36,7 +36,10 @@ export const TrailMapSection = () => {
           inView={true}
           className="mx-auto mb-8 max-w-5xl text-center"
         >
-          <p className="text-fluid-lg font-medium leading-relaxed text-mountain-600">
+          <p 
+            className="text-fluid-lg font-medium leading-relaxed text-mountain-600 text-justify"
+            style={{ textAlignLast: 'center' }}
+          >
             {t('description')}
           </p>
         </FadeIn>
