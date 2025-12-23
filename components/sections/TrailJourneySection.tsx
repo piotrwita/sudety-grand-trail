@@ -59,7 +59,7 @@ const renderContentWithImages = (
           <div className="relative aspect-[3/4] w-full">
             <Image
               src={images[imageIndex]}
-              alt={`${t('trailJourney.day')} ${dayNumber} - ${dayTitle} - ${t('trailJourney.photo')} ${imageIndex + 1}`}
+              alt={`${t('day')} ${dayNumber} - ${dayTitle} - ${t('photo')} ${imageIndex + 1}`}
               fill
               className="object-cover"
               sizes="320px"
@@ -162,10 +162,19 @@ const DayAccordion = ({ day, isOpen, onToggle }: DayAccordionProps) => {
     if (isOpen && !prevIsOpenRef.current && headerRef.current) {
       // Small delay to ensure animation starts but scroll happens before full expansion
       const timeoutId = setTimeout(() => {
-        headerRef.current?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
+        if (headerRef.current) {
+          // Calculate position manually to account for fixed header and padding
+          const rect = headerRef.current.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const headerHeight = 64; // h-16 = 64px (fixed header height)
+          const padding = 24; // Additional padding for better visibility
+          const targetPosition = rect.top + scrollTop - headerHeight - padding;
+          
+          window.scrollTo({
+            top: Math.max(0, targetPosition), // Ensure we don't scroll above page
+            behavior: 'smooth',
+          });
+        }
       }, 50);
       
       return () => clearTimeout(timeoutId);
