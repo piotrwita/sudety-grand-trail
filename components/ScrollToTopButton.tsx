@@ -42,7 +42,7 @@ export const ScrollToTopButton = () => {
           transition={{ duration: 0.25, ease: 'easeInOut' }}
           onClick={scrollToTop}
           aria-label={t('ariaLabel')}
-          className="group fixed bottom-6 right-6 z-[90] size-14 focus:outline-none focus:ring-4 focus:ring-accent/50 focus:ring-offset-2 focus:ring-offset-forest-800 md:bottom-8 md:right-8 md:size-16"
+          className="group fixed bottom-6 right-6 z-[90] size-14 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-0 focus-visible:rounded-full md:bottom-8 md:right-8 md:size-16"
         >
           <div className="flex size-full items-center justify-center rounded-full bg-gradient-to-br from-accent via-accent to-accent/90 text-cream shadow-vintage-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-vintage-xl">
             <UpArrowIcon className="size-6 md:size-7" />
