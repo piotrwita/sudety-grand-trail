@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { useRef } from 'react';
 import { Stats, StatsSeparator } from '@/components/Stats';
 import { VintageMountainsBackground } from '@/components/VintageMountainsBackground';
@@ -123,13 +123,13 @@ export const HomeHeroSection = () => {
             className="mt-4 flex w-full flex-col items-center justify-center gap-3 px-4 sm:mt-6 sm:flex-row sm:gap-4 md:gap-6"
           >
             <Link
-              href={siteRoutes.trail}
+              href={siteRoutes.trail as any}
               className="btn-primary w-full px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
               aria-label={t('startJourney')}
             >
               {t('startJourney')}
             </Link>
-            <Link
+            <a
               href={siteConfig.links.map.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -137,7 +137,7 @@ export const HomeHeroSection = () => {
               aria-label={t('viewMap')}
             >
               {t('viewMap')}
-            </Link>
+            </a>
           </FadeIn>
 
           {/* Stats Row */}

@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 import { siteRoutes } from './site-routes';
+import { locales, defaultLocale, type Locale } from '@/i18n/routing';
 
 export const siteMetadata = {
   title: 'Sudety Grand Trail',
   description:
     'Wyrusz w niezapomnianą podróż najpiękniejszymi szlakami Sudetów. 900 km i 23 pasma górskie do pokonania na trasie SGT.',
   // Use environment variable for flexible deployment (dev, staging, production)
-  siteUrl:
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sudety-grand-trail.com',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://sudety-grand-trail.com',
   siteName: 'Sudety Grand Trail',
   locale: 'pl_PL',
   type: 'website' as const,
@@ -30,7 +30,7 @@ export const siteMetadata = {
   openGraph: {
     type: 'website' as const,
     locale: 'pl_PL',
-    url: 'https://www.sudety-grand-trail.com',
+    url: 'https://sudety-grand-trail.com',
     siteName: 'Sudety Grand Trail',
     images: [
       {
@@ -63,7 +63,90 @@ export const siteMetadata = {
   },
 };
 
-// Helper function to generate page metadata with structured data
+// Locale to OpenGraph locale mapping
+const localeToOgLocale: Record<Locale, string> = {
+  pl: 'pl_PL',
+  en: 'en_US',
+};
+
+// Generate alternate hreflang links for all locales
+function generateAlternates(path: string, locale: Locale) {
+  const languages: Record<string, string> = {};
+
+  locales.forEach((loc) => {
+    const localePath = loc === defaultLocale ? path : `/${loc}${path}`;
+    languages[loc] = `${siteMetadata.siteUrl}${localePath}`;
+  });
+
+  // Add x-default pointing to the default locale
+  const defaultPath = path;
+  languages['x-default'] = `${siteMetadata.siteUrl}${defaultPath}`;
+
+  // Set the canonical URL for the current locale
+  const canonicalPath = locale === defaultLocale ? path : `/${locale}${path}`;
+  const canonical = `${siteMetadata.siteUrl}${canonicalPath}`;
+
+  return {
+    canonical,
+    languages,
+  };
+}
+
+// Helper function to generate locale-aware page metadata
+export function generateLocaleMetadata({
+  title,
+  description,
+  path = '',
+  locale,
+  keywords = [],
+  images,
+  type = 'website' as 'website' | 'article',
+}: {
+  title: string;
+  description: string;
+  path?: string;
+  locale: Locale;
+  keywords?: string[];
+  images?: Array<{
+    url: string;
+    width?: number;
+    height?: number;
+    alt?: string;
+  }>;
+  type?: 'website' | 'article';
+}): Metadata {
+  const alternates = generateAlternates(path, locale);
+  const pageImages = images || siteMetadata.openGraph.images;
+  const ogLocale = localeToOgLocale[locale];
+
+  return {
+    title,
+    description,
+    keywords: [...siteMetadata.keywords, ...keywords],
+    authors: siteMetadata.authors,
+    creator: siteMetadata.creator,
+    publisher: siteMetadata.publisher,
+    openGraph: {
+      title,
+      description,
+      url: alternates.canonical,
+      siteName: siteMetadata.siteName,
+      locale: ogLocale,
+      type: type === 'article' ? 'article' : 'website',
+      images: pageImages,
+    },
+    twitter: {
+      card: siteMetadata.twitter.card,
+      title,
+      description,
+      images: pageImages.map((img) => img.url),
+    },
+    alternates,
+    robots: siteMetadata.robots,
+  };
+}
+
+// Helper function to generate page metadata with structured data (non-locale version for backwards compatibility)
 export function generatePageMetadata({
   title,
   description,

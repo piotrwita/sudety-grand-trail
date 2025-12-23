@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { ReactNode } from 'react';
 import { FacebookIcon } from '@/components/icons';
 import { FadeIn } from '@/components/motion';
@@ -329,11 +329,22 @@ const ActionButton = ({
       ? 'btn-primary'
       : 'btn-secondary border-cream/60 text-cream/90 hover:bg-cream/90 hover:text-forest-800';
 
+  if (external) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${baseClasses} ${variantClasses}`}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
     <Link
-      href={href}
-      target={external ? '_blank' : undefined}
-      rel={external ? 'noopener noreferrer' : undefined}
+      href={href as any}
       className={`${baseClasses} ${variantClasses}`}
     >
       {children}

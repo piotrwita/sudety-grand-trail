@@ -5,7 +5,7 @@ import { LogoImage } from '@/components/LogoImage';
 import { ScrollIndicator } from '@/components/ScrollIndicator';
 import { Section } from '@/components/sections';
 import { FadeIn, ScaleIn } from '@/components/motion';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { sectionIds } from '@/config/section-ids';
 import { getSectionUrl } from '@/lib/section-navigation';
 import { siteRoutes } from '@/config/site-routes';
@@ -110,14 +110,14 @@ export const BadgeHeroSection = () => {
             className="mt-6 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row sm:gap-6"
           >
             <Link
-              href={getSectionUrl(siteRoutes.hallOfFame, sectionIds.submission)}
+              href={{ pathname: siteRoutes.hallOfFame as any, hash: sectionIds.submission }}
               className="theme-btn-base theme-badge-btn-primary w-full px-6 py-3 text-sm font-black shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:shadow-[0_0_40px_rgba(251,191,36,0.7)] sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
               aria-label={t('submit')}
             >
               {t('submit')}
             </Link>
             <Link
-              href={siteRoutes.hallOfFame}
+              href={siteRoutes.hallOfFame as any}
               className="theme-btn-base theme-badge-btn-secondary w-full px-6 py-3 text-sm font-bold sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
               aria-label={t('hallOfFame')}
             >

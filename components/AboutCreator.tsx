@@ -11,11 +11,11 @@ import { useTranslations } from '@/lib/i18n-utils';
 
 export const AboutCreator = () => {
   const { t } = useTranslations('aboutCreator');
-  
+
   return (
     <Section
       className="bg-cream"
-      ariaLabel={t('title')}
+      ariaLabel={`${t('title.part1')} - ${t('title.part2')}`}
     >
       {/* Background elements */}
       <div className="gradient-mesh-subtle absolute inset-0 opacity-30" />
