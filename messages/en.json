@@ -268,7 +268,7 @@
       "requiredFields": "* required field"
     },
     "hints": {
-      "photo": "JPG, max 500KB",
+      "photo": "JPG, max 300KB",
       "additionalPhotos": "Max. {max} photos"
     },
     "fileUpload": {

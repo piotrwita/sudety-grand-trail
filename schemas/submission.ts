@@ -6,7 +6,7 @@ import { isServer } from '../lib/utils';
    ============================================================================ */
 
 export const MAX_DESCRIPTION_LENGTH = 300;
-export const MAX_PHOTO_SIZE = 500 * 1024; // 500KB in bytes
+export const MAX_PHOTO_SIZE = 300 * 1024; // 300KB in bytes
 export const MAX_GPX_SIZE = 500 * 1024; // 500KB in bytes
 export const ACCEPTED_IMAGE_TYPES = [
   'image/jpeg',
@@ -152,7 +152,7 @@ const emailPhotoSchema = emailAttachmentSchema
       const estimatedSize = (attachment.content.length * 3) / 4;
       return estimatedSize <= MAX_PHOTO_SIZE;
     },
-    { message: 'Plik nie może być większy niż 500KB' }
+    { message: 'Plik nie może być większy niż 300KB' }
   );
 
 const emailGpxFileSchema = emailAttachmentSchema
@@ -195,7 +195,7 @@ const formPhotoSchema = z
   .refine((files) => {
     if (isServer()) return true;
     return !files || files.length === 0 || files[0]?.size <= MAX_PHOTO_SIZE;
-  }, 'Plik nie może być większy niż 500MB');
+  }, 'Plik nie może być większy niż 300KB');
 
 const formGpxFileSchema = z
   .any()
