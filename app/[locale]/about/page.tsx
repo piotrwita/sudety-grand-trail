@@ -5,7 +5,7 @@ import { generateLocaleMetadata } from '@/config/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import { type Locale } from '@/i18n/routing';
+import { type Locale, defaultLocale } from '@/i18n/routing';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -14,14 +14,15 @@ interface PageProps {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
+  const resolvedParams = await params;
+  const locale = (resolvedParams?.locale || defaultLocale) as Locale;
   const t = await getTranslations({ locale, namespace: 'metadata.pages.about' });
 
   return generateLocaleMetadata({
     title: t('title'),
     description: t('description'),
     path: '/about',
-    locale: locale as Locale,
+    locale,
     keywords: ['o mnie', 'twórca', 'historia', 'motywacja', 'biografia', 'pasja do gór'],
   });
 }
