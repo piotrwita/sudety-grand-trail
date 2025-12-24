@@ -38,6 +38,7 @@ export async function generateMetadata({
     creator: siteMetadata.creator,
     publisher: siteMetadata.publisher,
     metadataBase: new URL(siteMetadata.siteUrl),
+    themeColor: '#ff6b35', // Theme color for mobile browser address bar
     openGraph: {
       type: siteMetadata.openGraph.type,
       locale: locale === 'en' ? 'en_US' : 'pl_PL',
