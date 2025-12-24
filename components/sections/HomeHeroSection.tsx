@@ -12,6 +12,7 @@ import { siteRoutes } from '@/config/site-routes';
 import { FadeIn, ScaleIn } from '@/components/motion';
 import { ScrollIndicator } from '@/components/ScrollIndicator';
 import { useTranslations } from '@/lib/i18n-utils';
+import { sectionIds } from '@/config/section-ids';
 
 export const HomeHeroSection = () => {
   const { t } = useTranslations('homeHero');
@@ -123,7 +124,7 @@ export const HomeHeroSection = () => {
             className="mt-4 flex w-full flex-col items-center justify-center gap-3 px-4 sm:mt-6 sm:flex-row sm:gap-4 md:gap-6"
           >
             <Link
-              href={siteRoutes.trail as any}
+              href={{ pathname: siteRoutes.home as any, hash: sectionIds.aboutProject }}
               className="btn-primary w-full px-6 py-3 text-sm sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
               aria-label={t('startJourney')}
             >

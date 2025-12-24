@@ -9,6 +9,7 @@ import { siteRoutes } from '@/config/site-routes';
 import { Section } from './Section';
 import { SectionHeader } from './SectionHeader';
 import { useTranslations } from '@/lib/i18n-utils';
+import { sectionIds } from '@/config/section-ids';
 
 const FADE_IN_PROPS = {
   inView: true,
@@ -25,6 +26,7 @@ export const AboutProjectSection = () => {
 
   return (
     <Section
+      id={sectionIds.aboutProject}
       ariaLabel={t('title')}
       className="relative items-start overflow-hidden bg-gradient-to-br from-forest-800 via-earth-800 to-forest-700"
     >
