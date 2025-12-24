@@ -690,6 +690,9 @@ export const SubmissionForm = () => {
                 <p className="text-center text-xs text-mountain-500 sm:text-left">
                   {t('submit.verification')}
                 </p>
+                <p className="mt-1 text-center text-xs text-mountain-400 sm:text-left">
+                  {t('submit.requiredFields')}
+                </p>
               </div>
               <button
                 type="submit"

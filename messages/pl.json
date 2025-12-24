@@ -264,7 +264,8 @@
       },
       "error": "Wystąpił błąd. Spróbuj ponownie później.",
       "fixErrors": "Proszę poprawić błędy w formularzu",
-      "verification": "Zgłoszenie zostanie zweryfikowane przed publikacją"
+      "verification": "Zgłoszenie zostanie zweryfikowane przed publikacją",
+      "requiredFields": "* pole wymagane"
     },
     "hints": {
       "photo": "JPG, max 500KB",
@@ -293,7 +294,8 @@
       "button": "Zgłoś się",
       "sending": "Wysyłanie...",
       "success": "Zgłoszenie zostało wysłane pomyślnie! Skontaktujemy się z Tobą wkrótce.",
-      "error": "Wystąpił błąd. Spróbuj ponownie później."
+      "error": "Wystąpił błąd. Spróbuj ponownie później.",
+      "requiredFields": "* pole wymagane"
     }
   },
   "validation": {

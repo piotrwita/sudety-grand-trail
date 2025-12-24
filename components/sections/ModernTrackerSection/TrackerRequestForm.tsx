@@ -162,6 +162,10 @@ export const TrackerRequestForm = ({
             </div>
           )}
 
+          <p className="mt-4 text-center text-xs text-slate-400">
+            {t('submit.requiredFields')}
+          </p>
+
           <button
             type="submit"
             disabled={isSubmitting}

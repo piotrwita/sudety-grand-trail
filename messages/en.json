@@ -264,7 +264,8 @@
       },
       "error": "An error occurred. Please try again later.",
       "fixErrors": "Please fix errors in the form",
-      "verification": "Submission will be verified before publication"
+      "verification": "Submission will be verified before publication",
+      "requiredFields": "* required field"
     },
     "hints": {
       "photo": "JPG, max 500KB",
@@ -293,7 +294,8 @@
       "button": "Register",
       "sending": "Sending...",
       "success": "Registration sent successfully! We will contact you soon.",
-      "error": "An error occurred. Please try again later."
+      "error": "An error occurred. Please try again later.",
+      "requiredFields": "* required field"
     }
   },
   "validation": {
