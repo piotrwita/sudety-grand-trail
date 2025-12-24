@@ -193,6 +193,20 @@ All pages are available in both Polish (default) and English with locale-based r
 - Usage guidelines
 - Legal information
 
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js** 18.x or higher (20.x recommended)
+- **npm** 9.x or higher (comes with Node.js)
+
+You can check your versions by running:
+
+```bash
+node --version
+npm --version
+```
+
 ## Getting Started
 
 1. Install dependencies:
@@ -203,13 +217,7 @@ npm install
 
 2. Set up environment variables:
 
-Copy the `.env.sample` file to `.env.local` and fill in the required values:
-
-```bash
-cp .env.sample .env.local
-```
-
-Edit `.env.local` and configure the following variables:
+Create a `.env.local` file in the root directory and configure the following variables:
 
 - **Gmail OAuth2 Credentials** (required for email submission form):
   - `GMAIL_CLIENT_ID` - Your Gmail OAuth2 Client ID
@@ -222,6 +230,8 @@ Edit `.env.local` and configure the following variables:
   - `NEXT_PUBLIC_SITE_URL` - Your site URL (defaults to `https://sudety-grand-trail.com`)
 
 > **Note**: The email submission form will not work without proper Gmail OAuth2 credentials. If you don't need email functionality for development, you can skip these variables, but form submissions will fail.
+
+> **Need help setting up Gmail OAuth2?** See the [Gmail Refresh Token Guide](docs/REFRESH_TOKEN_GUIDE.md) for detailed instructions on generating and managing your OAuth2 credentials.
 
 3. Run the development server:
 
@@ -267,6 +277,49 @@ The website is production-ready and deployed at [https://sudety-grand-trail.com]
 - Static assets and images are optimized for production
 - SEO metadata is configured for both locales with proper hreflang tags
 
+## Troubleshooting
+
+### Gmail OAuth2 Issues
+
+**Problem**: Email form submissions are failing or you're getting authentication errors.
+
+**Solutions**:
+- Verify all Gmail OAuth2 credentials are correctly set in `.env.local`
+- Check if your `GMAIL_REFRESH_TOKEN` has expired (tokens expire after 7 days if the OAuth app is in Testing mode)
+- See the [Gmail Refresh Token Guide](docs/REFRESH_TOKEN_GUIDE.md) for detailed instructions on generating a new refresh token
+- Ensure `GMAIL_USER` matches the Gmail account used to generate the OAuth2 credentials
+- Add your Gmail account as a test user in Google Cloud Console to prevent token expiration
+
+### Build Errors
+
+**Problem**: Build fails with TypeScript or module resolution errors.
+
+**Solutions**:
+- Ensure you're using Node.js 18+ (20.x recommended)
+- Delete `node_modules` and `.next` folders, then run `npm install` again
+- Clear npm cache: `npm cache clean --force`
+- Verify all dependencies are installed: `npm install`
+
+### Internationalization Issues
+
+**Problem**: Translations not showing or locale routing not working.
+
+**Solutions**:
+- Verify translation files exist in `messages/pl.json` and `messages/en.json`
+- Check that locale routing is configured correctly in `i18n/routing.ts`
+- Ensure the default locale (`pl`) is set correctly
+- Clear `.next` cache and rebuild: `rm -rf .next && npm run build`
+
+### Development Server Issues
+
+**Problem**: Development server won't start or crashes.
+
+**Solutions**:
+- Check if port 3000 is already in use: `lsof -i :3000` (Mac/Linux) or `netstat -ano | findstr :3000` (Windows)
+- Try using a different port: `npm run dev -- -p 3001`
+- Verify Node.js version matches requirements
+- Check for syntax errors in recently modified files
+
 ## Production Website
 
 - **Official Website**: [https://sudety-grand-trail.com](https://sudety-grand-trail.com)
@@ -302,6 +355,17 @@ The website is built with a mobile-first approach and includes:
 - Touch-friendly interactive elements
 - Skip to content link for accessibility
 
+## Browser Support
+
+The website is optimized for modern browsers that support ES6+ features and React 19:
+
+- **Chrome/Edge**: Latest 2 versions
+- **Firefox**: Latest 2 versions
+- **Safari**: Latest 2 versions
+- **Mobile browsers**: iOS Safari (latest), Chrome Mobile (latest)
+
+The site uses modern web standards and may not work correctly in older browsers (Internet Explorer, older versions of Safari, etc.). For the best experience, please use an up-to-date browser.
+
 ## Animations
 
 Framer Motion animations include:
@@ -327,6 +391,19 @@ Framer Motion animations include:
 - Robots.txt configuration
 - Open Graph and Twitter Card support
 - PWA manifest support
+
+## Security Features
+
+The website implements comprehensive security headers configured in `next.config.js`:
+
+- **X-Frame-Options**: Set to `DENY` to prevent clickjacking attacks
+- **X-Content-Type-Options**: Set to `nosniff` to prevent MIME type sniffing
+- **Referrer-Policy**: Set to `strict-origin-when-cross-origin` for privacy protection
+- **Permissions-Policy**: Restricts access to camera, microphone, and geolocation APIs
+- **Strict-Transport-Security**: Enforces HTTPS with HSTS headers (max-age: 1 year)
+- **X-XSS-Protection**: Enables browser XSS filtering
+
+These headers are automatically applied to all routes, providing defense-in-depth security for the application.
 
 ## Accessibility
 
@@ -371,3 +448,11 @@ The website includes a comprehensive trail journal feature documenting the creat
 - **Interactive timeline**: Navigate through the journey chronologically
 
 Journal entries are stored in `data/trail-journal/` with individual files for each day (`day-1.ts` through `day-15.ts`). The journal is displayed on the homepage and trail page, providing visitors with an immersive experience of the trail journey.
+
+## License
+
+This project is private and proprietary. All rights reserved.
+
+---
+
+**Sudety Grand Trail** - [https://sudety-grand-trail.com](https://sudety-grand-trail.com)
