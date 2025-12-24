@@ -129,15 +129,13 @@ export const HomeHeroSection = () => {
             >
               {t('startJourney')}
             </Link>
-            <a
-              href={siteConfig.links.map.href}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={{ pathname: siteRoutes.trail as any, hash: 'map' }}
               className="btn-secondary w-full border-cream/80 px-6 py-3 text-sm text-cream hover:bg-cream hover:text-forest-800 focus:ring-cream/50 sm:w-auto sm:px-8 sm:py-3.5 sm:text-base md:px-10 md:py-4 md:text-lg"
               aria-label={t('viewMap')}
             >
               {t('viewMap')}
-            </a>
+            </Link>
           </FadeIn>
 
           {/* Stats Row */}

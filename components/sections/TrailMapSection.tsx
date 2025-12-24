@@ -16,6 +16,7 @@ export const TrailMapSection = () => {
 
   return (
     <Section
+      id="map"
       ariaLabel={t('title')}
       className="min-h-0 bg-gradient-to-br from-forest-50 to-cream"
     >
