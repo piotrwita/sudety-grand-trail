@@ -224,10 +224,6 @@ export const sendTrackerRequestEmail = async (
       html: formatTrackerRequestEmail(validatedData),
     };
 
-    console.log('sender', sender);
-    console.log('recipient', recipient);
-    console.log('email', validatedData.email);
-
     await transporter.sendMail(mailOptions);
 
     return {
