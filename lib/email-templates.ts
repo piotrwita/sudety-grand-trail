@@ -51,7 +51,6 @@ export const formatSubmissionEmail = (data: EmailSubmissionData): string => {
         <h3 style="color: #2d5016; margin-top: 30px;">Materiały</h3>
         <p><strong>Zdjęcie profilowe:</strong> ${data.photo ? data.photo.filename : 'Nie załączono'}</p>
         <p><strong>Plik GPX:</strong> ${data.gpxFile ? data.gpxFile.filename : 'Nie załączono'}</p>
-        <p><strong>Dodatkowe zdjęcia:</strong> ${data.additionalPhotos && data.additionalPhotos.length > 0 ? `${data.additionalPhotos.length} plik(ów)` : 'Nie załączono'}</p>
         
         ${
           data.description

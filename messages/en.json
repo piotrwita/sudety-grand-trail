@@ -232,7 +232,7 @@
       "days": "days",
       "photo": "Profile Photo",
       "gpxFile": "GPX File",
-      "gpxHint": "GPS track from crossing",
+      "gpxHint": "GPS track from crossing, max 500KB",
       "additionalPhotos": "Additional Photos",
       "description": "Short description (max {max} characters)",
       "favoriteSection": "Most Beautiful Moment",
@@ -267,7 +267,7 @@
       "verification": "Submission will be verified before publication"
     },
     "hints": {
-      "photo": "JPG, PNG, WebP",
+      "photo": "JPG, max 500KB",
       "additionalPhotos": "Max. {max} photos"
     },
     "fileUpload": {

@@ -6,13 +6,11 @@ import { isServer } from '../lib/utils';
    ============================================================================ */
 
 export const MAX_DESCRIPTION_LENGTH = 300;
-export const MAX_ADDITIONAL_PHOTOS = 5;
-export const MAX_FILE_SIZE = 1 * 1024 * 1024; // 1MB in bytes
+export const MAX_PHOTO_SIZE = 500 * 1024; // 500KB in bytes
+export const MAX_GPX_SIZE = 500 * 1024; // 500KB in bytes
 export const ACCEPTED_IMAGE_TYPES = [
   'image/jpeg',
   'image/jpg',
-  'image/png',
-  'image/webp',
 ] as const;
 export const TRAIL_TYPES = [
   'Solo',
@@ -145,16 +143,16 @@ const emailPhotoSchema = emailAttachmentSchema
         attachment.contentType as (typeof ACCEPTED_IMAGE_TYPES)[number]
       );
     },
-    { message: 'Akceptowane formaty: JPG, PNG, WebP' }
+    { message: 'Akceptowane formaty: JPG' }
   )
   .refine(
     (attachment) => {
       if (!attachment) return true;
       // Estimate size from base64 (base64 is ~33% larger than binary)
       const estimatedSize = (attachment.content.length * 3) / 4;
-      return estimatedSize <= MAX_FILE_SIZE;
+      return estimatedSize <= MAX_PHOTO_SIZE;
     },
-    { message: 'Plik nie może być większy niż 1MB' }
+    { message: 'Plik nie może być większy niż 500KB' }
   );
 
 const emailGpxFileSchema = emailAttachmentSchema
@@ -170,42 +168,11 @@ const emailGpxFileSchema = emailAttachmentSchema
     (attachment) => {
       if (!attachment) return true;
       const estimatedSize = (attachment.content.length * 3) / 4;
-      return estimatedSize <= MAX_FILE_SIZE;
+      return estimatedSize <= MAX_GPX_SIZE;
     },
-    { message: 'Plik nie może być większy niż 1MB' }
+    { message: 'Plik nie może być większy niż 500KB' }
   );
 
-const emailAdditionalPhotosSchema = z
-  .array(emailAttachmentSchema)
-  .optional()
-  .refine(
-    (photos) => {
-      if (!photos) return true;
-      return photos.length <= MAX_ADDITIONAL_PHOTOS;
-    },
-    { message: `Maksymalnie ${MAX_ADDITIONAL_PHOTOS} zdjęć` }
-  )
-  .refine(
-    (photos) => {
-      if (!photos || photos.length === 0) return true;
-      return photos.every((photo) => {
-        const estimatedSize = (photo.content.length * 3) / 4;
-        return estimatedSize <= MAX_FILE_SIZE;
-      });
-    },
-    { message: 'Każdy plik nie może być większy niż 1MB' }
-  )
-  .refine(
-    (photos) => {
-      if (!photos || photos.length === 0) return true;
-      return photos.every((photo) =>
-        ACCEPTED_IMAGE_TYPES.includes(
-          photo.contentType as (typeof ACCEPTED_IMAGE_TYPES)[number]
-        )
-      );
-    },
-    { message: 'Akceptowane formaty: JPG, PNG, WebP' }
-  );
 
 /* ============================================================================
    FORM FILE SCHEMAS (for client-side validation with FileList)
@@ -227,8 +194,8 @@ const formPhotoSchema = z
   }, 'Akceptowane formaty: JPG, PNG, WebP')
   .refine((files) => {
     if (isServer()) return true;
-    return !files || files.length === 0 || files[0]?.size <= MAX_FILE_SIZE;
-  }, 'Plik nie może być większy niż 1MB');
+    return !files || files.length === 0 || files[0]?.size <= MAX_PHOTO_SIZE;
+  }, 'Plik nie może być większy niż 500MB');
 
 const formGpxFileSchema = z
   .any()
@@ -242,32 +209,9 @@ const formGpxFileSchema = z
   }, 'Plik musi mieć rozszerzenie .gpx')
   .refine((files) => {
     if (isServer()) return true;
-    return !files || files.length === 0 || files[0]?.size <= MAX_FILE_SIZE;
-  }, 'Plik nie może być większy niż 1MB');
+    return !files || files.length === 0 || files[0]?.size <= MAX_GPX_SIZE;
+  }, 'Plik nie może być większy niż 500KB');
 
-const formAdditionalPhotosSchema = z
-  .any()
-  .optional()
-  .refine((files) => {
-    if (isServer()) return true;
-    return !files || files.length <= MAX_ADDITIONAL_PHOTOS;
-  }, `Maksymalnie ${MAX_ADDITIONAL_PHOTOS} zdjęć`)
-  .refine((files) => {
-    if (isServer()) return true;
-    if (!files || files.length === 0) return true;
-    return Array.from(files as FileList).every(
-      (file) => file.size <= MAX_FILE_SIZE
-    );
-  }, 'Każdy plik nie może być większy niż 1MB')
-  .refine((files) => {
-    if (isServer()) return true;
-    if (!files || files.length === 0) return true;
-    return Array.from(files as FileList).every((file) =>
-      ACCEPTED_IMAGE_TYPES.includes(
-        file.type as (typeof ACCEPTED_IMAGE_TYPES)[number]
-      )
-    );
-  }, 'Akceptowane formaty: JPG, PNG, WebP');
 
 /* ============================================================================
    COMPLETE SCHEMAS
@@ -307,7 +251,6 @@ export const submissionFormSchema = baseDateRangeRefine(
     ...baseSubmissionFields,
     photo: formPhotoSchema,
     gpxFile: formGpxFileSchema,
-    additionalPhotos: formAdditionalPhotosSchema,
   })
 );
 
@@ -319,7 +262,6 @@ export const emailSubmissionSchema = baseDateRangeRefine(
     ...baseSubmissionFields,
     photo: emailPhotoSchema,
     gpxFile: emailGpxFileSchema,
-    additionalPhotos: emailAdditionalPhotosSchema,
   })
 );
 

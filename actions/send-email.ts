@@ -80,16 +80,6 @@ const buildAttachments = (
     });
   }
 
-  if (data.additionalPhotos && data.additionalPhotos.length > 0) {
-    data.additionalPhotos.forEach((photo) => {
-      attachments.push({
-        filename: photo.filename,
-        content: Buffer.from(photo.content, 'base64'),
-        contentType: photo.contentType,
-      });
-    });
-  }
-
   return attachments;
 };
 

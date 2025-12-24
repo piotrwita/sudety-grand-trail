@@ -10,7 +10,6 @@ import {
   SubmissionFormData,
   EmailSubmissionData,
   MAX_DESCRIPTION_LENGTH,
-  MAX_ADDITIONAL_PHOTOS,
   ACCEPTED_IMAGE_TYPES,
   TRAIL_TYPES,
 } from '@/schemas/submission';
@@ -29,7 +28,6 @@ import {
   PhotoIcon,
   DocumentTextIcon,
   PencilIcon,
-  PhotoStackIcon,
   CheckIcon,
 } from '@/components/icons';
 import { useTranslations } from '@/lib/i18n-utils';
@@ -109,7 +107,7 @@ const FileUploadField = ({
   accept: string;
   multiple?: boolean;
   icon: React.ReactNode;
-  name: 'photo' | 'gpxFile' | 'additionalPhotos';
+  name: 'photo' | 'gpxFile';
   control: Control<SubmissionFormData>;
   t: (key: string, params?: Record<string, string | number>) => string;
 }) => (
@@ -312,23 +310,6 @@ export const SubmissionForm = () => {
         };
       }
 
-      // Convert additional photos to base64
-      if (
-        data.additionalPhotos &&
-        (data.additionalPhotos as FileList).length > 0
-      ) {
-        const photosFileList = data.additionalPhotos as FileList;
-        emailData.additionalPhotos = await Promise.all(
-          Array.from(photosFileList).map(async (file: File) => {
-            const base64Content = await fileToBase64(file);
-            return {
-              filename: file.name,
-              content: base64Content,
-              contentType: file.type,
-            };
-          })
-        );
-      }
 
       const result = await sendSubmissionEmail(emailData);
 
@@ -541,7 +522,7 @@ export const SubmissionForm = () => {
               title={t('sections.materials')}
             />
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-2">
               <FileUploadField
                 label={t('fields.photo')}
                 required
@@ -551,7 +532,7 @@ export const SubmissionForm = () => {
                     : undefined
                 }
                 hint={t('hints.photo')}
-                accept="image/*"
+                accept="image/jpeg,image/jpg"
                 icon={<PhotoIcon className="h-5 w-5" />}
                 name="photo"
                 control={control}
@@ -569,22 +550,6 @@ export const SubmissionForm = () => {
                 accept=".gpx"
                 icon={<MapIcon className="h-5 w-5" />}
                 name="gpxFile"
-                control={control}
-                t={t}
-              />
-
-              <FileUploadField
-                label={t('fields.additionalPhotos')}
-                error={
-                  errors.additionalPhotos?.message
-                    ? String(errors.additionalPhotos.message)
-                    : undefined
-                }
-                hint={t('hints.additionalPhotos', { max: MAX_ADDITIONAL_PHOTOS })}
-                accept="image/*"
-                multiple
-                icon={<PhotoStackIcon className="h-5 w-5" />}
-                name="additionalPhotos"
                 control={control}
                 t={t}
               />
