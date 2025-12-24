@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale, getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
@@ -17,6 +17,11 @@ import '../globals.css';
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
+
+// Viewport configuration
+export const viewport: Viewport = {
+  themeColor: '#ff6b35', // Theme color for mobile browser address bar
+};
 
 // Generate locale-aware metadata for the root layout
 export async function generateMetadata({
@@ -38,7 +43,6 @@ export async function generateMetadata({
     creator: siteMetadata.creator,
     publisher: siteMetadata.publisher,
     metadataBase: new URL(siteMetadata.siteUrl),
-    themeColor: '#ff6b35', // Theme color for mobile browser address bar
     openGraph: {
       type: siteMetadata.openGraph.type,
       locale: locale === 'en' ? 'en_US' : 'pl_PL',
