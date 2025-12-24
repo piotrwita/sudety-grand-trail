@@ -532,7 +532,7 @@ export const SubmissionForm = () => {
                     : undefined
                 }
                 hint={t('hints.photo')}
-                accept="image/jpeg,image/jpg"
+                accept="image/jpeg,image/jpg,image/png,image/webp"
                 icon={<PhotoIcon className="h-5 w-5" />}
                 name="photo"
                 control={control}

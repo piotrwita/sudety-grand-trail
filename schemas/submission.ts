@@ -11,6 +11,8 @@ export const MAX_GPX_SIZE = 500 * 1024; // 500KB in bytes
 export const ACCEPTED_IMAGE_TYPES = [
   'image/jpeg',
   'image/jpg',
+  'image/png',
+  'image/webp',
 ] as const;
 export const TRAIL_TYPES = [
   'Solo',
@@ -143,7 +145,7 @@ const emailPhotoSchema = emailAttachmentSchema
         attachment.contentType as (typeof ACCEPTED_IMAGE_TYPES)[number]
       );
     },
-    { message: 'Akceptowane formaty: JPG' }
+    { message: 'Akceptowane formaty: JPG, PNG, WebP' }
   )
   .refine(
     (attachment) => {
