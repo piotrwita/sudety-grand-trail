@@ -522,7 +522,7 @@ export const SubmissionForm = () => {
               title={t('sections.materials')}
             />
 
-            <div className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-2">
+            <div className="mx-auto grid max-w-xl gap-4 sm:max-w-none sm:grid-cols-2">
               <FileUploadField
                 label={t('fields.photo')}
                 required

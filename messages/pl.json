@@ -232,7 +232,7 @@
       "days": "dni",
       "photo": "Zdjęcie profilowe",
       "gpxFile": "Plik GPX",
-      "gpxHint": "Ślad GPS z przejścia, max 500KB",
+      "gpxHint": "Ślad GPS z przejścia (max 500KB)",
       "additionalPhotos": "Dodatkowe zdjęcia",
       "description": "Krótki opis (max {max} znaków)",
       "favoriteSection": "Najpiękniejszy moment",
@@ -268,7 +268,7 @@
       "requiredFields": "* pole wymagane"
     },
     "hints": {
-      "photo": "JPG, max 300KB",
+      "photo": "JPG (max 300KB)",
       "additionalPhotos": "Max. {max} zdjęć"
     },
     "fileUpload": {
