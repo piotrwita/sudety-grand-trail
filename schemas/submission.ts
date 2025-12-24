@@ -57,9 +57,52 @@ const baseTypeSchema = z.enum(TRAIL_TYPES, {
   message: 'Wybierz typ przejścia',
 });
 
-const baseStartDateSchema = z.string().min(1, 'Data rozpoczęcia jest wymagana');
+const MIN_DATE = '2025-06-01';
 
-const baseEndDateSchema = z.string().min(1, 'Data zakończenia jest wymagana');
+const getTodayString = () => {
+  const today = new Date();
+  return today.toISOString().split('T')[0];
+};
+
+const baseStartDateSchema = z
+  .string()
+  .min(1, 'Data rozpoczęcia jest wymagana')
+  .refine(
+    (date) => {
+      return date >= MIN_DATE;
+    },
+    {
+      message: 'Data nie może być wcześniejsza niż 1 czerwca 2025',
+    }
+  )
+  .refine(
+    (date) => {
+      return date <= getTodayString();
+    },
+    {
+      message: 'Data nie może być późniejsza niż dzisiaj',
+    }
+  );
+
+const baseEndDateSchema = z
+  .string()
+  .min(1, 'Data zakończenia jest wymagana')
+  .refine(
+    (date) => {
+      return date >= MIN_DATE;
+    },
+    {
+      message: 'Data nie może być wcześniejsza niż 1 czerwca 2025',
+    }
+  )
+  .refine(
+    (date) => {
+      return date <= getTodayString();
+    },
+    {
+      message: 'Data nie może być późniejsza niż dzisiaj',
+    }
+  );
 
 const baseDescriptionSchema = z
   .string()

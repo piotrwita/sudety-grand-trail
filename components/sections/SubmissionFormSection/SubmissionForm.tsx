@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { useForm, Controller, Control } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -198,6 +198,8 @@ const SectionDivider = ({
 /* ============================================================================
    MAIN FORM COMPONENT
    ============================================================================ */
+const MIN_DATE = '2025-06-01';
+
 export const SubmissionForm = () => {
   const { t } = useTranslations('submissionForm');
   const { t: tGlobal } = useTranslations();
@@ -206,6 +208,11 @@ export const SubmissionForm = () => {
   >('idle');
   const [hasValidationErrors, setHasValidationErrors] = useState(false);
   const [serverMessage, setServerMessage] = useState('');
+
+  const today = useMemo(() => {
+    const date = new Date();
+    return date.toISOString().split('T')[0];
+  }, []);
 
   const {
     register,
@@ -467,6 +474,8 @@ export const SubmissionForm = () => {
               >
                 <input
                   type="date"
+                  min={MIN_DATE}
+                  max={today}
                   {...register('startDate')}
                   className={inputClassName(!!errors.startDate)}
                 />
@@ -479,6 +488,8 @@ export const SubmissionForm = () => {
               >
                 <input
                   type="date"
+                  min={MIN_DATE}
+                  max={today}
                   {...register('endDate')}
                   className={inputClassName(!!errors.endDate)}
                 />
