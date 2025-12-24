@@ -21,6 +21,11 @@ export const TrackerRequestForm = ({
 }: TrackerRequestFormProps) => {
   const { t } = useTranslations('trackerForm');
   const today = useMemo(() => new Date().toISOString().split('T')[0], []);
+  const maxDate = useMemo(() => {
+    const date = new Date();
+    date.setFullYear(date.getFullYear() + 1);
+    return date.toISOString().split('T')[0];
+  }, []);
   const [submitStatus, setSubmitStatus] = useState<
     'idle' | 'success' | 'error'
   >('idle');
@@ -87,6 +92,7 @@ export const TrackerRequestForm = ({
             <input
               type="email"
               id="email"
+              maxLength={100}
               {...register('email')}
               className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm transition-all duration-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
               placeholder={t('placeholders.email')}
@@ -110,6 +116,7 @@ export const TrackerRequestForm = ({
               type="date"
               id="startDate"
               min={today}
+              max={maxDate}
               {...register('startDate')}
               className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm transition-all duration-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
             />
@@ -130,6 +137,7 @@ export const TrackerRequestForm = ({
             <input
               type="text"
               id="plannedDays"
+              maxLength={50}
               {...register('plannedDays')}
               className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm transition-all duration-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
               placeholder={t('placeholders.plannedDays')}

@@ -415,6 +415,7 @@ export const SubmissionForm = () => {
               >
                 <input
                   type="text"
+                  maxLength={100}
                   {...register('name')}
                   className={inputClassName(!!errors.name)}
                   placeholder={t('placeholders.name')}
@@ -424,6 +425,7 @@ export const SubmissionForm = () => {
               <FormField label={t('fields.nickname')} error={errors.nickname?.message}>
                 <input
                   type="text"
+                  maxLength={50}
                   {...register('nickname')}
                   className={inputClassName(!!errors.nickname)}
                   placeholder={t('placeholders.nickname')}
@@ -438,6 +440,7 @@ export const SubmissionForm = () => {
               >
                 <input
                   type="email"
+                  maxLength={100}
                   {...register('email')}
                   className={inputClassName(!!errors.email)}
                   placeholder={t('placeholders.email')}
@@ -620,6 +623,7 @@ export const SubmissionForm = () => {
               >
                 <input
                   type="text"
+                  maxLength={150}
                   {...register('favoriteSection')}
                   className={inputClassName(!!errors.favoriteSection)}
                   placeholder={t('placeholders.favoriteSection')}
@@ -632,6 +636,7 @@ export const SubmissionForm = () => {
               >
                 <input
                   type="text"
+                  maxLength={150}
                   {...register('hardestSection')}
                   className={inputClassName(!!errors.hardestSection)}
                   placeholder={t('placeholders.hardestSection')}
@@ -692,6 +697,7 @@ export const SubmissionForm = () => {
             >
               <textarea
                 {...register('additionalAchievements')}
+                maxLength={200}
                 rows={2}
                 className={inputClassName(!!errors.additionalAchievements)}
                 placeholder={t('placeholders.additionalAchievements')}

@@ -5,7 +5,7 @@ import { isServer } from '../lib/utils';
    CONSTANTS
    ============================================================================ */
 
-export const MAX_DESCRIPTION_LENGTH = 200;
+export const MAX_DESCRIPTION_LENGTH = 300;
 export const MAX_ADDITIONAL_PHOTOS = 5;
 export const MAX_FILE_SIZE = 1 * 1024 * 1024; // 1MB in bytes
 export const ACCEPTED_IMAGE_TYPES = [
@@ -46,12 +46,14 @@ export interface EmailAttachment {
 const baseNameSchema = z
   .string()
   .min(1, 'Imię i nazwisko jest wymagane')
-  .min(3, 'Imię i nazwisko musi mieć minimum 3 znaki');
+  .min(3, 'Imię i nazwisko musi mieć minimum 3 znaki')
+  .max(100, 'Imię i nazwisko nie może przekraczać 100 znaków');
 
 const baseEmailSchema = z
   .string()
   .min(1, 'Email jest wymagany')
-  .email('Wprowadź poprawny adres email');
+  .email('Wprowadź poprawny adres email')
+  .max(100, 'Adres email nie może przekraczać 100 znaków');
 
 const baseTypeSchema = z.enum(TRAIL_TYPES, {
   message: 'Wybierz typ przejścia',
@@ -273,16 +275,28 @@ const formAdditionalPhotosSchema = z
 
 const baseSubmissionFields = {
   name: baseNameSchema,
-  nickname: z.string().optional(),
+  nickname: z
+    .string()
+    .max(50, 'Pseudonim nie może przekraczać 50 znaków')
+    .optional(),
   email: baseEmailSchema,
   type: baseTypeSchema,
   startDate: baseStartDateSchema,
   endDate: baseEndDateSchema,
   description: baseDescriptionSchema,
-  favoriteSection: z.string().optional(),
-  hardestSection: z.string().optional(),
+  favoriteSection: z
+    .string()
+    .max(150, 'Najpiękniejszy moment nie może przekraczać 150 znaków')
+    .optional(),
+  hardestSection: z
+    .string()
+    .max(150, 'Najtrudniejszy fragment nie może przekraczać 150 znaków')
+    .optional(),
   isFirstSudety: z.boolean(),
-  additionalAchievements: z.string().optional(),
+  additionalAchievements: z
+    .string()
+    .max(200, 'Dodatkowe osiągnięcia nie mogą przekraczać 200 znaków')
+    .optional(),
 };
 
 /**
