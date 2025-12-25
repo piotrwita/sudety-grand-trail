@@ -28,7 +28,7 @@ const renderContentWithImages = (
     return paragraphs.map((paragraph, idx) => (
       <p
         key={idx}
-        className="mb-5 text-base text-justify leading-loose text-forest-700 last:mb-0 sm:text-lg sm:leading-loose"
+        className="mb-5 text-justify text-base leading-loose text-forest-700 last:mb-0 sm:text-lg sm:leading-loose"
       >
         {paragraph}
       </p>
@@ -79,7 +79,7 @@ const renderContentWithImages = (
     result.push(
       <p
         key={`p-${idx}`}
-        className="mb-5 text-base text-justify leading-loose text-forest-700 last:mb-0 sm:text-lg sm:leading-loose"
+        className="mb-5 text-justify text-base leading-loose text-forest-700 last:mb-0 sm:text-lg sm:leading-loose"
       >
         {paragraph}
       </p>
@@ -152,28 +152,37 @@ const DayAccordion = memo(({ day, isOpen, onToggle }: DayAccordionProps) => {
   const { t } = useTranslations('trailJourney');
   const headerRef = useRef<HTMLButtonElement>(null);
   const prevIsOpenRef = useRef(isOpen);
-  
+
   // Get translated title - always needed for header
   const translatedTitle = t(`days.${day.day}.title`) || day.title;
-  
+
   // Lazy load content only when opened - prevents calling t() for closed accordions
   const translatedContent = useMemo(() => {
     if (!isOpen) return '';
     return t(`days.${day.day}.content`) || day.content;
   }, [isOpen, day.day, t]);
-  
+
   // Scroll to header when accordion opens (transitioning from closed to open)
-  // Uses scrollIntoView with scroll-mt-24 class on button to handle fixed header offset
   useEffect(() => {
     if (isOpen && !prevIsOpenRef.current && headerRef.current) {
       const timeoutId = setTimeout(() => {
-        headerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (headerRef.current) {
+          const rect = headerRef.current.getBoundingClientRect();
+          const scrollTop = window.scrollY || document.documentElement.scrollTop;
+          const headerOffset = 96; // 6rem (h-16 header + padding)
+          const targetPosition = rect.top + scrollTop - headerOffset;
+
+          window.scrollTo({
+            top: Math.max(0, targetPosition),
+            behavior: 'smooth',
+          });
+        }
       }, 50);
       return () => clearTimeout(timeoutId);
     }
     prevIsOpenRef.current = isOpen;
   }, [isOpen]);
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -186,7 +195,7 @@ const DayAccordion = memo(({ day, isOpen, onToggle }: DayAccordionProps) => {
       <button
         ref={headerRef}
         onClick={() => onToggle(day.day)}
-        className="scroll-mt-24 flex w-full items-center justify-between gap-4 p-4 text-left transition-colors hover:bg-forest-50/50 sm:p-5"
+        className="flex w-full items-center justify-between gap-4 p-4 text-left transition-colors hover:bg-forest-50/50 sm:p-5"
         aria-expanded={isOpen}
       >
         <div className="flex flex-1 flex-wrap items-center gap-3 sm:gap-4">
