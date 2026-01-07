@@ -19,6 +19,12 @@ const socialLinks = {
     external: true,
     icon: 'facebook',
   },
+  instagram: {
+    href: 'https://www.instagram.com/sudety_grand_trail',
+    label: 'Instagram - Sudety Grand Trail',
+    external: true,
+    icon: 'instagram',
+  },
 } as const;
 
 export const siteConfig = {
@@ -40,7 +46,7 @@ export const siteConfig = {
     { href: siteRoutes.badge, label: 'Odznaka' },
     { href: siteRoutes.about, label: 'O Mnie' },
   ],
-  socialLinks: [socialLinks.map, socialLinks.facebook],
+  socialLinks: [socialLinks.map, socialLinks.facebook, socialLinks.instagram],
   links: socialLinks,
 } as const;
 

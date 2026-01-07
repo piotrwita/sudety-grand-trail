@@ -1,5 +1,6 @@
 export { MapIcon } from './MapIcon';
 export { FacebookIcon } from './FacebookIcon';
+export { InstagramIcon } from './InstagramIcon';
 export { HamburgerIcon } from './HamburgerIcon';
 export { DownloadIcon } from './DownloadIcon';
 export { ExternalLinkIcon } from './ExternalLinkIcon';

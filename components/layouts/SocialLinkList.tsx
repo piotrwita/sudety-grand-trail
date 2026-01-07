@@ -1,7 +1,7 @@
 'use client';
 
 import { siteConfig } from '@/config/site';
-import { FacebookIcon, MapIcon } from '@/components/icons';
+import { FacebookIcon, InstagramIcon, MapIcon } from '@/components/icons';
 import Link from 'next/link';
 import { useTranslations } from '@/lib/i18n-utils';
 
@@ -11,6 +11,8 @@ const getIcon = (iconName: string) => {
       return <MapIcon />;
     case 'facebook':
       return <FacebookIcon />;
+    case 'instagram':
+      return <InstagramIcon />;
     default:
       return null;
   }
