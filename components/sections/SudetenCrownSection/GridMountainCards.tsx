@@ -5,7 +5,7 @@ import { FadeIn } from '@/components/motion';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import { useDebounce } from '@/hooks/useDebounce';
 import { cn } from '@/lib/utils';
-import { KgpPeak, koronaGorPolski, type SudetenRange } from './data';
+import { type SudetenRange } from './data';
 import { CheckIcon } from '@/components/icons';
 import { SearchIcon } from '@/components/icons/SearchIcon';
 import { MountainCard } from './MountainCard';
@@ -79,21 +79,6 @@ const initialState: FilterState = {
   showKsOnly: false,
 };
 
-/**
- * Check if a peak is part of Korona Gór Polski (KGP)
- */
-const isKgpPeak = (
-  peakName: string,
-  kgpPeaks: KgpPeak[] = koronaGorPolski
-): boolean => {
-  return kgpPeaks.some(
-    (kgpPeak) =>
-      peakName === kgpPeak.name ||
-      peakName.includes(kgpPeak.name) ||
-      kgpPeak.name.includes(peakName)
-  );
-};
-
 export const GridMountainCards = ({ ranges }: GridMountainCardsProps) => {
   const [state, dispatch] = useReducer(filterReducer, initialState);
   const { selectedRangeId, searchTerm, showKgpOnly, showKsOnly } = state;
@@ -105,8 +90,8 @@ export const GridMountainCards = ({ ranges }: GridMountainCardsProps) => {
   const rangesWithKgp = useMemo(() => {
     return ranges.map((range) => ({
       ...range,
-      computedIsKgp: range.isKgp ?? isKgpPeak(range.peak, koronaGorPolski),
-      computedIsKs: range.isKs ?? false,
+      computedIsKgp: range.isKgp,
+      computedIsKs: range.isKs,
     }));
   }, [ranges]);
 
