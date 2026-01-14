@@ -191,7 +191,7 @@ export const sudetenRanges: SudetenRange[] = [
     peakHeight: 1058,
     country: 'PL',
     isKs: false,
-    isKgp: true,
+    isKgp: false,
     imageUrl: '/images/mountains/XW0Fwq.jpeg',
     description:
       '• Pierwsze schronisko wybudowane w 1837 roku przez rodzinę Schaffgotschów\n• Schronisko spłonęło w 1882 roku, ale zostało odbudowane jeszcze w tym samym roku\n• Po II wojnie światowej obiekt popadł w ruinę i został rozebrany\n• W 1996 roku teren zakupiony przez rodzinę Gołbów ze Szklarskiej Poręby, która odbudowała schronisko\n• Kamienna wieża widokowa ukończona w 2023 roku\n• Ciekawe formacje skalne na szczycie i grzbiecie',

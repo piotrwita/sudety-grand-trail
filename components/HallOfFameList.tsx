@@ -30,9 +30,9 @@ const mockCompletions = [
     isFirstCompleter: true,
     achievements: ['Pierwszy zdobywca', 'Najszybsze przejście'],
     favoriteSection:
-      'Równia pod Śnieżką w Karkonoszach, przy słonecznej pogodzie i bezchmurnym niebie',
+      'Marsz przez Równię pod Śnieżką w Karkonoszach, gdy słońce świeciło, niebo było bezchmurne, a przestrzeń wokół dawała poczucie totalnej wolności.',
     hardestSection:
-      'Cały dzień wędrówki pasmem grzbietu Ještědsko-Kozákowskiego w deszczu i mgle',
+      'Całodzienna wędrówka grzbietem pasma Ještědsko-Kozákowskiego w deszczu i gęstej mgle.',
     hasStoryPage: true, // tylko ten kafelek ma link do /about
   },
 ];
@@ -41,8 +41,10 @@ export const HallOfFameList = () => {
   const { t, locale } = useTranslations('hallOfFameList');
   const { t: tGlobal } = useTranslations();
   const router = useRouter();
+  // Always expand the first completer card by default
+  const firstCompleterId = mockCompletions.find(c => c.isFirstCompleter)?.id ?? null;
   const [selectedCompletion, setSelectedCompletion] = useState<number | null>(
-    null
+    firstCompleterId
   );
   const [sortBy, setSortBy] = useState<'date' | 'time' | 'name'>('date');
 
@@ -154,6 +156,10 @@ export const HallOfFameList = () => {
                 const target = e.target as HTMLElement;
                 if (target.closest('[data-story-link]')) {
                   return; // Nie zwijaj kafelka jeśli kliknięto w link do relacji
+                }
+                // Kafelek pierwszego zdobywcy (Zdobywcy Korony Sudetów) zawsze pozostaje rozwinięty
+                if (completion.isFirstCompleter) {
+                  return; // Nie pozwól na zwinięcie kafelka pierwszego zdobywcy
                 }
                 setSelectedCompletion(
                   selectedCompletion === completion.id ? null : completion.id

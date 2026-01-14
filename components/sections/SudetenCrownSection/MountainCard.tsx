@@ -25,7 +25,7 @@ interface MountainCardProps {
 }
 
 const cardBaseStyles =
-  'group relative overflow-hidden rounded-2xl border-2 border-earth-200/60 bg-gradient-to-br from-cream via-earth-50/20 to-cream p-3 shadow-vintage-lg transition-all duration-300 hover:scale-[1.02] hover:border-earth-400/60 hover:shadow-vintage-xl sm:p-4 md:p-5 lg:p-6';
+  'group relative overflow-hidden rounded-3xl border-2 border-earth-200/70 bg-gradient-to-br from-cream via-earth-50/30 to-cream p-3 shadow-[0_8px_24px_rgba(107,68,35,0.12),0_4px_8px_rgba(107,68,35,0.08)] transition-[transform,border-color,box-shadow] duration-500 ease-out hover:scale-[1.03] hover:border-earth-500/80 hover:shadow-[0_16px_48px_rgba(107,68,35,0.2),0_8px_16px_rgba(107,68,35,0.15)] hover:-translate-y-1 sm:p-4 md:p-5 lg:p-6';
 
 const LazyMountainCard = memo((props: MountainCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -90,17 +90,44 @@ const MountainCard = ({
         className={cn(
           cardBaseStyles,
           'cursor-pointer',
-          isMobile && 'hover:scale-100',
-          isSelected && 'border-earth-500/80 ring-2 ring-earth-500/50'
+          isMobile && 'hover:scale-100 hover:-translate-y-0',
+          isSelected && 'border-earth-600/90 ring-4 ring-earth-500/40 shadow-[0_20px_60px_rgba(107,68,35,0.25)]'
         )}
         onClick={onClick}
       >
-        {/* Subtle gradient overlay */}
-        <div className="from-earth-500/3 to-earth-600/3 absolute inset-0 rounded-2xl bg-gradient-to-br via-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        {/* Enhanced gradient overlay with animation */}
+        <div className="from-earth-500/5 via-earth-600/3 to-earth-700/5 absolute inset-0 rounded-3xl bg-gradient-to-br opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-        {/* Hover glow effect - only outside */}
-        <div className="via-earth-500/8 pointer-events-none absolute -inset-1 -z-10 rounded-2xl bg-gradient-to-br from-earth-400/15 to-earth-600/15 opacity-0 blur-lg transition-opacity duration-300 group-hover:opacity-100" />
-        <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} />
+        {/* Enhanced hover glow effect - optimized: single layer with reduced blur */}
+        <div className="via-earth-500/10 pointer-events-none absolute -inset-1.5 -z-10 rounded-3xl bg-gradient-to-br from-earth-400/15 to-earth-600/15 opacity-0 blur-lg transition-opacity duration-500 will-change-[opacity] group-hover:opacity-100" />
+        
+        {/* Shine effect on hover - optimized with will-change */}
+        <div className="absolute inset-0 -z-10 rounded-3xl opacity-0 transition-opacity duration-500 will-change-[opacity] group-hover:opacity-100">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 will-change-transform" />
+        </div>
+        <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} isMobile={true} isSelected={isSelected} />
+
+        {/* Mobile expand indicator - bottom right corner - optimized */}
+        {!isSelected && (
+          <div className="absolute bottom-3 right-3 z-10 sm:bottom-4 sm:right-4">
+            <div className="flex size-8 items-center justify-center rounded-full bg-earth-100/90 shadow-[0_2px_8px_rgba(107,68,35,0.15)] transition-[background-color,box-shadow] duration-300 will-change-[background-color,box-shadow] group-hover:bg-earth-200/90 group-hover:shadow-[0_4px_12px_rgba(107,68,35,0.25)]">
+              <svg
+                className="size-5 text-earth-600/80 transition-[color,transform] duration-300 will-change-[color,transform] group-hover:text-earth-700 group-hover:translate-y-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-label="Rozwiń"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </div>
+        )}
 
         {/* Expanded Details (Collapsible) */}
         <div
@@ -129,19 +156,24 @@ const MountainCard = ({
     >
       <MorphingDialogTrigger className="w-full text-left">
         <div className={cn(cardBaseStyles, 'h-full')}>
-          {/* Subtle gradient overlay */}
-          <div className="from-earth-500/3 to-earth-600/3 absolute inset-0 rounded-2xl bg-gradient-to-br via-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          {/* Enhanced gradient overlay with animation */}
+          <div className="from-earth-500/5 via-earth-600/3 to-earth-700/5 absolute inset-0 rounded-3xl bg-gradient-to-br opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-          {/* Hover glow effect - only outside */}
-          <div className="via-earth-500/8 pointer-events-none absolute -inset-1 -z-10 rounded-2xl bg-gradient-to-br from-earth-400/15 to-earth-600/15 opacity-0 blur-lg transition-opacity duration-300 group-hover:opacity-100" />
+          {/* Enhanced hover glow effect - optimized: single layer with reduced blur */}
+          <div className="via-earth-500/10 pointer-events-none absolute -inset-1.5 -z-10 rounded-3xl bg-gradient-to-br from-earth-400/15 to-earth-600/15 opacity-0 blur-lg transition-opacity duration-500 will-change-[opacity] group-hover:opacity-100" />
+          
+          {/* Shine effect on hover - optimized with will-change */}
+          <div className="absolute inset-0 -z-10 rounded-3xl opacity-0 transition-opacity duration-500 will-change-[opacity] group-hover:opacity-100">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 will-change-transform" />
+          </div>
 
-          <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} />
+          <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} isMobile={false} isSelected={false} />
         </div>
       </MorphingDialogTrigger>
       <MorphingDialogContainer>
-        <MorphingDialogContent className="relative h-auto w-[500px] rounded-2xl border-2 border-earth-300/80 bg-cream shadow-vintage-lg [&_.mountain-image-container]:h-80">
+        <MorphingDialogContent className="relative h-auto w-[500px] rounded-3xl border-2 border-earth-400/90 bg-cream shadow-[0_20px_60px_rgba(107,68,35,0.25),0_8px_16px_rgba(107,68,35,0.15)] [&_.mountain-image-container]:h-80">
           <div className="p-4 sm:p-5 md:p-6 lg:p-8">
-            <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} />
+            <MountainCardVisuals range={range} isKgp={isKgp} isKs={isKs} isMobile={false} isSelected={false} />
             <div className="mt-4 border-t border-earth-300/60 pt-4">
               <MountainDetails range={range} />
             </div>
@@ -157,37 +189,41 @@ const MountainCardVisuals = memo(
     range,
     isKgp,
     isKs,
-  }: Omit<MountainCardProps, 'isSelected' | 'onClick' | 'isMobile'>) => {
+    isMobile = false,
+    isSelected = false,
+  }: Omit<MountainCardProps, 'onClick'>) => {
     return (
       <div className="relative flex h-full flex-col">
-      <Watermark className="absolute -bottom-6 -right-6 z-0 opacity-[0.08] transition-opacity duration-300 group-hover:opacity-[0.12]" />
+      <Watermark className="absolute -bottom-6 -right-6 z-0 opacity-[0.08] transition-all duration-500 group-hover:opacity-[0.15] group-hover:scale-105" />
 
-      {/* Image Container with Overlays */}
-      <div className="relative mb-3 w-full overflow-hidden rounded-xl">
+      {/* Image Container with Enhanced Overlays */}
+      <div className="relative mb-4 w-full overflow-hidden rounded-2xl shadow-[0_4px_12px_rgba(107,68,35,0.15)] transition-[box-shadow,transform] duration-500 will-change-[box-shadow,transform] group-hover:shadow-[0_8px_24px_rgba(107,68,35,0.25)] group-hover:scale-[1.02]">
         {range.imageUrl ? (
-          <div className="mountain-image-container relative h-40 w-full sm:h-48 md:h-56 lg:h-64">
+          <div className="mountain-image-container relative h-40 w-full overflow-hidden sm:h-48 md:h-56 lg:h-64">
             <Image
               src={range.imageUrl}
               alt={`${range.rangeName} - ${range.peakName}`}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-700 will-change-transform group-hover:scale-110"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               loading="lazy"
             />
-            {/* Gradient overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-earth-900/60 via-transparent to-transparent" />
+            {/* Enhanced gradient overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-earth-900/70 via-earth-900/20 to-transparent transition-opacity duration-500 group-hover:from-earth-900/80" />
+            {/* Subtle vignette effect */}
+            <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-earth-900/20" />
           </div>
         ) : (
-          <div className="flex h-40 items-center justify-center bg-gradient-to-br from-earth-100 to-earth-200 text-4xl sm:h-48 md:h-56 lg:h-64">
+          <div className="flex h-40 items-center justify-center bg-gradient-to-br from-earth-100 via-earth-100 to-earth-200 text-5xl transition-all duration-500 group-hover:from-earth-200 group-hover:to-earth-300 sm:h-48 md:h-56 lg:h-64">
             🏔️
           </div>
         )}
 
-        {/* Rank Badge and Flag Overlays */}
-        <div className="absolute left-3 top-3 flex items-start justify-between sm:left-4 sm:top-4">
+        {/* Rank Badge and Flag Overlays with enhanced styling */}
+        <div className="absolute left-3 top-3 flex items-start justify-between transition-transform duration-500 group-hover:scale-105 sm:left-4 sm:top-4">
           <RankBadge rank={range.rank} isKgp={isKgp} isKs={isKs} />
         </div>
-        <div className="absolute right-3 top-3 sm:right-4 sm:top-4">
+        <div className="absolute right-3 top-3 transition-transform duration-500 group-hover:scale-105 sm:right-4 sm:top-4">
           <CountryBadge country={range.country} />
         </div>
       </div>
@@ -214,32 +250,88 @@ const CountryBadge = ({ country }: { country: string }) => {
     return '🏔️';
   };
 
+  const getCountryStyle = (code: string) => {
+    switch (code) {
+      case 'PL':
+        return {
+          gradient: 'from-red-600 via-red-700 to-red-800',
+          shadow: 'shadow-[0_6px_20px_rgba(220,38,38,0.5),0_2px_8px_rgba(185,28,28,0.4),inset_0_2px_4px_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(153,27,27,0.4)]',
+          ring: 'ring-2 ring-red-400/50',
+          glow: 'bg-red-500/40',
+        };
+      case 'CZ':
+        return {
+          gradient: 'from-blue-600 via-blue-700 to-blue-800',
+          shadow: 'shadow-[0_6px_20px_rgba(37,99,235,0.5),0_2px_8px_rgba(29,78,216,0.4),inset_0_2px_4px_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(30,64,175,0.4)]',
+          ring: 'ring-2 ring-blue-400/50',
+          glow: 'bg-blue-500/40',
+        };
+      case 'DE':
+        return {
+          gradient: 'from-yellow-500 via-yellow-600 to-yellow-700',
+          shadow: 'shadow-[0_6px_20px_rgba(234,179,8,0.5),0_2px_8px_rgba(202,138,4,0.4),inset_0_2px_4px_rgba(255,255,255,0.25),inset_0_-2px_4px_rgba(161,98,7,0.4)]',
+          ring: 'ring-2 ring-yellow-400/50',
+          glow: 'bg-yellow-500/40',
+        };
+      default:
+        return {
+          gradient: 'from-earth-600 via-earth-700 to-earth-800',
+          shadow: 'shadow-[0_6px_20px_rgba(107,68,35,0.5),0_2px_8px_rgba(91,58,31,0.4),inset_0_2px_4px_rgba(255,255,255,0.15),inset_0_-2px_4px_rgba(77,50,27,0.4)]',
+          ring: 'ring-2 ring-earth-400/50',
+          glow: 'bg-earth-500/40',
+        };
+    }
+  };
+
   return (
-    <div className="flex gap-1">
-      {codes.map((code) => (
-        <span
-          key={code}
-          className={cn(
-            'flex h-6 min-w-[24px] items-center justify-center rounded bg-earth-900/80 px-1.5 text-xs font-bold text-cream shadow-sm sm:h-7 sm:text-sm',
-            code === 'PL' && 'bg-red-900/80',
-            code === 'CZ' && 'bg-blue-900/80',
-            code === 'DE' && 'bg-yellow-900/80'
-          )}
-        >
-          {getFlagForCode(code)}
-        </span>
-      ))}
+    <div className="flex gap-1.5">
+      {codes.map((code) => {
+        const style = getCountryStyle(code);
+        return (
+          <div
+            key={code}
+            className={cn(
+              'relative flex h-7 min-w-[28px] items-center justify-center rounded-lg bg-gradient-to-br font-bold text-white shadow-[0_6px_20px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transition-[transform,box-shadow] duration-500 will-change-[transform,box-shadow] group-hover:scale-110 group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.15)] sm:h-8 sm:min-w-[32px] sm:text-sm',
+              style.gradient,
+              style.shadow,
+              style.ring
+            )}
+          >
+            {/* Outer glow ring on hover */}
+            <div className={cn(
+              'absolute -inset-1 rounded-lg opacity-0 blur-sm transition-opacity duration-500 will-change-opacity group-hover:opacity-100',
+              style.glow
+            )} />
+            
+            {/* Inner shine effect */}
+            <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-white/30 via-white/15 to-transparent opacity-50 transition-opacity duration-300 will-change-opacity group-hover:opacity-75" />
+            
+            {/* Top highlight */}
+            <div className="absolute top-0 left-1/2 h-1/2 w-3/4 -translate-x-1/2 rounded-lg bg-gradient-to-b from-white/40 to-transparent opacity-40" />
+            
+            {/* Flag emoji with shadow */}
+            <span className="relative z-10 text-base drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] sm:text-lg">
+              {getFlagForCode(code)}
+            </span>
+            
+            {/* Animated shine sweep on hover - optimized */}
+            <div className="absolute inset-0 rounded-lg overflow-hidden opacity-0 transition-opacity duration-500 will-change-[opacity] group-hover:opacity-100">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out will-change-transform" />
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
 
 const MountainInfo = memo(({ range }: { range: SudetenRange }) => {
   return (
-    <div className="mb-2 text-center">
-      <h3 className="font-display text-sm font-bold uppercase leading-tight text-earth-800 sm:text-base md:text-lg md:normal-case lg:text-xl">
+    <div className="mb-3 text-center transition-transform duration-500 will-change-transform group-hover:translate-y-[-2px]">
+      <h3 className="font-display text-sm font-bold uppercase leading-tight text-earth-900 drop-shadow-sm transition-color duration-300 will-change-[color] group-hover:text-earth-950 sm:text-base md:text-lg md:normal-case lg:text-xl">
         {range.rangeName}
       </h3>
-      <p className="truncate text-xs font-medium text-mountain-600 sm:text-sm md:font-bold lg:text-base">
+      <p className="mt-1 truncate text-xs font-semibold text-mountain-700 transition-color duration-300 will-change-[color] group-hover:text-mountain-800 sm:text-sm md:font-bold lg:text-base">
         {range.peakName}
       </p>
     </div>
@@ -249,9 +341,13 @@ const MountainInfo = memo(({ range }: { range: SudetenRange }) => {
 MountainInfo.displayName = 'MountainInfo';
 
 const ElevationStats = memo(({ range }: { range: SudetenRange }) => (
-  <div className="text-center">
-    <div className="stats-number text-lg font-bold text-earth-700 sm:text-xl md:text-2xl lg:text-3xl">
-      {range.peakHeight}M
+  <div className="text-center transition-transform duration-500 will-change-transform group-hover:scale-105">
+    <div className="stats-number relative inline-block text-lg font-bold text-earth-800 drop-shadow-sm transition-[color,filter] duration-300 will-change-[color,filter] group-hover:text-earth-900 group-hover:drop-shadow-md sm:text-xl md:text-2xl lg:text-3xl">
+      <span className="relative z-10">{range.peakHeight}M</span>
+      {/* Subtle glow effect behind elevation */}
+      <span className="absolute inset-0 text-earth-600/30 blur-sm transition-opacity duration-300 will-change-opacity group-hover:opacity-50">
+        {range.peakHeight}M
+      </span>
     </div>
   </div>
 ));
@@ -398,48 +494,136 @@ const DetailRow = memo(({ label, value }: { label: string; value: string }) => (
 
 DetailRow.displayName = 'DetailRow';
 
-const rankColors = {
-  1: 'from-yellow-400 to-yellow-600',
-  2: 'from-earth-400 to-earth-600',
-  3: 'from-mountain-400 to-mountain-600',
+// Enhanced rank colors with richer gradients
+type RankStyle = {
+  gradient: string;
+  shadow: string;
+  ring: string;
+  glow: string;
 };
-export const getRankColor = (rank: number): string => {
-  return rankColors[rank as keyof typeof rankColors] || rankColors[3];
+
+const rankColors: Record<1 | 2 | 3 | 'default', RankStyle> = {
+  1: {
+    gradient: 'from-yellow-400 via-yellow-500 to-yellow-600',
+    shadow: 'shadow-[0_6px_20px_rgba(234,179,8,0.5),0_2px_8px_rgba(234,179,8,0.3),inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(161,98,7,0.4)]',
+    ring: 'ring-2 ring-yellow-300/50',
+    glow: 'shadow-[0_0_20px_rgba(234,179,8,0.6)]',
+  },
+  2: {
+    gradient: 'from-gray-200 via-gray-300 to-gray-400',
+    shadow: 'shadow-[0_6px_20px_rgba(156,163,175,0.4),0_2px_8px_rgba(107,114,128,0.3),inset_0_2px_4px_rgba(255,255,255,0.4),inset_0_-2px_4px_rgba(75,85,99,0.3)]',
+    ring: 'ring-2 ring-gray-200/50',
+    glow: 'shadow-[0_0_20px_rgba(156,163,175,0.5)]',
+  },
+  3: {
+    gradient: 'from-amber-700 via-amber-800 to-amber-900',
+    shadow: 'shadow-[0_6px_20px_rgba(180,83,9,0.5),0_2px_8px_rgba(146,64,14,0.3),inset_0_2px_4px_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(120,53,15,0.4)]',
+    ring: 'ring-2 ring-amber-600/50',
+    glow: 'shadow-[0_0_20px_rgba(180,83,9,0.6)]',
+  },
+  default: {
+    gradient: 'from-forest-500 via-forest-600 to-forest-700',
+    shadow: 'shadow-[0_6px_20px_rgba(47,79,62,0.4),0_2px_8px_rgba(34,52,43,0.3),inset_0_2px_4px_rgba(255,255,255,0.15),inset_0_-2px_4px_rgba(34,52,43,0.4)]',
+    ring: 'ring-2 ring-forest-400/50',
+    glow: 'shadow-[0_0_20px_rgba(47,79,62,0.5)]',
+  },
+};
+
+export const getRankStyle = (rank: number): RankStyle => {
+  if (rank === 1) return rankColors[1];
+  if (rank === 2) return rankColors[2];
+  if (rank === 3) return rankColors[3];
+  return rankColors.default;
 };
 
 const RankBadge = memo(
-  ({ rank, isKgp, isKs }: { rank: number; isKgp: boolean; isKs: boolean }) => (
-    <div className="flex flex-shrink-0 items-center gap-1.5 sm:gap-2">
-      {/* Rank Number */}
-      <div
-        className={cn(
-          'flex items-center justify-center rounded-full bg-gradient-to-br font-display font-bold text-cream shadow-vintage',
-          'size-9 text-sm sm:size-10 sm:text-base md:size-8 md:text-sm lg:size-9 lg:text-base',
-          getRankColor(rank)
-        )}
-      >
-        {rank}
-      </div>
+  ({ rank, isKgp, isKs }: { rank: number; isKgp: boolean; isKs: boolean }) => {
+    const rankStyle = getRankStyle(rank);
+    
+    return (
+      <div className="flex flex-shrink-0 items-center gap-1.5 sm:gap-2">
+        {/* Rank Number with premium medal-style design */}
+        <div
+          className={cn(
+            'relative flex items-center justify-center rounded-full bg-gradient-to-br font-display font-bold text-white transition-transform duration-500 will-change-transform group-hover:scale-115',
+            'size-11 text-lg sm:size-12 sm:text-xl md:size-11 md:text-lg lg:size-12 lg:text-xl',
+            rankStyle.gradient,
+            rankStyle.shadow,
+            rankStyle.ring
+          )}
+        >
+          {/* Outer glow ring on hover */}
+          <div className={cn(
+            'absolute -inset-1 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100 blur-sm',
+            rank === 1 && 'bg-yellow-400/40',
+            rank === 2 && 'bg-gray-300/40',
+            rank === 3 && 'bg-amber-700/40',
+            rank > 3 && 'bg-forest-500/40'
+          )} />
+          
+          {/* Inner shine effect - always visible but stronger on hover */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/40 via-white/20 to-transparent opacity-60 transition-opacity duration-300 will-change-opacity group-hover:opacity-100" />
+          
+          {/* Top highlight */}
+          <div className="absolute top-0 left-1/2 h-1/2 w-3/4 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/50 to-transparent opacity-50" />
+          
+          {/* Number with text shadow for depth */}
+          <span className="relative z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">{rank}</span>
+          
+          {/* Animated shine sweep on hover - optimized */}
+          <div className="absolute inset-0 rounded-full overflow-hidden opacity-0 transition-opacity duration-500 will-change-[opacity] group-hover:opacity-100">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out will-change-transform" />
+          </div>
+        </div>
 
-      {/* Badges - inline row next to rank */}
+      {/* Badges - inline row next to rank with premium medal-style design */}
       {(isKs || isKgp) && (
-        <div className="flex shrink-0 gap-1 sm:gap-1.5">
+        <div className="flex shrink-0 gap-1.5 sm:gap-2">
           {isKs && (
-            <div className="relative flex size-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-700 to-amber-900 text-[9px] font-black leading-none text-cream shadow-[0_4px_12px_rgba(180,83,9,0.4),0_2px_4px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.2),inset_0_-1px_2px_rgba(0,0,0,0.2)] ring-2 ring-amber-500/30 sm:size-6 sm:text-[10px]">
-              <span className="relative">KS</span>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400/20 to-transparent" />
+            <div className="relative flex size-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-600 via-amber-700 to-amber-900 text-[9px] font-black leading-none text-white shadow-[0_6px_20px_rgba(180,83,9,0.6),0_2px_8px_rgba(146,64,14,0.4),inset_0_2px_4px_rgba(255,255,255,0.25),inset_0_-2px_4px_rgba(120,53,15,0.4)] ring-2 ring-amber-500/50 transition-[transform,box-shadow] duration-500 will-change-[transform,box-shadow] group-hover:scale-110 group-hover:shadow-[0_8px_24px_rgba(180,83,9,0.7),0_2px_8px_rgba(146,64,14,0.4),inset_0_2px_4px_rgba(255,255,255,0.3)] sm:size-6 sm:text-[10px]">
+              {/* Outer glow ring on hover */}
+              <div className="absolute -inset-1 rounded-full bg-amber-500/40 opacity-0 blur-sm transition-opacity duration-500 will-change-opacity group-hover:opacity-100" />
+              
+              {/* Inner shine effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/40 via-white/20 to-transparent opacity-60 transition-opacity duration-300 will-change-opacity group-hover:opacity-100" />
+              
+              {/* Top highlight */}
+              <div className="absolute top-0 left-1/2 h-1/2 w-3/4 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/50 to-transparent opacity-50" />
+              
+              {/* Text with shadow - centered */}
+              <span className="relative z-10 flex items-center justify-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">KS</span>
+              
+              {/* Animated shine sweep on hover - optimized */}
+              <div className="absolute inset-0 rounded-full overflow-hidden opacity-0 transition-opacity duration-500 will-change-[opacity] group-hover:opacity-100">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out will-change-transform" />
+              </div>
             </div>
           )}
           {isKgp && (
-            <div className="relative flex size-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-orange-600 to-red-700 text-[9px] font-black leading-none text-cream shadow-[0_4px_12px_rgba(234,88,12,0.4),0_2px_4px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.2),inset_0_-1px_2px_rgba(0,0,0,0.2)] ring-2 ring-orange-400/30 sm:size-6 sm:text-[10px]">
-              <span className="relative">KGP</span>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-orange-300/20 to-transparent" />
+            <div className="relative flex size-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 via-orange-600 to-red-700 text-[9px] font-black leading-none text-white shadow-[0_6px_20px_rgba(234,88,12,0.6),0_2px_8px_rgba(194,65,12,0.4),inset_0_2px_4px_rgba(255,255,255,0.25),inset_0_-2px_4px_rgba(154,52,18,0.4)] ring-2 ring-orange-400/50 transition-[transform,box-shadow] duration-500 will-change-[transform,box-shadow] group-hover:scale-110 group-hover:shadow-[0_8px_24px_rgba(234,88,12,0.7),0_2px_8px_rgba(194,65,12,0.4),inset_0_2px_4px_rgba(255,255,255,0.3)] sm:size-6 sm:text-[10px]">
+              {/* Outer glow ring on hover */}
+              <div className="absolute -inset-1 rounded-full bg-orange-400/40 opacity-0 blur-sm transition-opacity duration-500 will-change-opacity group-hover:opacity-100" />
+              
+              {/* Inner shine effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/40 via-white/20 to-transparent opacity-60 transition-opacity duration-300 will-change-opacity group-hover:opacity-100" />
+              
+              {/* Top highlight */}
+              <div className="absolute top-0 left-1/2 h-1/2 w-3/4 -translate-x-1/2 rounded-full bg-gradient-to-b from-white/50 to-transparent opacity-50" />
+              
+              {/* Text with shadow - centered */}
+              <span className="relative z-10 flex items-center justify-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">KGP</span>
+              
+              {/* Animated shine sweep on hover - optimized */}
+              <div className="absolute inset-0 rounded-full overflow-hidden opacity-0 transition-opacity duration-500 will-change-[opacity] group-hover:opacity-100">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out will-change-transform" />
+              </div>
             </div>
           )}
         </div>
       )}
     </div>
-  )
+    );
+  }
 );
 
 RankBadge.displayName = 'RankBadge';
