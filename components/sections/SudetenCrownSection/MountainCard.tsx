@@ -167,7 +167,7 @@ const MountainCardVisuals = memo(
           <div className="mountain-image-container relative h-40 w-full sm:h-48 md:h-56 lg:h-64">
             <Image
               src={range.imageUrl}
-              alt={`${range.name} - ${range.peak}`}
+              alt={`${range.rangeName} - ${range.peakName}`}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -205,6 +205,13 @@ MountainCardVisuals.displayName = 'MountainCardVisuals';
 const CountryBadge = ({ country }: { country: string }) => {
   const codes = country.split('/').map((c) => c.trim());
 
+  const getFlagForCode = (code: string): string => {
+    if (code === 'PL') return '🇵🇱';
+    if (code === 'CZ') return '🇨🇿';
+    if (code === 'DE') return '🇩🇪';
+    return '🏔️';
+  };
+
   return (
     <div className="flex gap-1">
       {codes.map((code) => (
@@ -217,7 +224,7 @@ const CountryBadge = ({ country }: { country: string }) => {
             code === 'DE' && 'bg-yellow-900/80'
           )}
         >
-          {code}
+          {getFlagForCode(code)}
         </span>
       ))}
     </div>
@@ -228,10 +235,10 @@ const MountainInfo = memo(({ range }: { range: SudetenRange }) => {
   return (
     <div className="mb-2 text-center">
       <h3 className="font-display text-sm font-bold uppercase leading-tight text-earth-800 sm:text-base md:text-lg md:normal-case lg:text-xl">
-        {range.name}
+        {range.rangeName}
       </h3>
       <p className="truncate text-xs font-medium text-mountain-600 sm:text-sm md:font-bold lg:text-base">
-        {range.peak}
+        {range.peakName}
       </p>
     </div>
   );
@@ -242,7 +249,7 @@ MountainInfo.displayName = 'MountainInfo';
 const ElevationStats = memo(({ range }: { range: SudetenRange }) => (
   <div className="text-center">
     <div className="stats-number text-lg font-bold text-earth-700 sm:text-xl md:text-2xl lg:text-3xl">
-      {range.elevation}M
+      {range.peakHeight}M
     </div>
   </div>
 ));
@@ -256,23 +263,119 @@ const getCountryFlag = (country: string): string => {
   return '🏔️';
 };
 
+// Helper function to normalize names for comparison (removes diacritics and converts to lowercase)
+const normalizeName = (name: string): string => {
+  return name
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // removes diacritics
+    .trim();
+};
+
+// Check if two names are similar (after normalization)
+const namesAreSimilar = (name1: string, name2: string): boolean => {
+  return normalizeName(name1) === normalizeName(name2);
+};
+
 const MountainDetails = memo(({ range }: { range: SudetenRange }) => {
   const { t } = useTranslations('sudetenCrown');
   
+  // Helper function to get country flags as string
+  const getCountryFlagsString = (country: string): string => {
+    const codes = country.split('/').map((c) => c.trim());
+    const flags = codes.map((code) => {
+      if (code === 'PL') return '🇵🇱';
+      if (code === 'CZ') return '🇨🇿';
+      if (code === 'DE') return '🇩🇪';
+      return '🏔️';
+    });
+    return flags.join(' ');
+  };
+
+  // Check if name contains Czech diacritics (ě, ř, ů, á, é, í, ó, ú, ý, č, ď, ň, š, ť, ž)
+  const containsCzechDiacritics = (name: string): boolean => {
+    const czechChars = /[ěřůáéíóúýčďňšťžĚŘŮÁÉÍÓÚÝČĎŇŠŤŽ]/;
+    return czechChars.test(name);
+  };
+
+  // Check if name contains Polish diacritics (ą, ć, ę, ł, ń, ó, ś, ź, ż)
+  const containsPolishDiacritics = (name: string): boolean => {
+    const polishChars = /[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/;
+    return polishChars.test(name);
+  };
+
+  // Only show foreign names if they exist and differ from Polish names
+  // For peak names: also show if one has Czech diacritics and the other doesn't (e.g., Jeřáb vs Jerab)
+  const shouldShowForeignRangeName = 
+    range.foreignRangeName && 
+    !namesAreSimilar(range.rangeName, range.foreignRangeName);
+  
+  const shouldShowForeignPeakName = 
+    range.foreignPeakName && 
+    (!namesAreSimilar(range.peakName, range.foreignPeakName) ||
+     (containsCzechDiacritics(range.peakName) && !containsCzechDiacritics(range.foreignPeakName)) ||
+     (!containsCzechDiacritics(range.peakName) && containsCzechDiacritics(range.foreignPeakName)));
+
+  // Determine if foreignPeakName is Polish:
+  // If peak is in Czech Republic, foreignPeakName is Polish (unless peakName contains Polish diacritics)
+  // If peakName contains Czech diacritics, foreignPeakName is Polish
+  // If foreignPeakName contains Polish diacritics, it's Polish
+  const isForeignPeakNamePolish = shouldShowForeignPeakName && (
+    containsPolishDiacritics(range.foreignPeakName) || 
+    containsCzechDiacritics(range.peakName) ||
+    (range.country === 'CZ' && !containsPolishDiacritics(range.peakName) && !containsCzechDiacritics(range.peakName))
+  );
+
+  // Special handling for Góry Łużyckie Luž (id: 35)
+  const isLuzSpecialCase = range.id === 35 && 
+    range.additionalRangeNameGerman && 
+    range.additionalRangeNameCzech && 
+    range.additionalPeakNameCzech && 
+    range.additionalPeakNameGerman;
+
   return (
-    <div className="space-y-2 text-sm text-earth-700 md:space-y-1">
+    <div className="space-y-3 text-sm text-earth-700">
+      {/* Names Section */}
       <div className="grid grid-cols-2 gap-2 md:block md:space-y-1">
-        <DetailRow label={t('czech')} value={range.nameCs} />
-        <DetailRow label={t('german')} value={range.nameDe} />
-        <DetailRow
-          label={`${t('peak')} (${getCountryFlag(range.country)})`}
-          value={range.peakCs}
-        />
-        {range.peakDe && (
-          <DetailRow label={t('peakGerman')} value={range.peakDe} />
+        {isLuzSpecialCase ? (
+          <>
+            <DetailRow label={t('rangeNameCzech')} value={range.additionalRangeNameCzech} />
+            <DetailRow label={t('rangeNameGerman')} value={range.additionalRangeNameGerman} />
+            <DetailRow label={t('peakName')} value={range.additionalPeakNameCzech} />
+            <DetailRow label={t('peakNameGerman')} value={range.additionalPeakNameGerman} />
+          </>
+        ) : (
+          <>
+            {shouldShowForeignRangeName && (
+              <DetailRow label={t('rangeNameCzech')} value={range.foreignRangeName} />
+            )}
+            {shouldShowForeignPeakName && (
+              <DetailRow 
+                label={isForeignPeakNamePolish ? t('peakNamePolish') : t('peakNameCzech')} 
+                value={range.foreignPeakName} 
+              />
+            )}
+          </>
         )}
-        <DetailRow label={t('countries')} value={range.country} />
+        <DetailRow 
+          label={t('countries')} 
+          value={getCountryFlagsString(range.country)} 
+        />
       </div>
+
+      {/* Description Section */}
+      {range.description && (
+        <div className="mt-4 border-t border-earth-300/60 pt-3">
+          <div className="space-y-1">
+            <span className="block font-bold text-earth-800">
+              {t('description')}:
+            </span>
+            <p className="whitespace-pre-line text-earth-700 leading-relaxed">
+              {range.description}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 });

@@ -767,11 +767,21 @@
     "noResults": "Nie znaleziono pasm spełniających kryteria.",
     "clearFilters": "Wyczyść filtry",
     "ranges": "Pasma",
+    "rangeName": "Nazwa pasma",
+    "foreignRangeName": "Nazwa pasma (obca)",
+    "rangeNameCzech": "Nazwa pasma górskiego (cz)",
+    "rangeNameGerman": "Nazwa pasma górskiego (de)",
     "czech": "Czeski",
     "german": "Niemiecki",
     "peak": "Szczyt",
+    "peakName": "Nazwa szczytu",
+    "foreignPeakName": "Nazwa szczytu (obca)",
+    "peakNameCzech": "Nazwa szczytu (cz)",
+    "peakNamePolish": "Nazwa szczytu",
+    "peakNameGerman": "Nazwa szczytu (de)",
     "peakGerman": "Szczyt (niem.)",
     "countries": "Kraje",
+    "description": "Warto wiedzieć",
     "imageCredits": {
       "text": "Zdjęcia szczytów pochodzą z serwisu Mapy.cz i są autorstwa użytkowników tego serwisu."
     }

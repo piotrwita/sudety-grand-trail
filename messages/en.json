@@ -767,11 +767,21 @@
     "noResults": "No ranges found matching the criteria.",
     "clearFilters": "Clear filters",
     "ranges": "Ranges",
+    "rangeName": "Range name",
+    "foreignRangeName": "Range name (foreign)",
+    "rangeNameCzech": "Mountain range name (Czech)",
+    "rangeNameGerman": "Mountain range name (German)",
     "czech": "Czech",
     "german": "German",
     "peak": "Peak",
+    "peakName": "Peak name",
+    "foreignPeakName": "Peak name (foreign)",
+    "peakNameCzech": "Peak name (Czech)",
+    "peakNamePolish": "Peak name (Polish)",
+    "peakNameGerman": "Peak name (German)",
     "peakGerman": "Peak (Ger.)",
     "countries": "Countries",
+    "description": "Worth knowing",
     "imageCredits": {
       "text": "Peak images are sourced from Mapy.cz and are the work of users of that service."
     }

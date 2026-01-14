@@ -102,8 +102,8 @@ export const GridMountainCards = ({ ranges }: GridMountainCardsProps) => {
       // Match against name, peak name, or country
       const matchesSearch =
         debouncedSearchTerm === '' ||
-        range.name.toLowerCase().includes(searchLower) ||
-        range.peak.toLowerCase().includes(searchLower) ||
+        range.rangeName.toLowerCase().includes(searchLower) ||
+        range.peakName.toLowerCase().includes(searchLower) ||
         range.country.toLowerCase().includes(searchLower);
 
       // Apply filters - if filter is active, show only matching peaks
