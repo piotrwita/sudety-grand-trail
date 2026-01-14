@@ -83,6 +83,7 @@ export const GridMountainCards = ({ ranges }: GridMountainCardsProps) => {
   const [state, dispatch] = useReducer(filterReducer, initialState);
   const { selectedRangeId, searchTerm, showKgpOnly, showKsOnly } = state;
   const isMobile = useIsMobile();
+  const { t } = useTranslations('sudetenCrown');
 
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
 
@@ -99,11 +100,18 @@ export const GridMountainCards = ({ ranges }: GridMountainCardsProps) => {
     return rangesWithKgp.filter((range) => {
       const searchLower = debouncedSearchTerm.toLowerCase();
 
-      // Match against name, peak name, or country
+      // Match against original name, peak name, translated names, or country
+      const originalRangeName = range.rangeName.toLowerCase();
+      const originalPeakName = range.peakName.toLowerCase();
+      const translatedRangeName = t(`peaks.${range.id}.rangeName`).toLowerCase();
+      const translatedPeakName = t(`peaks.${range.id}.peakName`).toLowerCase();
+      
       const matchesSearch =
         debouncedSearchTerm === '' ||
-        range.rangeName.toLowerCase().includes(searchLower) ||
-        range.peakName.toLowerCase().includes(searchLower) ||
+        originalRangeName.includes(searchLower) ||
+        originalPeakName.includes(searchLower) ||
+        translatedRangeName.includes(searchLower) ||
+        translatedPeakName.includes(searchLower) ||
         range.country.toLowerCase().includes(searchLower);
 
       // Apply filters - if filter is active, show only matching peaks
@@ -112,7 +120,7 @@ export const GridMountainCards = ({ ranges }: GridMountainCardsProps) => {
 
       return matchesSearch && matchesKs && matchesKgp;
     });
-  }, [rangesWithKgp, debouncedSearchTerm, showKgpOnly, showKsOnly]);
+  }, [rangesWithKgp, debouncedSearchTerm, showKgpOnly, showKsOnly, t]);
 
   const handleClearFilters = () => {
     dispatch({ type: FILTER_ACTIONS.CLEAR_FILTERS });

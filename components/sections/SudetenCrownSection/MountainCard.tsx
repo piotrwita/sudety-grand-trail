@@ -157,8 +157,9 @@ const MountainCardVisuals = memo(
     range,
     isKgp,
     isKs,
-  }: Omit<MountainCardProps, 'isSelected' | 'onClick' | 'isMobile'>) => (
-    <div className="relative flex h-full flex-col">
+  }: Omit<MountainCardProps, 'isSelected' | 'onClick' | 'isMobile'>) => {
+    return (
+      <div className="relative flex h-full flex-col">
       <Watermark className="absolute -bottom-6 -right-6 z-0 opacity-[0.08] transition-opacity duration-300 group-hover:opacity-[0.12]" />
 
       {/* Image Container with Overlays */}
@@ -197,7 +198,8 @@ const MountainCardVisuals = memo(
         <ElevationStats range={range} />
       </div>
     </div>
-  )
+    );
+  }
 );
 
 MountainCardVisuals.displayName = 'MountainCardVisuals';
@@ -317,14 +319,17 @@ const MountainDetails = memo(({ range }: { range: SudetenRange }) => {
      (!containsCzechDiacritics(range.peakName) && containsCzechDiacritics(range.foreignPeakName)));
 
   // Determine if foreignPeakName is Polish:
-  // If peak is in Czech Republic, foreignPeakName is Polish (unless peakName contains Polish diacritics)
-  // If peakName contains Czech diacritics, foreignPeakName is Polish
+  // If foreignPeakName contains Czech diacritics, it's Czech (not Polish)
   // If foreignPeakName contains Polish diacritics, it's Polish
-  const isForeignPeakNamePolish = shouldShowForeignPeakName && (
-    containsPolishDiacritics(range.foreignPeakName) || 
-    containsCzechDiacritics(range.peakName) ||
-    (range.country === 'CZ' && !containsPolishDiacritics(range.peakName) && !containsCzechDiacritics(range.peakName))
-  );
+  // If peakName contains Czech diacritics, foreignPeakName is Polish
+  // If peak is in Czech Republic only, foreignPeakName is Polish (unless peakName contains Polish diacritics)
+  const isForeignPeakNamePolish = shouldShowForeignPeakName && 
+    range.foreignPeakName &&
+    !containsCzechDiacritics(range.foreignPeakName!) && (
+      containsPolishDiacritics(range.foreignPeakName!) || 
+      containsCzechDiacritics(range.peakName) ||
+      (range.country === 'CZ' && !containsPolishDiacritics(range.peakName) && !containsCzechDiacritics(range.peakName))
+    );
 
   // Special handling for Góry Łużyckie Luž (id: 35)
   const isLuzSpecialCase = range.id === 35 && 
@@ -339,20 +344,20 @@ const MountainDetails = memo(({ range }: { range: SudetenRange }) => {
       <div className="grid grid-cols-2 gap-2 md:block md:space-y-1">
         {isLuzSpecialCase ? (
           <>
-            <DetailRow label={t('rangeNameCzech')} value={range.additionalRangeNameCzech} />
-            <DetailRow label={t('rangeNameGerman')} value={range.additionalRangeNameGerman} />
-            <DetailRow label={t('peakName')} value={range.additionalPeakNameCzech} />
-            <DetailRow label={t('peakNameGerman')} value={range.additionalPeakNameGerman} />
+            <DetailRow label={t('rangeNameCzech')} value={range.additionalRangeNameCzech!} />
+            <DetailRow label={t('rangeNameGerman')} value={range.additionalRangeNameGerman!} />
+            <DetailRow label={t('peakName')} value={range.additionalPeakNameCzech!} />
+            <DetailRow label={t('peakNameGerman')} value={range.additionalPeakNameGerman!} />
           </>
         ) : (
           <>
             {shouldShowForeignRangeName && (
-              <DetailRow label={t('rangeNameCzech')} value={range.foreignRangeName} />
+              <DetailRow label={t('rangeNameCzech')} value={range.foreignRangeName!} />
             )}
             {shouldShowForeignPeakName && (
               <DetailRow 
                 label={isForeignPeakNamePolish ? t('peakNamePolish') : t('peakNameCzech')} 
-                value={range.foreignPeakName} 
+                value={range.foreignPeakName!} 
               />
             )}
           </>
@@ -371,7 +376,7 @@ const MountainDetails = memo(({ range }: { range: SudetenRange }) => {
               {t('description')}:
             </span>
             <p className="whitespace-pre-line text-earth-700 leading-relaxed">
-              {range.description}
+              {t(`peaks.${range.id}.description`)}
             </p>
           </div>
         </div>

@@ -784,6 +784,283 @@
     "description": "Warto wiedzieć",
     "imageCredits": {
       "text": "Zdjęcia szczytów pochodzą z serwisu Mapy.cz i są autorstwa użytkowników tego serwisu."
+    },
+    "peaks": {
+      "1": {
+        "rangeName": "Karkonosze",
+        "peakName": "Śnieżka",
+        "description": "• Historyczna kaplica św. Wawrzyńca z XVII wieku na wierzchołku\n• Polska stacja meteorologiczna na szczycie\n• Wysokogórskie Obserwatorium Meteorologiczne przypomina \"latające spodki\"\n• Mgła utrzymuje się przez ponad 300 dni w roku, sprzyjając zjawiskom jak widmo Brockenu czy ognie św. Elma\n• Najwyżej położona czeska placówka pocztowa\n• Rekordowe podmuchy wiatru osiągnęły 288 km/h"
+      },
+      "2": {
+        "rangeName": "Wysoki Jesionik",
+        "peakName": "Praděd",
+        "description": "• Wieża telewizyjna o wysokości 162 metrów z restauracją - najwyżej położony punkt w Czechach\n• Obszar znany jako \"Morawski lodowiec\" ze względu na obfite opady śniegu\n• W granicach Narodowego Rezerwatu Przyrody Pradziad chroniącego alpejskie ekosystemy i rzadkie gatunki\n• Unikalne mroźne rozpadliny Tabulové skály z charakterystyczną górską florą i fauną\n• W pobliżu źródła rzeki Morawy"
+      },
+      "3": {
+        "rangeName": "Masyw Śnieżnika",
+        "peakName": "Śnieżnik",
+        "description": "• Najwyższy punkt kraju pardubickiego\n• Nowa wieża widokowa z 2022 roku - poprzednia wieża z końca XIX wieku została zburzona w 1973 roku\n• Niedaleko Trojmezní kámen - historyczny punkt styku Czech, Moraw i hrabstwa Kłodzkiego\n• Spotykają się tutaj trzy główne europejskie działy wodne prowadzące do Morza Czarnego, Północnego i Bałtyckiego\n• Długotrwała pokrywa śnieżna utrzymująca się nawet do 8 miesięcy w roku"
+      },
+      "4": {
+        "rangeName": "Karkonosze",
+        "peakName": "Skalny Stół",
+        "description": "• Rozległy, płaski wierzchołek przypominający stół\n• Bogate złoża kamieni szlachetnych, zwłaszcza granatów\n• Ruiny dawnej osady Forstbauden, zlikwidowanej w związku z poszukiwaniami uranu\n• Fragment terenu zamknięty w celu ochrony zagrożonych gatunków"
+      },
+      "5": {
+        "rangeName": "Karkonosze",
+        "peakName": "Łysocina",
+        "description": "• Najwyższy szczyt Grzbietu Lasockiego - najbardziej na wschód wysuniętej części Karkonoszy\n• Stanowi główny europejski dział wodny\n• W pobliżu górna stacja czeskiego wyciągu narciarskiego z kamerą dla Czeskiej Telewizji\n• Dawniej zalesione zbocza przekształcają się w polany"
+      },
+      "6": {
+        "rangeName": "Góry Złote",
+        "peakName": "Smrk",
+        "description": "• Należy do najbardziej płaskich szczytów w Sudetach\n• Nie przebiega przez niego żaden szlak turystyczny - najbliżej czerwona ścieżka około 100 m od wierzchołka\n• Chroniony obszar torfowiskowy Malení z roślinnością bagienną\n• W pobliżu historyczny trójstyk Moraw, Śląska i Polski"
+      },
+      "7": {
+        "rangeName": "Góry Izerskie",
+        "peakName": "Wysoka Kopa",
+        "description": "• Przez szczyt nie prowadzi żaden oznakowany szlak turystyczny - najbliżej czerwony szlak około 300 metrów na północ\n• W rejonie największy w Polsce kompleks torfowisk górskich z unikalną roślinnością i małymi jeziorkami\n• W pobliżu dawne wyrobisko kwarcu - kopalnia Stanisław, najwyżej położona kopalnia odkrywkowa w Polsce\n• Dostęp na sam szczyt ograniczony ze względu na ochronę cietrzewia\n• W okolicy Hala Izerska - polski biegun zimna, gdzie zanotowano nawet -45°C"
+      },
+      "8": {
+        "rangeName": "Góry Izerskie",
+        "peakName": "Smrk",
+        "description": "• Wieża widokowa z 2003 roku oraz pomnik Körnera na szczycie\n• Przez długi czas przecinały się tutaj granice Czech, Łużyc i Śląska - góra znana z historycznych sporów granicznych\n• Na południowych stokach bierze początek rzeka Jizera\n• W okolicy rezerwat przyrody Klečoviště\n• Góra znana z katastrof lotniczych"
+      },
+      "9": {
+        "rangeName": "Góry Orlickie",
+        "peakName": "Velká Deštná",
+        "description": "• Nowoczesna wieża widokowa z 2019 roku o wysokości 17,34 metra, zastępująca wcześniejsze drewniane konstrukcje\n• Projekt wieży inspirowany warunkami klimatycznymi regionu - ukośne drewniane elementy elewacji symbolizują deszcz i wiatr\n• W pobliżu torfowisko Jelení lázeň między Velką a Małą Deštną z unikalną florą bagienną\n• Około pół kilometra poniżej szczytu przy zielonym szlaku źródełko z doskonałą wodą i pięknym widokiem na okolicę\n• W sezonie dostępna restauracja przy skrzyżowaniu szlaków turystycznych"
+      },
+      "10": {
+        "rangeName": "Góry Bialskie",
+        "peakName": "Rudawiec",
+        "description": "• Najbardziej wysunięty na północ punkt Moraw\n• Trzeci co do wysokości szczyt Gór Bialskich, wybrany jako reprezentant pasma ze względu na dostępność znakowanych szlaków\n• Ze stoków rozpościerają się panoramy na Masyw Śnieżnika"
+      },
+      "11": {
+        "rangeName": "Góry Orlickie",
+        "peakName": "Orlica",
+        "description": "• Dawniej stało tu popularne schronisko z wieżą widokową, które spłonęło w 1946 roku\n• Od 2020 roku nowa drewniana wieża widokowa o wysokości 25,5 metra\n• Szczyt odwiedzali znani goście: cesarz Józef II, późniejszy prezydent USA John Quincy Adams oraz Fryderyk Chopin\n• Pomnik upamiętniający historyczne wizyty znanych osobistości\n• Leży na europejskim dziale wodnym oddzielającym zlewiska Morza Bałtyckiego i Morza Północnego"
+      },
+      "12": {
+        "rangeName": "Góry Izerskie",
+        "peakName": "Wysoki Kamień",
+        "description": "• Pierwsze schronisko wybudowane w 1837 roku przez rodzinę Schaffgotschów\n• Schronisko spłonęło w 1882 roku, ale zostało odbudowane jeszcze w tym samym roku\n• Po II wojnie światowej obiekt popadł w ruinę i został rozebrany\n• W 1996 roku teren zakupiony przez rodzinę Gołbów ze Szklarskiej Poręby, która odbudowała schronisko\n• Kamienna wieża widokowa ukończona w 2023 roku\n• Ciekawe formacje skalne na szczycie i grzbiecie"
+      },
+      "13": {
+        "rangeName": "Góry Sowie",
+        "peakName": "Wielka Sowa",
+        "description": "• Historyczna żelbetowa wieża widokowa z 1906 roku, znana wcześniej jako wieża Bismarcka\n• Wieża była kilkakrotnie odnawiana po II wojnie światowej i ponownie otwarta po gruntownej renowacji w 2008 roku\n• Wieża była w remoncie do 2023 roku\n• Wyciąg narciarski w okolicy nieczynny od 2011 roku\n• Leży w Parku Krajobrazowym Gór Sowich"
+      },
+      "14": {
+        "rangeName": "Grzbiet Jesztedzko-Kozakowski",
+        "peakName": "Ještěd",
+        "description": "• Unikalna wieża telewizyjna i hotel zaprojektowane przez architekta Karela Hubáčka mają kształt hiperboloidy - ukończone w 1973 roku\n• W 1969 roku projekt Hubáčka otrzymał prestiżową nagrodę Perreta od Międzynarodowej Unii Architektów\n• Pierwsze schronisko na szczycie powstało w 1844 roku, a w 1963 roku spłonęło, co doprowadziło do budowy obecnej wieży\n• W sierpniu 1968 roku podczas interwencji wojsk Układu Warszawskiego działało tu Wolne Studio Północ nadające audycje informacyjne"
+      },
+      "15": {
+        "rangeName": "Góry Hanuszowickie",
+        "peakName": "Jeřáb",
+        "description": "• Platforma widokowa z widokiem na Králický Sněžník\n• Leży na historycznej i współczesnej granicy między Czechami a Morawami\n• Przez szczyt przebiega europejski dział wodny między dorzeczami Łaby i Dunaju\n• Na zachodnim zboczu źródło Tiché Orlice\n• W pobliżu źródła Rudolfův pramen wznosi się kaplica Świętej Trójcy"
+      },
+      "16": {
+        "rangeName": "Góry Złote",
+        "peakName": "Kowadło",
+        "description": "• Dolina Białej Lądeckiej u podnóża była niegdyś szlakiem handlowym zwanym Drogą Solną - przewożono tędy sól z morawskich kopalni soli do Kłodzka\n• Porasta go świerkowy las i gnejsowe skałki\n• Leży na umownej granicy pomiędzy Górami Złotymi a Bialskimi"
+      },
+      "17": {
+        "rangeName": "Góry Bystrzyckie",
+        "peakName": "Jagodna Północna",
+        "description": "• Północny wierzchołek masywu Jagodnej, oddzielony od głównego szczytu\n• Nie jest oznakowany szlakami turystycznymi i nie posiada infrastruktury\n• Na mapach topograficznych geoportalu błędnie oznaczony jako \"Sasanka\"\n• Nazwa \"Jagodna Północna\" jest obecnie niestandaryzowana - trwają prace Komisji Nazewniczej przy Państwowym Rejestrze Nazw\n• Zaliczana do Diademu Polskich Gór"
+      },
+      "18": {
+        "rangeName": "Góry Bystrzyckie",
+        "peakName": "Jagodna",
+        "description": "• 23-metrowa wieża widokowa wybudowana w 2019 roku\n• Z wieży roztaczają się panoramy na Masyw Śnieżnika, Góry Orlickie, Bystrzyckie i Stołowe, a także odległe Karkonosze\n• Powszechnie uznawana za najwyższy szczyt pasma w ujęciu turystycznym - wyższa Jagodna Północna (985 m) nie posiada oznakowanych szlaków"
+      },
+      "19": {
+        "rangeName": "Góry Opawskie",
+        "peakName": "Příčný vrch",
+        "description": "• Ma formę płaskiego grzbietu o długości około 3 km, porośniętego głównie lasami świerkowymi z domieszką buka\n• Od średniowiecza była miejscem intensywnej eksploatacji złota oraz innych metali (ołów, miedź, piryt)\n• Kopalnie zostały zamknięte w grudniu 1993 roku, pozostawiając liczne szyby i chodniki o łącznej długości około 120 km\n• W okolicy ruiny zamku Edelštejn oraz ścieżka dydaktyczna o tematyce górniczej prowadząca ze Zlatých Hor na szczyt"
+      },
+      "20": {
+        "rangeName": "Karkonosze",
+        "peakName": "Hvězda",
+        "description": "• 24-metrowa neogotycka wieża widokowa Štěpánka z 1892 roku, zbudowana z cegły i piaskowca\n• Leży na granicy Gór Izerskich i Karkonoskiego Parku Narodowego\n• W przeszłości góra nosiła inne nazwy: Buková hora oraz Štěpánova výšina"
+      },
+      "21": {
+        "rangeName": "Rudawy Janowickie",
+        "peakName": "Skalnik",
+        "description": "• Składa się z dwóch wierzchołków - wyższego zalesionego i niższego Ostra Mała z platformą widokową\n• Charakterystyczne formacje skalne \"Konie Apokalipsy\" na południowym stoku góry\n• Znajduje się tu drewniana budka z pieczątką Korony Gór Polski\n• Ruiny starej wieży widokowej na szczycie\n• U podnóża miejscowości Strużnica i Czarnów ze schroniskiem „Czartak\""
+      },
+      "22": {
+        "rangeName": "Rudawy Janowickie",
+        "peakName": "Ostra Mała",
+        "description": "• Platforma widokowa dostępna stopniami wykutymi w skale w 1886 roku\n• Fantazyjne formacje skalne na wierzchołku tworzą charakterystyczny krajobraz\n• Położona w Rudawskim Parku Krajobrazowym chroniącym unikalne wartości przyrodnicze\n• Często mylona z sąsiednim Skalnikiem, który jest najwyższym szczytem Rudaw Janowickich"
+      },
+      "23": {
+        "rangeName": "Góry Kamienne",
+        "peakName": "Waligóra",
+        "description": "• Dawniej znajdowała się tutaj wieża widokowa\n• Masyw z łagodnym zboczem południowym i bardzo stromymi pozostałymi zboczami\n• Szczyt w całości zalesiony, co ogranicza widoki z wierzchołka\n• Popularna wśród turystów dzięki bliskości Przełęczy Trzech Dolin z dostępnymi szlakami, schroniskiem i możliwościami uprawiania sportów zimowych"
+      },
+      "24": {
+        "rangeName": "Góry Opawskie",
+        "peakName": "Zámecký vrch",
+        "description": "• Ruiny zamku Koberštejn zbudowanego pod koniec XIII wieku\n• Zamek został opuszczony w XIV wieku i miał za zadanie chronić szlak handlowy między Zlatými Horami a Vrbnem\n• Przez szczyt przebiega zielony szlak turystyczny prowadzący do pomnika żołnierzy radzieckich\n• Widoki na okoliczne pasmo Medvědská hornatina"
+      },
+      "25": {
+        "rangeName": "Góry Stołowe",
+        "peakName": "Szczeliniec Wielki",
+        "description": "• Wejście prowadzi przez 665 kamiennych schodów ułożonych na przełomie XVIII i XIX wieku przez Franza Pabla, ówczesnego sołtysa Karłowa\n• Labirynt skalny z fantazyjnymi formacjami skalnymi, takimi jak \"Kołyska Księżniczki Emilii\" i \"Serce Ducha Górskiego\"\n• \"Piekiełko\" – wąska szczelina skalna o długości około 100 metrów i głębokości blisko 20 metrów, w której nawet latem panuje niska temperatura\n• Nagrywano tu sceny do filmu \"Opowieści z Narnii\"\n• Atrakcja znana od 1576 roku"
+      },
+      "26": {
+        "rangeName": "Góry Złote",
+        "peakName": "Větrov",
+        "description": "• Dalimilova rozhledna otwarta w 2021 roku - kamienna wieża widokowa o wysokości 34 metrów\n• Wieża jest wierną repliką historycznej wieży cesarza Wilhelma I, która stała na Śnieżniku w latach 1899–1973\n• Na szczyt wieży prowadzi 170 schodów, a platformy widokowe znajdują się na wysokościach 17 i 28 metrów\n• W pobliżu popularne schronisko turystyczne Paprsek"
+      },
+      "27": {
+        "rangeName": "Góry Opawskie",
+        "peakName": "Biskupia Kopa",
+        "description": "• 18-metrowa kamienna wieża widokowa z 1898 roku, wybudowana z okazji 50-lecia panowania cesarza Franciszka Józefa I\n• Najstarsza wieża widokowa w Jesionikach, oferująca panoramę na Pradziada i Zlatý chlum\n• Schronisko PTTK \"Pod Biskupią Kopą\" z 1925 roku jest jedynym schroniskiem turystycznym w Górach Opawskich\n• Najwyższy punkt województwa opolskiego\n• W okolicy Gwarkowa Perć - 11-metrowa drabina skalna na jednym z szlaków\n• Dostępna szlakami turystycznymi ze Zlatých Hor i Petrovic"
+      },
+      "28": {
+        "rangeName": "Rudawy Janowickie",
+        "peakName": "Wołek",
+        "description": "• Krzyż poświęcony Janowi Pawłowi II na szczycie\n• W przeszłości szczyt był w całości zalesiony, obecnie po wycince drzew rozpościerają się widoki na Kotlinę Jeleniogórską, Góry Sokole oraz Karkonosze\n• Leży w Rudawskim Parku Krajobrazowym chroniącym unikalne wartości przyrodnicze\n• Charakteryzuje się bogatą florą – lasami świerkowymi, mieszanymi oraz kosodrzewiną"
+      },
+      "29": {
+        "rangeName": "Góry Wałbrzyskie",
+        "peakName": "Borowa",
+        "description": "• Nowoczesna wieża widokowa z 2017 roku o wysokości 16,5 metra zaprojektowana przez Zbigniewa Mazija\n• Wieża ma unikalny kształt hiperboloidy jednopowłokowej\n• Charakterystyczna trapezoidalna forma góry widoczna z Kotliny Wałbrzyskiej\n• Zbudowana ze skał wylewnych (ryolity, trachybazalty) będących świadectwem dawnej działalności wulkanicznej\n• Z platformy widokowej przy dobrej pogodzie widać wrocławski Sky Tower\n• Leży w Parku Krajobrazowym Sudetów Wałbrzyskich"
+      },
+      "30": {
+        "rangeName": "Góry Wałbrzyskie",
+        "peakName": "Chełmiec",
+        "description": "• Zabytkowa kamienna wieża widokowa z końca XIX wieku\n• 45-metrowy Krzyż Milenijny będący zwieńczeniem Boguszowskiej Drogi Krzyżowej Trudu Górniczego\n• Charakterystyczny kopulasty kształt widoczny nawet z odległego o około 70 km Wrocławia\n• Obszar objęty ochroną Natura 2000 z unikalnymi siedliskami leśnymi, w tym buczynami sudeckimi\n• 69-metrowy stalowy maszt radiowo-telewizyjny na szczycie\n• W pobliżu szczytu oświetlony krzyż, będący celem szlaków pielgrzymkowych"
+      },
+      "31": {
+        "rangeName": "Masyw Śnieżnika",
+        "peakName": "Igliczna",
+        "description": "• Na południowym zboczu Sanktuarium Matki Bożej Śnieżnej z kościołem z lat 1781-1782\n• Historia sanktuarium sięga 1750 roku, kiedy umieszczono tu figurę Matki Bożej z Mariazell w Austrii\n• W 1775 roku wichura obaliła drzewo pod figurą, która ocalała - zdarzenie uznano za cud\n• Schronisko \"Na Iglicznej\" powstało w 1880 roku jako gospoda \"Maria Schnee\" dla pielgrzymów\n• W partii szczytowej skalny grzebień z gnejsów wyrastający z rumowiska skalnego\n• Otoczona Śnieżnickim Parkiem Krajobrazowym"
+      },
+      "32": {
+        "rangeName": "Góry Sowie",
+        "peakName": "Włodarz",
+        "description": "• Podczas II wojny światowej znajdował się tutaj obóz pracy Wolfsberg, będący częścią kompleksu więziennego \"Riese\" - jednego z największych projektów budowlanych III Rzeszy\n• Około 3000 więźniów, głównie Żydów, było zmuszanych do budowy tuneli w nieludzkich warunkach w latach 1943-1945\n• W obozie zmarło 612 osób - obecnie fundamenty w lesie przypominają o tej tragedii\n• Część podziemi kompleksu Riese jest udostępniona do zwiedzania, w tym unikalna trasa z przejściem łodzią po zalanych korytarzach\n• Zaliczany do Diademu Polskich Gór"
+      },
+      "33": {
+        "rangeName": "Góry Wałbrzyskie",
+        "peakName": "Gomólnik Mały",
+        "description": "• Nowoczesny taras widokowy otwarty w kwietniu 2023 roku oferujący panoramiczne widoki na okoliczne pasma\n• Z tarasu widokowego przy dobrej pogodzie widać Sky Tower we Wrocławiu oddalony o około 70 km\n• Leży w Parku Krajobrazowym Sudetów Wałbrzyskich chroniącym wartości przyrodnicze regionu\n• Porasta go las świerkowy charakterystyczny dla tego obszaru Sudetów"
+      },
+      "34": {
+        "rangeName": "Niski Jesionik",
+        "peakName": "Slunečná",
+        "description": "• Najwyższy szczyt Slunečné vrchoviny, będącej częścią Niskiego Jesionika\n• Zbudowana ze skał karbońskich - łupków i piaskowców\n• Charakterystyczna wieża telekomunikacyjna stanowiąca punkt orientacyjny\n• W wyniku suszy w 2015 roku oraz plagi kornika lasy znacznie przerzedzone, co odsłoniło widoki na Moravský Beroun i Hrubý Jeseník\n• Na stoku rezerwat przyrody Panské louky chroniący rzadkie lasy torfowiskowe"
+      },
+      "35": {
+        "rangeName": "Góry Łużyckie",
+        "peakName": "Luž",
+        "description": "• Charakterystyczny stożkowy kształt wyróżnia szczyt w krajobrazie regionu\n• Pozostałości historycznej chaty oraz ogólnodostępna wieża widokowa na szczycie\n• Obszar wokół szczytu jest chronionym rezerwatem przyrody o bogatej florze i faunie\n• Na południowo-wschodnich stokach ośrodek narciarski Snowpark Luž\n• Najbliższe punkty gastronomiczne znajdują się w Chata Pod Luží i Lužická bouda"
+      },
+      "36": {
+        "rangeName": "Grzbiet Jesztedzko-Kozakowski",
+        "peakName": "Vápenný",
+        "description": "• Rezerwat przyrody Velký Vápenný chroni cenne buczyny i lasy żwirowe\n• Na zachodnim zboczu znajduje się opuszczony kamieniołom z Jaskinią Zachodnią\n• Pozostałości umocnień z czasów I Republiki Czeskiej\n• Ważne stanowisko paleontologiczne\n• Schronienie dla nietoperzy"
+      },
+      "37": {
+        "rangeName": "Góry Izerskie",
+        "peakName": "Muchov",
+        "description": "• Skalisty szczyt z telekomunikacyjnym nadajnikiem oferujący panoramiczne widoki\n• Według miejscowych legend jest schronieniem ducha Gór Izerskich - Muhy oraz ukrytym skarbem rozbójników\n• Grzbietowa droga prowadząca przez szczyt została wybudowana przed I wojną światową\n• Położony między punktami widokowymi Černá studnice i Terezínka"
+      },
+      "38": {
+        "rangeName": "Góry Wałbrzyskie",
+        "peakName": "Wołowiec",
+        "description": "• Powulkaniczne wzniesienie będące częścią trójwierzchołkowego masywu wraz z Małym Wołowcem (720 m) i Kozłem (774 m)\n• Na wierzchołku dominują buki w lesie regla dolnego\n• Pod północnym zboczem Małego Wołowca przebiegają dwa najdłuższe w Polsce tunele kolejowe na linii Wałbrzych Podgórze – Jedlina-Zdrój o długości 1560 m i 1611 m\n• Leży w Parku Krajobrazowym Sudetów Wałbrzyskich"
+      },
+      "39": {
+        "rangeName": "Góry Bardzkie",
+        "peakName": "Szeroka Góra",
+        "description": "• W przeszłości za najwyższy szczyt Gór Bardzkich uważano Kłodzką Górę (757 m), jednak najnowsze pomiary wykazały, że to Szeroka Góra jest najwyższym wzniesieniem pasma\n• Na szczyt nie prowadzi oznakowany szlak turystyczny - dostępna jest leśna ścieżka odchodząca od żółtego szlaku prowadzącego na Kłodzką Górę\n• Na szczycie znak geodezyjny\n• Otoczona lasami świerkowymi i bukowymi"
+      },
+      "40": {
+        "rangeName": "Góry Bardzkie",
+        "peakName": "Kłodzka Góra",
+        "description": "• Drugi co do wysokości szczyt Gór Bardzkich - przez wiele lat uważano ją za najwyższy punkt pasma\n• Stalowa wieża widokowa z 2020 roku o wysokości 34,5 metra z czterema platformami widokowymi\n• Obecnie uznaje się, że wyższa jest sąsiednia Szeroka Góra (765 m), jednak to Kłodzka Góra posiada infrastrukturę turystyczną\n• W noc świętojańską organizowane są tutaj popularne nocne wędrówki\n• Porośnięta świerkowym lasem"
+      },
+      "41": {
+        "rangeName": "Góry Jastrzębie",
+        "peakName": "Žaltman",
+        "description": "• Nowa wieża widokowa otwarta 24 września 2020 roku, dokładnie 53 lata po inauguracji poprzedniej konstrukcji\n• Wieża ma 25 metrów wysokości, platforma widokowa znajduje się na wysokości 23,5 metra, na którą prowadzą 122 schody\n• Z wieży roztacza się panoramiczny widok na Karkonosze, Skalny Miasto Adršpach i Teplice oraz dalsze pasma górskie\n• Obszar bogaty w zabytkowe kopalnie i fortyfikacje z okresu przed II wojną światową\n• Do szczytu prowadzi zielony szlak turystyczny i trasa rowerowa"
+      },
+      "42": {
+        "rangeName": "Góry Kaczawskie",
+        "peakName": "Skopiec",
+        "description": "• Charakteryzuje się łagodnym, kopulastym kształtem wierzchołka porośniętym lasem mieszanym ze świerkiem\n• Zbocza częściowo zajmują łąki i pola, co nadaje górze charakterystyczny wygląd\n• Budowa geologiczna obejmuje łupki, marmury i zieleńce - pozostałości dawnych wylewów wulkanicznych i osadów morskich\n• Leży w Parku Krajobrazowym \"Chełmy\" chroniącym unikalne wartości przyrodnicze regionu"
+      },
+      "43": {
+        "rangeName": "Góry Izerskie",
+        "peakName": "Špičák",
+        "description": "• Chroniony w rezerwacie przyrody Jizerskohorské bučiny, który w 2021 roku został wpisany na listę światowego dziedzictwa UNESCO jako pierwsza naturalna lokalizacja w Czechach\n• Na skalisty wierzchołek prowadzą metalowe schody o długości 70 metrów, wyremontowane w 2006 roku\n• Przebiega przez niego ścieżka dydaktyczna \"Oldřichovské háje a skály\"\n• Na południowo-wschodnim zboczu pomnik drwala Geisslera, który tragicznie zginął w tym miejscu"
+      },
+      "44": {
+        "rangeName": "Góry Kaczawskie",
+        "peakName": "Baraniec",
+        "description": "• Charakteryzuje się łagodną, kopulastą formą z słabo wyodrębnionym wierzchołkiem\n• W części szczytowej występują skałki i blokowiska z łupków, marmurów i diabazów - pozostałość dawnych wulkanicznych i morskich osadów\n• Zbocza porasta mieszany las ze świerkiem i dębem\n• Wyróżnia się spokojnym krajobrazem z łąkami i polami na niższych stokach\n• Leży niedaleko Skopca"
+      },
+      "45": {
+        "rangeName": "Góry Kaczawskie",
+        "peakName": "Okole",
+        "description": "• Tworzy rozległy masyw razem z Leśniakiem\n• Zbudowany ze skał metamorficznych - zieleńców i łupków zieleńcowych\n• Drewniana platforma widokowa oraz wiata turystyczna wybudowane w 2018 roku\n• Z platformy widokowej rozciągają się panoramy na Łysą Górę, Rudawy Janowickie, Karkonosze oraz przy dobrej widoczności Szczeliniec Wielki\n• W 2019 roku oddano do użytku Kaczawskie Single Tracki - sieć tras rowerowych, z których dwie przebiegają przez masyw Okola\n• Należy do Korony Gór Dolnego Śląska"
+      },
+      "46": {
+        "rangeName": "Masyw Ślęży",
+        "peakName": "Ślęża",
+        "description": "• Od wieków miejsce kultu - od pogańskich rytuałów po średniowieczny klasztor\n• Unikatowe formacje skalne i rzeźby kultowe z czasów przedchrześcijańskich\n• Bogata historia geologiczna - pozostałość prehistorycznego dna oceanicznego\n• Na szczycie znajduje się wieża widokowa\n• Wyróżnia się imponującą wysokością względną ponad 500 metrów\n• Najbliższe miasto to Sobótka, gdzie znajduje się końcowa kropka szlaku Sudety Grand Trail"
+      },
+      "47": {
+        "rangeName": "Wyżyna Zabrzeska",
+        "peakName": "Lázek",
+        "description": "• Historyczna wieża widokowa z 1933 roku o wysokości 20 metrów\n• Reichlova chata - schronisko górskie na wierzchołku\n• Pomniki upamiętniające członków antyfaszystowskiego ruchu oporu z okresu II wojny światowej\n• Nadajnik telekomunikacyjny na szczycie"
+      },
+      "48": {
+        "rangeName": "Góry Kamienne",
+        "peakName": "Boreczna",
+        "description": "• Drugi wierzchołek dwuwierzchołkowego szczytu Mniszek\n• Zbudowany ze skał wylewnych – porfirów i tufów\n• Na stokach głębokie szczeliny związane z dawną działalnością górniczą, najgłębsza o głębokości 36 metrów\n• W wyrobisku dawnego kamieniołomu działa naturalna ściana wspinaczkowa\n• W przeszłości funkcjonowała restauracja z wieżą widokową i muszlą koncertową, wyburzone w 1920 roku"
+      },
+      "49": {
+        "rangeName": "Niski Jesionik",
+        "peakName": "Pomezí",
+        "description": "• Lokalnie rozpoznawalny punkt grzbietowy w terenie niskich wzgórz, oznaczony jako vrchol na czeskich mapach turystycznych\n• Typowy przykład kopca w krajobrazie Nízký Jeseník charakteryzującym się lasami i pastwinami\n• Miejsce bywa oznaczone tabliczką przy drzewie i traktowane przez piechurów jako punkt szczytowy na trasach pieszych\n• Nie jest to jeden z formalnie katalogowanych wysokich szczytów regionu, ale raczej lokalny punkt orientacyjny w południowo-zachodniej części pasma"
+      },
+      "50": {
+        "rangeName": "Góry Bystrzyckie",
+        "peakName": "Kamienna Góra",
+        "description": "• Ma formę skalistego bastionu o stromych zboczach od wschodu i północy, zbudowanego z piaskowców kredowych\n• Płaska powierzchnia szczytowa pokryta jest rumowiskiem skalnym i dużymi blokami piaskowca kwarcowego\n• Punkt widokowy z panoramą na Polanicę-Zdrój, dawniej popularny cel spacerów kuracjuszy\n• U podnóża XIX-wieczna leśniczówka Kamienna Góra\n• Na zachodniej kulminacji pozostałości Fortu Fryderyka, pruskiej budowli z końca XVIII wieku, związanej z lokalną anegdotą o skoku Augusta Ponzela"
+      },
+      "51": {
+        "rangeName": "Góry Jastrzębie",
+        "peakName": "Jański Wierch",
+        "description": "• Położony około 2,5 km na południowy zachód od miejscowości Okrzeszyn\n• Zbudowany z górnokarbońskich piaskowców i zlepieńców\n• Masyw częściowo pokryty borem świerkowym charakterystycznym dla tego regionu Sudetów\n• Dostępny szlakiem turystycznym prowadzącym wzdłuż granicy"
+      },
+      "52": {
+        "rangeName": "Grzbiet Jesztedzko-Kozakowski",
+        "peakName": "Javorník",
+        "description": "• Potrójny punkt graniczny terenów katastralnych na szczycie\n• W przeszłości stały tu popularne budowle: Obří sud (hotel ponownie otwarty w 2011 roku) oraz wieża Blaschkova\n• Część parku krajobrazowego Ještěd chroniącego wartości przyrodnicze regionu\n• W okolicy ośrodek rekreacyjny z wyciągiem narciarskim i torem saneczkowym"
+      },
+      "53": {
+        "rangeName": "Góry Wałbrzyskie",
+        "peakName": "Niedźwiadki",
+        "description": "• Trójwierzchołkowe wzniesienie z kulminacjami osiągającymi wysokości 604, 623 i 629 m n.p.m.\n• Szczytowa część zbudowana ze skał wulkanicznych, natomiast zbocza tworzą skały osadowe z pokładami węgla kamiennego\n• Spotykają się tu głazy narzutowe pochodzenia lodowcowego\n• Na północno-zachodnim zboczu pozostałości mauzoleum z czasów III Rzeszy, wzniesionego w latach 1936–1938 według projektu Roberta Tischlera\n• Położone na terenie Wałbrzycha, wyraźnie góruje nad okoliczną zabudową"
+      },
+      "54": {
+        "rangeName": "Masyw Śnieżnika",
+        "peakName": "Wapniarka",
+        "description": "• Drewniana wieża widokowa z 2008 roku jest trzecią w historii tego miejsca - pierwsza z 1889 roku została zniszczona przez piorun w 1925 roku, druga z tego samego roku przetrwała do lat powojennych\n• Charakteryzuje się zróżnicowaną budową geologiczną z występowaniem wapieni krystalicznych\n• U podnóża dawne kamieniołomy wapienia oraz pozostałości pieców wapiennych\n• Wśród roślinności występują fragmenty ciepłolubnej buczyny storczykowej"
+      },
+      "55": {
+        "rangeName": "Góry Stołowe",
+        "peakName": "Guzowata",
+        "description": "• Nowoczesna platforma widokowa oddana do użytku w 2019 roku, oferująca panoramiczne widoki na Sudety\n• U podnóża Zalew Radkowski pełniący funkcję rekreacyjną\n• Miejsce wydarzeń kulturalnych - w ramach Festiwalu Góry Literatury na tarasie widokowym odbywają się spotkania z pisarzami i twórcami\n• Na platformę prowadzą dwie trasy: łagodniejsza brukowana ścieżka oraz krótsza, ale bardziej stroma droga leśna"
+      }
     }
   },
   "hallOfFameStats": {

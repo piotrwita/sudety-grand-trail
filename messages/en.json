@@ -769,21 +769,298 @@
     "ranges": "Ranges",
     "rangeName": "Range name",
     "foreignRangeName": "Range name (foreign)",
-    "rangeNameCzech": "Mountain range name (Czech)",
-    "rangeNameGerman": "Mountain range name (German)",
+    "rangeNameCzech": "Mountain range name (cz)",
+    "rangeNameGerman": "Mountain range name (de)",
     "czech": "Czech",
     "german": "German",
     "peak": "Peak",
     "peakName": "Peak name",
     "foreignPeakName": "Peak name (foreign)",
-    "peakNameCzech": "Peak name (Czech)",
-    "peakNamePolish": "Peak name (Polish)",
-    "peakNameGerman": "Peak name (German)",
+    "peakNameCzech": "Peak name (cz)",
+    "peakNamePolish": "Peak name (pl)",
+    "peakNameGerman": "Peak name (de)",
     "peakGerman": "Peak (Ger.)",
     "countries": "Countries",
     "description": "Worth knowing",
     "imageCredits": {
       "text": "Peak images are sourced from Mapy.cz and are the work of users of that service."
+    },
+    "peaks": {
+      "1": {
+        "rangeName": "Karkonosze",
+        "peakName": "Śnieżka",
+        "description": "• Historic St. Lawrence Chapel from the 17th century on the summit\n• Polish meteorological station on the peak\n• High Mountain Meteorological Observatory resembling \"flying saucers\"\n• Fog persists for over 300 days a year, favoring phenomena like Brocken specter or St. Elmo's fire\n• Highest located Czech post office\n• Record wind gusts reached 288 km/h"
+      },
+      "2": {
+        "rangeName": "Hrubý Jeseník",
+        "peakName": "Praděd",
+        "description": "• 162-meter television tower with restaurant - highest point in the Czech Republic\n• Area known as \"Moravian glacier\" due to abundant snowfall\n• Within the Praděd National Nature Reserve protecting alpine ecosystems and rare species\n• Unique frosty crevices of Tabulové skály with characteristic mountain flora and fauna\n• Near the source of the Morava River"
+      },
+      "3": {
+        "rangeName": "Králický Sněžník",
+        "peakName": "Śnieżnik",
+        "description": "• Highest point of Pardubice region\n• New observation tower from 2022 - previous tower from the late 19th century was demolished in 1973\n• Near Trojmezní kámen - historic meeting point of Bohemia, Moravia and Kłodzko County\n• Three main European watersheds meet here leading to the Black, North and Baltic Seas\n• Long-lasting snow cover persisting up to 8 months a year"
+      },
+      "4": {
+        "rangeName": "Karkonosze",
+        "peakName": "Skalny Stół",
+        "description": "• Extensive, flat summit resembling a table\n• Rich deposits of precious stones, especially garnets\n• Ruins of former Forstbauden settlement, closed due to uranium exploration\n• Part of the area closed to protect endangered species"
+      },
+      "5": {
+        "rangeName": "Karkonosze",
+        "peakName": "Łysocina",
+        "description": "• Highest peak of Lasocki Ridge - easternmost part of Karkonosze\n• Forms the main European watershed\n• Nearby upper station of Czech ski lift with camera for Czech Television\n• Formerly forested slopes transforming into meadows"
+      },
+      "6": {
+        "rangeName": "Rychlebské hory",
+        "peakName": "Smrk",
+        "description": "• One of the flattest peaks in the Sudetes\n• No marked trail passes through it - nearest red trail about 100 m from the summit\n• Protected peat bog area Malení with bog vegetation\n• Nearby historic tripoint of Moravia, Silesia and Poland"
+      },
+      "7": {
+        "rangeName": "Góry Izerskie",
+        "peakName": "Wysoka Kopa",
+        "description": "• No marked trail leads through the summit - nearest red trail about 300 meters to the north\n• Region's largest mountain peat bog complex in Poland with unique vegetation and small lakes\n• Nearby former quartz quarry - Stanisław mine, highest open-pit mine in Poland\n• Access to the summit limited due to black grouse protection\n• Nearby Izerska Hala - Polish cold pole, where temperatures as low as -45°C were recorded"
+      },
+      "8": {
+        "rangeName": "Jizerské hory",
+        "peakName": "Smrk",
+        "description": "• Observation tower from 2003 and Körner monument on the summit\n• Borders of Bohemia, Lusatia and Silesia intersected here for a long time - mountain known for historic border disputes\n• Jizera River originates on southern slopes\n• Nearby Klečoviště nature reserve\n• Mountain known for aviation disasters"
+      },
+      "9": {
+        "rangeName": "Orlické hory",
+        "peakName": "Velká Deštná",
+        "description": "• Modern observation tower from 2019, 17.34 meters high, replacing earlier wooden structures\n• Tower design inspired by regional climate conditions - slanted wooden facade elements symbolize rain and wind\n• Nearby Jelení lázeň peat bog between Velká and Malá Deštná with unique bog flora\n• About half a kilometer below the summit on green trail, a spring with excellent water and beautiful views\n• Restaurant available at trail intersection during season"
+      },
+      "10": {
+        "rangeName": "Bělské hory",
+        "peakName": "Rudawiec",
+        "description": "• Northernmost point of Moravia\n• Third highest peak of Bělské hory, chosen as range representative due to marked trail accessibility\n• Panoramas of Králický Sněžník Massif from the slopes"
+      },
+      "11": {
+        "rangeName": "Orlické hory",
+        "peakName": "Orlica",
+        "description": "• Popular mountain hut with observation tower once stood here, burned down in 1946\n• New wooden observation tower from 2020, 25.5 meters high\n• Peak visited by famous guests: Emperor Joseph II, future US President John Quincy Adams and Frédéric Chopin\n• Monument commemorating historic visits of famous personalities\n• Lies on European watershed separating Baltic and North Sea basins"
+      },
+      "12": {
+        "rangeName": "Góry Izerskie",
+        "peakName": "Wysoki Kamień",
+        "description": "• First mountain hut built in 1837 by the Schaffgotsch family\n• Hut burned down in 1882 but was rebuilt the same year\n• After WWII the building fell into ruin and was demolished\n• In 1996 the area was purchased by the Gołb family from Szklarska Poręba, who rebuilt the hut\n• Stone observation tower completed in 2023\n• Interesting rock formations on summit and ridge"
+      },
+      "13": {
+        "rangeName": "Góry Sowie",
+        "peakName": "Wielka Sowa",
+        "description": "• Historic reinforced concrete observation tower from 1906, formerly known as Bismarck Tower\n• Tower was renovated several times after WWII and reopened after thorough renovation in 2008\n• Tower was under renovation until 2023\n• Ski lift in the area inactive since 2011\n• Lies in Góry Sowie Landscape Park"
+      },
+      "14": {
+        "rangeName": "Ještědsko-kozákovský hřbet",
+        "peakName": "Ještěd",
+        "description": "• Unique television tower and hotel designed by architect Karel Hubáček in hyperboloid shape - completed in 1973\n• In 1969 Hubáček's project received prestigious Perret Award from International Union of Architects\n• First mountain hut on summit built in 1844, burned down in 1963, leading to construction of current tower\n• In August 1968 during Warsaw Pact intervention, Free Studio North operated here broadcasting news programs"
+      },
+      "15": {
+        "rangeName": "Hanušovická vrchovina",
+        "peakName": "Jeřáb",
+        "description": "• Observation platform with views of Králický Sněžník\n• Lies on historic and modern border between Bohemia and Moravia\n• European watershed passes through summit between Elbe and Danube basins\n• Source of Tichá Orlice on western slope\n• Near Rudolfův pramen spring stands Holy Trinity Chapel"
+      },
+      "16": {
+        "rangeName": "Rychlebské hory",
+        "peakName": "Kowadło",
+        "description": "• Biała Lądecka Valley at the base was once a trade route called Salt Road - salt was transported from Moravian salt mines to Kłodzko\n• Covered with spruce forest and gneiss rocks\n• Lies on conventional border between Rychlebské hory and Bělské hory"
+      },
+      "17": {
+        "rangeName": "Góry Bystrzyckie",
+        "peakName": "Jagodna Północna",
+        "description": "• Northern summit of Jagodna massif, separated from main peak\n• Not marked with trails and has no infrastructure\n• Incorrectly marked as \"Sasanka\" on topographic maps of geoportal\n• Name \"Jagodna Północna\" is currently unstandardized - work ongoing by Naming Commission at State Register of Names\n• Included in Diadem of Polish Mountains"
+      },
+      "18": {
+        "rangeName": "Góry Bystrzyckie",
+        "peakName": "Jagodna",
+        "description": "• 23-meter observation tower built in 2019\n• Panoramas of Králický Sněžník Massif, Orlické hory, Bystrzyckie and Stołowe Mountains, and distant Karkonosze from the tower\n• Generally recognized as highest peak of the range in tourist terms - higher Jagodna Północna (985 m) has no marked trails"
+      },
+      "19": {
+        "rangeName": "Zlatohorská vrchovina",
+        "peakName": "Příčný vrch",
+        "description": "• Forms a flat ridge about 3 km long, covered mainly with spruce forests mixed with beech\n• Since Middle Ages was site of intensive gold and other metal mining (lead, copper, pyrite)\n• Mines closed in December 1993, leaving numerous shafts and tunnels totaling about 120 km\n• Nearby ruins of Edelštejn Castle and educational mining trail leading from Zlaté Hory to summit"
+      },
+      "20": {
+        "rangeName": "Karkonosze",
+        "peakName": "Hvězda",
+        "description": "• 24-meter neo-Gothic observation tower Štěpánka from 1892, built of brick and sandstone\n• Lies on border of Jizerské hory and Krkonoše National Park\n• In the past the mountain had other names: Buková hora and Štěpánova výšina"
+      },
+      "21": {
+        "rangeName": "Rudawy Janowickie",
+        "peakName": "Skalnik",
+        "description": "• Consists of two summits - higher forested one and lower Ostra Mała with observation platform\n• Characteristic rock formations \"Horses of the Apocalypse\" on southern slope\n• Wooden box with Crown of Polish Mountains stamp located here\n• Ruins of old observation tower on summit\n• Villages Strużnica and Czarnów with \"Czartak\" mountain hut at the base"
+      },
+      "22": {
+        "rangeName": "Rudawy Janowickie",
+        "peakName": "Ostra Mała",
+        "description": "• Observation platform accessible by steps carved in rock in 1886\n• Fanciful rock formations on summit create characteristic landscape\n• Located in Rudawski Landscape Park protecting unique natural values\n• Often confused with neighboring Skalnik, which is the highest peak of Rudawy Janowickie"
+      },
+      "23": {
+        "rangeName": "Góry Kamienne",
+        "peakName": "Waligóra",
+        "description": "• Observation tower once stood here\n• Massif with gentle southern slope and very steep other slopes\n• Summit fully forested, limiting views from top\n• Popular among tourists due to proximity of Przełęcz Trzech Dolin with accessible trails, mountain hut and winter sports opportunities"
+      },
+      "24": {
+        "rangeName": "Zlatohorská vrchovina",
+        "peakName": "Zámecký vrch",
+        "description": "• Ruins of Koberštejn Castle built in late 13th century\n• Castle was abandoned in 14th century and was meant to protect trade route between Zlaté Hory and Vrbno\n• Green tourist trail passes through summit leading to Soviet soldiers monument\n• Views of surrounding Medvědská hornatina range"
+      },
+      "25": {
+        "rangeName": "Góry Stołowe",
+        "peakName": "Szczeliniec Wielki",
+        "description": "• Entrance leads through 665 stone steps laid at turn of 18th and 19th centuries by Franz Pabel, then mayor of Karłów\n• Rock labyrinth with fanciful rock formations such as \"Princess Emilia's Cradle\" and \"Mountain Spirit's Heart\"\n• \"Piekiełko\" - narrow rock crevice about 100 meters long and nearly 20 meters deep, where low temperatures persist even in summer\n• Scenes from \"Chronicles of Narnia\" were filmed here\n• Attraction known since 1576"
+      },
+      "26": {
+        "rangeName": "Rychlebské hory",
+        "peakName": "Větrov",
+        "description": "• Dalimilova rozhledna opened in 2021 - 34-meter stone observation tower\n• Tower is faithful replica of historic Emperor Wilhelm I tower that stood on Sněžník from 1899-1973\n• 170 steps lead to tower top, observation platforms at 17 and 28 meters\n• Popular Paprsek tourist hut nearby"
+      },
+      "27": {
+        "rangeName": "Zlatohorská vrchovina",
+        "peakName": "Biskupia Kopa",
+        "description": "• 18-meter stone observation tower from 1898, built on occasion of 50th anniversary of Emperor Franz Joseph I's reign\n• Oldest observation tower in Jeseníky, offering panorama of Praděd and Zlatý chlum\n• PTTK \"Pod Biskupią Kopą\" hut from 1925 is only tourist hut in Zlatohorská vrchovina\n• Highest point of Opole Voivodeship\n• Nearby Gwarkowa Perć - 11-meter rock ladder on one of trails\n• Accessible by tourist trails from Zlaté Hory and Petrovice"
+      },
+      "28": {
+        "rangeName": "Rudawy Janowickie",
+        "peakName": "Wołek",
+        "description": "• Cross dedicated to John Paul II on summit\n• In the past summit was fully forested, currently after tree cutting views open to Jelenia Góra Basin, Góry Sokole and Karkonosze\n• Lies in Rudawski Landscape Park protecting unique natural values\n• Characterized by rich flora - spruce, mixed forests and dwarf pine"
+      },
+      "29": {
+        "rangeName": "Góry Wałbrzyskie",
+        "peakName": "Borowa",
+        "description": "• Modern observation tower from 2017, 16.5 meters high, designed by Zbigniew Mazij\n• Tower has unique single-shell hyperboloid shape\n• Characteristic trapezoidal mountain shape visible from Wałbrzych Basin\n• Built of volcanic rocks (rhyolites, trachybasalts) evidence of former volcanic activity\n• Wrocław Sky Tower visible from observation platform in good weather\n• Lies in Sudety Wałbrzyskie Landscape Park"
+      },
+      "30": {
+        "rangeName": "Góry Wałbrzyskie",
+        "peakName": "Chełmiec",
+        "description": "• Historic stone observation tower from late 19th century\n• 45-meter Millennium Cross crowning Boguszów Way of the Cross of Mining Toil\n• Characteristic dome shape visible even from distant Wrocław about 70 km away\n• Area under Natura 2000 protection with unique forest habitats, including Sudeten beech forests\n• 69-meter steel radio-television mast on summit\n• Illuminated cross near summit, destination of pilgrimage trails"
+      },
+      "31": {
+        "rangeName": "Králický Sněžník",
+        "peakName": "Igliczna",
+        "description": "• Our Lady of the Snows Sanctuary with church from 1781-1782 on southern slope\n• Sanctuary history dates to 1750 when statue of Our Lady from Mariazell, Austria was placed here\n• In 1775 windstorm felled tree under statue, which survived - event considered a miracle\n• \"Na Iglicznej\" hut built in 1880 as \"Maria Schnee\" inn for pilgrims\n• Rocky gneiss ridge in summit area rising from rock rubble\n• Surrounded by Śnieżnicki Landscape Park"
+      },
+      "32": {
+        "rangeName": "Góry Sowie",
+        "peakName": "Włodarz",
+        "description": "• During WWII Wolfsberg labor camp was located here, part of \"Riese\" prison complex - one of largest construction projects of Third Reich\n• About 3000 prisoners, mainly Jews, were forced to build tunnels in inhumane conditions in 1943-1945\n• 612 people died in camp - foundations in forest now remind of this tragedy\n• Part of Riese underground complex is open to visitors, including unique route with boat passage through flooded corridors\n• Included in Diadem of Polish Mountains"
+      },
+      "33": {
+        "rangeName": "Góry Wałbrzyskie",
+        "peakName": "Gomólnik Mały",
+        "description": "• Modern observation terrace opened in April 2023 offering panoramic views of surrounding ranges\n• Wrocław Sky Tower visible from observation terrace in good weather, about 70 km away\n• Lies in Sudety Wałbrzyskie Landscape Park protecting natural values of region\n• Covered with spruce forest characteristic of this Sudeten area"
+      },
+      "34": {
+        "rangeName": "Nízký Jeseník",
+        "peakName": "Slunečná",
+        "description": "• Highest peak of Slunečná vrchovina, part of Nízký Jeseník\n• Built of Carboniferous rocks - shales and sandstones\n• Characteristic telecommunications tower serving as landmark\n• Due to 2015 drought and bark beetle plague forests significantly thinned, revealing views of Moravský Beroun and Hrubý Jeseník\n• Panské louky nature reserve on slope protecting rare peat bog forests"
+      },
+      "35": {
+        "rangeName": "Lužické hory",
+        "peakName": "Luž",
+        "description": "• Characteristic conical shape distinguishes peak in regional landscape\n• Remains of historic hut and publicly accessible observation tower on summit\n• Area around summit is protected nature reserve with rich flora and fauna\n• Snowpark Luž ski resort on southeastern slopes\n• Nearest dining points located at Chata Pod Luží and Lužická bouda"
+      },
+      "36": {
+        "rangeName": "Ještědsko-kozákovský hřbet",
+        "peakName": "Vápenný",
+        "description": "• Velký Vápenný nature reserve protects valuable beech and gravel forests\n• Abandoned quarry with Western Cave on western slope\n• Remains of fortifications from First Czechoslovak Republic\n• Important paleontological site\n• Bat refuge"
+      },
+      "37": {
+        "rangeName": "Jizerské hory",
+        "peakName": "Muchov",
+        "description": "• Rocky peak with telecommunications transmitter offering panoramic views\n• According to local legends is refuge of Jizerské hory spirit - Muha and hidden treasure of robbers\n• Ridge road passing through summit was built before WWI\n• Located between observation points Černá studnice and Terezínka"
+      },
+      "38": {
+        "rangeName": "Góry Wałbrzyskie",
+        "peakName": "Wołowiec",
+        "description": "• Post-volcanic elevation part of triple-peaked massif with Mały Wołowiec (720 m) and Kozioł (774 m)\n• Beech trees dominate on summit in lower montane forest\n• Two longest railway tunnels in Poland on Wałbrzych Podgórze – Jedlina-Zdrój line, 1560 m and 1611 m long, pass under northern slope of Mały Wołowiec\n• Lies in Sudety Wałbrzyskie Landscape Park"
+      },
+      "39": {
+        "rangeName": "Góry Bardzkie",
+        "peakName": "Szeroka Góra",
+        "description": "• In the past Kłodzka Góra (757 m) was considered highest peak of Góry Bardzkie, but latest measurements show Szeroka Góra is highest elevation of range\n• No marked trail leads to summit - forest path branches off yellow trail leading to Kłodzka Góra\n• Geodetic marker on summit\n• Surrounded by spruce and beech forests"
+      },
+      "40": {
+        "rangeName": "Góry Bardzkie",
+        "peakName": "Kłodzka Góra",
+        "description": "• Second highest peak of Góry Bardzkie - for many years considered highest point of range\n• Steel observation tower from 2020, 34.5 meters high with four observation platforms\n• Currently neighboring Szeroka Góra (765 m) is recognized as higher, but Kłodzka Góra has tourist infrastructure\n• Popular night hikes organized here on Midsummer Night\n• Covered with spruce forest"
+      },
+      "41": {
+        "rangeName": "Jestřebí hory",
+        "peakName": "Žaltman",
+        "description": "• New observation tower opened September 24, 2020, exactly 53 years after inauguration of previous structure\n• Tower is 25 meters high, observation platform at 23.5 meters, 122 steps lead to it\n• Panoramic views of Karkonosze, Adršpach-Teplice Rock City and further mountain ranges from tower\n• Area rich in historic mines and fortifications from pre-WWII period\n• Green tourist trail and bike route lead to summit"
+      },
+      "42": {
+        "rangeName": "Góry Kaczawskie",
+        "peakName": "Skopiec",
+        "description": "• Characterized by gentle, dome-shaped summit covered with mixed forest with spruce\n• Slopes partially occupied by meadows and fields, giving mountain characteristic appearance\n• Geological structure includes shales, marbles and greenstones - remnants of former volcanic flows and marine deposits\n• Lies in \"Chełmy\" Landscape Park protecting unique natural values of region"
+      },
+      "43": {
+        "rangeName": "Jizerské hory",
+        "peakName": "Špičák",
+        "description": "• Protected in Jizerskohorské bučiny nature reserve, which in 2021 was inscribed on UNESCO World Heritage List as first natural site in Czech Republic\n• Metal stairs 70 meters long, renovated in 2006, lead to rocky summit\n• Educational trail \"Oldřichovské háje a skály\" passes through it\n• Monument to logger Geissler on southeastern slope, who tragically died here"
+      },
+      "44": {
+        "rangeName": "Góry Kaczawskie",
+        "peakName": "Baraniec",
+        "description": "• Characterized by gentle, dome-shaped form with poorly distinguished summit\n• Rock formations and block fields of shales, marbles and diabases in summit area - remnants of former volcanic and marine deposits\n• Slopes covered with mixed forest with spruce and oak\n• Distinguished by peaceful landscape with meadows and fields on lower slopes\n• Located near Skopiec"
+      },
+      "45": {
+        "rangeName": "Góry Kaczawskie",
+        "peakName": "Okole",
+        "description": "• Forms extensive massif together with Leśniak\n• Built of metamorphic rocks - greenstones and greenstone shales\n• Wooden observation platform and tourist shelter built in 2018\n• Panoramas of Łysa Góra, Rudawy Janowickie, Karkonosze and with good visibility Szczeliniec Wielki from observation platform\n• Kaczawskie Single Tracks - network of bike trails, two passing through Okole massif, opened in 2019\n• Included in Crown of Lower Silesian Mountains"
+      },
+      "46": {
+        "rangeName": "Masyw Ślęży",
+        "peakName": "Ślęża",
+        "description": "• Place of worship for centuries - from pagan rituals to medieval monastery\n• Unique rock formations and cult sculptures from pre-Christian times\n• Rich geological history - remnant of prehistoric ocean floor\n• Observation tower located on summit\n• Distinguished by impressive relative height over 500 meters\n• Nearest city is Sobótka, where final point of Sudety Grand Trail is located"
+      },
+      "47": {
+        "rangeName": "Zábřežská vrchovina",
+        "peakName": "Lázek",
+        "description": "• Historic observation tower from 1933, 20 meters high\n• Reichlova chata - mountain hut on summit\n• Monuments commemorating members of anti-fascist resistance movement from WWII period\n• Telecommunications transmitter on summit"
+      },
+      "48": {
+        "rangeName": "Góry Kamienne",
+        "peakName": "Boreczna",
+        "description": "• Second summit of double-peaked Mniszek\n• Built of volcanic rocks - porphyries and tuffs\n• Deep crevices on slopes related to former mining activity, deepest 36 meters deep\n• Natural climbing wall operates in former quarry\n• Restaurant with observation tower and concert shell once functioned here, demolished in 1920"
+      },
+      "49": {
+        "rangeName": "Nízký Jeseník",
+        "peakName": "Pomezí",
+        "description": "• Locally recognizable ridge point in low hill terrain, marked as vrchol on Czech tourist maps\n• Typical example of hillock in Nízký Jeseník landscape characterized by forests and pastures\n• Place sometimes marked with sign at tree and treated by hikers as summit point on walking routes\n• Not one of formally catalogued high peaks of region, but rather local landmark in southwestern part of range"
+      },
+      "50": {
+        "rangeName": "Góry Bystrzyckie",
+        "peakName": "Kamienna Góra",
+        "description": "• Forms rocky bastion with steep slopes from east and north, built of Cretaceous sandstones\n• Flat summit surface covered with rock rubble and large blocks of quartz sandstone\n• Viewpoint with panorama of Polanica-Zdrój, formerly popular destination for spa guests' walks\n• 19th century Kamienna Góra forester's lodge at base\n• Remains of Fort Frederick on western summit, Prussian structure from late 18th century, related to local anecdote about August Ponzel's jump"
+      },
+      "51": {
+        "rangeName": "Jestřebí hory",
+        "peakName": "Jański Wierch",
+        "description": "• Located about 2.5 km southwest of Okrzeszyn village\n• Built of Upper Carboniferous sandstones and conglomerates\n• Massif partially covered with spruce forest characteristic of this Sudeten region\n• Accessible by tourist trail leading along border"
+      },
+      "52": {
+        "rangeName": "Ještědsko-kozákovský hřbet",
+        "peakName": "Javorník",
+        "description": "• Triple boundary point of cadastral areas on summit\n• Popular buildings once stood here: Obří sud (hotel reopened in 2011) and Blaschkova tower\n• Part of Ještěd landscape park protecting natural values of region\n• Nearby recreational center with ski lift and toboggan run"
+      },
+      "53": {
+        "rangeName": "Góry Wałbrzyskie",
+        "peakName": "Niedźwiadki",
+        "description": "• Triple-peaked elevation with summits reaching heights of 604, 623 and 629 m a.s.l.\n• Summit part built of volcanic rocks, while slopes form sedimentary rocks with coal seams\n• Glacial erratics meet here\n• Remains of mausoleum from Third Reich period on northwestern slope, built in 1936-1938 according to Robert Tischler's design\n• Located in Wałbrzych area, clearly towers over surrounding development"
+      },
+      "54": {
+        "rangeName": "Králický Sněžník",
+        "peakName": "Wapniarka",
+        "description": "• Wooden observation tower from 2008 is third in history of this place - first from 1889 was destroyed by lightning in 1925, second from same year survived until post-war years\n• Characterized by varied geological structure with occurrence of crystalline limestones\n• Former limestone quarries and remains of lime kilns at base\n• Fragments of thermophilic orchid beech forest occur in vegetation"
+      },
+      "55": {
+        "rangeName": "Góry Stołowe",
+        "peakName": "Guzowata",
+        "description": "• Modern observation platform opened in 2019, offering panoramic views of Sudetes\n• Radków Reservoir at base serving recreational function\n• Venue for cultural events - as part of Mountain Literature Festival, meetings with writers and creators take place on observation terrace\n• Two routes lead to platform: gentler paved path and shorter but steeper forest road"
+      }
     }
   },
   "hallOfFameStats": {
