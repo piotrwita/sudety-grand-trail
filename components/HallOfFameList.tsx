@@ -182,7 +182,7 @@ export const HallOfFameList = () => {
                 {completion.rank}
               </div>
 
-              <div className="flex items-start space-x-6">
+              <div className="flex flex-col items-center space-y-4 sm:flex-row sm:items-start sm:space-x-6 sm:space-y-0">
                 {/* Photo */}
                 <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-full shadow-vintage">
                   <Image
@@ -195,9 +195,9 @@ export const HallOfFameList = () => {
                 </div>
 
                 {/* Main Info */}
-                <div className="flex-1">
-                  <div className="mb-2 flex items-center space-x-3">
-                    <h3 className="section-title text-left text-xl">
+                <div className="flex-1 w-full text-center sm:text-left">
+                  <div className="mb-2 flex flex-col items-center space-y-1 sm:flex-row sm:items-center sm:space-x-3 sm:space-y-0">
+                    <h3 className="section-title text-xl">
                       {completion.name}
                     </h3>
                     {completion.nickname && (
