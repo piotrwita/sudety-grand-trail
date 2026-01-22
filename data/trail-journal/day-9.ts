@@ -2,6 +2,7 @@ import type { JournalDay } from '../trail-journal';
 
 export const day9: JournalDay = {
   day: 9,
+  date: '2025-06-15',
   distanceToday: 60,
   distanceTotal: 566,
   title: 'Piekło w Karkonoszach',

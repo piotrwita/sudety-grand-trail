@@ -149,12 +149,23 @@ interface DayAccordionProps {
 }
 
 const DayAccordion = memo(({ day, isOpen, onToggle }: DayAccordionProps) => {
-  const { t } = useTranslations('trailJourney');
+  const { t, locale } = useTranslations('trailJourney');
   const headerRef = useRef<HTMLButtonElement>(null);
   const prevIsOpenRef = useRef(isOpen);
 
   // Get translated title - always needed for header
   const translatedTitle = t(`days.${day.day}.title`) || day.title;
+
+  // Format date based on locale
+  const formattedDate = useMemo(() => {
+    if (!day.date) return '';
+    const dateLocale = locale === 'en' ? 'en-US' : 'pl-PL';
+    return new Date(day.date).toLocaleDateString(dateLocale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
+  }, [day.date, locale]);
 
   // Lazy load content only when opened - prevents calling t() for closed accordions
   const translatedContent = useMemo(() => {
@@ -211,6 +222,27 @@ const DayAccordion = memo(({ day, isOpen, onToggle }: DayAccordionProps) => {
               „{translatedTitle}"
             </h3>
             <div className="mt-1 flex flex-wrap items-center gap-2 text-sm text-forest-600 sm:gap-3">
+              {formattedDate && (
+                <>
+                  <span className="inline-flex items-center gap-1">
+                    <svg
+                      className="h-3.5 w-3.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span className="font-medium">{formattedDate}</span>
+                  </span>
+                  <span className="text-forest-400">|</span>
+                </>
+              )}
               <span className="inline-flex items-center gap-1">
                 <FootstepsIcon />
                 <span className="font-medium">{day.distanceToday} km</span>

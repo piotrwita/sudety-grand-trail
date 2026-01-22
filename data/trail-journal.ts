@@ -16,6 +16,7 @@ import { day15 } from './trail-journal/day-15';
 
 export interface JournalDay {
   day: number;
+  date: string; // Format: YYYY-MM-DD
   distanceToday: number;
   distanceTotal: number;
   title: string;

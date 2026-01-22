@@ -2,6 +2,7 @@ import type { JournalDay } from '../trail-journal';
 
 export const day15: JournalDay = {
   day: 15,
+  date: '2025-06-21',
   distanceToday: 52,
   distanceTotal: 924,
   title: 'Koniec',
