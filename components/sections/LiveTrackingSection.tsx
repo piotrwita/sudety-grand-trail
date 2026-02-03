@@ -65,7 +65,7 @@ export const LiveTrackingSection = () => {
             offset={30}
             direction="up"
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mx-auto max-w-5xl text-xl font-medium leading-relaxed text-mountain-600 text-justify"
+            className="mx-auto max-w-5xl text-justify text-xl font-medium leading-relaxed text-mountain-600"
             style={{ textAlignLast: 'center' }}
           >
             {t('description')}{' '}
@@ -93,7 +93,7 @@ export const LiveTrackingSection = () => {
           className="relative"
         >
           <InteractiveIframe
-            src="https://poltrax.live/sgt"
+            src="https://old.poltrax.live/sgt"
             className="card-vintage-noanim"
             title="Sudety Grand Trail - Live Tracking"
             overlayTitle={t('mapTitle')}
