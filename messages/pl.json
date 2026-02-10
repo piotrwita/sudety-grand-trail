@@ -418,8 +418,8 @@
   },
   "privacyPolicy": {
     "title": "Polityka Prywatności",
-    "lastUpdated": "Ostatnia aktualizacja: 22 grudnia 2025",
-    "intro": "Niniejsza Polityka Prywatności opisuje, w jaki sposób Sudety Grand Trail („my”, „nas” lub „nasz”) gromadzi, wykorzystuje i chroni Twoje informacje podczas odwiedzania naszej strony internetowej i korzystania z naszych usług.",
+    "lastUpdated": "Ostatnia aktualizacja: 10 lutego 2026",
+    "intro": "Niniejsza Polityka Prywatności opisuje, w jaki sposób Sudety Grand Trail (\u201Emy\u201D, \u201Enas\u201D lub \u201Enasz\u201D) gromadzi, wykorzystuje i chroni Twoje informacje podczas odwiedzania naszej strony internetowej i korzystania z naszych usług.",
     "commitment": "Zobowiązujemy się do ochrony Twojej prywatności i przejrzystości w zakresie naszych praktyk dotyczących danych. Niniejsza polityka wyjaśnia, jakie informacje gromadzimy i jak je wykorzystujemy.",
     "sections": [
       {
@@ -427,23 +427,33 @@
         "content": [
           {
             "subtitle": "Dane Osobowe, które Podajesz",
-            "text": "Gromadzimy tylko te dane osobowe, które dobrowolnie nam przekazujesz, takie jak:",
+            "text": "Gromadzimy tylko te dane osobowe, które dobrowolnie nam przekazujesz za pośrednictwem formularzy na stronie:",
             "list": [
-              "Imię i adres e-mail, gdy kontaktujesz się z nami za pomocą formularza kontaktowego",
-              "Wszelkie dodatkowe informacje, które zdecydujesz się zawrzeć w swoich wiadomościach"
+              "Formularz zgłoszenia przejścia (Galeria Sław): imię i nazwisko, pseudonim, adres e-mail, typ przejścia, daty rozpoczęcia i zakończenia, opis przejścia, zdjęcie profilowe (wymagane) oraz plik GPX z trasą (opcjonalnie)",
+              "Formularz zgłoszenia trackera GPS: adres e-mail, planowana data startu i czas trwania wyprawy",
+              "Wiadomości wysłane bezpośrednio na adres sgt.powiadomienia@gmail.com"
             ]
           },
           {
-            "subtitle": "Informacje Gromadzone Automatycznie",
-            "text": "Podczas odwiedzania naszej strony internetowej możemy automatycznie gromadzić podstawowe informacje techniczne, w tym:",
+            "subtitle": "Pliki Przesyłane przez Użytkowników",
+            "text": "Formularz zgłoszenia przejścia umożliwia przesłanie:",
             "list": [
-              "Adres IP",
-              "Typ i wersja przeglądarki",
+              "Zdjęcia profilowego (JPEG, PNG lub WebP, do 300 KB)",
+              "Pliku GPX (do 500 KB) — plik GPX zawiera dane geolokalizacyjne (współrzędne trasy)"
+            ],
+            "footer": "Przesłane pliki są przekazywane jako załączniki e-mail do administratora serwisu i nie są przechowywane na serwerze strony internetowej."
+          },
+          {
+            "subtitle": "Informacje Gromadzone Automatycznie",
+            "text": "Korzystamy z usługi Vercel Analytics, która w sposób bezplikowy (bez plików cookie) zbiera anonimowe dane o korzystaniu ze strony, w tym:",
+            "list": [
               "Odwiedzone strony i czas spędzony na naszej stronie",
+              "Wskaźniki wydajności strony (Web Vitals)",
+              "Typ i wersja przeglądarki",
               "Strona odsyłająca",
               "Informacje o urządzeniu i systemie operacyjnym"
             ],
-            "footer": "Informacje te są gromadzone za pośrednictwem standardowych logów serwera WWW i pomagają nam ulepszać wydajność naszej strony oraz doświadczenia użytkowników."
+            "footer": "Vercel Analytics nie używa plików cookie i nie śledzi indywidualnych użytkowników pomiędzy sesjami. Dane te pomagają nam ulepszać wydajność strony."
           }
         ]
       },
@@ -451,13 +461,13 @@
         "title": "Pliki Cookie i Śledzenie",
         "content": [
           {
-            "text": "Nie używamy plików cookie do śledzenia Twoich danych osobowych ani zachowań związanych z przeglądaniem.",
-            "subtitle": "Niezbędne Pliki Cookie",
+            "text": "Nie używamy plików cookie do śledzenia Twoich danych osobowych ani zachowań związanych z przeglądaniem. Strona nie ustawia żadnych własnych plików cookie.",
+            "subtitle": "Analityka",
             "list": [
-              "Podstawowa funkcjonalność strony internetowej",
-              "Celów bezpieczeństwa"
+              "Korzystamy z Vercel Analytics — narzędzia analitycznego, które nie używa plików cookie i nie gromadzi danych osobowych",
+              "Nie używamy plików cookie reklamowych ani żadnych technologii śledzących stron trzecich"
             ],
-            "footer": "Nie używamy plików cookie analitycznych, reklamowych ani żadnych technologii śledzących, które gromadzą dane osobowe o Twoich nawykach przeglądania."
+            "footer": "Osadzone treści stron trzecich (np. ramka Poltrax na stronie śledzenia na żywo) mogą podlegać własnym politykom prywatności tych usług."
           }
         ]
       },
@@ -467,11 +477,20 @@
           {
             "text": "Gromadzone przez nas informacje wykorzystujemy do:",
             "list": [
-              "Odpowiadania na Twoje zapytania i zapewniania obsługi klienta",
-              "Ulepszania naszej strony internetowej i usług",
-              "Zapewnienia bezpieczeństwa i prawidłowego funkcjonowania naszej strony internetowej",
-              "Wypełniania obowiązków prawnych"
+              "Przetwarzania zgłoszeń przejścia trasy i publikacji w Galerii Sław (imię, zdjęcie i szczegóły przejścia mogą być wyświetlane publicznie na stronie)",
+              "Obsługi zgłoszeń wypożyczenia trackera GPS",
+              "Odpowiadania na Twoje zapytania wysłane na adres e-mail",
+              "Ulepszania naszej strony internetowej i usług na podstawie anonimowych danych analitycznych",
+              "Zapewnienia bezpieczeństwa i prawidłowego funkcjonowania naszej strony internetowej"
             ]
+          }
+        ]
+      },
+      {
+        "title": "Publiczne Wyświetlanie Danych",
+        "content": [
+          {
+            "text": "Wysyłając formularz zgłoszenia przejścia, wyrażasz zgodę na to, że Twoje imię i nazwisko, zdjęcie profilowe oraz szczegóły przejścia (typ, daty, opis) mogą zostać opublikowane w sekcji Galeria Sław na naszej stronie. Jeśli chcesz usunąć swoje dane z Galerii Sław, skontaktuj się z nami pod adresem sgt.powiadomienia@gmail.com."
           }
         ]
       },
@@ -492,7 +511,7 @@
         "title": "Bezpieczeństwo Danych",
         "content": [
           {
-            "text": "Wdrażamy odpowiednie środki bezpieczeństwa, aby chronić Twoje dane osobowe przed nieuprawnionym dostępem, zmianą, ujawnieniem lub zniszczeniem. Jednak żadna metoda transmisji przez internet nie jest w 100% bezpieczna."
+            "text": "Wdrażamy odpowiednie środki bezpieczeństwa, aby chronić Twoje dane osobowe przed nieuprawnionym dostępem, zmianą, ujawnieniem lub zniszczeniem. Dane z formularzy są przesyłane przez szyfrowane połączenie (HTTPS) i przekazywane za pośrednictwem zabezpieczonego uwierzytelniania OAuth2. Jednak żadna metoda transmisji przez internet nie jest w 100% bezpieczna."
           }
         ]
       },
@@ -500,7 +519,7 @@
         "title": "Przechowywanie Danych",
         "content": [
           {
-            "text": "Twoje dane osobowe przechowujemy tylko tak długo, jak jest to konieczne do realizacji celów określonych w niniejszej polityce prywatności lub zgodnie z wymogami prawa. Zgłoszenia z formularza kontaktowego są zazwyczaj przechowywane przez okres do 2 lat w celach biznesowych."
+            "text": "Twoje dane osobowe przechowujemy tylko tak długo, jak jest to konieczne do realizacji celów określonych w niniejszej polityce prywatności lub zgodnie z wymogami prawa. Zgłoszenia z formularzy są przesyłane jako wiadomości e-mail i przechowywane zgodnie z ustawieniami skrzynki pocztowej administratora."
           }
         ]
       },

@@ -418,7 +418,7 @@
   },
   "privacyPolicy": {
     "title": "Privacy Policy",
-    "lastUpdated": "Last updated: December 22, 2025",
+    "lastUpdated": "Last updated: February 10, 2026",
     "intro": "This Privacy Policy describes how Sudety Grand Trail (\"we\", \"us\", or \"our\") collects, uses, and protects your information when you visit our website and use our services.",
     "commitment": "We are committed to protecting your privacy and being transparent about our data practices. This policy explains what information we collect and how we use it.",
     "sections": [
@@ -427,23 +427,33 @@
         "content": [
           {
             "subtitle": "Personal Information You Provide",
-            "text": "We only collect personal information that you voluntarily provide to us, such as:",
+            "text": "We only collect personal information that you voluntarily provide to us through the forms on our website:",
             "list": [
-              "Name and email address when you contact us through our contact form",
-              "Any additional information you choose to include in your messages"
+              "Trail completion submission form (Hall of Fame): full name, nickname, email address, trail type, start and end dates, description, profile photo (required), and GPX route file (optional)",
+              "GPS tracker request form: email address, planned start date, and expedition duration",
+              "Messages sent directly to sgt.powiadomienia@gmail.com"
             ]
           },
           {
-            "subtitle": "Automatically Collected Information",
-            "text": "When you visit our website, we may automatically collect basic technical information including:",
+            "subtitle": "User-Uploaded Files",
+            "text": "The trail completion submission form allows uploading:",
             "list": [
-              "IP address",
-              "Browser type and version",
+              "A profile photo (JPEG, PNG, or WebP, up to 300 KB)",
+              "A GPX file (up to 500 KB) — GPX files contain geolocation data (route coordinates)"
+            ],
+            "footer": "Uploaded files are sent as email attachments to the site administrator and are not stored on the website server."
+          },
+          {
+            "subtitle": "Automatically Collected Information",
+            "text": "We use Vercel Analytics, a cookie-free service that collects anonymous usage data including:",
+            "list": [
               "Pages visited and time spent on our site",
+              "Website performance metrics (Web Vitals)",
+              "Browser type and version",
               "Referring website",
               "Device and operating system information"
             ],
-            "footer": "This information is collected through standard web server logs and helps us improve our website's performance and user experience."
+            "footer": "Vercel Analytics does not use cookies and does not track individual users across sessions. This data helps us improve website performance."
           }
         ]
       },
@@ -451,13 +461,13 @@
         "title": "Cookies and Tracking",
         "content": [
           {
-            "text": "We do not use cookies to track your personal information or browsing behavior.",
-            "subtitle": "Essential Cookies",
+            "text": "We do not use cookies to track your personal information or browsing behavior. This website does not set any first-party cookies.",
+            "subtitle": "Analytics",
             "list": [
-              "Basic website functionality",
-              "Security purposes"
+              "We use Vercel Analytics — an analytics tool that does not use cookies and does not collect personal data",
+              "We do not use advertising cookies or any third-party tracking technologies"
             ],
-            "footer": "We do not use analytics cookies, advertising cookies, or any tracking technologies that collect personal data about your browsing habits."
+            "footer": "Embedded third-party content (e.g., the Poltrax frame on the live tracking page) may be subject to those services' own privacy policies."
           }
         ]
       },
@@ -467,11 +477,20 @@
           {
             "text": "We use the information we collect to:",
             "list": [
-              "Respond to your inquiries and provide customer service",
-              "Improve our website and services",
-              "Ensure the security and proper functioning of our website",
-              "Comply with legal obligations"
+              "Process trail completion submissions and publish them in the Hall of Fame (your name, photo, and trail details may be displayed publicly on the website)",
+              "Process GPS tracker rental requests",
+              "Respond to your inquiries sent to our email address",
+              "Improve our website and services based on anonymous analytics data",
+              "Ensure the security and proper functioning of our website"
             ]
+          }
+        ]
+      },
+      {
+        "title": "Public Display of Data",
+        "content": [
+          {
+            "text": "By submitting the trail completion form, you consent to your name, profile photo, and trail details (type, dates, description) being published in the Hall of Fame section of our website. If you wish to have your data removed from the Hall of Fame, please contact us at sgt.powiadomienia@gmail.com."
           }
         ]
       },
@@ -492,7 +511,7 @@
         "title": "Data Security",
         "content": [
           {
-            "text": "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure."
+            "text": "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. Form data is transmitted over an encrypted connection (HTTPS) and delivered via secured OAuth2 authentication. However, no method of transmission over the internet is 100% secure."
           }
         ]
       },
@@ -500,7 +519,7 @@
         "title": "Data Retention",
         "content": [
           {
-            "text": "We retain your personal information only for as long as necessary to fulfill the purposes outlined in this privacy policy or as required by law. Contact form submissions are typically retained for up to 2 years for business purposes."
+            "text": "We retain your personal information only for as long as necessary to fulfill the purposes outlined in this privacy policy or as required by law. Form submissions are delivered as email messages and retained according to the administrator's mailbox settings."
           }
         ]
       },
