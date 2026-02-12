@@ -2,6 +2,12 @@
 
 Jeśli Twój `GMAIL_REFRESH_TOKEN` wygasł i musisz go podmieniać w Vercel, użyj tego przewodnika.
 
+## Wymagany scope
+
+Projekt wymaga wyłącznie scope `https://www.googleapis.com/auth/gmail.send`. Ten scope pozwala jedynie na wysyłanie emaili — bez dostępu do skrzynki odbiorczej, wersji roboczych ani etykiet. Używany jest przez dwie Server Actions w `actions/send-email.ts`:
+- `sendSubmissionEmail` — zgłoszenie przejścia trasy (z załącznikami: zdjęcie, GPX)
+- `sendTrackerRequestEmail` — zgłoszenie wypożyczenia trackera GPS
+
 ## Szybkie rozwiązanie (Google OAuth Playground)
 
 ### Krok 1: Przygotuj dane
@@ -20,19 +26,21 @@ Jeśli Twój `GMAIL_REFRESH_TOKEN` wygasł i musisz go podmieniać w Vercel, uż
    - **OAuth Client ID**: Twój `GMAIL_CLIENT_ID`
    - **OAuth Client secret**: Twój `GMAIL_CLIENT_SECRET`
 
-5. W lewej kolumnie znajdź **"Gmail API v1"**
+5. Zamknij panel ustawień
 
-6. Zaznacz scope: `https://www.googleapis.com/auth/gmail.send`
+6. W lewej kolumnie znajdź **"Gmail API v1"** i rozwiń
 
-7. Kliknij **"Authorize APIs"**
+7. Zaznacz scope: `https://www.googleapis.com/auth/gmail.send` (jedyny wymagany scope)
 
-8. Zaloguj się kontem Gmail które używasz jako `GMAIL_USER`
+8. Kliknij **"Authorize APIs"**
 
-9. Zaakceptuj uprawnienia
+9. Zaloguj się kontem Gmail które używasz jako `GMAIL_USER`
 
-10. Kliknij **"Exchange authorization code for tokens"**
+10. Zaakceptuj uprawnienia
 
-11. Skopiuj **"Refresh token"** - to jest Twój nowy `GMAIL_REFRESH_TOKEN`
+11. Kliknij **"Exchange authorization code for tokens"**
+
+12. Skopiuj **"Refresh token"** - to jest Twój nowy `GMAIL_REFRESH_TOKEN`
 
 ### Krok 3: Zaktualizuj w Vercel
 
@@ -44,6 +52,8 @@ Jeśli Twój `GMAIL_REFRESH_TOKEN` wygasł i musisz go podmieniać w Vercel, uż
 6. Zrób **Redeploy** projektu
 
 ## Alternatywa: Skrypt Node.js
+
+> **Uwaga**: Skrypt `scripts/generate-refresh-token.js` używa redirect URI `urn:ietf:wg:oauth:2.0:oob`, który został wycofany przez Google w 2022 roku. Skrypt może nie działać z nowszymi projektami OAuth. W takim przypadku użyj metody z Google OAuth Playground opisanej wyżej.
 
 Jeśli wolisz użyć skryptu lokalnie:
 

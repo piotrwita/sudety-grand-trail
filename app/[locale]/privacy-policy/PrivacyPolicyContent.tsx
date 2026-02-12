@@ -57,6 +57,18 @@ export const PrivacyPolicyContent = () => {
                         {t('sections.0.content.1.footer')}
                       </p>
                     </div>
+                    <div>
+                      <h4 className="mb-2 text-xl font-bold text-accent">
+                        {t('sections.0.content.2.subtitle')}
+                      </h4>
+                      <p className="mb-3 text-mountain-300">
+                        {t('sections.0.content.2.text')}
+                      </p>
+                      <PolicyList items={tArray('sections.0.content.2.list')} />
+                      <p className="mt-4 text-sm italic text-mountain-400">
+                        {t('sections.0.content.2.footer')}
+                      </p>
+                    </div>
                   </div>
                 </PolicySection>
 
@@ -84,64 +96,71 @@ export const PrivacyPolicyContent = () => {
                   <PolicyList items={tArray('sections.2.content.0.list')} />
                 </PolicySection>
 
-                {/* 3. Information Sharing */}
+                {/* 3. Public Display of Data */}
                 <PolicySection title={t('sections.3.title')}>
-                  <p className="mb-3 text-mountain-300">
+                  <p className="text-mountain-300">
                     {t('sections.3.content.0.text')}
                   </p>
-                  <PolicyList items={tArray('sections.3.content.0.list')} />
                 </PolicySection>
 
-                {/* 4. Data Security */}
+                {/* 4. Information Sharing */}
                 <PolicySection title={t('sections.4.title')}>
-                  <p className="text-mountain-300">
+                  <p className="mb-3 text-mountain-300">
                     {t('sections.4.content.0.text')}
                   </p>
+                  <PolicyList items={tArray('sections.4.content.0.list')} />
                 </PolicySection>
 
-                {/* 5. Data Retention */}
+                {/* 5. Data Security */}
                 <PolicySection title={t('sections.5.title')}>
                   <p className="text-mountain-300">
                     {t('sections.5.content.0.text')}
                   </p>
                 </PolicySection>
 
-                {/* 6. Your Rights */}
+                {/* 6. Data Retention */}
                 <PolicySection title={t('sections.6.title')}>
-                  <p className="mb-3 text-mountain-300">
+                  <p className="text-mountain-300">
                     {t('sections.6.content.0.text')}
                   </p>
-                  <PolicyList items={tArray('sections.6.content.0.list')} />
-                  <p className="mt-4 text-sm text-mountain-400">
-                    {t('sections.6.content.0.footer')}
-                  </p>
                 </PolicySection>
 
-                {/* 7. Third-Party Links */}
+                {/* 7. Your Rights */}
                 <PolicySection title={t('sections.7.title')}>
-                  <p className="text-mountain-300">
+                  <p className="mb-3 text-mountain-300">
                     {t('sections.7.content.0.text')}
                   </p>
+                  <PolicyList items={tArray('sections.7.content.0.list')} />
+                  <p className="mt-4 text-sm text-mountain-400">
+                    {t('sections.7.content.0.footer')}
+                  </p>
                 </PolicySection>
 
-                {/* 8. Children's Privacy */}
+                {/* 8. Third-Party Links */}
                 <PolicySection title={t('sections.8.title')}>
                   <p className="text-mountain-300">
                     {t('sections.8.content.0.text')}
                   </p>
                 </PolicySection>
 
-                {/* 9. Changes to This Privacy Policy */}
+                {/* 9. Children's Privacy */}
                 <PolicySection title={t('sections.9.title')}>
                   <p className="text-mountain-300">
                     {t('sections.9.content.0.text')}
                   </p>
                 </PolicySection>
 
-                {/* 10. Contact Us */}
+                {/* 10. Changes to This Privacy Policy */}
                 <PolicySection title={t('sections.10.title')}>
                   <p className="text-mountain-300">
-                    {t('sections.10.content.0.text', {
+                    {t('sections.10.content.0.text')}
+                  </p>
+                </PolicySection>
+
+                {/* 11. Contact Us */}
+                <PolicySection title={t('sections.11.title')}>
+                  <p className="text-mountain-300">
+                    {t('sections.11.content.0.text', {
                       email: siteConfig.contactEmail,
                     })}
                   </p>
