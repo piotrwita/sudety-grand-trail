@@ -86,10 +86,8 @@ export const ModernTrackerSection = () => {
 
               <p className="text-justify text-lg leading-relaxed text-slate-700">
                 <strong className="text-accent">
-                  Copy Copy
                   {t('description.part1')}
                 </strong>
-                Copy Copy
                 {t('description.part2')}
               </p>
             </div>
