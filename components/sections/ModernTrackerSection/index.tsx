@@ -12,11 +12,11 @@ import { useTranslations } from '@/lib/i18n-utils';
 
 export const ModernTrackerSection = () => {
   const { t, tArray } = useTranslations('modernTracker');
-  
+
   return (
     <Section
       id={sectionIds.trackerForm}
-      ariaLabel="Zgłoś Próbę Przejścia - Tracker GPS"
+      ariaLabel={t('badge')}
       className="bg-gradient-to-br from-slate-50 via-white to-slate-100"
     >
       <div className="fluid-container">
@@ -47,7 +47,9 @@ export const ModernTrackerSection = () => {
 
           <h2 className="section-title mb-6 text-slate-900">
             {t('title')}{' '}
-            <span className="theme-live-text-gradient">{t('titleHighlight')}</span>
+            <span className="theme-live-text-gradient">
+              {t('titleHighlight')}
+            </span>
           </h2>
         </FadeIn>
 
@@ -71,7 +73,7 @@ export const ModernTrackerSection = () => {
                   className="relative inline-block h-12 w-auto transition-opacity hover:opacity-80"
                 >
                   <Image
-                    src="https://poltrax.live/_next/static/media/logo.fd1fe14c.png"
+                    src="/images/poltrax-logo.png"
                     alt="Poltrax Logo"
                     width={250}
                     height={48}
@@ -82,10 +84,13 @@ export const ModernTrackerSection = () => {
                 <p className="text-slate-500">{t('partner')}</p>
               </div>
 
-              <p className="text-lg leading-relaxed text-slate-700">
+              <p className="text-justify text-lg leading-relaxed text-slate-700">
                 <strong className="text-accent">
-                  {t('description')}
+                  Copy Copy
+                  {t('description.part1')}
                 </strong>
+                Copy Copy
+                {t('description.part2')}
               </p>
             </div>
 
@@ -96,9 +101,7 @@ export const ModernTrackerSection = () => {
                   <div className="flex size-7 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-sm">
                     <CheckIcon className="size-4 text-white" />
                   </div>
-                  <span className="text-slate-700 font-medium">
-                    {feature}
-                  </span>
+                  <span className="font-medium text-slate-700">{feature}</span>
                 </div>
               ))}
             </div>
