@@ -427,7 +427,7 @@ The website is fully bilingual with support for Polish (default) and English:
 
 ### Supported Locales
 
-- `pl` - Polish (default)
+- `pl` - Polish (Default)
 - `en` - English
 
 ### Adding New Translations
