@@ -93,7 +93,7 @@ export const LiveTrackingSection = () => {
           className="relative"
         >
           <InteractiveIframe
-            src="https://old.poltrax.live/sgt"
+            src="https://www.poltrax.live/sgt"
             className="card-vintage-noanim"
             title="Sudety Grand Trail - Live Tracking"
             overlayTitle={t('mapTitle')}
