@@ -1,6 +1,6 @@
 # Jak wygenerować nowy Gmail Refresh Token
 
-Jeśli Twój `GMAIL_REFRESH_TOKEN` wygasł i musisz go podmieniać w Vercel, użyj tego przewodnika.
+Jeśli Twój `GMAIL_REFRESH_TOKEN` wygasł i musisz go podmieniać w Vercel, użyj tego przewodnika. Runtime aplikacji wysyła wiadomości przez Gmail API (`users.messages.send`), więc token musi być zgodny z tym przepływem.
 
 ## Wymagany scope
 
@@ -51,17 +51,9 @@ Projekt wymaga wyłącznie scope `https://www.googleapis.com/auth/gmail.send`. T
 5. Kliknij **"Save"**
 6. Zrób **Redeploy** projektu
 
-## Alternatywa: Skrypt Node.js
+## Alternatywa: Skrypt Node.js z lokalnym callbackiem
 
-> **Uwaga**: Skrypt `scripts/generate-refresh-token.js` używa redirect URI `urn:ietf:wg:oauth:2.0:oob`, który został wycofany przez Google w 2022 roku. Skrypt może nie działać z nowszymi projektami OAuth. W takim przypadku użyj metody z Google OAuth Playground opisanej wyżej.
-
-Jeśli wolisz użyć skryptu lokalnie:
-
-### Instalacja zależności
-
-```bash
-npm install googleapis
-```
+Jeśli wolisz użyć skryptu lokalnie, projekt zawiera gotowy skrypt `scripts/generate-refresh-token.js`, który uruchamia tymczasowy lokalny callback OAuth na `http://127.0.0.1:3000/oauth2callback`.
 
 ### Uruchomienie skryptu
 
@@ -77,11 +69,21 @@ node scripts/generate-refresh-token.js
 GMAIL_CLIENT_ID="twoj_client_id" GMAIL_CLIENT_SECRET="twoj_client_secret" node scripts/generate-refresh-token.js
 ```
 
+Jeśli port `3000` jest zajęty, możesz ustawić inny:
+
+```powershell
+$env:GMAIL_CLIENT_ID="twoj_client_id"
+$env:GMAIL_CLIENT_SECRET="twoj_client_secret"
+$env:GMAIL_OAUTH_PORT="3010"
+node scripts/generate-refresh-token.js
+```
+
 Skrypt poprosi Cię o:
 1. Otwarcie URL w przeglądarce
 2. Zalogowanie się kontem Gmail
-3. Wklejenie kodu autoryzacyjnego
-4. Skopiowanie refresh tokena
+3. Zaakceptowanie scope `gmail.send`
+4. Poczekanie na przekierowanie na lokalny callback
+5. Skopiowanie refresh tokena z terminala
 
 ## Dlaczego token wygasa co tydzień?
 
@@ -121,12 +123,14 @@ Po dodaniu użytkownika testowego:
 - Token wygasł - wygeneruj nowy refresh token
 - Sprawdź czy `GMAIL_USER` jest tym samym kontem które użyłeś do generowania tokena
 - Sprawdź czy aplikacja OAuth ma poprawne uprawnienia
+- Sprawdź czy redirect URI w Google Cloud Console zawiera dokładnie ten adres, którego używa skrypt, np. `http://127.0.0.1:3000/oauth2callback`
 
 ### Nie otrzymuję refresh tokena
 
 - Odwołaj dostęp aplikacji: https://myaccount.google.com/permissions
 - Uruchom proces generowania tokena ponownie
 - Upewnij się że używasz `prompt: 'consent'` w konfiguracji OAuth
+- Upewnij się, że autoryzujesz aplikację z dostępem offline
 
 ### Email nie przychodzi po aktualizacji tokena
 
