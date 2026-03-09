@@ -219,7 +219,7 @@ npm install
 
 Create a `.env.local` file in the root directory and configure the following variables:
 
-- **Gmail OAuth2 Credentials** (required for email submission form):
+- **Gmail API OAuth2 Credentials** (required for email submission form):
   - `GMAIL_CLIENT_ID` - Your Gmail OAuth2 Client ID
   - `GMAIL_CLIENT_SECRET` - Your Gmail OAuth2 Client Secret
   - `GMAIL_REFRESH_TOKEN` - Your Gmail OAuth2 Refresh Token
@@ -229,7 +229,7 @@ Create a `.env.local` file in the root directory and configure the following var
 - **Site Configuration** (optional):
   - `NEXT_PUBLIC_SITE_URL` - Your site URL (defaults to `https://sudety-grand-trail.com`)
 
-> **Note**: The email submission form will not work without proper Gmail OAuth2 credentials. If you don't need email functionality for development, you can skip these variables, but form submissions will fail.
+> **Note**: The email submission form sends messages through Gmail API and will not work without proper Gmail OAuth2 credentials. If you don't need email functionality for development, you can skip these variables, but form submissions will fail.
 
 > **Need help setting up Gmail OAuth2?** See the [Gmail Refresh Token Guide](docs/REFRESH_TOKEN_GUIDE.md) for detailed instructions on generating and managing your OAuth2 credentials.
 
@@ -288,6 +288,7 @@ The website is production-ready and deployed at [https://sudety-grand-trail.com]
 - Check if your `GMAIL_REFRESH_TOKEN` has expired (tokens expire after 7 days if the OAuth app is in Testing mode)
 - See the [Gmail Refresh Token Guide](docs/REFRESH_TOKEN_GUIDE.md) for detailed instructions on generating a new refresh token
 - Ensure `GMAIL_USER` matches the Gmail account used to generate the OAuth2 credentials
+- Ensure your OAuth client has a redirect URI configured for the token generation flow you use
 - Add your Gmail account as a test user in Google Cloud Console to prevent token expiration
 
 ### Build Errors
